@@ -16,8 +16,8 @@ List is the same as FOP lib directory plus fop.jar
 I tried it with version 0.95 but later will probably work as well.
 
 2) Copy jni4net libraries to lib directory
-jni4net.n-0.1.0.0.dll
-jni4net.j-0.1.0.0.jar
+jni4net.n-0.2.0.0.dll
+jni4net.j-0.2.0.0.jar
 
 3) Then run generateProxies.cmd
 

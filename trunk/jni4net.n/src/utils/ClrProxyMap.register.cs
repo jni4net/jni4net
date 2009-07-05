@@ -266,7 +266,7 @@ namespace net.sf.jni4net.utils
             string className = attr;
             if (className == null)
             {
-                className = type.FullName.Replace(".__", ".");
+                className = type.Namespace.ToLowerInvariant() + "." + type.Name.Replace("__", "");
             }
             return className;
         }

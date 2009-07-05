@@ -22,7 +22,7 @@ using System;
 
 namespace net.sf.jni4net.attributes
 {
-    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Property)]
     public sealed class JavaMethodAttribute : Attribute
     {
         public JavaMethodAttribute()
