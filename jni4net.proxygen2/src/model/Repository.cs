@@ -238,8 +238,8 @@ namespace net.sf.jni4net.proxygen.model
 
                 if (type == null)
                 {
-                    Console.Error.WriteLine("Can't load type" + registration);
-                    throw new JNIException("Can't load type" + registration);
+                    Console.Error.WriteLine("Can't load type" + registration.TypeName);
+                    throw new JNIException("Can't load type" + registration.TypeName);
                 }
                 GType reg = RegisterType(type, registration);
                 reg.IsJVMGenerate = true;

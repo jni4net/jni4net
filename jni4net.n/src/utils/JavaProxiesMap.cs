@@ -123,9 +123,9 @@ namespace net.sf.jni4net.utils
                 ExpandRecord(clazzExact, newClazz);
                 return newClazz;
             }
-            if (__IClrProxy._class != null && __IClrProxy._class.isAssignableFrom(clazzExact))
+            if (IClrProxy_._class != null && IClrProxy_._class.isAssignableFrom(clazzExact))
             {
-                JavaProxyRecord newClazz = knownClasses[__IClrProxy._class];
+                JavaProxyRecord newClazz = knownClasses[IClrProxy_._class];
                 ExpandRecord(clazzExact, newClazz);
                 return newClazz;
             }

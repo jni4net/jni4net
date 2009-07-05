@@ -27,6 +27,7 @@ using System.Reflection;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
+using system;
 using Exception=System.Exception;
 using Object=java.lang.Object;
 using String=java.lang.String;
@@ -114,6 +115,8 @@ namespace net.sf.jni4net.proxygen.model
             javaLangClass = RegisterClass(Class._class);
             javaLangThrowable = RegisterClass(Throwable._class);
             systemString.JVMSubst = javaLangString;
+            RegisterType(typeof(IObject)).CLRSubst = systemObject;
+            RegisterType(typeof(java_.lang.IObject)).JVMSubst = javaLangObject;
         }
 
         private static void LoadFile(string file)

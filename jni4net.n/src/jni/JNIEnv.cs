@@ -1128,12 +1128,12 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        internal IObject GetObjectArrayElement(Object array, int index)
+        internal IJavaProxy GetObjectArrayElement(Object array, int index)
         {
             return GetObjectArrayElement(array.native, index);
         }
 
-        internal IObject GetObjectArrayElement(Object.JavaPtr* array, int index)
+        internal IJavaProxy GetObjectArrayElement(Object.JavaPtr* array, int index)
         {
             Object.JavaPtr* res = getObjectArrayElement(native, array, index);
             ExceptionTest();
@@ -1299,7 +1299,7 @@ namespace net.sf.jni4net.jni
             {
                 for (int i = 0; i < length; i++)
                 {
-                    object element = GetObjectArrayElement((Object) array, i);
+                    object element = Bridge.ToCLR(GetObjectArrayElement((Object)array, i));
                     res.SetValue(element, i);
                 }
             }
