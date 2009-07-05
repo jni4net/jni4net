@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.1.0.0/toolConfig.xsd">
+  <TargetDirJvm>../jni4net.j/src/main/java</TargetDirJvm>
+  <TargetDirClr>../jni4net.n/target/build-sources/generated-sources</TargetDirClr>
+  <!-- 
+  <Verbose>true</Verbose>
+  -->
+
+
+  <!-- basics -->
+  <ClrType TypeName="System.Object"/>
+  <ClrType TypeName="System.String"/>
+  <ClrType TypeName="System.Type"/>
+  <ClrType TypeName="System.ValueType"/>
+  <ClrType TypeName="System.MarshalByRefObject"/>
+
+  <!-- primitive -->
+  <ClrType TypeName="System.Boolean"/>
+  <ClrType TypeName="System.Byte"/>
+  <ClrType TypeName="System.Double"/>
+  <ClrType TypeName="System.Single"/>
+  <ClrType TypeName="System.Int32"/>
+  <ClrType TypeName="System.Int64"/>
+  <ClrType TypeName="System.Int16"/>
+  <ClrType TypeName="System.Char"/>
+  <ClrType TypeName="System.DateTime"/>
+  <ClrType TypeName="System.Decimal"/>
+  <ClrType TypeName="System.Guid"/>
+  <!-- 
+  <ClrType TypeName="System.UInt32"/>
+  <ClrType TypeName="System.UInt64"/>
+  <ClrType TypeName="System.UInt16"/>
+  <ClrType TypeName="System.SByte"/>
+  -->
+
+  <!-- exceptions -->
+  <ClrType TypeName="System.Exception"/>
+  <ClrType TypeName="System.NullReferenceException"/>
+  <ClrType TypeName="System.ArgumentException"/>
+  <ClrType TypeName="System.IO.IOException"/>
+  <ClrType TypeName="System.NotImplementedException"/>
+  <ClrType TypeName="System.NotSupportedException"/>
+  <ClrType TypeName="System.InvalidOperationException"/>
+
+  <!-- io -->
+  <ClrType TypeName="System.IO.FileStream"/>
+  <ClrType TypeName="System.IO.Stream"/>
+  <ClrType TypeName="System.Console"/>
+
+  <!-- colections -->
+  <ClrType TypeName="System.Collections.IList"/>
+  <ClrType TypeName="System.Collections.IEnumerator"/>
+  <ClrType TypeName="System.Collections.ICollection"/>
+  <ClrType TypeName="System.Collections.IDictionary"/>
+  <ClrType TypeName="System.IComparable"/>
+  <ClrType TypeName="System.IConvertible"/>
+  <ClrType TypeName="System.IDisposable"/>
+  <ClrType TypeName="System.IFormattable"/>
+  <ClrType TypeName="System.Array"/>
+
+  <!-- reflection -->
+  <ClrType TypeName="System.Reflection.Assembly"/>
+  <ClrType TypeName="System.Reflection.ConstructorInfo"/>
+  <ClrType TypeName="System.Reflection.MethodInfo"/>
+  <ClrType TypeName="System.Reflection.PropertyInfo"/>
+  <ClrType TypeName="System.Reflection.FieldInfo"/>
+  <ClrType TypeName="System.Reflection.ParameterInfo"/>
+  <ClrType TypeName="System.Reflection.BindingFlags"/>
+
+  <!-- bridges -->
+  <ClrType TypeName="net.sf.jni4net.Bridge"/>
+
+  <SkipClrMethod ClassName="System.Reflection.FieldInfo" MethodName="SetValueDirect" Signature="(LSystem/TypedReference;LSystem/Object;)V"/>
+  <SkipClrMethod ClassName="System.Reflection.FieldInfo" MethodName="GetValueDirect" Signature="(LSystem/TypedReference;)LSystem/Object;"/>
+
+  <SkipClrMethod ClassName="net.sf.jni4net.Bridge" MethodName="InvokeStatic" Signature="(Ljava/lang/Class;LSystem/String;LSystem/String;[LSystem/Object;)V"/>
+  <SkipClrMethod ClassName="net.sf.jni4net.Bridge" MethodName="CreateJVM" Signature="([LSystem/String;)V"/>
+
+</jni4net-proxygen>

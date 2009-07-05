@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>net.sf.jni4net</RootNamespace>
+    <AssemblyName>jni4net.n-0.1.0.0</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\target\</OutputPath>
+    <IntermediateOutputPath>..\target\obj\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\target\</OutputPath>
+    <IntermediateOutputPath>..\target\obj\</IntermediateOutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="selvin.exportdllattribute, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\tools\exportdll\selvin.exportdllattribute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="attributes\ClrWrapperAttribute.cs" />
+    <Compile Include="attributes\JavaClassAttribute.cs" />
+    <Compile Include="attributes\JavaInterfaceAttribute.cs" />
+    <Compile Include="attributes\JavaMethodAttribute.cs" />
+    <Compile Include="attributes\JavaProxyAttribute.cs" />
+    <Compile Include="jni\JNINativeMethod.cs" />
+    <Compile Include="jni\MethodInfoExt.cs" />
+    <Compile Include="net\sf\jni4net\Bridge.cs" />
+    <Compile Include="jni\FieldId.cs" />
+    <Compile Include="jni\IJavaProxy.cs" />
+    <Compile Include="jni\JavaVM.cs" />
+    <Compile Include="jni\JavaVM.delegates.cs" />
+    <Compile Include="jni\JavaVMInitArgs.cs" />
+    <Compile Include="jni\JNIEnv.delegates.cs" />
+    <Compile Include="jni\MethodId.cs" />
+    <Compile Include="jni\JNI.cs" />
+    <Compile Include="jni\JNIEnv.cs" />
+    <Compile Include="jni\JNIException.cs" />
+    <Compile Include="jni\JNIInvokeInterface.cs" />
+    <Compile Include="jni\JNINativeInterface.cs" />
+    <Compile Include="jni\LocalFrame.cs" />
+    <Compile Include="jni\MethodWrapper.cs" />
+    <Compile Include="jni\Structures.cs" />
+    <Compile Include="jni\Value.cs" />
+    <Compile Include="utils\ClrProxiesMap.cs" />
+    <Compile Include="utils\ClrProxyMap.register.cs" />
+    <Compile Include="utils\IntHandle.cs" />
+    <Compile Include="utils\JavaProxiesMap.cs" />
+    <Compile Include="utils\JavaProxiesMap.register.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Runnable.generated.cs">
+      <Link>generated\java\lang\Runnable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs">
+      <Link>generated\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\net\sf\jni4net\inj\IClrProxy.generated.cs">
+      <Link>generated\net\sf\jni4net\inj\IClrProxy.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\net\sf\jni4net\__Bridge.cs">
+      <Link>generated\net\sf\jni4net\__Bridge.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Modifier.generated.cs">
+      <Link>generated\java\lang\reflect\Modifier.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\Closeable.generated.cs">
+      <Link>generated\java\io\Closeable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\File.generated.cs">
+      <Link>generated\java\io\File.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\FilterOutputStream.generated.cs">
+      <Link>generated\java\io\FilterOutputStream.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\Flushable.generated.cs">
+      <Link>generated\java\io\Flushable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\InputStream.generated.cs">
+      <Link>generated\java\io\InputStream.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\OutputStream.generated.cs">
+      <Link>generated\java\io\OutputStream.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\PrintStream.generated.cs">
+      <Link>generated\java\io\PrintStream.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\io\Serializable.generated.cs">
+      <Link>generated\java\io\Serializable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\AbstractStringBuilder.generated.cs">
+      <Link>generated\java\lang\AbstractStringBuilder.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\annotation\Annotation.generated.cs">
+      <Link>generated\java\lang\annotation\Annotation.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Appendable.generated.cs">
+      <Link>generated\java\lang\Appendable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Boolean.generated.cs">
+      <Link>generated\java\lang\Boolean.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Byte.generated.cs">
+      <Link>generated\java\lang\Byte.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Character.generated.cs">
+      <Link>generated\java\lang\Character.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\CharSequence.generated.cs">
+      <Link>generated\java\lang\CharSequence.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Class.generated.cs">
+      <Link>generated\java\lang\Class.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\ClassLoader.generated.cs">
+      <Link>generated\java\lang\ClassLoader.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\ClassNotFoundException.generated.cs">
+      <Link>generated\java\lang\ClassNotFoundException.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Cloneable.generated.cs">
+      <Link>generated\java\lang\Cloneable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Comparable.generated.cs">
+      <Link>generated\java\lang\Comparable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Double.generated.cs">
+      <Link>generated\java\lang\Double.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Error.generated.cs">
+      <Link>generated\java\lang\Error.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Exception.generated.cs">
+      <Link>generated\java\lang\Exception.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Float.generated.cs">
+      <Link>generated\java\lang\Float.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Integer.generated.cs">
+      <Link>generated\java\lang\Integer.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Iterable.generated.cs">
+      <Link>generated\java\lang\Iterable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\LinkageError.generated.cs">
+      <Link>generated\java\lang\LinkageError.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Long.generated.cs">
+      <Link>generated\java\lang\Long.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\NoClassDefFoundError.generated.cs">
+      <Link>generated\java\lang\NoClassDefFoundError.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\NoSuchFieldException.generated.cs">
+      <Link>generated\java\lang\NoSuchFieldException.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\NoSuchMethodException.generated.cs">
+      <Link>generated\java\lang\NoSuchMethodException.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Number.generated.cs">
+      <Link>generated\java\lang\Number.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Object.generated.cs">
+      <Link>generated\java\lang\Object.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\AccessibleObject.generated.cs">
+      <Link>generated\java\lang\reflect\AccessibleObject.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\AnnotatedElement.generated.cs">
+      <Link>generated\java\lang\reflect\AnnotatedElement.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Constructor.generated.cs">
+      <Link>generated\java\lang\reflect\Constructor.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Field.generated.cs">
+      <Link>generated\java\lang\reflect\Field.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\GenericArrayType.generated.cs">
+      <Link>generated\java\lang\reflect\GenericArrayType.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\GenericDeclaration.generated.cs">
+      <Link>generated\java\lang\reflect\GenericDeclaration.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Member.generated.cs">
+      <Link>generated\java\lang\reflect\Member.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Method.generated.cs">
+      <Link>generated\java\lang\reflect\Method.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\ParameterizedType.generated.cs">
+      <Link>generated\java\lang\reflect\ParameterizedType.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\Type.generated.cs">
+      <Link>generated\java\lang\reflect\Type.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\TypeVariable.generated.cs">
+      <Link>generated\java\lang\reflect\TypeVariable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\reflect\WildcardType.generated.cs">
+      <Link>generated\java\lang\reflect\WildcardType.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\RuntimeException.generated.cs">
+      <Link>generated\java\lang\RuntimeException.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Short.generated.cs">
+      <Link>generated\java\lang\Short.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\StackTraceElement.generated.cs">
+      <Link>generated\java\lang\StackTraceElement.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\String.generated.cs">
+      <Link>generated\java\lang\String.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\StringBuffer.generated.cs">
+      <Link>generated\java\lang\StringBuffer.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\StringBuilder.generated.cs">
+      <Link>generated\java\lang\StringBuilder.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\System.generated.cs">
+      <Link>generated\java\lang\System.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\lang\Throwable.generated.cs">
+      <Link>generated\java\lang\Throwable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\net\URL.generated.cs">
+      <Link>generated\java\net\URL.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\nio\Buffer.generated.cs">
+      <Link>generated\java\nio\Buffer.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\nio\ByteBuffer.generated.cs">
+      <Link>generated\java\nio\ByteBuffer.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Collection.generated.cs">
+      <Link>generated\java\util\Collection.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Dictionary.generated.cs">
+      <Link>generated\java\util\Dictionary.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Enumeration.generated.cs">
+      <Link>generated\java\util\Enumeration.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Hashtable.generated.cs">
+      <Link>generated\java\util\Hashtable.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Iterator.generated.cs">
+      <Link>generated\java\util\Iterator.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\List.generated.cs">
+      <Link>generated\java\util\List.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Map.generated.cs">
+      <Link>generated\java\util\Map.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Properties.generated.cs">
+      <Link>generated\java\util\Properties.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\java\util\Set.generated.cs">
+      <Link>generated\java\util\Set.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\collections\__ICollection.cs">
+      <Link>generated\system\collections\__ICollection.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\collections\__IDictionary.cs">
+      <Link>generated\system\collections\__IDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\collections\__IEnumerable.cs">
+      <Link>generated\system\collections\__IEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\collections\__IEnumerator.cs">
+      <Link>generated\system\collections\__IEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\collections\__IList.cs">
+      <Link>generated\system\collections\__IList.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\io\__FileStream.cs">
+      <Link>generated\system\io\__FileStream.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\io\__Stream.cs">
+      <Link>generated\system\io\__Stream.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__Assembly.cs">
+      <Link>generated\system\reflection\__Assembly.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__ConstructorInfo.cs">
+      <Link>generated\system\reflection\__ConstructorInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__FieldInfo.cs">
+      <Link>generated\system\reflection\__FieldInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__ICustomAttributeProvider.cs">
+      <Link>generated\system\reflection\__ICustomAttributeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__IReflect.cs">
+      <Link>generated\system\reflection\__IReflect.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__MemberInfo.cs">
+      <Link>generated\system\reflection\__MemberInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__MethodBase.cs">
+      <Link>generated\system\reflection\__MethodBase.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__MethodInfo.cs">
+      <Link>generated\system\reflection\__MethodInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__ParameterInfo.cs">
+      <Link>generated\system\reflection\__ParameterInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\reflection\__PropertyInfo.cs">
+      <Link>generated\system\reflection\__PropertyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\security\__IEvidenceFactory.cs">
+      <Link>generated\system\security\__IEvidenceFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Array.cs">
+      <Link>generated\system\__Array.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Console.cs">
+      <Link>generated\system\__Console.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__DateTime.cs">
+      <Link>generated\system\__DateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Decimal.cs">
+      <Link>generated\system\__Decimal.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Exception.cs">
+      <Link>generated\system\__Exception.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Guid.cs">
+      <Link>generated\system\__Guid.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__IComparable.cs">
+      <Link>generated\system\__IComparable.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__IConvertible.cs">
+      <Link>generated\system\__IConvertible.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__IDisposable.cs">
+      <Link>generated\system\__IDisposable.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__IFormattable.cs">
+      <Link>generated\system\__IFormattable.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__MarshalByRefObject.cs">
+      <Link>generated\system\__MarshalByRefObject.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Object.cs">
+      <Link>generated\system\__Object.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__String.cs">
+      <Link>generated\system\__String.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__Type.cs">
+      <Link>generated\system\__Type.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__ValueType.cs">
+      <Link>generated\system\__ValueType.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__InvalidOperationException.cs">
+      <Link>generated\system\__InvalidOperationException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__NotImplementedException.cs">
+      <Link>generated\system\__NotImplementedException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__NotSupportedException.cs">
+      <Link>generated\system\__NotSupportedException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__NullReferenceException.cs">
+      <Link>generated\system\__NullReferenceException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__SystemException.cs">
+      <Link>generated\system\__SystemException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\__ArgumentException.cs">
+      <Link>generated\system\__ArgumentException.cs</Link>
+    </Compile>
+    <Compile Include="..\target\build-sources\generated-sources\system\io\__IOException.cs">
+      <Link>generated\system\io\__IOException.cs</Link>
+    </Compile>
+    <Compile Include="inj\IClrProxy.cs" />
+    <Compile Include="java\lang\Class.cs" />
+    <Compile Include="java\lang\Integer.cs" />
+    <Compile Include="java\lang\IObject.cs" />
+    <Compile Include="java\lang\Object.cs" />
+    <Compile Include="java\lang\reflect\Constructor.cs" />
+    <Compile Include="java\lang\reflect\Field.cs" />
+    <Compile Include="java\lang\reflect\Method.cs" />
+    <Compile Include="java\lang\reflect\ModifierFlags.cs" />
+    <Compile Include="java\lang\String.cs" />
+    <Compile Include="java\lang\Throwable.cs" />
+    <Compile Include="java\util\List.cs" />
+    <Compile Include="jni\ByteBufferNet.cs" />
+    <Compile Include="jni\JNIEnv.env.cs" />
+    <Compile Include="jni\JNIEnv.functions.cs" />
+    <Compile Include="system\IObject.cs" />
+    <Compile Include="utils\IConstructionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="standard.proxygen.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)\..\..\tools\exportdll\selvin.exportdll.exe $(TargetPath) "C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\ildasm.exe" "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe" /Debug</PostBuildEvent>
+  </PropertyGroup>
+</Project>

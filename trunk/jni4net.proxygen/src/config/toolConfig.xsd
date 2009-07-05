@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="toolConfig"
+    targetNamespace="http://jni4net.sf.net/toolConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://jni4net.sf.net/toolConfig.xsd"
+    xmlns:jni4net="http://jni4net.sf.net/toolConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="jni4net-proxygen" type="jni4net:ToolConfig"/>
+  
+  <xs:complexType name="ToolConfig">
+    <xs:sequence>
+      <xs:element name="TargetDirClr2Java" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="TargetDirJava2Clr" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="TargetDirJava2Native" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="SkipKnown"  type="xs:boolean" default="true" minOccurs="0"/>
+      <xs:element name="SkipSignatures"  type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="Verbose"  type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="ClassPath" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="AssemblyReference" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="JavaClass" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="ClrType" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="SkipJavaMethod" type="jni4net:SkipMethod" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="SkipClrMethod" type="jni4net:SkipMethod" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SkipMethod">
+    <xs:attribute name="ClassName" type="xs:string" use="required"/>
+    <xs:attribute name="MethodName" type="xs:string" use="required"/>
+    <xs:attribute name="Signature" type="xs:string" use="required"/>
+  </xs:complexType>
+
+
+</xs:schema>
+

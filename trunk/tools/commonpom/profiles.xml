@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<profiles>
+    <profile>
+        <id>default</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <jni4net.version>0.1.0.0</jni4net.version>
+            <jni4net.nversion>0.1.0.0</jni4net.nversion>
+        </properties>
+    </profile>
+</profiles>
