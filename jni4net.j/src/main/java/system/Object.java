@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public class Object implements net.sf.jni4net.inj.IClrProxy {
+public class Object implements net.sf.jni4net.inj.IClrProxy, system.IObject {
     
 	private int clrHandle;
 

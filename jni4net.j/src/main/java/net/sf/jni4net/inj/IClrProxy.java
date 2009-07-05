@@ -23,7 +23,7 @@ import system.IObject;
 /**
  * @author Pavel Savara (original)
  */
-public interface IClrProxy extends IObject {
+public interface IClrProxy {
 	int getClrHandle();
 
 	void initProxy(int handle);
