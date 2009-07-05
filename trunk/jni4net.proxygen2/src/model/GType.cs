@@ -87,6 +87,8 @@ namespace net.sf.jni4net.proxygen.model
         public string CLRNamespace { get; set; }
 
         public string JVMNamespace { get; set; }
+
+        public string JVMNamespaceExt { get; set; }
         
         public Type CLRType { get; set; }
 
@@ -288,6 +290,11 @@ namespace net.sf.jni4net.proxygen.model
                     CLRNamespace = JVMNamespace;
                     CLRFullName = JVMType.FullName;
                 }
+            }
+            JVMNamespaceExt = JVMNamespace;
+            if (JVMNamespace.StartsWith("java."))
+            {
+                JVMNamespaceExt = "java_."+ JVMNamespace.Substring(5);
             }
             /* TODO
             if (IsJVMGenerate)

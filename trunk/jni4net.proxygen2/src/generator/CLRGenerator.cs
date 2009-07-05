@@ -134,12 +134,15 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.IsPartial = true;
 
             GenerateTypeOfInit(tgtType);
-            if (type.IsInterface)
-            {
-                GenerateMethodsProxyC2J(tgtType);
-            }
             GenerateWrapperInitJ2C();
-            GenerateWrapperMethods(tgtType);
+            if (type.Registration == null || !type.Registration.NoMethods)
+            {
+                if (type.IsInterface)
+                {
+                    GenerateMethodsProxyC2J(tgtType);
+                }
+                GenerateWrapperMethods(tgtType);
+            }
             GenerateConstructionHelper(tgtType);
             CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv", false, false);
 

@@ -277,7 +277,7 @@ namespace net.sf.jni4net.proxygen.generator
             initMethod.Parameters.Add(
                 new CodeParameterDeclarationExpression(
                     new CodeTypeReference(typeof (Class), CodeTypeReferenceOptions.GlobalReference), "clazz"));
-            string wrapper = type.IsCLRProxy ? "__" + type.Name : type.Name;
+            string wrapper = "__" + type.Name;
             initMethod.Statements.Add(
                 new CodeVariableDeclarationStatement(
                     new CodeTypeReference(typeof (Type), CodeTypeReferenceOptions.GlobalReference), "type",

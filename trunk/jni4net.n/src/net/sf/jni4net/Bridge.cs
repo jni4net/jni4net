@@ -108,7 +108,7 @@ namespace net.sf.jni4net
             return ClrProxiesMap.ToClr<TRes>(proxy);
         }
 
-        public static object ToCLR(Object obj)
+        public static object ToCLR(IJavaProxy obj)
         {
             if (obj==null)
             {

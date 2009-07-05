@@ -35,7 +35,7 @@ namespace net.sf.jni4net.proxygen.generator
         /// </summary>
         public void Write(string newFile)
         {
-            string package = type.JVMNamespace.Replace('.', '/').ToLower();
+            string package = type.JVMNamespaceExt.Replace('.', '/').ToLower();
             string dirJava = Path.Combine(config.TargetDirJvm, package);
             if (!Directory.Exists(dirJava))
             {
@@ -150,7 +150,7 @@ namespace net.sf.jni4net.proxygen.generator
             ICodeGenerator codeGenerator = new JavaCodeGenerator();
             var cop = new CodeGeneratorOptions();
             var unit = new CodeCompileUnit();
-            var nameSpace = new CodeNamespace(type.JVMNamespace);
+            var nameSpace = new CodeNamespace(type.JVMNamespaceExt);
             unit.Namespaces.Add(nameSpace);
 
             Generate(nameSpace);
@@ -251,7 +251,7 @@ namespace net.sf.jni4net.proxygen.generator
         protected void GenerateProxy(CodeNamespace nameSpace)
         {
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
-            SetCurrentType(type.JVMNamespace + ".__" + type.Name, type.JVMNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
+            SetCurrentType(type.JVMNamespaceExt + ".__" + type.Name, type.JVMNamespace + "." + type.Name, type.JVMNamespaceExt + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;
             tgtType.AddAttribute("net.sf.jni4net.attributes.ClrProxy");
