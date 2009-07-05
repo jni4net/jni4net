@@ -77,7 +77,7 @@ namespace net.sf.jni4net.proxygen.generator
 
             sb.Replace("internal partial class @__", "internal unsafe partial class @__");
             sb.Replace("public partial class", "public unsafe partial class");
-
+            sb.Replace("internal sealed partial class @__", "internal sealed unsafe partial class @__");
 
             return sb.ToString();
         }
@@ -125,6 +125,10 @@ namespace net.sf.jni4net.proxygen.generator
                            , type.CLRNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;
+            if (type.IsInterface)
+            {
+                tgtType.TypeAttributes |= TypeAttributes.Sealed;
+            }
             tgtType.AddAttribute("net.sf.jni4net.attributes.JavaProxyAttribute");
             tgtType.BaseTypes.Add(Repository.javaLangObject.CLRReference);
             if (type.IsInterface)
@@ -162,7 +166,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
         }
 
-        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method)
+        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method, bool isProxy)
         {
             bool add = true;
             CodeStatementCollection tgtStatements;
@@ -251,11 +255,15 @@ namespace net.sf.jni4net.proxygen.generator
                     tgtMethod.PrivateImplementationType = method.DeclaringType.CLRReference;
                 }
             }
-            if (!config.SkipSignatures && !type.IsInterface)
+            if (!config.SkipSignatures && !isProxy)
             {
                 tgtMember.AddAttribute("net.sf.jni4net.attributes.JavaMethodAttribute", method.CLRSignature);
             }
             tgtMember.Attributes = method.Attributes;
+            if (isProxy)
+            {
+                tgtMember.Attributes |= MemberAttributes.Final;
+            }
             if (tgtMethod != null)
             {
                 GenerateParameters(method, tgtMethod);

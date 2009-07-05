@@ -9,22 +9,22 @@ namespace net.sf.jni4net.proxygen.generator
 {
     internal partial class CLRGenerator
     {
-        protected void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool skipStatic)
+        protected void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool isProxy)
         {
             if (method.IsCLRMethod && !type.IsInterface)
             {
                 return;
             }
-            if (skipStatic || !type.IsInterface)
+            if (isProxy || !type.IsInterface)
             {
                 GenerateMethodIdFieldC2J(method, tgtType, uName);
                 GenerateMethodRegC2J(method, uName);
             }
-            if (method.IsStatic && type.IsInterface && skipStatic)
+            if (method.IsStatic && type.IsInterface && isProxy)
             {
                 return;
             }
-            CodeStatementCollection tgtStatements = CreateMethodSignature(tgtType, method);
+            CodeStatementCollection tgtStatements = CreateMethodSignature(tgtType, method, isProxy);
             GenerateGetEnvC2J(method, tgtStatements);
             CodeMethodInvokeExpression invokeExpression = GenerateInvokeExpressionC2J(method, uName);
             CodeStatement call = GenerateCallStatementC2J(method, invokeExpression);

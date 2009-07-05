@@ -52,7 +52,7 @@ namespace net.sf.jni4net.proxygen.generator
                 {
                     if (method.IsJVMMethod && !method.IsField)
                     {
-                        CreateMethodSignature(tgtType, method);
+                        CreateMethodSignature(tgtType, method, false);
                     }
                 }
             }

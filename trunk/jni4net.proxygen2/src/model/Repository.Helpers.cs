@@ -42,11 +42,14 @@ namespace net.sf.jni4net.proxygen.model
         private static Type javaInterfaceAttr;
         private static Type javaMethodAttribute;
         private static Type clrWrapperAttr;
+        private static Type javalangIObjectType;
         private static Class clrProxyClass;
         internal static GType javaLangObject;
+        internal static GType javaLangIObject;
         internal static GType javaLangClass;
         internal static GType javaLangString;
         internal static GType systemObject;
+        internal static GType systemIObject;
         internal static GType systemType;
         internal static GType systemString;
         internal static GType systemException;
@@ -76,6 +79,10 @@ namespace net.sf.jni4net.proxygen.model
                 if (javaMethodAttribute == null)
                 {
                     javaMethodAttribute = assembly.GetType("net.sf.jni4net.attributes.JavaMethodAttribute");
+                }
+                if (javalangIObjectType == null)
+                {
+                    javalangIObjectType = assembly.GetType("java_.lang.IObject");
                 }
             }
             if (javaMethodAttribute == null)
@@ -115,8 +122,10 @@ namespace net.sf.jni4net.proxygen.model
             javaLangClass = RegisterClass(Class._class);
             javaLangThrowable = RegisterClass(Throwable._class);
             systemString.JVMSubst = javaLangString;
-            RegisterType(typeof(IObject)).CLRSubst = systemObject;
-            RegisterType(typeof(java_.lang.IObject)).JVMSubst = javaLangObject;
+            systemIObject = RegisterType(typeof (IObject));
+            systemIObject.CLRSubst = systemObject;
+            javaLangIObject = RegisterType(javalangIObjectType);
+            javaLangIObject.JVMSubst = javaLangObject;
         }
 
         private static void LoadFile(string file)

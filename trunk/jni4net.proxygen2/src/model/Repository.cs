@@ -28,6 +28,7 @@ using java.lang.reflect;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.generator;
+using net.sf.jni4net.utils;
 using Type=System.Type;
 
 namespace net.sf.jni4net.proxygen.model
@@ -175,7 +176,9 @@ namespace net.sf.jni4net.proxygen.model
                     if ((javaProxyType.IsAssignableFrom(type) && javaClassA != null) ||
                         (type.IsInterface && javaInterfaceA != null))
                     {
-                        Class clazz = JNIEnv.GetEnv().FindClassNoThrow(type.FullName.Replace('.', '/'));
+                        string name = (javaInterfaceA ?? javaClassA).GetType().GetProperty("ClassName").GetValue(javaInterfaceA ?? javaClassA, null) as string;
+                        string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
+                        Class clazz = JNIEnv.GetEnv().FindClassNoThrow(clazzName);
                         if (clazz != null)
                         {
                             RegisterClass(clazz);
@@ -187,7 +190,8 @@ namespace net.sf.jni4net.proxygen.model
                         Type realType = clrWrapperA.GetType().GetProperty("RealType").GetValue(clrWrapperA, null) as Type;
                         if (realType != null)
                         {
-                            string clazzName = type.FullName.Replace(".__", "/").Replace('.', '/');
+                            string name = clrWrapperA.GetType().GetProperty("ClassName").GetValue(clrWrapperA, null) as string;
+                            string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
                             Class clazz = JNIEnv.GetEnv().FindClassNoThrow(clazzName);
                             if (clazz != null)
                             {

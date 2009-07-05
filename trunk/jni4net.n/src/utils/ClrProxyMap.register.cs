@@ -278,7 +278,7 @@ namespace net.sf.jni4net.utils
             return name.ToString();
         }
 
-        private static string GetInterfaceName(string attr, Type type)
+        public static string GetInterfaceName(string attr, Type type)
         {
             string className = attr;
             if (className == null)
