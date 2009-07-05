@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IDictionary))]
-    internal unsafe partial class @__IDictionary : global::java.lang.Object, global::System.Collections.IDictionary {
+    internal sealed unsafe partial class @__IDictionary : global::java.lang.Object, global::System.Collections.IDictionary {
         
         internal static global::java.lang.Class staticClass;
         
@@ -65,28 +65,28 @@ namespace System.Collections {
                 base(env) {
         }
         
-        public virtual int Count {
+        public int Count {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallIntMethod(this, global::System.Collections.@__IDictionary._Count1);
             }
         }
         
-        public virtual object SyncRoot {
+        public object SyncRoot {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._SyncRoot2));
             }
         }
         
-        public virtual bool IsSynchronized {
+        public bool IsSynchronized {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._IsSynchronized3);
             }
         }
         
-        public virtual object this[object key] {
+        public object this[object key] {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Item4, new global::net.sf.jni4net.jni.Value(key)));
@@ -97,28 +97,28 @@ namespace System.Collections {
             }
         }
         
-        public virtual global::System.Collections.ICollection Keys {
+        public global::System.Collections.ICollection Keys {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.ICollection>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Keys6));
             }
         }
         
-        public virtual global::System.Collections.ICollection Values {
+        public global::System.Collections.ICollection Values {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.ICollection>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Values7));
             }
         }
         
-        public virtual bool IsReadOnly {
+        public bool IsReadOnly {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._IsReadOnly11);
             }
         }
         
-        public virtual bool IsFixedSize {
+        public bool IsFixedSize {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._IsFixedSize12);
@@ -145,32 +145,32 @@ namespace System.Collections {
             global::System.Collections.@__IDictionary._GetEnumerator15 = env.GetMethodID(global::System.Collections.@__IDictionary.staticClass, "IEnumerable_GetEnumerator", "()Lsystem/collections/IEnumerator;");
         }
         
-        public virtual void CopyTo(global::System.Array array, int index) {
+        public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IDictionary._CopyTo0, new global::net.sf.jni4net.jni.Value(array), new global::net.sf.jni4net.jni.Value(index));
         }
         
-        public virtual bool Contains(object key) {
+        public bool Contains(object key) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._Contains8, new global::net.sf.jni4net.jni.Value(key));
         }
         
-        public virtual void Add(object key, object value) {
+        public void Add(object key, object value) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Add9, new global::net.sf.jni4net.jni.Value(key), new global::net.sf.jni4net.jni.Value(value));
         }
         
-        public virtual void Clear() {
+        public void Clear() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Clear10);
         }
         
-        public virtual void Remove(object key) {
+        public void Remove(object key) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Remove13, new global::net.sf.jni4net.jni.Value(key));
         }
         
-        public virtual global::System.Collections.IDictionaryEnumerator GetEnumerator() {
+        public global::System.Collections.IDictionaryEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IDictionaryEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._GetEnumerator14));
         }

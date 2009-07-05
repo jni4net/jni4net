@@ -15,6 +15,7 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Closeable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void close();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.io {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable))]
-    internal unsafe partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
+    internal sealed unsafe partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.io {
             global::java.io.@__Closeable._close0 = env.GetMethodID(global::java.io.@__Closeable.staticClass, "close", "()V");
         }
         
-        public virtual void close() {
+        public void close() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.io.@__Closeable._close0);
         }

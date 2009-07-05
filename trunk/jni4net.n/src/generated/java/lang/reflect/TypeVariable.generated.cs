@@ -15,10 +15,13 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface TypeVariable : global::java.lang.reflect.Type {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/GenericDeclaration;")]
         global::java.lang.reflect.GenericDeclaration getGenericDeclaration();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         global::java.lang.String getName();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         java.lang.reflect.Type[] getBounds();
     }
     #endregion
@@ -37,7 +40,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.TypeVariable))]
-    internal unsafe partial class @__TypeVariable : global::java.lang.Object, global::java.lang.reflect.TypeVariable {
+    internal sealed unsafe partial class @__TypeVariable : global::java.lang.Object, global::java.lang.reflect.TypeVariable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -58,17 +61,17 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__TypeVariable._getBounds2 = env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getBounds", "()[Ljava/lang/reflect/Type;");
         }
         
-        public virtual global::java.lang.reflect.GenericDeclaration getGenericDeclaration() {
+        public global::java.lang.reflect.GenericDeclaration getGenericDeclaration() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.GenericDeclaration>(env.CallObjectMethod(this, global::java.lang.reflect.@__TypeVariable._getGenericDeclaration0));
         }
         
-        public virtual global::java.lang.String getName() {
+        public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.reflect.@__TypeVariable._getName1));
         }
         
-        public virtual java.lang.reflect.Type[] getBounds() {
+        public java.lang.reflect.Type[] getBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__TypeVariable._getBounds2))));
         }

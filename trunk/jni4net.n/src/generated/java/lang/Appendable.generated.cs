@@ -15,10 +15,13 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Appendable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)Ljava/lang/Appendable;")]
         global::java.lang.Appendable append(global::java.lang.CharSequence par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;")]
         global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/Appendable;")]
         global::java.lang.Appendable append(char par0);
     }
     #endregion
@@ -37,7 +40,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable))]
-    internal unsafe partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
+    internal sealed unsafe partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -58,17 +61,17 @@ namespace java.lang {
             global::java.lang.@__Appendable._append2 = env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(C)Ljava/lang/Appendable;");
         }
         
-        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
+        public global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
-        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
+        public global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
-        public virtual global::java.lang.Appendable append(char par0) {
+        public global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append2, new global::net.sf.jni4net.jni.Value(par0)));
         }

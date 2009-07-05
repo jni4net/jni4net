@@ -31,7 +31,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Cloneable))]
-    internal unsafe partial class @__Cloneable : global::java.lang.Object, global::java.lang.Cloneable {
+    internal sealed unsafe partial class @__Cloneable : global::java.lang.Object, global::java.lang.Cloneable {
         
         internal static global::java.lang.Class staticClass;
         

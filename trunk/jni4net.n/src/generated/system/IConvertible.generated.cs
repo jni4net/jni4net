@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IConvertible))]
-    internal unsafe partial class @__IConvertible : global::java.lang.Object, global::System.IConvertible {
+    internal sealed unsafe partial class @__IConvertible : global::java.lang.Object, global::System.IConvertible {
         
         internal static global::java.lang.Class staticClass;
         
@@ -88,87 +88,87 @@ namespace System {
             global::System.@__IConvertible._ToType16 = env.GetMethodID(global::System.@__IConvertible.staticClass, "ToType", "(Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;");
         }
         
-        public virtual global::System.TypeCode GetTypeCode() {
+        public global::System.TypeCode GetTypeCode() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::System.TypeCode>(env.CallObjectMethod(this, global::System.@__IConvertible._GetTypeCode0));
         }
         
-        public virtual bool ToBoolean(global::System.IFormatProvider provider) {
+        public bool ToBoolean(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::System.@__IConvertible._ToBoolean1, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual char ToChar(global::System.IFormatProvider provider) {
+        public char ToChar(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallCharMethod(this, global::System.@__IConvertible._ToChar2, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual sbyte ToSByte(global::System.IFormatProvider provider) {
+        public sbyte ToSByte(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((sbyte)(env.CallByteMethod(this, global::System.@__IConvertible._ToSByte3, new global::net.sf.jni4net.jni.Value(provider))));
         }
         
-        public virtual byte ToByte(global::System.IFormatProvider provider) {
+        public byte ToByte(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallByteMethod(this, global::System.@__IConvertible._ToByte4, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual short ToInt16(global::System.IFormatProvider provider) {
+        public short ToInt16(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallShortMethod(this, global::System.@__IConvertible._ToInt165, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual ushort ToUInt16(global::System.IFormatProvider provider) {
+        public ushort ToUInt16(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((ushort)(env.CallShortMethod(this, global::System.@__IConvertible._ToUInt166, new global::net.sf.jni4net.jni.Value(provider))));
         }
         
-        public virtual int ToInt32(global::System.IFormatProvider provider) {
+        public int ToInt32(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::System.@__IConvertible._ToInt327, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual uint ToUInt32(global::System.IFormatProvider provider) {
+        public uint ToUInt32(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((uint)(env.CallIntMethod(this, global::System.@__IConvertible._ToUInt328, new global::net.sf.jni4net.jni.Value(provider))));
         }
         
-        public virtual long ToInt64(global::System.IFormatProvider provider) {
+        public long ToInt64(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallLongMethod(this, global::System.@__IConvertible._ToInt649, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual ulong ToUInt64(global::System.IFormatProvider provider) {
+        public ulong ToUInt64(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((ulong)(env.CallLongMethod(this, global::System.@__IConvertible._ToUInt6410, new global::net.sf.jni4net.jni.Value(provider))));
         }
         
-        public virtual float ToSingle(global::System.IFormatProvider provider) {
+        public float ToSingle(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallFloatMethod(this, global::System.@__IConvertible._ToSingle11, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual double ToDouble(global::System.IFormatProvider provider) {
+        public double ToDouble(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallDoubleMethod(this, global::System.@__IConvertible._ToDouble12, new global::net.sf.jni4net.jni.Value(provider));
         }
         
-        public virtual decimal ToDecimal(global::System.IFormatProvider provider) {
+        public decimal ToDecimal(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<decimal>(env.CallObjectMethod(this, global::System.@__IConvertible._ToDecimal13, new global::net.sf.jni4net.jni.Value(provider)));
         }
         
-        public virtual global::System.DateTime ToDateTime(global::System.IFormatProvider provider) {
+        public global::System.DateTime ToDateTime(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::System.DateTime>(env.CallObjectMethod(this, global::System.@__IConvertible._ToDateTime14, new global::net.sf.jni4net.jni.Value(provider)));
         }
         
-        public virtual string ToString(global::System.IFormatProvider provider) {
+        public string ToString(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<string>(env.CallObjectMethod(this, global::System.@__IConvertible._ToString15, new global::net.sf.jni4net.jni.Value(provider)));
         }
         
-        public virtual object ToType(global::System.Type conversionType, global::System.IFormatProvider provider) {
+        public object ToType(global::System.Type conversionType, global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.@__IConvertible._ToType16, new global::net.sf.jni4net.jni.Value(conversionType), new global::net.sf.jni4net.jni.Value(provider)));
         }

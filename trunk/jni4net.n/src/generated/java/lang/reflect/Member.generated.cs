@@ -15,12 +15,16 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Member {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int getModifiers();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         global::java.lang.String getName();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         global::java.lang.Class getDeclaringClass();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         bool isSynthetic();
     }
     #endregion
@@ -34,6 +38,7 @@ namespace java.lang.reflect {
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int PUBLIC {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
@@ -41,6 +46,7 @@ namespace java.lang.reflect {
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int DECLARED {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
@@ -53,7 +59,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.Member))]
-    internal unsafe partial class @__Member : global::java.lang.Object, global::java.lang.reflect.Member {
+    internal sealed unsafe partial class @__Member : global::java.lang.Object, global::java.lang.reflect.Member {
         
         internal static global::java.lang.Class staticClass;
         
@@ -83,22 +89,22 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__Member._DECLARED5 = env.GetStaticFieldID(global::java.lang.reflect.@__Member.staticClass, "DECLARED", "I");
         }
         
-        public virtual int getModifiers() {
+        public int getModifiers() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.lang.reflect.@__Member._getModifiers0);
         }
         
-        public virtual global::java.lang.String getName() {
+        public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.reflect.@__Member._getName1));
         }
         
-        public virtual global::java.lang.Class getDeclaringClass() {
+        public global::java.lang.Class getDeclaringClass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.@__Member._getDeclaringClass2));
         }
         
-        public virtual bool isSynthetic() {
+        public bool isSynthetic() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.lang.reflect.@__Member._isSynthetic3);
         }

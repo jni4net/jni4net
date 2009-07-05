@@ -15,6 +15,7 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Flushable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void flush();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.io {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Flushable))]
-    internal unsafe partial class @__Flushable : global::java.lang.Object, global::java.io.Flushable {
+    internal sealed unsafe partial class @__Flushable : global::java.lang.Object, global::java.io.Flushable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.io {
             global::java.io.@__Flushable._flush0 = env.GetMethodID(global::java.io.@__Flushable.staticClass, "flush", "()V");
         }
         
-        public virtual void flush() {
+        public void flush() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.io.@__Flushable._flush0);
         }

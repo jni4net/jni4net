@@ -15,12 +15,16 @@ namespace java.lang.annotation {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Annotation {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int hashCode();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool equals(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         global::java.lang.String toString();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         global::java.lang.Class annotationType();
     }
     #endregion
@@ -39,7 +43,7 @@ namespace java.lang.annotation {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.annotation.Annotation))]
-    internal unsafe partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
+    internal sealed unsafe partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
         
         internal static global::java.lang.Class staticClass;
         
@@ -63,22 +67,22 @@ namespace java.lang.annotation {
             global::java.lang.annotation.@__Annotation._annotationType3 = env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "annotationType", "()Ljava/lang/Class;");
         }
         
-        public virtual int hashCode() {
+        public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0);
         }
         
-        public virtual bool equals(global::java.lang.Object par0) {
+        public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual global::java.lang.String toString() {
+        public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.annotation.@__Annotation._toString2));
         }
         
-        public virtual global::java.lang.Class annotationType() {
+        public global::java.lang.Class annotationType() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.annotation.@__Annotation._annotationType3));
         }

@@ -15,8 +15,10 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Enumeration {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         bool hasMoreElements();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
         global::java.lang.Object nextElement();
     }
     #endregion
@@ -35,7 +37,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Enumeration))]
-    internal unsafe partial class @__Enumeration : global::java.lang.Object, global::java.util.Enumeration {
+    internal sealed unsafe partial class @__Enumeration : global::java.lang.Object, global::java.util.Enumeration {
         
         internal static global::java.lang.Class staticClass;
         
@@ -53,12 +55,12 @@ namespace java.util {
             global::java.util.@__Enumeration._nextElement1 = env.GetMethodID(global::java.util.@__Enumeration.staticClass, "nextElement", "()Ljava/lang/Object;");
         }
         
-        public virtual bool hasMoreElements() {
+        public bool hasMoreElements() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Enumeration._hasMoreElements0);
         }
         
-        public virtual global::java.lang.Object nextElement() {
+        public global::java.lang.Object nextElement() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Enumeration._nextElement1));
         }

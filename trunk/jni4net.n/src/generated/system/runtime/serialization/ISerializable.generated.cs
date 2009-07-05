@@ -25,7 +25,7 @@ namespace System.Runtime.Serialization {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.ISerializable))]
-    internal unsafe partial class @__ISerializable : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
+    internal sealed unsafe partial class @__ISerializable : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Ljava/lang/Object;Lsystem/ValueType;)V");
         }
         
-        public virtual void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
+        public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, new global::net.sf.jni4net.jni.Value(info), new global::net.sf.jni4net.jni.Value(context));
         }

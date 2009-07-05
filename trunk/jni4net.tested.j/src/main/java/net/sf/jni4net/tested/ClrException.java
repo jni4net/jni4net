@@ -19,11 +19,20 @@ public class ClrException extends system.Object {
             super(env, handle);
     }
     
-    @net.sf.jni4net.attributes.ClrConstructor
+    @net.sf.jni4net.attributes.ClrConstructor("()V")
     public ClrException() {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         net.sf.jni4net.tested.ClrException.__ctorClrException0(this);
     }
+    
+    @net.sf.jni4net.attributes.ClrMethod("()V")
+    private native static void __ctorClrException0(net.sf.jni4net.inj.IClrProxy thiz);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()V")
+    public native static void NoException();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()V")
+    public native static void ThrowBack();
     
     public static system.Type typeof() {
         return net.sf.jni4net.tested.ClrException.staticType;
@@ -32,14 +41,5 @@ public class ClrException extends system.Object {
     private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
         net.sf.jni4net.tested.ClrException.staticType = staticType;
     }
-    
-    @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorClrException0(net.sf.jni4net.tested.ClrException thiz);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native static void NoException();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native static void ThrowBack();
     //</generated-proxy>
 }

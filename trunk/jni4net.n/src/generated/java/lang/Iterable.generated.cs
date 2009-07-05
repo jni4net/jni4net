@@ -15,6 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Iterable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Iterator;")]
         global::java.util.Iterator iterator();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Iterable))]
-    internal unsafe partial class @__Iterable : global::java.lang.Object, global::java.lang.Iterable {
+    internal sealed unsafe partial class @__Iterable : global::java.lang.Object, global::java.lang.Iterable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.lang {
             global::java.lang.@__Iterable._iterator0 = env.GetMethodID(global::java.lang.@__Iterable.staticClass, "iterator", "()Ljava/util/Iterator;");
         }
         
-        public virtual global::java.util.Iterator iterator() {
+        public global::java.util.Iterator iterator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Iterator>(env.CallObjectMethod(this, global::java.lang.@__Iterable._iterator0));
         }

@@ -25,7 +25,7 @@ namespace System.Security {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Security.IEvidenceFactory))]
-    internal unsafe partial class @__IEvidenceFactory : global::java.lang.Object, global::System.Security.IEvidenceFactory {
+    internal sealed unsafe partial class @__IEvidenceFactory : global::java.lang.Object, global::System.Security.IEvidenceFactory {
         
         internal static global::java.lang.Class staticClass;
         
@@ -35,7 +35,7 @@ namespace System.Security {
                 base(env) {
         }
         
-        public virtual global::System.Security.Policy.Evidence Evidence {
+        public global::System.Security.Policy.Evidence Evidence {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::System.Security.Policy.Evidence>(env.CallObjectMethod(this, global::System.Security.@__IEvidenceFactory._Evidence0));

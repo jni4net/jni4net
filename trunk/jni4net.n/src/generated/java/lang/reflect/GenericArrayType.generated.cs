@@ -15,6 +15,7 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface GenericArrayType : global::java.lang.reflect.Type {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]
         global::java.lang.reflect.Type getGenericComponentType();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericArrayType))]
-    internal unsafe partial class @__GenericArrayType : global::java.lang.Object, global::java.lang.reflect.GenericArrayType {
+    internal sealed unsafe partial class @__GenericArrayType : global::java.lang.Object, global::java.lang.reflect.GenericArrayType {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0 = env.GetMethodID(global::java.lang.reflect.@__GenericArrayType.staticClass, "getGenericComponentType", "()Ljava/lang/reflect/Type;");
         }
         
-        public virtual global::java.lang.reflect.Type getGenericComponentType() {
+        public global::java.lang.reflect.Type getGenericComponentType() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0));
         }

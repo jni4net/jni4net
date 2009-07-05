@@ -25,7 +25,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ICustomAttributeProvider))]
-    internal unsafe partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
+    internal sealed unsafe partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
         
         internal static global::java.lang.Class staticClass;
         
@@ -46,17 +46,17 @@ namespace System.Reflection {
             global::System.Reflection.@__ICustomAttributeProvider._IsDefined2 = env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "IsDefined", "(Lsystem/Type;Z)Z");
         }
         
-        public virtual object[] GetCustomAttributes(bool inherit) {
+        public object[] GetCustomAttributes(bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((object[])(env.ConvertArrayToNet<object>(env.CallObjectMethod(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, new global::net.sf.jni4net.jni.Value(inherit)))));
         }
         
-        public virtual object[] GetCustomAttributes(global::System.Type attributeType, bool inherit) {
+        public object[] GetCustomAttributes(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((object[])(env.ConvertArrayToNet<object>(env.CallObjectMethod(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, new global::net.sf.jni4net.jni.Value(attributeType), new global::net.sf.jni4net.jni.Value(inherit)))));
         }
         
-        public virtual bool IsDefined(global::System.Type attributeType, bool inherit) {
+        public bool IsDefined(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::System.Reflection.@__ICustomAttributeProvider._IsDefined2, new global::net.sf.jni4net.jni.Value(attributeType), new global::net.sf.jni4net.jni.Value(inherit));
         }

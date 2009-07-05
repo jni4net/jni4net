@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
   <!-- basics -->
-  <JavaClass TypeName="system.IObject" NoMethods="true"/>
   <JavaClass TypeName="java.lang.Object">
     <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
     <IgnoreInterface TypeName="java_.lang.IObject"/>
@@ -133,17 +132,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.lang.reflect.GenericDeclaration"/>
   <JavaClass TypeName="java.lang.reflect.AnnotatedElement"/>
   
-
-  <!-- bridge  SyncInterface="false" -->
-  <JavaClass TypeName="net.sf.jni4net.inj.IClrProxy">
-    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
-    <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
-    <IgnoreInterface TypeName="java_.lang.IObject"/>
-    <IgnoreInterface TypeName="system.IObject"/>
-  </JavaClass>
-
   <!-- basics -->
-  <ClrType TypeName="java_.lang.IObject" NoMethods="true"/>
   <ClrType TypeName="System.Object" MergeJavaSource="true">
     <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
     <IgnoreInterface TypeName="system.IObject"/>

@@ -31,7 +31,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.Type))]
-    internal unsafe partial class @__Type : global::java.lang.Object, global::java.lang.reflect.Type {
+    internal sealed unsafe partial class @__Type : global::java.lang.Object, global::java.lang.reflect.Type {
         
         internal static global::java.lang.Class staticClass;
         
