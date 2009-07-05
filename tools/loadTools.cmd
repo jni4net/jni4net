@@ -1,0 +1,2 @@
+@echo off
+java -cp %~dp0/loader Loader http://jni4net.googlecode.com/svn/tools/lib/ %~dp0/lib/ ant.jar ant-launcher.jar jacobe.jar junit.jar classworlds-1.1.jar maven-2.0.9-uber.jar selvin.exportdll.exe selvin.exportdllattribute.dll nunit.framework.dll

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jni4net</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>${jni4net.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net.proxygen</artifactId>
+    <version>${jni4net.nversion}</version>
+    <packaging>dotnet:exe</packaging>
+    <name>jni4net proxy generator</name>
+    <description>jni4net proxy generator</description>
+    <organization>
+        <name>jni4net</name>
+        <url>http://jni4net.sf.net</url>
+    </organization>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.j</artifactId>
+            <version>${jni4net.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n</artifactId>
+            <version>${jni4net.nversion}</version>
+            <type>dotnet:library</type>
+        </dependency>
+	</dependencies>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.nmaven.plugins</groupId>
+                <artifactId>maven-dotnet-compiler-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>0.17robocode</version>
+                <configuration>
+                    <aditionalOptions>/unsafe /nowarn:1591,0219,0436</aditionalOptions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jni4net</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>${jni4net.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net.j</artifactId>
+    <version>${jni4net.version}</version>
+    <name>jni4net Java</name>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <tasks>
+                                <exec executable="cmd.exe" dir="." failonerror="true">
+                                    <arg value="/c ..\tools\lastproxygen\proxygen.exe src\standard.proxygen.xml"/>
+                                </exec>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
