@@ -74,7 +74,7 @@ namespace java.lang.reflect {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(TypeVariable);
+            global::System.Type type = typeof(__TypeVariable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getGenericDeclaration", "getGenericDeclaration0", "()Ljava/lang/reflect/GenericDeclaration;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getName", "getName1", "()Ljava/lang/String;"));

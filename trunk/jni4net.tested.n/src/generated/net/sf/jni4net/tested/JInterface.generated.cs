@@ -15,18 +15,18 @@ namespace net.sf.jni4net.tested {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface JInterface {
         
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void runForrestRun();
+        
+        void run();
     }
     #endregion
     
     #region Component Designer generated code 
-    public partial class JInterface_ {
+    public unsafe partial class JInterface_ {
         
-        public new static java.lang.Class _class {
+        public new static global::java.lang.Class _class {
             get {
-                return net.sf.jni4net.tested.@__JInterface._class;
+                return global::net.sf.jni4net.tested.@__JInterface.staticClass;
             }
         }
     }
@@ -34,46 +34,86 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
-    internal partial class @__JInterface : global::java.lang.Object, net.sf.jni4net.tested.JInterface, global::java.lang.Runnable {
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.JInterface))]
+    internal unsafe partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
         
-        private static java.lang.Class staticClass;
+        internal static global::java.lang.Class staticClass;
         
-        private static global::net.sf.jni4net.jni.MethodId @__runForrestRun0;
+        internal static global::net.sf.jni4net.jni.MethodId _runForrestRun0;
         
-        private static global::net.sf.jni4net.jni.MethodId @__run1;
+        internal static global::net.sf.jni4net.jni.MethodId _run1;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _cdefined2;
         
         protected @__JInterface(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
         }
         
-        public new static java.lang.Class _class {
-            get {
-                return net.sf.jni4net.tested.@__JInterface.staticClass;
-            }
-        }
-        
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            net.sf.jni4net.tested.@__JInterface.staticClass = staticClass;
-            net.sf.jni4net.tested.@__JInterface.@__runForrestRun0 = env.GetMethodID(net.sf.jni4net.tested.@__JInterface.staticClass, "runForrestRun", "()V");
-            net.sf.jni4net.tested.@__JInterface.@__run1 = env.GetMethodID(net.sf.jni4net.tested.@__JInterface.staticClass, "run", "()V");
+            global::net.sf.jni4net.tested.@__JInterface.staticClass = staticClass;
+            global::net.sf.jni4net.tested.@__JInterface._runForrestRun0 = env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "runForrestRun", "()V");
+            global::net.sf.jni4net.tested.@__JInterface._run1 = env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "run", "()V");
+            global::net.sf.jni4net.tested.@__JInterface._cdefined2 = env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "cdefined", "()V");
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public void runForrestRun() {
+        public virtual void runForrestRun() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, net.sf.jni4net.tested.@__JInterface.@__runForrestRun0);
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._runForrestRun0);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        void java.lang.Runnable.run() {
+        public virtual void run() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, net.sf.jni4net.tested.@__JInterface.@__run1);
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._run1);
+        }
+        
+        public virtual void cdefined() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._cdefined2);
+        }
+        
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
+            global::System.Type type = typeof(__JInterface);
+            global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "runForrestRun", "runForrestRun0", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "run", "run1", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "cdefined", "cdefined2", "()V"));
+            return methods;
+        }
+        
+        private static void runForrestRun0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+            // ()V
+            // ()V
+            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            try {
+            global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
+            real.runForrestRun();
+            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+        }
+        
+        private static void run1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+            // ()V
+            // ()V
+            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            try {
+            global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
+            real.run();
+            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+        }
+        
+        private static void cdefined2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+            // ()V
+            // ()V
+            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            try {
+            global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
+            real.cdefined();
+            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new net.sf.jni4net.tested.@__JInterface(env);
+                return new global::net.sf.jni4net.tested.@__JInterface(env);
             }
         }
     }

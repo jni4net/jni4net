@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using java.lang;
 
-namespace java.lang
+namespace java_.lang
 {
     public interface IObject
     {

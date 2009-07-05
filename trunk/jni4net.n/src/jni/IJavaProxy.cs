@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using java.lang;
+using java_.lang;
 using Object=java.lang.Object;
 
 namespace net.sf.jni4net.jni

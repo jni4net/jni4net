@@ -10,7 +10,7 @@
 package system.io;
 
 @net.sf.jni4net.attributes.ClrType
-public abstract class Stream extends system.MarshalByRefObject implements system.IDisposable {
+public class Stream extends system.MarshalByRefObject implements system.IDisposable {
     
     //<generated-proxy>
     private static system.Type staticType;

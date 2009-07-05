@@ -42,6 +42,10 @@ namespace net.sf.jni4net.jni
         public static JNINativeMethod Create(Type type, string javaName, string clrName, string javaSignature)
         {
             MethodInfo methodInfo = type.GetMethod(clrName, BindingFlags.NonPublic | BindingFlags.Static);
+            if (methodInfo==null)
+            {
+                throw new JNIException("Can'type find" + type.Name + "." + clrName);
+            }
             return Create(methodInfo, javaName, javaSignature);
         }
 

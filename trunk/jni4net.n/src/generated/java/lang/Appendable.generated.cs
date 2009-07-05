@@ -74,7 +74,7 @@ namespace java.lang {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Appendable);
+            global::System.Type type = typeof(__Appendable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "append", "append0", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "append", "append1", "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;"));

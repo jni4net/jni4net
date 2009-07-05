@@ -30,18 +30,9 @@ namespace system {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::system.IObject))]
     internal unsafe partial class @__IObject : global::java.lang.Object, global::system.IObject {
         
         internal static global::java.lang.Class staticClass;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _ToString0;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _GetHashCode1;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _GetType2;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _Equals3;
         
         protected @__IObject(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
@@ -49,84 +40,6 @@ namespace system {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::system.@__IObject.staticClass = staticClass;
-            global::system.@__IObject._ToString0 = env.GetMethodID(global::system.@__IObject.staticClass, "ToString", "()Ljava/lang/String;");
-            global::system.@__IObject._GetHashCode1 = env.GetMethodID(global::system.@__IObject.staticClass, "GetHashCode", "()I");
-            global::system.@__IObject._GetType2 = env.GetMethodID(global::system.@__IObject.staticClass, "GetType", "()Lsystem/Type;");
-            global::system.@__IObject._Equals3 = env.GetMethodID(global::system.@__IObject.staticClass, "Equals", "(Lsystem/Object;)Z");
-        }
-        
-        public virtual global::java.lang.String ToString() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::system.@__IObject._ToString0));
-        }
-        
-        public virtual int GetHashCode() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::system.@__IObject._GetHashCode1);
-        }
-        
-        public virtual global::System.Type GetType() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::System.Type>(env.CallObjectMethod(this, global::system.@__IObject._GetType2));
-        }
-        
-        public virtual bool Equals(object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::system.@__IObject._Equals3, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(IObject);
-            global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToString", "ToString0", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetHashCode", "GetHashCode1", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetType", "GetType2", "()Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "Equals", "Equals3", "(Lsystem/Object;)Z"));
-            return methods;
-        }
-        
-        private static global::java.lang.Object.JavaPtr* ToString0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
-            // ()Ljava/lang/String;
-            // ()Ljava/lang/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::system.IObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::system.IObject>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToString());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
-        }
-        
-        private static int GetHashCode1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
-            // ()I
-            // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::system.IObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::system.IObject>(__env, @__obj);
-            return real.GetHashCode();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(int);
-        }
-        
-        private static global::java.lang.Object.JavaPtr* GetType2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
-            // ()Lsystem/Type;
-            // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::system.IObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::system.IObject>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetType());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
-        }
-        
-        private static bool Equals3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
-            // (Lsystem/Object;)Z
-            // (LSystem/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::system.IObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::system.IObject>(__env, @__obj);
-            return real.Equals(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(bool);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

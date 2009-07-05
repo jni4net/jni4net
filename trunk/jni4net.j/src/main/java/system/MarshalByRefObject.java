@@ -10,7 +10,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public abstract class MarshalByRefObject extends system.Object {
+public class MarshalByRefObject extends system.Object {
     
     //<generated-proxy>
     private static system.Type staticType;

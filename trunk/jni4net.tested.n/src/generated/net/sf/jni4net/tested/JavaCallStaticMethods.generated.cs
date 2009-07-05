@@ -13,56 +13,137 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public partial class JavaCallStaticMethods : global::java.lang.Object {
+    public unsafe partial class JavaCallStaticMethods : global::java.lang.Object {
         
-        private static java.lang.Class staticClass;
+        internal static global::java.lang.Class staticClass;
         
-        private static global::net.sf.jni4net.jni.MethodId @__stringMethod0;
+        internal static global::net.sf.jni4net.jni.MethodId _stringMethod0;
         
-        private static global::net.sf.jni4net.jni.MethodId @__voidMethod1;
+        internal static global::net.sf.jni4net.jni.MethodId _voidMethod1;
         
-        private static global::net.sf.jni4net.jni.MethodId @__ctorJavaCallStaticMethods2;
+        internal static global::net.sf.jni4net.jni.MethodId _wait2;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _wait3;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _wait4;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _hashCode5;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _getClass6;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _equals7;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _toString8;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _notify9;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _notifyAll10;
+        
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor11;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaCallStaticMethods() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
-            env.NewObject(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, net.sf.jni4net.tested.JavaCallStaticMethods.@__ctorJavaCallStaticMethods2, this);
+            env.NewObject(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.@__ctor11, this);
         }
         
         protected JavaCallStaticMethods(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
         }
         
-        public new static java.lang.Class _class {
+        public new static global::java.lang.Class _class {
             get {
-                return net.sf.jni4net.tested.JavaCallStaticMethods.staticClass;
+                return global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass;
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            net.sf.jni4net.tested.JavaCallStaticMethods.staticClass = staticClass;
-            net.sf.jni4net.tested.JavaCallStaticMethods.@__stringMethod0 = env.GetStaticMethodID(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringMethod", "(Ljava/lang/String;)Ljava/lang/String;");
-            net.sf.jni4net.tested.JavaCallStaticMethods.@__voidMethod1 = env.GetStaticMethodID(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "voidMethod", "(Ljava/lang/Object;)V");
-            net.sf.jni4net.tested.JavaCallStaticMethods.@__ctorJavaCallStaticMethods2 = env.GetMethodID(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass = staticClass;
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._stringMethod0 = env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringMethod", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod1 = env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "voidMethod", "(Ljava/lang/Object;)V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._wait2 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "wait", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._wait3 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "wait", "(JI)V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._wait4 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "wait", "(J)V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._hashCode5 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "hashCode", "()I");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._getClass6 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "getClass", "()Ljava/lang/Class;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._equals7 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._toString8 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "toString", "()Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._notify9 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "notify", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods._notifyAll10 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "notifyAll", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.@__ctor11 = env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
-        public static global::java.lang.String stringMethod(global::java.lang.String stringPar0) {
+        public static global::java.lang.String stringMethod(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, net.sf.jni4net.tested.JavaCallStaticMethods.@__stringMethod0, new global::net.sf.jni4net.jni.Value(stringPar0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._stringMethod0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
-        public static void voidMethod(global::java.lang.Object objectPar0) {
+        public static void voidMethod(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
-            env.CallStaticVoidMethod(net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, net.sf.jni4net.tested.JavaCallStaticMethods.@__voidMethod1, new global::net.sf.jni4net.jni.Value(objectPar0));
+            env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod1, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void wait() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._wait2);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
+        public void wait(long par0, int par1) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._wait3, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
+        public void wait(long par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._wait4, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
+        public virtual int hashCode() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._hashCode5);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
+        public global::java.lang.Class getClass() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._getClass6));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
+        public virtual bool equals(global::java.lang.Object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._equals7, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
+        public virtual global::java.lang.String toString() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._toString8));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void notify() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._notify9);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void notifyAll() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._notifyAll10);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new net.sf.jni4net.tested.JavaCallStaticMethods(env);
+                return new global::net.sf.jni4net.tested.JavaCallStaticMethods(env);
             }
         }
     }

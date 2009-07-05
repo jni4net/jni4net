@@ -10,7 +10,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public abstract class Enum extends system.ValueType implements system.IComparable, system.IFormattable, system.IConvertible {
+public class Enum extends system.ValueType implements system.IComparable, system.IFormattable, system.IConvertible {
     
     //<generated-proxy>
     private static system.Type staticType;

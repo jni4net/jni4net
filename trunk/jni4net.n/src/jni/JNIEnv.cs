@@ -25,6 +25,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using java.lang;
 using java.lang.reflect;
+using java_.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.utils;
 using Exception=System.Exception;

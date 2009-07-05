@@ -84,7 +84,7 @@ namespace java.lang.annotation {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Annotation);
+            global::System.Type type = typeof(__Annotation);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hashCode", "hashCode0", "()I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "equals", "equals1", "(Ljava/lang/Object;)Z"));
