@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.1.0.0, Version=0.1.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="jni4net.n-0.2.0.0, Version=0.2.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\jni4net.n-0.1.0.0.dll</HintPath>
+      <HintPath>lib\jni4net.n-0.2.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

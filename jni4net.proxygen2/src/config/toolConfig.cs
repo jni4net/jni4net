@@ -20,7 +20,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.1.0.0/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.2.0.0/toolConfig.xsd")]
     [System.Xml.Serialization.XmlRootAttribute("jni4net-proxygen", Namespace="http://jni4net.sf.net/0.1.0.0/toolConfig.xsd", IsNullable=false)]
     public partial class ToolConfig {
         

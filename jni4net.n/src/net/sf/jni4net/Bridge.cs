@@ -97,12 +97,12 @@ namespace net.sf.jni4net
             }
         }
 
-        public static TRes ToCLR<TRes>(IJavaProxy obj) where TRes : class
+        public static TRes ToCLR<TRes>(IJavaProxy obj)
         {
             IClrProxy proxy = obj as IClrProxy;
             if (proxy==null)
             {
-                return obj as TRes;
+                return (TRes)obj;
             }
             return ClrProxiesMap.ToClr<TRes>(proxy);
         }

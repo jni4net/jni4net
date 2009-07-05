@@ -4,7 +4,7 @@ using System.Text;
 
 namespace system
 {
-    public interface IObject
+    public partial interface IObject
     {
     }
 }

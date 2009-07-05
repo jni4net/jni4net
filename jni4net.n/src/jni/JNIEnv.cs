@@ -1668,7 +1668,7 @@ namespace net.sf.jni4net.jni
                 var clrProxy = javaProxy as IClrProxy;
                 if (clrProxy == null)
                 {
-                    throw new JNIException("Can't convert exception");
+                    throw new JNIException("Can't convert exception:" + javaProxy.toString());
                 }
                 var exception = ClrProxiesMap.ToClr<Exception>(clrProxy);
                 throw exception;

@@ -27,4 +27,10 @@ public interface IClrProxy extends IObject {
 	int getClrHandle();
 
 	void initProxy(int handle);
+
+
+    //<generated-interface>
+
+    //</generated-interface>
+
 }

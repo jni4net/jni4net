@@ -172,7 +172,7 @@ namespace net.sf.jni4net.proxygen.generator
                                                                  new CodeVariableReferenceExpression("type"),
                                                                  new CodePrimitiveExpression(method.JVMName),
                                                                  new CodePrimitiveExpression(uName),
-                                                                 new CodePrimitiveExpression(method.CLRSignature)));
+                                                                 new CodePrimitiveExpression(method.JVMSignature)));
             initMethod.Statements.Add(registation);
         }
 

@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>net.sf.jni4net.test</RootNamespace>
-    <AssemblyName>jni4net.test.n-0.1.0.0</AssemblyName>
+    <AssemblyName>jni4net.test.n-0.2.0.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
@@ -41,7 +41,7 @@
   <ItemGroup>
     <Reference Include="nunit.framework, Version=2.4.3.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\tools\nunit\nunit.framework.dll</HintPath>
+      <HintPath>..\..\tools\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -67,10 +67,6 @@
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
       <Name>jni4net.n</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\jni4net.proxygen\src\jni4net.proxygen.csproj">
-      <Project>{C2DA57E7-0E1C-4403-9775-296BCAD63C49}</Project>
-      <Name>jni4net.proxygen</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\jni4net.tested.n\src\jni4net.tested.n.csproj">
       <Project>{7E0900D3-6E8F-46EB-86DB-AA767AC90B86}</Project>
       <Name>jni4net.tested.n</Name>
@@ -85,7 +81,8 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
+echo [assembly: System.Reflection.AssemblyVersion("0.2.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+</PreBuildEvent>
   </PropertyGroup>
 </Project>

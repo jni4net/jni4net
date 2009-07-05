@@ -10,104 +10,40 @@
 package system.collections;
 
 @net.sf.jni4net.attributes.ClrInterface
-public interface IList {
+public interface IList extends system.collections.ICollection, system.collections.IEnumerable {
     
+    //<generated-interface>
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/Object;")
-    system.Object getItem(int indexPar0);
+    system.Object getItem(int index);
     
     @net.sf.jni4net.attributes.ClrMethod("(ILSystem/Object;)V")
-    void setItem(int indexPar0, system.Object valuePar1);
+    void setItem(int index, system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
-    int Add(system.Object valuePar0);
+    int Add(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    boolean Contains(system.Object valuePar0);
+    boolean Contains(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     void Clear();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    boolean getIsReadOnly();
+    boolean isReadOnly();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    boolean getIsFixedSize();
+    boolean isFixedSize();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
-    int IndexOf(system.Object valuePar0);
+    int IndexOf(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(ILSystem/Object;)V")
-    void Insert(int indexPar0, system.Object valuePar1);
+    void Insert(int index, system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)V")
-    void Remove(system.Object valuePar0);
+    void Remove(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    void RemoveAt(int indexPar0);
-}
-
-@net.sf.jni4net.attributes.ClrProxy
-class __IList extends system.Object implements IList, system.collections.ICollection, system.collections.IEnumerable {
-    
-    private static system.Type staticType;
-    
-    protected __IList(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
-    }
-    
-    public static system.Type typeof() {
-        return __IList.staticType;
-    }
-    
-    private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
-        __IList.staticType = staticType;
-    }
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/Object;")
-    public native final system.Object getItem(int indexPar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(ILSystem/Object;)V")
-    public native final void setItem(int indexPar0, system.Object valuePar1);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
-    public native final int Add(system.Object valuePar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native final boolean Contains(system.Object valuePar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native final void Clear();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getIsReadOnly();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getIsFixedSize();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
-    public native final int IndexOf(system.Object valuePar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(ILSystem/Object;)V")
-    public native final void Insert(int indexPar0, system.Object valuePar1);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)V")
-    public native final void Remove(system.Object valuePar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    public native final void RemoveAt(int indexPar0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;I)V")
-    public native final void CopyTo(system.Array arrayPar0, int indexPar1);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getCount();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Object;")
-    public native final system.Object getSyncRoot();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getIsSynchronized();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Collections/IEnumerator;")
-    public native final system.collections.IEnumerator GetEnumerator();
+    void RemoveAt(int index);
+    //</generated-interface>
 }
