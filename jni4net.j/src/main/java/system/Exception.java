@@ -19,7 +19,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public class Exception extends java.lang.RuntimeException implements net.sf.jni4net.inj.IClrProxy {
+public class Exception extends java.lang.RuntimeException implements net.sf.jni4net.inj.IClrProxy, system.IObject {
 
 	private int clrHandle;
 
