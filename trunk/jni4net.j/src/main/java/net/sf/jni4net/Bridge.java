@@ -119,7 +119,7 @@ public class Bridge extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/Assembly;)V")
     public native static void RegisterAssembly(system.reflection.Assembly assembly);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)LSystem/Object;")
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;")
     public native static system.Object ToCLR(java.lang.Object obj);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Ljava/lang/Object;")
