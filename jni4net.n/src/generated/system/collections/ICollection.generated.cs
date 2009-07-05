@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.ICollection))]
-    internal unsafe partial class @__ICollection : global::java.lang.Object, global::System.Collections.ICollection {
+    internal sealed unsafe partial class @__ICollection : global::java.lang.Object, global::System.Collections.ICollection {
         
         internal static global::java.lang.Class staticClass;
         
@@ -43,21 +43,21 @@ namespace System.Collections {
                 base(env) {
         }
         
-        public virtual int Count {
+        public int Count {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallIntMethod(this, global::System.Collections.@__ICollection._Count2);
             }
         }
         
-        public virtual object SyncRoot {
+        public object SyncRoot {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__ICollection._SyncRoot3));
             }
         }
         
-        public virtual bool IsSynchronized {
+        public bool IsSynchronized {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return env.CallBooleanMethod(this, global::System.Collections.@__ICollection._IsSynchronized4);
@@ -73,12 +73,12 @@ namespace System.Collections {
             global::System.Collections.@__ICollection._IsSynchronized4 = env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "isSynchronized", "()Z");
         }
         
-        public virtual global::System.Collections.IEnumerator GetEnumerator() {
+        public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__ICollection._GetEnumerator0));
         }
         
-        public virtual void CopyTo(global::System.Array array, int index) {
+        public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, new global::net.sf.jni4net.jni.Value(array), new global::net.sf.jni4net.jni.Value(index));
         }

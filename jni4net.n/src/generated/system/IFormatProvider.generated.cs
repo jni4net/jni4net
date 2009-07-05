@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IFormatProvider))]
-    internal unsafe partial class @__IFormatProvider : global::java.lang.Object, global::System.IFormatProvider {
+    internal sealed unsafe partial class @__IFormatProvider : global::java.lang.Object, global::System.IFormatProvider {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System {
             global::System.@__IFormatProvider._GetFormat0 = env.GetMethodID(global::System.@__IFormatProvider.staticClass, "GetFormat", "(Lsystem/Type;)Lsystem/Object;");
         }
         
-        public virtual object GetFormat(global::System.Type formatType) {
+        public object GetFormat(global::System.Type formatType) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.@__IFormatProvider._GetFormat0, new global::net.sf.jni4net.jni.Value(formatType)));
         }

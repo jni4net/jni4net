@@ -15,32 +15,46 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Map {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         global::java.lang.Object get(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")]
         global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int hashCode();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void clear();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool equals(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         bool isEmpty();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Set;")]
         global::java.util.Set entrySet();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Map;)V")]
         void putAll(global::java.util.Map par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int size();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Collection;")]
         global::java.util.Collection values();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         global::java.lang.Object remove(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Set;")]
         global::java.util.Set keySet();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool containsKey(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool containsValue(global::java.lang.Object par0);
     }
     #endregion
@@ -59,7 +73,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Map))]
-    internal unsafe partial class @__Map : global::java.lang.Object, global::java.util.Map {
+    internal sealed unsafe partial class @__Map : global::java.lang.Object, global::java.util.Map {
         
         internal static global::java.lang.Class staticClass;
         
@@ -113,72 +127,72 @@ namespace java.util {
             global::java.util.@__Map._containsValue13 = env.GetMethodID(global::java.util.@__Map.staticClass, "containsValue", "(Ljava/lang/Object;)Z");
         }
         
-        public virtual global::java.lang.Object get(global::java.lang.Object par0) {
+        public global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._get0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
-        public virtual global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
+        public global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._put1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
-        public virtual int hashCode() {
+        public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.util.@__Map._hashCode2);
         }
         
-        public virtual void clear() {
+        public void clear() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.util.@__Map._clear3);
         }
         
-        public virtual bool equals(global::java.lang.Object par0) {
+        public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Map._equals4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool isEmpty() {
+        public bool isEmpty() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Map._isEmpty5);
         }
         
-        public virtual global::java.util.Set entrySet() {
+        public global::java.util.Set entrySet() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Set>(env.CallObjectMethod(this, global::java.util.@__Map._entrySet6));
         }
         
-        public virtual void putAll(global::java.util.Map par0) {
+        public void putAll(global::java.util.Map par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.util.@__Map._putAll7, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual int size() {
+        public int size() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.util.@__Map._size8);
         }
         
-        public virtual global::java.util.Collection values() {
+        public global::java.util.Collection values() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Collection>(env.CallObjectMethod(this, global::java.util.@__Map._values9));
         }
         
-        public virtual global::java.lang.Object remove(global::java.lang.Object par0) {
+        public global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._remove10, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
-        public virtual global::java.util.Set keySet() {
+        public global::java.util.Set keySet() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Set>(env.CallObjectMethod(this, global::java.util.@__Map._keySet11));
         }
         
-        public virtual bool containsKey(global::java.lang.Object par0) {
+        public bool containsKey(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Map._containsKey12, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool containsValue(global::java.lang.Object par0) {
+        public bool containsValue(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Map._containsValue13, new global::net.sf.jni4net.jni.Value(par0));
         }

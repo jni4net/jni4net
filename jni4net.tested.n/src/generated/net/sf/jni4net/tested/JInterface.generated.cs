@@ -15,8 +15,10 @@ namespace net.sf.jni4net.tested {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface JInterface {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void runForrestRun();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void run();
     }
     #endregion
@@ -35,7 +37,7 @@ namespace net.sf.jni4net.tested {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.JInterface))]
-    internal unsafe partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
+    internal sealed unsafe partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
         
         internal static global::java.lang.Class staticClass;
         
@@ -56,17 +58,17 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.@__JInterface._cdefined2 = env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "cdefined", "()V");
         }
         
-        public virtual void runForrestRun() {
+        public void runForrestRun() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._runForrestRun0);
         }
         
-        public virtual void run() {
+        public void run() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._run1);
         }
         
-        public virtual void cdefined() {
+        public void cdefined() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._cdefined2);
         }

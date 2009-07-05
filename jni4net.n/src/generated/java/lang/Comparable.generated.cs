@@ -15,6 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Comparable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         int compareTo(global::java.lang.Object par0);
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Comparable))]
-    internal unsafe partial class @__Comparable : global::java.lang.Object, global::java.lang.Comparable {
+    internal sealed unsafe partial class @__Comparable : global::java.lang.Object, global::java.lang.Comparable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.lang {
             global::java.lang.@__Comparable._compareTo0 = env.GetMethodID(global::java.lang.@__Comparable.staticClass, "compareTo", "(Ljava/lang/Object;)I");
         }
         
-        public virtual int compareTo(global::java.lang.Object par0) {
+        public int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, new global::net.sf.jni4net.jni.Value(par0));
         }

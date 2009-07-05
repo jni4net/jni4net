@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IDictionaryEnumerator))]
-    internal unsafe partial class @__IDictionaryEnumerator : global::java.lang.Object, global::System.Collections.IDictionaryEnumerator {
+    internal sealed unsafe partial class @__IDictionaryEnumerator : global::java.lang.Object, global::System.Collections.IDictionaryEnumerator {
         
         internal static global::java.lang.Class staticClass;
         
@@ -45,28 +45,28 @@ namespace System.Collections {
                 base(env) {
         }
         
-        public virtual object Current {
+        public object Current {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionaryEnumerator._Current1));
             }
         }
         
-        public virtual object Key {
+        public object Key {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionaryEnumerator._Key3));
             }
         }
         
-        public virtual object Value {
+        public object Value {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionaryEnumerator._Value4));
             }
         }
         
-        public virtual global::System.Collections.DictionaryEntry Entry {
+        public global::System.Collections.DictionaryEntry Entry {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.DictionaryEntry>(env.CallObjectMethod(this, global::System.Collections.@__IDictionaryEnumerator._Entry5));
@@ -83,12 +83,12 @@ namespace System.Collections {
             global::System.Collections.@__IDictionaryEnumerator._Entry5 = env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getEntry", "()Lsystem/ValueType;");
         }
         
-        public virtual bool MoveNext() {
+        public bool MoveNext() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::System.Collections.@__IDictionaryEnumerator._MoveNext0);
         }
         
-        public virtual void Reset() {
+        public void Reset() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IDictionaryEnumerator._Reset2);
         }

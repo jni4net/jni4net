@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IDisposable))]
-    internal unsafe partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
+    internal sealed unsafe partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System {
             global::System.@__IDisposable._Dispose0 = env.GetMethodID(global::System.@__IDisposable.staticClass, "Dispose", "()V");
         }
         
-        public virtual void Dispose() {
+        public void Dispose() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.@__IDisposable._Dispose0);
         }

@@ -15,32 +15,46 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Collection : global::java.lang.Iterable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool add(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int hashCode();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void clear();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool equals(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool contains(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         bool isEmpty();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool addAll(global::java.util.Collection par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int size();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Object;")]
         java.lang.Object[] toArray();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/Object;)[Ljava/lang/Object;")]
         java.lang.Object[] toArray(java.lang.Object[] par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool remove(global::java.lang.Object par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool containsAll(global::java.util.Collection par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool removeAll(global::java.util.Collection par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool retainAll(global::java.util.Collection par0);
     }
     #endregion
@@ -59,7 +73,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Collection))]
-    internal unsafe partial class @__Collection : global::java.lang.Object, global::java.util.Collection {
+    internal sealed unsafe partial class @__Collection : global::java.lang.Object, global::java.util.Collection {
         
         internal static global::java.lang.Class staticClass;
         
@@ -116,77 +130,77 @@ namespace java.util {
             global::java.util.@__Collection._retainAll14 = env.GetMethodID(global::java.util.@__Collection.staticClass, "retainAll", "(Ljava/util/Collection;)Z");
         }
         
-        public virtual global::java.util.Iterator iterator() {
+        public global::java.util.Iterator iterator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Iterator>(env.CallObjectMethod(this, global::java.util.@__Collection._iterator0));
         }
         
-        public virtual bool add(global::java.lang.Object par0) {
+        public bool add(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._add1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual int hashCode() {
+        public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.util.@__Collection._hashCode2);
         }
         
-        public virtual void clear() {
+        public void clear() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.util.@__Collection._clear3);
         }
         
-        public virtual bool equals(global::java.lang.Object par0) {
+        public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._equals4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool contains(global::java.lang.Object par0) {
+        public bool contains(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._contains5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool isEmpty() {
+        public bool isEmpty() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._isEmpty6);
         }
         
-        public virtual bool addAll(global::java.util.Collection par0) {
+        public bool addAll(global::java.util.Collection par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._addAll7, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual int size() {
+        public int size() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.util.@__Collection._size8);
         }
         
-        public virtual java.lang.Object[] toArray() {
+        public java.lang.Object[] toArray() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.Object[])(env.ConvertArrayToNet<java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray9))));
         }
         
-        public virtual java.lang.Object[] toArray(java.lang.Object[] par0) {
+        public java.lang.Object[] toArray(java.lang.Object[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.Object[])(env.ConvertArrayToNet<java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray10, global::net.sf.jni4net.jni.Value.CreateArray(par0)))));
         }
         
-        public virtual bool remove(global::java.lang.Object par0) {
+        public bool remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._remove11, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool containsAll(global::java.util.Collection par0) {
+        public bool containsAll(global::java.util.Collection par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._containsAll12, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool removeAll(global::java.util.Collection par0) {
+        public bool removeAll(global::java.util.Collection par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._removeAll13, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual bool retainAll(global::java.util.Collection par0) {
+        public bool retainAll(global::java.util.Collection par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Collection._retainAll14, new global::net.sf.jni4net.jni.Value(par0));
         }

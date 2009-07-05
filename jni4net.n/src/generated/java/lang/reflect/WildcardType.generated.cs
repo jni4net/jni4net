@@ -15,8 +15,10 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface WildcardType : global::java.lang.reflect.Type {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         java.lang.reflect.Type[] getLowerBounds();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         java.lang.reflect.Type[] getUpperBounds();
     }
     #endregion
@@ -35,7 +37,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.WildcardType))]
-    internal unsafe partial class @__WildcardType : global::java.lang.Object, global::java.lang.reflect.WildcardType {
+    internal sealed unsafe partial class @__WildcardType : global::java.lang.Object, global::java.lang.reflect.WildcardType {
         
         internal static global::java.lang.Class staticClass;
         
@@ -53,12 +55,12 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__WildcardType._getUpperBounds1 = env.GetMethodID(global::java.lang.reflect.@__WildcardType.staticClass, "getUpperBounds", "()[Ljava/lang/reflect/Type;");
         }
         
-        public virtual java.lang.reflect.Type[] getLowerBounds() {
+        public java.lang.reflect.Type[] getLowerBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0))));
         }
         
-        public virtual java.lang.reflect.Type[] getUpperBounds() {
+        public java.lang.reflect.Type[] getUpperBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1))));
         }

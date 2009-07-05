@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.ICloneable))]
-    internal unsafe partial class @__ICloneable : global::java.lang.Object, global::System.ICloneable {
+    internal sealed unsafe partial class @__ICloneable : global::java.lang.Object, global::System.ICloneable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System {
             global::System.@__ICloneable._Clone0 = env.GetMethodID(global::System.@__ICloneable.staticClass, "Clone", "()Lsystem/Object;");
         }
         
-        public virtual object Clone() {
+        public object Clone() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.@__ICloneable._Clone0));
         }

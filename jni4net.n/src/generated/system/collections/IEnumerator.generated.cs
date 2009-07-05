@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IEnumerator))]
-    internal unsafe partial class @__IEnumerator : global::java.lang.Object, global::System.Collections.IEnumerator {
+    internal sealed unsafe partial class @__IEnumerator : global::java.lang.Object, global::System.Collections.IEnumerator {
         
         internal static global::java.lang.Class staticClass;
         
@@ -39,7 +39,7 @@ namespace System.Collections {
                 base(env) {
         }
         
-        public virtual object Current {
+        public object Current {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
                 return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IEnumerator._Current1));
@@ -53,12 +53,12 @@ namespace System.Collections {
             global::System.Collections.@__IEnumerator._Reset2 = env.GetMethodID(global::System.Collections.@__IEnumerator.staticClass, "Reset", "()V");
         }
         
-        public virtual bool MoveNext() {
+        public bool MoveNext() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::System.Collections.@__IEnumerator._MoveNext0);
         }
         
-        public virtual void Reset() {
+        public void Reset() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::System.Collections.@__IEnumerator._Reset2);
         }

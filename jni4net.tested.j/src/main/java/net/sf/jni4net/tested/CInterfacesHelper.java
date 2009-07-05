@@ -19,11 +19,20 @@ public class CInterfacesHelper extends system.Object {
             super(env, handle);
     }
     
-    @net.sf.jni4net.attributes.ClrConstructor
+    @net.sf.jni4net.attributes.ClrConstructor("()V")
     public CInterfacesHelper() {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         net.sf.jni4net.tested.CInterfacesHelper.__ctorCInterfacesHelper0(this);
     }
+    
+    @net.sf.jni4net.attributes.ClrMethod("()V")
+    private native static void __ctorCInterfacesHelper0(net.sf.jni4net.inj.IClrProxy thiz);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterface;")
+    public native final net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
+    public native final java.lang.Comparable CWithJavaInterfaceUnreg(int i);
     
     public static system.Type typeof() {
         return net.sf.jni4net.tested.CInterfacesHelper.staticType;
@@ -32,14 +41,5 @@ public class CInterfacesHelper extends system.Object {
     private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
         net.sf.jni4net.tested.CInterfacesHelper.staticType = staticType;
     }
-    
-    @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorCInterfacesHelper0(net.sf.jni4net.tested.CInterfacesHelper thiz);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterface;")
-    public native final net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
-    public native final java.lang.Comparable CWithJavaInterfaceUnreg(int i);
     //</generated-proxy>
 }

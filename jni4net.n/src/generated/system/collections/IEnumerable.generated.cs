@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IEnumerable))]
-    internal unsafe partial class @__IEnumerable : global::java.lang.Object, global::System.Collections.IEnumerable {
+    internal sealed unsafe partial class @__IEnumerable : global::java.lang.Object, global::System.Collections.IEnumerable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System.Collections {
             global::System.Collections.@__IEnumerable._GetEnumerator0 = env.GetMethodID(global::System.Collections.@__IEnumerable.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
         }
         
-        public virtual global::System.Collections.IEnumerator GetEnumerator() {
+        public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
         }

@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IComparable))]
-    internal unsafe partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
+    internal sealed unsafe partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -40,7 +40,7 @@ namespace System {
             global::System.@__IComparable._CompareTo0 = env.GetMethodID(global::System.@__IComparable.staticClass, "CompareTo", "(Lsystem/Object;)I");
         }
         
-        public virtual int CompareTo(object obj) {
+        public int CompareTo(object obj) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, new global::net.sf.jni4net.jni.Value(obj));
         }

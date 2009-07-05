@@ -14,10 +14,6 @@ namespace net.sf.jni4net.inj {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface IClrProxy {
-        
-        int getClrHandle();
-        
-        void initProxy(int par0);
     }
     #endregion
     

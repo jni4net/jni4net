@@ -19,22 +19,14 @@ public class CWithJavaInterface extends system.Object implements java.lang.Compa
             super(env, handle);
     }
     
-    @net.sf.jni4net.attributes.ClrConstructor
+    @net.sf.jni4net.attributes.ClrConstructor("(I)V")
     public CWithJavaInterface(int value) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         net.sf.jni4net.tested.CWithJavaInterface.__ctorCWithJavaInterface0(this, value);
     }
     
-    public static system.Type typeof() {
-        return net.sf.jni4net.tested.CWithJavaInterface.staticType;
-    }
-    
-    private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
-        net.sf.jni4net.tested.CWithJavaInterface.staticType = staticType;
-    }
-    
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    private native static void __ctorCWithJavaInterface0(net.sf.jni4net.tested.CWithJavaInterface thiz, int value);
+    private native static void __ctorCWithJavaInterface0(net.sf.jni4net.inj.IClrProxy thiz, int value);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native final int getValue();
@@ -47,5 +39,13 @@ public class CWithJavaInterface extends system.Object implements java.lang.Compa
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void run();
+    
+    public static system.Type typeof() {
+        return net.sf.jni4net.tested.CWithJavaInterface.staticType;
+    }
+    
+    private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
+        net.sf.jni4net.tested.CWithJavaInterface.staticType = staticType;
+    }
     //</generated-proxy>
 }

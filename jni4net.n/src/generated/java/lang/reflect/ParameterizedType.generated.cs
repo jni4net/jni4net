@@ -15,10 +15,13 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface ParameterizedType : global::java.lang.reflect.Type {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         java.lang.reflect.Type[] getActualTypeArguments();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]
         global::java.lang.reflect.Type getOwnerType();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]
         global::java.lang.reflect.Type getRawType();
     }
     #endregion
@@ -37,7 +40,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.ParameterizedType))]
-    internal unsafe partial class @__ParameterizedType : global::java.lang.Object, global::java.lang.reflect.ParameterizedType {
+    internal sealed unsafe partial class @__ParameterizedType : global::java.lang.Object, global::java.lang.reflect.ParameterizedType {
         
         internal static global::java.lang.Class staticClass;
         
@@ -58,17 +61,17 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__ParameterizedType._getRawType2 = env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getRawType", "()Ljava/lang/reflect/Type;");
         }
         
-        public virtual java.lang.reflect.Type[] getActualTypeArguments() {
+        public java.lang.reflect.Type[] getActualTypeArguments() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0))));
         }
         
-        public virtual global::java.lang.reflect.Type getOwnerType() {
+        public global::java.lang.reflect.Type getOwnerType() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__ParameterizedType._getOwnerType1));
         }
         
-        public virtual global::java.lang.reflect.Type getRawType() {
+        public global::java.lang.reflect.Type getRawType() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__ParameterizedType._getRawType2));
         }

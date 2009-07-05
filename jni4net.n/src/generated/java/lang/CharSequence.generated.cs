@@ -15,12 +15,16 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface CharSequence {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         global::java.lang.String toString();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
         char charAt(int par0);
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int length();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/lang/CharSequence;")]
         global::java.lang.CharSequence subSequence(int par0, int par1);
     }
     #endregion
@@ -39,7 +43,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.CharSequence))]
-    internal unsafe partial class @__CharSequence : global::java.lang.Object, global::java.lang.CharSequence {
+    internal sealed unsafe partial class @__CharSequence : global::java.lang.Object, global::java.lang.CharSequence {
         
         internal static global::java.lang.Class staticClass;
         
@@ -63,22 +67,22 @@ namespace java.lang {
             global::java.lang.@__CharSequence._subSequence3 = env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "subSequence", "(II)Ljava/lang/CharSequence;");
         }
         
-        public virtual global::java.lang.String toString() {
+        public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.@__CharSequence._toString0));
         }
         
-        public virtual char charAt(int par0) {
+        public char charAt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public virtual int length() {
+        public int length() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::java.lang.@__CharSequence._length2);
         }
         
-        public virtual global::java.lang.CharSequence subSequence(int par0, int par1) {
+        public global::java.lang.CharSequence subSequence(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.CharSequence>(env.CallObjectMethod(this, global::java.lang.@__CharSequence._subSequence3, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }

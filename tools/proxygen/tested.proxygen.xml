@@ -22,15 +22,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <TargetDirClr>jni4net.tested.n/src/generated</TargetDirClr>
   <ClassPath>jni4net.j/target/classes</ClassPath>
   <ClassPath>jni4net.tested.j/target/classes</ClassPath>
+  <AssemblyReference>jni4net.tested.n\target\jni4net.n-0.2.0.0.dll</AssemblyReference>
+  <AssemblyReference>jni4net.tested.n\target\jni4net.tested.n-0.2.0.0.dll</AssemblyReference>
 
   <!-- 
-  <AssemblyReference>jni4net.n\target\jni4net.n-0.2.0.0.dll</AssemblyReference>
-  <AssemblyReference>jni4net.tested.n\target\jni4net.tested.n-0.2.0.0.dll</AssemblyReference>
   <Verbose>true</Verbose>
+  -->
+
   <ClrType TypeName="net.sf.jni4net.tested.ClrException"/>
   <ClrType TypeName="net.sf.jni4net.tested.CWithJavaInterface"/>
   <ClrType TypeName="net.sf.jni4net.tested.CInterfacesHelper"/>
-  -->
 
   <JavaClass TypeName="net.sf.jni4net.tested.JavaCallInstanceMethods"/>
   <JavaClass TypeName="net.sf.jni4net.tested.JavaInstanceFields"/>

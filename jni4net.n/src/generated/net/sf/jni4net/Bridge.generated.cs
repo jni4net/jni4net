@@ -114,10 +114,10 @@ namespace net.sf.jni4net {
         
         private static global::java.lang.Object.JavaPtr* ToCLR6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* obj) {
             // (Ljava/lang/Object;)Lsystem/Object;
-            // (Ljava/lang/Object;)LSystem/Object;
+            // (Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::net.sf.jni4net.Bridge.ToCLR(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Object>(__env, obj)));
+            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::net.sf.jni4net.Bridge.ToCLR(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<net.sf.jni4net.jni.IJavaProxy>(__env, obj)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::java.lang.Object.JavaPtr*);
         }

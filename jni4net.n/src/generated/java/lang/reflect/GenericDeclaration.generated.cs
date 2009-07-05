@@ -15,6 +15,7 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface GenericDeclaration {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/TypeVariable;")]
         java.lang.reflect.TypeVariable[] getTypeParameters();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericDeclaration))]
-    internal unsafe partial class @__GenericDeclaration : global::java.lang.Object, global::java.lang.reflect.GenericDeclaration {
+    internal sealed unsafe partial class @__GenericDeclaration : global::java.lang.Object, global::java.lang.reflect.GenericDeclaration {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.lang.reflect {
             global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0 = env.GetMethodID(global::java.lang.reflect.@__GenericDeclaration.staticClass, "getTypeParameters", "()[Ljava/lang/reflect/TypeVariable;");
         }
         
-        public virtual java.lang.reflect.TypeVariable[] getTypeParameters() {
+        public java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0))));
         }

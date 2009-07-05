@@ -15,6 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Runnable {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void run();
     }
     #endregion
@@ -33,7 +34,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Runnable))]
-    internal unsafe partial class @__Runnable : global::java.lang.Object, global::java.lang.Runnable {
+    internal sealed unsafe partial class @__Runnable : global::java.lang.Object, global::java.lang.Runnable {
         
         internal static global::java.lang.Class staticClass;
         
@@ -48,7 +49,7 @@ namespace java.lang {
             global::java.lang.@__Runnable._run0 = env.GetMethodID(global::java.lang.@__Runnable.staticClass, "run", "()V");
         }
         
-        public virtual void run() {
+        public void run() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.lang.@__Runnable._run0);
         }

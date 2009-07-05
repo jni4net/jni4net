@@ -15,10 +15,13 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Iterator {
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         bool hasNext();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
         global::java.lang.Object next();
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void remove();
     }
     #endregion
@@ -37,7 +40,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Iterator))]
-    internal unsafe partial class @__Iterator : global::java.lang.Object, global::java.util.Iterator {
+    internal sealed unsafe partial class @__Iterator : global::java.lang.Object, global::java.util.Iterator {
         
         internal static global::java.lang.Class staticClass;
         
@@ -58,17 +61,17 @@ namespace java.util {
             global::java.util.@__Iterator._remove2 = env.GetMethodID(global::java.util.@__Iterator.staticClass, "remove", "()V");
         }
         
-        public virtual bool hasNext() {
+        public bool hasNext() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallBooleanMethod(this, global::java.util.@__Iterator._hasNext0);
         }
         
-        public virtual global::java.lang.Object next() {
+        public global::java.lang.Object next() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Iterator._next1));
         }
         
-        public virtual void remove() {
+        public void remove() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.util.@__Iterator._remove2);
         }
