@@ -38,7 +38,7 @@ namespace System.Reflection {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(BindingFlags);
+            global::System.Type type = typeof(__BindingFlags);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             return methods;
         }

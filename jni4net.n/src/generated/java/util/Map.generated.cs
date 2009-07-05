@@ -184,7 +184,7 @@ namespace java.util {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Map);
+            global::System.Type type = typeof(__Map);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "get", "get0", "(Ljava/lang/Object;)Ljava/lang/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "put", "put1", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"));

@@ -109,7 +109,6 @@
     <Compile Include="generated\java\lang\Exception.generated.cs" />
     <Compile Include="generated\java\lang\Float.generated.cs" />
     <Compile Include="generated\java\lang\Integer.generated.cs" />
-    <Compile Include="generated\java\lang\IObject.generated.cs" />
     <Compile Include="generated\java\lang\Iterable.generated.cs" />
     <Compile Include="generated\java\lang\LinkageError.generated.cs" />
     <Compile Include="generated\java\lang\Long.generated.cs" />
@@ -152,6 +151,7 @@
     <Compile Include="generated\java\util\Map.generated.cs" />
     <Compile Include="generated\java\util\Properties.generated.cs" />
     <Compile Include="generated\java\util\Set.generated.cs" />
+    <Compile Include="generated\java_\lang\IObject.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\Bridge.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\inj\IClrProxy.generated.cs" />
     <Compile Include="generated\system\ArgumentException.generated.cs" />

@@ -46,7 +46,7 @@ namespace System.Runtime.Serialization {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(ISerializable);
+            global::System.Type type = typeof(__ISerializable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetObjectData", "GetObjectData0", "(Ljava/lang/Object;Lsystem/ValueType;)V"));
             return methods;

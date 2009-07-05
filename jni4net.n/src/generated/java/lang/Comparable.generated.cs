@@ -54,7 +54,7 @@ namespace java.lang {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Comparable);
+            global::System.Type type = typeof(__Comparable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "compareTo", "compareTo0", "(Ljava/lang/Object;)I"));
             return methods;

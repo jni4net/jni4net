@@ -164,7 +164,7 @@ namespace java.util {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Set);
+            global::System.Type type = typeof(__Set);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "iterator", "iterator0", "()Ljava/util/Iterator;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "add", "add1", "(Ljava/lang/Object;)Z"));

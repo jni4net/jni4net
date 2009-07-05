@@ -10,7 +10,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public abstract class Array extends system.Object implements system.ICloneable, system.collections.IList, system.collections.ICollection, system.collections.IEnumerable {
+public class Array extends system.Object implements system.ICloneable, system.collections.IList, system.collections.ICollection, system.collections.IEnumerable {
     
     //<generated-proxy>
     private static system.Type staticType;

@@ -64,7 +64,7 @@ namespace java.util {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Enumeration);
+            global::System.Type type = typeof(__Enumeration);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hasMoreElements", "hasMoreElements0", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "nextElement", "nextElement1", "()Ljava/lang/Object;"));

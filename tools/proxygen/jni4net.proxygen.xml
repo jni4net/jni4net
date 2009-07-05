@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="system.IObject" NoMethods="true"/>
   <JavaClass TypeName="java.lang.Object">
     <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
-    <IgnoreInterface TypeName="java.lang.IObject"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
   </JavaClass>
   <JavaClass TypeName="java.lang.Class"/>
   <JavaClass TypeName="java.lang.ClassLoader"/>
@@ -99,7 +99,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <!-- exceptions -->
   <JavaClass TypeName="java.lang.Throwable">
     <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
-    <IgnoreInterface TypeName="java.lang.IObject"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
   </JavaClass>
   <JavaClass TypeName="java.lang.Error"/>
   <JavaClass TypeName="java.lang.Exception"/>
@@ -138,12 +138,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="net.sf.jni4net.inj.IClrProxy">
     <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
     <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
-    <IgnoreInterface TypeName="java.lang.IObject"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
     <IgnoreInterface TypeName="system.IObject"/>
   </JavaClass>
 
   <!-- basics -->
-  <ClrType TypeName="java.lang.IObject" NoMethods="true"/>
+  <ClrType TypeName="java_.lang.IObject" NoMethods="true"/>
   <ClrType TypeName="System.Object" MergeJavaSource="true">
     <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
     <IgnoreInterface TypeName="system.IObject"/>

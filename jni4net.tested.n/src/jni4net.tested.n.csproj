@@ -50,6 +50,9 @@
     </Compile>
     <Compile Include="CInterfacesHelper.cs" />
     <Compile Include="CWithJavaInterfaceUnreg.cs" />
+    <Compile Include="generated\net\sf\jni4net\tested\CInterfacesHelper.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\tested\ClrException.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\tested\CWithJavaInterface.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\JavaCallBack.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\JavaCallInstanceMethods.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\JavaCallStaticMethods.generated.cs" />
@@ -59,11 +62,8 @@
     <Compile Include="generated\net\sf\jni4net\tested\JInterface.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\JInterfacesHelper.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\JWithClrInterface.generated.cs" />
-    <Compile Include="generated\net\sf\jni4net\tested\__CInterfacesHelper.cs" />
-    <Compile Include="generated\net\sf\jni4net\tested\__ClrException.cs" />
     <Compile Include="ClrException.cs" />
     <Compile Include="CWithJavaInterface.cs" />
-    <Compile Include="generated\net\sf\jni4net\tested\__CWithJavaInterface.cs" />
     <Compile Include="generated\tested\JInterface.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +71,6 @@
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
       <Name>jni4net.n</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="tested.proxygen.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="tested\" />

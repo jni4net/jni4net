@@ -54,7 +54,7 @@ namespace java.lang.reflect {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(GenericArrayType);
+            global::System.Type type = typeof(__GenericArrayType);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getGenericComponentType", "getGenericComponentType0", "()Ljava/lang/reflect/Type;"));
             return methods;

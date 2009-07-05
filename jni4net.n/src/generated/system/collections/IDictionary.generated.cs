@@ -181,7 +181,7 @@ namespace System.Collections {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(IDictionary);
+            global::System.Type type = typeof(__IDictionary);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "CopyTo", "CopyTo0", "(Lsystem/Array;I)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getCount", "Count1", "()I"));

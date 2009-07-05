@@ -10,7 +10,7 @@
 package system.reflection;
 
 @net.sf.jni4net.attributes.ClrType
-public abstract class MethodInfo extends system.reflection.MethodBase {
+public class MethodInfo extends system.reflection.MethodBase {
     
     //<generated-proxy>
     private static system.Type staticType;

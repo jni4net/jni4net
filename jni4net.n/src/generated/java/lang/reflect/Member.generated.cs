@@ -104,7 +104,7 @@ namespace java.lang.reflect {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Member);
+            global::System.Type type = typeof(__Member);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getModifiers", "getModifiers0", "()I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getName", "getName1", "()Ljava/lang/String;"));

@@ -17,10 +17,10 @@ namespace net.sf.jni4net.proxygen.generator
             SetCurrentType(type.JVMNamespace + "." + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.Public;
-            if (type.IsAbstract)
+            /*if (type.IsAbstract)
             {
                 tgtType.TypeAttributes |= TypeAttributes.Abstract;
-            }
+            }*/
             tgtType.AddAttribute("net.sf.jni4net.attributes.ClrType");
             if (type.Base != null)
             {

@@ -8,12 +8,4 @@ namespace net.sf.jni4net.tested
     {
         void cdefined();
     }
-
-    partial class @__JInterface
-    {
-        public void cdefined()
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

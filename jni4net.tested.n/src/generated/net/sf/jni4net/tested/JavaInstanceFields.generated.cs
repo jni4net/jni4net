@@ -13,78 +13,163 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public partial class JavaInstanceFields : global::java.lang.Object {
+    public unsafe partial class JavaInstanceFields : global::java.lang.Object {
         
-        private static java.lang.Class staticClass;
+        internal static global::java.lang.Class staticClass;
         
-        private static global::net.sf.jni4net.jni.FieldId @__intField0;
+        internal static global::net.sf.jni4net.jni.MethodId _wait0;
         
-        private static global::net.sf.jni4net.jni.FieldId @__stringField1;
+        internal static global::net.sf.jni4net.jni.MethodId _wait1;
         
-        private static global::net.sf.jni4net.jni.FieldId @__byteField2;
+        internal static global::net.sf.jni4net.jni.MethodId _wait2;
         
-        private static global::net.sf.jni4net.jni.FieldId @__charField3;
+        internal static global::net.sf.jni4net.jni.MethodId _hashCode3;
         
-        private static global::net.sf.jni4net.jni.MethodId @__ctorJavaInstanceFields4;
+        internal static global::net.sf.jni4net.jni.MethodId _getClass4;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _equals5;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _toString6;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _notify7;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _notifyAll8;
+        
+        internal static global::net.sf.jni4net.jni.FieldId _intField9;
+        
+        internal static global::net.sf.jni4net.jni.FieldId _stringField10;
+        
+        internal static global::net.sf.jni4net.jni.FieldId _byteField11;
+        
+        internal static global::net.sf.jni4net.jni.FieldId _charField12;
+        
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor13;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaInstanceFields() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
-            env.NewObject(net.sf.jni4net.tested.JavaInstanceFields.staticClass, net.sf.jni4net.tested.JavaInstanceFields.@__ctorJavaInstanceFields4, this);
+            env.NewObject(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor13, this);
         }
         
         protected JavaInstanceFields(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
         }
         
-        public new static java.lang.Class _class {
+        public new static global::java.lang.Class _class {
             get {
-                return net.sf.jni4net.tested.JavaInstanceFields.staticClass;
+                return global::net.sf.jni4net.tested.JavaInstanceFields.staticClass;
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public virtual int intField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return env.GetIntField(this, net.sf.jni4net.tested.JavaInstanceFields.@__intField0);
+                return env.GetIntField(this, global::net.sf.jni4net.tested.JavaInstanceFields._intField9);
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/String;")]
         public virtual global::java.lang.String stringField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.GetObjectField(this, net.sf.jni4net.tested.JavaInstanceFields.@__stringField1));
+                return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.GetObjectField(this, global::net.sf.jni4net.tested.JavaInstanceFields._stringField10));
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("B")]
         public virtual byte byteField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return env.GetByteField(this, net.sf.jni4net.tested.JavaInstanceFields.@__byteField2);
+                return env.GetByteField(this, global::net.sf.jni4net.tested.JavaInstanceFields._byteField11);
             }
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("C")]
         public virtual char charField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return env.GetCharField(this, net.sf.jni4net.tested.JavaInstanceFields.@__charField3);
+                return env.GetCharField(this, global::net.sf.jni4net.tested.JavaInstanceFields._charField12);
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            net.sf.jni4net.tested.JavaInstanceFields.staticClass = staticClass;
-            net.sf.jni4net.tested.JavaInstanceFields.@__intField0 = env.GetFieldID(net.sf.jni4net.tested.JavaInstanceFields.staticClass, "intField", "I");
-            net.sf.jni4net.tested.JavaInstanceFields.@__stringField1 = env.GetFieldID(net.sf.jni4net.tested.JavaInstanceFields.staticClass, "stringField", "Ljava/lang/String;");
-            net.sf.jni4net.tested.JavaInstanceFields.@__byteField2 = env.GetFieldID(net.sf.jni4net.tested.JavaInstanceFields.staticClass, "byteField", "B");
-            net.sf.jni4net.tested.JavaInstanceFields.@__charField3 = env.GetFieldID(net.sf.jni4net.tested.JavaInstanceFields.staticClass, "charField", "C");
-            net.sf.jni4net.tested.JavaInstanceFields.@__ctorJavaInstanceFields4 = env.GetMethodID(net.sf.jni4net.tested.JavaInstanceFields.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaInstanceFields.staticClass = staticClass;
+            global::net.sf.jni4net.tested.JavaInstanceFields._wait0 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "wait", "()V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._wait1 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "wait", "(JI)V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._wait2 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "wait", "(J)V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._hashCode3 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "hashCode", "()I");
+            global::net.sf.jni4net.tested.JavaInstanceFields._getClass4 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "getClass", "()Ljava/lang/Class;");
+            global::net.sf.jni4net.tested.JavaInstanceFields._equals5 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::net.sf.jni4net.tested.JavaInstanceFields._toString6 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "toString", "()Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaInstanceFields._notify7 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "notify", "()V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._notifyAll8 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "notifyAll", "()V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._intField9 = env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "intField", "I");
+            global::net.sf.jni4net.tested.JavaInstanceFields._stringField10 = env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "stringField", "Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaInstanceFields._byteField11 = env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "byteField", "B");
+            global::net.sf.jni4net.tested.JavaInstanceFields._charField12 = env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "charField", "C");
+            global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor13 = env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "<init>", "()V");
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void wait() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._wait0);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
+        public void wait(long par0, int par1) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._wait1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
+        public void wait(long par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._wait2, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
+        public virtual int hashCode() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._hashCode3);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
+        public global::java.lang.Class getClass() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._getClass4));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
+        public virtual bool equals(global::java.lang.Object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._equals5, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
+        public virtual global::java.lang.String toString() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._toString6));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void notify() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._notify7);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public void notifyAll() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._notifyAll8);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new net.sf.jni4net.tested.JavaInstanceFields(env);
+                return new global::net.sf.jni4net.tested.JavaInstanceFields(env);
             }
         }
     }

@@ -48,7 +48,7 @@ namespace net.sf.jni4net.utils
             RegisterType(env, typeof(__Type), true);
             RegisterType(env, typeof(__Object), true);
             RegisterType(env, typeof(__String), true);
-            WritePrimitiveRecord("int", typeof (int));
+            WritePrimitiveRecord("int", typeof(int));
             WritePrimitiveRecord("long", typeof (long));
             WritePrimitiveRecord("short", typeof (short));
             WritePrimitiveRecord("char", typeof (char));
@@ -98,11 +98,11 @@ namespace net.sf.jni4net.utils
         {
             string className = GetInterfaceName(name, wrapper);
             string proxyName = GetProxyName(name, wrapper);
+            string staticName = GetStaticName(name, wrapper);
             Type type = real;
             if (type == null)
             {
-                string realTypeName = GetTypeName(className);
-                Type.GetType(realTypeName);
+                type = Type.GetType(className, true, true);
             }
             if (type == null)
             {
@@ -117,14 +117,21 @@ namespace net.sf.jni4net.utils
             }
 
             Class proxy = iface;
+            Class stati = iface;
             if (type.IsInterface)
             {
                 proxy = env.FindClassNoThrow(proxyName.Replace(".", "/"));
+                stati = env.FindClassNoThrow(staticName.Replace(".", "/"));
             }
             if (proxy == null)
             {
                 Console.WriteLine("Can't find proxy     " + proxyName);
                 throw new JNIException("Can't find java proxy class: " + proxyName);
+            }
+            if (stati == null)
+            {
+                Console.WriteLine("Can't find proxy     " + staticName);
+                throw new JNIException("Can't find java proxy class: " + staticName);
             }
 
 
@@ -135,19 +142,29 @@ namespace net.sf.jni4net.utils
             {
                 throw new JNIException("Can't find CLR type init method for " + wrapper);
             }
-
-            MethodId constructor = env.GetMethodID(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
-            if (initMethod == null)
+            MethodId constructor;
+            if (type.IsInterface)
+            {
+                constructor = env.GetMethodID(proxy, "<init>", "()V");
+            }
+            else
+            {
+                constructor = env.GetMethodID(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
+            }
+            if (constructor == null)
             {
                 throw new JNIException("Can't find java proxy constructor for " + proxyName);
             }
 
 
             var registrations = (List<JNINativeMethod>) initMethod.Invoke(null, new object[] {env, proxy});
-            JNINativeMethod[] methods = registrations.ToArray();
-            fixed (JNINativeMethod* m = &(methods[0]))
+            if (registrations.Count > 0)
             {
-                env.RegisterNatives(proxy, m, methods.Length);
+                JNINativeMethod[] methods = registrations.ToArray();
+                fixed (JNINativeMethod* m = &(methods[0]))
+                {
+                    env.RegisterNatives(proxy, m, methods.Length);
+                }
             }
 
             ClrProxyRecord res = CreateRecord(iface, proxy, wrapper, type, constructor);
@@ -155,7 +172,7 @@ namespace net.sf.jni4net.utils
             {
                 WriteRecord(res);
             }
-            proxy.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, real);
+            stati.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, real);
             return res;
         }
 
@@ -267,6 +284,10 @@ namespace net.sf.jni4net.utils
             if (className == null)
             {
                 className = type.Namespace.ToLowerInvariant() + "." + type.Name.Replace("__", "");
+                if (className=="java.lang.IObject")
+                {
+                    className = "java_.lang.IObject";
+                }
             }
             return className;
         }
@@ -276,7 +297,25 @@ namespace net.sf.jni4net.utils
             string className = attr;
             if (className == null)
             {
-                className = type.FullName;
+                className = type.Namespace.ToLowerInvariant() + "." + type.Name;
+                if (className.StartsWith("java."))
+                {
+                    className = "java_." + className.Substring(5);
+                }
+            }
+            return className;
+        }
+
+        private static string GetStaticName(string attr, Type type)
+        {
+            string className = attr;
+            if (className == null)
+            {
+                className = type.Namespace.ToLowerInvariant() + "." + type.Name.Replace("__", "") + "_";
+                if (className.StartsWith("java."))
+                {
+                    className = "java_." + className.Substring(5);
+                }
             }
             return className;
         }

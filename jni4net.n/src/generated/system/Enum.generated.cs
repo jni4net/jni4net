@@ -38,7 +38,7 @@ namespace System {
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(Enum);
+            global::System.Type type = typeof(__Enum);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "CompareTo", "CompareTo0", "(Lsystem/Object;)I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToString", "ToString1", "(Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;"));
