@@ -14,7 +14,7 @@ namespace net.sf.jni4net.proxygen.generator
     {
         protected CodeMemberMethod initMethod;
 
-        protected void GenerateWrapperMethods(CodeTypeDeclaration tgtType)
+        protected void GenerateWrapperMethodsJ2C(CodeTypeDeclaration tgtType)
         {
             tgtType.AddAttribute("net.sf.jni4net.attributes.ClrWrapperAttribute", type.CLRReference);
             tgtType.Members.Add(initMethod);
@@ -22,15 +22,22 @@ namespace net.sf.jni4net.proxygen.generator
             int m = 0;
             foreach (GMethod method in type.MethodsWithInterfaces)
             {
-                string uName = method.IsConstructor
-                                   ? "__ctor" + type.Name + m
-                                   : (method.CLRName + m);
+                string uName = (method.CLRName + m);
 
                 if (!method.IsStatic || !type.IsInterface)
                 {
                     GenerateMethodJ2C(method, tgtType, uName);
                     GenerateMethodRegistrationJ2C(method, uName);
                 }
+                m++;
+            }
+            m = 0;
+            foreach (GMethod method in type.Constructors)
+            {
+                string uName = "__ctor" + type.Name + m;
+
+                GenerateMethodJ2C(method, tgtType, uName);
+                GenerateMethodRegistrationJ2C(method, uName);
                 m++;
             }
 
@@ -64,13 +71,13 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 tgtMethod.ReturnType = new CodeTypeReference(typeof (void));
 
-                var call = new CodeObjectCreateExpression(CurrentType, callParams.ToArray());
+                var call = new CodeObjectCreateExpression(RealType, callParams.ToArray());
 
                 tgtMethod.Statements.Add(
                     new CodeVariableDeclarationStatement(RealType, "real", call));
                 tgtMethod.Statements.Add(
                     new CodeSnippetStatement(
-                        "            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, obj, real);"));
+                        "            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);"));
             }
             else
             {
@@ -165,14 +172,16 @@ namespace net.sf.jni4net.proxygen.generator
 
         private void GenerateMethodRegistrationJ2C(GMethod method, string uName)
         {
+            string callbackName = method.IsConstructor ? uName :  method.JVMName;
+            string callBackSignature = method.IsConstructor ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/IClrProxy;") : method.JVMSignature;
             var registation = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("methods"),
                                                              "Add",
                                                              new CodeMethodInvokeExpression(
                                                                  new CodeMethodReferenceExpression(TypeReferenceEx(typeof (JNINativeMethod)),"Create"),
                                                                  new CodeVariableReferenceExpression("type"),
-                                                                 new CodePrimitiveExpression(method.JVMName),
+                                                                 new CodePrimitiveExpression(callbackName),
                                                                  new CodePrimitiveExpression(uName),
-                                                                 new CodePrimitiveExpression(method.JVMSignature)));
+                                                                 new CodePrimitiveExpression(callBackSignature)));
             initMethod.Statements.Add(registation);
         }
 

@@ -110,6 +110,7 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 m++;
             }
+            //todo static constructor ?
 
             tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, cdc));
             tgtType.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, cdc));
@@ -143,9 +144,9 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 if (type.IsInterface)
                 {
-                    GenerateMethodsProxyC2J(tgtType);
+                    GenerateProxyMethodsC2J(tgtType);
                 }
-                GenerateWrapperMethods(tgtType);
+                GenerateWrapperMethodsJ2C(tgtType);
             }
             GenerateConstructionHelper(tgtType);
             CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv", false, false);
@@ -155,13 +156,19 @@ namespace net.sf.jni4net.proxygen.generator
         }
 
 
-        private void GenerateMethodsProxyC2J(CodeTypeDeclaration tgtType)
+        private void GenerateProxyMethodsC2J(CodeTypeDeclaration tgtType)
         {
             int m = 0;
             foreach (GMethod method in type.MethodsWithInterfaces)
             {
                 string uName = ("_" + method.CLRName + m);
                 CreateMethodC2J(method, tgtType, uName, true);
+                m++;
+            }
+            foreach (GMethod method in type.Constructors)
+            {
+                string uName = ("_" + method.CLRName + m);
+                CreateMethodC2J(method, tgtType, uName, false);
                 m++;
             }
         }
