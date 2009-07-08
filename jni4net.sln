@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{28B154BE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fop", "samples\fop\fop.csproj", "{1160D75E-9B26-4B79-A092-FCE1A9FD48E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.proxygen2", "jni4net.proxygen2\src\jni4net.proxygen2.csproj", "{C2DA57E7-0E1C-4103-9775-2962CAD63C49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.proxygen", "jni4net.proxygen\src\jni4net.proxygen.csproj", "{C2DA57E7-0E1C-4103-9775-2962CAD63C49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
