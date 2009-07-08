@@ -226,7 +226,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project://D:\Sf\jni4net4\jni4net.ipr" />
+    <option name="state" value="https://jni4net.googlecode.com/svn/trunk/jni4net.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -256,10 +256,21 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$/jni4net.n" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/jni4net.proxygen" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/jni4net.test.n" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/jni4net.tested.n" vcs="svn" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
   <component name="libraryTable">
     <library name="Maven: junit:junit:4.5">
