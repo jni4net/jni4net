@@ -16,7 +16,7 @@ namespace net.sf.jni4net.proxygen.generator
             CodeTypeDeclaration tgtType = new CodeTypeDeclaration(type.Name);
             SetCurrentType(type.JVMNamespace + "." + type.Name);
             nameSpace.Types.Add(tgtType);
-            tgtType.TypeAttributes = TypeAttributes.Public;
+            tgtType.TypeAttributes = type.Attributes & TypeAttributes.VisibilityMask;
             /*if (type.IsAbstract)
             {
                 tgtType.TypeAttributes |= TypeAttributes.Abstract;
