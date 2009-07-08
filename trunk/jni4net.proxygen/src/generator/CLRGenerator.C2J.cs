@@ -184,7 +184,7 @@ namespace net.sf.jni4net.proxygen.generator
                 CodeStatement statement =
                     new CodeVariableDeclarationStatement(
                         new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), "env",
-                        new CodeMethodInvokeExpression(TypeReferenceEx(typeof (JNIEnv)), "GetEnv"));
+                        new CodePropertyReferenceExpression(TypeReferenceEx(typeof (JNIEnv)), "ThreadEnv"));
                 tgtStatements.Add(statement);
             }
             else
