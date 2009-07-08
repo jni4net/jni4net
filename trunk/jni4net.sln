@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n", "jni4net.n\src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.test.n", "jni4net.test.n\src\jni4net.test.n.csproj", "{7E0900D3-6E8F-46EB-86DB-AA767AA90B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.proxygen", "jni4net.proxygen\src\jni4net.proxygen.csproj", "{C2DA57E7-0E1C-4403-9775-296BCAD63C49}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selvin.exportdllattribute", "selvin.exportdllattribute\src\selvin.exportdllattribute.csproj", "{EAF9A4CD-0965-44C3-8570-09063E4D5E79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selvin.exportdll", "selvin.exportdll\src\selvin.exportdll.csproj", "{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}"
@@ -35,10 +33,6 @@ Global
 		{7E0900D3-6E8F-46EB-86DB-AA767AA90B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E0900D3-6E8F-46EB-86DB-AA767AA90B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E0900D3-6E8F-46EB-86DB-AA767AA90B86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2DA57E7-0E1C-4403-9775-296BCAD63C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2DA57E7-0E1C-4403-9775-296BCAD63C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2DA57E7-0E1C-4403-9775-296BCAD63C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2DA57E7-0E1C-4403-9775-296BCAD63C49}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
