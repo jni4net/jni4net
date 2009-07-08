@@ -19,10 +19,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Reflection;
 using System.CodeDom;
 using System.Collections.Generic;
 using java.lang;
-using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
 
@@ -30,35 +30,46 @@ namespace net.sf.jni4net.proxygen.model
 {
     internal class GType
     {
+        private readonly Dictionary<string, GMethod> _allMethods = new Dictionary<string, GMethod>();
+        private readonly List<GMethod> _skippedMethods = new List<GMethod>();
+        private readonly List<GMethod> _methods = new List<GMethod>();
+        private readonly List<GMethod> _methodsWithInterfaces = new List<GMethod>();
+        private readonly List<GMethod> _constructors = new List<GMethod>();
+        private readonly List<GType> _interfaces = new List<GType>();
+        private readonly List<GType> _allInterfaces = new List<GType>();
+
         public bool MergeJavaSource { get; set; }
-
         public bool IsAbstract { get; set; }
-
         public bool IsArray { get; set; }
-
         public bool IsPrimitive { get; set; }
-
         public bool IsCLRProxy { get; set; }
-
         public bool IsJVMProxy { get; set; }
-
         public bool IsCLRGenerate { get; set; }
-
         public bool IsJVMGenerate { get; set; }
-
         public bool IsSkipCLRInterface { get; set; }
-
         public bool IsSkipJVMInterface { get; set; }
-
         public bool IsInterface { get; set; }
-
         public bool IsJVMType { get; set; }
-        
         public bool IsCLRType { get; set; }
-
         public string LowerName { get; set; }
-
         public string Name { get; set; }
+        public string CLRFullName { get; set; }
+        public string JVMFullName { get; set; }
+        public string CLRNamespace { get; set; }
+        public string JVMNamespace { get; set; }
+        public string JVMNamespaceExt { get; set; }
+        public Type CLRType { get; set; }
+        public Class JVMType { get; set; }
+        public GType Base { get; set; }
+        public GType ArrayElement { get; set; }
+        public GType JVMSubst { get; set; }
+        public GType CLRSubst { get; set; }
+        public bool IsMethodsLoaded { get; set; }
+        public bool IsMethodsPreLoaded { get; set; }
+        public bool IsLoadJVMMethods { get; set; }
+        public bool IsLoadCLRMethods { get; set; }
+        public TypeRegistration Registration { get; set; }
+        public TypeAttributes Attributes { get; set; }
 
         public string CLRResolved
         {
@@ -80,34 +91,6 @@ namespace net.sf.jni4net.proxygen.model
             get { return new CodeTypeReference(CLRResolved, CodeTypeReferenceOptions.GlobalReference); }
         }
 
-        public string CLRFullName { get; set; }
-
-        public string JVMFullName { get; set; }
-
-        public string CLRNamespace { get; set; }
-
-        public string JVMNamespace { get; set; }
-
-        public string JVMNamespaceExt { get; set; }
-        
-        public Type CLRType { get; set; }
-
-        public Class JVMType { get; set; }
-
-        public GType Base { get; set; }
-
-        public GType ArrayElement { get; set; }
-
-        public GType JVMSubst { get; set; }
-
-        public GType CLRSubst { get; set; }
-
-        public bool IsMethodsLoaded { get; set; }
-        public bool IsMethodsPreLoaded { get; set; }
-        public bool IsLoadJVMMethods { get; set; }
-        public bool IsLoadCLRMethods { get; set; }
-        public TypeRegistration Registration { get; set; }
-        Dictionary<string, GMethod> _allMethods = new Dictionary<string, GMethod>();
         public Dictionary<string, GMethod> AllMethods
         {
             get
@@ -116,7 +99,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        List<GMethod> _skippedMethods = new List<GMethod>();
         public List<GMethod> SkippedMethods
         {
             get
@@ -124,8 +106,7 @@ namespace net.sf.jni4net.proxygen.model
                 return _skippedMethods;
             }
         }
-        
-        private readonly List<GMethod> _methods = new List<GMethod>();
+
         public List<GMethod> Methods
         {
             get
@@ -134,7 +115,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private readonly List<GMethod> _methodsWithInterfaces = new List<GMethod>();
         public List<GMethod> MethodsWithInterfaces
         {
             get
@@ -143,7 +123,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private readonly List<GMethod> _constructors = new List<GMethod>();
         public List<GMethod> Constructors
         {
             get
@@ -152,7 +131,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private readonly List<GType> _interfaces = new List<GType>();
         public List<GType> Interfaces
         {
             get
@@ -161,7 +139,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private readonly List<GType> _allInterfaces = new List<GType>();
         public List<GType> AllInterfaces
         {
             get

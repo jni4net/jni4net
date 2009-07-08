@@ -20,7 +20,7 @@ namespace net.sf.jni4net.proxygen.generator
             var tgtType = new CodeTypeDeclaration(type.Name);
             SetCurrentType(type.CLRNamespace + "." + type.Name);
             nameSpace.Types.Add(tgtType);
-            tgtType.TypeAttributes = TypeAttributes.Public;
+            tgtType.TypeAttributes = type.Attributes & TypeAttributes.VisibilityMask;
             tgtType.IsPartial = true;
             tgtType.AddAttribute("net.sf.jni4net.attributes.JavaClassAttribute");
             tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, cdc));

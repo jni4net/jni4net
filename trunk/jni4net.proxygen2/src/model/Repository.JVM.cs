@@ -2,6 +2,7 @@
 using System.Linq;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Reflection;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
@@ -62,12 +63,22 @@ namespace net.sf.jni4net.proxygen.model
                 res.LowerName = ((string)clazz.getName()).ToLowerInvariant();
             }
 
-            var classModifiers = (ModifierFlags) clazz.getModifiers();
+            res.Attributes = 0;
+            var classModifiers = (ModifierFlags)clazz.getModifiers();
             if ((classModifiers & ModifierFlags.Abstract) != 0)
             {
                 res.IsAbstract = true;
+                res.Attributes |= TypeAttributes.Abstract;
             }
-
+            if ((classModifiers & ModifierFlags.Public) != 0)
+            {
+                res.Attributes |= TypeAttributes.Public;
+            }
+            else if ((classModifiers & ModifierFlags.Private) != 0)
+            {
+                res.Attributes |= TypeAttributes.NotPublic;
+            }
+            //TODO internal ?
             if (knownNames.ContainsKey(res.LowerName))
             {
                 res = knownNames[res.LowerName];
@@ -93,6 +104,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.JVMFullName = clazz.getName();
             }
+            res.Attributes = 0;
             res.IsJVMType = true;
             res.IsPrimitive = clazz.isPrimitive();
             res.IsInterface = clazz.isInterface();

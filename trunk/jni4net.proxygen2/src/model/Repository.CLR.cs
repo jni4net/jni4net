@@ -72,7 +72,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.CLRFullName = type.FullName;
             }
-
+            res.Attributes = type.Attributes;
             res.IsCLRType = true;
             res.IsInterface = type.IsInterface;
             res.IsJVMProxy = javaProxyType.IsAssignableFrom(type);
