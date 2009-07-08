@@ -48,7 +48,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaStaticFields() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::net.sf.jni4net.tested.JavaStaticFields.staticClass, global::net.sf.jni4net.tested.JavaStaticFields.@__ctor13, this);
         }
         
@@ -65,7 +65,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int intField {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticIntField(global::net.sf.jni4net.tested.JavaStaticFields.staticClass, global::net.sf.jni4net.tested.JavaStaticFields._intField9);
             }
         }
@@ -73,7 +73,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/String;")]
         public static global::java.lang.String stringField {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.GetStaticObjectField(global::net.sf.jni4net.tested.JavaStaticFields.staticClass, global::net.sf.jni4net.tested.JavaStaticFields._stringField10));
             }
         }
@@ -81,7 +81,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("B")]
         public static byte byteField {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticByteField(global::net.sf.jni4net.tested.JavaStaticFields.staticClass, global::net.sf.jni4net.tested.JavaStaticFields._byteField11);
             }
         }
@@ -89,7 +89,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("C")]
         public static char charField {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticCharField(global::net.sf.jni4net.tested.JavaStaticFields.staticClass, global::net.sf.jni4net.tested.JavaStaticFields._charField12);
             }
         }

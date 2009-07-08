@@ -36,7 +36,7 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Dictionary() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.util.Dictionary.staticClass, global::java.util.Dictionary.@__ctor7, this);
         }
         

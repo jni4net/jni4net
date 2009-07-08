@@ -30,12 +30,12 @@ namespace java.lang
     {
         public static implicit operator String(string str)
         {
-            return JNIEnv.GetEnv().NewString(str);
+            return JNIEnv.ThreadEnv.NewString(str);
         }
 
         public static unsafe implicit operator string(String str)
         {
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             byte b = 0;
             IntPtr chars = env.GetStringChars(str.native, &b);
             string result = Marshal.PtrToStringUni(chars);

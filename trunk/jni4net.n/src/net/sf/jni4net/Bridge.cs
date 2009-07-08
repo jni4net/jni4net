@@ -89,7 +89,7 @@ namespace net.sf.jni4net
                 Console.WriteLine("loading " + assembly);
             }
             knownAssemblies.Add(assembly, assembly);
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             JavaProxiesMap.RegisterAssembly(env, assembly);
             ClrProxiesMap.RegisterAssembly(env, assembly);
             if (Verbose)
@@ -129,7 +129,7 @@ namespace net.sf.jni4net
             {
                 return jp;
             }
-            return ClrProxiesMap.WrapClrObj(JNIEnv.GetEnv(), obj) as Object;
+            return ClrProxiesMap.WrapClrObj(JNIEnv.ThreadEnv, obj) as Object;
         }
 
         public static TRes ToJVM<TRes>(object obj) where TRes : class, IObject
@@ -139,7 +139,7 @@ namespace net.sf.jni4net
             {
                 return jp as TRes;
             }
-            return ClrProxiesMap.WrapClrObj(JNIEnv.GetEnv(), obj) as TRes;
+            return ClrProxiesMap.WrapClrObj(JNIEnv.ThreadEnv, obj) as TRes;
         }
 
         public static Class TypeToKnownClass(Type real)
@@ -240,12 +240,12 @@ namespace net.sf.jni4net
 
         public static void InvokeStatic(Class clazz, string method, string signature, params object[] args)
         {
-            JNIEnv.GetEnv().CallStaticMethod(clazz, method, signature, args);
+            JNIEnv.ThreadEnv.CallStaticMethod(clazz, method, signature, args);
         }
 
         public static TRes InvokeStatic<TRes>(Class clazz, string method, string signature, params object[] args)
         {
-            return JNIEnv.GetEnv().CallStaticMethod<TRes>(clazz, method, signature, args);
+            return JNIEnv.ThreadEnv.CallStaticMethod<TRes>(clazz, method, signature, args);
         }
 
         public static void disposeClrHandle(int clrHandle)

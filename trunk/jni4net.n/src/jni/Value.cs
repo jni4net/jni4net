@@ -43,7 +43,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            init(o, JNIEnv.GetEnv(null));
+            init(o, JNIEnv.GetEnvForVm(null));
         }
 
         public Value(object o, JNIEnv env)
@@ -294,7 +294,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(i).native;
         }
 
@@ -310,7 +310,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(z).native;
         }
 
@@ -326,7 +326,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(b).native;
         }
 
@@ -342,7 +342,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(c).native;
         }
 
@@ -358,7 +358,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(s).native;
         }
 
@@ -374,7 +374,7 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(f).native;
         }
 
@@ -390,14 +390,14 @@ namespace net.sf.jni4net.jni
             _double = 0;
             _object = null;
 
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(d).native;
         }
 
         public static Value CreateArray<T>(T[] o)
         {
             var v = new Value();
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             v._object = env.ConvertArrayToJava(o).native;
             return v;
         }

@@ -44,7 +44,7 @@ namespace java.lang.reflect
 
         public MethodId GetMethodId()
         {
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             return env.FromReflectedMethod(this);
         }
 

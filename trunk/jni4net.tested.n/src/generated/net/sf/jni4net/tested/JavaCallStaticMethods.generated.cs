@@ -44,7 +44,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaCallStaticMethods() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.@__ctor11, this);
         }
         
@@ -76,13 +76,13 @@ namespace net.sf.jni4net.tested {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String stringMethod(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._stringMethod0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public static void voidMethod(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod1, new global::net.sf.jni4net.jni.Value(par0));
         }
         

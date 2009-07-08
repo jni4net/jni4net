@@ -89,7 +89,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 Console.Error.WriteLine("Wrong DLLs ?");
             }
-            clrProxyClass = JNIEnv.GetEnv().FindClassNoThrow("net/sf/jni4net/inj/IClrProxy");
+            clrProxyClass = JNIEnv.ThreadEnv.FindClassNoThrow("net/sf/jni4net/inj/IClrProxy");
             knownNames.Add("int", RegisterType(typeof (int)));
             knownNames.Add("long", RegisterType(typeof (long)));
             knownNames.Add("short", RegisterType(typeof (short)));

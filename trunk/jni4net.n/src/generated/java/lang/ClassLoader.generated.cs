@@ -78,7 +78,7 @@ namespace java.lang {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/ClassLoader;")]
         public static global::java.lang.ClassLoader getSystemClassLoader() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.ClassLoader>(env.CallStaticObjectMethod(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemClassLoader1));
         }
         
@@ -96,13 +96,13 @@ namespace java.lang {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/net/URL;")]
         public static global::java.net.URL getSystemResource(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.net.URL>(env.CallStaticObjectMethod(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResource4, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/io/InputStream;")]
         public static global::java.io.InputStream getSystemResourceAsStream(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.InputStream>(env.CallStaticObjectMethod(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResourceAsStream5, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
@@ -126,7 +126,7 @@ namespace java.lang {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/util/Enumeration;")]
         public static global::java.util.Enumeration getSystemResources(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallStaticObjectMethod(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResources9, new global::net.sf.jni4net.jni.Value(par0)));
         }
         

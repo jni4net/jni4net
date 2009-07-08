@@ -48,25 +48,28 @@ namespace net.sf.jni4net.jni
             }
         }
 
-        public static JNIEnv GetEnv()
+        public static JNIEnv ThreadEnv
         {
-            if (threadJNIEnv == null)
+            get
             {
-                if (defaultVM == null)
+                if (threadJNIEnv == null)
                 {
-                    throw new JNIException(
-                        "AttachCurrentThreadAsDaemon failed: Java VM is not attached, call JNI.CreateJavaVM() first");
+                    if (defaultVM == null)
+                    {
+                        throw new JNIException(
+                            "AttachCurrentThreadAsDaemon failed: Java VM is not attached, call JNI.CreateJavaVM() first");
+                    }
+                    JNIResult result = defaultVM.AttachCurrentThreadAsDaemon(out threadJNIEnv, null);
+                    if (result != JNIResult.JNI_OK)
+                    {
+                        throw new JNIException("AttachCurrentThreadAsDaemon failed: " + result);
+                    }
                 }
-                JNIResult result = defaultVM.AttachCurrentThreadAsDaemon(out threadJNIEnv, null);
-                if (result != JNIResult.JNI_OK)
-                {
-                    throw new JNIException("AttachCurrentThreadAsDaemon failed: " + result);
-                }
+                return threadJNIEnv;
             }
-            return threadJNIEnv;
         }
 
-        public static JNIEnv GetEnv(JavaVM vm)
+        public static JNIEnv GetEnvForVm(JavaVM vm)
         {
             if (threadJNIEnv == null)
             {

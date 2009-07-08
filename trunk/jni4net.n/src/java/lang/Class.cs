@@ -125,7 +125,7 @@ namespace java.lang
 
         public static Class getPrimitiveClass(string name)
         {
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass", "(Ljava/lang/String;)Ljava/lang/Class;");
             return Bridge.ToCLR<Class>(env.CallStaticObjectMethod(staticClass, id, new Value(name)));
         }

@@ -231,13 +231,13 @@ namespace java.lang {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;")]
         public static global::java.lang.Class forName(global::java.lang.String par0, bool par1, global::java.lang.ClassLoader par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallStaticObjectMethod(global::java.lang.Class.staticClass, global::java.lang.Class._forName5, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Class;")]
         public static global::java.lang.Class forName(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallStaticObjectMethod(global::java.lang.Class.staticClass, global::java.lang.Class._forName6, new global::net.sf.jni4net.jni.Value(par0)));
         }
         

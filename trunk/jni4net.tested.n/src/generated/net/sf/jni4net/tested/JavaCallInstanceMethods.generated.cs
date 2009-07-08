@@ -72,7 +72,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaCallInstanceMethods() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, global::net.sf.jni4net.tested.JavaCallInstanceMethods.@__ctor25, this);
         }
         
