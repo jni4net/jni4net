@@ -90,49 +90,49 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
         public PrintStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor28, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;)V")]
         public PrintStream(global::java.io.File par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor29, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Z)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor30, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;ZLjava/lang/String;)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1, global::java.lang.String par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor31, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor32, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor33, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public PrintStream(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor34, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         

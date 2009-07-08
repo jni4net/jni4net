@@ -348,7 +348,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             else
             {
-                Class arrClass = JNIEnv.GetEnv().NewObjectArray(0, JVMType, null).getClass();
+                Class arrClass = JNIEnv.ThreadEnv.NewObjectArray(0, JVMType, null).getClass();
                 return Repository.RegisterClass(arrClass);
             }
         }

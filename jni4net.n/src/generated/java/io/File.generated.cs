@@ -128,28 +128,28 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public File(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor50, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)V")]
         public File(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor51, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public File(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor52, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
         public File(object par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor53, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
@@ -166,7 +166,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("C")]
         public static char separatorChar {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._separatorChar46);
             }
         }
@@ -174,7 +174,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/String;")]
         public static global::java.lang.String separator {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.GetStaticObjectField(global::java.io.File.staticClass, global::java.io.File._separator47));
             }
         }
@@ -182,7 +182,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("C")]
         public static char pathSeparatorChar {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._pathSeparatorChar48);
             }
         }
@@ -190,7 +190,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/String;")]
         public static global::java.lang.String pathSeparator {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.GetStaticObjectField(global::java.io.File.staticClass, global::java.io.File._pathSeparator49));
             }
         }
@@ -351,13 +351,13 @@ namespace java.io {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;")]
         public static global::java.io.File createTempFile(global::java.lang.String par0, global::java.lang.String par1, global::java.io.File par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.File>(env.CallStaticObjectMethod(global::java.io.File.staticClass, global::java.io.File._createTempFile16, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;")]
         public static global::java.io.File createTempFile(global::java.lang.String par0, global::java.lang.String par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.File>(env.CallStaticObjectMethod(global::java.io.File.staticClass, global::java.io.File._createTempFile17, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
@@ -453,7 +453,7 @@ namespace java.io {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/io/File;")]
         public static java.io.File[] listRoots() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return ((java.io.File[])(env.ConvertArrayToNet<java.io.File>(env.CallStaticObjectMethod(global::java.io.File.staticClass, global::java.io.File._listRoots33))));
         }
         

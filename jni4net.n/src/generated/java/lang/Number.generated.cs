@@ -34,7 +34,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Number() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.Number.staticClass, global::java.lang.Number.@__ctor6, this);
         }
         

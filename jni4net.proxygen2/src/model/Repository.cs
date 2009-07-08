@@ -178,7 +178,7 @@ namespace net.sf.jni4net.proxygen.model
                     {
                         string name = (javaInterfaceA ?? javaClassA).GetType().GetProperty("ClassName").GetValue(javaInterfaceA ?? javaClassA, null) as string;
                         string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
-                        Class clazz = JNIEnv.GetEnv().FindClassNoThrow(clazzName);
+                        Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
                         if (clazz != null)
                         {
                             RegisterClass(clazz);
@@ -192,7 +192,7 @@ namespace net.sf.jni4net.proxygen.model
                         {
                             string name = clrWrapperA.GetType().GetProperty("ClassName").GetValue(clrWrapperA, null) as string;
                             string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
-                            Class clazz = JNIEnv.GetEnv().FindClassNoThrow(clazzName);
+                            Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
                             if (clazz != null)
                             {
                                 RegisterClass(clazz);
@@ -207,7 +207,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterClasses()
         {
-            JNIEnv env = JNIEnv.GetEnv();
+            JNIEnv env = JNIEnv.ThreadEnv;
             foreach (TypeRegistration registration in config.JavaClass)
             {
                 string name = registration.TypeName.Replace(".", "/");

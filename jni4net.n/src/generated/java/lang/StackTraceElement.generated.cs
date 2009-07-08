@@ -32,7 +32,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V")]
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3));
         }
         

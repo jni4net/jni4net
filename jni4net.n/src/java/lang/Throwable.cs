@@ -39,7 +39,7 @@ namespace java.lang
 
         protected JNIEnv Env
         {
-            get { return JNIEnv.GetEnv(javaVM); }
+            get { return JNIEnv.GetEnvForVm(javaVM); }
         }
 
         internal string NetStackTrace

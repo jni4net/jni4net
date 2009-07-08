@@ -90,7 +90,7 @@ namespace java.lang.reflect {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/reflect/AccessibleObject;Z)V")]
         public static void setAccessible(java.lang.reflect.AccessibleObject[] par0, bool par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.reflect.AccessibleObject.staticClass, global::java.lang.reflect.AccessibleObject._setAccessible6, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         

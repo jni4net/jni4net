@@ -41,7 +41,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int PUBLIC {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member._PUBLIC4);
             }
         }
@@ -49,7 +49,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int DECLARED {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member._DECLARED5);
             }
         }

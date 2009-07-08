@@ -24,14 +24,14 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public NoSuchMethodException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor0, this);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public NoSuchMethodException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor1, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         

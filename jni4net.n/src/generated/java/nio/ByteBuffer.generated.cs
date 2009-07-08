@@ -396,19 +396,19 @@ namespace java.nio {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap35, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap36, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer allocate(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocate37, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
@@ -420,7 +420,7 @@ namespace java.nio {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer allocateDirect(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocateDirect39, new global::net.sf.jni4net.jni.Value(par0)));
         }
         

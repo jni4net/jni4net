@@ -88,7 +88,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/io/InputStream;")]
         public static global::java.io.InputStream @in {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.InputStream>(env.GetStaticObjectField(global::java.lang.System.staticClass, global::java.lang.System._in26));
             }
         }
@@ -96,7 +96,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/io/PrintStream;")]
         public static global::java.io.PrintStream @out {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.PrintStream>(env.GetStaticObjectField(global::java.lang.System.staticClass, global::java.lang.System._out27));
             }
         }
@@ -104,7 +104,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/io/PrintStream;")]
         public static global::java.io.PrintStream err {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
                 return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.PrintStream>(env.GetStaticObjectField(global::java.lang.System.staticClass, global::java.lang.System._err28));
             }
         }
@@ -144,157 +144,157 @@ namespace java.lang {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public static void exit(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._exit0, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
         public static void runFinalizersOnExit(bool par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._runFinalizersOnExit1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String setProperty(global::java.lang.String par0, global::java.lang.String par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._setProperty2, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String getProperty(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getProperty3, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String getProperty(global::java.lang.String par0, global::java.lang.String par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getProperty4, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public static int identityHashCode(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return env.CallStaticIntMethod(global::java.lang.System.staticClass, global::java.lang.System._identityHashCode5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public static long currentTimeMillis() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System._currentTimeMillis6);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public static long nanoTime() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System._nanoTime7);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;ILjava/lang/Object;II)V")]
         public static void arraycopy(global::java.lang.Object par0, int par1, global::java.lang.Object par2, int par3, int par4) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._arraycopy8, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3), new global::net.sf.jni4net.jni.Value(par4));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public static object getSecurityManager() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getSecurityManager9));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public static void load(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._load10, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public static void loadLibrary(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._loadLibrary11, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String mapLibraryName(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._mapLibraryName12, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String clearProperty(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._clearProperty13, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public static object console() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._console14));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public static void gc() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._gc15);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Properties;")]
         public static global::java.util.Properties getProperties() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Properties>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getProperties16));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String getenv(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getenv17, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Map;")]
         public static global::java.util.Map getenv() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Map>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._getenv18));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/io/Closeable;")]
         public static global::java.io.Closeable inheritedChannel() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.Closeable>(env.CallStaticObjectMethod(global::java.lang.System.staticClass, global::java.lang.System._inheritedChannel19));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public static void runFinalization() {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._runFinalization20);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintStream;)V")]
         public static void setErr(global::java.io.PrintStream par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setErr21, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/InputStream;)V")]
         public static void setIn(global::java.io.InputStream par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setIn22, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintStream;)V")]
         public static void setOut(global::java.io.PrintStream par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setOut23, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Properties;)V")]
         public static void setProperties(global::java.util.Properties par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setProperties24, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
         public static void setSecurityManager(object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setSecurityManager25, new global::net.sf.jni4net.jni.Value(par0));
         }
         

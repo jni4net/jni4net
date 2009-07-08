@@ -32,7 +32,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public OutputStream() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.GetEnv();
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.io.OutputStream.staticClass, global::java.io.OutputStream.@__ctor5, this);
         }
         
