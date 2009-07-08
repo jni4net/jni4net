@@ -1,12 +1,8 @@
 @echo off
 
-cd jni4net.j
-..\tools\lastproxygen\proxygen.exe src\standard.proxygen.xml
-cd ..
+if not exist jni4net.n\target\build-sources\generated-sources\META-INF\ mkdir jni4net.n\target\build-sources\generated-sources\META-INF\
+echo [assembly: System.Reflection.AssemblyVersion("0.2.0.0")] > jni4net.n\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs 
 
-cd jni4net.n
-if not exist target\build-sources\generated-sources\META-INF mkdir target\build-sources\generated-sources\META-INF\
-..\tools\lastproxygen\proxygen.exe src\standard.proxygen.xml
-echo [assembly: System.Reflection.AssemblyVersion("0.2.0.0")] > target\build-sources\generated-sources\META-INF\AssemblyInfo.cs 
-cd ..
+jni4net.proxygen\target\proxygen.exe tools\proxygen\jni4net.proxygen.xml 
+
 

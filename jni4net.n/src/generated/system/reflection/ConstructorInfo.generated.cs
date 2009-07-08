@@ -25,7 +25,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ConstructorInfo))]
-    internal unsafe partial class @__ConstructorInfo : global::java.lang.Object {
+    internal sealed unsafe partial class @__ConstructorInfo : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

@@ -125,11 +125,7 @@ namespace net.sf.jni4net.proxygen.generator
             SetCurrentType(type.CLRNamespace + ".__" + type.Name
                            , type.CLRNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
-            tgtType.TypeAttributes = TypeAttributes.NotPublic;
-            if (type.IsInterface)
-            {
-                tgtType.TypeAttributes |= TypeAttributes.Sealed;
-            }
+            tgtType.TypeAttributes = TypeAttributes.NotPublic|TypeAttributes.Sealed;
             tgtType.AddAttribute("net.sf.jni4net.attributes.JavaProxyAttribute");
             tgtType.BaseTypes.Add(Repository.javaLangObject.CLRReference);
             if (type.IsInterface)

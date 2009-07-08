@@ -25,7 +25,7 @@ namespace net.sf.jni4net.tested {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.ClrException))]
-    internal unsafe partial class @__ClrException : global::java.lang.Object {
+    internal sealed unsafe partial class @__ClrException : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         
