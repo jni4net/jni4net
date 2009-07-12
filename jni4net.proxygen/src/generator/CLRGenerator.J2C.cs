@@ -235,7 +235,7 @@ namespace net.sf.jni4net.proxygen.generator
                 else
                 {
                     callParams.Add(new CodeSnippetExpression(
-                                       "global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<" + paramType.CLRResolved +
+                                       "global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::" + paramType.CLRResolved +
                                        ">(__env, " + method.ParameterNames[p] + ")"));
                 }
             }
