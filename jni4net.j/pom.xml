@@ -19,4 +19,35 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>keytool-maven-plugin</artifactId>
+				<configuration>
+					<keystore>${basedir}/../tools/keys/jni4net.jkey</keystore>
+					<alias>jni4net</alias>
+					<dname>cn=jni4net.sf.net, ou=None, L=Prague, ST=Czech, o=jni4net, c=CZ</dname>
+					<storepass>jni44net</storepass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<keystore>${basedir}/../tools/keys/jni4net.jkey</keystore>
+					<alias>jni4net</alias>
+					<storepass>jni44net</storepass>
+					<verify>true</verify>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
