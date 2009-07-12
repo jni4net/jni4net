@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jvnet.wagon-svn</groupId>
+  <artifactId>wagon-svn</artifactId>
+  <version>1.8</version>
+  <name>Maven Wagon for Subversion</name>
+  <description>
+    Wagon that gets and puts artifacts using Subversion
+  </description>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>local-repository</id>
+      <url>file:${path-to-m2-repo.java.net}</url>
+    </repository>
+    <site>
+      <id>local</id>
+      <url>file:../www/</url>
+    </site>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:svn:https://svn.dev.java.net/svn/wagon-svn/tags/wagon-svn-1.8</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/wagon-svn/tags/wagon-svn-1.8</developerConnection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jvnet.hudson.svnkit</groupId>
+      <artifactId>svnkit</artifactId>
+      <version>1.1.4-hudson-4</version>
+      <!--groupId>com.svnkit</groupId>
+      <artifactId>svnkit</artifactId>
+      <version>1.1.0</version-->
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-provider-api</artifactId>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <!--dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>2.0</version>
+    </dependency-->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>java.net2</id>
+      <url>http://download.java.net/maven/2/</url>
+    </repository>
+  </repositories>
+
+  <licenses>
+    <license>
+      <name>CDDL</name>
+      <url>http://www.netbeans.org/cddl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    TODO: mvn forked by "mvn release:perform" doesn't get interactive System.in. So we need a better authentication
+    story.
+  -->
+</project>

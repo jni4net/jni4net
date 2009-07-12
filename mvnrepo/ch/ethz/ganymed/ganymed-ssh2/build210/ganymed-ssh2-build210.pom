@@ -1,0 +1,21 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ch.ethz.ganymed</groupId>
+  <artifactId>ganymed-ssh2</artifactId>
+  <version>build210</version>
+  <name>Ganymed SSH2 for Java</name>
+  <description>Ganymed SSH2 for Java is a library which implements the SSH-2 protocol in pure Java</description>
+  <url>http://www.ganymed.ethz.ch/ssh2/</url>
+  <licenses>
+    <license>
+      <name>BSD style license</name>
+      <url>http://www.ganymed.ethz.ch/ssh2/LICENSE.txt</url>        
+    </license>
+  </licenses>
+  <distributionManagement>
+    <downloadUrl>http://www.ganymed.ethz.ch/ssh2/</downloadUrl>
+  </distributionManagement>  
+  <build>
+      <sourceDirectory>src</sourceDirectory>
+  </build>
+</project>
