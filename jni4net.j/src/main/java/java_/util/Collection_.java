@@ -32,11 +32,11 @@ class __Collection extends system.Object implements java.util.Collection {
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Iterator;")
     public native java.util.Iterator iterator();
     
-    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
-    public native boolean add(java.lang.Object par0);
-    
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native int hashCode();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
+    public native boolean add(java.lang.Object par0);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void clear();
@@ -46,9 +46,6 @@ class __Collection extends system.Object implements java.util.Collection {
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean contains(java.lang.Object par0);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean isEmpty();
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/util/Collection;)Z")
     public native boolean addAll(java.util.Collection par0);
@@ -64,6 +61,9 @@ class __Collection extends system.Object implements java.util.Collection {
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean remove(java.lang.Object par0);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isEmpty();
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/util/Collection;)Z")
     public native boolean containsAll(java.util.Collection par0);

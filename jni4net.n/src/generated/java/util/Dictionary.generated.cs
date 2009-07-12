@@ -17,19 +17,19 @@ namespace java.util {
         
         internal static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get0;
+        internal static global::net.sf.jni4net.jni.MethodId _put0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put1;
+        internal static global::net.sf.jni4net.jni.MethodId _get1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isEmpty2;
+        internal static global::net.sf.jni4net.jni.MethodId _size2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _size3;
+        internal static global::net.sf.jni4net.jni.MethodId _remove3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remove4;
+        internal static global::net.sf.jni4net.jni.MethodId _elements4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _elements5;
+        internal static global::net.sf.jni4net.jni.MethodId _keys5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _keys6;
+        internal static global::net.sf.jni4net.jni.MethodId _isEmpty6;
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor7;
         
@@ -52,56 +52,56 @@ namespace java.util {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.util.Dictionary.staticClass = staticClass;
-            global::java.util.Dictionary._get0 = env.GetMethodID(global::java.util.Dictionary.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._put1 = env.GetMethodID(global::java.util.Dictionary.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._isEmpty2 = env.GetMethodID(global::java.util.Dictionary.staticClass, "isEmpty", "()Z");
-            global::java.util.Dictionary._size3 = env.GetMethodID(global::java.util.Dictionary.staticClass, "size", "()I");
-            global::java.util.Dictionary._remove4 = env.GetMethodID(global::java.util.Dictionary.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._elements5 = env.GetMethodID(global::java.util.Dictionary.staticClass, "elements", "()Ljava/util/Enumeration;");
-            global::java.util.Dictionary._keys6 = env.GetMethodID(global::java.util.Dictionary.staticClass, "keys", "()Ljava/util/Enumeration;");
+            global::java.util.Dictionary._put0 = env.GetMethodID(global::java.util.Dictionary.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary._get1 = env.GetMethodID(global::java.util.Dictionary.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary._size2 = env.GetMethodID(global::java.util.Dictionary.staticClass, "size", "()I");
+            global::java.util.Dictionary._remove3 = env.GetMethodID(global::java.util.Dictionary.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary._elements4 = env.GetMethodID(global::java.util.Dictionary.staticClass, "elements", "()Ljava/util/Enumeration;");
+            global::java.util.Dictionary._keys5 = env.GetMethodID(global::java.util.Dictionary.staticClass, "keys", "()Ljava/util/Enumeration;");
+            global::java.util.Dictionary._isEmpty6 = env.GetMethodID(global::java.util.Dictionary.staticClass, "isEmpty", "()Z");
             global::java.util.Dictionary.@__ctor7 = env.GetMethodID(global::java.util.Dictionary.staticClass, "<init>", "()V");
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
-        public virtual global::java.lang.Object get(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._get0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._put1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._put0, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        public virtual bool isEmpty() {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
+        public virtual global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.Dictionary._isEmpty2);
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._get1, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int size() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.util.Dictionary._size3);
+            return env.CallIntMethod(this, global::java.util.Dictionary._size2);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._remove4, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Dictionary._remove3, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Enumeration;")]
         public virtual global::java.util.Enumeration elements() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Dictionary._elements5));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Dictionary._elements4));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Enumeration;")]
         public virtual global::java.util.Enumeration keys() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Dictionary._keys6));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Dictionary._keys5));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        public virtual bool isEmpty() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.util.Dictionary._isEmpty6);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

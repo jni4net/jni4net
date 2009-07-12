@@ -17,23 +17,23 @@ namespace java.lang.reflect {
         
         internal static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isInterface0;
+        internal static global::net.sf.jni4net.jni.MethodId _toString0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString1;
+        internal static global::net.sf.jni4net.jni.MethodId _isAbstract1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isAbstract2;
+        internal static global::net.sf.jni4net.jni.MethodId _isInterface2;
         
         internal static global::net.sf.jni4net.jni.MethodId _isProtected3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isFinal4;
+        internal static global::net.sf.jni4net.jni.MethodId _isPublic4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isStatic5;
+        internal static global::net.sf.jni4net.jni.MethodId _isVolatile5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isPublic6;
+        internal static global::net.sf.jni4net.jni.MethodId _isStatic6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isVolatile7;
+        internal static global::net.sf.jni4net.jni.MethodId _isPrivate7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isPrivate8;
+        internal static global::net.sf.jni4net.jni.MethodId _isFinal8;
         
         internal static global::net.sf.jni4net.jni.MethodId _isNative9;
         
@@ -184,15 +184,15 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.lang.reflect.Modifier.staticClass = staticClass;
-            global::java.lang.reflect.Modifier._isInterface0 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isInterface", "(I)Z");
-            global::java.lang.reflect.Modifier._toString1 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "toString", "(I)Ljava/lang/String;");
-            global::java.lang.reflect.Modifier._isAbstract2 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isAbstract", "(I)Z");
+            global::java.lang.reflect.Modifier._toString0 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "toString", "(I)Ljava/lang/String;");
+            global::java.lang.reflect.Modifier._isAbstract1 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isAbstract", "(I)Z");
+            global::java.lang.reflect.Modifier._isInterface2 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isInterface", "(I)Z");
             global::java.lang.reflect.Modifier._isProtected3 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isProtected", "(I)Z");
-            global::java.lang.reflect.Modifier._isFinal4 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isFinal", "(I)Z");
-            global::java.lang.reflect.Modifier._isStatic5 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStatic", "(I)Z");
-            global::java.lang.reflect.Modifier._isPublic6 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPublic", "(I)Z");
-            global::java.lang.reflect.Modifier._isVolatile7 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isVolatile", "(I)Z");
-            global::java.lang.reflect.Modifier._isPrivate8 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPrivate", "(I)Z");
+            global::java.lang.reflect.Modifier._isPublic4 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPublic", "(I)Z");
+            global::java.lang.reflect.Modifier._isVolatile5 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isVolatile", "(I)Z");
+            global::java.lang.reflect.Modifier._isStatic6 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStatic", "(I)Z");
+            global::java.lang.reflect.Modifier._isPrivate7 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPrivate", "(I)Z");
+            global::java.lang.reflect.Modifier._isFinal8 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isFinal", "(I)Z");
             global::java.lang.reflect.Modifier._isNative9 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isNative", "(I)Z");
             global::java.lang.reflect.Modifier._isStrict10 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStrict", "(I)Z");
             global::java.lang.reflect.Modifier._isSynchronized11 = env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isSynchronized", "(I)Z");
@@ -212,22 +212,22 @@ namespace java.lang.reflect {
             global::java.lang.reflect.Modifier.@__ctor25 = env.GetMethodID(global::java.lang.reflect.Modifier.staticClass, "<init>", "()V");
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isInterface(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isInterface0, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toString(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._toString1, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._toString0, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isAbstract(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isAbstract2, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isAbstract1, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isInterface(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isInterface2, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -237,33 +237,33 @@ namespace java.lang.reflect {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isFinal(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isFinal4, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isStatic(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isStatic5, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isPublic(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPublic6, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPublic4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isVolatile(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isVolatile7, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isVolatile5, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isStatic(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isStatic6, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isPrivate(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPrivate8, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPrivate7, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isFinal(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isFinal8, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]

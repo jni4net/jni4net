@@ -19,147 +19,147 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierStart1;
+        internal static global::net.sf.jni4net.jni.MethodId _compareTo1;
         
         internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierStart2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierPart3;
+        internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierStart3;
         
         internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierPart4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _reverseBytes5;
+        internal static global::net.sf.jni4net.jni.MethodId _isJavaIdentifierPart5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _compareTo6;
+        internal static global::net.sf.jni4net.jni.MethodId _toString6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString7;
+        internal static global::net.sf.jni4net.jni.MethodId _charCount7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _charCount8;
+        internal static global::net.sf.jni4net.jni.MethodId _codePointAt8;
         
         internal static global::net.sf.jni4net.jni.MethodId _codePointAt9;
         
         internal static global::net.sf.jni4net.jni.MethodId _codePointAt10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _codePointAt11;
+        internal static global::net.sf.jni4net.jni.MethodId _codePointBefore11;
         
         internal static global::net.sf.jni4net.jni.MethodId _codePointBefore12;
         
         internal static global::net.sf.jni4net.jni.MethodId _codePointBefore13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _codePointBefore14;
+        internal static global::net.sf.jni4net.jni.MethodId _codePointCount14;
         
         internal static global::net.sf.jni4net.jni.MethodId _codePointCount15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _codePointCount16;
+        internal static global::net.sf.jni4net.jni.MethodId _offsetByCodePoints16;
         
         internal static global::net.sf.jni4net.jni.MethodId _offsetByCodePoints17;
         
-        internal static global::net.sf.jni4net.jni.MethodId _offsetByCodePoints18;
+        internal static global::net.sf.jni4net.jni.MethodId _toChars18;
         
         internal static global::net.sf.jni4net.jni.MethodId _toChars19;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toChars20;
+        internal static global::net.sf.jni4net.jni.MethodId _toLowerCase20;
         
         internal static global::net.sf.jni4net.jni.MethodId _toLowerCase21;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toLowerCase22;
+        internal static global::net.sf.jni4net.jni.MethodId _toUpperCase22;
         
         internal static global::net.sf.jni4net.jni.MethodId _toUpperCase23;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toUpperCase24;
+        internal static global::net.sf.jni4net.jni.MethodId _valueOf24;
         
-        internal static global::net.sf.jni4net.jni.MethodId _valueOf25;
+        internal static global::net.sf.jni4net.jni.MethodId _getType25;
         
         internal static global::net.sf.jni4net.jni.MethodId _getType26;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getType27;
+        internal static global::net.sf.jni4net.jni.MethodId _isHighSurrogate27;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isHighSurrogate28;
+        internal static global::net.sf.jni4net.jni.MethodId _isLowSurrogate28;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isLowSurrogate29;
+        internal static global::net.sf.jni4net.jni.MethodId _isValidCodePoint29;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isValidCodePoint30;
+        internal static global::net.sf.jni4net.jni.MethodId _charValue30;
         
-        internal static global::net.sf.jni4net.jni.MethodId _charValue31;
+        internal static global::net.sf.jni4net.jni.MethodId _digit31;
         
         internal static global::net.sf.jni4net.jni.MethodId _digit32;
         
-        internal static global::net.sf.jni4net.jni.MethodId _digit33;
+        internal static global::net.sf.jni4net.jni.MethodId _forDigit33;
         
-        internal static global::net.sf.jni4net.jni.MethodId _forDigit34;
+        internal static global::net.sf.jni4net.jni.MethodId _getDirectionality34;
         
         internal static global::net.sf.jni4net.jni.MethodId _getDirectionality35;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDirectionality36;
+        internal static global::net.sf.jni4net.jni.MethodId _getNumericValue36;
         
         internal static global::net.sf.jni4net.jni.MethodId _getNumericValue37;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getNumericValue38;
+        internal static global::net.sf.jni4net.jni.MethodId _isDefined38;
         
         internal static global::net.sf.jni4net.jni.MethodId _isDefined39;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isDefined40;
+        internal static global::net.sf.jni4net.jni.MethodId _isDigit40;
         
         internal static global::net.sf.jni4net.jni.MethodId _isDigit41;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isDigit42;
+        internal static global::net.sf.jni4net.jni.MethodId _isISOControl42;
         
         internal static global::net.sf.jni4net.jni.MethodId _isISOControl43;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isISOControl44;
+        internal static global::net.sf.jni4net.jni.MethodId _isIdentifierIgnorable44;
         
         internal static global::net.sf.jni4net.jni.MethodId _isIdentifierIgnorable45;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isIdentifierIgnorable46;
+        internal static global::net.sf.jni4net.jni.MethodId _isJavaLetter46;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isJavaLetter47;
+        internal static global::net.sf.jni4net.jni.MethodId _isJavaLetterOrDigit47;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isJavaLetterOrDigit48;
+        internal static global::net.sf.jni4net.jni.MethodId _isLetter48;
         
         internal static global::net.sf.jni4net.jni.MethodId _isLetter49;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isLetter50;
+        internal static global::net.sf.jni4net.jni.MethodId _isLetterOrDigit50;
         
         internal static global::net.sf.jni4net.jni.MethodId _isLetterOrDigit51;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isLetterOrDigit52;
+        internal static global::net.sf.jni4net.jni.MethodId _isLowerCase52;
         
         internal static global::net.sf.jni4net.jni.MethodId _isLowerCase53;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isLowerCase54;
+        internal static global::net.sf.jni4net.jni.MethodId _isMirrored54;
         
         internal static global::net.sf.jni4net.jni.MethodId _isMirrored55;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isMirrored56;
+        internal static global::net.sf.jni4net.jni.MethodId _isSpace56;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSpace57;
+        internal static global::net.sf.jni4net.jni.MethodId _isSpaceChar57;
         
         internal static global::net.sf.jni4net.jni.MethodId _isSpaceChar58;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSpaceChar59;
+        internal static global::net.sf.jni4net.jni.MethodId _isSupplementaryCodePoint59;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSupplementaryCodePoint60;
+        internal static global::net.sf.jni4net.jni.MethodId _isSurrogatePair60;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSurrogatePair61;
+        internal static global::net.sf.jni4net.jni.MethodId _isTitleCase61;
         
         internal static global::net.sf.jni4net.jni.MethodId _isTitleCase62;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isTitleCase63;
+        internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierPart63;
         
         internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierPart64;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierPart65;
+        internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierStart65;
         
         internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierStart66;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isUnicodeIdentifierStart67;
+        internal static global::net.sf.jni4net.jni.MethodId _isUpperCase67;
         
         internal static global::net.sf.jni4net.jni.MethodId _isUpperCase68;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isUpperCase69;
+        internal static global::net.sf.jni4net.jni.MethodId _isWhitespace69;
         
         internal static global::net.sf.jni4net.jni.MethodId _isWhitespace70;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isWhitespace71;
+        internal static global::net.sf.jni4net.jni.MethodId _reverseBytes71;
         
         internal static global::net.sf.jni4net.jni.MethodId _toCodePoint72;
         
@@ -839,77 +839,77 @@ namespace java.lang {
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.lang.Character.staticClass = staticClass;
             global::java.lang.Character._compareTo0 = env.GetMethodID(global::java.lang.Character.staticClass, "compareTo", "(Ljava/lang/Object;)I");
-            global::java.lang.Character._isJavaIdentifierStart1 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierStart", "(C)Z");
+            global::java.lang.Character._compareTo1 = env.GetMethodID(global::java.lang.Character.staticClass, "compareTo", "(Ljava/lang/Character;)I");
             global::java.lang.Character._isJavaIdentifierStart2 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierStart", "(I)Z");
-            global::java.lang.Character._isJavaIdentifierPart3 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierPart", "(I)Z");
+            global::java.lang.Character._isJavaIdentifierStart3 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierStart", "(C)Z");
             global::java.lang.Character._isJavaIdentifierPart4 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierPart", "(C)Z");
-            global::java.lang.Character._reverseBytes5 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "reverseBytes", "(C)C");
-            global::java.lang.Character._compareTo6 = env.GetMethodID(global::java.lang.Character.staticClass, "compareTo", "(Ljava/lang/Character;)I");
-            global::java.lang.Character._toString7 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toString", "(C)Ljava/lang/String;");
-            global::java.lang.Character._charCount8 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "charCount", "(I)I");
-            global::java.lang.Character._codePointAt9 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "([CII)I");
-            global::java.lang.Character._codePointAt10 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "(Ljava/lang/CharSequence;I)I");
-            global::java.lang.Character._codePointAt11 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "([CI)I");
-            global::java.lang.Character._codePointBefore12 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointBefore", "(Ljava/lang/CharSequence;I)I");
+            global::java.lang.Character._isJavaIdentifierPart5 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaIdentifierPart", "(I)Z");
+            global::java.lang.Character._toString6 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toString", "(C)Ljava/lang/String;");
+            global::java.lang.Character._charCount7 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "charCount", "(I)I");
+            global::java.lang.Character._codePointAt8 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "(Ljava/lang/CharSequence;I)I");
+            global::java.lang.Character._codePointAt9 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "([CI)I");
+            global::java.lang.Character._codePointAt10 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointAt", "([CII)I");
+            global::java.lang.Character._codePointBefore11 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointBefore", "(Ljava/lang/CharSequence;I)I");
+            global::java.lang.Character._codePointBefore12 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointBefore", "([CII)I");
             global::java.lang.Character._codePointBefore13 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointBefore", "([CI)I");
-            global::java.lang.Character._codePointBefore14 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointBefore", "([CII)I");
+            global::java.lang.Character._codePointCount14 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointCount", "(Ljava/lang/CharSequence;II)I");
             global::java.lang.Character._codePointCount15 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointCount", "([CII)I");
-            global::java.lang.Character._codePointCount16 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "codePointCount", "(Ljava/lang/CharSequence;II)I");
+            global::java.lang.Character._offsetByCodePoints16 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "offsetByCodePoints", "([CIIII)I");
             global::java.lang.Character._offsetByCodePoints17 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "offsetByCodePoints", "(Ljava/lang/CharSequence;II)I");
-            global::java.lang.Character._offsetByCodePoints18 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "offsetByCodePoints", "([CIIII)I");
-            global::java.lang.Character._toChars19 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toChars", "(I[CI)I");
-            global::java.lang.Character._toChars20 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toChars", "(I)[C");
+            global::java.lang.Character._toChars18 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toChars", "(I[CI)I");
+            global::java.lang.Character._toChars19 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toChars", "(I)[C");
+            global::java.lang.Character._toLowerCase20 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toLowerCase", "(C)C");
             global::java.lang.Character._toLowerCase21 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toLowerCase", "(I)I");
-            global::java.lang.Character._toLowerCase22 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toLowerCase", "(C)C");
-            global::java.lang.Character._toUpperCase23 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toUpperCase", "(C)C");
-            global::java.lang.Character._toUpperCase24 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toUpperCase", "(I)I");
-            global::java.lang.Character._valueOf25 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "valueOf", "(C)Ljava/lang/Character;");
-            global::java.lang.Character._getType26 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getType", "(I)I");
-            global::java.lang.Character._getType27 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getType", "(C)I");
-            global::java.lang.Character._isHighSurrogate28 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isHighSurrogate", "(C)Z");
-            global::java.lang.Character._isLowSurrogate29 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLowSurrogate", "(C)Z");
-            global::java.lang.Character._isValidCodePoint30 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isValidCodePoint", "(I)Z");
-            global::java.lang.Character._charValue31 = env.GetMethodID(global::java.lang.Character.staticClass, "charValue", "()C");
-            global::java.lang.Character._digit32 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "digit", "(II)I");
-            global::java.lang.Character._digit33 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "digit", "(CI)I");
-            global::java.lang.Character._forDigit34 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "forDigit", "(II)C");
-            global::java.lang.Character._getDirectionality35 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getDirectionality", "(I)B");
-            global::java.lang.Character._getDirectionality36 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getDirectionality", "(C)B");
-            global::java.lang.Character._getNumericValue37 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getNumericValue", "(I)I");
-            global::java.lang.Character._getNumericValue38 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getNumericValue", "(C)I");
+            global::java.lang.Character._toUpperCase22 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toUpperCase", "(C)C");
+            global::java.lang.Character._toUpperCase23 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toUpperCase", "(I)I");
+            global::java.lang.Character._valueOf24 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "valueOf", "(C)Ljava/lang/Character;");
+            global::java.lang.Character._getType25 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getType", "(I)I");
+            global::java.lang.Character._getType26 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getType", "(C)I");
+            global::java.lang.Character._isHighSurrogate27 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isHighSurrogate", "(C)Z");
+            global::java.lang.Character._isLowSurrogate28 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLowSurrogate", "(C)Z");
+            global::java.lang.Character._isValidCodePoint29 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isValidCodePoint", "(I)Z");
+            global::java.lang.Character._charValue30 = env.GetMethodID(global::java.lang.Character.staticClass, "charValue", "()C");
+            global::java.lang.Character._digit31 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "digit", "(II)I");
+            global::java.lang.Character._digit32 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "digit", "(CI)I");
+            global::java.lang.Character._forDigit33 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "forDigit", "(II)C");
+            global::java.lang.Character._getDirectionality34 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getDirectionality", "(I)B");
+            global::java.lang.Character._getDirectionality35 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getDirectionality", "(C)B");
+            global::java.lang.Character._getNumericValue36 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getNumericValue", "(I)I");
+            global::java.lang.Character._getNumericValue37 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "getNumericValue", "(C)I");
+            global::java.lang.Character._isDefined38 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDefined", "(I)Z");
             global::java.lang.Character._isDefined39 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDefined", "(C)Z");
-            global::java.lang.Character._isDefined40 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDefined", "(I)Z");
-            global::java.lang.Character._isDigit41 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDigit", "(C)Z");
-            global::java.lang.Character._isDigit42 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDigit", "(I)Z");
-            global::java.lang.Character._isISOControl43 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isISOControl", "(I)Z");
-            global::java.lang.Character._isISOControl44 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isISOControl", "(C)Z");
-            global::java.lang.Character._isIdentifierIgnorable45 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isIdentifierIgnorable", "(C)Z");
-            global::java.lang.Character._isIdentifierIgnorable46 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isIdentifierIgnorable", "(I)Z");
-            global::java.lang.Character._isJavaLetter47 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaLetter", "(C)Z");
-            global::java.lang.Character._isJavaLetterOrDigit48 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaLetterOrDigit", "(C)Z");
+            global::java.lang.Character._isDigit40 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDigit", "(C)Z");
+            global::java.lang.Character._isDigit41 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isDigit", "(I)Z");
+            global::java.lang.Character._isISOControl42 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isISOControl", "(I)Z");
+            global::java.lang.Character._isISOControl43 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isISOControl", "(C)Z");
+            global::java.lang.Character._isIdentifierIgnorable44 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isIdentifierIgnorable", "(C)Z");
+            global::java.lang.Character._isIdentifierIgnorable45 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isIdentifierIgnorable", "(I)Z");
+            global::java.lang.Character._isJavaLetter46 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaLetter", "(C)Z");
+            global::java.lang.Character._isJavaLetterOrDigit47 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isJavaLetterOrDigit", "(C)Z");
+            global::java.lang.Character._isLetter48 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetter", "(C)Z");
             global::java.lang.Character._isLetter49 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetter", "(I)Z");
-            global::java.lang.Character._isLetter50 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetter", "(C)Z");
+            global::java.lang.Character._isLetterOrDigit50 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetterOrDigit", "(C)Z");
             global::java.lang.Character._isLetterOrDigit51 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetterOrDigit", "(I)Z");
-            global::java.lang.Character._isLetterOrDigit52 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLetterOrDigit", "(C)Z");
+            global::java.lang.Character._isLowerCase52 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLowerCase", "(C)Z");
             global::java.lang.Character._isLowerCase53 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLowerCase", "(I)Z");
-            global::java.lang.Character._isLowerCase54 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isLowerCase", "(C)Z");
-            global::java.lang.Character._isMirrored55 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isMirrored", "(I)Z");
-            global::java.lang.Character._isMirrored56 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isMirrored", "(C)Z");
-            global::java.lang.Character._isSpace57 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpace", "(C)Z");
-            global::java.lang.Character._isSpaceChar58 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpaceChar", "(I)Z");
-            global::java.lang.Character._isSpaceChar59 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpaceChar", "(C)Z");
-            global::java.lang.Character._isSupplementaryCodePoint60 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSupplementaryCodePoint", "(I)Z");
-            global::java.lang.Character._isSurrogatePair61 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSurrogatePair", "(CC)Z");
-            global::java.lang.Character._isTitleCase62 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isTitleCase", "(C)Z");
-            global::java.lang.Character._isTitleCase63 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isTitleCase", "(I)Z");
-            global::java.lang.Character._isUnicodeIdentifierPart64 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierPart", "(I)Z");
-            global::java.lang.Character._isUnicodeIdentifierPart65 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierPart", "(C)Z");
+            global::java.lang.Character._isMirrored54 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isMirrored", "(I)Z");
+            global::java.lang.Character._isMirrored55 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isMirrored", "(C)Z");
+            global::java.lang.Character._isSpace56 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpace", "(C)Z");
+            global::java.lang.Character._isSpaceChar57 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpaceChar", "(I)Z");
+            global::java.lang.Character._isSpaceChar58 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSpaceChar", "(C)Z");
+            global::java.lang.Character._isSupplementaryCodePoint59 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSupplementaryCodePoint", "(I)Z");
+            global::java.lang.Character._isSurrogatePair60 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isSurrogatePair", "(CC)Z");
+            global::java.lang.Character._isTitleCase61 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isTitleCase", "(C)Z");
+            global::java.lang.Character._isTitleCase62 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isTitleCase", "(I)Z");
+            global::java.lang.Character._isUnicodeIdentifierPart63 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierPart", "(I)Z");
+            global::java.lang.Character._isUnicodeIdentifierPart64 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierPart", "(C)Z");
+            global::java.lang.Character._isUnicodeIdentifierStart65 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierStart", "(C)Z");
             global::java.lang.Character._isUnicodeIdentifierStart66 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierStart", "(I)Z");
-            global::java.lang.Character._isUnicodeIdentifierStart67 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUnicodeIdentifierStart", "(C)Z");
-            global::java.lang.Character._isUpperCase68 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUpperCase", "(C)Z");
-            global::java.lang.Character._isUpperCase69 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUpperCase", "(I)Z");
+            global::java.lang.Character._isUpperCase67 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUpperCase", "(C)Z");
+            global::java.lang.Character._isUpperCase68 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isUpperCase", "(I)Z");
+            global::java.lang.Character._isWhitespace69 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isWhitespace", "(I)Z");
             global::java.lang.Character._isWhitespace70 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isWhitespace", "(C)Z");
-            global::java.lang.Character._isWhitespace71 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "isWhitespace", "(I)Z");
+            global::java.lang.Character._reverseBytes71 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "reverseBytes", "(C)C");
             global::java.lang.Character._toCodePoint72 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toCodePoint", "(CC)I");
             global::java.lang.Character._toTitleCase73 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toTitleCase", "(I)I");
             global::java.lang.Character._toTitleCase74 = env.GetStaticMethodID(global::java.lang.Character.staticClass, "toTitleCase", "(C)C");
@@ -987,10 +987,10 @@ namespace java.lang {
             return env.CallIntMethod(this, global::java.lang.Character._compareTo0, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
-        public static bool isJavaIdentifierStart(char par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierStart1, new global::net.sf.jni4net.jni.Value(par0));
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Character;)I")]
+        public virtual int compareTo(global::java.lang.Character par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.lang.Character._compareTo1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -999,10 +999,10 @@ namespace java.lang {
             return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierStart2, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isJavaIdentifierPart(int par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
+        public static bool isJavaIdentifierStart(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierPart3, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierStart3, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
@@ -1011,52 +1011,52 @@ namespace java.lang {
             return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierPart4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
-        public static char reverseBytes(char par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isJavaIdentifierPart(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._reverseBytes5, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Character;)I")]
-        public virtual int compareTo(global::java.lang.Character par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Character._compareTo6, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaIdentifierPart5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/String;")]
         public static global::java.lang.String toString(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toString7, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toString6, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int charCount(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._charCount8, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
-        public static int codePointAt(char[] par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt9, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._charCount7, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;I)I")]
         public static int codePointAt(global::java.lang.CharSequence par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt10, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt8, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CI)I")]
         public static int codePointAt(char[] par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt11, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt9, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
+        public static int codePointAt(char[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt10, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;I)I")]
         public static int codePointBefore(global::java.lang.CharSequence par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore12, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore11, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
+        public static int codePointBefore(char[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore12, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CI)I")]
@@ -1065,10 +1065,10 @@ namespace java.lang {
             return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore13, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
-        public static int codePointBefore(char[] par0, int par1, int par2) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)I")]
+        public static int codePointCount(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore14, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount14, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
@@ -1077,10 +1077,10 @@ namespace java.lang {
             return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount15, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)I")]
-        public static int codePointCount(global::java.lang.CharSequence par0, int par1, int par2) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CIIII)I")]
+        public static int offsetByCodePoints(char[] par0, int par1, int par2, int par3, int par4) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount16, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints16, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3), new global::net.sf.jni4net.jni.Value(par4));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)I")]
@@ -1089,22 +1089,22 @@ namespace java.lang {
             return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints17, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CIIII)I")]
-        public static int offsetByCodePoints(char[] par0, int par1, int par2, int par3, int par4) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints18, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3), new global::net.sf.jni4net.jni.Value(par4));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I[CI)I")]
         public static int toChars(int par0, char[] par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars19, new global::net.sf.jni4net.jni.Value(par0), global::net.sf.jni4net.jni.Value.CreateArray(par1), new global::net.sf.jni4net.jni.Value(par2));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars18, new global::net.sf.jni4net.jni.Value(par0), global::net.sf.jni4net.jni.Value.CreateArray(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)[C")]
         public static char[] toChars(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((char[])(env.ConvertArrayToNet<char>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars20, new global::net.sf.jni4net.jni.Value(par0)))));
+            return ((char[])(env.ConvertArrayToNet<char>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars19, new global::net.sf.jni4net.jni.Value(par0)))));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
+        public static char toLowerCase(char par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toLowerCase20, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
@@ -1114,105 +1114,105 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
-        public static char toLowerCase(char par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toLowerCase22, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
         public static char toUpperCase(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toUpperCase23, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toUpperCase22, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int toUpperCase(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toUpperCase24, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toUpperCase23, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/Character;")]
         public static global::java.lang.Character valueOf(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Character>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._valueOf25, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Character>(env.CallStaticObjectMethod(global::java.lang.Character.staticClass, global::java.lang.Character._valueOf24, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int getType(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getType26, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getType25, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)I")]
         public static int getType(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getType27, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getType26, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isHighSurrogate(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isHighSurrogate28, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isHighSurrogate27, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isLowSurrogate(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLowSurrogate29, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLowSurrogate28, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isValidCodePoint(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isValidCodePoint30, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isValidCodePoint29, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()C")]
         public virtual char charValue() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.lang.Character._charValue31);
+            return env.CallCharMethod(this, global::java.lang.Character._charValue30);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)I")]
         public static int digit(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._digit32, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._digit31, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(CI)I")]
         public static int digit(char par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._digit33, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._digit32, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)C")]
         public static char forDigit(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._forDigit34, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._forDigit33, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)B")]
         public static byte getDirectionality(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticByteMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getDirectionality35, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticByteMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getDirectionality34, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)B")]
         public static byte getDirectionality(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticByteMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getDirectionality36, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticByteMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getDirectionality35, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int getNumericValue(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getNumericValue37, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getNumericValue36, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)I")]
         public static int getNumericValue(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getNumericValue38, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._getNumericValue37, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isDefined(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDefined38, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
@@ -1221,58 +1221,58 @@ namespace java.lang {
             return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDefined39, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isDefined(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDefined40, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isDigit(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDigit41, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDigit40, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isDigit(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDigit42, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isDigit41, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isISOControl(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isISOControl43, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isISOControl42, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isISOControl(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isISOControl44, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isISOControl43, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isIdentifierIgnorable(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isIdentifierIgnorable45, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isIdentifierIgnorable44, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isIdentifierIgnorable(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isIdentifierIgnorable46, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isIdentifierIgnorable45, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isJavaLetter(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaLetter47, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaLetter46, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isJavaLetterOrDigit(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaLetterOrDigit48, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isJavaLetterOrDigit47, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
+        public static bool isLetter(char par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLetter48, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -1282,9 +1282,9 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
-        public static bool isLetter(char par0) {
+        public static bool isLetterOrDigit(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLetter50, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLetterOrDigit50, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -1294,9 +1294,9 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
-        public static bool isLetterOrDigit(char par0) {
+        public static bool isLowerCase(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLetterOrDigit52, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLowerCase52, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -1305,76 +1305,76 @@ namespace java.lang {
             return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLowerCase53, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
-        public static bool isLowerCase(char par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isLowerCase54, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isMirrored(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isMirrored55, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isMirrored54, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isMirrored(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isMirrored56, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isMirrored55, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isSpace(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpace57, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpace56, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isSpaceChar(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpaceChar58, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpaceChar57, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isSpaceChar(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpaceChar59, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSpaceChar58, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isSupplementaryCodePoint(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSupplementaryCodePoint60, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSupplementaryCodePoint59, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(CC)Z")]
         public static bool isSurrogatePair(char par0, char par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSurrogatePair61, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isSurrogatePair60, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isTitleCase(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isTitleCase62, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isTitleCase61, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isTitleCase(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isTitleCase63, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isTitleCase62, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isUnicodeIdentifierPart(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierPart64, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierPart63, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isUnicodeIdentifierPart(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierPart65, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierPart64, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
+        public static bool isUnicodeIdentifierStart(char par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierStart65, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -1384,21 +1384,21 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
-        public static bool isUnicodeIdentifierStart(char par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUnicodeIdentifierStart67, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
         public static bool isUpperCase(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUpperCase68, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUpperCase67, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
         public static bool isUpperCase(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUpperCase69, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isUpperCase68, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
+        public static bool isWhitespace(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isWhitespace69, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Z")]
@@ -1407,10 +1407,10 @@ namespace java.lang {
             return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isWhitespace70, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
-        public static bool isWhitespace(int par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
+        public static char reverseBytes(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Character.staticClass, global::java.lang.Character._isWhitespace71, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticCharMethod(global::java.lang.Character.staticClass, global::java.lang.Character._reverseBytes71, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(CC)I")]

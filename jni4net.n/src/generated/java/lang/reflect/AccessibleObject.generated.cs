@@ -48,8 +48,8 @@ namespace java.lang.reflect {
             global::java.lang.reflect.AccessibleObject._getDeclaredAnnotations2 = env.GetMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "getDeclaredAnnotations", "()[Ljava/lang/annotation/Annotation;");
             global::java.lang.reflect.AccessibleObject._isAnnotationPresent3 = env.GetMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "isAnnotationPresent", "(Ljava/lang/Class;)Z");
             global::java.lang.reflect.AccessibleObject._isAccessible4 = env.GetMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "isAccessible", "()Z");
-            global::java.lang.reflect.AccessibleObject._setAccessible5 = env.GetMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "setAccessible", "(Z)V");
-            global::java.lang.reflect.AccessibleObject._setAccessible6 = env.GetStaticMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "setAccessible", "([Ljava/lang/reflect/AccessibleObject;Z)V");
+            global::java.lang.reflect.AccessibleObject._setAccessible5 = env.GetStaticMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "setAccessible", "([Ljava/lang/reflect/AccessibleObject;Z)V");
+            global::java.lang.reflect.AccessibleObject._setAccessible6 = env.GetMethodID(global::java.lang.reflect.AccessibleObject.staticClass, "setAccessible", "(Z)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;")]
@@ -61,13 +61,13 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/annotation/Annotation;")]
         public virtual java.lang.annotation.Annotation[] getAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.AccessibleObject._getAnnotations1))));
+            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.AccessibleObject._getAnnotations1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/annotation/Annotation;")]
         public virtual java.lang.annotation.Annotation[] getDeclaredAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.AccessibleObject._getDeclaredAnnotations2))));
+            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.AccessibleObject._getDeclaredAnnotations2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Z")]
@@ -82,16 +82,16 @@ namespace java.lang.reflect {
             return env.CallBooleanMethod(this, global::java.lang.reflect.AccessibleObject._isAccessible4);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
-        public virtual void setAccessible(bool par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.lang.reflect.AccessibleObject._setAccessible5, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/reflect/AccessibleObject;Z)V")]
         public static void setAccessible(java.lang.reflect.AccessibleObject[] par0, bool par1) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.CallStaticVoidMethod(global::java.lang.reflect.AccessibleObject.staticClass, global::java.lang.reflect.AccessibleObject._setAccessible6, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.CallStaticVoidMethod(global::java.lang.reflect.AccessibleObject.staticClass, global::java.lang.reflect.AccessibleObject._setAccessible5, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
+        public virtual void setAccessible(bool par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::java.lang.reflect.AccessibleObject._setAccessible6, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -29,13 +29,13 @@ public final class Appendable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Appendable extends system.Object implements java.lang.Appendable {
     
+    @net.sf.jni4net.attributes.ClrMethod("(C)Ljava/lang/Appendable;")
+    public native java.lang.Appendable append(char par0);
+    
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/CharSequence;)Ljava/lang/Appendable;")
     public native java.lang.Appendable append(java.lang.CharSequence par0);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;")
     public native java.lang.Appendable append(java.lang.CharSequence par0, int par1, int par2);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(C)Ljava/lang/Appendable;")
-    public native java.lang.Appendable append(char par0);
 }
 //</generated-proxy>

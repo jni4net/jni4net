@@ -27,9 +27,9 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString5;
+        internal static global::net.sf.jni4net.jni.MethodId _toHexString5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toHexString6;
+        internal static global::net.sf.jni4net.jni.MethodId _toString6;
         
         internal static global::net.sf.jni4net.jni.MethodId _compare7;
         
@@ -55,43 +55,37 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _MAX_VALUE18;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MIN_NORMAL19;
+        internal static global::net.sf.jni4net.jni.FieldId _MIN_VALUE19;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MIN_VALUE20;
+        internal static global::net.sf.jni4net.jni.FieldId _SIZE20;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MAX_EXPONENT21;
+        internal static global::net.sf.jni4net.jni.FieldId _TYPE21;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MIN_EXPONENT22;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor22;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SIZE23;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor23;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TYPE24;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor24;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor25;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor26;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor27;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
-        public Float(global::java.lang.String par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
+        public Float(float par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor25, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor22, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
         public Float(double par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor26, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor23, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
-        public Float(float par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
+        public Float(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor27, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor24, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         protected Float(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -137,34 +131,10 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("F")]
-        public static float MIN_NORMAL {
-            get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticFloatField(global::java.lang.Float.staticClass, global::java.lang.Float._MIN_NORMAL19);
-            }
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("F")]
         public static float MIN_VALUE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticFloatField(global::java.lang.Float.staticClass, global::java.lang.Float._MIN_VALUE20);
-            }
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
-        public static int MAX_EXPONENT {
-            get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Float.staticClass, global::java.lang.Float._MAX_EXPONENT21);
-            }
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
-        public static int MIN_EXPONENT {
-            get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Float.staticClass, global::java.lang.Float._MIN_EXPONENT22);
+                return env.GetStaticFloatField(global::java.lang.Float.staticClass, global::java.lang.Float._MIN_VALUE19);
             }
         }
         
@@ -172,7 +142,7 @@ namespace java.lang {
         public static int SIZE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Float.staticClass, global::java.lang.Float._SIZE23);
+                return env.GetStaticIntField(global::java.lang.Float.staticClass, global::java.lang.Float._SIZE20);
             }
         }
         
@@ -180,7 +150,7 @@ namespace java.lang {
         public static global::java.lang.Class TYPE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.GetStaticObjectField(global::java.lang.Float.staticClass, global::java.lang.Float._TYPE24));
+                return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.GetStaticObjectField(global::java.lang.Float.staticClass, global::java.lang.Float._TYPE21));
             }
         }
         
@@ -191,29 +161,26 @@ namespace java.lang {
             global::java.lang.Float._floatToIntBits2 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "floatToIntBits", "(F)I");
             global::java.lang.Float._intBitsToFloat3 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "intBitsToFloat", "(I)F");
             global::java.lang.Float._compareTo4 = env.GetMethodID(global::java.lang.Float.staticClass, "compareTo", "(Ljava/lang/Float;)I");
-            global::java.lang.Float._toString5 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "toString", "(F)Ljava/lang/String;");
-            global::java.lang.Float._toHexString6 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "toHexString", "(F)Ljava/lang/String;");
+            global::java.lang.Float._toHexString5 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "toHexString", "(F)Ljava/lang/String;");
+            global::java.lang.Float._toString6 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "toString", "(F)Ljava/lang/String;");
             global::java.lang.Float._compare7 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "compare", "(FF)I");
             global::java.lang.Float._valueOf8 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "valueOf", "(F)Ljava/lang/Float;");
             global::java.lang.Float._valueOf9 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Float;");
             global::java.lang.Float._isNaN10 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "isNaN", "(F)Z");
             global::java.lang.Float._isNaN11 = env.GetMethodID(global::java.lang.Float.staticClass, "isNaN", "()Z");
-            global::java.lang.Float._isInfinite12 = env.GetMethodID(global::java.lang.Float.staticClass, "isInfinite", "()Z");
-            global::java.lang.Float._isInfinite13 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "isInfinite", "(F)Z");
+            global::java.lang.Float._isInfinite12 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "isInfinite", "(F)Z");
+            global::java.lang.Float._isInfinite13 = env.GetMethodID(global::java.lang.Float.staticClass, "isInfinite", "()Z");
             global::java.lang.Float._parseFloat14 = env.GetStaticMethodID(global::java.lang.Float.staticClass, "parseFloat", "(Ljava/lang/String;)F");
             global::java.lang.Float._POSITIVE_INFINITY15 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "POSITIVE_INFINITY", "F");
             global::java.lang.Float._NEGATIVE_INFINITY16 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "NEGATIVE_INFINITY", "F");
             global::java.lang.Float._NaN17 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "NaN", "F");
             global::java.lang.Float._MAX_VALUE18 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MAX_VALUE", "F");
-            global::java.lang.Float._MIN_NORMAL19 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MIN_NORMAL", "F");
-            global::java.lang.Float._MIN_VALUE20 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MIN_VALUE", "F");
-            global::java.lang.Float._MAX_EXPONENT21 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MAX_EXPONENT", "I");
-            global::java.lang.Float._MIN_EXPONENT22 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MIN_EXPONENT", "I");
-            global::java.lang.Float._SIZE23 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "SIZE", "I");
-            global::java.lang.Float._TYPE24 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Float.@__ctor25 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Float.@__ctor26 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(D)V");
-            global::java.lang.Float.@__ctor27 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(F)V");
+            global::java.lang.Float._MIN_VALUE19 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "MIN_VALUE", "F");
+            global::java.lang.Float._SIZE20 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "SIZE", "I");
+            global::java.lang.Float._TYPE21 = env.GetStaticFieldID(global::java.lang.Float.staticClass, "TYPE", "Ljava/lang/Class;");
+            global::java.lang.Float.@__ctor22 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(F)V");
+            global::java.lang.Float.@__ctor23 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(D)V");
+            global::java.lang.Float.@__ctor24 = env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -247,15 +214,15 @@ namespace java.lang {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Ljava/lang/String;")]
-        public static global::java.lang.String toString(float par0) {
+        public static global::java.lang.String toHexString(float par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Float.staticClass, global::java.lang.Float._toString5, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Float.staticClass, global::java.lang.Float._toHexString5, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Ljava/lang/String;")]
-        public static global::java.lang.String toHexString(float par0) {
+        public static global::java.lang.String toString(float par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Float.staticClass, global::java.lang.Float._toHexString6, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallStaticObjectMethod(global::java.lang.Float.staticClass, global::java.lang.Float._toString6, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(FF)I")]
@@ -288,16 +255,16 @@ namespace java.lang {
             return env.CallBooleanMethod(this, global::java.lang.Float._isNaN11);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        public virtual bool isInfinite() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.Float._isInfinite12);
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Z")]
         public static bool isInfinite(float par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticBooleanMethod(global::java.lang.Float.staticClass, global::java.lang.Float._isInfinite13, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallStaticBooleanMethod(global::java.lang.Float.staticClass, global::java.lang.Float._isInfinite12, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        public virtual bool isInfinite() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.lang.Float._isInfinite13);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)F")]

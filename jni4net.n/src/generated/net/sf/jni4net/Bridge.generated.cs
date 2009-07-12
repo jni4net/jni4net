@@ -117,7 +117,7 @@ namespace net.sf.jni4net {
             // (Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::net.sf.jni4net.Bridge.ToCLR(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<net.sf.jni4net.jni.IJavaProxy>(__env, obj)));
+            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::net.sf.jni4net.Bridge.ToCLR(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::net.sf.jni4net.jni.IJavaProxy>(__env, obj)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::java.lang.Object.JavaPtr*);
         }
@@ -167,7 +167,7 @@ namespace net.sf.jni4net {
             // (Ljava/lang/Class;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
-            return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::net.sf.jni4net.Bridge.JavaSignature(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Class>(__env, clazz)));
+            return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::net.sf.jni4net.Bridge.JavaSignature(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Class>(__env, clazz)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::java.lang.Object.JavaPtr*);
         }

@@ -57,12 +57,12 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.Type[] getLowerBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0))));
+            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0))));
         }
         
         public java.lang.reflect.Type[] getUpperBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1))));
+            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1))));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {

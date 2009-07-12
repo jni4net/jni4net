@@ -87,53 +87,53 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor34;
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
-        public PrintStream(global::java.io.OutputStream par0) : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor28, this, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;)V")]
         public PrintStream(global::java.io.File par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor29, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor28, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Z)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor30, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor29, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;ZLjava/lang/String;)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1, global::java.lang.String par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor31, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor30, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor32, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor31, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor33, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor32, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public PrintStream(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor34, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor33, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
+        public PrintStream(global::java.io.OutputStream par0) : 
+                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor34, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         protected PrintStream(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -148,9 +148,9 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.io.PrintStream.staticClass = staticClass;
-            global::java.io.PrintStream._append0 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;");
-            global::java.io.PrintStream._append1 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;");
-            global::java.io.PrintStream._append2 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(C)Ljava/lang/Appendable;");
+            global::java.io.PrintStream._append0 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(C)Ljava/lang/Appendable;");
+            global::java.io.PrintStream._append1 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;");
+            global::java.io.PrintStream._append2 = env.GetMethodID(global::java.io.PrintStream.staticClass, "append", "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;");
             global::java.io.PrintStream._close3 = env.GetMethodID(global::java.io.PrintStream.staticClass, "close", "()V");
             global::java.io.PrintStream._println4 = env.GetMethodID(global::java.io.PrintStream.staticClass, "println", "(Z)V");
             global::java.io.PrintStream._println5 = env.GetMethodID(global::java.io.PrintStream.staticClass, "println", "(C)V");
@@ -165,42 +165,42 @@ namespace java.io {
             global::java.io.PrintStream._format14 = env.GetMethodID(global::java.io.PrintStream.staticClass, "format", "(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;");
             global::java.io.PrintStream._format15 = env.GetMethodID(global::java.io.PrintStream.staticClass, "format", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;");
             global::java.io.PrintStream._print16 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(I)V");
-            global::java.io.PrintStream._print17 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(Ljava/lang/Object;)V");
-            global::java.io.PrintStream._print18 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(Ljava/lang/String;)V");
-            global::java.io.PrintStream._print19 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "([C)V");
-            global::java.io.PrintStream._print20 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(J)V");
-            global::java.io.PrintStream._print21 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(D)V");
+            global::java.io.PrintStream._print17 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(J)V");
+            global::java.io.PrintStream._print18 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(Ljava/lang/Object;)V");
+            global::java.io.PrintStream._print19 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(Ljava/lang/String;)V");
+            global::java.io.PrintStream._print20 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(F)V");
+            global::java.io.PrintStream._print21 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "([C)V");
             global::java.io.PrintStream._print22 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(Z)V");
             global::java.io.PrintStream._print23 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(C)V");
-            global::java.io.PrintStream._print24 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(F)V");
+            global::java.io.PrintStream._print24 = env.GetMethodID(global::java.io.PrintStream.staticClass, "print", "(D)V");
             global::java.io.PrintStream._checkError25 = env.GetMethodID(global::java.io.PrintStream.staticClass, "checkError", "()Z");
             global::java.io.PrintStream._printf26 = env.GetMethodID(global::java.io.PrintStream.staticClass, "printf", "(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;");
             global::java.io.PrintStream._printf27 = env.GetMethodID(global::java.io.PrintStream.staticClass, "printf", "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;");
-            global::java.io.PrintStream.@__ctor28 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
-            global::java.io.PrintStream.@__ctor29 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/File;)V");
-            global::java.io.PrintStream.@__ctor30 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;Z)V");
-            global::java.io.PrintStream.@__ctor31 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;ZLjava/lang/String;)V");
-            global::java.io.PrintStream.@__ctor32 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.io.PrintStream.@__ctor33 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;)V");
-            global::java.io.PrintStream.@__ctor34 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/File;Ljava/lang/String;)V");
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)Ljava/lang/Appendable;")]
-        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append0, new global::net.sf.jni4net.jni.Value(par0)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;")]
-        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+            global::java.io.PrintStream.@__ctor28 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/File;)V");
+            global::java.io.PrintStream.@__ctor29 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;Z)V");
+            global::java.io.PrintStream.@__ctor30 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;ZLjava/lang/String;)V");
+            global::java.io.PrintStream.@__ctor31 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.io.PrintStream.@__ctor32 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;)V");
+            global::java.io.PrintStream.@__ctor33 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/File;Ljava/lang/String;)V");
+            global::java.io.PrintStream.@__ctor34 = env.GetMethodID(global::java.io.PrintStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/Appendable;")]
         public virtual global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append2, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append0, new global::net.sf.jni4net.jni.Value(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)Ljava/lang/Appendable;")]
+        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append1, new global::net.sf.jni4net.jni.Value(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;")]
+        public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.io.PrintStream._append2, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -287,34 +287,34 @@ namespace java.io {
             env.CallVoidMethod(this, global::java.io.PrintStream._print16, new global::net.sf.jni4net.jni.Value(par0));
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
+        public virtual void print(long par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::java.io.PrintStream._print17, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public virtual void print(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.PrintStream._print17, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.io.PrintStream._print18, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public virtual void print(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.PrintStream._print18, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.io.PrintStream._print19, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
+        public virtual void print(float par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::java.io.PrintStream._print20, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)V")]
         public virtual void print(char[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.PrintStream._print19, global::net.sf.jni4net.jni.Value.CreateArray(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
-        public virtual void print(long par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.PrintStream._print20, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
-        public virtual void print(double par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.PrintStream._print21, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.io.PrintStream._print21, global::net.sf.jni4net.jni.Value.CreateArray(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
@@ -329,8 +329,8 @@ namespace java.io {
             env.CallVoidMethod(this, global::java.io.PrintStream._print23, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
-        public virtual void print(float par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
+        public virtual void print(double par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::java.io.PrintStream._print24, new global::net.sf.jni4net.jni.Value(par0));
         }

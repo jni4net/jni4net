@@ -63,7 +63,7 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.Type[] getActualTypeArguments() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0))));
+            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0))));
         }
         
         public global::java.lang.reflect.Type getOwnerType() {

@@ -51,7 +51,7 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0))));
+            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<global::java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0))));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {

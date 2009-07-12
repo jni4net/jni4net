@@ -50,9 +50,9 @@ namespace java.io {
             global::java.io.OutputStream.staticClass = staticClass;
             global::java.io.OutputStream._close0 = env.GetMethodID(global::java.io.OutputStream.staticClass, "close", "()V");
             global::java.io.OutputStream._flush1 = env.GetMethodID(global::java.io.OutputStream.staticClass, "flush", "()V");
-            global::java.io.OutputStream._write2 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "(I)V");
-            global::java.io.OutputStream._write3 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([B)V");
-            global::java.io.OutputStream._write4 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([BII)V");
+            global::java.io.OutputStream._write2 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([BII)V");
+            global::java.io.OutputStream._write3 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "(I)V");
+            global::java.io.OutputStream._write4 = env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([B)V");
             global::java.io.OutputStream.@__ctor5 = env.GetMethodID(global::java.io.OutputStream.staticClass, "<init>", "()V");
         }
         
@@ -68,22 +68,22 @@ namespace java.io {
             env.CallVoidMethod(this, global::java.io.OutputStream._flush1);
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)V")]
+        public virtual void write(byte[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            env.CallVoidMethod(this, global::java.io.OutputStream._write2, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+        }
+        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public virtual void write(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.OutputStream._write2, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.io.OutputStream._write3, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)V")]
         public virtual void write(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.OutputStream._write3, global::net.sf.jni4net.jni.Value.CreateArray(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)V")]
-        public virtual void write(byte[] par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.OutputStream._write4, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            env.CallVoidMethod(this, global::java.io.OutputStream._write4, global::net.sf.jni4net.jni.Value.CreateArray(par0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -23,33 +23,25 @@ namespace java.nio {
         
         internal static global::net.sf.jni4net.jni.MethodId _clear2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _array3;
+        internal static global::net.sf.jni4net.jni.MethodId _position3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _arrayOffset4;
+        internal static global::net.sf.jni4net.jni.MethodId _position4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hasArray5;
+        internal static global::net.sf.jni4net.jni.MethodId _remaining5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isDirect6;
+        internal static global::net.sf.jni4net.jni.MethodId _capacity6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _position7;
+        internal static global::net.sf.jni4net.jni.MethodId _flip7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _position8;
+        internal static global::net.sf.jni4net.jni.MethodId _hasRemaining8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remaining9;
+        internal static global::net.sf.jni4net.jni.MethodId _isReadOnly9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _capacity10;
+        internal static global::net.sf.jni4net.jni.MethodId _mark10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _flip11;
+        internal static global::net.sf.jni4net.jni.MethodId _reset11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hasRemaining12;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _isReadOnly13;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _mark14;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _reset15;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _rewind16;
+        internal static global::net.sf.jni4net.jni.MethodId _rewind12;
         
         protected Buffer(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
@@ -66,20 +58,16 @@ namespace java.nio {
             global::java.nio.Buffer._limit0 = env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "(I)Ljava/nio/Buffer;");
             global::java.nio.Buffer._limit1 = env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "()I");
             global::java.nio.Buffer._clear2 = env.GetMethodID(global::java.nio.Buffer.staticClass, "clear", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._array3 = env.GetMethodID(global::java.nio.Buffer.staticClass, "array", "()Ljava/lang/Object;");
-            global::java.nio.Buffer._arrayOffset4 = env.GetMethodID(global::java.nio.Buffer.staticClass, "arrayOffset", "()I");
-            global::java.nio.Buffer._hasArray5 = env.GetMethodID(global::java.nio.Buffer.staticClass, "hasArray", "()Z");
-            global::java.nio.Buffer._isDirect6 = env.GetMethodID(global::java.nio.Buffer.staticClass, "isDirect", "()Z");
-            global::java.nio.Buffer._position7 = env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "()I");
-            global::java.nio.Buffer._position8 = env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "(I)Ljava/nio/Buffer;");
-            global::java.nio.Buffer._remaining9 = env.GetMethodID(global::java.nio.Buffer.staticClass, "remaining", "()I");
-            global::java.nio.Buffer._capacity10 = env.GetMethodID(global::java.nio.Buffer.staticClass, "capacity", "()I");
-            global::java.nio.Buffer._flip11 = env.GetMethodID(global::java.nio.Buffer.staticClass, "flip", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._hasRemaining12 = env.GetMethodID(global::java.nio.Buffer.staticClass, "hasRemaining", "()Z");
-            global::java.nio.Buffer._isReadOnly13 = env.GetMethodID(global::java.nio.Buffer.staticClass, "isReadOnly", "()Z");
-            global::java.nio.Buffer._mark14 = env.GetMethodID(global::java.nio.Buffer.staticClass, "mark", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._reset15 = env.GetMethodID(global::java.nio.Buffer.staticClass, "reset", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._rewind16 = env.GetMethodID(global::java.nio.Buffer.staticClass, "rewind", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer._position3 = env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "()I");
+            global::java.nio.Buffer._position4 = env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "(I)Ljava/nio/Buffer;");
+            global::java.nio.Buffer._remaining5 = env.GetMethodID(global::java.nio.Buffer.staticClass, "remaining", "()I");
+            global::java.nio.Buffer._capacity6 = env.GetMethodID(global::java.nio.Buffer.staticClass, "capacity", "()I");
+            global::java.nio.Buffer._flip7 = env.GetMethodID(global::java.nio.Buffer.staticClass, "flip", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer._hasRemaining8 = env.GetMethodID(global::java.nio.Buffer.staticClass, "hasRemaining", "()Z");
+            global::java.nio.Buffer._isReadOnly9 = env.GetMethodID(global::java.nio.Buffer.staticClass, "isReadOnly", "()Z");
+            global::java.nio.Buffer._mark10 = env.GetMethodID(global::java.nio.Buffer.staticClass, "mark", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer._reset11 = env.GetMethodID(global::java.nio.Buffer.staticClass, "reset", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer._rewind12 = env.GetMethodID(global::java.nio.Buffer.staticClass, "rewind", "()Ljava/nio/Buffer;");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/Buffer;")]
@@ -100,88 +88,64 @@ namespace java.nio {
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._clear2));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
-        public virtual global::java.lang.Object array() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.nio.Buffer._array3));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
-        public virtual int arrayOffset() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.Buffer._arrayOffset4);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        public virtual bool hasArray() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.nio.Buffer._hasArray5);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        public virtual bool isDirect() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.nio.Buffer._isDirect6);
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int position() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.Buffer._position7);
+            return env.CallIntMethod(this, global::java.nio.Buffer._position3);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/Buffer;")]
         public global::java.nio.Buffer position(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._position8, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._position4, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int remaining() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.Buffer._remaining9);
+            return env.CallIntMethod(this, global::java.nio.Buffer._remaining5);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int capacity() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.Buffer._capacity10);
+            return env.CallIntMethod(this, global::java.nio.Buffer._capacity6);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer flip() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._flip11));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._flip7));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public bool hasRemaining() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.nio.Buffer._hasRemaining12);
+            return env.CallBooleanMethod(this, global::java.nio.Buffer._hasRemaining8);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isReadOnly() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.nio.Buffer._isReadOnly13);
+            return env.CallBooleanMethod(this, global::java.nio.Buffer._isReadOnly9);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer mark() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._mark14));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._mark10));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer reset() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._reset15));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._reset11));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer rewind() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._rewind16));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._rewind12));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

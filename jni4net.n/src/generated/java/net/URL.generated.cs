@@ -67,36 +67,36 @@ namespace java.net {
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor24;
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")]
-        public URL(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2) : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor19, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;LSystem/Object;)V")]
         public URL(global::java.lang.String par0, global::java.lang.String par1, int par2, global::java.lang.String par3, object par4) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor20, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3), new global::net.sf.jni4net.jni.Value(par4));
+            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor19, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2), new global::net.sf.jni4net.jni.Value(par3), new global::net.sf.jni4net.jni.Value(par4));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public URL(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor21, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor20, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URL;Ljava/lang/String;)V")]
         public URL(global::java.net.URL par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor22, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor21, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URL;Ljava/lang/String;LSystem/Object;)V")]
         public URL(global::java.net.URL par0, global::java.lang.String par1, object par2) : 
+                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor22, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")]
+        public URL(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor23, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
@@ -129,8 +129,8 @@ namespace java.net {
             global::java.net.URL._getFile5 = env.GetMethodID(global::java.net.URL.staticClass, "getFile", "()Ljava/lang/String;");
             global::java.net.URL._getHost6 = env.GetMethodID(global::java.net.URL.staticClass, "getHost", "()Ljava/lang/String;");
             global::java.net.URL._getProtocol7 = env.GetMethodID(global::java.net.URL.staticClass, "getProtocol", "()Ljava/lang/String;");
-            global::java.net.URL._openConnection8 = env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "(Ljava/net/Proxy;)Ljava/net/URLConnection;");
-            global::java.net.URL._openConnection9 = env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "()Ljava/net/URLConnection;");
+            global::java.net.URL._openConnection8 = env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "()Ljava/net/URLConnection;");
+            global::java.net.URL._openConnection9 = env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "(Ljava/net/Proxy;)Ljava/net/URLConnection;");
             global::java.net.URL._getRef10 = env.GetMethodID(global::java.net.URL.staticClass, "getRef", "()Ljava/lang/String;");
             global::java.net.URL._getContent11 = env.GetMethodID(global::java.net.URL.staticClass, "getContent", "()Ljava/lang/Object;");
             global::java.net.URL._getContent12 = env.GetMethodID(global::java.net.URL.staticClass, "getContent", "([Ljava/lang/Class;)Ljava/lang/Object;");
@@ -140,12 +140,12 @@ namespace java.net {
             global::java.net.URL._sameFile16 = env.GetMethodID(global::java.net.URL.staticClass, "sameFile", "(Ljava/net/URL;)Z");
             global::java.net.URL._setURLStreamHandlerFactory17 = env.GetStaticMethodID(global::java.net.URL.staticClass, "setURLStreamHandlerFactory", "(Ljava/net/URLStreamHandlerFactory;)V");
             global::java.net.URL._toExternalForm18 = env.GetMethodID(global::java.net.URL.staticClass, "toExternalForm", "()Ljava/lang/String;");
-            global::java.net.URL.@__ctor19 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
-            global::java.net.URL.@__ctor20 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandle" +
+            global::java.net.URL.@__ctor19 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandle" +
                     "r;)V");
-            global::java.net.URL.@__ctor21 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.net.URL.@__ctor22 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;)V");
-            global::java.net.URL.@__ctor23 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V");
+            global::java.net.URL.@__ctor20 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.net.URL.@__ctor21 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;)V");
+            global::java.net.URL.@__ctor22 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V");
+            global::java.net.URL.@__ctor23 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
             global::java.net.URL.@__ctor24 = env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V");
         }
         
@@ -197,16 +197,16 @@ namespace java.net {
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.net.URL._getProtocol7));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)LSystem/Object;")]
-        public virtual object openConnection(object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.net.URL._openConnection8, new global::net.sf.jni4net.jni.Value(par0)));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public virtual object openConnection() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.net.URL._openConnection9));
+            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.net.URL._openConnection8));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)LSystem/Object;")]
+        public virtual object openConnection(object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.net.URL._openConnection9, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]

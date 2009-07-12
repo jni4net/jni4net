@@ -29,14 +29,11 @@ public final class Map_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Map extends system.Object implements java.util.Map {
     
-    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Ljava/lang/Object;")
-    public native java.lang.Object get(java.lang.Object par0);
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int hashCode();
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")
     public native java.lang.Object put(java.lang.Object par0, java.lang.Object par1);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int hashCode();
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void clear();
@@ -44,11 +41,11 @@ class __Map extends system.Object implements java.util.Map {
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean equals(java.lang.Object par0);
     
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean isEmpty();
-    
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Set;")
     public native java.util.Set entrySet();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Ljava/lang/Object;")
+    public native java.lang.Object get(java.lang.Object par0);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/util/Map;)V")
     public native void putAll(java.util.Map par0);
@@ -62,13 +59,16 @@ class __Map extends system.Object implements java.util.Map {
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Ljava/lang/Object;")
     public native java.lang.Object remove(java.lang.Object par0);
     
-    @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Set;")
-    public native java.util.Set keySet();
-    
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean containsKey(java.lang.Object par0);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean containsValue(java.lang.Object par0);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isEmpty();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Set;")
+    public native java.util.Set keySet();
 }
 //</generated-proxy>

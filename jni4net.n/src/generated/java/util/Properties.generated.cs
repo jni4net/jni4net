@@ -25,46 +25,40 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _load3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _load4;
+        internal static global::net.sf.jni4net.jni.MethodId _list4;
         
         internal static global::net.sf.jni4net.jni.MethodId _list5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _list6;
+        internal static global::net.sf.jni4net.jni.MethodId _loadFromXML6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _loadFromXML7;
+        internal static global::net.sf.jni4net.jni.MethodId _propertyNames7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _propertyNames8;
+        internal static global::net.sf.jni4net.jni.MethodId _save8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _save9;
+        internal static global::net.sf.jni4net.jni.MethodId _store9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _store10;
+        internal static global::net.sf.jni4net.jni.MethodId _storeToXML10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _store11;
+        internal static global::net.sf.jni4net.jni.MethodId _storeToXML11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _storeToXML12;
+        internal static global::net.sf.jni4net.jni.MethodId _clone12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _storeToXML13;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _stringPropertyNames14;
-        
-        internal static global::net.sf.jni4net.jni.MethodId _clone15;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor16;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor17;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Properties;)V")]
-        public Properties(global::java.util.Properties par0) : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor16, this, new global::net.sf.jni4net.jni.Value(par0));
-        }
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor14;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Properties() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor17, this);
+            env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor13, this);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Properties;)V")]
+        public Properties(global::java.util.Properties par0) : 
+                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor14, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         protected Properties(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -83,20 +77,17 @@ namespace java.util {
             global::java.util.Properties._getProperty1 = env.GetMethodID(global::java.util.Properties.staticClass, "getProperty", "(Ljava/lang/String;)Ljava/lang/String;");
             global::java.util.Properties._getProperty2 = env.GetMethodID(global::java.util.Properties.staticClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
             global::java.util.Properties._load3 = env.GetMethodID(global::java.util.Properties.staticClass, "load", "(Ljava/io/InputStream;)V");
-            global::java.util.Properties._load4 = env.GetMethodID(global::java.util.Properties.staticClass, "load", "(Ljava/io/Reader;)V");
+            global::java.util.Properties._list4 = env.GetMethodID(global::java.util.Properties.staticClass, "list", "(Ljava/io/PrintWriter;)V");
             global::java.util.Properties._list5 = env.GetMethodID(global::java.util.Properties.staticClass, "list", "(Ljava/io/PrintStream;)V");
-            global::java.util.Properties._list6 = env.GetMethodID(global::java.util.Properties.staticClass, "list", "(Ljava/io/PrintWriter;)V");
-            global::java.util.Properties._loadFromXML7 = env.GetMethodID(global::java.util.Properties.staticClass, "loadFromXML", "(Ljava/io/InputStream;)V");
-            global::java.util.Properties._propertyNames8 = env.GetMethodID(global::java.util.Properties.staticClass, "propertyNames", "()Ljava/util/Enumeration;");
-            global::java.util.Properties._save9 = env.GetMethodID(global::java.util.Properties.staticClass, "save", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
-            global::java.util.Properties._store10 = env.GetMethodID(global::java.util.Properties.staticClass, "store", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
-            global::java.util.Properties._store11 = env.GetMethodID(global::java.util.Properties.staticClass, "store", "(Ljava/io/Writer;Ljava/lang/String;)V");
-            global::java.util.Properties._storeToXML12 = env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V");
-            global::java.util.Properties._storeToXML13 = env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
-            global::java.util.Properties._stringPropertyNames14 = env.GetMethodID(global::java.util.Properties.staticClass, "stringPropertyNames", "()Ljava/util/Set;");
-            global::java.util.Properties._clone15 = env.GetMethodID(global::java.util.Properties.staticClass, "clone", "()Ljava/lang/Object;");
-            global::java.util.Properties.@__ctor16 = env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "(Ljava/util/Properties;)V");
-            global::java.util.Properties.@__ctor17 = env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "()V");
+            global::java.util.Properties._loadFromXML6 = env.GetMethodID(global::java.util.Properties.staticClass, "loadFromXML", "(Ljava/io/InputStream;)V");
+            global::java.util.Properties._propertyNames7 = env.GetMethodID(global::java.util.Properties.staticClass, "propertyNames", "()Ljava/util/Enumeration;");
+            global::java.util.Properties._save8 = env.GetMethodID(global::java.util.Properties.staticClass, "save", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
+            global::java.util.Properties._store9 = env.GetMethodID(global::java.util.Properties.staticClass, "store", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
+            global::java.util.Properties._storeToXML10 = env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
+            global::java.util.Properties._storeToXML11 = env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V");
+            global::java.util.Properties._clone12 = env.GetMethodID(global::java.util.Properties.staticClass, "clone", "()Ljava/lang/Object;");
+            global::java.util.Properties.@__ctor13 = env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "()V");
+            global::java.util.Properties.@__ctor14 = env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "(Ljava/util/Properties;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;")]
@@ -124,9 +115,9 @@ namespace java.util {
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
-        public virtual void load(object par0) {
+        public virtual void list(object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._load4, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.util.Properties._list4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintStream;)V")]
@@ -135,64 +126,46 @@ namespace java.util {
             env.CallVoidMethod(this, global::java.util.Properties._list5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
-        public virtual void list(object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._list6, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/InputStream;)V")]
         public virtual void loadFromXML(global::java.io.InputStream par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._loadFromXML7, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.util.Properties._loadFromXML6, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Enumeration;")]
         public virtual global::java.util.Enumeration propertyNames() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Properties._propertyNames8));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Enumeration>(env.CallObjectMethod(this, global::java.util.Properties._propertyNames7));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Ljava/lang/String;)V")]
         public virtual void save(global::java.io.OutputStream par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._save9, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.CallVoidMethod(this, global::java.util.Properties._save8, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Ljava/lang/String;)V")]
         public virtual void store(global::java.io.OutputStream par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._store10, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;Ljava/lang/String;)V")]
-        public virtual void store(object par0, global::java.lang.String par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._store11, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V")]
-        public virtual void storeToXML(global::java.io.OutputStream par0, global::java.lang.String par1, global::java.lang.String par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._storeToXML12, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            env.CallVoidMethod(this, global::java.util.Properties._store9, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Ljava/lang/String;)V")]
         public virtual void storeToXML(global::java.io.OutputStream par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.Properties._storeToXML13, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.CallVoidMethod(this, global::java.util.Properties._storeToXML10, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Set;")]
-        public virtual global::java.util.Set stringPropertyNames() {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V")]
+        public virtual void storeToXML(global::java.io.OutputStream par0, global::java.lang.String par1, global::java.lang.String par2) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Set>(env.CallObjectMethod(this, global::java.util.Properties._stringPropertyNames14));
+            env.CallVoidMethod(this, global::java.util.Properties._storeToXML11, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
         public virtual global::java.lang.Object clone() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Properties._clone15));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.Properties._clone12));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
