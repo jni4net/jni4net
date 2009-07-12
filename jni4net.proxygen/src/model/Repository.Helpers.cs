@@ -361,7 +361,10 @@ namespace net.sf.jni4net.proxygen.model
                 if (type.AllMethods.ContainsKey(sig))
                 {
                     type.SkippedMethods.Add(res);
-                    Console.WriteLine("Skip " + type + "." + method + "<-" + type.AllMethods[sig].Type);
+                    if (config.Verbose)
+                    {
+                        Console.WriteLine("Skip " + type + "." + method + "<-" + type.AllMethods[sig].Type);
+                    }
                     return;
                 }
                 type.AllMethods.Add(sig, res);
