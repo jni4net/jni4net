@@ -28,7 +28,7 @@
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>selvin.exportdll</artifactId>
-            <version>${jni4net.nversion}</version>
+            <version>0.2.0.0</version>
             <type>dotnet:exe</type>
             <scope>provided</scope>
         </dependency>
