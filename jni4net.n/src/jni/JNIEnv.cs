@@ -1660,7 +1660,17 @@ namespace net.sf.jni4net.jni
             {
                 //ExceptionDescribe();
                 ExceptionClear();
-                var javaProxy = Wrap<IJavaProxy>(occurred);
+                IJavaProxy javaProxy;
+                try
+                {
+                    javaProxy = Wrap<IJavaProxy>(occurred);
+                }
+                catch(Exception ex)
+                {
+                    Console.Error.WriteLine(ex.Message);
+                    Console.Error.WriteLine(ex);
+                    throw;
+                }
                 var throwable = javaProxy as Throwable;
                 if (throwable != null)
                 {

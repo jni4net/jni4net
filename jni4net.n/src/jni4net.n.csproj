@@ -219,9 +219,6 @@
     <Compile Include="system\__Object.cs" />
     <Compile Include="utils\IConstructionHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="jni4net.snk" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -231,7 +228,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)\..\..\tools\lib\selvin.exportdll-0.2.0.0.exe $(TargetPath) . . $(ProjectDir)\jni4net.snk /Debug</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)\..\..\tools\lib\selvin.exportdll-0.2.0.0.exe $(TargetPath) . . $(ProjectDir)/../../tools/keys/jni4net.snk /Debug</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.2.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>

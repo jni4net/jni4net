@@ -276,6 +276,7 @@ namespace net.sf.jni4net
             catch (Exception ex)
             {
                 Console.Error.WriteLine("Can't init bridge:" + ex.Message);
+                Console.Error.WriteLine("Can't init bridge:" + ex);
                 Class exClazz = env.FindClass("net/sf/jni4net/inj/INJException");
                 env.ThrowNew(exClazz, ex.Message);
                 return -1;

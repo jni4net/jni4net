@@ -86,7 +86,7 @@ namespace net.sf.jni4net.jni
             JavaVM.JavaPtr* njvm;
             JNIEnv.JavaPtr* nenv;
             JavaVMInitArgs.JavaPtr args;
-            args.version = JNI_VERSION_1_6;
+            args.version = JNI_VERSION_1_4;
 
             if (options.Length > 0)
             {
