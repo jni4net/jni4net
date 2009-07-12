@@ -1,0 +1,53 @@
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.suckerdiv ul{
+margin: 0px 0px 0px 10px;
+padding: 0;
+list-style-type: none;
+width: 105px; /* Width of Menu Items */
+border-bottom: 1px solid #fff;
+}
+	
+.suckerdiv ul li{
+position: relative;
+}
+	
+/*Sub level menu items */
+.suckerdiv ul li ul{
+position: absolute;
+width: 130px; /*sub menu width*/
+top: 0;
+visibility: hidden;
+}
+
+/* Sub level menu links style */
+.suckerdiv ul li a{
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: black;
+text-decoration: none;
+background: #fff;
+padding: 1px 5px;
+border: 1px solid #fff;
+border-bottom: 0;
+}
+
+.suckerdiv ul li a:visited{
+color: black;
+}
+
+.suckerdiv ul li a:hover{
+background-color: #8A1812;
+color: #eee;
+}
+
+.suckerdiv .subfolderstyle{
+/*background: url(media/arrow-list.gif) no-repeat center right;*/
+}
+
+	
+/* Holly Hack for IE \*/
+* html .suckerdiv ul li { float: left; height: 1%; }
+* html .suckerdiv ul li a { height: 1%; }
+/* End */
