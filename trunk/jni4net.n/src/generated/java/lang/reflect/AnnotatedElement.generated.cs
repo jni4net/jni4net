@@ -74,12 +74,12 @@ namespace java.lang.reflect {
         
         public java.lang.annotation.Annotation[] getAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.@__AnnotatedElement._getAnnotations1))));
+            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.@__AnnotatedElement._getAnnotations1))));
         }
         
         public java.lang.annotation.Annotation[] getDeclaredAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.@__AnnotatedElement._getDeclaredAnnotations2))));
+            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.reflect.@__AnnotatedElement._getDeclaredAnnotations2))));
         }
         
         public bool isAnnotationPresent(global::java.lang.Class par0) {
@@ -103,7 +103,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getAnnotation(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Class>(__env, par0)));
+            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getAnnotation(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Class>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::java.lang.Object.JavaPtr*);
         }
@@ -136,7 +136,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
-            return real.isAnnotationPresent(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Class>(__env, par0));
+            return real.isAnnotationPresent(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Class>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }

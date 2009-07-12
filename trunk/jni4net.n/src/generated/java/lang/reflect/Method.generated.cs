@@ -107,7 +107,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/TypeVariable;")]
         public virtual java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getTypeParameters0))));
+            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<global::java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getTypeParameters0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -143,7 +143,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
         public virtual java.lang.Class[] getParameterTypes() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Class[])(env.ConvertArrayToNet<java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getParameterTypes6))));
+            return ((java.lang.Class[])(env.ConvertArrayToNet<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getParameterTypes6))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
@@ -167,19 +167,19 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
         public virtual java.lang.Class[] getExceptionTypes() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Class[])(env.ConvertArrayToNet<java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getExceptionTypes10))));
+            return ((java.lang.Class[])(env.ConvertArrayToNet<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getExceptionTypes10))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         public virtual java.lang.reflect.Type[] getGenericExceptionTypes() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getGenericExceptionTypes11))));
+            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getGenericExceptionTypes11))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         public virtual java.lang.reflect.Type[] getGenericParameterTypes() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getGenericParameterTypes12))));
+            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.Method._getGenericParameterTypes12))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]

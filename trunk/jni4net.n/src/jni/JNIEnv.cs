@@ -190,10 +190,8 @@ namespace net.sf.jni4net.jni
 
         public void CallStaticVoidMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
-            if (callStaticVoidMethod(native, clazz.native, methodIdNative.native, args) != JNIResult.JNI_OK)
-            {
-                throw new ApplicationException();
-            }
+            //TODO result could be tested in Java 1.6
+            callStaticVoidMethod(native, clazz.native, methodIdNative.native, args);
             ExceptionTest();
         }
 
@@ -340,10 +338,8 @@ namespace net.sf.jni4net.jni
 
         public void CallVoidMethod(IJavaProxy obj, MethodId methodId, params Value[] args)
         {
-            if (callVoidMethod(native, obj.Native, methodId.native, args) != JNIResult.JNI_OK)
-            {
-                throw new JNIException("Can't call method");
-            }
+            //TODO result could be tested in Java 1.6
+            callVoidMethod(native, obj.Native, methodId.native, args);
             ExceptionTest();
         }
 

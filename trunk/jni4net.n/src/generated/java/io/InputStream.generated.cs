@@ -25,15 +25,15 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _available3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _read4;
+        internal static global::net.sf.jni4net.jni.MethodId _markSupported4;
         
         internal static global::net.sf.jni4net.jni.MethodId _read5;
         
         internal static global::net.sf.jni4net.jni.MethodId _read6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _skip7;
+        internal static global::net.sf.jni4net.jni.MethodId _read7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _markSupported8;
+        internal static global::net.sf.jni4net.jni.MethodId _skip8;
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor9;
         
@@ -60,11 +60,11 @@ namespace java.io {
             global::java.io.InputStream._mark1 = env.GetMethodID(global::java.io.InputStream.staticClass, "mark", "(I)V");
             global::java.io.InputStream._reset2 = env.GetMethodID(global::java.io.InputStream.staticClass, "reset", "()V");
             global::java.io.InputStream._available3 = env.GetMethodID(global::java.io.InputStream.staticClass, "available", "()I");
-            global::java.io.InputStream._read4 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([BII)I");
-            global::java.io.InputStream._read5 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([B)I");
-            global::java.io.InputStream._read6 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "()I");
-            global::java.io.InputStream._skip7 = env.GetMethodID(global::java.io.InputStream.staticClass, "skip", "(J)J");
-            global::java.io.InputStream._markSupported8 = env.GetMethodID(global::java.io.InputStream.staticClass, "markSupported", "()Z");
+            global::java.io.InputStream._markSupported4 = env.GetMethodID(global::java.io.InputStream.staticClass, "markSupported", "()Z");
+            global::java.io.InputStream._read5 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "()I");
+            global::java.io.InputStream._read6 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([BII)I");
+            global::java.io.InputStream._read7 = env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([B)I");
+            global::java.io.InputStream._skip8 = env.GetMethodID(global::java.io.InputStream.staticClass, "skip", "(J)J");
             global::java.io.InputStream.@__ctor9 = env.GetMethodID(global::java.io.InputStream.staticClass, "<init>", "()V");
         }
         
@@ -92,34 +92,34 @@ namespace java.io {
             return env.CallIntMethod(this, global::java.io.InputStream._available3);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)I")]
-        public virtual int read(byte[] par0, int par1, int par2) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        public virtual bool markSupported() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.io.InputStream._read4, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)I")]
-        public virtual int read(byte[] par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.io.InputStream._read5, global::net.sf.jni4net.jni.Value.CreateArray(par0));
+            return env.CallBooleanMethod(this, global::java.io.InputStream._markSupported4);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int read() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.io.InputStream._read6);
+            return env.CallIntMethod(this, global::java.io.InputStream._read5);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)I")]
+        public virtual int read(byte[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)I")]
+        public virtual int read(byte[] par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.jni.Value.CreateArray(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)J")]
         public virtual long skip(long par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.io.InputStream._skip7, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        public virtual bool markSupported() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.io.InputStream._markSupported8);
+            return env.CallLongMethod(this, global::java.io.InputStream._skip8, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -25,29 +25,29 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor3;
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public Exception() : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Throwable;)V")]
+        public Exception(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor0, this);
+            env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor0, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
-        public Exception(global::java.lang.String par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
+        public Exception(global::java.lang.Throwable par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor1, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Throwable;)V")]
-        public Exception(global::java.lang.String par0, global::java.lang.Throwable par1) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
+        public Exception() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor2, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor2, this);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
-        public Exception(global::java.lang.Throwable par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
+        public Exception(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor3, this, new global::net.sf.jni4net.jni.Value(par0));
@@ -65,10 +65,10 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.lang.Exception.staticClass = staticClass;
-            global::java.lang.Exception.@__ctor0 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "()V");
-            global::java.lang.Exception.@__ctor1 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Exception.@__ctor2 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
-            global::java.lang.Exception.@__ctor3 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.Exception.@__ctor0 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
+            global::java.lang.Exception.@__ctor1 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.Exception.@__ctor2 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "()V");
+            global::java.lang.Exception.@__ctor3 = env.GetMethodID(global::java.lang.Exception.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

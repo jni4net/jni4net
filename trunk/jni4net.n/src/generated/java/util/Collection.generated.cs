@@ -15,11 +15,11 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaInterfaceAttribute()]
     public partial interface Collection : global::java.lang.Iterable {
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
-        bool add(global::java.lang.Object par0);
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         int hashCode();
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
+        bool add(global::java.lang.Object par0);
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         void clear();
@@ -29,9 +29,6 @@ namespace java.util {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool contains(global::java.lang.Object par0);
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
-        bool isEmpty();
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool addAll(global::java.util.Collection par0);
@@ -47,6 +44,9 @@ namespace java.util {
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         bool remove(global::java.lang.Object par0);
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        bool isEmpty();
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Collection;)Z")]
         bool containsAll(global::java.util.Collection par0);
@@ -79,9 +79,9 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _iterator0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _add1;
+        internal static global::net.sf.jni4net.jni.MethodId _hashCode1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hashCode2;
+        internal static global::net.sf.jni4net.jni.MethodId _add2;
         
         internal static global::net.sf.jni4net.jni.MethodId _clear3;
         
@@ -89,17 +89,17 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _contains5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isEmpty6;
+        internal static global::net.sf.jni4net.jni.MethodId _addAll6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _addAll7;
+        internal static global::net.sf.jni4net.jni.MethodId _size7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _size8;
+        internal static global::net.sf.jni4net.jni.MethodId _toArray8;
         
         internal static global::net.sf.jni4net.jni.MethodId _toArray9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toArray10;
+        internal static global::net.sf.jni4net.jni.MethodId _remove10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remove11;
+        internal static global::net.sf.jni4net.jni.MethodId _isEmpty11;
         
         internal static global::net.sf.jni4net.jni.MethodId _containsAll12;
         
@@ -114,17 +114,17 @@ namespace java.util {
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.util.@__Collection.staticClass = staticClass;
             global::java.util.@__Collection._iterator0 = env.GetMethodID(global::java.util.@__Collection.staticClass, "iterator", "()Ljava/util/Iterator;");
-            global::java.util.@__Collection._add1 = env.GetMethodID(global::java.util.@__Collection.staticClass, "add", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Collection._hashCode2 = env.GetMethodID(global::java.util.@__Collection.staticClass, "hashCode", "()I");
+            global::java.util.@__Collection._hashCode1 = env.GetMethodID(global::java.util.@__Collection.staticClass, "hashCode", "()I");
+            global::java.util.@__Collection._add2 = env.GetMethodID(global::java.util.@__Collection.staticClass, "add", "(Ljava/lang/Object;)Z");
             global::java.util.@__Collection._clear3 = env.GetMethodID(global::java.util.@__Collection.staticClass, "clear", "()V");
             global::java.util.@__Collection._equals4 = env.GetMethodID(global::java.util.@__Collection.staticClass, "equals", "(Ljava/lang/Object;)Z");
             global::java.util.@__Collection._contains5 = env.GetMethodID(global::java.util.@__Collection.staticClass, "contains", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Collection._isEmpty6 = env.GetMethodID(global::java.util.@__Collection.staticClass, "isEmpty", "()Z");
-            global::java.util.@__Collection._addAll7 = env.GetMethodID(global::java.util.@__Collection.staticClass, "addAll", "(Ljava/util/Collection;)Z");
-            global::java.util.@__Collection._size8 = env.GetMethodID(global::java.util.@__Collection.staticClass, "size", "()I");
-            global::java.util.@__Collection._toArray9 = env.GetMethodID(global::java.util.@__Collection.staticClass, "toArray", "()[Ljava/lang/Object;");
-            global::java.util.@__Collection._toArray10 = env.GetMethodID(global::java.util.@__Collection.staticClass, "toArray", "([Ljava/lang/Object;)[Ljava/lang/Object;");
-            global::java.util.@__Collection._remove11 = env.GetMethodID(global::java.util.@__Collection.staticClass, "remove", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Collection._addAll6 = env.GetMethodID(global::java.util.@__Collection.staticClass, "addAll", "(Ljava/util/Collection;)Z");
+            global::java.util.@__Collection._size7 = env.GetMethodID(global::java.util.@__Collection.staticClass, "size", "()I");
+            global::java.util.@__Collection._toArray8 = env.GetMethodID(global::java.util.@__Collection.staticClass, "toArray", "()[Ljava/lang/Object;");
+            global::java.util.@__Collection._toArray9 = env.GetMethodID(global::java.util.@__Collection.staticClass, "toArray", "([Ljava/lang/Object;)[Ljava/lang/Object;");
+            global::java.util.@__Collection._remove10 = env.GetMethodID(global::java.util.@__Collection.staticClass, "remove", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Collection._isEmpty11 = env.GetMethodID(global::java.util.@__Collection.staticClass, "isEmpty", "()Z");
             global::java.util.@__Collection._containsAll12 = env.GetMethodID(global::java.util.@__Collection.staticClass, "containsAll", "(Ljava/util/Collection;)Z");
             global::java.util.@__Collection._removeAll13 = env.GetMethodID(global::java.util.@__Collection.staticClass, "removeAll", "(Ljava/util/Collection;)Z");
             global::java.util.@__Collection._retainAll14 = env.GetMethodID(global::java.util.@__Collection.staticClass, "retainAll", "(Ljava/util/Collection;)Z");
@@ -135,14 +135,14 @@ namespace java.util {
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Iterator>(env.CallObjectMethod(this, global::java.util.@__Collection._iterator0));
         }
         
-        public bool add(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Collection._add1, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.util.@__Collection._hashCode2);
+            return env.CallIntMethod(this, global::java.util.@__Collection._hashCode1);
+        }
+        
+        public bool add(global::java.lang.Object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.util.@__Collection._add2, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         public void clear() {
@@ -160,34 +160,34 @@ namespace java.util {
             return env.CallBooleanMethod(this, global::java.util.@__Collection._contains5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        public bool isEmpty() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Collection._isEmpty6);
-        }
-        
         public bool addAll(global::java.util.Collection par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Collection._addAll7, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.util.@__Collection._addAll6, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         public int size() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.util.@__Collection._size8);
+            return env.CallIntMethod(this, global::java.util.@__Collection._size7);
         }
         
         public java.lang.Object[] toArray() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Object[])(env.ConvertArrayToNet<java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray9))));
+            return ((java.lang.Object[])(env.ConvertArrayToNet<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray8))));
         }
         
         public java.lang.Object[] toArray(java.lang.Object[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Object[])(env.ConvertArrayToNet<java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray10, global::net.sf.jni4net.jni.Value.CreateArray(par0)))));
+            return ((java.lang.Object[])(env.ConvertArrayToNet<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Collection._toArray9, global::net.sf.jni4net.jni.Value.CreateArray(par0)))));
         }
         
         public bool remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Collection._remove11, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.util.@__Collection._remove10, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        public bool isEmpty() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.util.@__Collection._isEmpty11);
         }
         
         public bool containsAll(global::java.util.Collection par0) {
@@ -209,17 +209,17 @@ namespace java.util {
             global::System.Type type = typeof(__Collection);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "iterator", "iterator0", "()Ljava/util/Iterator;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "add", "add1", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hashCode", "hashCode2", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hashCode", "hashCode1", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "add", "add2", "(Ljava/lang/Object;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "clear", "clear3", "()V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "equals", "equals4", "(Ljava/lang/Object;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "contains", "contains5", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "isEmpty", "isEmpty6", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "addAll", "addAll7", "(Ljava/util/Collection;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "size", "size8", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "toArray", "toArray9", "()[Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "toArray", "toArray10", "([Ljava/lang/Object;)[Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "remove", "remove11", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "addAll", "addAll6", "(Ljava/util/Collection;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "size", "size7", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "toArray", "toArray8", "()[Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "toArray", "toArray9", "([Ljava/lang/Object;)[Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "remove", "remove10", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "isEmpty", "isEmpty11", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "containsAll", "containsAll12", "(Ljava/util/Collection;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "removeAll", "removeAll13", "(Ljava/util/Collection;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "retainAll", "retainAll14", "(Ljava/util/Collection;)Z"));
@@ -237,18 +237,7 @@ namespace java.util {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool add1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
-            // (Ljava/lang/Object;)Z
-            // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
-            return real.add(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(bool);
-        }
-        
-        private static int hashCode2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int hashCode1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
@@ -257,6 +246,17 @@ namespace java.util {
             return real.hashCode();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
+        }
+        
+        private static bool add2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+            // (Ljava/lang/Object;)Z
+            // (Ljava/lang/Object;)Z
+            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            try {
+            global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
+            return real.add(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            return default(bool);
         }
         
         private static void clear3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
@@ -275,7 +275,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
-            return real.equals(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Object>(__env, par0));
+            return real.equals(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -286,23 +286,12 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
-            return real.contains(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Object>(__env, par0));
+            return real.contains(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static bool isEmpty6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
-            // ()Z
-            // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
-            try {
-            global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
-            return real.isEmpty();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(bool);
-        }
-        
-        private static bool addAll7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool addAll6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/util/Collection;)Z
             // (Ljava/util/Collection;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
@@ -313,7 +302,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static int size8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int size7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
@@ -324,7 +313,7 @@ namespace java.util {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* toArray9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* toArray8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()[Ljava/lang/Object;
             // ()[Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
@@ -335,7 +324,7 @@ namespace java.util {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* toArray10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static global::java.lang.Object.JavaPtr* toArray9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // ([Ljava/lang/Object;)[Ljava/lang/Object;
             // ([Ljava/lang/Object;)[Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
@@ -346,13 +335,24 @@ namespace java.util {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool remove11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool remove10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
             try {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
-            return real.remove(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<java.lang.Object>(__env, par0));
+            return real.remove(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            return default(bool);
+        }
+        
+        private static bool isEmpty11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+            // ()Z
+            // ()Z
+            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            try {
+            global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
+            return real.isEmpty();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }

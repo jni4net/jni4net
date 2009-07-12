@@ -43,15 +43,15 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor12;
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
-        public Boolean(global::java.lang.String par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
+        public Boolean(bool par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor11, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
-        public Boolean(bool par0) : 
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
+        public Boolean(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor12, this, new global::net.sf.jni4net.jni.Value(par0));
@@ -104,8 +104,8 @@ namespace java.lang {
             global::java.lang.Boolean._TRUE8 = env.GetStaticFieldID(global::java.lang.Boolean.staticClass, "TRUE", "Ljava/lang/Boolean;");
             global::java.lang.Boolean._FALSE9 = env.GetStaticFieldID(global::java.lang.Boolean.staticClass, "FALSE", "Ljava/lang/Boolean;");
             global::java.lang.Boolean._TYPE10 = env.GetStaticFieldID(global::java.lang.Boolean.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Boolean.@__ctor11 = env.GetMethodID(global::java.lang.Boolean.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Boolean.@__ctor12 = env.GetMethodID(global::java.lang.Boolean.staticClass, "<init>", "(Z)V");
+            global::java.lang.Boolean.@__ctor11 = env.GetMethodID(global::java.lang.Boolean.staticClass, "<init>", "(Z)V");
+            global::java.lang.Boolean.@__ctor12 = env.GetMethodID(global::java.lang.Boolean.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]

@@ -25,23 +25,23 @@ namespace java.lang.reflect {
         
         internal static global::net.sf.jni4net.jni.MethodId _isSynthetic3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get4;
+        internal static global::net.sf.jni4net.jni.MethodId _getBoolean4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getBoolean5;
+        internal static global::net.sf.jni4net.jni.MethodId _getByte5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getByte6;
+        internal static global::net.sf.jni4net.jni.MethodId _getShort6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getShort7;
+        internal static global::net.sf.jni4net.jni.MethodId _getChar7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getChar8;
+        internal static global::net.sf.jni4net.jni.MethodId _getInt8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getInt9;
+        internal static global::net.sf.jni4net.jni.MethodId _getLong9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getLong10;
+        internal static global::net.sf.jni4net.jni.MethodId _getFloat10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFloat11;
+        internal static global::net.sf.jni4net.jni.MethodId _getDouble11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDouble12;
+        internal static global::net.sf.jni4net.jni.MethodId _get12;
         
         internal static global::net.sf.jni4net.jni.MethodId _getGenericType13;
         
@@ -105,15 +105,15 @@ namespace java.lang.reflect {
             global::java.lang.reflect.Field._getName1 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getName", "()Ljava/lang/String;");
             global::java.lang.reflect.Field._getDeclaringClass2 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getDeclaringClass", "()Ljava/lang/Class;");
             global::java.lang.reflect.Field._isSynthetic3 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "isSynthetic", "()Z");
-            global::java.lang.reflect.Field._get4 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.lang.reflect.Field._getBoolean5 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getBoolean", "(Ljava/lang/Object;)Z");
-            global::java.lang.reflect.Field._getByte6 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getByte", "(Ljava/lang/Object;)B");
-            global::java.lang.reflect.Field._getShort7 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getShort", "(Ljava/lang/Object;)S");
-            global::java.lang.reflect.Field._getChar8 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getChar", "(Ljava/lang/Object;)C");
-            global::java.lang.reflect.Field._getInt9 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getInt", "(Ljava/lang/Object;)I");
-            global::java.lang.reflect.Field._getLong10 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getLong", "(Ljava/lang/Object;)J");
-            global::java.lang.reflect.Field._getFloat11 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getFloat", "(Ljava/lang/Object;)F");
-            global::java.lang.reflect.Field._getDouble12 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getDouble", "(Ljava/lang/Object;)D");
+            global::java.lang.reflect.Field._getBoolean4 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getBoolean", "(Ljava/lang/Object;)Z");
+            global::java.lang.reflect.Field._getByte5 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getByte", "(Ljava/lang/Object;)B");
+            global::java.lang.reflect.Field._getShort6 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getShort", "(Ljava/lang/Object;)S");
+            global::java.lang.reflect.Field._getChar7 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getChar", "(Ljava/lang/Object;)C");
+            global::java.lang.reflect.Field._getInt8 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getInt", "(Ljava/lang/Object;)I");
+            global::java.lang.reflect.Field._getLong9 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getLong", "(Ljava/lang/Object;)J");
+            global::java.lang.reflect.Field._getFloat10 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getFloat", "(Ljava/lang/Object;)F");
+            global::java.lang.reflect.Field._getDouble11 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getDouble", "(Ljava/lang/Object;)D");
+            global::java.lang.reflect.Field._get12 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
             global::java.lang.reflect.Field._getGenericType13 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getGenericType", "()Ljava/lang/reflect/Type;");
             global::java.lang.reflect.Field._getType14 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "getType", "()Ljava/lang/Class;");
             global::java.lang.reflect.Field._isEnumConstant15 = env.GetMethodID(global::java.lang.reflect.Field.staticClass, "isEnumConstant", "()Z");
@@ -155,58 +155,58 @@ namespace java.lang.reflect {
             return env.CallBooleanMethod(this, global::java.lang.reflect.Field._isSynthetic3);
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
-        public virtual global::java.lang.Object get(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.reflect.Field._get4, new global::net.sf.jni4net.jni.Value(par0)));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool getBoolean(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.reflect.Field._getBoolean5, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.lang.reflect.Field._getBoolean4, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)B")]
         public virtual byte getByte(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallByteMethod(this, global::java.lang.reflect.Field._getByte6, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallByteMethod(this, global::java.lang.reflect.Field._getByte5, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)S")]
         public virtual short getShort(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallShortMethod(this, global::java.lang.reflect.Field._getShort7, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallShortMethod(this, global::java.lang.reflect.Field._getShort6, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)C")]
         public virtual char getChar(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.lang.reflect.Field._getChar8, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallCharMethod(this, global::java.lang.reflect.Field._getChar7, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int getInt(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.reflect.Field._getInt9, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallIntMethod(this, global::java.lang.reflect.Field._getInt8, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)J")]
         public virtual long getLong(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.lang.reflect.Field._getLong10, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallLongMethod(this, global::java.lang.reflect.Field._getLong9, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)F")]
         public virtual float getFloat(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallFloatMethod(this, global::java.lang.reflect.Field._getFloat11, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallFloatMethod(this, global::java.lang.reflect.Field._getFloat10, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)D")]
         public virtual double getDouble(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallDoubleMethod(this, global::java.lang.reflect.Field._getDouble12, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallDoubleMethod(this, global::java.lang.reflect.Field._getDouble11, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
+        public virtual global::java.lang.Object get(global::java.lang.Object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.reflect.Field._get12, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]

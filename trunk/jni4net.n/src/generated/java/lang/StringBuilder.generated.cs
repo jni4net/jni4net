@@ -33,32 +33,32 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId @__ctor7;
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
-        public StringBuilder(int par0) : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor4, this, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public StringBuilder(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor5, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor4, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)V")]
         public StringBuilder(global::java.lang.CharSequence par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor6, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor5, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public StringBuilder() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor7, this);
+            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor6, this);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
+        public StringBuilder(int par0) : 
+                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
+            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor7, this, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         protected StringBuilder(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -77,10 +77,10 @@ namespace java.lang {
             global::java.lang.StringBuilder._charAt1 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "charAt", "(I)C");
             global::java.lang.StringBuilder._length2 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "length", "()I");
             global::java.lang.StringBuilder._subSequence3 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "subSequence", "(II)Ljava/lang/CharSequence;");
-            global::java.lang.StringBuilder.@__ctor4 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(I)V");
-            global::java.lang.StringBuilder.@__ctor5 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.StringBuilder.@__ctor6 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/CharSequence;)V");
-            global::java.lang.StringBuilder.@__ctor7 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "()V");
+            global::java.lang.StringBuilder.@__ctor4 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.StringBuilder.@__ctor5 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/CharSequence;)V");
+            global::java.lang.StringBuilder.@__ctor6 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "()V");
+            global::java.lang.StringBuilder.@__ctor7 = env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]

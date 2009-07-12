@@ -19,105 +19,113 @@ namespace java.nio {
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get1;
+        internal static global::net.sf.jni4net.jni.MethodId _compareTo1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get2;
+        internal static global::net.sf.jni4net.jni.MethodId _getShort2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get3;
+        internal static global::net.sf.jni4net.jni.MethodId _getShort3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get4;
+        internal static global::net.sf.jni4net.jni.MethodId _getChar4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put5;
+        internal static global::net.sf.jni4net.jni.MethodId _getChar5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put6;
+        internal static global::net.sf.jni4net.jni.MethodId _getInt6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put7;
+        internal static global::net.sf.jni4net.jni.MethodId _getInt7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put8;
+        internal static global::net.sf.jni4net.jni.MethodId _getLong8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put9;
+        internal static global::net.sf.jni4net.jni.MethodId _getLong9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _compareTo10;
+        internal static global::net.sf.jni4net.jni.MethodId _getFloat10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getShort11;
+        internal static global::net.sf.jni4net.jni.MethodId _getFloat11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getShort12;
+        internal static global::net.sf.jni4net.jni.MethodId _getDouble12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putShort13;
+        internal static global::net.sf.jni4net.jni.MethodId _getDouble13;
         
         internal static global::net.sf.jni4net.jni.MethodId _putShort14;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getChar15;
+        internal static global::net.sf.jni4net.jni.MethodId _putShort15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getChar16;
+        internal static global::net.sf.jni4net.jni.MethodId _putChar16;
         
         internal static global::net.sf.jni4net.jni.MethodId _putChar17;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putChar18;
+        internal static global::net.sf.jni4net.jni.MethodId _putInt18;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getInt19;
+        internal static global::net.sf.jni4net.jni.MethodId _putInt19;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getInt20;
+        internal static global::net.sf.jni4net.jni.MethodId _putLong20;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putInt21;
+        internal static global::net.sf.jni4net.jni.MethodId _putLong21;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putInt22;
+        internal static global::net.sf.jni4net.jni.MethodId _putFloat22;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getLong23;
+        internal static global::net.sf.jni4net.jni.MethodId _putFloat23;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getLong24;
+        internal static global::net.sf.jni4net.jni.MethodId _putDouble24;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putLong25;
+        internal static global::net.sf.jni4net.jni.MethodId _putDouble25;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putLong26;
+        internal static global::net.sf.jni4net.jni.MethodId _put26;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFloat27;
+        internal static global::net.sf.jni4net.jni.MethodId _put27;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFloat28;
+        internal static global::net.sf.jni4net.jni.MethodId _put28;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putFloat29;
+        internal static global::net.sf.jni4net.jni.MethodId _put29;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putFloat30;
+        internal static global::net.sf.jni4net.jni.MethodId _put30;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDouble31;
+        internal static global::net.sf.jni4net.jni.MethodId _get31;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDouble32;
+        internal static global::net.sf.jni4net.jni.MethodId _get32;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putDouble33;
+        internal static global::net.sf.jni4net.jni.MethodId _get33;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putDouble34;
+        internal static global::net.sf.jni4net.jni.MethodId _get34;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wrap35;
+        internal static global::net.sf.jni4net.jni.MethodId _array35;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wrap36;
+        internal static global::net.sf.jni4net.jni.MethodId _arrayOffset36;
         
-        internal static global::net.sf.jni4net.jni.MethodId _allocate37;
+        internal static global::net.sf.jni4net.jni.MethodId _hasArray37;
         
-        internal static global::net.sf.jni4net.jni.MethodId _duplicate38;
+        internal static global::net.sf.jni4net.jni.MethodId _isDirect38;
         
-        internal static global::net.sf.jni4net.jni.MethodId _allocateDirect39;
+        internal static global::net.sf.jni4net.jni.MethodId _wrap39;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asCharBuffer40;
+        internal static global::net.sf.jni4net.jni.MethodId _wrap40;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asDoubleBuffer41;
+        internal static global::net.sf.jni4net.jni.MethodId _allocate41;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asFloatBuffer42;
+        internal static global::net.sf.jni4net.jni.MethodId _duplicate42;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asIntBuffer43;
+        internal static global::net.sf.jni4net.jni.MethodId _allocateDirect43;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asLongBuffer44;
+        internal static global::net.sf.jni4net.jni.MethodId _asCharBuffer44;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asReadOnlyBuffer45;
+        internal static global::net.sf.jni4net.jni.MethodId _asDoubleBuffer45;
         
-        internal static global::net.sf.jni4net.jni.MethodId _asShortBuffer46;
+        internal static global::net.sf.jni4net.jni.MethodId _asFloatBuffer46;
         
-        internal static global::net.sf.jni4net.jni.MethodId _compact47;
+        internal static global::net.sf.jni4net.jni.MethodId _asIntBuffer47;
         
-        internal static global::net.sf.jni4net.jni.MethodId _order48;
+        internal static global::net.sf.jni4net.jni.MethodId _asLongBuffer48;
         
-        internal static global::net.sf.jni4net.jni.MethodId _order49;
+        internal static global::net.sf.jni4net.jni.MethodId _asReadOnlyBuffer49;
         
-        internal static global::net.sf.jni4net.jni.MethodId _slice50;
+        internal static global::net.sf.jni4net.jni.MethodId _asShortBuffer50;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _compact51;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _order52;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _order53;
+        
+        internal static global::net.sf.jni4net.jni.MethodId _slice54;
         
         protected ByteBuffer(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
@@ -132,56 +140,60 @@ namespace java.nio {
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::java.nio.ByteBuffer.staticClass = staticClass;
             global::java.nio.ByteBuffer._compareTo0 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "compareTo", "(Ljava/lang/Object;)I");
-            global::java.nio.ByteBuffer._get1 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "(I)B");
-            global::java.nio.ByteBuffer._get2 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "()B");
-            global::java.nio.ByteBuffer._get3 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "([B)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._get4 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "([BII)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._put5 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "([B)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._put6 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(IB)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._put7 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._put8 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(B)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._put9 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "([BII)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._compareTo10 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "compareTo", "(Ljava/nio/ByteBuffer;)I");
-            global::java.nio.ByteBuffer._getShort11 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getShort", "()S");
-            global::java.nio.ByteBuffer._getShort12 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getShort", "(I)S");
-            global::java.nio.ByteBuffer._putShort13 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putShort", "(S)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._compareTo1 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "compareTo", "(Ljava/nio/ByteBuffer;)I");
+            global::java.nio.ByteBuffer._getShort2 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getShort", "(I)S");
+            global::java.nio.ByteBuffer._getShort3 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getShort", "()S");
+            global::java.nio.ByteBuffer._getChar4 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getChar", "()C");
+            global::java.nio.ByteBuffer._getChar5 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getChar", "(I)C");
+            global::java.nio.ByteBuffer._getInt6 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getInt", "()I");
+            global::java.nio.ByteBuffer._getInt7 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getInt", "(I)I");
+            global::java.nio.ByteBuffer._getLong8 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getLong", "(I)J");
+            global::java.nio.ByteBuffer._getLong9 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getLong", "()J");
+            global::java.nio.ByteBuffer._getFloat10 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getFloat", "(I)F");
+            global::java.nio.ByteBuffer._getFloat11 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getFloat", "()F");
+            global::java.nio.ByteBuffer._getDouble12 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getDouble", "(I)D");
+            global::java.nio.ByteBuffer._getDouble13 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getDouble", "()D");
             global::java.nio.ByteBuffer._putShort14 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putShort", "(IS)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._getChar15 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getChar", "()C");
-            global::java.nio.ByteBuffer._getChar16 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getChar", "(I)C");
-            global::java.nio.ByteBuffer._putChar17 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putChar", "(C)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._putChar18 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putChar", "(IC)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._getInt19 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getInt", "(I)I");
-            global::java.nio.ByteBuffer._getInt20 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getInt", "()I");
-            global::java.nio.ByteBuffer._putInt21 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putInt", "(II)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._putInt22 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putInt", "(I)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._getLong23 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getLong", "(I)J");
-            global::java.nio.ByteBuffer._getLong24 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getLong", "()J");
-            global::java.nio.ByteBuffer._putLong25 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putLong", "(IJ)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._putLong26 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putLong", "(J)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._getFloat27 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getFloat", "(I)F");
-            global::java.nio.ByteBuffer._getFloat28 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getFloat", "()F");
-            global::java.nio.ByteBuffer._putFloat29 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putFloat", "(F)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._putFloat30 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putFloat", "(IF)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._getDouble31 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getDouble", "()D");
-            global::java.nio.ByteBuffer._getDouble32 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "getDouble", "(I)D");
-            global::java.nio.ByteBuffer._putDouble33 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putDouble", "(D)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._putDouble34 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putDouble", "(ID)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._wrap35 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "wrap", "([BII)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._wrap36 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "wrap", "([B)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._allocate37 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "allocate", "(I)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._duplicate38 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "duplicate", "()Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._allocateDirect39 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "allocateDirect", "(I)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._asCharBuffer40 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asCharBuffer", "()Ljava/nio/CharBuffer;");
-            global::java.nio.ByteBuffer._asDoubleBuffer41 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asDoubleBuffer", "()Ljava/nio/DoubleBuffer;");
-            global::java.nio.ByteBuffer._asFloatBuffer42 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asFloatBuffer", "()Ljava/nio/FloatBuffer;");
-            global::java.nio.ByteBuffer._asIntBuffer43 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asIntBuffer", "()Ljava/nio/IntBuffer;");
-            global::java.nio.ByteBuffer._asLongBuffer44 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asLongBuffer", "()Ljava/nio/LongBuffer;");
-            global::java.nio.ByteBuffer._asReadOnlyBuffer45 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asReadOnlyBuffer", "()Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._asShortBuffer46 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asShortBuffer", "()Ljava/nio/ShortBuffer;");
-            global::java.nio.ByteBuffer._compact47 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "compact", "()Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._order48 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "order", "(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;");
-            global::java.nio.ByteBuffer._order49 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "order", "()Ljava/nio/ByteOrder;");
-            global::java.nio.ByteBuffer._slice50 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "slice", "()Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putShort15 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putShort", "(S)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putChar16 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putChar", "(C)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putChar17 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putChar", "(IC)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putInt18 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putInt", "(I)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putInt19 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putInt", "(II)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putLong20 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putLong", "(J)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putLong21 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putLong", "(IJ)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putFloat22 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putFloat", "(IF)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putFloat23 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putFloat", "(F)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putDouble24 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putDouble", "(D)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._putDouble25 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "putDouble", "(ID)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._put26 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._put27 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "([BII)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._put28 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(B)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._put29 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "(IB)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._put30 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "put", "([B)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._get31 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "(I)B");
+            global::java.nio.ByteBuffer._get32 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "([BII)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._get33 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "([B)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._get34 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "get", "()B");
+            global::java.nio.ByteBuffer._array35 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "array", "()[B");
+            global::java.nio.ByteBuffer._arrayOffset36 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "arrayOffset", "()I");
+            global::java.nio.ByteBuffer._hasArray37 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "hasArray", "()Z");
+            global::java.nio.ByteBuffer._isDirect38 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "isDirect", "()Z");
+            global::java.nio.ByteBuffer._wrap39 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "wrap", "([BII)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._wrap40 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "wrap", "([B)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._allocate41 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "allocate", "(I)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._duplicate42 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "duplicate", "()Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._allocateDirect43 = env.GetStaticMethodID(global::java.nio.ByteBuffer.staticClass, "allocateDirect", "(I)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._asCharBuffer44 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asCharBuffer", "()Ljava/nio/CharBuffer;");
+            global::java.nio.ByteBuffer._asDoubleBuffer45 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asDoubleBuffer", "()Ljava/nio/DoubleBuffer;");
+            global::java.nio.ByteBuffer._asFloatBuffer46 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asFloatBuffer", "()Ljava/nio/FloatBuffer;");
+            global::java.nio.ByteBuffer._asIntBuffer47 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asIntBuffer", "()Ljava/nio/IntBuffer;");
+            global::java.nio.ByteBuffer._asLongBuffer48 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asLongBuffer", "()Ljava/nio/LongBuffer;");
+            global::java.nio.ByteBuffer._asReadOnlyBuffer49 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asReadOnlyBuffer", "()Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._asShortBuffer50 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "asShortBuffer", "()Ljava/nio/ShortBuffer;");
+            global::java.nio.ByteBuffer._compact51 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "compact", "()Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._order52 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "order", "()Ljava/nio/ByteOrder;");
+            global::java.nio.ByteBuffer._order53 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "order", "(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;");
+            global::java.nio.ByteBuffer._slice54 = env.GetMethodID(global::java.nio.ByteBuffer.staticClass, "slice", "()Ljava/nio/ByteBuffer;");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -190,82 +202,82 @@ namespace java.nio {
             return env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo0, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)B")]
-        public virtual byte get(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallByteMethod(this, global::java.nio.ByteBuffer._get1, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]
-        public virtual byte get() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallByteMethod(this, global::java.nio.ByteBuffer._get2);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer get(byte[] par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._get3, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer get(byte[] par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._get4, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
-        public global::java.nio.ByteBuffer put(byte[] par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put5, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IB)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer put(int par0, byte par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put6, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer put(global::java.nio.ByteBuffer par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put7, new global::net.sf.jni4net.jni.Value(par0)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(B)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer put(byte par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put8, new global::net.sf.jni4net.jni.Value(par0)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer put(byte[] par0, int par1, int par2) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put9, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
-        }
-        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/nio/ByteBuffer;)I")]
         public virtual int compareTo(global::java.nio.ByteBuffer par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo10, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()S")]
-        public virtual short getShort() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort11);
+            return env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo1, new global::net.sf.jni4net.jni.Value(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)S")]
         public virtual short getShort(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort12, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort2, new global::net.sf.jni4net.jni.Value(par0));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer putShort(short par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()S")]
+        public virtual short getShort() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putShort13, new global::net.sf.jni4net.jni.Value(par0)));
+            return env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort3);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()C")]
+        public virtual char getChar() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar4);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
+        public virtual char getChar(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar5, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
+        public virtual int getInt() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt6);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
+        public virtual int getInt(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt7, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)J")]
+        public virtual long getLong(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong8, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
+        public virtual long getLong() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong9);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)F")]
+        public virtual float getFloat(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat10, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()F")]
+        public virtual float getFloat() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat11);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)D")]
+        public virtual double getDouble(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble12, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()D")]
+        public virtual double getDouble() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble13);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IS)Ljava/nio/ByteBuffer;")]
@@ -274,220 +286,244 @@ namespace java.nio {
             return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putShort14, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()C")]
-        public virtual char getChar() {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer putShort(short par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar15);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
-        public virtual char getChar(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar16, new global::net.sf.jni4net.jni.Value(par0));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putShort15, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putChar(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putChar17, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putChar16, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IC)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putChar(int par0, char par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putChar18, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
-        public virtual int getInt(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt19, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
-        public virtual int getInt() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt20);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer putInt(int par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putInt21, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putChar17, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putInt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putInt22, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putInt18, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)J")]
-        public virtual long getLong(int par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer putInt(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong23, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
-        public virtual long getLong() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong24);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IJ)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer putLong(int par0, long par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putLong25, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putInt19, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putLong(long par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putLong26, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putLong20, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)F")]
-        public virtual float getFloat(int par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IJ)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer putLong(int par0, long par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat27, new global::net.sf.jni4net.jni.Value(par0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()F")]
-        public virtual float getFloat() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat28);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Ljava/nio/ByteBuffer;")]
-        public virtual global::java.nio.ByteBuffer putFloat(float par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putFloat29, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putLong21, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IF)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putFloat(int par0, float par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putFloat30, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putFloat22, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()D")]
-        public virtual double getDouble() {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer putFloat(float par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble31);
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)D")]
-        public virtual double getDouble(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble32, new global::net.sf.jni4net.jni.Value(par0));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putFloat23, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putDouble(double par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putDouble33, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putDouble24, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(ID)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer putDouble(int par0, double par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putDouble34, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._putDouble25, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer put(global::java.nio.ByteBuffer par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put26, new global::net.sf.jni4net.jni.Value(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer put(byte[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put27, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(B)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer put(byte par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put28, new global::net.sf.jni4net.jni.Value(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IB)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer put(int par0, byte par1) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put29, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
+        public global::java.nio.ByteBuffer put(byte[] par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._put30, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)B")]
+        public virtual byte get(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallByteMethod(this, global::java.nio.ByteBuffer._get31, new global::net.sf.jni4net.jni.Value(par0));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer get(byte[] par0, int par1, int par2) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._get32, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
+        public virtual global::java.nio.ByteBuffer get(byte[] par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._get33, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]
+        public virtual byte get() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallByteMethod(this, global::java.nio.ByteBuffer._get34);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[B")]
+        public byte[] array() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return ((byte[])(env.ConvertArrayToNet<byte>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._array35))));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
+        public int arrayOffset() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallIntMethod(this, global::java.nio.ByteBuffer._arrayOffset36);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        public bool hasArray() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.nio.ByteBuffer._hasArray37);
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
+        public virtual bool isDirect() {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return env.CallBooleanMethod(this, global::java.nio.ByteBuffer._isDirect38);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap35, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap39, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap36, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap40, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer allocate(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocate37, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocate41, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer duplicate() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._duplicate38));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._duplicate42));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer allocateDirect(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocateDirect39, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallStaticObjectMethod(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._allocateDirect43, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asCharBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asCharBuffer40));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asCharBuffer44));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asDoubleBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asDoubleBuffer41));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asDoubleBuffer45));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asFloatBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asFloatBuffer42));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asFloatBuffer46));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asIntBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asIntBuffer43));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asIntBuffer47));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asLongBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asLongBuffer44));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asLongBuffer48));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer asReadOnlyBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asReadOnlyBuffer45));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asReadOnlyBuffer49));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public virtual global::java.nio.Buffer asShortBuffer() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asShortBuffer46));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._asShortBuffer50));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer compact() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._compact47));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)Ljava/nio/ByteBuffer;")]
-        public global::java.nio.ByteBuffer order(object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._order48, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._compact51));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public object order() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._order49));
+            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._order52));
+        }
+        
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)Ljava/nio/ByteBuffer;")]
+        public global::java.nio.ByteBuffer order(object par0) {
+            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._order53, new global::net.sf.jni4net.jni.Value(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer slice() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._slice50));
+            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.ByteBuffer>(env.CallObjectMethod(this, global::java.nio.ByteBuffer._slice54));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
