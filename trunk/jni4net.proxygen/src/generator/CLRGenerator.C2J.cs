@@ -70,9 +70,9 @@ namespace net.sf.jni4net.proxygen.generator
                     {
                         var expression = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("env"),
                                                                         "ConvertArrayToNet", invokeExpression);
-                        expression.Method.TypeArguments.Add(method.ReturnType.ArrayElement.CLRResolved);
+                        expression.Method.TypeArguments.Add(method.ReturnType.ArrayElement.CLRReference);
                         invokeExpression = expression;
-                        var castExpression = new CodeCastExpression(method.ReturnType.CLRResolved, invokeExpression);
+                        var castExpression = new CodeCastExpression(method.ReturnType.CLRReference, invokeExpression);
                         call = new CodeMethodReturnStatement(castExpression);
                     }
                     else
