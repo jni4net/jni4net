@@ -72,8 +72,8 @@ public class Bridge extends system.Object {
 			if (!path.exists()) {
 				throw new Error("Can't find " + path);
 			}
-		} else if (file.contains(".jar")) {
-			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net.j", "jni4net.n").replaceAll(VersionReader.getVersion(), getNVersion());
+		} else if (file.endsWith(".jar")) {
+			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n");
 			path = new java.io.File(base + ".dll");
 		} else {
 			throw new Error("Can't find " + file);
