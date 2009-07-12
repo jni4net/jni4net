@@ -104,7 +104,6 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.JVMFullName = clazz.getName();
             }
-            res.Attributes = 0;
             res.IsJVMType = true;
             res.IsPrimitive = clazz.isPrimitive();
             res.IsInterface = clazz.isInterface();
