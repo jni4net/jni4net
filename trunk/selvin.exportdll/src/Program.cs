@@ -42,18 +42,23 @@ namespace selvin.exportdll
 
                 string ildasmpath = @"C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\ildasm.exe";
                 string ilasmpath = @"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe";
+                string keypath = null;
                 bool debug = false;
-                if (args.Length > 1)
+                if (args.Length > 1 && args[1]!=".")
                 {
                     ildasmpath = args[1];
                 }
-                if (args.Length > 2)
+                if (args.Length > 2 && args[2] != ".")
                 {
                     ilasmpath = args[2];
                 }
                 if (args.Length > 3)
                 {
-                    if (args[3] == "/Debug")
+                    keypath = args[3];
+                }
+                if (args.Length > 4)
+                {
+                    if (args[4] == "/Debug")
                         debug = true;
                 }
                 string filepath = Path.GetFullPath(args[0]);
@@ -317,6 +322,10 @@ namespace selvin.exportdll
                     proc = new Process();
                     arguments = string.Format("/nologo /quiet /out:{0}.dll {0}.il /DLL{1} {2}", filename, res,
                                               debug ? "/debug" : "/optimize");
+                    if (keypath!=null)
+                    {
+                        arguments += " /KEY=" + keypath;
+                    }
                     Console.WriteLine("Compiling file with arguments '{0}'", arguments);
                     info = new ProcessStartInfo(ilasmpath, arguments);
                     info.UseShellExecute = false;

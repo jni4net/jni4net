@@ -27,24 +27,24 @@ namespace net.sf.jni4net.proxygen.generator
 {
     public static class Utils
     {
-        public static void AddAttribute(this CodeTypeDeclaration declaration, string attr)
+        public static void AddAttribute(CodeTypeDeclaration declaration, string attr)
         {
             declaration.CustomAttributes.Add(new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference)));
         }
 
-        public static void AddAttribute(this CodeTypeMember tgtMethodCLR, string attr, object value)
+        public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, object value)
         {
             var declaration = AddAttribute(tgtMethodCLR, attr);
             declaration.Arguments.Add(new CodeAttributeArgument(new CodePrimitiveExpression(value)));
         }
 
-        public static void AddAttribute(this CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer)
+        public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer)
         {
             var declaration = AddAttribute(tgtMethodCLR, attr);
             declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer)));
         }
 
-        public static CodeAttributeDeclaration AddAttribute(this CodeTypeMember tgtMethodCLR, string attr)
+        public static CodeAttributeDeclaration AddAttribute(CodeTypeMember tgtMethodCLR, string attr)
         {
             CodeAttributeDeclaration declaration =
                 new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference));

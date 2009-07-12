@@ -234,10 +234,13 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.j/jni4net.j.iml" filepath="$PROJECT_DIR$/jni4net.j/jni4net.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n/jni4net.n.iml" filepath="$PROJECT_DIR$/jni4net.n/jni4net.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" filepath="$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" filepath="$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" filepath="$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" filepath="$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/selvin.exportdll/selvin.exportdll.iml" filepath="$PROJECT_DIR$/selvin.exportdll/selvin.exportdll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/selvin.exportdllattribute/selvin.exportdllattribute.iml" filepath="$PROJECT_DIR$/selvin.exportdllattribute/selvin.exportdllattribute.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
@@ -256,20 +259,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
   <component name="libraryTable">
@@ -282,6 +271,46 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.jni4net:jni4net.j:0.1.0.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.jni4net:jni4net.tested.j:0.1.0.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

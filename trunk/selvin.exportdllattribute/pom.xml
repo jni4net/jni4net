@@ -21,7 +21,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/nowarn:1591</aditionalOptions>
+                    <aditionalOptions>/nowarn:1591 /keyfile:${basedir}/../tools/keys/exportdll.snk</aditionalOptions>
                 </configuration>
             </plugin>
         </plugins>

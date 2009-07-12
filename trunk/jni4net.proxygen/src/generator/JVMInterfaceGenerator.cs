@@ -55,7 +55,7 @@ namespace net.sf.jni4net.proxygen.generator
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.Public;
             tgtType.IsInterface = true;
-            tgtType.AddAttribute("net.sf.jni4net.attributes.ClrInterface");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrInterface");
 
             foreach (GType ifc in type.Interfaces)
             {

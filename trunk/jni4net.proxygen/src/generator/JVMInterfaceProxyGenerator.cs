@@ -1,10 +1,6 @@
-using System;
 using System.CodeDom;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using net.sf.jni4net.proxygen.model;
 
 namespace net.sf.jni4net.proxygen.generator
@@ -12,7 +8,7 @@ namespace net.sf.jni4net.proxygen.generator
     /// <summary>
     /// create static helper type for interfaces
     /// </summary>
-    class JVMInterfaceProxyGenerator : JVMGenerator
+    internal class JVMInterfaceProxyGenerator : JVMGenerator
     {
         public JVMInterfaceProxyGenerator(GType type) : base(type)
         {
@@ -36,19 +32,17 @@ namespace net.sf.jni4net.proxygen.generator
         {
             // static helper type
             var tgtType = new CodeTypeDeclaration(type.Name + "_");
-            SetCurrentType(type.JVMNamespaceExt + "." + type.Name + "_", type.JVMNamespace + "." + type.Name, type.JVMNamespaceExt + ".__" + type.Name);
+            SetCurrentType(type.JVMNamespaceExt + "." + type.Name + "_", type.JVMNamespace + "." + type.Name,
+                           type.JVMNamespaceExt + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.Public | TypeAttributes.Sealed;
-            tgtType.AddAttribute("net.sf.jni4net.attributes.ClrTypeInfo");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrTypeInfo");
 
             // fields with type information
             GenerateTypeOfInit(tgtType);
 
 
-
             WrapMethodsMagic(tgtType, sMagicStatic, eMagicStatic);
         }
-
     }
-
 }

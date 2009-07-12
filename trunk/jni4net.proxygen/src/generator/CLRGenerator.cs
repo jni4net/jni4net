@@ -126,7 +126,7 @@ namespace net.sf.jni4net.proxygen.generator
                            , type.CLRNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic|TypeAttributes.Sealed;
-            tgtType.AddAttribute("net.sf.jni4net.attributes.JavaProxyAttribute");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaProxyAttribute");
             tgtType.BaseTypes.Add(Repository.javaLangObject.CLRReference);
             if (type.IsInterface)
             {
@@ -260,7 +260,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
             if (!config.SkipSignatures && !isProxy)
             {
-                tgtMember.AddAttribute("net.sf.jni4net.attributes.JavaMethodAttribute", method.CLRSignature);
+                Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.CLRSignature);
             }
             tgtMember.Attributes = method.Attributes;
             if (isProxy)

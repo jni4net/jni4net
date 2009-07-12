@@ -222,11 +222,11 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 if (method.IsConstructor)
                 {
-                    tgtMethod.AddAttribute("net.sf.jni4net.attributes.ClrConstructor", method.CLRSignature);
+                    Utils.AddAttribute(tgtMethod, "net.sf.jni4net.attributes.ClrConstructor", method.CLRSignature);
                 }
                 else
                 {
-                    tgtMethod.AddAttribute("net.sf.jni4net.attributes.ClrMethod", method.CLRSignature);
+                    Utils.AddAttribute(tgtMethod, "net.sf.jni4net.attributes.ClrMethod", method.CLRSignature);
                 }
             }
             tgtMethod.Attributes = method.Attributes;
@@ -254,7 +254,7 @@ namespace net.sf.jni4net.proxygen.generator
             SetCurrentType(type.JVMNamespaceExt + ".__" + type.Name, type.JVMNamespace + "." + type.Name, type.JVMNamespaceExt + ".__" + type.Name);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;
-            tgtType.AddAttribute("net.sf.jni4net.attributes.ClrProxy");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrProxy");
             tgtType.BaseTypes.Add(Repository.systemObject.JVMReference);
             tgtType.BaseTypes.Add(type.JVMReference);
 
