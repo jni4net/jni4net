@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>jni4net.commonpom</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>${jni4net.version}</version>
+        <relativePath>tools/commonpom</relativePath>
+    </parent>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net</artifactId>
+    <version>${jni4net.version}</version>
+    <packaging>pom</packaging>
+    <name>JNI 4 .NET</name>
+    <modules>
+        <module>jni4net.j</module>
+        <module>jni4net.n</module>
+        <module>jni4net.proxygen</module>
+        <module>jni4net.tested.j</module>
+        <module>jni4net.tested.n</module>
+        <module>jni4net.test.j</module>
+        <module>jni4net.test.n</module>
+        <module>selvin.exportdll</module>
+        <module>selvin.exportdllattribute</module>
+        <!--
+        -->
+    </modules>
+</project>

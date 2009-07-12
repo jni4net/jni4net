@@ -1,0 +1,187 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
+  <artifactId>maven-antrun-extended-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <name>Maven AntRun Extended Plugin</name>
+  <version>1.39</version>
+  <description>This extended antrun maven plugin enables users not only to run ant scripts embedded in the POM, but also to reference maven dependencies using Ant task classes. This enables the user to delegate more complex tasks to Ant such as constructing file-based installation distros.</description>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution />
+      <comments />
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>psterk</id>
+      <name>Paul Sterk</name>
+      <email>paul.sterk@sun.com</email>
+      <url />
+      <organization>Sun Microsystems</organization>
+      <organizationUrl>http://www.sun.com</organizationUrl>
+      <roles />
+      <timezone>US Pacific</timezone>
+      <properties />
+    </developer>
+    <developer>
+      <id>kohsuke</id>
+      <name>Kohsuke Kawaguchi</name>
+      <email>kohsuke.kawaguchi@sun.com</email>
+      <url>http://weblogs.java.net/blog/kohsuke/</url>
+      <organization>Sun Microsystems</organization>
+      <organizationUrl>http://www.sun.com</organizationUrl>
+      <roles />
+      <timezone>US Pacific</timezone>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>${maven.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>${maven.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>ant</groupId>
+        <artifactId>ant-launcher</artifactId>
+        <version>1.6.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>ant</groupId>
+        <artifactId>ant</artifactId>
+        <!--
+          Ant 1.7 causes http://www.nabble.com/Another-V3-build-error-after-update-tt14721686.html
+          See http://jira.codehaus.org/browse/MANTRUN-68 for the cause. In the mean time,
+          falling back to 1.6.5.
+        -->
+        <version>1.6.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-embedder</artifactId>
+      <!-- There's no release of Maven embedder since 2.0.1, so we can't do ${maven.version} here -->
+      <version>2.0.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+       <groupId>org.apache.commons</groupId>
+       <artifactId>commons-io</artifactId>
+       <version>1.3.2</version>
+   </dependency>
+  </dependencies>
+
+  <scm>
+    <connection>scm:svn:https://maven-antrun-extended-plugin.dev.java.net/svn/maven-antrun-extended-plugin/tags/maven-antrun-extended-plugin-1.39</connection>
+    <developerConnection>scm:svn:https://maven-antrun-extended-plugin.dev.java.net/svn/maven-antrun-extended-plugin/tags/maven-antrun-extended-plugin-1.39</developerConnection>
+  </scm>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>2.4</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <tagBase>https://maven-antrun-extended-plugin.dev.java.net/svn/maven-antrun-extended-plugin/tags</tagBase>
+        </configuration>
+      </plugin>
+    </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.jvnet.wagon-svn</groupId>
+        <artifactId>wagon-svn</artifactId>
+        <version>1.5</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>maven2-repository.dev.java.net</id>
+      <name>Java.net Repository for Maven</name>
+      <url>http://download.java.net/maven/2/</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <site>
+      <id>java.net</id>
+      <url>java-net:/maven-antrun-extended-plugin/trunk/www/</url>
+    </site>
+    <repository>
+      <id>java.net</id>
+      <uniqueVersion>false</uniqueVersion>
+      <url>java-net:/maven2-repository/trunk/repository/</url>
+    </repository>
+  </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>integration-tests</id>
+      <activation>
+        <property>
+          <name>maven.test.skip</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <configuration>
+              <debug>true</debug>
+              <projectsDirectory>src/it</projectsDirectory>
+              <pomIncludes>
+                <pomInclude>**/pom.xml</pomInclude>
+              </pomIncludes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>integration-test</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.3</version>
+                <configuration>
+                    <!--argLine>-Xdebug -Xrunjdwp:transport=dt_socket,address=9009,server=y,suspend=y</argLine-->
+                </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <properties>
+    <!-- skipping tests until someone decides to fix this -->
+    <maven.test.skip>true</maven.test.skip>
+    <!-- if you need to debug against a different version of option, -Dmaven.version=2.0.7 -->
+    <maven.version>2.0.7</maven.version>
+  </properties>
+</project>
