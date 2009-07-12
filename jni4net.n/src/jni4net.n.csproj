@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
     </TargetFrameworkSubset>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,14 +40,11 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="selvin.exportdllattribute, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="selvin.exportdllattribute-0.2.0.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\tools\lib\selvin.exportdllattribute.dll</HintPath>
+      <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
@@ -220,6 +219,9 @@
     <Compile Include="system\__Object.cs" />
     <Compile Include="utils\IConstructionHelper.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="jni4net.snk" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -229,7 +231,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)\..\..\tools\lib\selvin.exportdll.exe $(TargetPath) "C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\ildasm.exe" "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe" /Debug</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)\..\..\tools\lib\selvin.exportdll-0.2.0.0.exe $(TargetPath) . . $(ProjectDir)\jni4net.snk /Debug</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.2.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>

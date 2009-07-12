@@ -16,7 +16,7 @@ namespace net.sf.jni4net.proxygen.generator
 
         protected void GenerateWrapperMethodsJ2C(CodeTypeDeclaration tgtType)
         {
-            tgtType.AddAttribute("net.sf.jni4net.attributes.ClrWrapperAttribute", type.CLRReference);
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrWrapperAttribute", type.CLRReference);
             tgtType.Members.Add(initMethod);
 
             int m = 0;

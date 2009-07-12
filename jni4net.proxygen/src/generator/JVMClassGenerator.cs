@@ -21,7 +21,7 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 tgtType.TypeAttributes |= TypeAttributes.Abstract;
             }*/
-            tgtType.AddAttribute("net.sf.jni4net.attributes.ClrType");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrType");
             if (type.Base != null)
             {
                 tgtType.BaseTypes.Add(type.Base.JVMReference);
@@ -95,7 +95,7 @@ namespace net.sf.jni4net.proxygen.generator
             CodeMemberMethod tgtMethod = new CodeMemberMethod();
             tgtMethod.Name = uName;
             tgtMethod.Attributes = MemberAttributes.Static | MemberAttributes.Private | MemberAttributes.New;
-            tgtMethod.AddAttribute("net.sf.jni4net.attributes.ClrMethod", constructor.JVMSignature);
+            Utils.AddAttribute(tgtMethod, "net.sf.jni4net.attributes.ClrMethod", constructor.JVMSignature);
 
             // inject thiz parameter
             var tgtParameter = new CodeParameterDeclarationExpression();

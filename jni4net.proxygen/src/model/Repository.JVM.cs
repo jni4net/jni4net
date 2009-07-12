@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
@@ -238,8 +237,13 @@ namespace net.sf.jni4net.proxygen.model
                     return;
                 }
 
-                FinishRegistration(method.getName(), type, res, force, res.Name + res.GetCLRSignatureNoRet(), skip => skip.Name + skip.GetCLRSignatureNoRet());
+                FinishRegistration(method.getName(), type, res, force, res.Name + res.GetCLRSignatureNoRet(), skipCLR);
             }
+        }
+
+        private static string skipCLR(GMethod skip)
+        {
+            return skip.Name + skip.GetCLRSignatureNoRet();
         }
 
         private static void RegisterJVMConstructor(GType type, Constructor ctor, bool register)

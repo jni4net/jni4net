@@ -354,7 +354,7 @@ namespace net.sf.jni4net.proxygen.model
             return fskip;
         }
 
-        private static void FinishRegistration(string method, GType type, GMethod res, bool force, string sig, Func<GMethod, string> x)
+        private static void FinishRegistration(string method, GType type, GMethod res, bool force, string sig, RegSkip x)
         {
             if (!res.UseExplicitInterface && !force)
             {

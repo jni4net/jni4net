@@ -22,7 +22,7 @@ namespace net.sf.jni4net.proxygen.generator
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = type.Attributes & TypeAttributes.VisibilityMask;
             tgtType.IsPartial = true;
-            tgtType.AddAttribute("net.sf.jni4net.attributes.JavaClassAttribute");
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaClassAttribute");
             tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, cdc));
             tgtType.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, cdc));
             if (type.Base != null)
@@ -76,7 +76,7 @@ namespace net.sf.jni4net.proxygen.generator
             var tgtMethod = new CodeMemberMethod();
             tgtMethod.Name = uName;
             tgtMethod.Attributes = MemberAttributes.Static | MemberAttributes.Private | MemberAttributes.New;
-            tgtMethod.AddAttribute("net.sf.jni4net.attributes.ClrMethod", constructor.CLRSignature);
+            Utils.AddAttribute(tgtMethod, "net.sf.jni4net.attributes.ClrMethod", constructor.CLRSignature);
 
             // inject thiz parameter
             var tgtParameter = new CodeParameterDeclarationExpression();

@@ -8,13 +8,15 @@
     <ProjectGuid>{EAF9A4CD-0965-44C3-8570-09063E4D5E79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>selvin.exportdllattribute</RootNamespace>
-    <AssemblyName>selvin.exportdllattribute</AssemblyName>
+    <AssemblyName>selvin.exportdllattribute-0.2.0.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
     </TargetFrameworkSubset>
     <StartupObject>
     </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../tools/keys/exportdll.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExportDllAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exportdll.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
