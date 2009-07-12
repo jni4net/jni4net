@@ -15,14 +15,14 @@
         <repository>
             <id>net.sf.jni4net</id>
             <name>jni4net release repository</name>
-            <url>http://jni4net.sourceforge.net/maven2</url>
+            <url>http://jni4net.googlecode.com/svn/mvnrepo</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>net.sf.jni4net</id>
             <name>jni4net release repository</name>
-            <url>http://jni4net.sourceforge.net/maven2</url>
+            <url>http://jni4net.googlecode.com/svn/mvnrepo</url>
         </pluginRepository>
     </pluginRepositories>
 	<licenses>

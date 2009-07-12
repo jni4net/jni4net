@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>selvin.exportdllattribute</artifactId>
-    <version>${jni4net.nversion}</version>
+    <version>0.2.0.0</version>
     <packaging>dotnet:library</packaging>
     <name>Dll Export helper tool - build time</name>
     <build>
