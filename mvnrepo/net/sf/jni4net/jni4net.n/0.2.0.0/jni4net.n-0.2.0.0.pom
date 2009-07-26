@@ -4,12 +4,12 @@
     <parent>
         <artifactId>jni4net</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>${jni4net.version}</version>
+        <version>0.2.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net.n</artifactId>
-    <version>${jni4net.nversion}</version>
+    <version>0.2.0.0</version>
     <packaging>dotnet:library</packaging>
     <name>jni4net .NET</name>
     <description>jni4net .NET</description>
@@ -42,7 +42,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/unsafe /nowarn:1591,0114,0628,0109,0169,0618,0108</aditionalOptions>
+                    <aditionalOptions>/unsafe /nowarn:1591,0114,0628,0109,0169,0618,0108 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
             </plugin>
             <plugin>
@@ -63,7 +63,7 @@
                                 <copy file="${exportdll}" todir="target/tool"/>
                                 <copy file="${exportdllattribute}" todir="target/tool"/>
                                 <exec executable="cmd.exe" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-${jni4net.nversion}.exe jni4net.n-${jni4net.nversion}.dll"/>
+                                    <arg value="/c tool\selvin.exportdll-${jni4net.nversion}.exe jni4net.n-${jni4net.nversion}.dll . . ${basedir}/../tools/keys/jni4net.snk"/>
                                 </exec>
                             </tasks>
                         </configuration>
