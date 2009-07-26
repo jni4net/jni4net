@@ -4,7 +4,7 @@
     <parent>
         <artifactId>jni4net</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>${jni4net.version}</version>
+        <version>0.2.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
@@ -21,7 +21,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/nowarn:1591</aditionalOptions>
+                    <aditionalOptions>/nowarn:1591 /keyfile:${basedir}/../tools/keys/exportdll.snk</aditionalOptions>
                 </configuration>
             </plugin>
         </plugins>
