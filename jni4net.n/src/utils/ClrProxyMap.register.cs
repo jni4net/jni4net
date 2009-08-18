@@ -23,10 +23,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using java.lang;
 using net.sf.jni4net.attributes;
 using net.sf.jni4net.jni;
 using system;
+using Exception=System.Exception;
 using StringBuilder=System.Text.StringBuilder;
 
 namespace net.sf.jni4net.utils
@@ -160,6 +162,25 @@ namespace net.sf.jni4net.utils
             var registrations = (List<JNINativeMethod>) initMethod.Invoke(null, new object[] {env, proxy});
             if (registrations.Count > 0)
             {
+                if (Bridge.Debug)
+                {
+                    foreach (JNINativeMethod registration in registrations)
+                    {
+                        string n = Marshal.PtrToStringAnsi(registration.name);
+                        string s = Marshal.PtrToStringAnsi(registration.signature);
+                        if (env.GetMethodIDNoThrow(iface, n, s)==null)
+                        {
+                            try
+                            {
+                                env.GetStaticMethodID(iface, n, s);
+                            }
+                            catch (Exception ex2)
+                            {
+                                Console.Error.WriteLine(ex2);
+                            }
+                        }
+                    }
+                }
                 JNINativeMethod[] methods = registrations.ToArray();
                 fixed (JNINativeMethod* m = &(methods[0]))
                 {

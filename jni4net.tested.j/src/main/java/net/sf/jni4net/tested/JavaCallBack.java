@@ -42,6 +42,10 @@ public class JavaCallBack {
 		ClrException.ThrowBack();
 	}
 
+	public static int callBackStatic(int a, int b) {
+		return StaticMethods.add(a,b);
+	}
+
 	public static int callBackComparison() {
 		CWithJavaInterface c1=new CWithJavaInterface (1);
 		CWithJavaInterface c2=new CWithJavaInterface (2);

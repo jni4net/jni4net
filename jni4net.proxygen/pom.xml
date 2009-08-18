@@ -31,6 +31,7 @@
         </dependency>
 	</dependencies>
     <build>
+		<finalName>proxygen</finalName>
         <sourceDirectory>src</sourceDirectory>
         <plugins>
             <plugin>

@@ -42,5 +42,11 @@ namespace net.sf.jni4net.test
             testInstance.throwBack();
         }
 
+        [Test]
+        public void testStatic()
+        {
+            int res = JavaCallBack.callBackStatic(1, 3);
+            Assert.AreEqual(4,res);
+        }
     }
 }

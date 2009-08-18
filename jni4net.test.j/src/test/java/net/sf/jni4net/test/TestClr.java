@@ -19,10 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net.test;
 
 import net.sf.jni4net.Bridge;
-import net.sf.jni4net.tested.ClrException;
-import net.sf.jni4net.tested.JavaCallBack;
-import net.sf.jni4net.tested.JavaToClrReflection;
-import net.sf.jni4net.tested.CWithJavaInterface;
+import net.sf.jni4net.tested.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Assert;
@@ -62,6 +59,11 @@ public class TestClr {
 	@Test()
 	public void testExceptionType() {
 		JavaCallBack.callBackException();
+	}
+
+	@Test()
+	public void testCtor() {
+		StaticMethods sm=new StaticMethods(); 
 	}
 
 	@Test()

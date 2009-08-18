@@ -221,7 +221,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 else
                 {
-                    Console.Error.WriteLine("Can't load class " + registration);
+                    Console.Error.WriteLine("Can't load class " + registration.TypeName);
                 }
             }
         }
