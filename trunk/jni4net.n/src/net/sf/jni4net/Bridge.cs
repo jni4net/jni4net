@@ -41,6 +41,7 @@ namespace net.sf.jni4net
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool bindNative = true;
         public static bool Verbose { get; set; }
+        public static bool Debug { get; set; }
 
         public static bool BindNative
         {
@@ -272,6 +273,10 @@ namespace net.sf.jni4net
             try
             {
                 Init(env);
+                if (Verbose)
+                {
+                    Console.WriteLine("core loaded from " + typeof(Bridge).Assembly.Location);
+                }
             }
             catch (Exception ex)
             {

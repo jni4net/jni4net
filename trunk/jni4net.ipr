@@ -234,7 +234,6 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.j/jni4net.j.iml" filepath="$PROJECT_DIR$/jni4net.j/jni4net.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n/jni4net.n.iml" filepath="$PROJECT_DIR$/jni4net.n/jni4net.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" filepath="$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" filepath="$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" filepath="$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" />

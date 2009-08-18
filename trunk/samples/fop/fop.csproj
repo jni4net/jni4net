@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.2.0.0, Version=0.2.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\jni4net.n-0.2.0.0.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -62,6 +58,12 @@
     <Compile Include="org\apache\fop\apps\MimeConstants.generated.cs" />
     <Compile Include="org\apache\xmlgraphics\image\loader\ImageContext.generated.cs" />
     <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\jni4net.n\src\jni4net.n.csproj">
+      <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
+      <Name>jni4net.n</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
