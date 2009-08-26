@@ -21,11 +21,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Runtime.Serialization;
 
 namespace net.sf.jni4net.jni
 {
+    [Serializable]
     public class JNIException : Exception
     {
+        protected JNIException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+        public JNIException()
+        {
+        }
+
         public JNIException(string message)
             : base(message)
         {
