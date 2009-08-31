@@ -20,25 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 #if !JNI4NET_MINI
 using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net;
 using net.sf.jni4net.jni;
+
 #endif
 
 namespace java.lang
 {
-    public unsafe partial class Class
+    public partial class Class
     {
         private long hashCodeCache = long.MinValue;
-
-        internal new JavaPtr* native
-        {
-            get { return (JavaPtr*) base.native; }
-        }
 
         public string FullName
         {
@@ -126,7 +120,8 @@ namespace java.lang
         public static Class getPrimitiveClass(string name)
         {
             JNIEnv env = JNIEnv.ThreadEnv;
-            MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass", "(Ljava/lang/String;)Ljava/lang/Class;");
+            MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass",
+                                                "(Ljava/lang/String;)Ljava/lang/Class;");
             return Bridge.ToCLR<Class>(env.CallStaticObjectMethod(staticClass, id, new Value(name)));
         }
 
@@ -171,14 +166,5 @@ namespace java.lang
                 return true;
             return !x.equals(y);
         }
-
-        #region Nested type: JavaPtr
-
-        [StructLayout(LayoutKind.Sequential, Size = 1), NativeCppClass]
-        public new struct JavaPtr
-        {
-        }
-
-        #endregion
     }
 }

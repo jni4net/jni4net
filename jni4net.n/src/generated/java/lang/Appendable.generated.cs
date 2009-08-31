@@ -85,7 +85,7 @@ namespace java.lang {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* append0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, char par0) {
+        private static global::System.IntPtr append0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, char par0) {
             // (C)Ljava/lang/Appendable;
             // (C)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -93,10 +93,10 @@ namespace java.lang {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* append1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static global::System.IntPtr append1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/CharSequence;)Ljava/lang/Appendable;
             // (Ljava/lang/CharSequence;)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -104,10 +104,10 @@ namespace java.lang {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* append2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0, int par1, int par2) {
+        private static global::System.IntPtr append2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0, int par1, int par2) {
             // (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
             // (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -115,7 +115,7 @@ namespace java.lang {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, par0), par1, par2));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

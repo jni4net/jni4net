@@ -119,7 +119,7 @@ namespace java.lang.reflect {
             return methods;
         }
         
-        private static int getModifiers0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int getModifiers0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -130,7 +130,7 @@ namespace java.lang.reflect {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* getName1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getName1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -138,10 +138,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.Member real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.Member>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getName());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* getDeclaringClass2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getDeclaringClass2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/Class;
             // ()Ljava/lang/Class;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -149,10 +149,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.Member real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.Member>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getDeclaringClass());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool isSynthetic3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool isSynthetic3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

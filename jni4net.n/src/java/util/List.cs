@@ -1,7 +1,3 @@
-﻿using System;
-using System.Collections;
-using Object=java.lang.Object;
-
 namespace java.util
 {
     /*

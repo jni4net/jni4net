@@ -27,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>false</RegisterForComInterop>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0109,0108,0628,0114,0108,0618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

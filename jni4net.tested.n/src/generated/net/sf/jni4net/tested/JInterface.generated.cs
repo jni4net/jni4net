@@ -82,7 +82,7 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static void runForrestRun0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void runForrestRun0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -92,7 +92,7 @@ namespace net.sf.jni4net.tested {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void run1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void run1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -102,7 +102,7 @@ namespace net.sf.jni4net.tested {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void cdefined2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void cdefined2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

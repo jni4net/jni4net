@@ -52,7 +52,7 @@ namespace System {
             return methods;
         }
         
-        private static int CompareTo0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
+        private static int CompareTo0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

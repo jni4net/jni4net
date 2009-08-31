@@ -97,7 +97,7 @@ namespace java.lang.annotation {
             return methods;
         }
         
-        private static int hashCode0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int hashCode0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -108,7 +108,7 @@ namespace java.lang.annotation {
             return default(int);
         }
         
-        private static bool equals1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool equals1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -119,7 +119,7 @@ namespace java.lang.annotation {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* toString2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr toString2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -127,10 +127,10 @@ namespace java.lang.annotation {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.toString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* annotationType3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr annotationType3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/Class;
             // ()Ljava/lang/Class;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -138,7 +138,7 @@ namespace java.lang.annotation {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.annotationType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

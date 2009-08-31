@@ -30,21 +30,21 @@ using String=java.lang.String;
 
 namespace net.sf.jni4net.utils
 {
-    public unsafe partial class ClrProxiesMap
+    public partial class ClrProxiesMap
     {
-        public static Object.JavaPtr* WrapClr(JNIEnv env, object real)
+        public static IntPtr WrapClr(JNIEnv env, object real)
         {
             return WrapClrObj(env, real).Native;
         }
 
         public static IJavaProxy WrapClrObj(JNIEnv env, object real)
         {
-            if (real==null)
+            if (real == null)
             {
                 return null;
             }
-            IJavaProxy res = real as IJavaProxy;
-            if (res!=null)
+            var res = real as IJavaProxy;
+            if (res != null)
             {
                 return res;
             }
@@ -55,7 +55,7 @@ namespace net.sf.jni4net.utils
                 res = env.NewObjectArray(array.Length, elemClazz, null);
                 for (int i = 0; i < array.Length; i++)
                 {
-                    Object.JavaPtr* item = WrapClr(env, array.GetValue(i));
+                    IntPtr item = WrapClr(env, array.GetValue(i));
                     env.SetObjectArrayElement((Object) res, i, item);
                 }
             }
@@ -68,12 +68,12 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static Object.JavaPtr* ConvertString(JNIEnv env, object real)
+        public static IntPtr ConvertString(JNIEnv env, object real)
         {
             return env.NewString(real as string).native;
         }
 
-        public static void InitProxy(JNIEnv env, Object.JavaPtr* obj, object real)
+        public static void InitProxy(JNIEnv env, IntPtr obj, object real)
         {
             JavaProxiesMap.Wrap<IClrProxy>(env, obj).initProxy(IntHandle.Alloc(real));
         }
@@ -88,7 +88,7 @@ namespace net.sf.jni4net.utils
             return (TRes) IntHandle.ToObject(handle);
         }
 
-        public static TRes ToClr<TRes>(JNIEnv env, Object.JavaPtr* obj)
+        public static TRes ToClr<TRes>(JNIEnv env, IntPtr obj)
         {
             var javaProxy = JavaProxiesMap.Wrap<IJavaProxy>(env, obj);
             var clrProxy = javaProxy as IClrProxy;

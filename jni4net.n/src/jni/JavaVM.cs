@@ -34,7 +34,7 @@ namespace net.sf.jni4net.jni
         public JavaVM(IntPtr native)
         {
             this.native = native;
-            functions = *(*(JavaPtr*)native.ToPointer()).functions;
+            functions = *(*(JavaPtr*) native.ToPointer()).functions;
         }
 
         internal JNIResult AttachCurrentThread(out JNIEnv penv, JavaVMInitArgs? args)
@@ -117,6 +117,8 @@ namespace net.sf.jni4net.jni
             return result;
         }
 
+        #region Nested type: JNIInvokeInterface
+
         [StructLayout(LayoutKind.Sequential), NativeCppClass]
         public struct JNIInvokeInterface
         {
@@ -131,5 +133,6 @@ namespace net.sf.jni4net.jni
             public IntPtr AttachCurrentThreadAsDaemon;
         }
 
+        #endregion
     }
 }

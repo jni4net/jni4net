@@ -24,7 +24,6 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using net.sf.jni4net.utils;
-using Object=java.lang.Object;
 
 namespace net.sf.jni4net.jni
 {
@@ -40,7 +39,7 @@ namespace net.sf.jni4net.jni
         internal JNIEnv(IntPtr native)
         {
             this.native = native;
-            functions = *(*(JavaPtr*)native.ToPointer()).functions;
+            functions = *(*(JavaPtr*) native.ToPointer()).functions;
             InitMethods();
             if (defaultVM == null)
             {
@@ -95,7 +94,7 @@ namespace net.sf.jni4net.jni
             return threadJNIEnv;
         }
 
-        public T Wrap<T>(Object.JavaPtr* obj) where T : IJavaProxy
+        public T Wrap<T>(IntPtr obj) where T : IJavaProxy
         {
             return JavaProxiesMap.Wrap<T>(this, obj);
         }
@@ -120,6 +119,10 @@ namespace net.sf.jni4net.jni
         {
             public JNINativeInterface* functions;
         }
+
+        #endregion
+
+        #region Nested type: JNINativeInterface
 
         [StructLayout(LayoutKind.Sequential), NativeCppClass]
         public struct JNINativeInterface
@@ -357,7 +360,6 @@ namespace net.sf.jni4net.jni
             public IntPtr GetDirectBufferAddress;
             public IntPtr GetDirectBufferCapacity;
         }
-    
 
         #endregion
     }

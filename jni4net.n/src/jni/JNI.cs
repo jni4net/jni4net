@@ -85,7 +85,7 @@ namespace net.sf.jni4net.jni
             Init();
             IntPtr njvm;
             IntPtr nenv;
-            JavaVMInitArgs args=new JavaVMInitArgs();
+            var args = new JavaVMInitArgs();
             args.version = JNI_VERSION_1_4;
 
             if (options.Length > 0)

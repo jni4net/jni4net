@@ -61,7 +61,7 @@ namespace java.lang {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* iterator0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr iterator0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/util/Iterator;
             // ()Ljava/util/Iterator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -69,7 +69,7 @@ namespace java.lang {
             global::java.lang.Iterable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Iterable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.iterator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

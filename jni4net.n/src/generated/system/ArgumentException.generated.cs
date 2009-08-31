@@ -50,7 +50,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* ParamName0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ParamName0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -58,10 +58,10 @@ namespace System {
             global::System.ArgumentException real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.ArgumentException>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ParamName);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void @__ctorArgumentException0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorArgumentException0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -71,7 +71,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorArgumentException1(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message) {
+        private static void @__ctorArgumentException1(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr message) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -81,7 +81,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorArgumentException2(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message, global::java.lang.Object.JavaPtr* innerException) {
+        private static void @__ctorArgumentException2(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr message, global::System.IntPtr innerException) {
             // (Ljava/lang/String;Lsystem/Exception;)V
             // (LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -91,7 +91,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorArgumentException3(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message, global::java.lang.Object.JavaPtr* paramName, global::java.lang.Object.JavaPtr* innerException) {
+        private static void @__ctorArgumentException3(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr message, global::System.IntPtr paramName, global::System.IntPtr innerException) {
             // (Ljava/lang/String;Ljava/lang/String;Lsystem/Exception;)V
             // (LSystem/String;LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -101,7 +101,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorArgumentException4(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message, global::java.lang.Object.JavaPtr* paramName) {
+        private static void @__ctorArgumentException4(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr message, global::System.IntPtr paramName) {
             // (Ljava/lang/String;Ljava/lang/String;)V
             // (LSystem/String;LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

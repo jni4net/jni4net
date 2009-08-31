@@ -85,7 +85,7 @@ namespace java.util {
             return methods;
         }
         
-        private static bool hasNext0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool hasNext0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -96,7 +96,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* next1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr next1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/Object;
             // ()Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -104,10 +104,10 @@ namespace java.util {
             global::java.util.Iterator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Iterator>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.next());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void remove2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void remove2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

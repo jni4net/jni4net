@@ -1,4 +1,5 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
+
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -16,6 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #endregion
 
 using java.lang;

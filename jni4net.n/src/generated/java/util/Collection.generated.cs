@@ -226,7 +226,7 @@ namespace java.util {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* iterator0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr iterator0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/util/Iterator;
             // ()Ljava/util/Iterator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -234,10 +234,10 @@ namespace java.util {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::java.lang.Iterable)(real)).iterator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int hashCode1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int hashCode1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -248,7 +248,7 @@ namespace java.util {
             return default(int);
         }
         
-        private static bool add2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool add2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -259,7 +259,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static void clear3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void clear3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -269,7 +269,7 @@ namespace java.util {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static bool equals4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool equals4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -280,7 +280,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool contains5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool contains5(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -291,7 +291,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool addAll6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool addAll6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/util/Collection;)Z
             // (Ljava/util/Collection;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -302,7 +302,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static int size7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int size7(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -313,7 +313,7 @@ namespace java.util {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* toArray8(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr toArray8(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()[Ljava/lang/Object;
             // ()[Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -321,10 +321,10 @@ namespace java.util {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.toArray());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* toArray9(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static global::System.IntPtr toArray9(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // ([Ljava/lang/Object;)[Ljava/lang/Object;
             // ([Ljava/lang/Object;)[Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -332,10 +332,10 @@ namespace java.util {
             global::java.util.Collection real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Collection>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.toArray(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Object[]>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool remove10(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool remove10(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -346,7 +346,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool isEmpty11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool isEmpty11(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -357,7 +357,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool containsAll12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool containsAll12(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/util/Collection;)Z
             // (Ljava/util/Collection;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -368,7 +368,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool removeAll13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool removeAll13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/util/Collection;)Z
             // (Ljava/util/Collection;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -379,7 +379,7 @@ namespace java.util {
             return default(bool);
         }
         
-        private static bool retainAll14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool retainAll14(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/util/Collection;)Z
             // (Ljava/util/Collection;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

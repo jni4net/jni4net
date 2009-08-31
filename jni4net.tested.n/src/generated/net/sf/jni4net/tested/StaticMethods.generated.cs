@@ -45,7 +45,7 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static int add0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int a, int b) {
+        private static int add0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int a, int b) {
             // (II)I
             // (II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -55,7 +55,7 @@ namespace net.sf.jni4net.tested {
             return default(int);
         }
         
-        private static void @__ctorStaticMethods0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorStaticMethods0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

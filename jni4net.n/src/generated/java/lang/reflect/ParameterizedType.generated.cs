@@ -85,7 +85,7 @@ namespace java.lang.reflect {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* getActualTypeArguments0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getActualTypeArguments0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()[Ljava/lang/reflect/Type;
             // ()[Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -93,10 +93,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getActualTypeArguments());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* getOwnerType1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getOwnerType1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/reflect/Type;
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -104,10 +104,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getOwnerType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* getRawType2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getRawType2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/reflect/Type;
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -115,7 +115,7 @@ namespace java.lang.reflect {
             global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getRawType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -48,4 +48,5 @@ namespace java.lang.reflect
         Enum = 0x00004000,
     }
 }
+
 #endif

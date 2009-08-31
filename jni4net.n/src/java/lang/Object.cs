@@ -22,19 +22,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using net.sf.jni4net.jni;
 
 namespace java.lang
 {
-    public unsafe partial class Object : IDisposable, IJavaProxy
+    public partial class Object : IJavaProxy
     {
-        private static MethodId __equals;
-        private static MethodId __hashCode;
         internal Class clazz;
         private JavaVM javaVM;
-        internal JavaPtr* native;
+        internal IntPtr native;
 
         protected internal Object(JNIEnv env)
         {
@@ -51,7 +47,7 @@ namespace java.lang
 
         public virtual void Dispose()
         {
-            if (native != null)
+            if (native != IntPtr.Zero)
             {
                 JNIEnv env = JNIEnv.GetEnvNoThrow(javaVM);
                 // we don't crash if JVM is gone already
@@ -67,15 +63,15 @@ namespace java.lang
 
         #region IJavaProxy Members
 
-        JavaPtr* IJavaProxy.Native
+        IntPtr IJavaProxy.Native
         {
             get { return native; }
             set { native = value; }
         }
 
-        void IJavaProxy.Init(JNIEnv env, JavaPtr* obj, Class clazz)
+        void IJavaProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
-            this.clazz = clazz;
+            clazz = clazs;
             native = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
             javaVM = env.GetJavaVM();
@@ -161,14 +157,5 @@ namespace java.lang
         {
             return toString();
         }
-
-        #region Nested type: JavaPtr
-
-        [StructLayout(LayoutKind.Sequential, Size = 1), NativeCppClass]
-        public struct JavaPtr
-        {
-        }
-
-        #endregion
     }
 }

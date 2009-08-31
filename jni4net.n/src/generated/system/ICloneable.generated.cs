@@ -52,7 +52,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* Clone0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr Clone0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -60,7 +60,7 @@ namespace System {
             global::System.ICloneable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.ICloneable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Clone());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

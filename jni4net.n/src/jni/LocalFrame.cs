@@ -24,7 +24,7 @@ using System;
 
 namespace net.sf.jni4net.jni
 {
-    public unsafe class LocalFrame : IDisposable
+    public class LocalFrame : IDisposable
     {
         private readonly JNIEnv env;
 
@@ -43,7 +43,7 @@ namespace net.sf.jni4net.jni
 
         public void Dispose()
         {
-            env.PopLocalFrame(null);
+            env.PopLocalFrame(IntPtr.Zero);
         }
 
         #endregion

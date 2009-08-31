@@ -76,7 +76,7 @@ namespace System {
             return methods;
         }
         
-        private static int CompareTo0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
+        private static int CompareTo0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -87,7 +87,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* formatProvider) {
+        private static global::System.IntPtr ToString1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr formatProvider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -95,10 +95,10 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, ((global::System.IFormattable)(real)).ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, formatProvider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetTypeCode2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetTypeCode2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -106,10 +106,10 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).GetTypeCode());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool ToBoolean3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static bool ToBoolean3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Z
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -120,7 +120,7 @@ namespace System {
             return default(bool);
         }
         
-        private static char ToChar4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static char ToChar4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)C
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -131,7 +131,7 @@ namespace System {
             return default(char);
         }
         
-        private static sbyte ToSByte5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static sbyte ToSByte5(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -142,7 +142,7 @@ namespace System {
             return default(sbyte);
         }
         
-        private static byte ToByte6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static byte ToByte6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -153,7 +153,7 @@ namespace System {
             return default(byte);
         }
         
-        private static short ToInt167(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static short ToInt167(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -164,7 +164,7 @@ namespace System {
             return default(short);
         }
         
-        private static ushort ToUInt168(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ushort ToUInt168(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -175,7 +175,7 @@ namespace System {
             return default(ushort);
         }
         
-        private static int ToInt329(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static int ToInt329(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -186,7 +186,7 @@ namespace System {
             return default(int);
         }
         
-        private static uint ToUInt3210(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static uint ToUInt3210(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -197,7 +197,7 @@ namespace System {
             return default(uint);
         }
         
-        private static long ToInt6411(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static long ToInt6411(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -208,7 +208,7 @@ namespace System {
             return default(long);
         }
         
-        private static ulong ToUInt6412(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ulong ToUInt6412(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -219,7 +219,7 @@ namespace System {
             return default(ulong);
         }
         
-        private static float ToSingle13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static float ToSingle13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)F
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -230,7 +230,7 @@ namespace System {
             return default(float);
         }
         
-        private static double ToDouble14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static double ToDouble14(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)D
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -241,7 +241,7 @@ namespace System {
             return default(double);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDecimal15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDecimal15(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -249,10 +249,10 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToDecimal(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDateTime16(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDateTime16(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -260,10 +260,10 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToDateTime(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString17(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToString17(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -271,10 +271,10 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, ((global::System.IConvertible)(real)).ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToType18(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* conversionType, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToType18(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr conversionType, global::System.IntPtr provider) {
             // (Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -282,80 +282,80 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToType(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, conversionType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Parse19(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr Parse19(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value) {
             // (Lsystem/Type;Ljava/lang/String;)Lsystem/Object;
             // (LSystem/Type;LSystem/String;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Parse20(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value, bool ignoreCase) {
+        private static global::System.IntPtr Parse20(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value, bool ignoreCase) {
             // (Lsystem/Type;Ljava/lang/String;Z)Lsystem/Object;
             // (LSystem/Type;LSystem/String;Z)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, value), ignoreCase));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetUnderlyingType21(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType) {
+        private static global::System.IntPtr GetUnderlyingType21(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType) {
             // (Lsystem/Type;)Lsystem/Type;
             // (LSystem/Type;)LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.GetUnderlyingType(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValues22(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType) {
+        private static global::System.IntPtr GetValues22(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType) {
             // (Lsystem/Type;)Lsystem/Array;
             // (LSystem/Type;)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.GetValues(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetName23(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr GetName23(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value) {
             // (Lsystem/Type;Lsystem/Object;)Ljava/lang/String;
             // (LSystem/Type;LSystem/Object;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::System.Enum.GetName(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetNames24(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType) {
+        private static global::System.IntPtr GetNames24(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType) {
             // (Lsystem/Type;)[Lsystem/String;
             // (LSystem/Type;)[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.GetNames(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToObject25(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr ToObject25(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value) {
             // (Lsystem/Type;Lsystem/Object;)Lsystem/Object;
             // (LSystem/Type;LSystem/Object;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool IsDefined26(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value) {
+        private static bool IsDefined26(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value) {
             // (Lsystem/Type;Lsystem/Object;)Z
             // (LSystem/Type;LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -365,17 +365,17 @@ namespace System {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Format27(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* format) {
+        private static global::System.IntPtr Format27(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, global::System.IntPtr value, global::System.IntPtr format) {
             // (Lsystem/Type;Lsystem/Object;Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/Type;LSystem/Object;LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::System.Enum.Format(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString28(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format) {
+        private static global::System.IntPtr ToString28(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format) {
             // (Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -383,47 +383,47 @@ namespace System {
             global::System.Enum real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Enum>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToObject29(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, sbyte value) {
+        private static global::System.IntPtr ToObject29(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, sbyte value) {
             // (Lsystem/Type;B)Lsystem/Object;
             // (LSystem/Type;LSystem/SByte;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToObject30(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, short value) {
+        private static global::System.IntPtr ToObject30(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, short value) {
             // (Lsystem/Type;S)Lsystem/Object;
             // (LSystem/Type;S)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToObject31(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, int value) {
+        private static global::System.IntPtr ToObject31(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, int value) {
             // (Lsystem/Type;I)Lsystem/Object;
             // (LSystem/Type;I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToObject32(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* enumType, long value) {
+        private static global::System.IntPtr ToObject32(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr enumType, long value) {
             // (Lsystem/Type;J)Lsystem/Object;
             // (LSystem/Type;J)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, enumType), value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

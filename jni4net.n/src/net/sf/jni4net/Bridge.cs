@@ -36,7 +36,7 @@ using Object=java.lang.Object;
 
 namespace net.sf.jni4net
 {
-    public static unsafe class Bridge
+    public static class Bridge
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool bindNative = true;
@@ -101,21 +101,21 @@ namespace net.sf.jni4net
 
         public static TRes ToCLR<TRes>(IJavaProxy obj)
         {
-            IClrProxy proxy = obj as IClrProxy;
-            if (proxy==null)
+            var proxy = obj as IClrProxy;
+            if (proxy == null)
             {
-                return (TRes)obj;
+                return (TRes) obj;
             }
             return ClrProxiesMap.ToClr<TRes>(proxy);
         }
 
         public static object ToCLR(IJavaProxy obj)
         {
-            if (obj==null)
+            if (obj == null)
             {
                 return null;
             }
-            IClrProxy proxy = obj as IClrProxy;
+            var proxy = obj as IClrProxy;
             if (proxy == null)
             {
                 return obj;
@@ -125,8 +125,8 @@ namespace net.sf.jni4net
 
         public static Object ToJVM(object obj)
         {
-            Object jp = obj as Object;
-            if (jp!=null)
+            var jp = obj as Object;
+            if (jp != null)
             {
                 return jp;
             }
@@ -135,7 +135,7 @@ namespace net.sf.jni4net
 
         public static TRes ToJVM<TRes>(object obj) where TRes : class, IObject
         {
-            Object jp = obj as Object;
+            var jp = obj as Object;
             if (jp != null)
             {
                 return jp as TRes;
@@ -158,7 +158,7 @@ namespace net.sf.jni4net
             string low = typeName.ToLowerInvariant();
             int arr = low.LastIndexOf("[");
             string array = "";
-            while (arr!=-1)
+            while (arr != -1)
             {
                 array += "[";
                 low = low.Substring(0, arr);
@@ -199,7 +199,7 @@ namespace net.sf.jni4net
                 case "system.void":
                     return array + "V";
                 default:
-                    return array + "L" + typeName.Substring(0,low.Length).Replace('.', '/') + ";";
+                    return array + "L" + typeName.Substring(0, low.Length).Replace('.', '/') + ";";
             }
         }
 
@@ -257,7 +257,7 @@ namespace net.sf.jni4net
         #region Initialization
 
         [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
-        internal static int initDotNet(IntPtr envi, Class.JavaPtr* clazz, bool verbose)
+        internal static int initDotNet(IntPtr envi, IntPtr clazz, bool verbose)
         {
             Verbose = verbose;
             JNIEnv env;
@@ -275,7 +275,7 @@ namespace net.sf.jni4net
                 Init(env);
                 if (Verbose)
                 {
-                    Console.WriteLine("core loaded from " + typeof(Bridge).Assembly.Location);
+                    Console.WriteLine("core loaded from " + typeof (Bridge).Assembly.Location);
                 }
             }
             catch (Exception ex)

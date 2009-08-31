@@ -27,7 +27,6 @@ using System.Runtime.InteropServices;
 using java.lang;
 using net.sf.jni4net.attributes;
 using net.sf.jni4net.jni;
-using system;
 using Exception=System.Exception;
 using StringBuilder=System.Text.StringBuilder;
 
@@ -47,10 +46,10 @@ namespace net.sf.jni4net.utils
                 return;
             }
             initialized = true;
-            RegisterType(env, typeof(__Type), true);
-            RegisterType(env, typeof(__Object), true);
-            RegisterType(env, typeof(__String), true);
-            WritePrimitiveRecord("int", typeof(int));
+            RegisterType(env, typeof (__Type), true);
+            RegisterType(env, typeof (__Object), true);
+            RegisterType(env, typeof (__String), true);
+            WritePrimitiveRecord("int", typeof (int));
             WritePrimitiveRecord("long", typeof (long));
             WritePrimitiveRecord("short", typeof (short));
             WritePrimitiveRecord("char", typeof (char));
@@ -96,7 +95,8 @@ namespace net.sf.jni4net.utils
             return null;
         }
 
-        private static unsafe ClrProxyRecord RegisterWrapper(JNIEnv env, Type wrapper, string name, Type real, bool write)
+        private static unsafe ClrProxyRecord RegisterWrapper(JNIEnv env, Type wrapper, string name, Type real,
+                                                             bool write)
         {
             string className = GetInterfaceName(name, wrapper);
             string proxyName = GetProxyName(name, wrapper);
@@ -168,7 +168,7 @@ namespace net.sf.jni4net.utils
                     {
                         string n = Marshal.PtrToStringAnsi(registration.name);
                         string s = Marshal.PtrToStringAnsi(registration.signature);
-                        if (env.GetMethodIDNoThrow(iface, n, s)==null)
+                        if (env.GetMethodIDNoThrow(iface, n, s) == null)
                         {
                             try
                             {
@@ -197,23 +197,24 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        private static ClrProxyRecord CreateRecord(Class iface, Class proxy, Type wrapper, Type real, MethodId constructor)
+        private static ClrProxyRecord CreateRecord(Class iface, Class proxy, Type wrapper, Type real,
+                                                   MethodId constructor)
         {
             return new ClrProxyRecord
-                             {
-                                 iface = iface,
-                                 proxy = proxy,
-                                 wrapper = wrapper,
-                                 real = real,
-                                 constructor = constructor,
-                             };
+                       {
+                           iface = iface,
+                           proxy = proxy,
+                           wrapper = wrapper,
+                           real = real,
+                           constructor = constructor,
+                       };
         }
 
         private static void WriteRecord(ClrProxyRecord record)
         {
             if (knownWrappers.ContainsKey(record.wrapper))
             {
-                Console.Error.WriteLine("Duplicate wrap"+record.wrapper);
+                Console.Error.WriteLine("Duplicate wrap" + record.wrapper);
             }
             else
             {
@@ -305,7 +306,7 @@ namespace net.sf.jni4net.utils
             if (className == null)
             {
                 className = type.Namespace.ToLowerInvariant() + "." + type.Name.Replace("__", "");
-                if (className=="java.lang.IObject")
+                if (className == "java.lang.IObject")
                 {
                     className = "java_.lang.IObject";
                 }

@@ -30,11 +30,11 @@ using String=java.lang.String;
 
 namespace net.sf.jni4net.utils
 {
-    public unsafe partial class JavaProxiesMap
+    public partial class JavaProxiesMap
     {
-        public static T Wrap<T>(JNIEnv env, Object.JavaPtr* obj) where T : IJavaProxy
+        public static T Wrap<T>(JNIEnv env, IntPtr obj) where T : IJavaProxy
         {
-            if (obj == null)
+            if (obj == IntPtr.Zero)
             {
                 return default(T);
             }
@@ -69,9 +69,9 @@ namespace net.sf.jni4net.utils
             return default(T);
         }
 
-        public static T Wrap<T>(JNIEnv env, Object.JavaPtr* obj, Class clazzExact)
+        public static T Wrap<T>(JNIEnv env, IntPtr obj, Class clazzExact)
         {
-            if (obj == null)
+            if (obj == IntPtr.Zero)
             {
                 return default(T);
             }

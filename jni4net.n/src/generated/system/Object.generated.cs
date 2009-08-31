@@ -46,7 +46,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetType0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetType0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Type;
             // ()LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -54,10 +54,10 @@ namespace System {
             object real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int GetHashCode1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int GetHashCode1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -68,7 +68,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToString2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -76,10 +76,10 @@ namespace System {
             object real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool Equals3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
+        private static bool Equals3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj) {
             // (Lsystem/Object;)Z
             // (LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -90,7 +90,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool Equals4(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* objA, global::java.lang.Object.JavaPtr* objB) {
+        private static bool Equals4(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr objA, global::System.IntPtr objB) {
             // (Lsystem/Object;Lsystem/Object;)Z
             // (LSystem/Object;LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -100,7 +100,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool ReferenceEquals5(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* objA, global::java.lang.Object.JavaPtr* objB) {
+        private static bool ReferenceEquals5(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr objA, global::System.IntPtr objB) {
             // (Lsystem/Object;Lsystem/Object;)Z
             // (LSystem/Object;LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -110,7 +110,7 @@ namespace System {
             return default(bool);
         }
         
-        private static void @__ctorObject0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorObject0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

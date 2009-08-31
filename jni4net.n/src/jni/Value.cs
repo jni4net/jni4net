@@ -29,7 +29,7 @@ using Object=java.lang.Object;
 namespace net.sf.jni4net.jni
 {
     [StructLayout(LayoutKind.Explicit, Size = 8), NativeCppClass]
-    public unsafe struct Value
+    public struct Value
     {
         public Value(object o)
         {
@@ -41,7 +41,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             init(o, JNIEnv.GetEnvForVm(null));
         }
@@ -56,7 +56,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             init(o, env);
         }
@@ -65,7 +65,7 @@ namespace net.sf.jni4net.jni
         {
             if (o == null)
             {
-                _object = null;
+                _object = IntPtr.Zero;
             }
             else if (o is int)
             {
@@ -141,7 +141,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _int = i;
         }
@@ -156,7 +156,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _bool = z ? (byte) 1 : (byte) 0;
         }
@@ -171,7 +171,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _byte = b;
         }
@@ -186,7 +186,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _char = (short) c; //test
         }
@@ -201,7 +201,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _char = s;
         }
@@ -216,7 +216,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _float = f;
         }
@@ -231,7 +231,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _double = d;
         }
@@ -246,7 +246,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _object = o.native;
         }
@@ -261,7 +261,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _object = o.Native;
         }
@@ -277,7 +277,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             _double = o._double;
         }
@@ -292,7 +292,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(i).native;
@@ -308,7 +308,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(z).native;
@@ -324,7 +324,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(b).native;
@@ -340,7 +340,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(c).native;
@@ -356,7 +356,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(s).native;
@@ -372,7 +372,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(f).native;
@@ -388,7 +388,7 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = null;
+            _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
             _object = env.ConvertArrayToJava(d).native;
@@ -410,6 +410,6 @@ namespace net.sf.jni4net.jni
         [FieldOffset(0)] public long _long;
         [FieldOffset(0)] public float _float;
         [FieldOffset(0)] public double _double;
-        [FieldOffset(0)] public void* _object;
+        [FieldOffset(0)] public IntPtr _object;
     }
 }
