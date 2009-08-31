@@ -33,24 +33,28 @@ namespace net.sf.jni4net.jni
             functions = *(*native).functions;
         }
 
-        public JNIResult AttachCurrentThread(out JNIEnv penv, JavaVMInitArgs args)
-        {
-            return AttachCurrentThread(out penv, args.native);
-        }
-
-        internal JNIResult AttachCurrentThread(out JNIEnv penv, JavaVMInitArgs.JavaPtr* args)
+        internal JNIResult AttachCurrentThread(out JNIEnv penv, JavaVMInitArgs? args)
         {
             if (attachCurrentThread == null)
             {
                 MethodWrapper.GetDelegateForFunctionPointer(functions.AttachCurrentThread, ref attachCurrentThread);
             }
             JNIEnv.JavaPtr* env;
-            JNIResult result = attachCurrentThread.Invoke(native, out env, args);
+            JNIResult result;
+            if (args.HasValue)
+            {
+                JavaVMInitArgs initArgs = args.Value;
+                result = attachCurrentThread.Invoke(native, out env, &initArgs);
+            }
+            else
+            {
+                result = attachCurrentThread.Invoke(native, out env, null);
+            }
             penv = new JNIEnv(env);
             return result;
         }
 
-        public JNIResult AttachCurrentThreadAsDaemon(out JNIEnv penv, JavaVMInitArgs args)
+        public JNIResult AttachCurrentThreadAsDaemon(out JNIEnv penv, JavaVMInitArgs? args)
         {
             if (attachCurrentThreadAsDaemon == null)
             {
@@ -58,7 +62,16 @@ namespace net.sf.jni4net.jni
                                                             ref attachCurrentThreadAsDaemon);
             }
             JNIEnv.JavaPtr* env;
-            JNIResult result = attachCurrentThreadAsDaemon.Invoke(native, out env, args == null ? null : args.native);
+            JNIResult result;
+            if (args.HasValue)
+            {
+                JavaVMInitArgs value = args.Value;
+                result = attachCurrentThreadAsDaemon.Invoke(native, out env, &value);
+            }
+            else
+            {
+                result = attachCurrentThreadAsDaemon.Invoke(native, out env, null);
+            }
             if (result == JNIResult.JNI_OK)
             {
                 penv = new JNIEnv(env);
