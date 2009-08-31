@@ -163,7 +163,7 @@ namespace net.sf.jni4net.proxygen.generator
                                                                    wrapperName,
                                                                    new CodeVariableReferenceExpression("__env"),
                                                                    call));
-                        tgtMethod.ReturnType = TypeReference(typeof (Object.JavaPtr).MakePointerType());
+                        tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }
                 }
                 tgtMethod.Statements.Add(callst);
@@ -251,13 +251,13 @@ namespace net.sf.jni4net.proxygen.generator
             if (method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (Class.JavaPtr).MakePointerType()), "__clazz");
+                    TypeReference(typeof (IntPtr).MakePointerType()), "__clazz");
                 tgtMethod.Parameters.Add(classParam);
             }
             if (!method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (Object.JavaPtr).MakePointerType()), "__obj");
+                    TypeReference(typeof (IntPtr)), "__obj");
                 tgtMethod.Parameters.Add(classParam);
             }
 
@@ -267,7 +267,7 @@ namespace net.sf.jni4net.proxygen.generator
                 GType paramType = method.Parameters[p];
                 CodeTypeReference parameter = paramType.IsPrimitive
                                                   ? paramType.CLRReference
-                                                  : TypeReference(typeof (Object.JavaPtr).MakePointerType());
+                                                  : TypeReference(typeof (IntPtr));
 
                 string name = method.ParameterNames[p];
                 tgtMethod.Parameters.Add(new CodeParameterDeclarationExpression(parameter, name));

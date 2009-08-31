@@ -51,9 +51,9 @@ namespace net.sf.jni4net.utils
             initialized = true;
 
             RegisterType(env, typeof (Object), true);
-            RegisterType(env, typeof(String), true);
-            RegisterType(env, typeof(Class), true);
-            RegisterType(env, typeof(IClrProxy), true);
+            RegisterType(env, typeof (String), true);
+            RegisterType(env, typeof (Class), true);
+            RegisterType(env, typeof (IClrProxy), true);
 
             WritePrimitiveRecord("int", typeof (int));
             WritePrimitiveRecord("long", typeof (long));
@@ -71,7 +71,7 @@ namespace net.sf.jni4net.utils
             InitCore(env);
             foreach (Type type in assembly.GetTypes())
             {
-                if (typeof(IJavaProxy).IsAssignableFrom(type) || type.IsInterface)
+                if (typeof (IJavaProxy).IsAssignableFrom(type) || type.IsInterface)
                 {
                     RegisterType(env, type, true);
                 }
@@ -100,7 +100,7 @@ namespace net.sf.jni4net.utils
             JavaClassAttribute classAttribute = GetJavaClassAttribute(type);
             if (classAttribute != null)
             {
-                var res = RegisterProxy(env, type, type, classAttribute.ClassName);
+                JavaProxyRecord res = RegisterProxy(env, type, type, classAttribute.ClassName);
                 if (write)
                 {
                     WriteRecord(res);
@@ -112,7 +112,7 @@ namespace net.sf.jni4net.utils
             {
                 string proxyName = type.FullName.Replace(type.Name, "__" + type.Name);
                 Type proxy = type.Assembly.GetType(proxyName);
-                var res = RegisterProxy(env, type, proxy, interfaceAttribute.ClassName);
+                JavaProxyRecord res = RegisterProxy(env, type, proxy, interfaceAttribute.ClassName);
                 if (write)
                 {
                     WriteRecord(res);
@@ -171,16 +171,17 @@ namespace net.sf.jni4net.utils
             return CreateRecord(className, clazz, iface, proxy, constructorhelper);
         }
 
-        private static JavaProxyRecord CreateRecord(string clazzName,Class clazz, Type iface, Type proxy, IConstructionHelper constructor)
+        private static JavaProxyRecord CreateRecord(string clazzName, Class clazz, Type iface, Type proxy,
+                                                    IConstructionHelper constructor)
         {
             return new JavaProxyRecord
                        {
                            clazzName = clazzName,
-                clazz = clazz,
-                constructor = constructor,
-                iface = iface,
-                proxy = proxy
-            };
+                           clazz = clazz,
+                           constructor = constructor,
+                           iface = iface,
+                           proxy = proxy
+                       };
         }
 
         private static void WriteRecord(JavaProxyRecord record)

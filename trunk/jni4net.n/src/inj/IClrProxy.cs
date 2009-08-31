@@ -1,4 +1,4 @@
-﻿using net.sf.jni4net.jni;
+using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.inj
 {

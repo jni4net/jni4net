@@ -23,14 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using java.lang;
 using java_.lang;
-using Object=java.lang.Object;
 
 namespace net.sf.jni4net.jni
 {
-    public unsafe interface IJavaProxy : IObject
+    public interface IJavaProxy : IObject
     {
-        Object.JavaPtr* Native { get; set; }
-        void Init(JNIEnv env, Object.JavaPtr* obj, Class clazz);
+        IntPtr Native { get; set; }
+        void Init(JNIEnv env, IntPtr obj, Class clazz);
 
         Class GetClass();
     }

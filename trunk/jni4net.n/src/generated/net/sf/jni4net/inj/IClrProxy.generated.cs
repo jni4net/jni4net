@@ -67,7 +67,7 @@ namespace net.sf.jni4net.inj {
             return methods;
         }
         
-        private static int getClrHandle0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int getClrHandle0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -78,7 +78,7 @@ namespace net.sf.jni4net.inj {
             return default(int);
         }
         
-        private static void initProxy1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int par0) {
+        private static void initProxy1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int par0) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

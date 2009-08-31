@@ -61,7 +61,7 @@ namespace java.lang.reflect {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* getTypeParameters0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr getTypeParameters0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()[Ljava/lang/reflect/TypeVariable;
             // ()[Ljava/lang/reflect/TypeVariable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -69,7 +69,7 @@ namespace java.lang.reflect {
             global::java.lang.reflect.GenericDeclaration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.GenericDeclaration>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getTypeParameters());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

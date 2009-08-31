@@ -196,7 +196,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetTypeCode0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetTypeCode0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -204,10 +204,10 @@ namespace System {
             global::System.IConvertible real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IConvertible>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetTypeCode());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool ToBoolean1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static bool ToBoolean1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Z
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -218,7 +218,7 @@ namespace System {
             return default(bool);
         }
         
-        private static char ToChar2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static char ToChar2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)C
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -229,7 +229,7 @@ namespace System {
             return default(char);
         }
         
-        private static sbyte ToSByte3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static sbyte ToSByte3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -240,7 +240,7 @@ namespace System {
             return default(sbyte);
         }
         
-        private static byte ToByte4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static byte ToByte4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -251,7 +251,7 @@ namespace System {
             return default(byte);
         }
         
-        private static short ToInt165(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static short ToInt165(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -262,7 +262,7 @@ namespace System {
             return default(short);
         }
         
-        private static ushort ToUInt166(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ushort ToUInt166(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -273,7 +273,7 @@ namespace System {
             return default(ushort);
         }
         
-        private static int ToInt327(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static int ToInt327(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -284,7 +284,7 @@ namespace System {
             return default(int);
         }
         
-        private static uint ToUInt328(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static uint ToUInt328(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -295,7 +295,7 @@ namespace System {
             return default(uint);
         }
         
-        private static long ToInt649(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static long ToInt649(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -306,7 +306,7 @@ namespace System {
             return default(long);
         }
         
-        private static ulong ToUInt6410(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ulong ToUInt6410(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -317,7 +317,7 @@ namespace System {
             return default(ulong);
         }
         
-        private static float ToSingle11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static float ToSingle11(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)F
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -328,7 +328,7 @@ namespace System {
             return default(float);
         }
         
-        private static double ToDouble12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static double ToDouble12(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)D
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -339,7 +339,7 @@ namespace System {
             return default(double);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDecimal13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDecimal13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -347,10 +347,10 @@ namespace System {
             global::System.IConvertible real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IConvertible>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToDecimal(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDateTime14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDateTime14(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -358,10 +358,10 @@ namespace System {
             global::System.IConvertible real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IConvertible>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToDateTime(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToString15(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -369,10 +369,10 @@ namespace System {
             global::System.IConvertible real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IConvertible>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToType16(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* conversionType, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToType16(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr conversionType, global::System.IntPtr provider) {
             // (Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -380,7 +380,7 @@ namespace System {
             global::System.IConvertible real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IConvertible>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToType(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, conversionType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

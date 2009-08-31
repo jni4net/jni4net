@@ -117,7 +117,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* Clone0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr Clone0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -125,10 +125,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.ICloneable)(real)).Clone());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetEnumerator1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetEnumerator1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/collections/IEnumerator;
             // ()LSystem/Collections/IEnumerator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -136,10 +136,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.IEnumerable)(real)).GetEnumerator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void CopyTo2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* array, int index) {
+        private static void CopyTo2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr array, int index) {
             // (Lsystem/Array;I)V
             // (LSystem/Array;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -149,7 +149,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Count3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Count3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -160,7 +160,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* SyncRoot4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr SyncRoot4(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -168,10 +168,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.ICollection)(real)).SyncRoot);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool IsSynchronized5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsSynchronized5(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -182,7 +182,7 @@ namespace System {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Item6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
+        private static global::System.IntPtr Item6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index) {
             // (I)Lsystem/Object;
             // (I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -190,10 +190,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.IList)(real))[index]);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void Item7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
+        private static void Item7(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index, global::System.IntPtr value) {
             // (ILsystem/Object;)V
             // (ILSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -203,7 +203,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Add8(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static int Add8(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -214,7 +214,7 @@ namespace System {
             return default(int);
         }
         
-        private static bool Contains9(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static bool Contains9(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/Object;)Z
             // (LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -225,7 +225,7 @@ namespace System {
             return default(bool);
         }
         
-        private static void Clear10(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void Clear10(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -235,7 +235,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static bool IsReadOnly11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsReadOnly11(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -246,7 +246,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool IsFixedSize12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsFixedSize12(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -257,7 +257,7 @@ namespace System {
             return default(bool);
         }
         
-        private static int IndexOf13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static int IndexOf13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -268,7 +268,7 @@ namespace System {
             return default(int);
         }
         
-        private static void Insert14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
+        private static void Insert14(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index, global::System.IntPtr value) {
             // (ILsystem/Object;)V
             // (ILSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -278,7 +278,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Remove15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static void Remove15(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -288,7 +288,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void RemoveAt16(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
+        private static void RemoveAt16(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -298,67 +298,67 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance17(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, int length) {
+        private static global::System.IntPtr CreateInstance17(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, int length) {
             // (Lsystem/Type;I)Lsystem/Array;
             // (LSystem/Type;I)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), length));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance18(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, int length1, int length2) {
+        private static global::System.IntPtr CreateInstance18(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, int length1, int length2) {
             // (Lsystem/Type;II)Lsystem/Array;
             // (LSystem/Type;II)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), length1, length2));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance19(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, int length1, int length2, int length3) {
+        private static global::System.IntPtr CreateInstance19(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, int length1, int length2, int length3) {
             // (Lsystem/Type;III)Lsystem/Array;
             // (LSystem/Type;III)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), length1, length2, length3));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance20(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, global::java.lang.Object.JavaPtr* lengths) {
+        private static global::System.IntPtr CreateInstance20(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, global::System.IntPtr lengths) {
             // (Lsystem/Type;[I)Lsystem/Array;
             // (LSystem/Type;[I)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int32[]>(__env, lengths)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance21(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, global::java.lang.Object.JavaPtr* lengths) {
+        private static global::System.IntPtr CreateInstance21(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, global::System.IntPtr lengths) {
             // (Lsystem/Type;[J)Lsystem/Array;
             // (LSystem/Type;[J)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int64[]>(__env, lengths)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateInstance22(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* elementType, global::java.lang.Object.JavaPtr* lengths, global::java.lang.Object.JavaPtr* lowerBounds) {
+        private static global::System.IntPtr CreateInstance22(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr elementType, global::System.IntPtr lengths, global::System.IntPtr lowerBounds) {
             // (Lsystem/Type;[I[I)Lsystem/Array;
             // (LSystem/Type;[I[I)LSystem/Array;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Array.CreateInstance(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, elementType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int32[]>(__env, lengths), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int32[]>(__env, lowerBounds)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void Copy23(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* sourceArray, global::java.lang.Object.JavaPtr* destinationArray, int length) {
+        private static void Copy23(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr sourceArray, global::System.IntPtr destinationArray, int length) {
             // (Lsystem/Array;Lsystem/Array;I)V
             // (LSystem/Array;LSystem/Array;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -367,7 +367,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Copy24(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* sourceArray, int sourceIndex, global::java.lang.Object.JavaPtr* destinationArray, int destinationIndex, int length) {
+        private static void Copy24(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr sourceArray, int sourceIndex, global::System.IntPtr destinationArray, int destinationIndex, int length) {
             // (Lsystem/Array;ILsystem/Array;II)V
             // (LSystem/Array;ILSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -376,7 +376,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void ConstrainedCopy25(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* sourceArray, int sourceIndex, global::java.lang.Object.JavaPtr* destinationArray, int destinationIndex, int length) {
+        private static void ConstrainedCopy25(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr sourceArray, int sourceIndex, global::System.IntPtr destinationArray, int destinationIndex, int length) {
             // (Lsystem/Array;ILsystem/Array;II)V
             // (LSystem/Array;ILSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -385,7 +385,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Copy26(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* sourceArray, global::java.lang.Object.JavaPtr* destinationArray, long length) {
+        private static void Copy26(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr sourceArray, global::System.IntPtr destinationArray, long length) {
             // (Lsystem/Array;Lsystem/Array;J)V
             // (LSystem/Array;LSystem/Array;J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -394,7 +394,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Copy27(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* sourceArray, long sourceIndex, global::java.lang.Object.JavaPtr* destinationArray, long destinationIndex, long length) {
+        private static void Copy27(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr sourceArray, long sourceIndex, global::System.IntPtr destinationArray, long destinationIndex, long length) {
             // (Lsystem/Array;JLsystem/Array;JJ)V
             // (LSystem/Array;JLSystem/Array;JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -403,7 +403,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Clear28(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length) {
+        private static void Clear28(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length) {
             // (Lsystem/Array;II)V
             // (LSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -412,7 +412,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue29(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* indices) {
+        private static global::System.IntPtr GetValue29(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr indices) {
             // ([I)Lsystem/Object;
             // ([I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -420,10 +420,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int32[]>(__env, indices)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue30(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
+        private static global::System.IntPtr GetValue30(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index) {
             // (I)Lsystem/Object;
             // (I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -431,10 +431,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue31(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index1, int index2) {
+        private static global::System.IntPtr GetValue31(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index1, int index2) {
             // (II)Lsystem/Object;
             // (II)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -442,10 +442,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index1, index2));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue32(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index1, int index2, int index3) {
+        private static global::System.IntPtr GetValue32(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int index1, int index2, int index3) {
             // (III)Lsystem/Object;
             // (III)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -453,10 +453,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index1, index2, index3));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue33(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long index) {
+        private static global::System.IntPtr GetValue33(global::System.IntPtr @__envi, global::System.IntPtr @__obj, long index) {
             // (J)Lsystem/Object;
             // (J)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -464,10 +464,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue34(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long index1, long index2) {
+        private static global::System.IntPtr GetValue34(global::System.IntPtr @__envi, global::System.IntPtr @__obj, long index1, long index2) {
             // (JJ)Lsystem/Object;
             // (JJ)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -475,10 +475,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index1, index2));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue35(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long index1, long index2, long index3) {
+        private static global::System.IntPtr GetValue35(global::System.IntPtr @__envi, global::System.IntPtr @__obj, long index1, long index2, long index3) {
             // (JJJ)Lsystem/Object;
             // (JJJ)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -486,10 +486,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(index1, index2, index3));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetValue36(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* indices) {
+        private static global::System.IntPtr GetValue36(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr indices) {
             // ([J)Lsystem/Object;
             // ([J)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -497,10 +497,10 @@ namespace System {
             global::System.Array real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetValue(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Int64[]>(__env, indices)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void SetValue37(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, int index) {
+        private static void SetValue37(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, int index) {
             // (Lsystem/Object;I)V
             // (LSystem/Object;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -510,7 +510,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue38(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, int index1, int index2) {
+        private static void SetValue38(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, int index1, int index2) {
             // (Lsystem/Object;II)V
             // (LSystem/Object;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -520,7 +520,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue39(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, int index1, int index2, int index3) {
+        private static void SetValue39(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, int index1, int index2, int index3) {
             // (Lsystem/Object;III)V
             // (LSystem/Object;III)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -530,7 +530,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue40(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* indices) {
+        private static void SetValue40(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, global::System.IntPtr indices) {
             // (Lsystem/Object;[I)V
             // (LSystem/Object;[I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -540,7 +540,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue41(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, long index) {
+        private static void SetValue41(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, long index) {
             // (Lsystem/Object;J)V
             // (LSystem/Object;J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -550,7 +550,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue42(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, long index1, long index2) {
+        private static void SetValue42(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, long index1, long index2) {
             // (Lsystem/Object;JJ)V
             // (LSystem/Object;JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -560,7 +560,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue43(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, long index1, long index2, long index3) {
+        private static void SetValue43(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, long index1, long index2, long index3) {
             // (Lsystem/Object;JJJ)V
             // (LSystem/Object;JJJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -570,7 +570,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetValue44(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* indices) {
+        private static void SetValue44(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value, global::System.IntPtr indices) {
             // (Lsystem/Object;[J)V
             // (LSystem/Object;[J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -580,7 +580,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Length45(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Length45(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -591,7 +591,7 @@ namespace System {
             return default(int);
         }
         
-        private static long LongLength46(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static long LongLength46(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -602,7 +602,7 @@ namespace System {
             return default(long);
         }
         
-        private static int GetLength47(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int dimension) {
+        private static int GetLength47(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int dimension) {
             // (I)I
             // (I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -613,7 +613,7 @@ namespace System {
             return default(int);
         }
         
-        private static long GetLongLength48(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int dimension) {
+        private static long GetLongLength48(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int dimension) {
             // (I)J
             // (I)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -624,7 +624,7 @@ namespace System {
             return default(long);
         }
         
-        private static int Rank49(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Rank49(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -635,7 +635,7 @@ namespace System {
             return default(int);
         }
         
-        private static int GetUpperBound50(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int dimension) {
+        private static int GetUpperBound50(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int dimension) {
             // (I)I
             // (I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -646,7 +646,7 @@ namespace System {
             return default(int);
         }
         
-        private static int GetLowerBound51(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int dimension) {
+        private static int GetLowerBound51(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int dimension) {
             // (I)I
             // (I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -657,7 +657,7 @@ namespace System {
             return default(int);
         }
         
-        private static int BinarySearch52(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value) {
+        private static int BinarySearch52(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value) {
             // (Lsystem/Array;Lsystem/Object;)I
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -667,7 +667,7 @@ namespace System {
             return default(int);
         }
         
-        private static int BinarySearch53(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length, global::java.lang.Object.JavaPtr* value) {
+        private static int BinarySearch53(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length, global::System.IntPtr value) {
             // (Lsystem/Array;IILsystem/Object;)I
             // (LSystem/Array;IILSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -677,7 +677,7 @@ namespace System {
             return default(int);
         }
         
-        private static int BinarySearch54(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* comparer) {
+        private static int BinarySearch54(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value, global::System.IntPtr comparer) {
             // (Lsystem/Array;Lsystem/Object;Ljava/lang/Object;)I
             // (LSystem/Array;LSystem/Object;LSystem/Collections/IComparer;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -687,7 +687,7 @@ namespace System {
             return default(int);
         }
         
-        private static int BinarySearch55(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* comparer) {
+        private static int BinarySearch55(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length, global::System.IntPtr value, global::System.IntPtr comparer) {
             // (Lsystem/Array;IILsystem/Object;Ljava/lang/Object;)I
             // (LSystem/Array;IILSystem/Object;LSystem/Collections/IComparer;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -697,7 +697,7 @@ namespace System {
             return default(int);
         }
         
-        private static void CopyTo56(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* array, long index) {
+        private static void CopyTo56(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr array, long index) {
             // (Lsystem/Array;J)V
             // (LSystem/Array;J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -707,7 +707,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int IndexOf57(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value) {
+        private static int IndexOf57(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value) {
             // (Lsystem/Array;Lsystem/Object;)I
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -717,7 +717,7 @@ namespace System {
             return default(int);
         }
         
-        private static int IndexOf58(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value, int startIndex) {
+        private static int IndexOf58(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value, int startIndex) {
             // (Lsystem/Array;Lsystem/Object;I)I
             // (LSystem/Array;LSystem/Object;I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -727,7 +727,7 @@ namespace System {
             return default(int);
         }
         
-        private static int IndexOf59(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value, int startIndex, int count) {
+        private static int IndexOf59(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value, int startIndex, int count) {
             // (Lsystem/Array;Lsystem/Object;II)I
             // (LSystem/Array;LSystem/Object;II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -737,7 +737,7 @@ namespace System {
             return default(int);
         }
         
-        private static int LastIndexOf60(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value) {
+        private static int LastIndexOf60(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value) {
             // (Lsystem/Array;Lsystem/Object;)I
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -747,7 +747,7 @@ namespace System {
             return default(int);
         }
         
-        private static int LastIndexOf61(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value, int startIndex) {
+        private static int LastIndexOf61(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value, int startIndex) {
             // (Lsystem/Array;Lsystem/Object;I)I
             // (LSystem/Array;LSystem/Object;I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -757,7 +757,7 @@ namespace System {
             return default(int);
         }
         
-        private static int LastIndexOf62(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* value, int startIndex, int count) {
+        private static int LastIndexOf62(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr value, int startIndex, int count) {
             // (Lsystem/Array;Lsystem/Object;II)I
             // (LSystem/Array;LSystem/Object;II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -767,7 +767,7 @@ namespace System {
             return default(int);
         }
         
-        private static void Reverse63(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array) {
+        private static void Reverse63(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array) {
             // (Lsystem/Array;)V
             // (LSystem/Array;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -776,7 +776,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Reverse64(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length) {
+        private static void Reverse64(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length) {
             // (Lsystem/Array;II)V
             // (LSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -785,7 +785,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort65(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array) {
+        private static void Sort65(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array) {
             // (Lsystem/Array;)V
             // (LSystem/Array;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -794,7 +794,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort66(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* keys, global::java.lang.Object.JavaPtr* items) {
+        private static void Sort66(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr keys, global::System.IntPtr items) {
             // (Lsystem/Array;Lsystem/Array;)V
             // (LSystem/Array;LSystem/Array;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -803,7 +803,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort67(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length) {
+        private static void Sort67(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length) {
             // (Lsystem/Array;II)V
             // (LSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -812,7 +812,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort68(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* keys, global::java.lang.Object.JavaPtr* items, int index, int length) {
+        private static void Sort68(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr keys, global::System.IntPtr items, int index, int length) {
             // (Lsystem/Array;Lsystem/Array;II)V
             // (LSystem/Array;LSystem/Array;II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -821,7 +821,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort69(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, global::java.lang.Object.JavaPtr* comparer) {
+        private static void Sort69(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, global::System.IntPtr comparer) {
             // (Lsystem/Array;Ljava/lang/Object;)V
             // (LSystem/Array;LSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -830,7 +830,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort70(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* keys, global::java.lang.Object.JavaPtr* items, global::java.lang.Object.JavaPtr* comparer) {
+        private static void Sort70(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr keys, global::System.IntPtr items, global::System.IntPtr comparer) {
             // (Lsystem/Array;Lsystem/Array;Ljava/lang/Object;)V
             // (LSystem/Array;LSystem/Array;LSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -839,7 +839,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort71(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* array, int index, int length, global::java.lang.Object.JavaPtr* comparer) {
+        private static void Sort71(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr array, int index, int length, global::System.IntPtr comparer) {
             // (Lsystem/Array;IILjava/lang/Object;)V
             // (LSystem/Array;IILSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -848,7 +848,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Sort72(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* keys, global::java.lang.Object.JavaPtr* items, int index, int length, global::java.lang.Object.JavaPtr* comparer) {
+        private static void Sort72(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr keys, global::System.IntPtr items, int index, int length, global::System.IntPtr comparer) {
             // (Lsystem/Array;Lsystem/Array;IILjava/lang/Object;)V
             // (LSystem/Array;LSystem/Array;IILSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -857,7 +857,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Initialize73(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void Initialize73(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

@@ -78,19 +78,19 @@ namespace net.sf.jni4net.jni
 
         public Class FindClass(string name)
         {
-            Class.JavaPtr* invoke = findClass.Invoke(native, name);
+            IntPtr invoke = findClass.Invoke(native, name);
             ExceptionTest();
-            return Wrap<Class>((Object.JavaPtr*) invoke);
+            return Wrap<Class>(invoke);
         }
 
         public Class FindClassNoThrow(string name)
         {
-            Class.JavaPtr* invoke = findClass.Invoke(native, name);
+            IntPtr invoke = findClass.Invoke(native, name);
             if (ExceptionRead())
             {
                 return null;
             }
-            return Wrap<Class>((Object.JavaPtr*) invoke);
+            return Wrap<Class>(invoke);
         }
 
 
@@ -99,9 +99,9 @@ namespace net.sf.jni4net.jni
             return GetObjectClass(obj.Native);
         }
 
-        internal Class GetObjectClass(Object.JavaPtr* obj)
+        internal Class GetObjectClass(IntPtr obj)
         {
-            var res = (Object.JavaPtr*) getObjectClass.Invoke(native, obj);
+            IntPtr res = getObjectClass.Invoke(native, obj);
             ExceptionTest();
             return Wrap<Class>(res);
         }
@@ -137,20 +137,20 @@ namespace net.sf.jni4net.jni
             return new FieldId(res);
         }
 
-        #if !JNI4NET_MINI
+#if !JNI4NET_MINI
 
         public Field ToReflectedField(Class cls, FieldId fieldID, bool isStatic)
         {
-            Object.JavaPtr* res = toReflectedField.Invoke(native, cls.native, fieldID.native,
-                                                          isStatic ? (byte) 1 : (byte) 0);
+            IntPtr res = toReflectedField.Invoke(native, cls.native, fieldID.native,
+                                                 isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
             return Wrap<Field>(res);
         }
 
         public Method ToReflectedMethod(Class cls, MethodId methodId, bool isStatic)
         {
-            Object.JavaPtr* res = toReflectedMethod.Invoke(native, cls.native, methodId.native,
-                                                           isStatic ? (byte) 1 : (byte) 0);
+            IntPtr res = toReflectedMethod.Invoke(native, cls.native, methodId.native,
+                                                  isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
             return Wrap<Method>(res);
         }
@@ -170,6 +170,7 @@ namespace net.sf.jni4net.jni
         }
 
 #endif
+
         public FieldId GetStaticFieldID(Class clazz, string name, string sig)
         {
             IntPtr res = getStaticFieldID.Invoke(native, clazz.native, name, sig);
@@ -197,7 +198,7 @@ namespace net.sf.jni4net.jni
 
         public IJavaProxy CallStaticObjectMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
-            Object.JavaPtr* res = callStaticObjectMethod(native, clazz.native, methodIdNative.native, args);
+            IntPtr res = callStaticObjectMethod(native, clazz.native, methodIdNative.native, args);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -284,9 +285,9 @@ namespace net.sf.jni4net.jni
             MethodId idNative = GetStaticMethodID(clazz, method, sig);
             if (idNative != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) CallStaticObjectMethod(clazz, idNative, args);
+                    return (TRes) CallStaticObjectMethod(clazz, idNative, args);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
@@ -345,7 +346,7 @@ namespace net.sf.jni4net.jni
 
         public IJavaProxy CallObjectMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
-            Object.JavaPtr* res = callObjectMethod(native, obj.Native, methodIdNative.native, args);
+            IntPtr res = callObjectMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -504,7 +505,7 @@ namespace net.sf.jni4net.jni
             MethodId idNative = GetMethodID(GetObjectClass(obj), method, sig);
             if (idNative != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
                     return (TRes) CallObjectMethod(obj, idNative, args);
                 }
@@ -558,7 +559,7 @@ namespace net.sf.jni4net.jni
 
         public IJavaProxy GetObjectField(IJavaProxy obj, FieldId fieldID)
         {
-            Object.JavaPtr* res = getObjectField(native, obj.Native, fieldID.native);
+            IntPtr res = getObjectField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -596,7 +597,7 @@ namespace net.sf.jni4net.jni
             return GetIntField(obj.Native, fieldID);
         }
 
-        public int GetIntField(Object.JavaPtr* obj, FieldId fieldID)
+        public int GetIntField(IntPtr obj, FieldId fieldID)
         {
             int res = getIntField(native, obj, fieldID.native);
             ExceptionTest();
@@ -643,9 +644,9 @@ namespace net.sf.jni4net.jni
             FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
             if (id != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) GetObjectField(obj, id);
+                    return (TRes) GetObjectField(obj, id);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
@@ -755,7 +756,7 @@ namespace net.sf.jni4net.jni
             FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
             if (id != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(T)))
+                if (typeof (IObject).IsAssignableFrom(typeof (T)))
                 {
                     SetObjectField(obj, id, (Object) (object) value);
                 }
@@ -871,7 +872,7 @@ namespace net.sf.jni4net.jni
             FieldId id = GetStaticFieldID(clazz, fieldName, sig);
             if (id != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(T)))
+                if (typeof (IObject).IsAssignableFrom(typeof (T)))
                 {
                     SetStaticObjectField(clazz, id, (Object) (object) value);
                 }
@@ -930,7 +931,7 @@ namespace net.sf.jni4net.jni
 
         public IJavaProxy GetStaticObjectField(Class clazz, FieldId fieldID)
         {
-            Object.JavaPtr* res = getStaticObjectField(native, clazz.native, fieldID.native);
+            IntPtr res = getStaticObjectField(native, clazz.native, fieldID.native);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -1008,9 +1009,9 @@ namespace net.sf.jni4net.jni
             FieldId id = GetStaticFieldID(objectClass, fieldName, sig);
             if (id != null)
             {
-                if (typeof(IObject).IsAssignableFrom(typeof(TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) GetStaticObjectField(objectClass, id);
+                    return (TRes) GetStaticObjectField(objectClass, id);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
@@ -1063,7 +1064,7 @@ namespace net.sf.jni4net.jni
 
         public IObject NewDirectByteBuffer(void* address, long capacity)
         {
-            Object.JavaPtr* res = newDirectByteBuffer.Invoke(native, address, capacity);
+            IntPtr res = newDirectByteBuffer.Invoke(native, address, capacity);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -1089,20 +1090,20 @@ namespace net.sf.jni4net.jni
         public String NewString(string unicode)
         {
             IntPtr uni = Marshal.StringToHGlobalUni(unicode);
-            Object.JavaPtr* res = newString(native, uni, unicode.Length);
+            IntPtr res = newString(native, uni, unicode.Length);
             ExceptionTest();
             Marshal.FreeHGlobal(uni);
             return Wrap<String>(res);
         }
 
-        internal IntPtr GetStringChars(Object.JavaPtr* str, byte* isCopy)
+        internal IntPtr GetStringChars(IntPtr str, byte* isCopy)
         {
             IntPtr res = getStringChars(native, str, isCopy);
             ExceptionTest();
             return res;
         }
 
-        internal void ReleaseStringChars(Object.JavaPtr* str, IntPtr chars)
+        internal void ReleaseStringChars(IntPtr str, IntPtr chars)
         {
             releaseStringChars(native, str, chars);
             ExceptionTest();
@@ -1117,7 +1118,7 @@ namespace net.sf.jni4net.jni
             return GetArrayLength(array.native);
         }
 
-        internal int GetArrayLength(Object.JavaPtr* array)
+        internal int GetArrayLength(IntPtr array)
         {
             int res = getArrayLength(native, array);
             ExceptionTest();
@@ -1129,26 +1130,26 @@ namespace net.sf.jni4net.jni
             return GetObjectArrayElement(array.native, index);
         }
 
-        internal IJavaProxy GetObjectArrayElement(Object.JavaPtr* array, int index)
+        internal IJavaProxy GetObjectArrayElement(IntPtr array, int index)
         {
-            Object.JavaPtr* res = getObjectArrayElement(native, array, index);
+            IntPtr res = getObjectArrayElement(native, array, index);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
 
         public Object NewObjectArray(int len, Class clazz, IJavaProxy init)
         {
-            Object.JavaPtr* res = newObjectArray(native, len, clazz.native, init == null ? null : init.Native);
+            IntPtr res = newObjectArray(native, len, clazz.native, init == null ? IntPtr.Zero : init.Native);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         public void SetObjectArrayElement(Object array, int index, IJavaProxy val)
         {
-            SetObjectArrayElement(array, index, val == null ? null : val.Native);
+            SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.Native);
         }
 
-        public void SetObjectArrayElement(Object array, int index, Object.JavaPtr* val)
+        public void SetObjectArrayElement(Object array, int index, IntPtr val)
         {
             setObjectArrayElement(native, array.native, index, val);
             ExceptionTest();
@@ -1156,56 +1157,56 @@ namespace net.sf.jni4net.jni
 
         internal Object NewBooleanArray(int len)
         {
-            Object.JavaPtr* res = newBooleanArray(native, len);
+            IntPtr res = newBooleanArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewByteArray(int len)
         {
-            Object.JavaPtr* res = newByteArray(native, len);
+            IntPtr res = newByteArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewShortArray(int len)
         {
-            Object.JavaPtr* res = newShortArray(native, len);
+            IntPtr res = newShortArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewCharArray(int len)
         {
-            Object.JavaPtr* res = newCharArray(native, len);
+            IntPtr res = newCharArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewIntArray(int len)
         {
-            Object.JavaPtr* res = newIntArray(native, len);
+            IntPtr res = newIntArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewLongArray(int len)
         {
-            Object.JavaPtr* res = newLongArray(native, len);
+            IntPtr res = newLongArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewFloatArray(int len)
         {
-            Object.JavaPtr* res = newFloatArray(native, len);
+            IntPtr res = newFloatArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
 
         internal Object NewDoubleArray(int len)
         {
-            Object.JavaPtr* res = newDoubleArray(native, len);
+            IntPtr res = newDoubleArray(native, len);
             ExceptionTest();
             return Wrap<Object>(res);
         }
@@ -1295,7 +1296,7 @@ namespace net.sf.jni4net.jni
             {
                 for (int i = 0; i < length; i++)
                 {
-                    object element = Bridge.ToCLR(GetObjectArrayElement((Object)array, i));
+                    object element = Bridge.ToCLR(GetObjectArrayElement((Object) array, i));
                     res.SetValue(element, i);
                 }
             }
@@ -1419,12 +1420,12 @@ namespace net.sf.jni4net.jni
         {
             Object res;
             int length = array.Length;
-            if (typeof(IObject).IsAssignableFrom(type))
+            if (typeof (IObject).IsAssignableFrom(type))
             {
                 res = NewObjectArray(length, JavaProxiesMap.TypeToKnownClass(type), null);
                 for (int i = 0; i < array.Length; i++)
                 {
-                    SetObjectArrayElement(res, i, (IJavaProxy)array.GetValue(i));
+                    SetObjectArrayElement(res, i, (IJavaProxy) array.GetValue(i));
                 }
             }
             else if (typeof (string).IsAssignableFrom(type))
@@ -1486,20 +1487,20 @@ namespace net.sf.jni4net.jni
 
         #region references
 
-        internal Object.JavaPtr* NewGlobalRef(Object.JavaPtr* lobj)
+        internal IntPtr NewGlobalRef(IntPtr lobj)
         {
-            if (lobj == null)
+            if (lobj == IntPtr.Zero)
             {
                 throw new ArgumentNullException("lobj");
             }
-            Object.JavaPtr* res = newGlobalRef(native, lobj);
+            IntPtr res = newGlobalRef(native, lobj);
             //optimized away ExceptionTest();
             return res;
         }
 
-        internal Object.JavaPtr* PopLocalFrame(Object.JavaPtr* result)
+        internal IntPtr PopLocalFrame(IntPtr result)
         {
-            Object.JavaPtr* res = popLocalFrame(native, result);
+            IntPtr res = popLocalFrame(native, result);
             ExceptionTest();
             return res;
         }
@@ -1526,18 +1527,18 @@ namespace net.sf.jni4net.jni
 
         internal void DeleteGlobalRef(IJavaProxy gref)
         {
-            if (gref == null || gref.Native == null)
+            if (gref == null || gref.Native == IntPtr.Zero)
             {
                 throw new ArgumentNullException("gref");
             }
             deleteGlobalRef(native, gref.Native);
             //optimized away ExceptionTest();
-            gref.Native = null;
+            gref.Native = IntPtr.Zero;
         }
 
-        internal void DeleteLocalRef(Object.JavaPtr* lref)
+        internal void DeleteLocalRef(IntPtr lref)
         {
-            if (lref == null)
+            if (lref == IntPtr.Zero)
             {
                 throw new ArgumentNullException("lref");
             }
@@ -1558,35 +1559,35 @@ namespace net.sf.jni4net.jni
 
         internal IObject AllocObject(Class clazz)
         {
-            Object.JavaPtr* res = allocObject(native, clazz.native);
+            IntPtr res = allocObject(native, clazz.native);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
 
         public void NewObject(Class clazz, MethodId methodID, IJavaProxy obj, params Value[] args)
         {
-            Object.JavaPtr* res = newObject(native, clazz.native, methodID.native, args);
+            IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
             obj.Init(this, res, clazz);
         }
 
-        public Object.JavaPtr* NewObjectPtr(Class clazz, MethodId methodID, params Value[] args)
+        public IntPtr NewObjectPtr(Class clazz, MethodId methodID, params Value[] args)
         {
-            Object.JavaPtr* res = newObject(native, clazz.native, methodID.native, args);
+            IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
             return res;
         }
 
         public IJavaProxy NewObjectEx(Class clazz, MethodId methodID, params Value[] args)
         {
-            Object.JavaPtr* res = newObject(native, clazz.native, methodID.native, args);
+            IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
 
         public IObject NewObject(Class clazz, MethodId methodID, params Value[] args)
         {
-            Object.JavaPtr* res = newObject(native, clazz.native, methodID.native, args);
+            IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
             return Wrap<IJavaProxy>(res);
         }
@@ -1607,11 +1608,11 @@ namespace net.sf.jni4net.jni
 
         public void Throw(Throwable ex)
         {
-            Object.JavaPtr* ptr = ex.native;
+            IntPtr ptr = ex.native;
             Throw(ptr);
         }
 
-        internal void Throw(Object.JavaPtr* ptr)
+        internal void Throw(IntPtr ptr)
         {
             if (@throw(native, ptr) != JNIResult.JNI_OK)
             {
@@ -1629,7 +1630,7 @@ namespace net.sf.jni4net.jni
             Marshal.FreeHGlobal(uni);
         }
 
-        public Object.JavaPtr* ExceptionOccurred()
+        public IntPtr ExceptionOccurred()
         {
             return exceptionOccurred(native);
         }
@@ -1651,8 +1652,8 @@ namespace net.sf.jni4net.jni
 
         public void ExceptionTest()
         {
-            Object.JavaPtr* occurred = ExceptionOccurred();
-            if (null != occurred)
+            IntPtr occurred = ExceptionOccurred();
+            if (IntPtr.Zero != occurred)
             {
                 //ExceptionDescribe();
                 ExceptionClear();
@@ -1661,7 +1662,7 @@ namespace net.sf.jni4net.jni
                 {
                     javaProxy = Wrap<IJavaProxy>(occurred);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.Error.WriteLine(ex.Message);
                     Console.Error.WriteLine(ex);
@@ -1684,8 +1685,8 @@ namespace net.sf.jni4net.jni
 
         public bool ExceptionRead()
         {
-            Object.JavaPtr* occurred = ExceptionOccurred();
-            if (null != occurred)
+            IntPtr occurred = ExceptionOccurred();
+            if (IntPtr.Zero != occurred)
             {
                 if (Bridge.Verbose)
                 {

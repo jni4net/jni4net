@@ -141,47 +141,47 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* Error0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr Error0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/MarshalByRefObject;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.Error);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* In1(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr In1(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/MarshalByRefObject;
             // ()LSystem/IO/TextReader;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.In);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Out2(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr Out2(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/MarshalByRefObject;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.Out);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* InputEncoding3(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr InputEncoding3(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/ICloneable;
             // ()LSystem/Text/Encoding;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.InputEncoding);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void InputEncoding4(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void InputEncoding4(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/ICloneable;)V
             // (LSystem/Text/Encoding;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -190,17 +190,17 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* OutputEncoding5(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr OutputEncoding5(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/ICloneable;
             // ()LSystem/Text/Encoding;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OutputEncoding);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void OutputEncoding6(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void OutputEncoding6(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/ICloneable;)V
             // (LSystem/Text/Encoding;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -209,7 +209,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Beep7(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static void Beep7(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -218,7 +218,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Beep8(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int frequency, int duration) {
+        private static void Beep8(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int frequency, int duration) {
             // (II)V
             // (II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -227,7 +227,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Clear9(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static void Clear9(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -236,17 +236,17 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* BackgroundColor10(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr BackgroundColor10(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/Enum;
             // ()LSystem/ConsoleColor;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.BackgroundColor);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void BackgroundColor11(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void BackgroundColor11(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Enum;)V
             // (LSystem/ConsoleColor;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -255,17 +255,17 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* ForegroundColor12(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr ForegroundColor12(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/Enum;
             // ()LSystem/ConsoleColor;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.ForegroundColor);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void ForegroundColor13(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void ForegroundColor13(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Enum;)V
             // (LSystem/ConsoleColor;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -274,7 +274,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void ResetColor14(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static void ResetColor14(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -283,7 +283,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void MoveBufferArea15(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int sourceLeft, int sourceTop, int sourceWidth, int sourceHeight, int targetLeft, int targetTop) {
+        private static void MoveBufferArea15(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int sourceLeft, int sourceTop, int sourceWidth, int sourceHeight, int targetLeft, int targetTop) {
             // (IIIIII)V
             // (IIIIII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -292,7 +292,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void MoveBufferArea16(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int sourceLeft, int sourceTop, int sourceWidth, int sourceHeight, int targetLeft, int targetTop, char sourceChar, global::java.lang.Object.JavaPtr* sourceForeColor, global::java.lang.Object.JavaPtr* sourceBackColor) {
+        private static void MoveBufferArea16(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int sourceLeft, int sourceTop, int sourceWidth, int sourceHeight, int targetLeft, int targetTop, char sourceChar, global::System.IntPtr sourceForeColor, global::System.IntPtr sourceBackColor) {
             // (IIIIIICLsystem/Enum;Lsystem/Enum;)V
             // (IIIIIICLSystem/ConsoleColor;LSystem/ConsoleColor;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -301,7 +301,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int BufferHeight17(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int BufferHeight17(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -311,7 +311,7 @@ namespace System {
             return default(int);
         }
         
-        private static void BufferHeight18(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void BufferHeight18(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -320,7 +320,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int BufferWidth19(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int BufferWidth19(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -330,7 +330,7 @@ namespace System {
             return default(int);
         }
         
-        private static void BufferWidth20(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void BufferWidth20(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -339,7 +339,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetBufferSize21(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int width, int height) {
+        private static void SetBufferSize21(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int width, int height) {
             // (II)V
             // (II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -348,7 +348,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int WindowHeight22(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int WindowHeight22(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -358,7 +358,7 @@ namespace System {
             return default(int);
         }
         
-        private static void WindowHeight23(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void WindowHeight23(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -367,7 +367,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int WindowWidth24(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int WindowWidth24(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -377,7 +377,7 @@ namespace System {
             return default(int);
         }
         
-        private static void WindowWidth25(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void WindowWidth25(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -386,7 +386,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetWindowSize26(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int width, int height) {
+        private static void SetWindowSize26(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int width, int height) {
             // (II)V
             // (II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -395,7 +395,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int LargestWindowWidth27(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int LargestWindowWidth27(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -405,7 +405,7 @@ namespace System {
             return default(int);
         }
         
-        private static int LargestWindowHeight28(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int LargestWindowHeight28(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -415,7 +415,7 @@ namespace System {
             return default(int);
         }
         
-        private static int WindowLeft29(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int WindowLeft29(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -425,7 +425,7 @@ namespace System {
             return default(int);
         }
         
-        private static void WindowLeft30(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void WindowLeft30(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -434,7 +434,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int WindowTop31(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int WindowTop31(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -444,7 +444,7 @@ namespace System {
             return default(int);
         }
         
-        private static void WindowTop32(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void WindowTop32(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -453,7 +453,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetWindowPosition33(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int left, int top) {
+        private static void SetWindowPosition33(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int left, int top) {
             // (II)V
             // (II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -462,7 +462,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int CursorLeft34(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int CursorLeft34(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -472,7 +472,7 @@ namespace System {
             return default(int);
         }
         
-        private static void CursorLeft35(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void CursorLeft35(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -481,7 +481,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int CursorTop36(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int CursorTop36(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -491,7 +491,7 @@ namespace System {
             return default(int);
         }
         
-        private static void CursorTop37(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void CursorTop37(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -500,7 +500,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetCursorPosition38(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int left, int top) {
+        private static void SetCursorPosition38(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int left, int top) {
             // (II)V
             // (II)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -509,7 +509,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int CursorSize39(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int CursorSize39(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -519,7 +519,7 @@ namespace System {
             return default(int);
         }
         
-        private static void CursorSize40(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void CursorSize40(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -528,7 +528,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static bool CursorVisible41(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static bool CursorVisible41(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -538,7 +538,7 @@ namespace System {
             return default(bool);
         }
         
-        private static void CursorVisible42(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, bool value) {
+        private static void CursorVisible42(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -547,17 +547,17 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* Title43(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr Title43(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::System.Console.Title);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void Title44(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void Title44(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -566,27 +566,27 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* ReadKey45(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr ReadKey45(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/ValueType;
             // ()LSystem/ConsoleKeyInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.ReadKey());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ReadKey46(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, bool intercept) {
+        private static global::System.IntPtr ReadKey46(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, bool intercept) {
             // (Z)Lsystem/ValueType;
             // (Z)LSystem/ConsoleKeyInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.ReadKey(intercept));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool KeyAvailable47(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static bool KeyAvailable47(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -596,7 +596,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool NumberLock48(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static bool NumberLock48(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -606,7 +606,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool CapsLock49(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static bool CapsLock49(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -616,7 +616,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool TreatControlCAsInput50(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static bool TreatControlCAsInput50(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -626,7 +626,7 @@ namespace System {
             return default(bool);
         }
         
-        private static void TreatControlCAsInput51(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, bool value) {
+        private static void TreatControlCAsInput51(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -635,67 +635,67 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardError52(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr OpenStandardError52(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardError());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardError53(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int bufferSize) {
+        private static global::System.IntPtr OpenStandardError53(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardError(bufferSize));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardInput54(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr OpenStandardInput54(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardInput());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardInput55(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int bufferSize) {
+        private static global::System.IntPtr OpenStandardInput55(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardInput(bufferSize));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardOutput56(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr OpenStandardOutput56(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardOutput());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* OpenStandardOutput57(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int bufferSize) {
+        private static global::System.IntPtr OpenStandardOutput57(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.Console.OpenStandardOutput(bufferSize));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void SetIn58(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* newIn) {
+        private static void SetIn58(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr newIn) {
             // (Lsystem/MarshalByRefObject;)V
             // (LSystem/IO/TextReader;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -704,7 +704,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetOut59(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* newOut) {
+        private static void SetOut59(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr newOut) {
             // (Lsystem/MarshalByRefObject;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -713,7 +713,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void SetError60(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* newError) {
+        private static void SetError60(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr newError) {
             // (Lsystem/MarshalByRefObject;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -722,7 +722,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Read61(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static int Read61(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -732,17 +732,17 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* ReadLine62(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr ReadLine62(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, global::System.Console.ReadLine());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void WriteLine63(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static void WriteLine63(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -751,7 +751,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine64(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, bool value) {
+        private static void WriteLine64(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -760,7 +760,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine65(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, char value) {
+        private static void WriteLine65(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, char value) {
             // (C)V
             // (C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -769,7 +769,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine66(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* buffer) {
+        private static void WriteLine66(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr buffer) {
             // ([C)V
             // ([C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -778,7 +778,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine67(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* buffer, int index, int count) {
+        private static void WriteLine67(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr buffer, int index, int count) {
             // ([CII)V
             // ([CII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -787,7 +787,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine68(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void WriteLine68(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Decimal;)V
             // (LSystem/Decimal;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -796,7 +796,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine69(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, double value) {
+        private static void WriteLine69(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, double value) {
             // (D)V
             // (D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -805,7 +805,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine70(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, float value) {
+        private static void WriteLine70(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, float value) {
             // (F)V
             // (F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -814,7 +814,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine71(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void WriteLine71(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -823,7 +823,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine72(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, long value) {
+        private static void WriteLine72(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -832,7 +832,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine73(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void WriteLine73(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -841,7 +841,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine74(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void WriteLine74(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -850,7 +850,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine75(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0) {
+        private static void WriteLine75(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0) {
             // (Ljava/lang/String;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -859,7 +859,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine76(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1) {
+        private static void WriteLine76(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -868,7 +868,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine77(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1, global::java.lang.Object.JavaPtr* arg2) {
+        private static void WriteLine77(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -877,7 +877,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine78(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1, global::java.lang.Object.JavaPtr* arg2, global::java.lang.Object.JavaPtr* arg3) {
+        private static void WriteLine78(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2, global::System.IntPtr arg3) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -886,7 +886,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void WriteLine79(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg) {
+        private static void WriteLine79(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg) {
             // (Ljava/lang/String;[Lsystem/Object;)V
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -895,7 +895,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write80(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0) {
+        private static void Write80(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0) {
             // (Ljava/lang/String;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -904,7 +904,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write81(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1) {
+        private static void Write81(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -913,7 +913,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write82(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1, global::java.lang.Object.JavaPtr* arg2) {
+        private static void Write82(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -922,7 +922,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write83(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg0, global::java.lang.Object.JavaPtr* arg1, global::java.lang.Object.JavaPtr* arg2, global::java.lang.Object.JavaPtr* arg3) {
+        private static void Write83(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2, global::System.IntPtr arg3) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -931,7 +931,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write84(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* arg) {
+        private static void Write84(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr format, global::System.IntPtr arg) {
             // (Ljava/lang/String;[Lsystem/Object;)V
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -940,7 +940,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write85(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, bool value) {
+        private static void Write85(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -949,7 +949,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write86(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, char value) {
+        private static void Write86(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, char value) {
             // (C)V
             // (C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -958,7 +958,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write87(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* buffer) {
+        private static void Write87(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr buffer) {
             // ([C)V
             // ([C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -967,7 +967,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write88(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* buffer, int index, int count) {
+        private static void Write88(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr buffer, int index, int count) {
             // ([CII)V
             // ([CII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -976,7 +976,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write89(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, double value) {
+        private static void Write89(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, double value) {
             // (D)V
             // (D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -985,7 +985,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write90(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void Write90(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Decimal;)V
             // (LSystem/Decimal;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -994,7 +994,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write91(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, float value) {
+        private static void Write91(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, float value) {
             // (F)V
             // (F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1003,7 +1003,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write92(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int value) {
+        private static void Write92(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1012,7 +1012,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write93(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, long value) {
+        private static void Write93(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1021,7 +1021,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write94(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void Write94(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1030,7 +1030,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Write95(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value) {
+        private static void Write95(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

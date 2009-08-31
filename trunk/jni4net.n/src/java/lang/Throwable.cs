@@ -27,11 +27,11 @@ using net.sf.jni4net.jni;
 
 namespace java.lang
 {
-    unsafe partial class Throwable : global::System.Exception, IJavaProxy, IDisposable
+    partial class Throwable : global::System.Exception, IJavaProxy
     {
         internal Class clazz;
         private JavaVM javaVM;
-        internal Object.JavaPtr* native;
+        internal IntPtr native;
 
         protected internal Throwable(JNIEnv env)
         {
@@ -84,15 +84,15 @@ namespace java.lang
 
         #region IJavaProxy Members
 
-        Object.JavaPtr* IJavaProxy.Native
+        IntPtr IJavaProxy.Native
         {
             get { return native; }
             set { native = value; }
         }
 
-        void IJavaProxy.Init(JNIEnv env, Object.JavaPtr* obj, Class clazz)
+        void IJavaProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
-            this.clazz = clazz;
+            clazz = clazs;
             native = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
             javaVM = env.GetJavaVM();
@@ -110,7 +110,7 @@ namespace java.lang
 
         public void Dispose()
         {
-            if (native != null)
+            if (native != IntPtr.Zero)
             {
                 JNIEnv env;
                 JNIResult result = javaVM.AttachCurrentThreadAsDaemon(out env, null);
@@ -185,7 +185,7 @@ namespace java.lang
             JNIEnv env = Env;
             if ((_toString5 == null))
             {
-                _toString5 = env.GetMethodID(((IJavaProxy)this).GetClass(), "toString", "()Ljava/lang/String;");
+                _toString5 = env.GetMethodID(((IJavaProxy) this).GetClass(), "toString", "()Ljava/lang/String;");
             }
             return toString();
         }

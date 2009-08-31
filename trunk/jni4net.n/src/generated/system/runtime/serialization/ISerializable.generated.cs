@@ -52,7 +52,7 @@ namespace System.Runtime.Serialization {
             return methods;
         }
         
-        private static void GetObjectData0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* info, global::java.lang.Object.JavaPtr* context) {
+        private static void GetObjectData0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
             // (Ljava/lang/Object;Lsystem/ValueType;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

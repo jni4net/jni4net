@@ -48,7 +48,7 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static int Value0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Value0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -59,7 +59,7 @@ namespace net.sf.jni4net.tested {
             return default(int);
         }
         
-        private static void Value1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int value) {
+        private static void Value1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -69,7 +69,7 @@ namespace net.sf.jni4net.tested {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int compareTo2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* objectPar0) {
+        private static int compareTo2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr objectPar0) {
             // (Ljava/lang/Object;)I
             // (Ljava/lang/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -80,7 +80,7 @@ namespace net.sf.jni4net.tested {
             return default(int);
         }
         
-        private static void run3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void run3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -90,7 +90,7 @@ namespace net.sf.jni4net.tested {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorCWithJavaInterface0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int value) {
+        private static void @__ctorCWithJavaInterface0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

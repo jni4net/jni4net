@@ -61,7 +61,7 @@ namespace java.lang {
             return methods;
         }
         
-        private static int compareTo0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static int compareTo0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)I
             // (Ljava/lang/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

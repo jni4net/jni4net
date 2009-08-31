@@ -28,7 +28,9 @@ namespace net.sf.jni4net.jni
     [Serializable]
     public class JNIException : Exception
     {
-        protected JNIException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+        protected JNIException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
 
         public JNIException()
         {

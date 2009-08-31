@@ -136,7 +136,7 @@ namespace System {
             return methods;
         }
         
-        private static int CompareTo0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
+        private static int CompareTo0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -147,7 +147,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* formatProvider) {
+        private static global::System.IntPtr ToString1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr formatProvider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -155,10 +155,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, ((global::System.IFormattable)(real)).ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, formatProvider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetTypeCode2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetTypeCode2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -166,10 +166,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).GetTypeCode());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool ToBoolean3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static bool ToBoolean3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Z
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -180,7 +180,7 @@ namespace System {
             return default(bool);
         }
         
-        private static char ToChar4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static char ToChar4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)C
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -191,7 +191,7 @@ namespace System {
             return default(char);
         }
         
-        private static sbyte ToSByte5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static sbyte ToSByte5(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -202,7 +202,7 @@ namespace System {
             return default(sbyte);
         }
         
-        private static byte ToByte6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static byte ToByte6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -213,7 +213,7 @@ namespace System {
             return default(byte);
         }
         
-        private static short ToInt167(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static short ToInt167(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -224,7 +224,7 @@ namespace System {
             return default(short);
         }
         
-        private static ushort ToUInt168(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ushort ToUInt168(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -235,7 +235,7 @@ namespace System {
             return default(ushort);
         }
         
-        private static int ToInt329(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static int ToInt329(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -246,7 +246,7 @@ namespace System {
             return default(int);
         }
         
-        private static uint ToUInt3210(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static uint ToUInt3210(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -257,7 +257,7 @@ namespace System {
             return default(uint);
         }
         
-        private static long ToInt6411(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static long ToInt6411(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -268,7 +268,7 @@ namespace System {
             return default(long);
         }
         
-        private static ulong ToUInt6412(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static ulong ToUInt6412(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -279,7 +279,7 @@ namespace System {
             return default(ulong);
         }
         
-        private static float ToSingle13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static float ToSingle13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)F
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -290,7 +290,7 @@ namespace System {
             return default(float);
         }
         
-        private static double ToDouble14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static double ToDouble14(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)D
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -301,7 +301,7 @@ namespace System {
             return default(double);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDecimal15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDecimal15(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -309,10 +309,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToDecimal(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToDateTime16(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToDateTime16(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -320,10 +320,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToDateTime(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString17(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToString17(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -331,10 +331,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, ((global::System.IConvertible)(real)).ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToType18(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* conversionType, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ToType18(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr conversionType, global::System.IntPtr provider) {
             // (Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -342,10 +342,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.IConvertible)(real)).ToType(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, conversionType), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void GetObjectData19(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* info, global::java.lang.Object.JavaPtr* context) {
+        private static void GetObjectData19(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
             // (Ljava/lang/Object;Lsystem/ValueType;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -355,7 +355,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* Add20(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr Add20(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/ValueType;)Lsystem/DateTime;
             // (LSystem/TimeSpan;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -363,10 +363,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Add(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.TimeSpan>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddDays21(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, double value) {
+        private static global::System.IntPtr AddDays21(global::System.IntPtr @__envi, global::System.IntPtr @__obj, double value) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -374,10 +374,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddDays(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddHours22(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, double value) {
+        private static global::System.IntPtr AddHours22(global::System.IntPtr @__envi, global::System.IntPtr @__obj, double value) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -385,10 +385,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddHours(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddMilliseconds23(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, double value) {
+        private static global::System.IntPtr AddMilliseconds23(global::System.IntPtr @__envi, global::System.IntPtr @__obj, double value) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -396,10 +396,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddMilliseconds(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddMinutes24(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, double value) {
+        private static global::System.IntPtr AddMinutes24(global::System.IntPtr @__envi, global::System.IntPtr @__obj, double value) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -407,10 +407,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddMinutes(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddMonths25(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int months) {
+        private static global::System.IntPtr AddMonths25(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int months) {
             // (I)Lsystem/DateTime;
             // (I)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -418,10 +418,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddMonths(months));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddSeconds26(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, double value) {
+        private static global::System.IntPtr AddSeconds26(global::System.IntPtr @__envi, global::System.IntPtr @__obj, double value) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -429,10 +429,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddSeconds(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddTicks27(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long value) {
+        private static global::System.IntPtr AddTicks27(global::System.IntPtr @__envi, global::System.IntPtr @__obj, long value) {
             // (J)Lsystem/DateTime;
             // (J)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -440,10 +440,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddTicks(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* AddYears28(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int value) {
+        private static global::System.IntPtr AddYears28(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int value) {
             // (I)Lsystem/DateTime;
             // (I)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -451,10 +451,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.AddYears(value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int Compare29(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* t1, global::java.lang.Object.JavaPtr* t2) {
+        private static int Compare29(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr t1, global::System.IntPtr t2) {
             // (Lsystem/DateTime;Lsystem/DateTime;)I
             // (LSystem/DateTime;LSystem/DateTime;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -464,7 +464,7 @@ namespace System {
             return default(int);
         }
         
-        private static int CompareTo30(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static int CompareTo30(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/DateTime;)I
             // (LSystem/DateTime;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -475,7 +475,7 @@ namespace System {
             return default(int);
         }
         
-        private static int DaysInMonth31(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int year, int month) {
+        private static int DaysInMonth31(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int year, int month) {
             // (II)I
             // (II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -485,7 +485,7 @@ namespace System {
             return default(int);
         }
         
-        private static bool Equals32(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static bool Equals32(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/DateTime;)Z
             // (LSystem/DateTime;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -496,7 +496,7 @@ namespace System {
             return default(bool);
         }
         
-        private static bool Equals33(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* t1, global::java.lang.Object.JavaPtr* t2) {
+        private static bool Equals33(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr t1, global::System.IntPtr t2) {
             // (Lsystem/DateTime;Lsystem/DateTime;)Z
             // (LSystem/DateTime;LSystem/DateTime;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -506,47 +506,47 @@ namespace System {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* FromBinary34(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, long dateData) {
+        private static global::System.IntPtr FromBinary34(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, long dateData) {
             // (J)Lsystem/DateTime;
             // (J)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.FromBinary(dateData));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* FromFileTime35(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, long fileTime) {
+        private static global::System.IntPtr FromFileTime35(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, long fileTime) {
             // (J)Lsystem/DateTime;
             // (J)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.FromFileTime(fileTime));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* FromFileTimeUtc36(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, long fileTime) {
+        private static global::System.IntPtr FromFileTimeUtc36(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, long fileTime) {
             // (J)Lsystem/DateTime;
             // (J)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.FromFileTimeUtc(fileTime));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* FromOADate37(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, double d) {
+        private static global::System.IntPtr FromOADate37(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, double d) {
             // (D)Lsystem/DateTime;
             // (D)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.FromOADate(d));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool IsDaylightSavingTime38(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsDaylightSavingTime38(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -557,17 +557,17 @@ namespace System {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* SpecifyKind39(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* value, global::java.lang.Object.JavaPtr* kind) {
+        private static global::System.IntPtr SpecifyKind39(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr value, global::System.IntPtr kind) {
             // (Lsystem/DateTime;Lsystem/Enum;)Lsystem/DateTime;
             // (LSystem/DateTime;LSystem/DateTimeKind;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.SpecifyKind(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, value), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTimeKind>(__env, kind)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static long ToBinary40(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static long ToBinary40(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -578,7 +578,7 @@ namespace System {
             return default(long);
         }
         
-        private static global::java.lang.Object.JavaPtr* Date41(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr Date41(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -586,10 +586,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Date);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int Day42(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Day42(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -600,7 +600,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* DayOfWeek43(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr DayOfWeek43(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/DayOfWeek;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -608,10 +608,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.DayOfWeek);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int DayOfYear44(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int DayOfYear44(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -622,7 +622,7 @@ namespace System {
             return default(int);
         }
         
-        private static int Hour45(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Hour45(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -633,7 +633,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* Kind46(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr Kind46(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/DateTimeKind;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -641,10 +641,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Kind);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int Millisecond47(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Millisecond47(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -655,7 +655,7 @@ namespace System {
             return default(int);
         }
         
-        private static int Minute48(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Minute48(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -666,7 +666,7 @@ namespace System {
             return default(int);
         }
         
-        private static int Month49(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Month49(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -677,27 +677,27 @@ namespace System {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* Now50(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr Now50(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.Now);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* UtcNow51(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr UtcNow51(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.UtcNow);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int Second52(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Second52(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -708,7 +708,7 @@ namespace System {
             return default(int);
         }
         
-        private static long Ticks53(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static long Ticks53(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -719,7 +719,7 @@ namespace System {
             return default(long);
         }
         
-        private static global::java.lang.Object.JavaPtr* TimeOfDay54(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr TimeOfDay54(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/ValueType;
             // ()LSystem/TimeSpan;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -727,20 +727,20 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.TimeOfDay);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Today55(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz) {
+        private static global::System.IntPtr Today55(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.Today);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static int Year56(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Year56(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -751,7 +751,7 @@ namespace System {
             return default(int);
         }
         
-        private static bool IsLeapYear57(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int year) {
+        private static bool IsLeapYear57(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int year) {
             // (I)Z
             // (I)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -761,67 +761,67 @@ namespace System {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Parse58(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s) {
+        private static global::System.IntPtr Parse58(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s) {
             // (Ljava/lang/String;)Lsystem/DateTime;
             // (LSystem/String;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.Parse(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Parse59(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr Parse59(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s, global::System.IntPtr provider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.Parse(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Parse60(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s, global::java.lang.Object.JavaPtr* provider, global::java.lang.Object.JavaPtr* styles) {
+        private static global::System.IntPtr Parse60(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s, global::System.IntPtr provider, global::System.IntPtr styles) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;Lsystem/Enum;)Lsystem/DateTime;
             // (LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.Parse(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.DateTimeStyles>(__env, styles)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ParseExact61(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr ParseExact61(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s, global::System.IntPtr format, global::System.IntPtr provider) {
             // (Ljava/lang/String;Ljava/lang/String;Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/String;LSystem/String;LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.ParseExact(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ParseExact62(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* provider, global::java.lang.Object.JavaPtr* style) {
+        private static global::System.IntPtr ParseExact62(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s, global::System.IntPtr format, global::System.IntPtr provider, global::System.IntPtr style) {
             // (Ljava/lang/String;Ljava/lang/String;Lsystem/IFormatProvider;Lsystem/Enum;)Lsystem/DateTime;
             // (LSystem/String;LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.ParseExact(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.DateTimeStyles>(__env, style)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ParseExact63(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* s, global::java.lang.Object.JavaPtr* formats, global::java.lang.Object.JavaPtr* provider, global::java.lang.Object.JavaPtr* style) {
+        private static global::System.IntPtr ParseExact63(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr s, global::System.IntPtr formats, global::System.IntPtr provider, global::System.IntPtr style) {
             // (Ljava/lang/String;[Lsystem/String;Lsystem/IFormatProvider;Lsystem/Enum;)Lsystem/DateTime;
             // (LSystem/String;[LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.DateTime.ParseExact(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, s), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String[]>(__env, formats), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.DateTimeStyles>(__env, style)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Subtract64(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr Subtract64(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/DateTime;)Lsystem/ValueType;
             // (LSystem/DateTime;)LSystem/TimeSpan;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -829,10 +829,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Subtract(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* Subtract65(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static global::System.IntPtr Subtract65(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/ValueType;)Lsystem/DateTime;
             // (LSystem/TimeSpan;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -840,10 +840,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Subtract(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.TimeSpan>(__env, value)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static double ToOADate66(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static double ToOADate66(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()D
             // ()D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -854,7 +854,7 @@ namespace System {
             return default(double);
         }
         
-        private static long ToFileTime67(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static long ToFileTime67(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -865,7 +865,7 @@ namespace System {
             return default(long);
         }
         
-        private static long ToFileTimeUtc68(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static long ToFileTimeUtc68(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -876,7 +876,7 @@ namespace System {
             return default(long);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToLocalTime69(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToLocalTime69(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -884,10 +884,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToLocalTime());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToLongDateString70(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToLongDateString70(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -895,10 +895,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToLongDateString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToLongTimeString71(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToLongTimeString71(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -906,10 +906,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToLongTimeString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToShortDateString72(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToShortDateString72(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -917,10 +917,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToShortDateString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToShortTimeString73(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToShortTimeString73(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -928,10 +928,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToShortTimeString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString74(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format) {
+        private static global::System.IntPtr ToString74(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format) {
             // (Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -939,10 +939,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* ToUniversalTime75(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr ToUniversalTime75(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()Lsystem/DateTime;
             // ()LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -950,10 +950,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ToUniversalTime());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetDateTimeFormats76(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr GetDateTimeFormats76(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
             // ()[Lsystem/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -961,10 +961,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetDateTimeFormats());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetDateTimeFormats77(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr GetDateTimeFormats77(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr provider) {
             // (Lsystem/IFormatProvider;)[Lsystem/String;
             // (LSystem/IFormatProvider;)[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -972,10 +972,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetDateTimeFormats(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetDateTimeFormats78(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, char format) {
+        private static global::System.IntPtr GetDateTimeFormats78(global::System.IntPtr @__envi, global::System.IntPtr @__obj, char format) {
             // (C)[Lsystem/String;
             // (C)[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -983,10 +983,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetDateTimeFormats(format));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetDateTimeFormats79(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, char format, global::java.lang.Object.JavaPtr* provider) {
+        private static global::System.IntPtr GetDateTimeFormats79(global::System.IntPtr @__envi, global::System.IntPtr @__obj, char format, global::System.IntPtr provider) {
             // (CLsystem/IFormatProvider;)[Lsystem/String;
             // (CLSystem/IFormatProvider;)[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -994,10 +994,10 @@ namespace System {
             global::System.DateTime real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.DateTime>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetDateTimeFormats(format, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static void @__ctorDateTime0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, long ticks) {
+        private static void @__ctorDateTime0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, long ticks) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1007,7 +1007,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime1(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, long ticks, global::java.lang.Object.JavaPtr* kind) {
+        private static void @__ctorDateTime1(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, long ticks, global::System.IntPtr kind) {
             // (JLsystem/Enum;)V
             // (JLSystem/DateTimeKind;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1017,7 +1017,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime2(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day) {
+        private static void @__ctorDateTime2(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day) {
             // (III)V
             // (III)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1027,7 +1027,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime3(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, global::java.lang.Object.JavaPtr* calendar) {
+        private static void @__ctorDateTime3(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, global::System.IntPtr calendar) {
             // (IIILsystem/ICloneable;)V
             // (IIILSystem/Globalization/Calendar;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1037,7 +1037,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime4(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second) {
+        private static void @__ctorDateTime4(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second) {
             // (IIIIII)V
             // (IIIIII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1047,7 +1047,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime5(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, global::java.lang.Object.JavaPtr* kind) {
+        private static void @__ctorDateTime5(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, global::System.IntPtr kind) {
             // (IIIIIILsystem/Enum;)V
             // (IIIIIILSystem/DateTimeKind;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1057,7 +1057,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime6(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, global::java.lang.Object.JavaPtr* calendar) {
+        private static void @__ctorDateTime6(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, global::System.IntPtr calendar) {
             // (IIIIIILsystem/ICloneable;)V
             // (IIIIIILSystem/Globalization/Calendar;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1067,7 +1067,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime7(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond) {
+        private static void @__ctorDateTime7(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond) {
             // (IIIIIII)V
             // (IIIIIII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1077,7 +1077,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime8(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::java.lang.Object.JavaPtr* kind) {
+        private static void @__ctorDateTime8(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::System.IntPtr kind) {
             // (IIIIIIILsystem/Enum;)V
             // (IIIIIIILSystem/DateTimeKind;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1087,7 +1087,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime9(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::java.lang.Object.JavaPtr* calendar) {
+        private static void @__ctorDateTime9(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::System.IntPtr calendar) {
             // (IIIIIIILsystem/ICloneable;)V
             // (IIIIIIILSystem/Globalization/Calendar;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -1097,7 +1097,7 @@ namespace System {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorDateTime10(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::java.lang.Object.JavaPtr* calendar, global::java.lang.Object.JavaPtr* kind) {
+        private static void @__ctorDateTime10(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int year, int month, int day, int hour, int minute, int second, int millisecond, global::System.IntPtr calendar, global::System.IntPtr kind) {
             // (IIIIIIILsystem/ICloneable;Lsystem/Enum;)V
             // (IIIIIIILSystem/Globalization/Calendar;LSystem/DateTimeKind;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

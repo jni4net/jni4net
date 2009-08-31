@@ -52,7 +52,7 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetFormat0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* formatType) {
+        private static global::System.IntPtr GetFormat0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr formatType) {
             // (Lsystem/Type;)Lsystem/Object;
             // (LSystem/Type;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -60,7 +60,7 @@ namespace System {
             global::System.IFormatProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetFormat(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, formatType)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

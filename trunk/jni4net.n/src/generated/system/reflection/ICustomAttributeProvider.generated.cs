@@ -70,7 +70,7 @@ namespace System.Reflection {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetCustomAttributes0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, bool inherit) {
+        private static global::System.IntPtr GetCustomAttributes0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, bool inherit) {
             // (Z)[Lsystem/Object;
             // (Z)[LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -78,10 +78,10 @@ namespace System.Reflection {
             global::System.Reflection.ICustomAttributeProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ICustomAttributeProvider>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetCustomAttributes(inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetCustomAttributes1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
+        private static global::System.IntPtr GetCustomAttributes1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr attributeType, bool inherit) {
             // (Lsystem/Type;Z)[Lsystem/Object;
             // (LSystem/Type;Z)[LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -89,10 +89,10 @@ namespace System.Reflection {
             global::System.Reflection.ICustomAttributeProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ICustomAttributeProvider>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetCustomAttributes(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::java.lang.Object.JavaPtr*);
+            return default(global::System.IntPtr);
         }
         
-        private static bool IsDefined2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
+        private static bool IsDefined2(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr attributeType, bool inherit) {
             // (Lsystem/Type;Z)Z
             // (LSystem/Type;Z)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
