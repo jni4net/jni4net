@@ -97,10 +97,10 @@ namespace java.lang.reflect {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* getAnnotation0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static global::java.lang.Object.JavaPtr* getAnnotation0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
             // (Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getAnnotation(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Class>(__env, par0)));
@@ -108,10 +108,10 @@ namespace java.lang.reflect {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* getAnnotations1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* getAnnotations1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()[Ljava/lang/annotation/Annotation;
             // ()[Ljava/lang/annotation/Annotation;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getAnnotations());
@@ -119,10 +119,10 @@ namespace java.lang.reflect {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* getDeclaredAnnotations2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* getDeclaredAnnotations2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()[Ljava/lang/annotation/Annotation;
             // ()[Ljava/lang/annotation/Annotation;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getDeclaredAnnotations());
@@ -130,10 +130,10 @@ namespace java.lang.reflect {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool isAnnotationPresent3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool isAnnotationPresent3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/lang/Class;)Z
             // (Ljava/lang/Class;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.AnnotatedElement real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.AnnotatedElement>(__env, @__obj);
             return real.isAnnotationPresent(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Class>(__env, par0));

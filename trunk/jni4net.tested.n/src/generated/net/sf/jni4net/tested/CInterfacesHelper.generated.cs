@@ -46,10 +46,10 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* createCWithJavaInterface0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int i) {
+        private static global::java.lang.Object.JavaPtr* createCWithJavaInterface0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int i) {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.createCWithJavaInterface(i));
@@ -57,10 +57,10 @@ namespace net.sf.jni4net.tested {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* CWithJavaInterfaceUnreg1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int i) {
+        private static global::java.lang.Object.JavaPtr* CWithJavaInterfaceUnreg1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int i) {
             // (I)Ljava/lang/Comparable;
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.CWithJavaInterfaceUnreg(i));
@@ -68,10 +68,10 @@ namespace net.sf.jni4net.tested {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void @__ctorCInterfacesHelper0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorCInterfacesHelper0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.CInterfacesHelper real = new global::net.sf.jni4net.tested.CInterfacesHelper();
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);

@@ -70,10 +70,10 @@ namespace System.IO {
             return methods;
         }
         
-        private static bool IsAsync0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsAsync0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             return real.IsAsync;
@@ -81,10 +81,10 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Name1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Name1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.Name);
@@ -92,10 +92,10 @@ namespace System.IO {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetAccessControl2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetAccessControl2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/Object;
             // ()LSystem/Security/AccessControl/FileSecurity;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetAccessControl());
@@ -103,20 +103,20 @@ namespace System.IO {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void SetAccessControl3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* fileSecurity) {
+        private static void SetAccessControl3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* fileSecurity) {
             // (Ljava/lang/Object;)V
             // (LSystem/Security/AccessControl/FileSecurity;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             real.SetAccessControl(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Security.AccessControl.FileSecurity>(__env, fileSecurity));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::System.IntPtr Handle4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::System.IntPtr Handle4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/ValueType;
             // ()LSystem/IntPtr;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             return ((global::System.IntPtr)(real.Handle));
@@ -124,10 +124,10 @@ namespace System.IO {
             return default(global::System.IntPtr);
         }
         
-        private static global::java.lang.Object.JavaPtr* SafeFileHandle5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* SafeFileHandle5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/IDisposable;
             // ()LMicrosoft/Win32/SafeHandles/SafeFileHandle;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.SafeFileHandle);
@@ -135,160 +135,160 @@ namespace System.IO {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void Lock6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, long position, long length) {
+        private static void Lock6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long position, long length) {
             // (JJ)V
             // (JJ)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             real.Lock(position, length);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Unlock7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, long position, long length) {
+        private static void Unlock7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, long position, long length) {
             // (JJ)V
             // (JJ)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
             real.Unlock(position, length);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode) {
+        private static void @__ctorFileStream0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode) {
             // (Ljava/lang/String;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access) {
+        private static void @__ctorFileStream1(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share) {
+        private static void @__ctorFileStream2(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileShare>(__env, share));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize) {
+        private static void @__ctorFileStream3(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;I)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;I)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileShare>(__env, share), bufferSize);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize, global::java.lang.Object.JavaPtr* options) {
+        private static void @__ctorFileStream4(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize, global::java.lang.Object.JavaPtr* options) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;ILSystem/IO/FileOptions;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileShare>(__env, share), bufferSize, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileOptions>(__env, options));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize, bool useAsync) {
+        private static void @__ctorFileStream5(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* access, global::java.lang.Object.JavaPtr* share, int bufferSize, bool useAsync) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;IZ)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;IZ)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileShare>(__env, share), bufferSize, useAsync);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* rights, global::java.lang.Object.JavaPtr* share, int bufferSize, global::java.lang.Object.JavaPtr* options, global::java.lang.Object.JavaPtr* fileSecurity) {
+        private static void @__ctorFileStream6(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* path, global::java.lang.Object.JavaPtr* mode, global::java.lang.Object.JavaPtr* rights, global::java.lang.Object.JavaPtr* share, int bufferSize, global::java.lang.Object.JavaPtr* options, global::java.lang.Object.JavaPtr* fileSecurity) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;Ljava/lang/Object;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/Security/AccessControl/FileSystemRights;LSystem/IO/FileShare;ILSystem/IO/FileOptions;LSystem/Security/AccessControl/FileSecurity;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, path), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Security.AccessControl.FileSystemRights>(__env, rights), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileShare>(__env, share), bufferSize, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileOptions>(__env, options), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Security.AccessControl.FileSecurity>(__env, fileSecurity));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access) {
+        private static void @__ctorFileStream7(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access) {
             // (Lsystem/ValueType;Lsystem/Enum;)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle) {
+        private static void @__ctorFileStream8(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle) {
             // (Lsystem/ValueType;Lsystem/Enum;Z)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;Z)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), ownsHandle);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle, int bufferSize) {
+        private static void @__ctorFileStream9(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle, int bufferSize) {
             // (Lsystem/ValueType;Lsystem/Enum;ZI)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZI)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), ownsHandle, bufferSize);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle, int bufferSize, bool isAsync) {
+        private static void @__ctorFileStream10(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::System.IntPtr handle, global::java.lang.Object.JavaPtr* access, bool ownsHandle, int bufferSize, bool isAsync) {
             // (Lsystem/ValueType;Lsystem/Enum;ZIZ)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZIZ)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), ownsHandle, bufferSize, isAsync);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access) {
+        private static void @__ctorFileStream11(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access) {
             // (Lsystem/IDisposable;Lsystem/Enum;)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream12(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access, int bufferSize) {
+        private static void @__ctorFileStream12(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access, int bufferSize) {
             // (Lsystem/IDisposable;Lsystem/Enum;I)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;I)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), bufferSize);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorFileStream13(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access, int bufferSize, bool isAsync) {
+        private static void @__ctorFileStream13(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* handle, global::java.lang.Object.JavaPtr* access, int bufferSize, bool isAsync) {
             // (Lsystem/IDisposable;Lsystem/Enum;IZ)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;IZ)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileAccess>(__env, access), bufferSize, isAsync);
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);

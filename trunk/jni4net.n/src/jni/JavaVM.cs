@@ -41,7 +41,7 @@ namespace net.sf.jni4net.jni
             {
                 MethodWrapper.GetDelegateForFunctionPointer(functions.AttachCurrentThread, ref attachCurrentThread);
             }
-            JNIEnv.JavaPtr* env;
+            IntPtr env;
             JNIResult result;
             if (args.HasValue)
             {
@@ -63,7 +63,7 @@ namespace net.sf.jni4net.jni
                 MethodWrapper.GetDelegateForFunctionPointer(functions.AttachCurrentThreadAsDaemon,
                                                             ref attachCurrentThreadAsDaemon);
             }
-            JNIEnv.JavaPtr* env;
+            IntPtr env;
             JNIResult result;
             if (args.HasValue)
             {
@@ -109,7 +109,7 @@ namespace net.sf.jni4net.jni
             {
                 MethodWrapper.GetDelegateForFunctionPointer(functions.GetEnv, ref getEnv);
             }
-            JNIEnv.JavaPtr* env;
+            IntPtr env;
             JNIResult result = getEnv.Invoke(native, out env, version);
             penv = new JNIEnv(env);
             return result;
