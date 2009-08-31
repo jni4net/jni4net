@@ -56,7 +56,6 @@
     <Compile Include="org\apache\fop\apps\Fop.generated.cs" />
     <Compile Include="org\apache\fop\apps\FopFactory.generated.cs" />
     <Compile Include="org\apache\fop\apps\MimeConstants.generated.cs" />
-    <Compile Include="org\apache\xmlgraphics\image\loader\ImageContext.generated.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +63,9 @@
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
       <Name>jni4net.n</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="org\apache\xmlgraphics\image\loader\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
