@@ -105,10 +105,10 @@ namespace System.Collections {
             return methods;
         }
         
-        private static bool MoveNext0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool MoveNext0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             return ((global::System.Collections.IEnumerator)(real)).MoveNext();
@@ -116,10 +116,10 @@ namespace System.Collections {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Current1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Current1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.IEnumerator)(real)).Current);
@@ -127,20 +127,20 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void Reset2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void Reset2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             ((global::System.Collections.IEnumerator)(real)).Reset();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* Key3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Key3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Key);
@@ -148,10 +148,10 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Value4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Value4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Value);
@@ -159,10 +159,10 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Entry5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Entry5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/ValueType;
             // ()LSystem/Collections/DictionaryEntry;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionaryEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionaryEnumerator>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Entry);

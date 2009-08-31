@@ -97,10 +97,10 @@ namespace java.lang.annotation {
             return methods;
         }
         
-        private static int hashCode0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int hashCode0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return real.hashCode();
@@ -108,10 +108,10 @@ namespace java.lang.annotation {
             return default(int);
         }
         
-        private static bool equals1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static bool equals1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return real.equals(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
@@ -119,10 +119,10 @@ namespace java.lang.annotation {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* toString2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* toString2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.toString());
@@ -130,10 +130,10 @@ namespace java.lang.annotation {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* annotationType3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* annotationType3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/Class;
             // ()Ljava/lang/Class;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.annotationType());

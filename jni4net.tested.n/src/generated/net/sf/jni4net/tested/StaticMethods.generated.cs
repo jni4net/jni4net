@@ -45,20 +45,20 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static int add0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, int a, int b) {
+        private static int add0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, int a, int b) {
             // (II)I
             // (II)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             return global::net.sf.jni4net.tested.StaticMethods.add(a, b);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static void @__ctorStaticMethods0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorStaticMethods0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.StaticMethods real = new global::net.sf.jni4net.tested.StaticMethods();
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);

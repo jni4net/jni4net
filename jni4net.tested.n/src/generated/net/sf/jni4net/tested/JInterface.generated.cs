@@ -82,30 +82,30 @@ namespace net.sf.jni4net.tested {
             return methods;
         }
         
-        private static void runForrestRun0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void runForrestRun0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
             real.runForrestRun();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void run1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void run1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
             real.run();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void cdefined2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void cdefined2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.JInterface real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.JInterface>(__env, @__obj);
             real.cdefined();

@@ -52,10 +52,10 @@ namespace System {
             return methods;
         }
         
-        private static void Dispose0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void Dispose0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IDisposable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IDisposable>(__env, @__obj);
             real.Dispose();

@@ -52,10 +52,10 @@ namespace System.Reflection {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
+        private static global::java.lang.Object.JavaPtr* Invoke0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
             // (Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
             // (LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Invoke(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.CultureInfo>(__env, culture)));
@@ -63,10 +63,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* parameters) {
+        private static global::java.lang.Object.JavaPtr* Invoke1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* parameters) {
             // ([Lsystem/Object;)Lsystem/Object;
             // ([LSystem/Object;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Invoke(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters)));
@@ -74,10 +74,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke_22(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
+        private static global::java.lang.Object.JavaPtr* Invoke_22(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
             // (Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
             // (LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(real)).Invoke_2(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.CultureInfo>(__env, culture)));
@@ -85,10 +85,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke_33(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj, global::java.lang.Object.JavaPtr* parameters) {
+        private static global::java.lang.Object.JavaPtr* Invoke_33(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj, global::java.lang.Object.JavaPtr* parameters) {
             // (Lsystem/Object;[Lsystem/Object;)Lsystem/Object;
             // (LSystem/Object;[LSystem/Object;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(real)).Invoke_3(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters)));
@@ -96,10 +96,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke_44(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
+        private static global::java.lang.Object.JavaPtr* Invoke_44(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* invokeAttr, global::java.lang.Object.JavaPtr* binder, global::java.lang.Object.JavaPtr* parameters, global::java.lang.Object.JavaPtr* culture) {
             // (Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
             // (LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(real)).Invoke_4(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Globalization.CultureInfo>(__env, culture)));
@@ -107,10 +107,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Invoke_55(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* parameters) {
+        private static global::java.lang.Object.JavaPtr* Invoke_55(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* parameters) {
             // ([Lsystem/Object;)Lsystem/Object;
             // ([LSystem/Object;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ConstructorInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ConstructorInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(real)).Invoke_5(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object[]>(__env, parameters)));

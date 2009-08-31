@@ -57,20 +57,20 @@ namespace System {
             return methods;
         }
         
-        private static void GetObjectData0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* info, global::java.lang.Object.JavaPtr* context) {
+        private static void GetObjectData0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* info, global::java.lang.Object.JavaPtr* context) {
             // (Ljava/lang/Object;Lsystem/ValueType;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             ((global::System.Runtime.Serialization.ISerializable)(real)).GetObjectData(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.SerializationInfo>(__env, info), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.StreamingContext>(__env, context));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* Message1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Message1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.Message);
@@ -78,10 +78,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Data2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Data2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/collections/IDictionary;
             // ()LSystem/Collections/IDictionary;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Data);
@@ -89,10 +89,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetBaseException3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetBaseException3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Exception;
             // ()LSystem/Exception;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetBaseException());
@@ -100,10 +100,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* InnerException4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* InnerException4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Exception;
             // ()LSystem/Exception;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.InnerException);
@@ -111,10 +111,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* TargetSite5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* TargetSite5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/MethodBase;
             // ()LSystem/Reflection/MethodBase;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.TargetSite);
@@ -122,10 +122,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* StackTrace6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* StackTrace6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.StackTrace);
@@ -133,10 +133,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* HelpLink7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* HelpLink7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.HelpLink);
@@ -144,20 +144,20 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void HelpLink8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static void HelpLink8(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             real.HelpLink = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, value);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* Source9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Source9(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.Source);
@@ -165,20 +165,20 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void Source10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static void Source10(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             real.Source = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, value);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* ToString11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString());
@@ -186,10 +186,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetType12(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetType12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Type;
             // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetType());
@@ -197,10 +197,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool Equals13(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
+        private static bool Equals13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* obj) {
             // (Lsystem/Object;)Z
             // (LSystem/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return ((object)(real)).Equals(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, obj));
@@ -208,10 +208,10 @@ namespace System {
             return default(bool);
         }
         
-        private static int GetHashCode14(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int GetHashCode14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, @__obj);
             return ((object)(real)).GetHashCode();
@@ -219,30 +219,30 @@ namespace System {
             return default(int);
         }
         
-        private static void @__ctorException0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void @__ctorException0(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = new global::System.Exception();
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorException1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message) {
+        private static void @__ctorException1(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = new global::System.Exception(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, message));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorException2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message, global::java.lang.Object.JavaPtr* innerException) {
+        private static void @__ctorException2(global::System.IntPtr @__envi, global::java.lang.Class.JavaPtr* @__clazz, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* message, global::java.lang.Object.JavaPtr* innerException) {
             // (Ljava/lang/String;Lsystem/Exception;)V
             // (LSystem/String;LSystem/Exception;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Exception real = new global::System.Exception(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, message), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Exception>(__env, innerException));
             global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);

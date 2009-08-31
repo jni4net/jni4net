@@ -84,7 +84,7 @@ namespace net.sf.jni4net.jni
         {
             Init();
             IntPtr njvm;
-            JNIEnv.JavaPtr* nenv;
+            IntPtr nenv;
             JavaVMInitArgs args=new JavaVMInitArgs();
             args.version = JNI_VERSION_1_4;
 
@@ -139,7 +139,7 @@ namespace net.sf.jni4net.jni
         private static class Dll
         {
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
-            internal static extern JNIResult JNI_CreateJavaVM(out IntPtr pvm, out JNIEnv.JavaPtr* penv,
+            internal static extern JNIResult JNI_CreateJavaVM(out IntPtr pvm, out IntPtr penv,
                                                               JavaVMInitArgs* args);
 
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]

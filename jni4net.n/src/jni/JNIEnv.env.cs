@@ -33,14 +33,14 @@ namespace net.sf.jni4net.jni
         private static JavaVM defaultVM;
         [ThreadStatic] private static JNIEnv threadJNIEnv;
 
-        private readonly JavaPtr* native;
+        private readonly IntPtr native;
         private JNINativeInterface functions;
         private JavaVM javaVM;
 
-        internal JNIEnv(JavaPtr* native)
+        internal JNIEnv(IntPtr native)
         {
             this.native = native;
-            functions = *(*native).functions;
+            functions = *(*(JavaPtr*)native.ToPointer()).functions;
             InitMethods();
             if (defaultVM == null)
             {
@@ -95,35 +95,30 @@ namespace net.sf.jni4net.jni
             return threadJNIEnv;
         }
 
-        public unsafe T Wrap<T>(Object.JavaPtr* obj) where T : IJavaProxy
+        public T Wrap<T>(Object.JavaPtr* obj) where T : IJavaProxy
         {
             return JavaProxiesMap.Wrap<T>(this, obj);
+        }
+
+        public static JNIEnv Wrap(IntPtr envi)
+        {
+            if (envi == IntPtr.Zero)
+            {
+                return null;
+            }
+            if (threadJNIEnv != null && envi == threadJNIEnv.native)
+            {
+                return threadJNIEnv;
+            }
+            return new JNIEnv(envi);
         }
 
         #region Nested type: JavaPtr
 
         [StructLayout(LayoutKind.Sequential, Size = 4), NativeCppClass]
-        public unsafe struct JavaPtr
+        private struct JavaPtr
         {
             public JNINativeInterface* functions;
-
-            public JNIEnv Wrap()
-            {
-                // ReSharper disable ConditionIsAlwaysTrueOrFalse
-                fixed (JavaPtr* ptr = &this)
-                {
-                    if (threadJNIEnv != null && ptr == threadJNIEnv.native)
-                    {
-                        return threadJNIEnv;
-                    }
-                    if (ptr == null)
-                    {
-                        return null;
-                    }
-                    return new JNIEnv(ptr);
-                }
-                // ReSharper restore ConditionIsAlwaysTrueOrFalse
-            }
         }
 
         #endregion

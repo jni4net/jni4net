@@ -49,10 +49,10 @@ namespace System.Reflection {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* ReturnType0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* ReturnType0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Type;
             // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ReturnType);
@@ -60,10 +60,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* ReturnParameter1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* ReturnParameter1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/ParameterInfo;
             // ()LSystem/Reflection/ParameterInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ReturnParameter);
@@ -71,10 +71,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* ReturnTypeCustomAttributes2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* ReturnTypeCustomAttributes2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/ICustomAttributeProvider;
             // ()LSystem/Reflection/ICustomAttributeProvider;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ReturnTypeCustomAttributes);
@@ -82,10 +82,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetBaseDefinition3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetBaseDefinition3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/MethodInfo;
             // ()LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetBaseDefinition());
@@ -93,10 +93,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetGenericMethodDefinition4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetGenericMethodDefinition4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/MethodInfo;
             // ()LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetGenericMethodDefinition());
@@ -104,10 +104,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* MakeGenericMethod5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* typeArguments) {
+        private static global::java.lang.Object.JavaPtr* MakeGenericMethod5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* typeArguments) {
             // ([Lsystem/Type;)Lsystem/reflection/MethodInfo;
             // ([LSystem/Type;)LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MethodInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.MakeGenericMethod(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type[]>(__env, typeArguments)));

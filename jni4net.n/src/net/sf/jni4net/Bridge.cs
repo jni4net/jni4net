@@ -257,13 +257,13 @@ namespace net.sf.jni4net
         #region Initialization
 
         [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
-        internal static int initDotNet(JNIEnv.JavaPtr* envi, Class.JavaPtr* clazz, bool verbose)
+        internal static int initDotNet(IntPtr envi, Class.JavaPtr* clazz, bool verbose)
         {
             Verbose = verbose;
             JNIEnv env;
             try
             {
-                env = (*envi).Wrap();
+                env = JNIEnv.Wrap(envi);
             }
             catch (Exception)
             {

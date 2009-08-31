@@ -73,10 +73,10 @@ namespace java.util {
             return methods;
         }
         
-        private static bool hasMoreElements0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool hasMoreElements0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Enumeration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Enumeration>(__env, @__obj);
             return real.hasMoreElements();
@@ -84,10 +84,10 @@ namespace java.util {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* nextElement1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* nextElement1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/Object;
             // ()Ljava/lang/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Enumeration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Enumeration>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.nextElement());

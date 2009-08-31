@@ -36,7 +36,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: AllocObject
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* AllocObject(JavaPtr* thiz, Class.JavaPtr* clazz);
+            internal delegate Object.JavaPtr* AllocObject(IntPtr thiz, Class.JavaPtr* clazz);
 
             #endregion
 
@@ -44,7 +44,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate byte CallBooleanMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
@@ -52,7 +52,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate byte CallByteMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -60,7 +60,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate ushort CallCharMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -68,7 +68,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate double CallDoubleMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -76,7 +76,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate float CallFloatMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -84,7 +84,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate int CallIntMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
@@ -92,7 +92,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate long CallLongMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -107,7 +107,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualByteMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte CallNonvirtualByteMethod(JavaPtr* thiz,
+            internal delegate byte CallNonvirtualByteMethod(IntPtr thiz,
                                                             Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                             IntPtr methodID, params Value[] args);
 
@@ -116,7 +116,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualCharMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate ushort CallNonvirtualCharMethod(JavaPtr* thiz,
+            internal delegate ushort CallNonvirtualCharMethod(IntPtr thiz,
                                                               Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                               IntPtr methodID, params Value[] args);
 
@@ -125,7 +125,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualDoubleMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate double CallNonvirtualDoubleMethod(JavaPtr* thiz,
+            internal delegate double CallNonvirtualDoubleMethod(IntPtr thiz,
                                                                 Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                                 IntPtr methodID, params Value[] args);
 
@@ -134,7 +134,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualFloatMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate float CallNonvirtualFloatMethod(JavaPtr* thiz,
+            internal delegate float CallNonvirtualFloatMethod(IntPtr thiz,
                                                               Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                               IntPtr methodID, params Value[] args);
 
@@ -143,7 +143,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualIntMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int CallNonvirtualIntMethod(JavaPtr* thiz,
+            internal delegate int CallNonvirtualIntMethod(IntPtr thiz,
                                                           Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                           IntPtr methodID, params Value[] args);
 
@@ -152,7 +152,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualLongMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate long CallNonvirtualLongMethod(JavaPtr* thiz,
+            internal delegate long CallNonvirtualLongMethod(IntPtr thiz,
                                                             Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                             IntPtr methodID, params Value[] args);
 
@@ -161,7 +161,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualObjectMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* CallNonvirtualObjectMethod(JavaPtr* thiz,
+            internal delegate Object.JavaPtr* CallNonvirtualObjectMethod(IntPtr thiz,
                                                                          Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                                          IntPtr methodID, params Value[] args
                 );
@@ -171,7 +171,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualShortMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate short CallNonvirtualShortMethod(JavaPtr* thiz,
+            internal delegate short CallNonvirtualShortMethod(IntPtr thiz,
                                                               Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                               IntPtr methodID, params Value[] args);
 
@@ -180,7 +180,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: CallNonvirtualVoidMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void CallNonvirtualVoidMethod(JavaPtr* thiz,
+            internal delegate void CallNonvirtualVoidMethod(IntPtr thiz,
                                                             Object.JavaPtr* obj, Class.JavaPtr* clazz,
                                                             IntPtr methodID, params Value[] args);
 
@@ -190,7 +190,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* CallObjectMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
@@ -198,7 +198,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate short CallShortMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -206,7 +206,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate byte CallStaticBooleanMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -214,7 +214,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate byte CallStaticByteMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -222,7 +222,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate ushort CallStaticCharMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -230,7 +230,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate double CallStaticDoubleMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -238,7 +238,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate float CallStaticFloatMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -246,7 +246,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate int CallStaticIntMethod(
-                JavaPtr* thiz, Class.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
@@ -254,7 +254,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate long CallStaticLongMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -262,7 +262,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* CallStaticObjectMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -270,7 +270,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate short CallStaticShortMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -278,7 +278,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult CallStaticVoidMethod(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
@@ -286,14 +286,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult CallVoidMethod(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr methodIdJavaPtr, params Value[] args);
 
             #endregion
 
             #region Nested type: DefineClass
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Class.JavaPtr* DefineClass(JavaPtr* thiz,
+            internal delegate Class.JavaPtr* DefineClass(IntPtr thiz,
                                                          IntPtr name /*const char* */, Object.JavaPtr* loader,
                                                          IntPtr buf /*const byte **/, int len);
 
@@ -302,84 +302,84 @@ namespace net.sf.jni4net.jni
             #region Nested type: DeleteGlobalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void DeleteGlobalRef(JavaPtr* thiz, Object.JavaPtr* gref);
+            internal delegate void DeleteGlobalRef(IntPtr thiz, Object.JavaPtr* gref);
 
             #endregion
 
             #region Nested type: DeleteLocalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void DeleteLocalRef(JavaPtr* thiz, Object.JavaPtr* lref);
+            internal delegate void DeleteLocalRef(IntPtr thiz, Object.JavaPtr* lref);
 
             #endregion
 
             #region Nested type: DeleteWeakGlobalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void DeleteWeakGlobalRef(JavaPtr* thiz, IntPtr wref);
+            internal delegate void DeleteWeakGlobalRef(IntPtr thiz, IntPtr wref);
 
             #endregion
 
             #region Nested type: EnsureLocalCapacity
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int EnsureLocalCapacity(JavaPtr* thiz, int capacity);
+            internal delegate int EnsureLocalCapacity(IntPtr thiz, int capacity);
 
             #endregion
 
             #region Nested type: ExceptionCheck
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte ExceptionCheck(JavaPtr* thiz);
+            internal delegate byte ExceptionCheck(IntPtr thiz);
 
             #endregion
 
             #region Nested type: ExceptionClear
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ExceptionClear(JavaPtr* thiz);
+            internal delegate void ExceptionClear(IntPtr thiz);
 
             #endregion
 
             #region Nested type: ExceptionDescribe
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ExceptionDescribe(JavaPtr* thiz);
+            internal delegate void ExceptionDescribe(IntPtr thiz);
 
             #endregion
 
             #region Nested type: ExceptionOccurred
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* ExceptionOccurred(JavaPtr* thiz);
+            internal delegate Object.JavaPtr* ExceptionOccurred(IntPtr thiz);
 
             #endregion
 
             #region Nested type: FatalError
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void FatalError(JavaPtr* thiz, IntPtr msg);
+            internal delegate void FatalError(IntPtr thiz, IntPtr msg);
 
             #endregion
 
             #region Nested type: FindClass
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Class.JavaPtr* FindClass(JavaPtr* thiz, [MarshalAs(UnmanagedType.LPStr)] string name);
+            internal delegate Class.JavaPtr* FindClass(IntPtr thiz, [MarshalAs(UnmanagedType.LPStr)] string name);
 
             #endregion
 
             #region Nested type: FromReflectedField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr FromReflectedField(JavaPtr* thiz, Object.JavaPtr* field);
+            internal delegate IntPtr FromReflectedField(IntPtr thiz, Object.JavaPtr* field);
 
             #endregion
 
             #region Nested type: FromReflectedMethod
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr FromReflectedMethod(JavaPtr* thiz, Object.JavaPtr* method);
+            internal delegate IntPtr FromReflectedMethod(IntPtr thiz, Object.JavaPtr* method);
 
             #endregion
 
@@ -387,14 +387,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate int GetArrayLength(
-                JavaPtr* thiz, Object.JavaPtr* array);
+                IntPtr thiz, Object.JavaPtr* array);
 
             #endregion
 
             #region Nested type: GetBooleanArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte* GetBooleanArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate byte* GetBooleanArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -402,21 +402,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetBooleanArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, byte* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, byte* buf);
 
             #endregion
 
             #region Nested type: GetBooleanField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte GetBooleanField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate byte GetBooleanField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetByteArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte* GetByteArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate byte* GetByteArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -424,21 +424,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetByteArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, byte* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, byte* buf);
 
             #endregion
 
             #region Nested type: GetByteField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte GetByteField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate byte GetByteField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetCharArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate ushort* GetCharArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate ushort* GetCharArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -446,35 +446,35 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetCharArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, char* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, char* buf);
 
             #endregion
 
             #region Nested type: GetCharField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate ushort GetCharField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate ushort GetCharField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetDirectBufferAddress
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void* GetDirectBufferAddress(JavaPtr* thiz, Object.JavaPtr* buf);
+            internal delegate void* GetDirectBufferAddress(IntPtr thiz, Object.JavaPtr* buf);
 
             #endregion
 
             #region Nested type: GetDirectBufferCapacity
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate long GetDirectBufferCapacity(JavaPtr* thiz, Object.JavaPtr* buf);
+            internal delegate long GetDirectBufferCapacity(IntPtr thiz, Object.JavaPtr* buf);
 
             #endregion
 
             #region Nested type: GetDoubleArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate double* GetDoubleArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate double* GetDoubleArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -482,7 +482,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetDoubleArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, double* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, double* buf
                 /* double* */);
 
             #endregion
@@ -490,7 +490,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetDoubleField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate double GetDoubleField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate double GetDoubleField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
@@ -498,7 +498,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate IntPtr GetFieldID(
-                JavaPtr* thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
+                IntPtr thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
                 [MarshalAs(UnmanagedType.LPStr)] string sig);
 
             #endregion
@@ -506,7 +506,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetFloatArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate float* GetFloatArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate float* GetFloatArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -514,49 +514,49 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetFloatArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, float* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, float* buf);
 
             #endregion
 
             #region Nested type: GetFloatField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate float GetFloatField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate float GetFloatField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetIntArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int* GetIntArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate int* GetIntArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
             #region Nested type: GetIntArrayRegion
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void GetIntArrayRegion(JavaPtr* thiz, Object.JavaPtr* array, int start, int len, int* buf);
+            internal delegate void GetIntArrayRegion(IntPtr thiz, Object.JavaPtr* array, int start, int len, int* buf);
 
             #endregion
 
             #region Nested type: GetIntField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int GetIntField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate int GetIntField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetJavaVM
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult GetJavaVM(JavaPtr* thiz, out IntPtr vm);
+            internal delegate JNIResult GetJavaVM(IntPtr thiz, out IntPtr vm);
 
             #endregion
 
             #region Nested type: GetLongArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate long* GetLongArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate long* GetLongArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -564,14 +564,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetLongArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, long* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, long* buf);
 
             #endregion
 
             #region Nested type: GetLongField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate long GetLongField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate long GetLongField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
@@ -579,7 +579,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate IntPtr GetMethodID(
-                JavaPtr* thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
+                IntPtr thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
                 [MarshalAs(UnmanagedType.LPStr)] string sig);
 
             #endregion
@@ -588,14 +588,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* GetObjectArrayElement(
-                JavaPtr* thiz, Object.JavaPtr* array, int index);
+                IntPtr thiz, Object.JavaPtr* array, int index);
 
             #endregion
 
             #region Nested type: GetObjectClass
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Class.JavaPtr* GetObjectClass(JavaPtr* thiz, Object.JavaPtr* obj);
+            internal delegate Class.JavaPtr* GetObjectClass(IntPtr thiz, Object.JavaPtr* obj);
 
             #endregion
 
@@ -603,21 +603,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* GetObjectField(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetPrimitiveArrayCritical
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void* GetPrimitiveArrayCritical(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate void* GetPrimitiveArrayCritical(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
             #region Nested type: GetShortArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate short* GetShortArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* isCopy);
+            internal delegate short* GetShortArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* isCopy);
 
             #endregion
 
@@ -625,42 +625,42 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void GetShortArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, short* buf);
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, short* buf);
 
             #endregion
 
             #region Nested type: GetShortField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate short GetShortField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID);
+            internal delegate short GetShortField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticBooleanField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte GetStaticBooleanField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate byte GetStaticBooleanField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticByteField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate byte GetStaticByteField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate byte GetStaticByteField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticCharField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate ushort GetStaticCharField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate ushort GetStaticCharField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticDoubleField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate double GetStaticDoubleField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate double GetStaticDoubleField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
@@ -668,7 +668,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate IntPtr GetStaticFieldID(
-                JavaPtr* thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
+                IntPtr thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
                 [MarshalAs(UnmanagedType.LPStr)] string sig);
 
             #endregion
@@ -676,21 +676,21 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetStaticFloatField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate float GetStaticFloatField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate float GetStaticFloatField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticIntField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int GetStaticIntField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate int GetStaticIntField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStaticLongField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate long GetStaticLongField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate long GetStaticLongField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
@@ -698,7 +698,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate IntPtr GetStaticMethodID(
-                JavaPtr* thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
+                IntPtr thiz, Class.JavaPtr* clazz, [MarshalAs(UnmanagedType.LPStr)] string name,
                 [MarshalAs(UnmanagedType.LPStr)] string sig);
 
             #endregion
@@ -707,7 +707,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* GetStaticObjectField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID
                 );
 
             #endregion
@@ -715,63 +715,63 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetStaticShortField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate short GetStaticShortField(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID);
+            internal delegate short GetStaticShortField(IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID);
 
             #endregion
 
             #region Nested type: GetStringChars
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr GetStringChars(JavaPtr* thiz, Object.JavaPtr* str, byte* isCopy);
+            internal delegate IntPtr GetStringChars(IntPtr thiz, Object.JavaPtr* str, byte* isCopy);
 
             #endregion
 
             #region Nested type: GetStringCritical
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr GetStringCritical(JavaPtr* thiz, Object.JavaPtr* str, byte* isCopy);
+            internal delegate IntPtr GetStringCritical(IntPtr thiz, Object.JavaPtr* str, byte* isCopy);
 
             #endregion
 
             #region Nested type: GetStringLength
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int GetStringLength(JavaPtr* thiz, Object.JavaPtr* str);
+            internal delegate int GetStringLength(IntPtr thiz, Object.JavaPtr* str);
 
             #endregion
 
             #region Nested type: GetStringRegion
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void GetStringRegion(JavaPtr* thiz, Object.JavaPtr* str, int start, int len, char* buf);
+            internal delegate void GetStringRegion(IntPtr thiz, Object.JavaPtr* str, int start, int len, char* buf);
 
             #endregion
 
             #region Nested type: GetStringUTFChars
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr GetStringUTFChars(JavaPtr* thiz, Object.JavaPtr* str, IntPtr isCopy /*byte * */);
+            internal delegate IntPtr GetStringUTFChars(IntPtr thiz, Object.JavaPtr* str, IntPtr isCopy /*byte * */);
 
             #endregion
 
             #region Nested type: GetStringUTFLength
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int GetStringUTFLength(JavaPtr* thiz, Object.JavaPtr* str);
+            internal delegate int GetStringUTFLength(IntPtr thiz, Object.JavaPtr* str);
 
             #endregion
 
             #region Nested type: GetStringUTFRegion
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void GetStringUTFRegion(JavaPtr* thiz, Object.JavaPtr* str, int start, int len, char* buf);
+            internal delegate void GetStringUTFRegion(IntPtr thiz, Object.JavaPtr* str, int start, int len, char* buf);
 
             #endregion
 
             #region Nested type: GetVersion
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int GetVersion(JavaPtr* thiz);
+            internal delegate int GetVersion(IntPtr thiz);
 
             #endregion
 
@@ -779,91 +779,91 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate byte IsSameObject(
-                JavaPtr* thiz, Object.JavaPtr* o1, Object.JavaPtr* o2);
+                IntPtr thiz, Object.JavaPtr* o1, Object.JavaPtr* o2);
 
             #endregion
 
             #region Nested type: MonitorEnter
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int MonitorEnter(JavaPtr* thiz, Object.JavaPtr* obj);
+            internal delegate int MonitorEnter(IntPtr thiz, Object.JavaPtr* obj);
 
             #endregion
 
             #region Nested type: MonitorExit
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int MonitorExit(JavaPtr* thiz, Object.JavaPtr* obj);
+            internal delegate int MonitorExit(IntPtr thiz, Object.JavaPtr* obj);
 
             #endregion
 
             #region Nested type: NewBooleanArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewBooleanArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewBooleanArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewByteArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewByteArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewByteArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewCharArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewCharArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewCharArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewDirectByteBuffer
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewDirectByteBuffer(JavaPtr* thiz, void* address, long capacity);
+            internal delegate Object.JavaPtr* NewDirectByteBuffer(IntPtr thiz, void* address, long capacity);
 
             #endregion
 
             #region Nested type: NewDoubleArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewDoubleArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewDoubleArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewFloatArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewFloatArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewFloatArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewGlobalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewGlobalRef(JavaPtr* thiz, Object.JavaPtr* lobj);
+            internal delegate Object.JavaPtr* NewGlobalRef(IntPtr thiz, Object.JavaPtr* lobj);
 
             #endregion
 
             #region Nested type: NewIntArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewIntArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewIntArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewLocalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewLocalRef(JavaPtr* thiz, Object.JavaPtr* reference);
+            internal delegate Object.JavaPtr* NewLocalRef(IntPtr thiz, Object.JavaPtr* reference);
 
             #endregion
 
             #region Nested type: NewLongArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewLongArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewLongArray(IntPtr thiz, int len);
 
             #endregion
 
@@ -871,7 +871,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* NewObject(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr methodID, params Value[] args);
 
             #endregion
 
@@ -879,49 +879,49 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* NewObjectArray(
-                JavaPtr* thiz, int len, Class.JavaPtr* clazz, Object.JavaPtr* init);
+                IntPtr thiz, int len, Class.JavaPtr* clazz, Object.JavaPtr* init);
 
             #endregion
 
             #region Nested type: NewShortArray
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewShortArray(JavaPtr* thiz, int len);
+            internal delegate Object.JavaPtr* NewShortArray(IntPtr thiz, int len);
 
             #endregion
 
             #region Nested type: NewString
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewString(JavaPtr* thiz, IntPtr unicode, int len);
+            internal delegate Object.JavaPtr* NewString(IntPtr thiz, IntPtr unicode, int len);
 
             #endregion
 
             #region Nested type: NewStringUTF
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* NewStringUTF(JavaPtr* thiz, IntPtr utf /* const char * */);
+            internal delegate Object.JavaPtr* NewStringUTF(IntPtr thiz, IntPtr utf /* const char * */);
 
             #endregion
 
             #region Nested type: NewWeakGlobalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr NewWeakGlobalRef(JavaPtr* thiz, Object.JavaPtr* obj);
+            internal delegate IntPtr NewWeakGlobalRef(IntPtr thiz, Object.JavaPtr* obj);
 
             #endregion
 
             #region Nested type: PopLocalFrame
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate Object.JavaPtr* PopLocalFrame(JavaPtr* thiz, Object.JavaPtr* result);
+            internal delegate Object.JavaPtr* PopLocalFrame(IntPtr thiz, Object.JavaPtr* result);
 
             #endregion
 
             #region Nested type: PushLocalFrame
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate int PushLocalFrame(JavaPtr* thiz, int capacity);
+            internal delegate int PushLocalFrame(IntPtr thiz, int capacity);
 
             #endregion
 
@@ -929,7 +929,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult RegisterNatives(
-                JavaPtr* thiz, Class.JavaPtr* clazz, JNINativeMethod* methods, int nMethods);
+                IntPtr thiz, Class.JavaPtr* clazz, JNINativeMethod* methods, int nMethods);
 
             #endregion
 
@@ -937,14 +937,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleaseBooleanArrayElements(
-                JavaPtr* thiz, Object.JavaPtr* array, byte* elems, int mode);
+                IntPtr thiz, Object.JavaPtr* array, byte* elems, int mode);
 
             #endregion
 
             #region Nested type: ReleaseByteArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseByteArrayElements(JavaPtr* thiz, Object.JavaPtr* array, byte* elems, int mode);
+            internal delegate void ReleaseByteArrayElements(IntPtr thiz, Object.JavaPtr* array, byte* elems, int mode);
 
             #endregion
 
@@ -952,7 +952,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleaseCharArrayElements(
-                JavaPtr* thiz, Object.JavaPtr* array, ushort* elems, int mode);
+                IntPtr thiz, Object.JavaPtr* array, ushort* elems, int mode);
 
             #endregion
 
@@ -960,7 +960,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleaseDoubleArrayElements(
-                JavaPtr* thiz, Object.JavaPtr* array, double* elems, int mode);
+                IntPtr thiz, Object.JavaPtr* array, double* elems, int mode);
 
             #endregion
 
@@ -968,21 +968,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleaseFloatArrayElements(
-                JavaPtr* thiz, Object.JavaPtr* array, float* elems, int mode);
+                IntPtr thiz, Object.JavaPtr* array, float* elems, int mode);
 
             #endregion
 
             #region Nested type: ReleaseIntArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseIntArrayElements(JavaPtr* thiz, Object.JavaPtr* array, int* elems, int mode);
+            internal delegate void ReleaseIntArrayElements(IntPtr thiz, Object.JavaPtr* array, int* elems, int mode);
 
             #endregion
 
             #region Nested type: ReleaseLongArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseLongArrayElements(JavaPtr* thiz, Object.JavaPtr* array, long* elems, int mode);
+            internal delegate void ReleaseLongArrayElements(IntPtr thiz, Object.JavaPtr* array, long* elems, int mode);
 
             #endregion
 
@@ -990,7 +990,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleasePrimitiveArrayCritical(
-                JavaPtr* thiz, Object.JavaPtr* array, void* carray, int mode);
+                IntPtr thiz, Object.JavaPtr* array, void* carray, int mode);
 
             #endregion
 
@@ -998,21 +998,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void ReleaseShortArrayElements(
-                JavaPtr* thiz, Object.JavaPtr* array, short* elems, int mode);
+                IntPtr thiz, Object.JavaPtr* array, short* elems, int mode);
 
             #endregion
 
             #region Nested type: ReleaseStringChars
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseStringChars(JavaPtr* thiz, Object.JavaPtr* str, IntPtr chars);
+            internal delegate void ReleaseStringChars(IntPtr thiz, Object.JavaPtr* str, IntPtr chars);
 
             #endregion
 
             #region Nested type: ReleaseStringCritical
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseStringCritical(JavaPtr* thiz, Object.JavaPtr* str, IntPtr cstring
+            internal delegate void ReleaseStringCritical(IntPtr thiz, Object.JavaPtr* str, IntPtr cstring
                 /*const char * */);
 
             #endregion
@@ -1020,7 +1020,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: ReleaseStringUTFChars
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void ReleaseStringUTFChars(JavaPtr* thiz, Object.JavaPtr* str, IntPtr chars
+            internal delegate void ReleaseStringUTFChars(IntPtr thiz, Object.JavaPtr* str, IntPtr chars
                 /* const char* */);
 
             #endregion
@@ -1029,7 +1029,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetBooleanArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, byte* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, byte* buf
                 /*  const byte * */);
 
             #endregion
@@ -1038,7 +1038,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetBooleanField(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, byte val);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, byte val);
 
             #endregion
 
@@ -1046,7 +1046,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetByteArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, byte* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, byte* buf
                 /* const byte * */);
 
             #endregion
@@ -1054,7 +1054,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetByteField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetByteField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, byte val);
+            internal delegate void SetByteField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, byte val);
 
             #endregion
 
@@ -1062,7 +1062,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetCharArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, char* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, char* buf
                 /* const ushort *  */);
 
             #endregion
@@ -1070,7 +1070,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetCharField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetCharField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, ushort val
+            internal delegate void SetCharField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, ushort val
                 );
 
             #endregion
@@ -1079,7 +1079,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetDoubleArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, double* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, double* buf
                 /* const double * */);
 
             #endregion
@@ -1088,7 +1088,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetDoubleField(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, double val);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, double val);
 
             #endregion
 
@@ -1096,7 +1096,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetFloatArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, float* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, float* buf
                 /* const float *  */);
 
             #endregion
@@ -1104,7 +1104,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetFloatField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetFloatField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, float val
+            internal delegate void SetFloatField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, float val
                 );
 
             #endregion
@@ -1112,7 +1112,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetIntArrayRegion
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetIntArrayRegion(JavaPtr* thiz, Object.JavaPtr* array, int start, int len, int* buf
+            internal delegate void SetIntArrayRegion(IntPtr thiz, Object.JavaPtr* array, int start, int len, int* buf
                 /* const int * */);
 
             #endregion
@@ -1120,7 +1120,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetIntField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetIntField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, int val);
+            internal delegate void SetIntField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, int val);
 
             #endregion
 
@@ -1128,7 +1128,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetLongArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, long* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, long* buf
                 /*  const long * */);
 
             #endregion
@@ -1136,7 +1136,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetLongField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetLongField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, long val);
+            internal delegate void SetLongField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, long val);
 
             #endregion
 
@@ -1144,7 +1144,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetObjectArrayElement(
-                JavaPtr* thiz, Object.JavaPtr* array, int index, Object.JavaPtr* val);
+                IntPtr thiz, Object.JavaPtr* array, int index, Object.JavaPtr* val);
 
             #endregion
 
@@ -1152,7 +1152,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetObjectField(
-                JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, Object.JavaPtr* val);
+                IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, Object.JavaPtr* val);
 
             #endregion
 
@@ -1160,7 +1160,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetShortArrayRegion(
-                JavaPtr* thiz, Object.JavaPtr* array, int start, int len, short* buf
+                IntPtr thiz, Object.JavaPtr* array, int start, int len, short* buf
                 /* const short *  */);
 
             #endregion
@@ -1168,7 +1168,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: SetShortField
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate void SetShortField(JavaPtr* thiz, Object.JavaPtr* obj, IntPtr fieldID, short val
+            internal delegate void SetShortField(IntPtr thiz, Object.JavaPtr* obj, IntPtr fieldID, short val
                 );
 
             #endregion
@@ -1177,7 +1177,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticBooleanField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, byte value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, byte value);
 
             #endregion
 
@@ -1185,7 +1185,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticByteField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, byte value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, byte value);
 
             #endregion
 
@@ -1193,7 +1193,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticCharField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, ushort value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, ushort value);
 
             #endregion
 
@@ -1201,7 +1201,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticDoubleField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, double value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, double value);
 
             #endregion
 
@@ -1209,7 +1209,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticFloatField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, float value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, float value);
 
             #endregion
 
@@ -1217,7 +1217,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticIntField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, int value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, int value);
 
             #endregion
 
@@ -1225,7 +1225,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticLongField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, long value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, long value);
 
             #endregion
 
@@ -1233,7 +1233,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticObjectField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, Object.JavaPtr* value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, Object.JavaPtr* value);
 
             #endregion
 
@@ -1241,21 +1241,21 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate void SetStaticShortField(
-                JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr fieldID, short value);
+                IntPtr thiz, Class.JavaPtr* clazz, IntPtr fieldID, short value);
 
             #endregion
 
             #region Nested type: Throw
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult Throw(JavaPtr* thiz, Object.JavaPtr* obj);
+            internal delegate JNIResult Throw(IntPtr thiz, Object.JavaPtr* obj);
 
             #endregion
 
             #region Nested type: ThrowNew
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult ThrowNew(JavaPtr* thiz, Class.JavaPtr* clazz, IntPtr msg);
+            internal delegate JNIResult ThrowNew(IntPtr thiz, Class.JavaPtr* clazz, IntPtr msg);
 
             #endregion
 
@@ -1263,7 +1263,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* ToReflectedField(
-                JavaPtr* thiz, Class.JavaPtr* cls, IntPtr fieldID, byte isStatic);
+                IntPtr thiz, Class.JavaPtr* cls, IntPtr fieldID, byte isStatic);
 
             #endregion
 
@@ -1271,14 +1271,14 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate Object.JavaPtr* ToReflectedMethod(
-                JavaPtr* thiz, Class.JavaPtr* cls, IntPtr methodID, byte isStatic);
+                IntPtr thiz, Class.JavaPtr* cls, IntPtr methodID, byte isStatic);
 
             #endregion
 
             #region Nested type: UnregisterJavaPtrs
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult UnregisterJavaPtrs(JavaPtr* thiz, Class.JavaPtr* clazz);
+            internal delegate JNIResult UnregisterJavaPtrs(IntPtr thiz, Class.JavaPtr* clazz);
 
             #endregion
         }

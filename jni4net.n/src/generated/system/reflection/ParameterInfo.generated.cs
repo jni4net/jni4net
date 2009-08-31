@@ -62,10 +62,10 @@ namespace System.Reflection {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetCustomAttributes0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, bool inherit) {
+        private static global::java.lang.Object.JavaPtr* GetCustomAttributes0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, bool inherit) {
             // (Z)[Lsystem/Object;
             // (Z)[LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(inherit));
@@ -73,10 +73,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetCustomAttributes1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
+        private static global::java.lang.Object.JavaPtr* GetCustomAttributes1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
             // (Lsystem/Type;Z)[Lsystem/Object;
             // (LSystem/Type;Z)[LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit));
@@ -84,10 +84,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool IsDefined2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
+        private static bool IsDefined2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* attributeType, bool inherit) {
             // (Lsystem/Type;Z)Z
             // (LSystem/Type;Z)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return ((global::System.Reflection.ICustomAttributeProvider)(real)).IsDefined(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit);
@@ -95,10 +95,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* ParameterType3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* ParameterType3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Type;
             // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ParameterType);
@@ -106,10 +106,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Name4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Name4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.Name);
@@ -117,10 +117,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* DefaultValue5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* DefaultValue5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.DefaultValue);
@@ -128,10 +128,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* RawDefaultValue6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* RawDefaultValue6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.RawDefaultValue);
@@ -139,10 +139,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static int Position7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Position7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.Position;
@@ -150,10 +150,10 @@ namespace System.Reflection {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* Attributes8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Attributes8(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/Reflection/ParameterAttributes;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Attributes);
@@ -161,10 +161,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* Member9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* Member9(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/reflection/MemberInfo;
             // ()LSystem/Reflection/MemberInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Member);
@@ -172,10 +172,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool IsIn10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsIn10(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsIn;
@@ -183,10 +183,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static bool IsOut11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsOut11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsOut;
@@ -194,10 +194,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static bool IsLcid12(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsLcid12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsLcid;
@@ -205,10 +205,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static bool IsRetval13(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsRetval13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsRetval;
@@ -216,10 +216,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static bool IsOptional14(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsOptional14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsOptional;
@@ -227,10 +227,10 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static int MetadataToken15(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int MetadataToken15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.MetadataToken;
@@ -238,10 +238,10 @@ namespace System.Reflection {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetRequiredCustomModifiers16(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetRequiredCustomModifiers16(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetRequiredCustomModifiers());
@@ -249,10 +249,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* GetOptionalCustomModifiers17(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetOptionalCustomModifiers17(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetOptionalCustomModifiers());
@@ -260,10 +260,10 @@ namespace System.Reflection {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void GetTypeInfo18(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, uint iTInfo, uint lcid, global::System.IntPtr ppTInfo) {
+        private static void GetTypeInfo18(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, uint iTInfo, uint lcid, global::System.IntPtr ppTInfo) {
             // (IILsystem/ValueType;)V
             // (LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
             ((global::System.Runtime.InteropServices._ParameterInfo)(real)).GetTypeInfo(iTInfo, lcid, ppTInfo);

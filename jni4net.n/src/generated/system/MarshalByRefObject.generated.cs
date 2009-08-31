@@ -46,10 +46,10 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetLifetimeService0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetLifetimeService0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetLifetimeService());
@@ -57,10 +57,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* InitializeLifetimeService1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* InitializeLifetimeService1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.InitializeLifetimeService());
@@ -68,10 +68,10 @@ namespace System {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static global::java.lang.Object.JavaPtr* CreateObjRef2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* requestedType) {
+        private static global::java.lang.Object.JavaPtr* CreateObjRef2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* requestedType) {
             // (Lsystem/Type;)Lsystem/runtime/serialization/ISerializable;
             // (LSystem/Type;)LSystem/Runtime/Remoting/ObjRef;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.CreateObjRef(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, requestedType)));

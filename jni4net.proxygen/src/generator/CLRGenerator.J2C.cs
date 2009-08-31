@@ -212,7 +212,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             var env = new CodeVariableDeclarationStatement(
                 new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference), "__env",
-                new CodeSnippetExpression("(*@__envi).Wrap()"));
+                new CodeSnippetExpression("global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi)"));
             tgtMethod.Statements.Add(env);
         }
 
@@ -245,7 +245,7 @@ namespace net.sf.jni4net.proxygen.generator
         private void GenerateMethodParamsJ2C(CodeMemberMethod tgtMethod, GMethod method)
         {
             var enviParam = new CodeParameterDeclarationExpression(
-                TypeReference(typeof (JNIEnv.JavaPtr).MakePointerType()), "__envi");
+                TypeReference(typeof (IntPtr)), "__envi");
             tgtMethod.Parameters.Add(enviParam);
 
             if (method.IsStatic || method.IsConstructor)

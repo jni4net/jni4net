@@ -198,10 +198,10 @@ namespace System.Collections {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* GetEnumerator0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* GetEnumerator0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/collections/IEnumerator;
             // ()LSystem/Collections/IEnumerator;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.IEnumerable)(real)).GetEnumerator());
@@ -209,20 +209,20 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void CopyTo1(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* array, int index) {
+        private static void CopyTo1(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* array, int index) {
             // (Lsystem/Array;I)V
             // (LSystem/Array;I)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             ((global::System.Collections.ICollection)(real)).CopyTo(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, array), index);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Count2(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static int Count2(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return ((global::System.Collections.ICollection)(real)).Count;
@@ -230,10 +230,10 @@ namespace System.Collections {
             return default(int);
         }
         
-        private static global::java.lang.Object.JavaPtr* SyncRoot3(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static global::java.lang.Object.JavaPtr* SyncRoot3(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.ICollection)(real)).SyncRoot);
@@ -241,10 +241,10 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static bool IsSynchronized4(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsSynchronized4(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return ((global::System.Collections.ICollection)(real)).IsSynchronized;
@@ -252,10 +252,10 @@ namespace System.Collections {
             return default(bool);
         }
         
-        private static global::java.lang.Object.JavaPtr* Item5(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
+        private static global::java.lang.Object.JavaPtr* Item5(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
             // (I)Lsystem/Object;
             // (I)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real[index]);
@@ -263,20 +263,20 @@ namespace System.Collections {
             return default(global::java.lang.Object.JavaPtr*);
         }
         
-        private static void Item6(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
+        private static void Item6(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
             // (ILsystem/Object;)V
             // (ILSystem/Object;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             real[index] = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static int Add7(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static int Add7(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return real.Add(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
@@ -284,10 +284,10 @@ namespace System.Collections {
             return default(int);
         }
         
-        private static bool Contains8(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static bool Contains8(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Lsystem/Object;)Z
             // (LSystem/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return real.Contains(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
@@ -295,20 +295,20 @@ namespace System.Collections {
             return default(bool);
         }
         
-        private static void Clear9(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void Clear9(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             real.Clear();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static bool IsReadOnly10(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsReadOnly10(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return real.IsReadOnly;
@@ -316,10 +316,10 @@ namespace System.Collections {
             return default(bool);
         }
         
-        private static bool IsFixedSize11(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static bool IsFixedSize11(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return real.IsFixedSize;
@@ -327,10 +327,10 @@ namespace System.Collections {
             return default(bool);
         }
         
-        private static int IndexOf12(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static int IndexOf12(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             return real.IndexOf(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
@@ -338,30 +338,30 @@ namespace System.Collections {
             return default(int);
         }
         
-        private static void Insert13(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
+        private static void Insert13(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index, global::java.lang.Object.JavaPtr* value) {
             // (ILsystem/Object;)V
             // (ILSystem/Object;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             real.Insert(index, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void Remove14(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
+        private static void Remove14(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             real.Remove(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static void RemoveAt15(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
+        private static void RemoveAt15(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, int index) {
             // (I)V
             // (I)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IList real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IList>(__env, @__obj);
             real.RemoveAt(index);

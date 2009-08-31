@@ -61,10 +61,10 @@ namespace java.lang {
             return methods;
         }
         
-        private static int compareTo0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
+        private static int compareTo0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* par0) {
             // (Ljava/lang/Object;)I
             // (Ljava/lang/Object;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Comparable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Comparable>(__env, @__obj);
             return real.compareTo(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));

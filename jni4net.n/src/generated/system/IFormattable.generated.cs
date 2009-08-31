@@ -52,10 +52,10 @@ namespace System {
             return methods;
         }
         
-        private static global::java.lang.Object.JavaPtr* ToString0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* formatProvider) {
+        private static global::java.lang.Object.JavaPtr* ToString0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj, global::java.lang.Object.JavaPtr* format, global::java.lang.Object.JavaPtr* formatProvider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IFormattable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormattable>(__env, @__obj);
             return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, formatProvider)));

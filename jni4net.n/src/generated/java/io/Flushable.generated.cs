@@ -61,10 +61,10 @@ namespace java.io {
             return methods;
         }
         
-        private static void flush0(global::net.sf.jni4net.jni.JNIEnv.JavaPtr* @__envi, global::java.lang.Object.JavaPtr* @__obj) {
+        private static void flush0(global::System.IntPtr @__envi, global::java.lang.Object.JavaPtr* @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = (*@__envi).Wrap();
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.io.Flushable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.io.Flushable>(__env, @__obj);
             real.flush();
