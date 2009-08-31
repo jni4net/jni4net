@@ -50,7 +50,7 @@ namespace net.sf.jni4net.jni
         {
             if (javaVM == null)
             {
-                JavaVM.JavaPtr* jvm;
+                IntPtr jvm;
                 getJavaVM.Invoke(native, out jvm);
                 ExceptionTest();
                 javaVM = new JavaVM(jvm);
