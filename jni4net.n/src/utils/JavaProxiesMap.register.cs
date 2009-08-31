@@ -159,7 +159,14 @@ namespace net.sf.jni4net.utils
                 Console.WriteLine("Can't find .NET InitJNI: method" + proxy);
                 throw new JNIException("Can't find .NET InitJNI method: " + proxy);
             }
-            initMethod.Invoke(null, new object[] {env, clazz});
+            try
+            {
+                initMethod.Invoke(null, new object[] {env, clazz});
+            }
+            catch (Exception ex)
+            {
+                throw new JNIException("Can't initialize class " + className, ex);
+            }
 
             return CreateRecord(className, clazz, iface, proxy, constructorhelper);
         }

@@ -38,5 +38,10 @@ namespace net.sf.jni4net.jni
             : base(message)
         {
         }
+
+        public JNIException(string message, Exception ex)
+            : base(message, ex)
+        {
+        }
     }
 }
