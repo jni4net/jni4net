@@ -12,7 +12,7 @@ namespace System.Collections {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IDictionary_ {
+    public partial class IDictionary_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IDictionary))]
-    internal sealed unsafe partial class @__IDictionary : global::java.lang.Object, global::System.Collections.IDictionary {
+    internal sealed partial class @__IDictionary : global::java.lang.Object, global::System.Collections.IDictionary {
         
         internal static global::java.lang.Class staticClass;
         

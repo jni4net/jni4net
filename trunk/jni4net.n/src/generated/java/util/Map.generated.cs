@@ -60,7 +60,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Map_ {
+    public partial class Map_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -73,7 +73,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Map))]
-    internal sealed unsafe partial class @__Map : global::java.lang.Object, global::java.util.Map {
+    internal sealed partial class @__Map : global::java.lang.Object, global::java.util.Map {
         
         internal static global::java.lang.Class staticClass;
         

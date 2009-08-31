@@ -13,7 +13,7 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class JWithClrInterface : global::java.lang.Object, global::System.IComparable, global::java.lang.Runnable {
+    public partial class JWithClrInterface : global::java.lang.Object, global::System.IComparable, global::java.lang.Runnable {
         
         internal static global::java.lang.Class staticClass;
         

@@ -18,7 +18,7 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Serializable_ {
+    public partial class Serializable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -31,7 +31,7 @@ namespace java.io {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Serializable))]
-    internal sealed unsafe partial class @__Serializable : global::java.lang.Object, global::java.io.Serializable {
+    internal sealed partial class @__Serializable : global::java.lang.Object, global::java.io.Serializable {
         
         internal static global::java.lang.Class staticClass;
         

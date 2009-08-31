@@ -27,7 +27,7 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Appendable_ {
+    public partial class Appendable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -40,7 +40,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable))]
-    internal sealed unsafe partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
+    internal sealed partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
         
         internal static global::java.lang.Class staticClass;
         

@@ -13,7 +13,7 @@ namespace java.io {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class PrintStream : global::java.io.FilterOutputStream, global::java.lang.Appendable, global::java.io.Closeable {
+    public partial class PrintStream : global::java.io.FilterOutputStream, global::java.lang.Appendable, global::java.io.Closeable {
         
         internal static global::java.lang.Class staticClass;
         

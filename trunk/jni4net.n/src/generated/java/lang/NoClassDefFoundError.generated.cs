@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class NoClassDefFoundError : global::java.lang.LinkageError {
+    public partial class NoClassDefFoundError : global::java.lang.LinkageError {
         
         internal static global::java.lang.Class staticClass;
         

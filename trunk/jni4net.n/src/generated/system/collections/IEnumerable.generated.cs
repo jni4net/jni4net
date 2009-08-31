@@ -12,7 +12,7 @@ namespace System.Collections {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IEnumerable_ {
+    public partial class IEnumerable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IEnumerable))]
-    internal sealed unsafe partial class @__IEnumerable : global::java.lang.Object, global::System.Collections.IEnumerable {
+    internal sealed partial class @__IEnumerable : global::java.lang.Object, global::System.Collections.IEnumerable {
         
         internal static global::java.lang.Class staticClass;
         

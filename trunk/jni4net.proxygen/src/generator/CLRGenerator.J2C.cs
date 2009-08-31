@@ -251,7 +251,7 @@ namespace net.sf.jni4net.proxygen.generator
             if (method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (IntPtr).MakePointerType()), "__clazz");
+                    TypeReference(typeof (IntPtr)), "__clazz");
                 tgtMethod.Parameters.Add(classParam);
             }
             if (!method.IsStatic || method.IsConstructor)

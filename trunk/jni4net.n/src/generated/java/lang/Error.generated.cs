@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class Error : global::java.lang.Throwable {
+    public partial class Error : global::java.lang.Throwable {
         
         internal static global::java.lang.Class staticClass;
         

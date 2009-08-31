@@ -27,7 +27,7 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class TypeVariable_ {
+    public partial class TypeVariable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -40,7 +40,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.TypeVariable))]
-    internal sealed unsafe partial class @__TypeVariable : global::java.lang.Object, global::java.lang.reflect.TypeVariable {
+    internal sealed partial class @__TypeVariable : global::java.lang.Object, global::java.lang.reflect.TypeVariable {
         
         internal static global::java.lang.Class staticClass;
         

@@ -21,7 +21,7 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Iterable_ {
+    public partial class Iterable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -34,7 +34,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Iterable))]
-    internal sealed unsafe partial class @__Iterable : global::java.lang.Object, global::java.lang.Iterable {
+    internal sealed partial class @__Iterable : global::java.lang.Object, global::java.lang.Iterable {
         
         internal static global::java.lang.Class staticClass;
         

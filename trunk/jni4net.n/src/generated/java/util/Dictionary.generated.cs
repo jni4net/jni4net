@@ -13,7 +13,7 @@ namespace java.util {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class Dictionary : global::java.lang.Object {
+    public partial class Dictionary : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class Byte : global::java.lang.Number, global::java.lang.Comparable {
+    public partial class Byte : global::java.lang.Number, global::java.lang.Comparable {
         
         internal static global::java.lang.Class staticClass;
         

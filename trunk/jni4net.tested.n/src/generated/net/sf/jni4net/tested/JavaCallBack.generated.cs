@@ -13,7 +13,7 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class JavaCallBack : global::java.lang.Object {
+    public partial class JavaCallBack : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         
