@@ -25,38 +25,12 @@ using System.Runtime.InteropServices;
 
 namespace net.sf.jni4net.jni
 {
-    public unsafe class JavaVMInitArgs
+    [StructLayout(LayoutKind.Sequential), NativeCppClass]
+    public unsafe struct JavaVMInitArgs
     {
-        internal JavaPtr* native;
-
-        internal JavaVMInitArgs(JavaPtr* ptr)
-        {
-            native = ptr;
-        }
-
-        #region Nested type: JavaPtr
-
-        [StructLayout(LayoutKind.Sequential), NativeCppClass]
-        internal struct JavaPtr
-        {
-            public int version;
-            public int nOptions;
-            public JavaVMOption* options;
-            public byte ignoreUnrecognized;
-
-            public JavaVMInitArgs Wrap()
-            {
-                fixed (JavaPtr* real1 = &this)
-                {
-                    if (real1 == null)
-                    {
-                        return null;
-                    }
-                    return new JavaVMInitArgs(real1);
-                }
-            }
-        }
-
-        #endregion
+        public int version;
+        public int nOptions;
+        public JavaVMOption* options;
+        public byte ignoreUnrecognized;
     }
 }

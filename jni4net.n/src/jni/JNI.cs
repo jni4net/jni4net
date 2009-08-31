@@ -62,7 +62,7 @@ namespace net.sf.jni4net.jni
                 try
                 {
                     Directory.SetCurrentDirectory(jvmDir);
-                    var args = new JavaVMInitArgs.JavaPtr();
+                    var args = new JavaVMInitArgs();
 
                     //just load DLL, don't worry for result
                     Dll.JNI_GetDefaultJavaVMInitArgs(&args);
@@ -85,7 +85,7 @@ namespace net.sf.jni4net.jni
             Init();
             JavaVM.JavaPtr* njvm;
             JNIEnv.JavaPtr* nenv;
-            JavaVMInitArgs.JavaPtr args;
+            JavaVMInitArgs args=new JavaVMInitArgs();
             args.version = JNI_VERSION_1_4;
 
             if (options.Length > 0)
@@ -115,7 +115,7 @@ namespace net.sf.jni4net.jni
                 {
                     njvm = njvma;
                     jvm = new JavaVM(njvm);
-                    result = jvm.AttachCurrentThread(out env, &args);
+                    result = jvm.AttachCurrentThread(out env, args);
                     if (result != JNIResult.JNI_OK)
                     {
                         throw new JNIException("Can't join current JVM " + result);
@@ -140,14 +140,14 @@ namespace net.sf.jni4net.jni
         {
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
             internal static extern JNIResult JNI_CreateJavaVM(out JavaVM.JavaPtr* pvm, out JNIEnv.JavaPtr* penv,
-                                                              JavaVMInitArgs.JavaPtr* args);
+                                                              JavaVMInitArgs* args);
 
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
             internal static extern JNIResult JNI_GetCreatedJavaVMs(out JavaVM.JavaPtr* pvm, int size,
                                                                    [Out] out int size2);
 
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
-            internal static extern JNIResult JNI_GetDefaultJavaVMInitArgs(JavaVMInitArgs.JavaPtr* args);
+            internal static extern JNIResult JNI_GetDefaultJavaVMInitArgs(JavaVMInitArgs* args);
         }
 
         #endregion

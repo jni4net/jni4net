@@ -35,7 +35,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult AttachCurrentThread(
-                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs.JavaPtr* args);
+                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
 
             #endregion
 
@@ -43,7 +43,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult AttachCurrentThreadAsDaemon(
-                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs.JavaPtr* args);
+                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
 
             #endregion
 
