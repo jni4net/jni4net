@@ -108,33 +108,33 @@ namespace net.sf.jni4net.jni
 
         public MethodId GetStaticMethodID(Class clazz, string name, string sig)
         {
-            MethodId.JavaPtr* res = getStaticMethodID.Invoke(native, clazz.native, name, sig);
+            IntPtr res = getStaticMethodID.Invoke(native, clazz.native, name, sig);
             ExceptionTest();
-            return (*res).Wrap();
+            return new MethodId(res);
         }
 
         public MethodId GetMethodID(Class clazz, string name, string sig)
         {
-            MethodId.JavaPtr* res = getMethodID.Invoke(native, clazz.native, name, sig);
+            IntPtr res = getMethodID.Invoke(native, clazz.native, name, sig);
             ExceptionTest();
-            return (*res).Wrap();
+            return new MethodId(res);
         }
 
         public MethodId GetMethodIDNoThrow(Class clazz, string name, string sig)
         {
-            MethodId.JavaPtr* res = getMethodID.Invoke(native, clazz.native, name, sig);
+            IntPtr res = getMethodID.Invoke(native, clazz.native, name, sig);
             if (ExceptionRead())
             {
                 return null;
             }
-            return (*res).Wrap();
+            return new MethodId(res);
         }
 
         public FieldId GetFieldID(Class clazz, string name, string sig)
         {
-            FieldId.JavaPtr* res = getFieldID.Invoke(native, clazz.native, name, sig);
+            IntPtr res = getFieldID.Invoke(native, clazz.native, name, sig);
             ExceptionTest();
-            return (*res).Wrap();
+            return new FieldId(res);
         }
 
         #if !JNI4NET_MINI
@@ -157,24 +157,24 @@ namespace net.sf.jni4net.jni
 
         public MethodId FromReflectedMethod(Method methodId)
         {
-            MethodId.JavaPtr* res = fromReflectedMethod.Invoke(native, methodId.native);
+            IntPtr res = fromReflectedMethod.Invoke(native, methodId.native);
             ExceptionTest();
-            return (*res).Wrap();
+            return new MethodId(res);
         }
 
         public FieldId FromReflectedField(Field FieldId)
         {
-            FieldId.JavaPtr* res = fromReflectedField.Invoke(native, FieldId.native);
+            IntPtr res = fromReflectedField.Invoke(native, FieldId.native);
             ExceptionTest();
-            return (*res).Wrap();
+            return new FieldId(res);
         }
 
 #endif
         public FieldId GetStaticFieldID(Class clazz, string name, string sig)
         {
-            FieldId.JavaPtr* res = getStaticFieldID.Invoke(native, clazz.native, name, sig);
+            IntPtr res = getStaticFieldID.Invoke(native, clazz.native, name, sig);
             ExceptionTest();
-            return (*res).Wrap();
+            return new FieldId(res);
         }
 
         public JNIResult RegisterNatives(Class clazz, JNINativeMethod* methods, int nMethods)
