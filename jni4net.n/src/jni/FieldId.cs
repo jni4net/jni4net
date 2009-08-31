@@ -20,37 +20,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
-using System.Runtime.InteropServices;
+using System;
 
 namespace net.sf.jni4net.jni
 {
-    public unsafe class FieldId
+    public class FieldId
     {
-        internal JavaPtr* native;
+        internal IntPtr native;
 
-        private FieldId(JavaPtr* ptr)
+        internal FieldId(IntPtr ptr)
         {
             native = ptr;
         }
-
-        #region Nested type: JavaPtr
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct JavaPtr
-        {
-            public FieldId Wrap()
-            {
-                fixed (JavaPtr* ptr = &this)
-                {
-                    if (ptr == null)
-                    {
-                        return null;
-                    }
-                    return new FieldId(ptr);
-                }
-            }
-        }
-
-        #endregion
     }
 }
