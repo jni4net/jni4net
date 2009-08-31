@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,7 +36,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult AttachCurrentThread(
-                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
+                IntPtr thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
 
             #endregion
 
@@ -43,28 +44,28 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
             internal delegate JNIResult AttachCurrentThreadAsDaemon(
-                JavaPtr* thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
+                IntPtr thiz, out JNIEnv.JavaPtr* penv, JavaVMInitArgs* args);
 
             #endregion
 
             #region Nested type: DestroyJavaVM
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult DestroyJavaVM(JavaPtr* thiz);
+            internal delegate JNIResult DestroyJavaVM(IntPtr thiz);
 
             #endregion
 
             #region Nested type: DetachCurrentThread
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult DetachCurrentThread(JavaPtr* thiz);
+            internal delegate JNIResult DetachCurrentThread(IntPtr thiz);
 
             #endregion
 
             #region Nested type: GetEnv
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult GetEnv(JavaPtr* thiz, out JNIEnv.JavaPtr* penv, int version);
+            internal delegate JNIResult GetEnv(IntPtr thiz, out JNIEnv.JavaPtr* penv, int version);
 
             #endregion
         }
@@ -74,7 +75,7 @@ namespace net.sf.jni4net.jni
         #region Nested type: JavaPtr
 
         [StructLayout(LayoutKind.Sequential, Size = 4), NativeCppClass]
-        public struct JavaPtr
+        private struct JavaPtr
         {
             public JNIInvokeInterface* functions;
         }

@@ -20,17 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
+
 namespace net.sf.jni4net.jni
 {
     public unsafe partial class JavaVM
     {
-        private readonly JavaPtr* native;
+        private readonly IntPtr native;
         private JNIInvokeInterface functions;
 
-        public JavaVM(JavaPtr* native)
+        public JavaVM(IntPtr native)
         {
             this.native = native;
-            functions = *(*native).functions;
+            functions = *(*(JavaPtr*)native.ToPointer()).functions;
         }
 
         internal JNIResult AttachCurrentThread(out JNIEnv penv, JavaVMInitArgs? args)

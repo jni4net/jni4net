@@ -549,7 +549,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetJavaVM
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate JNIResult GetJavaVM(JavaPtr* thiz, out JavaVM.JavaPtr* vm);
+            internal delegate JNIResult GetJavaVM(JavaPtr* thiz, out IntPtr vm);
 
             #endregion
 

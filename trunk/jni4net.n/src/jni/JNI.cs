@@ -83,7 +83,7 @@ namespace net.sf.jni4net.jni
         public static void CreateJavaVM(out JavaVM jvm, out JNIEnv env, bool attachIfExists, params string[] options)
         {
             Init();
-            JavaVM.JavaPtr* njvm;
+            IntPtr njvm;
             JNIEnv.JavaPtr* nenv;
             JavaVMInitArgs args=new JavaVMInitArgs();
             args.version = JNI_VERSION_1_4;
@@ -104,7 +104,7 @@ namespace net.sf.jni4net.jni
             JNIResult result;
             if (attachIfExists)
             {
-                JavaVM.JavaPtr* njvma;
+                IntPtr njvma;
                 int count;
                 result = Dll.JNI_GetCreatedJavaVMs(out njvma, 1, out count);
                 if (result != JNIResult.JNI_OK)
@@ -139,11 +139,11 @@ namespace net.sf.jni4net.jni
         private static class Dll
         {
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
-            internal static extern JNIResult JNI_CreateJavaVM(out JavaVM.JavaPtr* pvm, out JNIEnv.JavaPtr* penv,
+            internal static extern JNIResult JNI_CreateJavaVM(out IntPtr pvm, out JNIEnv.JavaPtr* penv,
                                                               JavaVMInitArgs* args);
 
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
-            internal static extern JNIResult JNI_GetCreatedJavaVMs(out JavaVM.JavaPtr* pvm, int size,
+            internal static extern JNIResult JNI_GetCreatedJavaVMs(out IntPtr pvm, int size,
                                                                    [Out] out int size2);
 
             [DllImport("jvm.dll", CallingConvention = CallingConvention.StdCall)]
