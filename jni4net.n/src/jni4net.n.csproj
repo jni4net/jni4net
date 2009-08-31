@@ -67,8 +67,6 @@
     <Compile Include="jni\JNI.cs" />
     <Compile Include="jni\JNIEnv.cs" />
     <Compile Include="jni\JNIException.cs" />
-    <Compile Include="jni\JNIInvokeInterface.cs" />
-    <Compile Include="jni\JNINativeInterface.cs" />
     <Compile Include="jni\LocalFrame.cs" />
     <Compile Include="jni\MethodWrapper.cs" />
     <Compile Include="jni\Structures.cs" />

@@ -21,6 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace net.sf.jni4net.jni
 {
@@ -114,5 +116,20 @@ namespace net.sf.jni4net.jni
             penv = new JNIEnv(env);
             return result;
         }
+
+        [StructLayout(LayoutKind.Sequential), NativeCppClass]
+        public struct JNIInvokeInterface
+        {
+            public IntPtr reserved0;
+            public IntPtr reserved1;
+            public IntPtr reserved2;
+
+            public IntPtr DestroyJavaVM;
+            public IntPtr AttachCurrentThread;
+            public IntPtr DetachCurrentThread;
+            public IntPtr GetEnv;
+            public IntPtr AttachCurrentThreadAsDaemon;
+        }
+
     }
 }
