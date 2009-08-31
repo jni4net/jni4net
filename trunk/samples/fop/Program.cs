@@ -9,10 +9,14 @@ namespace fop
 {
     internal class Program
     {
+        /// <summary>
+        /// Start this from directory \samples\fop\
+        /// </summary>
         private static void Main(string[] args)
         {
             Bridge.BindNative = false;
             Bridge.CreateJVM("-Djava.class.path="
+                + "../../jni4net.j/target/classes;"
                 + "lib/fop.jar;"
                 + "lib/avalon-framework-4.2.0.jar;"
                 + "lib/batik-all-1.7.jar;"
@@ -42,7 +46,7 @@ namespace fop
                 output = new BufferedOutputStream(new FileOutputStream(new File(outFileName)));
 
                 // Step 3: Construct fop with desired output format
-                Fop fop = fopFactory.newFop(__MimeConstants.MIME_PDF, output);
+                Fop fop = fopFactory.newFop(MimeConstants_.MIME_PDF, output);
 
                 // Step 4: Setup JAXP using identity transformer
                 TransformerFactory factory = TransformerFactory.newInstance();
