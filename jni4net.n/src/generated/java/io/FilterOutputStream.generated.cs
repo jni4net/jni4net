@@ -13,7 +13,7 @@ namespace java.io {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class FilterOutputStream : global::java.io.OutputStream {
+    public partial class FilterOutputStream : global::java.io.OutputStream {
         
         internal static global::java.lang.Class staticClass;
         

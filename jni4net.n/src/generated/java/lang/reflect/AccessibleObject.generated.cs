@@ -13,7 +13,7 @@ namespace java.lang.reflect {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class AccessibleObject : global::java.lang.Object, global::java.lang.reflect.AnnotatedElement {
+    public partial class AccessibleObject : global::java.lang.Object, global::java.lang.reflect.AnnotatedElement {
         
         internal static global::java.lang.Class staticClass;
         

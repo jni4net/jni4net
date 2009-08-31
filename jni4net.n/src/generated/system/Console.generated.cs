@@ -12,7 +12,7 @@ namespace System {
     
     
     #region Component Designer generated code 
-    public unsafe partial class Console_ {
+    public partial class Console_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Console))]
-    internal sealed unsafe partial class @__Console : global::java.lang.Object {
+    internal sealed partial class @__Console : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

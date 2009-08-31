@@ -108,6 +108,12 @@ public class Bridge extends system.Object {
     public native static void setVerbose(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native static boolean getDebug();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    public native static void setDebug(boolean value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getBindNative();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")

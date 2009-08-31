@@ -12,7 +12,7 @@ namespace System {
     
     
     #region Component Designer generated code 
-    public unsafe partial class Exception_ {
+    public partial class Exception_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Exception))]
-    internal sealed unsafe partial class @__Exception : global::java.lang.Object {
+    internal sealed partial class @__Exception : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

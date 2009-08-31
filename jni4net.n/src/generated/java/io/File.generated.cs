@@ -13,7 +13,7 @@ namespace java.io {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class File : global::java.lang.Object, global::java.io.Serializable, global::java.lang.Comparable {
+    public partial class File : global::java.lang.Object, global::java.io.Serializable, global::java.lang.Comparable {
         
         internal static global::java.lang.Class staticClass;
         

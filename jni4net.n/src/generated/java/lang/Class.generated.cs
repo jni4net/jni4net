@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class Class : global::java.lang.Object, global::java.io.Serializable, global::java.lang.reflect.GenericDeclaration, global::java.lang.reflect.Type, global::java.lang.reflect.AnnotatedElement {
+    public partial class Class : global::java.lang.Object, global::java.io.Serializable, global::java.lang.reflect.GenericDeclaration, global::java.lang.reflect.Type, global::java.lang.reflect.AnnotatedElement {
         
         internal static global::java.lang.Class staticClass;
         

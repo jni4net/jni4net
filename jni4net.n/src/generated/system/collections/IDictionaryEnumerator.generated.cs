@@ -12,7 +12,7 @@ namespace System.Collections {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IDictionaryEnumerator_ {
+    public partial class IDictionaryEnumerator_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IDictionaryEnumerator))]
-    internal sealed unsafe partial class @__IDictionaryEnumerator : global::java.lang.Object, global::System.Collections.IDictionaryEnumerator {
+    internal sealed partial class @__IDictionaryEnumerator : global::java.lang.Object, global::System.Collections.IDictionaryEnumerator {
         
         internal static global::java.lang.Class staticClass;
         

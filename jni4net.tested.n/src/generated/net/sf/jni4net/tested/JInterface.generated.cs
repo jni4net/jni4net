@@ -24,7 +24,7 @@ namespace net.sf.jni4net.tested {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class JInterface_ {
+    public partial class JInterface_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -37,7 +37,7 @@ namespace net.sf.jni4net.tested {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.JInterface))]
-    internal sealed unsafe partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
+    internal sealed partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
         
         internal static global::java.lang.Class staticClass;
         

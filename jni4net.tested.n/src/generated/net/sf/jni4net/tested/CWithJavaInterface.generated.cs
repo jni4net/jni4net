@@ -12,7 +12,7 @@ namespace net.sf.jni4net.tested {
     
     
     #region Component Designer generated code 
-    public unsafe partial class CWithJavaInterface_ {
+    public partial class CWithJavaInterface_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace net.sf.jni4net.tested {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.CWithJavaInterface))]
-    internal sealed unsafe partial class @__CWithJavaInterface : global::java.lang.Object {
+    internal sealed partial class @__CWithJavaInterface : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

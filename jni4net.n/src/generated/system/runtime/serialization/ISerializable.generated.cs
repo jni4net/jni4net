@@ -12,7 +12,7 @@ namespace System.Runtime.Serialization {
     
     
     #region Component Designer generated code 
-    public unsafe partial class ISerializable_ {
+    public partial class ISerializable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Runtime.Serialization {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.ISerializable))]
-    internal sealed unsafe partial class @__ISerializable : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
+    internal sealed partial class @__ISerializable : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
         
         internal static global::java.lang.Class staticClass;
         

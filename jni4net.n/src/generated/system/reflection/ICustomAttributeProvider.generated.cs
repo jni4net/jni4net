@@ -12,7 +12,7 @@ namespace System.Reflection {
     
     
     #region Component Designer generated code 
-    public unsafe partial class ICustomAttributeProvider_ {
+    public partial class ICustomAttributeProvider_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ICustomAttributeProvider))]
-    internal sealed unsafe partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
+    internal sealed partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
         
         internal static global::java.lang.Class staticClass;
         

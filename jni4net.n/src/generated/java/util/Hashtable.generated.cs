@@ -13,7 +13,7 @@ namespace java.util {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class Hashtable : global::java.util.Dictionary, global::java.util.Map, global::java.lang.Cloneable, global::java.io.Serializable {
+    public partial class Hashtable : global::java.util.Dictionary, global::java.util.Map, global::java.lang.Cloneable, global::java.io.Serializable {
         
         internal static global::java.lang.Class staticClass;
         

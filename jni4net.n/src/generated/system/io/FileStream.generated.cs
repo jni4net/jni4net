@@ -12,7 +12,7 @@ namespace System.IO {
     
     
     #region Component Designer generated code 
-    public unsafe partial class FileStream_ {
+    public partial class FileStream_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.IO {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.FileStream))]
-    internal sealed unsafe partial class @__FileStream : global::java.lang.Object {
+    internal sealed partial class @__FileStream : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         

@@ -12,7 +12,7 @@ namespace System.Security {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IEvidenceFactory_ {
+    public partial class IEvidenceFactory_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Security {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Security.IEvidenceFactory))]
-    internal sealed unsafe partial class @__IEvidenceFactory : global::java.lang.Object, global::System.Security.IEvidenceFactory {
+    internal sealed partial class @__IEvidenceFactory : global::java.lang.Object, global::System.Security.IEvidenceFactory {
         
         internal static global::java.lang.Class staticClass;
         

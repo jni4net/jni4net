@@ -12,7 +12,7 @@ namespace System {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IDisposable_ {
+    public partial class IDisposable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IDisposable))]
-    internal sealed unsafe partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
+    internal sealed partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
         
         internal static global::java.lang.Class staticClass;
         

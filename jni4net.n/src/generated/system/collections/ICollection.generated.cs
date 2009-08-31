@@ -12,7 +12,7 @@ namespace System.Collections {
     
     
     #region Component Designer generated code 
-    public unsafe partial class ICollection_ {
+    public partial class ICollection_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.ICollection))]
-    internal sealed unsafe partial class @__ICollection : global::java.lang.Object, global::System.Collections.ICollection {
+    internal sealed partial class @__ICollection : global::java.lang.Object, global::System.Collections.ICollection {
         
         internal static global::java.lang.Class staticClass;
         

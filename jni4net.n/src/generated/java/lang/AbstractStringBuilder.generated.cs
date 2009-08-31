@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class AbstractStringBuilder : global::java.lang.Object, global::java.lang.Appendable, global::java.lang.CharSequence {
+    public partial class AbstractStringBuilder : global::java.lang.Object, global::java.lang.Appendable, global::java.lang.CharSequence {
         
         internal static global::java.lang.Class staticClass;
         

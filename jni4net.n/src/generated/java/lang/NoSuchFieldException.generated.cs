@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class NoSuchFieldException : global::java.lang.Exception {
+    public partial class NoSuchFieldException : global::java.lang.Exception {
         
         internal static global::java.lang.Class staticClass;
         

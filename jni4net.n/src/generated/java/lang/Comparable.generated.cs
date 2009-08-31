@@ -21,7 +21,7 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Comparable_ {
+    public partial class Comparable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -34,7 +34,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Comparable))]
-    internal sealed unsafe partial class @__Comparable : global::java.lang.Object, global::java.lang.Comparable {
+    internal sealed partial class @__Comparable : global::java.lang.Object, global::java.lang.Comparable {
         
         internal static global::java.lang.Class staticClass;
         

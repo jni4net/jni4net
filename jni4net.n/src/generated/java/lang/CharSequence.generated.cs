@@ -30,7 +30,7 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class CharSequence_ {
+    public partial class CharSequence_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -43,7 +43,7 @@ namespace java.lang {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.CharSequence))]
-    internal sealed unsafe partial class @__CharSequence : global::java.lang.Object, global::java.lang.CharSequence {
+    internal sealed partial class @__CharSequence : global::java.lang.Object, global::java.lang.CharSequence {
         
         internal static global::java.lang.Class staticClass;
         

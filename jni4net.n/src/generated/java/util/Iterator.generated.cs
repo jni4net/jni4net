@@ -27,7 +27,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Iterator_ {
+    public partial class Iterator_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -40,7 +40,7 @@ namespace java.util {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Iterator))]
-    internal sealed unsafe partial class @__Iterator : global::java.lang.Object, global::java.util.Iterator {
+    internal sealed partial class @__Iterator : global::java.lang.Object, global::java.util.Iterator {
         
         internal static global::java.lang.Class staticClass;
         

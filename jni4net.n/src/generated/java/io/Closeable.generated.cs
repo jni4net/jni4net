@@ -21,7 +21,7 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Closeable_ {
+    public partial class Closeable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -34,7 +34,7 @@ namespace java.io {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable))]
-    internal sealed unsafe partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
+    internal sealed partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
         
         internal static global::java.lang.Class staticClass;
         

@@ -30,7 +30,7 @@ namespace java.lang.annotation {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Annotation_ {
+    public partial class Annotation_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -43,7 +43,7 @@ namespace java.lang.annotation {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.annotation.Annotation))]
-    internal sealed unsafe partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
+    internal sealed partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
         
         internal static global::java.lang.Class staticClass;
         

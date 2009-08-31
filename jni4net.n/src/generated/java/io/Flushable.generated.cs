@@ -21,7 +21,7 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    public unsafe partial class Flushable_ {
+    public partial class Flushable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -34,7 +34,7 @@ namespace java.io {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Flushable))]
-    internal sealed unsafe partial class @__Flushable : global::java.lang.Object, global::java.io.Flushable {
+    internal sealed partial class @__Flushable : global::java.lang.Object, global::java.io.Flushable {
         
         internal static global::java.lang.Class staticClass;
         

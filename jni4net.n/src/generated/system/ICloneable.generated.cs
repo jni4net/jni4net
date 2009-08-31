@@ -12,7 +12,7 @@ namespace System {
     
     
     #region Component Designer generated code 
-    public unsafe partial class ICloneable_ {
+    public partial class ICloneable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.ICloneable))]
-    internal sealed unsafe partial class @__ICloneable : global::java.lang.Object, global::System.ICloneable {
+    internal sealed partial class @__ICloneable : global::java.lang.Object, global::System.ICloneable {
         
         internal static global::java.lang.Class staticClass;
         

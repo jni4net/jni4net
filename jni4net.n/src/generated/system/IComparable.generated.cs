@@ -12,7 +12,7 @@ namespace System {
     
     
     #region Component Designer generated code 
-    public unsafe partial class IComparable_ {
+    public partial class IComparable_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IComparable))]
-    internal sealed unsafe partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
+    internal sealed partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
         
         internal static global::java.lang.Class staticClass;
         

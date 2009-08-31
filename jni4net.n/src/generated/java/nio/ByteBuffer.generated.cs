@@ -13,7 +13,7 @@ namespace java.nio {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public unsafe partial class ByteBuffer : global::java.nio.Buffer, global::java.lang.Comparable {
+    public partial class ByteBuffer : global::java.nio.Buffer, global::java.lang.Comparable {
         
         internal static global::java.lang.Class staticClass;
         

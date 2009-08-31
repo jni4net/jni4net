@@ -12,7 +12,7 @@ namespace System.Reflection {
     
     
     #region Component Designer generated code 
-    public unsafe partial class ParameterInfo_ {
+    public partial class ParameterInfo_ {
         
         public new static global::java.lang.Class _class {
             get {
@@ -25,7 +25,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ParameterInfo))]
-    internal sealed unsafe partial class @__ParameterInfo : global::java.lang.Object {
+    internal sealed partial class @__ParameterInfo : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;
         
