@@ -38,7 +38,7 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Appendable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable))]
     internal sealed partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
         

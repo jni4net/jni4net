@@ -35,7 +35,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Enumeration))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Enumeration))]
     internal sealed partial class @__Enumeration : global::java.lang.Object, global::java.util.Enumeration {
         

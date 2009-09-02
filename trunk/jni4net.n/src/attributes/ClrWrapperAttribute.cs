@@ -31,23 +31,11 @@ namespace net.sf.jni4net.attributes
         {
         }
 
-        public ClrWrapperAttribute(string className)
+        public ClrWrapperAttribute(Type interfaceType)
         {
-            ClassName = className;
+            InterfaceType = interfaceType;
         }
 
-        public ClrWrapperAttribute(Type realType)
-        {
-            RealType = realType;
-        }
-
-        public ClrWrapperAttribute(string className, Type realType)
-        {
-            ClassName = className;
-            RealType = realType;
-        }
-
-        public string ClassName { get; private set; }
-        public Type RealType { get; private set; }
+        public Type InterfaceType { get; private set; }
     }
 }

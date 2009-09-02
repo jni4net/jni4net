@@ -25,7 +25,7 @@ using System.Runtime.InteropServices;
 
 namespace net.sf.jni4net.utils
 {
-    public class IntHandle
+    public static class IntHandle
     {
         public static void Free(int ptr)
         {

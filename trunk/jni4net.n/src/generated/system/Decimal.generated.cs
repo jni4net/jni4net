@@ -23,7 +23,7 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(decimal))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(decimal))]
     internal sealed partial class @__Decimal : global::java.lang.Object {
         

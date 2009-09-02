@@ -77,8 +77,8 @@ namespace net.sf.jni4net.proxygen.generator
             foreach (GType type in Repository.CLRGenTypes())
             {
                 new CLRClassGenerator(type).Generate();
+                new JVMStaticGenerator(type).Generate();
             }
-        
         }
     }
 }

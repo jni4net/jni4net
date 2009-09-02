@@ -27,5 +27,15 @@ namespace net.sf.jni4net.attributes
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class JavaProxyAttribute : Attribute
     {
+        public JavaProxyAttribute()
+        {
+        }
+
+        public JavaProxyAttribute(Type interfaceType)
+        {
+            InterfaceType = interfaceType;
+        }
+
+        public Type InterfaceType { get; private set; }
     }
 }

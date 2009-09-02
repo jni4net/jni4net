@@ -91,8 +91,10 @@ namespace net.sf.jni4net
             }
             knownAssemblies.Add(assembly, assembly);
             JNIEnv env = JNIEnv.ThreadEnv;
+            Registry.Default.RegisterAssembly(assembly, true);
             JavaProxiesMap.RegisterAssembly(env, assembly);
             ClrProxiesMap.RegisterAssembly(env, assembly);
+
             if (Verbose)
             {
                 Console.WriteLine("loaded " + assembly);

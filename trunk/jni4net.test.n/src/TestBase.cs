@@ -40,6 +40,7 @@ namespace net.sf.jni4net.test
             Bridge.Verbose = true;
             if (Environment.CurrentDirectory.EndsWith("target"))
             {
+                Bridge.Debug = true;
                 Bridge.CreateJVM(out vm, out env,
                                  "-Djava.class.path=../../jni4net.j/target/classes;../../jni4net.tested.j/target/classes;../../jni4net.test.j/target/test-classes");
             }

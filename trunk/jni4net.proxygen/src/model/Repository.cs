@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -176,8 +176,7 @@ namespace net.sf.jni4net.proxygen.model
                     if ((javaProxyType.IsAssignableFrom(type) && javaClassA != null) ||
                         (type.IsInterface && javaInterfaceA != null))
                     {
-                        string name = (javaInterfaceA ?? javaClassA).GetType().GetProperty("ClassName").GetValue(javaInterfaceA ?? javaClassA, null) as string;
-                        string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
+                        string clazzName = GetInterfaceName(type);
                         Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
                         if (clazz != null)
                         {
@@ -187,11 +186,10 @@ namespace net.sf.jni4net.proxygen.model
                     }
                     else if (clrWrapperA != null && type.IsSealed && type.Name.StartsWith("__"))
                     {
-                        Type realType = clrWrapperA.GetType().GetProperty("RealType").GetValue(clrWrapperA, null) as Type;
+                        Type realType = clrWrapperA.GetType().GetProperty("InterfaceType").GetValue(clrWrapperA, null) as Type;
                         if (realType != null)
                         {
-                            string name = clrWrapperA.GetType().GetProperty("ClassName").GetValue(clrWrapperA, null) as string;
-                            string clazzName = ClrProxiesMap.GetInterfaceName(name, type).Replace('.', '/');
+                            string clazzName = GetInterfaceName(type);
                             Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
                             if (clazz != null)
                             {

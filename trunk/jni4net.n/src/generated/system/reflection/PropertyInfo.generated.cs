@@ -23,7 +23,7 @@ namespace System.Reflection {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Reflection.PropertyInfo))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.PropertyInfo))]
     internal sealed partial class @__PropertyInfo : global::java.lang.Object {
         

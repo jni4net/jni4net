@@ -23,8 +23,9 @@ namespace java_.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
-    internal unsafe partial class @__IObject : global::java.lang.Object, global::java_.lang.IObject {
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java_.lang.IObject))]
+    internal unsafe partial class @__IObject : global::java.lang.Object, global::java_.lang.IObject
+    {
         
         internal static global::java.lang.Class staticClass;
         

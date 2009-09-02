@@ -71,7 +71,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Collection))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Collection))]
     internal sealed partial class @__Collection : global::java.lang.Object, global::java.util.Collection {
         

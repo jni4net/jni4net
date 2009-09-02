@@ -23,7 +23,7 @@ namespace System.Runtime.Serialization {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Runtime.Serialization.ISerializable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.ISerializable))]
     internal sealed partial class @__ISerializable : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
         

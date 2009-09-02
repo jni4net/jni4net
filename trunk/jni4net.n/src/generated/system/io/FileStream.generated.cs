@@ -23,7 +23,7 @@ namespace System.IO {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.FileStream))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.FileStream))]
     internal sealed partial class @__FileStream : global::java.lang.Object {
         

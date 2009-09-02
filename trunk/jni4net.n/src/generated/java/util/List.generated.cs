@@ -59,7 +59,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.List))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.List))]
     internal sealed partial class @__List : global::java.lang.Object, global::java.util.List {
         

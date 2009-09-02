@@ -23,7 +23,7 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.InvalidOperationException))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.InvalidOperationException))]
     internal sealed partial class @__InvalidOperationException : global::java.lang.Object {
         

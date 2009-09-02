@@ -27,15 +27,5 @@ namespace net.sf.jni4net.attributes
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class JavaClassAttribute : Attribute
     {
-        public JavaClassAttribute()
-        {
-        }
-
-        public JavaClassAttribute(string className)
-        {
-            ClassName = className;
-        }
-
-        public string ClassName { get; private set; }
     }
 }

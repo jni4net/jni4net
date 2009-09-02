@@ -23,7 +23,7 @@ namespace net.sf.jni4net {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.Bridge))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.Bridge))]
     internal sealed partial class @__Bridge : global::java.lang.Object {
         
