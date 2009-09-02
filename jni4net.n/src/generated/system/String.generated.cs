@@ -23,7 +23,7 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(string))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(string))]
     internal sealed partial class @__String : global::java.lang.Object {
         

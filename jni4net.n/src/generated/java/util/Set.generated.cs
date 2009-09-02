@@ -29,7 +29,7 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Set))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Set))]
     internal sealed partial class @__Set : global::java.lang.Object, global::java.util.Set {
         

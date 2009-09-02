@@ -32,7 +32,7 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Flushable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Flushable))]
     internal sealed partial class @__Flushable : global::java.lang.Object, global::java.io.Flushable {
         

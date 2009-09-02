@@ -100,7 +100,7 @@ namespace net.sf.jni4net.utils
             JavaClassAttribute classAttribute = GetJavaClassAttribute(type);
             if (classAttribute != null)
             {
-                JavaProxyRecord res = RegisterProxy(env, type, type, classAttribute.ClassName);
+                JavaProxyRecord res = RegisterProxy(env, type, type, null);
                 if (write)
                 {
                     WriteRecord(res);

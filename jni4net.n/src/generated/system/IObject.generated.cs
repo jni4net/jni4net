@@ -29,7 +29,7 @@ namespace system {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::system.IObject))]
     internal unsafe partial class @__IObject : global::java.lang.Object {
         
         internal static global::java.lang.Class staticClass;

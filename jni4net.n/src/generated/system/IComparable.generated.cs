@@ -23,7 +23,7 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IComparable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IComparable))]
     internal sealed partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
         

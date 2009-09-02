@@ -32,7 +32,7 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Closeable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable))]
     internal sealed partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
         

@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -393,6 +393,17 @@ namespace net.sf.jni4net.proxygen.model
             }
             type.MethodsWithInterfaces.Add(res);
             type.Methods.Add(res);
+        }
+
+        private static string GetInterfaceName(Type type)
+        {
+            string clazzName = type.Namespace.ToLowerInvariant() + "." + type.Name.Replace("__", "");
+            if (clazzName == "java.lang.IObject")
+            {
+                clazzName = "java_.lang.IObject";
+            }
+            clazzName = clazzName.Replace('.', '/');
+            return clazzName;
         }
     }
 }

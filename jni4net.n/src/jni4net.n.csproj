@@ -27,7 +27,8 @@
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>false</RegisterForComInterop>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <NoWarn>0109,0108,0628,0114,0108,0618</NoWarn>
+    <NoWarn>
+    </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,6 +47,8 @@
       <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
@@ -217,6 +220,10 @@
     <Compile Include="system\__Exception.cs" />
     <Compile Include="system\__Object.cs" />
     <Compile Include="utils\IConstructionHelper.cs" />
+    <Compile Include="utils\Registry.cs" />
+    <Compile Include="utils\Registry.helpers.cs" />
+    <Compile Include="utils\Registry.register.cs" />
+    <Compile Include="utils\RegistryRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

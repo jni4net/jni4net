@@ -76,6 +76,7 @@
     <Compile Include="generator\CLRWrapperGenerator.cs" />
     <Compile Include="generator\Generator.Helpers.cs" />
     <Compile Include="generator\JVMClassGenerator.cs" />
+    <Compile Include="generator\JVMStaticGenerator.cs" />
     <Compile Include="model\Repository.CLR.cs" />
     <Compile Include="model\Repository.JVM.cs" />
   </ItemGroup>

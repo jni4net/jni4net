@@ -21,9 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using java.lang;
 
 namespace net.sf.jni4net.jni
 {
@@ -47,6 +49,15 @@ namespace net.sf.jni4net.jni
                 throw new JNIException("Can'type find" + type.Name + "." + clrName);
             }
             return Create(methodInfo, javaName, javaSignature);
+        }
+
+        public unsafe static void Register(List<JNINativeMethod> registrations, Class jvmProxy, JNIEnv env)
+        {
+            JNINativeMethod[] methods = registrations.ToArray();
+            fixed (JNINativeMethod* m = &(methods[0]))
+            {
+                env.RegisterNatives(jvmProxy, m, methods.Length);
+            }
         }
 
         public IntPtr name; //char* 

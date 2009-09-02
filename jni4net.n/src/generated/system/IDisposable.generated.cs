@@ -23,7 +23,7 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IDisposable))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IDisposable))]
     internal sealed partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
         

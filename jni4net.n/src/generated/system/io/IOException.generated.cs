@@ -23,7 +23,7 @@ namespace System.IO {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.IOException))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.IOException))]
     internal sealed partial class @__IOException : global::java.lang.Object {
         

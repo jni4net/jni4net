@@ -82,14 +82,14 @@ namespace net.sf.jni4net.utils
             {
                 if (!Bridge.BindNative)
                 {
-                    res = CreateRecord(null, null, wrapper, wrapperAttribute.RealType, null);
+                    res = CreateRecord(null, null, wrapper, wrapperAttribute.InterfaceType, null);
                     if (write)
                     {
                         WriteRecord(res);
                     }
                     return res;
                 }
-                return RegisterWrapper(env, wrapper, wrapperAttribute.ClassName, wrapperAttribute.RealType, write);
+                return RegisterWrapper(env, wrapper, null, wrapperAttribute.InterfaceType, write);
             }
 
             return null;

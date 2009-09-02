@@ -38,7 +38,7 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute()]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.ParameterizedType))]
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.ParameterizedType))]
     internal sealed partial class @__ParameterizedType : global::java.lang.Object, global::java.lang.reflect.ParameterizedType {
         
