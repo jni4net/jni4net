@@ -220,6 +220,7 @@
     <Compile Include="system\__Exception.cs" />
     <Compile Include="system\__Object.cs" />
     <Compile Include="utils\IConstructionHelper.cs" />
+    <Compile Include="utils\Registry.resolve.cs" />
     <Compile Include="utils\Registry.cs" />
     <Compile Include="utils\Registry.helpers.cs" />
     <Compile Include="utils\Registry.register.cs" />

@@ -17,31 +17,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package net.sf.jni4net.tested;
 
-import system.IComparable;
-
 /**
  * @author Pavel Savara (original)
  */
-public class JInterfacesHelper {
-	public CWithJavaInterface getCWithJavaInterfaceC (CWithJavaInterface a){
-		return a;
+public class JWithClrInterfaceExt extends JWithClrInterface{
+	public JWithClrInterfaceExt(int value) {
+		super(value);
 	}
-
-	public Runnable getCWithJavaInterface (Runnable a){
-		return a;
-	}
-
-	public JWithClrInterface createJWithClrInterface (int i){
-		return new JWithClrInterface(i);
-	}
-
-	public IComparable createJWithClrInterfaceUnreg (int i){
-		return new JWithClrInterfaceUnreg(i);
-	}
-
-	public JWithClrInterface createJWithClrInterfaceExt(int i){
-		return new JWithClrInterfaceExt(i);
-	}
-
-
 }

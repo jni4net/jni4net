@@ -53,6 +53,7 @@
       <Link>generated\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BasicTests.cs" />
+    <Compile Include="BTests.cs" />
     <Compile Include="CallInstanceFieldsTest.cs" />
     <Compile Include="CallInstanceMethodsTest.cs" />
     <Compile Include="CallStaticMethodsTest.cs" />

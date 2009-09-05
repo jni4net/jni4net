@@ -29,5 +29,10 @@ namespace net.sf.jni4net.utils
         public Class JVMStatic;
         public MethodId JVMConstructor;
         public bool JVMBound;
+
+        public override string ToString()
+        {
+            return JVMName;
+        }
     }
 }

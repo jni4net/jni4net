@@ -1,3 +1,4 @@
+using System;
 using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.inj
@@ -7,5 +8,13 @@ namespace net.sf.jni4net.inj
         int getClrHandle();
 
         void initProxy(int par0);
+    }
+
+    partial class __IClrProxy
+    {
+        public static int getClrHandle(JNIEnv env, IntPtr obj)
+        {
+            return env.CallIntMethod(obj, _getClrHandle0);
+        }
     }
 }

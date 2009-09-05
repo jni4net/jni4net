@@ -25,6 +25,7 @@ using System.Runtime.InteropServices;
 
 namespace net.sf.jni4net.utils
 {
+    //TODO solve this for 64bit platform
     public static class IntHandle
     {
         public static void Free(int ptr)

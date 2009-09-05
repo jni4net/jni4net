@@ -158,32 +158,10 @@ namespace net.sf.jni4net.utils
             }
             catch (Exception ex)
             {
-                throw new JNIException("Can't initialize class " + record.CLRName, ex);
+                throw new JNIException("Can't initialize proxy " + record.CLRName, ex);
             }
+            //TODO record.JVMStatic.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, record.CLRInterface);
         }
 
-        private void RegisterType(Type type, bool bindJVM, JNIEnv env)
-        {
-            RegistryRecord record = null;
-            RegisterWrapper(type, ref record);
-            RegisterInterfaceProxy(type, ref record);
-            RegisterClassProxy(type, ref record);
-            if (record != null)
-            {
-                if (bindJVM && !record.JVMBound)
-                {
-                    RegisterClass(record, env);
-                    if (record.CLRProxy != null)
-                    {
-                        RegisterStaticAndMethods(record, env);
-                    }
-                    if (record.CLRWrapper != null)
-                    {
-                        RegisterNative(record.CLRWrapperInitMethod, env, record.JVMProxy, record.JVMInterface);
-                    }
-                    record.JVMBound = true;
-                }
-            }
-        }
     }
 }
