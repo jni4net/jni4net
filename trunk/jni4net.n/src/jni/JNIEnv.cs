@@ -366,6 +366,13 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public int CallIntMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            int res = callIntMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
         public short CallShortMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             short res = callShortMethod(native, obj.Native, methodIdNative.native, args);
