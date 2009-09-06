@@ -112,22 +112,6 @@ namespace net.sf.jni4net
             return Convertor.C2JObject(JNIEnv.ThreadEnv, obj) as TRes;
         }
 
-        /*
-        public static TRes ToCLR<TRes>(IJavaProxy obj)
-        {
-            return Convertor.J2C<TRes>(JNIEnv.ThreadEnv, obj.Native);
-        }
-
-        public static IObject ToJVM(object obj)
-        {
-            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj);
-        }
-
-        public static TRes ToJVM<TRes>(object obj) where TRes : class, IObject
-        {
-            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj) as TRes;
-        }*/
-
         public static Class TypeToKnownClass(Type real)
         {
             return Registry.Default.GetCLRRecord(real).JVMInterface;

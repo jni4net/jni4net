@@ -66,7 +66,7 @@ namespace java.lang {
             // (Ljava/lang/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.Comparable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Comparable>(__env, @__obj);
+            global::java.lang.Comparable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Comparable>(__env, @__obj);
             return real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);

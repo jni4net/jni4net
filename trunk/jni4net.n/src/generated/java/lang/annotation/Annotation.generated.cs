@@ -102,7 +102,7 @@ namespace java.lang.annotation {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
+            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
             return real.hashCode();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -113,7 +113,7 @@ namespace java.lang.annotation {
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
+            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
             return real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -124,7 +124,7 @@ namespace java.lang.annotation {
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
+            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.toString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -135,7 +135,7 @@ namespace java.lang.annotation {
             // ()Ljava/lang/Class;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.annotation.Annotation>(__env, @__obj);
+            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.annotationType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

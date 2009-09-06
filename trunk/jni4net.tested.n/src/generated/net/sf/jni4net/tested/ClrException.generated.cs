@@ -70,7 +70,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.ClrException real = new global::net.sf.jni4net.tested.ClrException();
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         

@@ -90,7 +90,7 @@ namespace java.lang.reflect {
             // ()[Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
+            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getActualTypeArguments());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -101,7 +101,7 @@ namespace java.lang.reflect {
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
+            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getOwnerType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -112,7 +112,7 @@ namespace java.lang.reflect {
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
+            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getRawType());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

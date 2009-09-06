@@ -222,7 +222,7 @@ namespace java.util {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.hashCode();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -233,7 +233,7 @@ namespace java.util {
             // (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.put(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par1)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -244,7 +244,7 @@ namespace java.util {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             real.clear();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -254,7 +254,7 @@ namespace java.util {
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -265,7 +265,7 @@ namespace java.util {
             // ()Ljava/util/Set;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.entrySet());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -276,7 +276,7 @@ namespace java.util {
             // (Ljava/lang/Object;)Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.get(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -287,7 +287,7 @@ namespace java.util {
             // (Ljava/util/Map;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             real.putAll(global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -297,7 +297,7 @@ namespace java.util {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.size();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -308,7 +308,7 @@ namespace java.util {
             // ()Ljava/util/Collection;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.values());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -319,7 +319,7 @@ namespace java.util {
             // (Ljava/lang/Object;)Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.remove(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -330,7 +330,7 @@ namespace java.util {
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.containsKey(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -341,7 +341,7 @@ namespace java.util {
             // (Ljava/lang/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.containsValue(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -352,7 +352,7 @@ namespace java.util {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return real.isEmpty();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -363,7 +363,7 @@ namespace java.util {
             // ()Ljava/util/Set;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
+            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.keySet());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

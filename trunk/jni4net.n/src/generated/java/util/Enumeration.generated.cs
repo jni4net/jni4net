@@ -78,7 +78,7 @@ namespace java.util {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Enumeration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Enumeration>(__env, @__obj);
+            global::java.util.Enumeration real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Enumeration>(__env, @__obj);
             return real.hasMoreElements();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -89,7 +89,7 @@ namespace java.util {
             // ()Ljava/lang/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.util.Enumeration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Enumeration>(__env, @__obj);
+            global::java.util.Enumeration real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Enumeration>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.nextElement());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

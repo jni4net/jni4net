@@ -57,7 +57,7 @@ namespace System {
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IComparable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IComparable>(__env, @__obj);
+            global::System.IComparable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IComparable>(__env, @__obj);
             return real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);

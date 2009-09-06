@@ -66,7 +66,7 @@ namespace java.lang {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.lang.Runnable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Runnable>(__env, @__obj);
+            global::java.lang.Runnable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Runnable>(__env, @__obj);
             real.run();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

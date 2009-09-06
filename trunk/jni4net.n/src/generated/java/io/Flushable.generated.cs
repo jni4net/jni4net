@@ -66,7 +66,7 @@ namespace java.io {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::java.io.Flushable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.io.Flushable>(__env, @__obj);
+            global::java.io.Flushable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Flushable>(__env, @__obj);
             real.flush();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

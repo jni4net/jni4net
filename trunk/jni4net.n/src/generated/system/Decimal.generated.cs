@@ -108,7 +108,7 @@ namespace System {
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IFormattable)(real)).ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, formatProvider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -119,7 +119,7 @@ namespace System {
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IComparable)(real)).CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -130,7 +130,7 @@ namespace System {
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IConvertible)(real)).GetTypeCode());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -141,7 +141,7 @@ namespace System {
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToBoolean(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -152,7 +152,7 @@ namespace System {
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToChar(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(char);
@@ -163,7 +163,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((sbyte)(((global::System.IConvertible)(real)).ToSByte(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider))));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(sbyte);
@@ -174,7 +174,7 @@ namespace System {
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToByte(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(byte);
@@ -185,7 +185,7 @@ namespace System {
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToInt16(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(short);
@@ -196,7 +196,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((ushort)(((global::System.IConvertible)(real)).ToUInt16(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider))));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(ushort);
@@ -207,7 +207,7 @@ namespace System {
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToInt32(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -218,7 +218,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((uint)(((global::System.IConvertible)(real)).ToUInt32(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider))));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(uint);
@@ -229,7 +229,7 @@ namespace System {
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToInt64(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(long);
@@ -240,7 +240,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((ulong)(((global::System.IConvertible)(real)).ToUInt64(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider))));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(ulong);
@@ -251,7 +251,7 @@ namespace System {
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToSingle(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(float);
@@ -262,7 +262,7 @@ namespace System {
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return ((global::System.IConvertible)(real)).ToDouble(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(double);
@@ -273,7 +273,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IConvertible)(real)).ToDecimal(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -284,7 +284,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IConvertible)(real)).ToDateTime(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -295,7 +295,7 @@ namespace System {
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IConvertible)(real)).ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -306,7 +306,7 @@ namespace System {
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IConvertible)(real)).ToType(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, conversionType), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, provider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -367,7 +367,7 @@ namespace System {
             // (LSystem/Decimal;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -388,7 +388,7 @@ namespace System {
             // (LSystem/Decimal;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return real.Equals(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -419,7 +419,7 @@ namespace System {
             // (LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            decimal real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Decimal>(__env, @__obj);
+            decimal real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Decimal>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, format)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -671,7 +671,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(value);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -681,7 +681,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(value);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -691,7 +691,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(value);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -701,7 +701,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(value);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -711,7 +711,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Int32[]>(__env, bits));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -721,7 +721,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             decimal real = new decimal(lo, mid, hi, isNegative, scale);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         

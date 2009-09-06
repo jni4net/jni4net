@@ -57,7 +57,7 @@ namespace System.Runtime.Serialization {
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Runtime.Serialization.ISerializable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.ISerializable>(__env, @__obj);
+            global::System.Runtime.Serialization.ISerializable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.ISerializable>(__env, @__obj);
             real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.SerializationInfo>(__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.StreamingContext>(__env, context));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
