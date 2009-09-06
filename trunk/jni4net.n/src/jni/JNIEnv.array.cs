@@ -231,17 +231,6 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        internal object GetObjectArrayElement(Object array, int index)
-        {
-            return GetObjectArrayElement(array.native, index);
-        }
-
-        internal object GetObjectArrayElement(IntPtr array, int index)
-        {
-            IntPtr res = GetObjectArrayElementPtr(array, index);
-            return Convertor.J2C(this, res);
-        }
-
         public void SetObjectArrayElement(Object array, int index, IJavaProxy val)
         {
             SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.Native);

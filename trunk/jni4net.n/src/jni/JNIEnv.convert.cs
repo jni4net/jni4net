@@ -31,11 +31,6 @@ namespace net.sf.jni4net.jni
             CallVoidMethod(obj, method, signature, Convertor.ConverArgs(this, args));
         }
 
-        public object CallObjectMethod(IJavaProxy obj, string method, string signature, params object[] args)
-        {
-            return CallObjectMethod(obj, method, signature, Convertor.ConverArgs(this, args));
-        }
-
         public bool CallBooleanMethod(IJavaProxy obj, string method, string sig, params object[] args)
         {
             return CallBooleanMethod(obj, method, sig, Convertor.ConverArgs(this, args));
