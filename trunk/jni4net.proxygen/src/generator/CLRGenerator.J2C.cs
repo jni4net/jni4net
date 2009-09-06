@@ -154,13 +154,21 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        var callExpression =
+                        CodeTypeReference[] parameters;
+                        if (method.ReturnType == Repository.systemString)
+                        {
+                            parameters = new[] { TypeReference(typeof(java.lang.String)), TypeReference(typeof(string)) };
+                        }
+                        else
+                        {
+                            parameters = new[] { method.ReturnType.CLRReference };
+                        }
+                        CodeMethodInvokeExpression callExpression =
                             new CodeMethodInvokeExpression(
                                 new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                                  "C2J", new[] { method.ReturnType.CLRReference }),
-                                                                  envVariable, call);
+                                                                  "C2J", parameters),
+                                envVariable, call);
 
-                        
                         callst = new CodeMethodReturnStatement(callExpression);
                         tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }

@@ -67,12 +67,22 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    var castExpression =
+                    CodeTypeReference[] parameters;
+                    if (method.ReturnType == Repository.systemString)
+                    {
+                        parameters = new[] { TypeReference(typeof(java.lang.String)), TypeReference(typeof(string)) };
+                    }
+                    else
+                    {
+                        parameters = new[] { method.ReturnType.CLRReference };
+                    }
+                    CodeMethodInvokeExpression callExpression =
                         new CodeMethodInvokeExpression(
                             new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                              "J2C", new[] { method.ReturnType.CLRReference }),
-                                                              envVariable,invokeExpression);
-                    call = new CodeMethodReturnStatement(castExpression);
+                                                              "J2C", parameters),
+                            envVariable, invokeExpression);
+
+                    call = new CodeMethodReturnStatement(callExpression);
                 }
             }
             return call;
