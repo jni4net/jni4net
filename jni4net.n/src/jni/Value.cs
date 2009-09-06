@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using java.lang;
 using net.sf.jni4net.utils;
 using Object=java.lang.Object;
 
@@ -31,7 +32,12 @@ namespace net.sf.jni4net.jni
     [StructLayout(LayoutKind.Explicit, Size = 8), NativeCppClass]
     public struct Value
     {
-        public Value(object o)
+        public static Value Null
+        {
+            get { return new Value(); }
+        }
+
+        public Value(IntPtr o)
         {
             _bool = 0;
             _byte = 0;
@@ -41,246 +47,9 @@ namespace net.sf.jni4net.jni
             _long = 0;
             _float = 0;
             _double = 0;
-            _object = IntPtr.Zero;
-
-            init(o, JNIEnv.GetEnvForVm(null));
+            _object = o;
         }
 
-        public Value(object o, JNIEnv env)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            init(o, env);
-        }
-
-        private void init(object o, JNIEnv env)
-        {
-            if (o == null)
-            {
-                _object = IntPtr.Zero;
-            }
-            else if (o is int)
-            {
-                _int = (int) o;
-            }
-            else if (o is bool)
-            {
-                _bool = ((bool) o) ? (byte) 1 : (byte) 0;
-            }
-            else if (o is byte)
-            {
-                _bool = ((byte) o);
-            }
-            else if (o is char)
-            {
-                _char = (short) ((char) o);
-            }
-            else if (o is short)
-            {
-                _short = ((short) o);
-            }
-            else if (o is long)
-            {
-                _long = ((long) o);
-            }
-            else if (o is float)
-            {
-                _float = ((float) o);
-            }
-            else if (o is double)
-            {
-                _double = ((double) o);
-            }
-            else if (o is Value)
-            {
-                _double = ((Value) o)._double;
-            }
-            else if (o is Object)
-            {
-                _object = ((Object) o).native;
-            }
-            else if (o is string)
-            {
-                _object = env.NewString(((string) o)).native;
-            }
-            else if (o is Array)
-            {
-                var a = o as Array;
-                Type elementType = o.GetType().GetElementType();
-                if (typeof (Object).IsAssignableFrom(elementType))
-                {
-                    Object array = env.NewObjectArray(a.Length, JavaProxiesMap.TypeToKnownClass(elementType), null);
-                    _object = array.native;
-                    for (int i = 0; i < a.Length; i++)
-                    {
-                        env.SetObjectArrayElement(array, i, (Object) a.GetValue(i));
-                    }
-                }
-            }
-            else
-            {
-                _object = ClrProxiesMap.WrapClr(env, o);
-            }
-        }
-
-        public Value(int i)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _int = i;
-        }
-
-        public Value(bool z)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _bool = z ? (byte) 1 : (byte) 0;
-        }
-
-        public Value(byte b)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _byte = b;
-        }
-
-        public Value(char c)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _char = (short) c; //test
-        }
-
-        public Value(short s)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _char = s;
-        }
-
-        public Value(float f)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _float = f;
-        }
-
-        public Value(double d)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _double = d;
-        }
-
-        public Value(Object o)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _object = o.native;
-        }
-
-        public Value(IJavaProxy o)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _object = o.Native;
-        }
-
-
-        public Value(Value o)
-        {
-            _bool = 0;
-            _byte = 0;
-            _char = 0;
-            _short = 0;
-            _int = 0;
-            _long = 0;
-            _float = 0;
-            _double = 0;
-            _object = IntPtr.Zero;
-
-            _double = o._double;
-        }
 
         public Value(int[] i)
         {
@@ -295,7 +64,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(i).native;
+            _object = Convertor.C2J(env, i);
         }
 
         public Value(bool[] z)
@@ -311,7 +80,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(z).native;
+            _object = Convertor.C2J(env, z);
         }
 
         public Value(byte[] b)
@@ -327,7 +96,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(b).native;
+            _object = Convertor.C2J(env, b);
         }
 
         public Value(char[] c)
@@ -343,7 +112,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(c).native;
+            _object = Convertor.C2J(env, c);
         }
 
         public Value(short[] s)
@@ -359,7 +128,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(s).native;
+            _object = Convertor.C2J(env, s);
         }
 
         public Value(float[] f)
@@ -375,7 +144,7 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(f).native;
+            _object = Convertor.C2J(env, f);
         }
 
         public Value(double[] d)
@@ -391,14 +160,14 @@ namespace net.sf.jni4net.jni
             _object = IntPtr.Zero;
 
             JNIEnv env = JNIEnv.ThreadEnv;
-            _object = env.ConvertArrayToJava(d).native;
+            _object = Convertor.C2J(env, d);
         }
 
         public static Value CreateArray<T>(T[] o)
         {
             var v = new Value();
             JNIEnv env = JNIEnv.ThreadEnv;
-            v._object = env.ConvertArrayToJava(o).native;
+            v._object = Convertor.C2J(env, o);
             return v;
         }
 

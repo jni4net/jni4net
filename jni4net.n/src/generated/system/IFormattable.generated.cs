@@ -42,7 +42,7 @@ namespace System {
         
         public string ToString(string format, global::System.IFormatProvider formatProvider) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<string>(env.CallObjectMethod(this, global::System.@__IFormattable._ToString0, new global::net.sf.jni4net.jni.Value(format), new global::net.sf.jni4net.jni.Value(formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<string>(env, env.CallObjectMethodPtr(this, global::System.@__IFormattable._ToString0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, format), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, formatProvider)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -58,7 +58,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IFormattable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormattable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.ToString(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.String>(__env, format), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IFormatProvider>(__env, formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, formatProvider)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

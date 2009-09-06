@@ -134,7 +134,7 @@ namespace java.util {
         
         public global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._put1, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._put1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
         }
         
         public void clear() {
@@ -144,22 +144,22 @@ namespace java.util {
         
         public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._equals3, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.util.@__Map._equals3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         public global::java.util.Set entrySet() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Set>(env.CallObjectMethod(this, global::java.util.@__Map._entrySet4));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._entrySet4));
         }
         
         public global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._get5, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._get5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         public void putAll(global::java.util.Map par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.@__Map._putAll6, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.util.@__Map._putAll6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         public int size() {
@@ -169,22 +169,22 @@ namespace java.util {
         
         public global::java.util.Collection values() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Collection>(env.CallObjectMethod(this, global::java.util.@__Map._values8));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Collection>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._values8));
         }
         
         public global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Map._remove9, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._remove9, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         public bool containsKey(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._containsKey10, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.util.@__Map._containsKey10, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         public bool containsValue(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._containsValue11, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.util.@__Map._containsValue11, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         public bool isEmpty() {
@@ -194,7 +194,7 @@ namespace java.util {
         
         public global::java.util.Set keySet() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Set>(env.CallObjectMethod(this, global::java.util.@__Map._keySet13));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._keySet13));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -234,7 +234,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.put(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0), global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.put(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par1)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -255,7 +255,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return real.equals(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            return real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -266,7 +266,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.entrySet());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.entrySet());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -277,7 +277,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.get(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.get(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -288,7 +288,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            real.putAll(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, par0));
+            real.putAll(global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -309,7 +309,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.values());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.values());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -320,7 +320,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.remove(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.remove(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -331,7 +331,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return real.containsKey(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            return real.containsKey(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -342,7 +342,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return real.containsValue(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            return real.containsValue(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -364,7 +364,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Map real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.keySet());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.keySet());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

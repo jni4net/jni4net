@@ -58,41 +58,26 @@ namespace net.sf.jni4net.jni
             return javaVM;
         }
 
-        public Value[] ConverArgs(params object[] args)
-        {
-            if (args.Length == 0)
-            {
-                return null;
-            }
-            var jargs = new Value[args.Length];
-            for (int i = 0; i < args.Length; i++)
-            {
-                jargs[i] = new Value(args[i], this);
-            }
-            return jargs;
-        }
-
         #endregion
 
         #region reflection
 
         public Class FindClass(string name)
         {
-            IntPtr invoke = findClass.Invoke(native, name);
+            IntPtr clazz = findClass.Invoke(native, name);
             ExceptionTest();
-            return Wrap<Class>(invoke);
+            return Convertor.OptiJ2CP<Class>(this, clazz);
         }
 
         public Class FindClassNoThrow(string name)
         {
-            IntPtr invoke = findClass.Invoke(native, name);
+            IntPtr clazz = findClass.Invoke(native, name);
             if (ExceptionRead())
             {
                 return null;
             }
-            return Wrap<Class>(invoke);
+            return Convertor.OptiJ2CP<Class>(this, clazz);
         }
-
 
         public Class GetObjectClass(IJavaProxy obj)
         {
@@ -103,7 +88,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = getObjectClass.Invoke(native, obj);
             ExceptionTest();
-            return Wrap<Class>(res);
+            return Convertor.OptiJ2CP<Class>(this, res);
         }
 
         public MethodId GetStaticMethodID(Class clazz, string name, string sig)
@@ -144,7 +129,7 @@ namespace net.sf.jni4net.jni
             IntPtr res = toReflectedField.Invoke(native, cls.native, fieldID.native,
                                                  isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
-            return Wrap<Field>(res);
+            return Convertor.OptiJ2CP<Field>(this, res);
         }
 
         public Method ToReflectedMethod(Class cls, MethodId methodId, bool isStatic)
@@ -152,7 +137,7 @@ namespace net.sf.jni4net.jni
             IntPtr res = toReflectedMethod.Invoke(native, cls.native, methodId.native,
                                                   isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
-            return Wrap<Method>(res);
+            return Convertor.OptiJ2CP<Method>(this, res);
         }
 
         public MethodId FromReflectedMethod(Method methodId)
@@ -196,11 +181,10 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        public IJavaProxy CallStaticObjectMethod(Class clazz, MethodId methodIdNative, params Value[] args)
+        public object CallStaticObjectMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
-            IntPtr res = callStaticObjectMethod(native, clazz.native, methodIdNative.native, args);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            IntPtr res = CallStaticObjectMethodPtr(clazz, methodIdNative, args);
+            return Convertor.J2C(this, res);
         }
 
         public int CallStaticIntMethod(Class clazz, MethodId methodIdNative, params Value[] args)
@@ -259,12 +243,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public void CallStaticMethod(Class clazz, string method, string sig, params object[] args)
-        {
-            CallStaticVoidMethod(clazz, method, sig, ConverArgs(args));
-        }
-
-        private void CallStaticVoidMethod(Class clazz, string method, string sig, params Value[] args)
+        internal void CallStaticVoidMethod(Class clazz, string method, string sig, params Value[] args)
         {
             MethodId idNative = GetStaticMethodID(clazz, method, sig);
             if (idNative != null)
@@ -273,11 +252,6 @@ namespace net.sf.jni4net.jni
                 return;
             }
             throw new ArgumentException();
-        }
-
-        public TRes CallStaticMethod<TRes>(Class clazz, string method, string sig, params object[] args)
-        {
-            return CallStaticMethod<TRes>(clazz, method, sig, ConverArgs(args));
         }
 
         private TRes CallStaticMethod<TRes>(Class clazz, string method, string sig, params Value[] args)
@@ -337,20 +311,30 @@ namespace net.sf.jni4net.jni
 
         #region call instance
 
+        public void CallVoidMethod(IntPtr obj, MethodId methodId, params Value[] args)
+        {
+            callVoidMethod(native, obj, methodId.native, args);
+            //TODO result could be tested in Java 1.6
+            ExceptionTest();
+        }
+
         public void CallVoidMethod(IJavaProxy obj, MethodId methodId, params Value[] args)
         {
-            //TODO result could be tested in Java 1.6
-            callVoidMethod(native, obj.Native, methodId.native, args);
-            ExceptionTest();
+            CallVoidMethod(obj.Native, methodId, args);
         }
 
-        public IJavaProxy CallObjectMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
+        public object CallObjectMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
-            IntPtr res = callObjectMethod(native, obj.Native, methodIdNative.native, args);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            IntPtr res = CallObjectMethodPtr(obj, methodIdNative, args);
+            return Convertor.J2C(this, res);
         }
 
+        public object CallObjectMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            IntPtr res = callObjectMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return Convertor.J2C(this, res);
+        }
 
         public bool CallBooleanMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
@@ -415,35 +399,6 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public void CallVoidMethod(IJavaProxy obj, string method, string signature, params object[] args)
-        {
-            CallVoidMethod(obj, method, signature, ConverArgs(args));
-        }
-
-        public IObject CallObjectMethod(IJavaProxy obj, string method, string signature, params object[] args)
-        {
-            return CallObjectMethod(obj, method, signature, ConverArgs(args));
-        }
-
-        public bool CallBooleanMethod(IJavaProxy obj, string method, string sig, params object[] args)
-        {
-            return CallBooleanMethod(obj, method, sig, ConverArgs(args));
-        }
-
-        public int CallIntMethod(IJavaProxy obj, string method, string signature, params object[] args)
-        {
-            return CallIntMethod(obj, method, signature, ConverArgs(args));
-        }
-
-        public string CallStringMethod(IJavaProxy obj, string method, string signature, params object[] args)
-        {
-            var str = (Object) CallObjectMethod(obj, method, signature, ConverArgs(args));
-            byte b = 0;
-            IntPtr chars = GetStringChars(str.native, &b);
-            string result = Marshal.PtrToStringUni(chars);
-            ReleaseStringChars(str.native, chars);
-            return result;
-        }
 
         private void CallVoidMethod(IJavaProxy obj, string method, string sig, params Value[] args)
         {
@@ -460,7 +415,7 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private IObject CallObjectMethod(IJavaProxy obj, string method, string sig, params Value[] args)
+        private object CallObjectMethod(IJavaProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
             if (objectClass != null)
@@ -500,11 +455,6 @@ namespace net.sf.jni4net.jni
                 }
             }
             throw new ArgumentException();
-        }
-
-        public TRes CallMethod<TRes>(IJavaProxy obj, string method, string sig, params object[] args)
-        {
-            return CallMethod<TRes>(obj, method, sig, ConverArgs(args));
         }
 
         private TRes CallMethod<TRes>(IJavaProxy obj, string method, string sig, params Value[] args)
@@ -564,11 +514,10 @@ namespace net.sf.jni4net.jni
 
         #region getters instance
 
-        public IJavaProxy GetObjectField(IJavaProxy obj, FieldId fieldID)
+        public object GetObjectField(IJavaProxy obj, FieldId fieldID)
         {
-            IntPtr res = getObjectField(native, obj.Native, fieldID.native);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            IntPtr res = GetObjectFieldPtr(obj, fieldID);
+            return Convertor.J2C(this, res);
         }
 
         public bool GetBooleanField(IJavaProxy obj, FieldId fieldID)
@@ -632,7 +581,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public IObject GetObjectField(IJavaProxy obj, string fieldName, string sig)
+        public object GetObjectField(IJavaProxy obj, string fieldName, string sig)
         {
             Class objectClass = obj.GetClass();
             if (objectClass != null)
@@ -936,11 +885,10 @@ namespace net.sf.jni4net.jni
 
         #region getters static
 
-        public IJavaProxy GetStaticObjectField(Class clazz, FieldId fieldID)
+        public object GetStaticObjectField(Class clazz, FieldId fieldID)
         {
-            IntPtr res = getStaticObjectField(native, clazz.native, fieldID.native);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            IntPtr res = GetStaticObjectFieldPtr(clazz, fieldID);
+            return Convertor.J2C(this, res);
         }
 
 
@@ -1073,7 +1021,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = newDirectByteBuffer.Invoke(native, address, capacity);
             ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            return Convertor.OptiJ2CP<IJavaProxy>(this, res);
         }
 
         public void* GetDirectBufferAddress(Object buf)
@@ -1096,398 +1044,17 @@ namespace net.sf.jni4net.jni
 
         public String NewString(string unicode)
         {
-            IntPtr uni = Marshal.StringToHGlobalUni(unicode);
-            IntPtr res = newString(native, uni, unicode.Length);
-            ExceptionTest();
-            Marshal.FreeHGlobal(uni);
-            return Wrap<String>(res);
+            IntPtr res = NewStringPtr(unicode);
+            return Convertor.OptiJ2CP<String>(this, res);
         }
 
-        internal IntPtr GetStringChars(IntPtr str, byte* isCopy)
+        internal string ConvertToString(IntPtr javaString)
         {
-            IntPtr res = getStringChars(native, str, isCopy);
-            ExceptionTest();
-            return res;
-        }
-
-        internal void ReleaseStringChars(IntPtr str, IntPtr chars)
-        {
-            releaseStringChars(native, str, chars);
-            ExceptionTest();
-        }
-
-        #endregion
-
-        #region array
-
-        internal int GetArrayLength(Object array)
-        {
-            return GetArrayLength(array.native);
-        }
-
-        internal int GetArrayLength(IntPtr array)
-        {
-            int res = getArrayLength(native, array);
-            ExceptionTest();
-            return res;
-        }
-
-        internal IJavaProxy GetObjectArrayElement(Object array, int index)
-        {
-            return GetObjectArrayElement(array.native, index);
-        }
-
-        internal IJavaProxy GetObjectArrayElement(IntPtr array, int index)
-        {
-            IntPtr res = getObjectArrayElement(native, array, index);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
-        }
-
-        public Object NewObjectArray(int len, Class clazz, IJavaProxy init)
-        {
-            IntPtr res = newObjectArray(native, len, clazz.native, init == null ? IntPtr.Zero : init.Native);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        public void SetObjectArrayElement(Object array, int index, IJavaProxy val)
-        {
-            SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.Native);
-        }
-
-        public void SetObjectArrayElement(Object array, int index, IntPtr val)
-        {
-            setObjectArrayElement(native, array.native, index, val);
-            ExceptionTest();
-        }
-
-        internal Object NewBooleanArray(int len)
-        {
-            IntPtr res = newBooleanArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewByteArray(int len)
-        {
-            IntPtr res = newByteArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewShortArray(int len)
-        {
-            IntPtr res = newShortArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewCharArray(int len)
-        {
-            IntPtr res = newCharArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewIntArray(int len)
-        {
-            IntPtr res = newIntArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewLongArray(int len)
-        {
-            IntPtr res = newLongArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewFloatArray(int len)
-        {
-            IntPtr res = newFloatArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal Object NewDoubleArray(int len)
-        {
-            IntPtr res = newDoubleArray(native, len);
-            ExceptionTest();
-            return Wrap<Object>(res);
-        }
-
-        internal void GetIntArrayRegion(IJavaProxy array, int start, int len, int[] buf)
-        {
-            fixed (int* ptr = &buf[0])
-            {
-                getIntArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetCharArrayRegion(IJavaProxy array, int start, int len, char[] buf)
-        {
-            fixed (char* ptr = &buf[0])
-            {
-                getCharArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetByteArrayRegion(IJavaProxy array, int start, int len, byte[] buf)
-        {
-            fixed (byte* ptr = &buf[0])
-            {
-                getByteArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetShortArrayRegion(IJavaProxy array, int start, int len, short[] buf)
-        {
-            fixed (short* ptr = &buf[0])
-            {
-                getShortArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetLongArrayRegion(IJavaProxy array, int start, int len, long[] buf)
-        {
-            fixed (long* ptr = &buf[0])
-            {
-                getLongArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetFloatArrayRegion(IJavaProxy array, int start, int len, float[] buf)
-        {
-            fixed (float* ptr = &buf[0])
-            {
-                getFloatArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetDoubleArrayRegion(IJavaProxy array, int start, int len, double[] buf)
-        {
-            fixed (double* ptr = &buf[0])
-            {
-                getDoubleArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void GetBooleanArrayRegion(IJavaProxy array, int start, int len, bool[] buf)
-        {
-            fixed (bool* ptr = &buf[0])
-            {
-                getBooleanArrayRegion(native, array.Native, start, len, (byte*) ptr);
-            }
-            ExceptionTest();
-        }
-
-        public T[] ConvertArrayToNet<T>(IJavaProxy array)
-        {
-            return (T[]) ConvertArrayToNet(array, typeof (T));
-        }
-
-        public Array ConvertArrayToNet(IJavaProxy array, Type elementType)
-        {
-            int length = GetArrayLength((Object) array);
-            Array res = Array.CreateInstance(elementType, length);
-            if (!elementType.IsPrimitive)
-            {
-                for (int i = 0; i < length; i++)
-                {
-                    object element = Bridge.ToCLR(GetObjectArrayElement((Object) array, i));
-                    res.SetValue(element, i);
-                }
-            }
-            else if (elementType == typeof (int))
-            {
-                GetIntArrayRegion(array, 0, length, (int[]) res);
-            }
-            else if (elementType == typeof (char))
-            {
-                GetCharArrayRegion(array, 0, length, (char[]) res);
-            }
-            else if (elementType == typeof (byte))
-            {
-                GetByteArrayRegion(array, 0, length, (byte[]) res);
-            }
-            else if (elementType == typeof (long))
-            {
-                GetLongArrayRegion(array, 0, length, (long[]) res);
-            }
-            else if (elementType == typeof (short))
-            {
-                GetShortArrayRegion(array, 0, length, (short[]) res);
-            }
-            else if (elementType == typeof (double))
-            {
-                GetDoubleArrayRegion(array, 0, length, (double[]) res);
-            }
-            else if (elementType == typeof (float))
-            {
-                GetFloatArrayRegion(array, 0, length, (float[]) res);
-            }
-            else if (elementType == typeof (bool))
-            {
-                GetBooleanArrayRegion(array, 0, length, (bool[]) res);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-            return res;
-        }
-
-        internal void SetIntArrayRegion(IJavaProxy array, int start, int len, int[] buf)
-        {
-            fixed (int* ptr = &buf[0])
-            {
-                setIntArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetBooleanArrayRegion(IJavaProxy array, int start, int len, bool[] buf)
-        {
-            fixed (bool* ptr = &buf[0])
-            {
-                setBooleanArrayRegion(native, array.Native, start, len, (byte*) ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetByteArrayRegion(IJavaProxy array, int start, int len, byte[] buf)
-        {
-            fixed (byte* ptr = &buf[0])
-            {
-                setByteArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetCharArrayRegion(IJavaProxy array, int start, int len, char[] buf)
-        {
-            fixed (char* ptr = &buf[0])
-            {
-                setCharArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetShortArrayRegion(IJavaProxy array, int start, int len, short[] buf)
-        {
-            fixed (short* ptr = &buf[0])
-            {
-                setShortArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetLongArrayRegion(IJavaProxy array, int start, int len, long[] buf)
-        {
-            fixed (long* ptr = &buf[0])
-            {
-                setLongArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetFloatArrayRegion(IJavaProxy array, int start, int len, float[] buf)
-        {
-            fixed (float* ptr = &buf[0])
-            {
-                setFloatArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        internal void SetDoubleArrayRegion(IJavaProxy array, int start, int len, double[] buf)
-        {
-            fixed (double* ptr = &buf[0])
-            {
-                setDoubleArrayRegion(native, array.Native, start, len, ptr);
-            }
-            ExceptionTest();
-        }
-
-        public Object ConvertArrayToJava<T>(T[] array)
-        {
-            return ConvertArrayToJava(array, typeof (T));
-        }
-
-        public Object ConvertArrayToJava(Array array, Type type)
-        {
-            Object res;
-            int length = array.Length;
-            if (typeof (IObject).IsAssignableFrom(type))
-            {
-                res = NewObjectArray(length, JavaProxiesMap.TypeToKnownClass(type), null);
-                for (int i = 0; i < array.Length; i++)
-                {
-                    SetObjectArrayElement(res, i, (IJavaProxy) array.GetValue(i));
-                }
-            }
-            else if (typeof (string).IsAssignableFrom(type))
-            {
-                res = NewObjectArray(length, String._class, null);
-                for (int i = 0; i < array.Length; i++)
-                {
-                    SetObjectArrayElement(res, i, (String) (string) array.GetValue(i));
-                }
-            }
-            else if (typeof (int).IsAssignableFrom(type))
-            {
-                res = NewIntArray(length);
-                SetIntArrayRegion(res, 0, length, (int[]) array);
-            }
-            else if (typeof (bool).IsAssignableFrom(type))
-            {
-                res = NewBooleanArray(length);
-                SetBooleanArrayRegion(res, 0, length, (bool[]) array);
-            }
-            else if (typeof (long).IsAssignableFrom(type))
-            {
-                res = NewLongArray(length);
-                SetLongArrayRegion(res, 0, length, (long[]) array);
-            }
-            else if (typeof (double).IsAssignableFrom(type))
-            {
-                res = NewDoubleArray(length);
-                SetDoubleArrayRegion(res, 0, length, (double[]) array);
-            }
-            else if (typeof (byte).IsAssignableFrom(type))
-            {
-                res = NewByteArray(length);
-                SetByteArrayRegion(res, 0, length, (byte[]) array);
-            }
-            else if (typeof (short).IsAssignableFrom(type))
-            {
-                res = NewShortArray(length);
-                SetShortArrayRegion(res, 0, length, (short[]) array);
-            }
-            else if (typeof (float).IsAssignableFrom(type))
-            {
-                res = NewFloatArray(length);
-                SetFloatArrayRegion(res, 0, length, (float[]) array);
-            }
-            else if (typeof (char).IsAssignableFrom(type))
-            {
-                res = NewCharArray(length);
-                SetCharArrayRegion(res, 0, length, (char[]) array);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-            return res;
+            byte b = 0;
+            IntPtr chars = GetStringChars(javaString, &b);
+            string result = Marshal.PtrToStringUni(chars);
+            ReleaseStringChars(javaString, chars);
+            return result;
         }
 
         #endregion
@@ -1568,7 +1135,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = allocObject(native, clazz.native);
             ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            return Convertor.OptiJ2CP<IJavaProxy>(this, res);
         }
 
         public void NewObject(Class clazz, MethodId methodID, IJavaProxy obj, params Value[] args)
@@ -1578,36 +1145,20 @@ namespace net.sf.jni4net.jni
             obj.Init(this, res, clazz);
         }
 
-        public IntPtr NewObjectPtr(Class clazz, MethodId methodID, params Value[] args)
+        public IntPtr NewObjectPtr(IntPtr clazz, MethodId methodID, params Value[] args)
         {
-            IntPtr res = newObject(native, clazz.native, methodID.native, args);
+            IntPtr res = newObject(native, clazz, methodID.native, args);
             ExceptionTest();
             return res;
-        }
-
-        public IJavaProxy NewObjectEx(Class clazz, MethodId methodID, params Value[] args)
-        {
-            IntPtr res = newObject(native, clazz.native, methodID.native, args);
-            ExceptionTest();
-            return Wrap<IJavaProxy>(res);
         }
 
         public IObject NewObject(Class clazz, MethodId methodID, params Value[] args)
         {
             IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
-            return Wrap<IJavaProxy>(res);
+            return Convertor.OptiJ2CP<IJavaProxy>(this, res);
         }
 
-        public IObject NewObject(Class clazz, string method, string sig, params object[] args)
-        {
-            MethodId idNative = GetMethodID(clazz, method, sig);
-            if (idNative != null)
-            {
-                return NewObject(clazz, idNative, ConverArgs(args));
-            }
-            throw new ArgumentException();
-        }
 
         #endregion
 
@@ -1664,29 +1215,7 @@ namespace net.sf.jni4net.jni
             {
                 //ExceptionDescribe();
                 ExceptionClear();
-                IJavaProxy javaProxy;
-                try
-                {
-                    javaProxy = Wrap<IJavaProxy>(occurred);
-                }
-                catch (Exception ex)
-                {
-                    Console.Error.WriteLine(ex.Message);
-                    Console.Error.WriteLine(ex);
-                    throw;
-                }
-                var throwable = javaProxy as Throwable;
-                if (throwable != null)
-                {
-                    throw throwable;
-                }
-                var clrProxy = javaProxy as IClrProxy;
-                if (clrProxy == null)
-                {
-                    throw new JNIException("Can't convert exception:" + javaProxy.toString());
-                }
-                var exception = ClrProxiesMap.ToClr<Exception>(clrProxy);
-                throw exception;
+                throw Convertor.J2C<Exception>(this, occurred);
             }
         }
 
@@ -1711,8 +1240,7 @@ namespace net.sf.jni4net.jni
             var ext = ex as Throwable;
             if (ext == null)
             {
-                IJavaProxy proxy = ClrProxiesMap.WrapClrObj(this, ex);
-                Throw(proxy.Native);
+                Throw(Convertor.C2J(this, ex));
             }
             else
             {

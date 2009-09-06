@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using net.sf.jni4net.attributes;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using Class = java.lang.Class;
 
@@ -11,7 +12,7 @@ namespace net.sf.jni4net.utils
     {
         #region Singleton
 
-        private static readonly Registry defaultRegistry = new Registry();
+        private static Registry defaultRegistry = new Registry();
 
         public static Registry Default
         {
@@ -27,16 +28,32 @@ namespace net.sf.jni4net.utils
         private readonly Dictionary<Class, RegistryRecord> knownJVMInterfaces = new Dictionary<Class, RegistryRecord>();
         private readonly Dictionary<Class, RegistryRecord> knownJVMProxies = new Dictionary<Class, RegistryRecord>();
         private readonly Dictionary<Class, RegistryRecord> knownJVM = new Dictionary<Class, RegistryRecord>();
+        private bool initialized;
 
         public Registry()
         {
+            if (Default==null)
+            {
+                defaultRegistry = this;
+            }
+
             JNIEnv env = JNIEnv.ThreadEnv;
-            RegisterType(typeof(__Type), true, env);
-            RegisterType(typeof(__Object), true, env);
-            RegisterType(typeof(__String), true, env);
             RegisterType(typeof(Class), true, env);
             RegisterType(typeof(java.lang.Object), true, env);
             RegisterType(typeof(java.lang.String), true, env);
+            RegisterType(typeof(__Type), true, env);
+            RegisterType(typeof(__Object), true, env);
+            RegisterType(typeof(__String), true, env);
+            RegisterType(typeof(__IClrProxy), true, env);
+            initialized = true;
+
+            BindJvm(knownCLR[typeof (Class)], env);
+            BindJvm(knownCLR[typeof(java.lang.Object)], env);
+            BindJvm(knownCLR[typeof(java.lang.String)], env);
+            BindJvm(knownCLR[typeof(__Type)], env);
+            BindJvm(knownCLR[typeof(__Object)], env);
+            BindJvm(knownCLR[typeof(__String)], env);
+            BindJvm(knownCLR[typeof(__IClrProxy)], env);
 
             RegisterType(typeof(java.lang.Boolean), true, env);
             RegisterType(typeof(java.lang.Byte), true, env);
@@ -97,17 +114,30 @@ namespace net.sf.jni4net.utils
             {
                 if (bindJVM && !record.JVMBound)
                 {
-                    RegisterClass(record, env);
-                    if (record.CLRProxy != null)
-                    {
-                        RegisterStaticAndMethods(record, env);
-                    }
-                    if (record.CLRWrapper != null)
-                    {
-                        RegisterNative(record.CLRWrapperInitMethod, env, record.JVMProxy, record.JVMInterface);
-                    }
-                    record.JVMBound = true;
+                    BindJvm(record, env);
                 }
+            }
+        }
+
+        private void BindJvm(RegistryRecord record, JNIEnv env)
+        {
+            RegisterClass(record, env);
+            if (record.CLRProxy != null)
+            {
+                RegisterStaticAndMethods(record, env);
+                if (initialized)
+                {
+                    RegisterTypeOf(record, env);
+                }
+            }
+            if (initialized)
+            {
+                if (record.CLRWrapper != null)
+                {
+                    RegisterNative(record.CLRWrapperInitMethod, env, record.JVMProxy, record.JVMInterface);
+                }
+                RegisterClassToMap(record);
+                record.JVMBound = true;
             }
         }
 
@@ -142,11 +172,14 @@ namespace net.sf.jni4net.utils
                 knownJVMProxies[record.JVMProxy] = record;
                 knownJVM[record.JVMProxy] = record;
             }
+        }
+
+        private void RegisterClassToMap(RegistryRecord record)
+        {
             knownJVMInterfaces[record.JVMInterface] = record;
             knownJVM[record.JVMInterface] = record;
             knownJVM[record.JVMStatic] = record;
         }
-
         private void RegisterInterfaceProxy(Type proxyType, ref RegistryRecord record)
         {
             JavaProxyAttribute javaProxyAttribute = GetJavaProxyAttribute(proxyType);

@@ -26,6 +26,7 @@ using net.sf.jni4net.jni;
 
 namespace java.lang
 {
+    //TODO sealed
     public partial class String
     {
         public static implicit operator String(string str)
@@ -33,14 +34,14 @@ namespace java.lang
             return JNIEnv.ThreadEnv.NewString(str);
         }
 
-        public static unsafe implicit operator string(String str)
+        public static implicit operator string(String str)
         {
+            if (str==(String)null)
+            {
+                return null;
+            }
             JNIEnv env = JNIEnv.ThreadEnv;
-            byte b = 0;
-            IntPtr chars = env.GetStringChars(str.native, &b);
-            string result = Marshal.PtrToStringUni(chars);
-            env.ReleaseStringChars(str.native, chars);
-            return result;
+            return env.ConvertToString(str.native);
         }
 
         public override bool Equals(object obj)

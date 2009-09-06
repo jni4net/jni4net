@@ -69,12 +69,12 @@ namespace java.lang {
         
         public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.@__CharSequence._toString0));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._toString0));
         }
         
         public char charAt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         public int length() {
@@ -84,7 +84,7 @@ namespace java.lang {
         
         public global::java.lang.CharSequence subSequence(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.CharSequence>(env.CallObjectMethod(this, global::java.lang.@__CharSequence._subSequence3, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(env, env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._subSequence3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -103,7 +103,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.CharSequence real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.toString());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.toString());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -136,7 +136,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.CharSequence real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.subSequence(par0, par1));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.subSequence(par0, par1));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -29,7 +29,7 @@ namespace java.lang {
         public ClassNotFoundException(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor1, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -43,7 +43,7 @@ namespace java.lang {
         public ClassNotFoundException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor3, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected ClassNotFoundException(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -67,7 +67,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Throwable;")]
         public virtual global::java.lang.Throwable getException() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Throwable>(env.CallObjectMethod(this, global::java.lang.ClassNotFoundException._getException0));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Throwable>(env, env.CallObjectMethodPtr(this, global::java.lang.ClassNotFoundException._getException0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

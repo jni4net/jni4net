@@ -73,7 +73,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/Buffer;")]
         public global::java.nio.Buffer limit(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._limit0, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._limit0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -85,7 +85,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer clear() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._clear2));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._clear2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -97,7 +97,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/Buffer;")]
         public global::java.nio.Buffer position(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._position4, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._position4, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -115,7 +115,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer flip() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._flip7));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._flip7));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
@@ -133,19 +133,19 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer mark() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._mark10));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._mark10));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer reset() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._reset11));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._reset11));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
         public global::java.nio.Buffer rewind() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.nio.Buffer>(env.CallObjectMethod(this, global::java.nio.Buffer._rewind12));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.Buffer>(env, env.CallObjectMethodPtr(this, global::java.nio.Buffer._rewind12));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

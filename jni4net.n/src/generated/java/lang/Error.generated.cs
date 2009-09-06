@@ -29,14 +29,14 @@ namespace java.lang {
         public Error(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor0, this, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
         public Error(global::java.lang.Throwable par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor1, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -50,7 +50,7 @@ namespace java.lang {
         public Error(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor3, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.Error.staticClass, global::java.lang.Error.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected Error(global::net.sf.jni4net.jni.JNIEnv env) : 

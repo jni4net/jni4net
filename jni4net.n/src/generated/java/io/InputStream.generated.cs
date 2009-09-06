@@ -77,7 +77,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public virtual void mark(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.InputStream._mark1, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::java.io.InputStream._mark1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -107,19 +107,19 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)I")]
         public virtual int read(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.jni.Value.CreateArray(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2));
+            return env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)I")]
         public virtual int read(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.jni.Value.CreateArray(par0));
+            return env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)J")]
         public virtual long skip(long par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.io.InputStream._skip8, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallLongMethod(this, global::java.io.InputStream._skip8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

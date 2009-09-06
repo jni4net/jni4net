@@ -48,17 +48,17 @@ namespace System.Reflection {
         
         public object[] GetCustomAttributes(bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((object[])(env.ConvertArrayToNet<object>(env.CallObjectMethod(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, new global::net.sf.jni4net.jni.Value(inherit)))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<object[]>(env, env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, inherit)));
         }
         
         public object[] GetCustomAttributes(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((object[])(env.ConvertArrayToNet<object>(env.CallObjectMethod(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, new global::net.sf.jni4net.jni.Value(attributeType), new global::net.sf.jni4net.jni.Value(inherit)))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<object[]>(env, env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, attributeType), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, inherit)));
         }
         
         public bool IsDefined(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::System.Reflection.@__ICustomAttributeProvider._IsDefined2, new global::net.sf.jni4net.jni.Value(attributeType), new global::net.sf.jni4net.jni.Value(inherit));
+            return env.CallBooleanMethod(this, global::System.Reflection.@__ICustomAttributeProvider._IsDefined2, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, attributeType), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, inherit));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -76,7 +76,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ICustomAttributeProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ICustomAttributeProvider>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetCustomAttributes(inherit));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetCustomAttributes(inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -87,7 +87,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ICustomAttributeProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ICustomAttributeProvider>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetCustomAttributes(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -98,7 +98,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.ICustomAttributeProvider real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ICustomAttributeProvider>(__env, @__obj);
-            return real.IsDefined(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit);
+            return real.IsDefined(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }

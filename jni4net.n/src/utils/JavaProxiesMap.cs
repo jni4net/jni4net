@@ -34,82 +34,10 @@ namespace net.sf.jni4net.utils
     {
         public static T Wrap<T>(JNIEnv env, IntPtr obj) where T : IJavaProxy
         {
-            if (obj == IntPtr.Zero)
-            {
-                return default(T);
-            }
-            Type clrType = typeof (T);
-            if (clrType == typeof (Class))
-            {
-                var nclazz = new Class(env);
-                ((IJavaProxy) nclazz).Init(env, obj, Class._class);
-                return (T) (object) nclazz;
-            }
-            if (clrType == typeof (String))
-            {
-                var nstring = new String(env);
-                ((IJavaProxy) nstring).Init(env, obj, String._class);
-                return (T) (object) nstring;
-            }
-
-            Class clazzExact;
-            JavaProxyRecord record;
-            //using (new LocalFrame(env, 10))
-            {
-                clazzExact = env.GetObjectClass(obj);
-                record = ResolveClass(clazzExact);
-            }
-
-            IJavaProxy bestKnown = record.constructor.CreateProxy(env);
-            if (bestKnown != null)
-            {
-                bestKnown.Init(env, obj, clazzExact);
-                return (T) bestKnown;
-            }
-            return default(T);
+            return Convertor.J2C<T>(env, obj);
         }
 
-        public static T Wrap<T>(JNIEnv env, IntPtr obj, Class clazzExact)
-        {
-            if (obj == IntPtr.Zero)
-            {
-                return default(T);
-            }
-            Type clrType = typeof (T);
-            if (clrType == typeof (Class))
-            {
-                var nclazz = new Class(env);
-                ((IJavaProxy) nclazz).Init(env, obj, Class._class);
-                return (T) (object) nclazz;
-            }
-            if (clrType == typeof (String))
-            {
-                var nstring = new String(env);
-                ((IJavaProxy) nstring).Init(env, obj, String._class);
-                return (T) (object) nstring;
-            }
-
-            JavaProxyRecord record;
-            //using (new LocalFrame(env, 10))
-            {
-                record = ResolveClass(clazzExact);
-            }
-
-
-            IJavaProxy bestKnown = record.constructor.CreateProxy(env);
-            if (bestKnown != null)
-            {
-                bestKnown.Init(env, obj, clazzExact);
-                return (T) bestKnown;
-            }
-            return default(T);
-        }
-
-        public static Class TypeToKnownClass(Type knownType)
-        {
-            return ResolveType(knownType).clazz;
-        }
-
+        /*
         private static JavaProxyRecord ResolveClass(Class clazzExact)
         {
             JavaProxyRecord result;
@@ -267,5 +195,6 @@ namespace net.sf.jni4net.utils
             }
             return known;
         }
+         */
     }
 }

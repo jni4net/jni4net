@@ -34,38 +34,7 @@ namespace net.sf.jni4net.utils
     {
         public static IntPtr WrapClr(JNIEnv env, object real)
         {
-            return WrapClrObj(env, real).Native;
-        }
-
-        public static IJavaProxy WrapClrObj(JNIEnv env, object real)
-        {
-            if (real == null)
-            {
-                return null;
-            }
-            var res = real as IJavaProxy;
-            if (res != null)
-            {
-                return res;
-            }
-            var array = real as Array;
-            if (array != null)
-            {
-                Class elemClazz = RealToKnownProxy(real.GetType().GetElementType());
-                res = env.NewObjectArray(array.Length, elemClazz, null);
-                for (int i = 0; i < array.Length; i++)
-                {
-                    IntPtr item = WrapClr(env, array.GetValue(i));
-                    env.SetObjectArrayElement((Object) res, i, item);
-                }
-            }
-            else
-            {
-                int clrHandle = IntHandle.Alloc(real);
-                ClrProxyRecord record = ResolveRealType(real.GetType());
-                res = env.NewObjectEx(record.proxy, record.constructor, new Value(), new Value(clrHandle));
-            }
-            return res;
+            return Convertor.C2J(env, real);
         }
 
         public static IntPtr ConvertString(JNIEnv env, object real)
@@ -75,7 +44,7 @@ namespace net.sf.jni4net.utils
 
         public static void InitProxy(JNIEnv env, IntPtr obj, object real)
         {
-            JavaProxiesMap.Wrap<IClrProxy>(env, obj).initProxy(IntHandle.Alloc(real));
+            Convertor.InitProxy(env, obj, real);
         }
 
         public static TRes ToClr<TRes>(IClrProxy clrProxy)
@@ -90,33 +59,10 @@ namespace net.sf.jni4net.utils
 
         public static TRes ToClr<TRes>(JNIEnv env, IntPtr obj)
         {
-            var javaProxy = JavaProxiesMap.Wrap<IJavaProxy>(env, obj);
-            var clrProxy = javaProxy as IClrProxy;
-            if (clrProxy != null)
-            {
-                return ToClr<TRes>(clrProxy);
-            }
-            if (typeof (TRes) == typeof (string))
-            {
-                return (TRes) (object) (string) (String) javaProxy;
-            }
-            if (typeof (TRes).IsArray)
-            {
-                return (TRes) (object) env.ConvertArrayToNet(javaProxy, typeof (TRes).GetElementType());
-            }
-            return (TRes) javaProxy;
+            return Convertor.J2C<TRes>(env, obj);
         }
 
-        public static Class RealToKnownProxy(Type real)
-        {
-            return ResolveRealType(real).proxy;
-        }
-
-        public static Class RealToKnownIface(Type real)
-        {
-            return ResolveRealType(real).iface;
-        }
-
+        /*
         public static bool IsKnownReal(Type real)
         {
             return knownReal.ContainsKey(real);
@@ -197,5 +143,6 @@ namespace net.sf.jni4net.utils
             }
             return known;
         }
+         */
     }
 }

@@ -42,7 +42,7 @@ namespace System.Runtime.Serialization {
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, new global::net.sf.jni4net.jni.Value(info), new global::net.sf.jni4net.jni.Value(context));
+            env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, context));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -58,7 +58,7 @@ namespace System.Runtime.Serialization {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Runtime.Serialization.ISerializable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.ISerializable>(__env, @__obj);
-            real.GetObjectData(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.SerializationInfo>(__env, info), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Runtime.Serialization.StreamingContext>(__env, context));
+            real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.SerializationInfo>(__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.StreamingContext>(__env, context));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         

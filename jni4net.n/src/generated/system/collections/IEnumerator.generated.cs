@@ -42,7 +42,7 @@ namespace System.Collections {
         public object Current {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IEnumerator._Current1));
+                return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerator._Current1));
             }
         }
         
@@ -89,7 +89,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IEnumerator>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Current);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Current);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

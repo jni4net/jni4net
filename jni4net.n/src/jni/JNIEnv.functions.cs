@@ -20,6 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
+using System.Runtime.InteropServices;
+
 namespace net.sf.jni4net.jni
 {
     partial class JNIEnv
@@ -363,5 +366,7 @@ namespace net.sf.jni4net.jni
             MethodWrapper.GetDelegateForFunctionPointer(functions.SetFloatArrayRegion, ref setFloatArrayRegion);
             MethodWrapper.GetDelegateForFunctionPointer(functions.SetDoubleArrayRegion, ref setDoubleArrayRegion);
         }
+
+     
     }
 }

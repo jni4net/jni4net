@@ -51,7 +51,7 @@ namespace java.lang {
         
         public global::java.util.Iterator iterator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.util.Iterator>(env.CallObjectMethod(this, global::java.lang.@__Iterable._iterator0));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Iterator>(env, env.CallObjectMethodPtr(this, global::java.lang.@__Iterable._iterator0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -67,7 +67,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Iterable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Iterable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.iterator());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.iterator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

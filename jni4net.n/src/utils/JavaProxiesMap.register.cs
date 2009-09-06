@@ -35,10 +35,8 @@ namespace net.sf.jni4net.utils
 {
     partial class JavaProxiesMap
     {
-        private static readonly Dictionary<Class, JavaProxyRecord> knownClasses =
-            new Dictionary<Class, JavaProxyRecord>();
-
-        private static readonly Dictionary<Type, JavaProxyRecord> knownTypes = new Dictionary<Type, JavaProxyRecord>();
+        //private static readonly Dictionary<Class, JavaProxyRecord> knownClasses =new Dictionary<Class, JavaProxyRecord>();
+        //private static readonly Dictionary<Type, JavaProxyRecord> knownTypes = new Dictionary<Type, JavaProxyRecord>();
 
         private static bool initialized;
 
@@ -49,7 +47,7 @@ namespace net.sf.jni4net.utils
                 return;
             }
             initialized = true;
-
+            /*
             RegisterType(env, typeof (Object), true);
             RegisterType(env, typeof (String), true);
             RegisterType(env, typeof (Class), true);
@@ -64,8 +62,9 @@ namespace net.sf.jni4net.utils
             WritePrimitiveRecord("float", typeof (float));
             WritePrimitiveRecord("void", typeof (void));
             WritePrimitiveRecord("boolean", typeof (bool));
+             */
         }
-
+        /*
         public static void RegisterAssembly(JNIEnv env, Assembly assembly)
         {
             InitCore(env);
@@ -278,5 +277,6 @@ namespace net.sf.jni4net.utils
         }
 
         #endregion
+         */
     }
 }

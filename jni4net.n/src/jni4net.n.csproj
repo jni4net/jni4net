@@ -219,12 +219,20 @@
     <Compile Include="system\IObject.cs" />
     <Compile Include="system\__Exception.cs" />
     <Compile Include="system\__Object.cs" />
+    <Compile Include="utils\Convertor.cs" />
+    <Compile Include="utils\Convertor.params.cs" />
     <Compile Include="utils\IConstructionHelper.cs" />
     <Compile Include="utils\Registry.resolve.cs" />
     <Compile Include="utils\Registry.cs" />
     <Compile Include="utils\Registry.helpers.cs" />
     <Compile Include="utils\Registry.register.cs" />
     <Compile Include="utils\RegistryRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="jni\JNIEnv.array.cs" />
+    <Compile Include="jni\JNIEnv.convert.cs" />
+    <Compile Include="jni\JNIEnv.raw.cs" />
+    <Compile Include="utils\Convertor.generic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

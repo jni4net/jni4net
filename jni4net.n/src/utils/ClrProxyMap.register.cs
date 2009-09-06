@@ -34,9 +34,9 @@ namespace net.sf.jni4net.utils
 {
     partial class ClrProxiesMap
     {
-        private static readonly Dictionary<Class, ClrProxyRecord> knownClasses = new Dictionary<Class, ClrProxyRecord>();
-        private static readonly Dictionary<Type, ClrProxyRecord> knownReal = new Dictionary<Type, ClrProxyRecord>();
-        private static readonly Dictionary<Type, ClrProxyRecord> knownWrappers = new Dictionary<Type, ClrProxyRecord>();
+        //private static readonly Dictionary<Class, ClrProxyRecord> knownClasses = new Dictionary<Class, ClrProxyRecord>();
+        //private static readonly Dictionary<Type, ClrProxyRecord> knownReal = new Dictionary<Type, ClrProxyRecord>();
+        //private static readonly Dictionary<Type, ClrProxyRecord> knownWrappers = new Dictionary<Type, ClrProxyRecord>();
         private static bool initialized;
 
         public static void InitCore(JNIEnv env)
@@ -46,6 +46,7 @@ namespace net.sf.jni4net.utils
                 return;
             }
             initialized = true;
+            /*
             RegisterType(env, typeof (__Type), true);
             RegisterType(env, typeof (__Object), true);
             RegisterType(env, typeof (__String), true);
@@ -58,8 +59,9 @@ namespace net.sf.jni4net.utils
             WritePrimitiveRecord("float", typeof (float));
             WritePrimitiveRecord("void", typeof (void));
             WritePrimitiveRecord("boolean", typeof (bool));
+             */
         }
-
+        /*
         public static void RegisterAssembly(JNIEnv env, Assembly assembly)
         {
             InitCore(env);
@@ -354,5 +356,6 @@ namespace net.sf.jni4net.utils
         }
 
         #endregion
+         */
     }
 }
