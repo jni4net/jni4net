@@ -59,7 +59,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(inherit));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -70,7 +70,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -81,7 +81,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return ((global::System.Reflection.ICustomAttributeProvider)(real)).IsDefined(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Type>(__env, attributeType), inherit);
+            return ((global::System.Reflection.ICustomAttributeProvider)(real)).IsDefined(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -92,7 +92,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.MemberType);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.MemberType);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -103,7 +103,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.ConvertString(@__env, real.Name);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Name);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -114,7 +114,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.DeclaringType);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.DeclaringType);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -125,7 +125,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.ReflectedType);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ReflectedType);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -147,7 +147,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Reflection.MemberInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MemberInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Module);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Module);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

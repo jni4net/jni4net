@@ -51,7 +51,7 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<global::java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.TypeVariable[]>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -67,7 +67,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.GenericDeclaration real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.GenericDeclaration>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getTypeParameters());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getTypeParameters());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -23,7 +23,8 @@ namespace net.sf.jni4net.test
         {
             var cw1 = new CWithJavaInterface(1);
             var cw2 = new CWithJavaInterface(2);
-            Assert.AreEqual(1, cw1.compareTo(Bridge.ToJVM<Object>(cw2)));
+            Object other = Bridge.WrapCLR<Object>(cw2);
+            Assert.AreEqual(1, cw1.compareTo(other));
 
             cw2.run();
             Assert.AreEqual(3, cw2.Value);
@@ -36,7 +37,7 @@ namespace net.sf.jni4net.test
             var cw1 = new CWithJavaInterfaceUnreg(1);
             var cw2 = new CWithJavaInterfaceUnreg(2);
 
-            Assert.AreEqual(1, cw1.compareTo(Bridge.ToJVM<Object>(cw2)));
+            Assert.AreEqual(1, cw1.compareTo(Bridge.WrapCLR<Object>(cw2)));
 
             cw2.run();
             Assert.AreEqual(3, cw2.Value);

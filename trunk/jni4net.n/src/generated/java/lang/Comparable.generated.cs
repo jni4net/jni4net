@@ -51,7 +51,7 @@ namespace java.lang {
         
         public int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -67,7 +67,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Comparable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Comparable>(__env, @__obj);
-            return real.compareTo(global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::java.lang.Object>(__env, par0));
+            return real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }

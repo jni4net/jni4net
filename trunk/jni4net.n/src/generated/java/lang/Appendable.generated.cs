@@ -63,17 +63,17 @@ namespace java.lang {
         
         public global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append0, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(env, env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append1, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(env, env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Appendable>(env.CallObjectMethod(this, global::java.lang.@__Appendable._append2, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(env, env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append2, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par2)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -91,7 +91,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(par0));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.append(par0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -102,7 +102,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.append(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(__env, par0)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -113,7 +113,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.Appendable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.Appendable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.append(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.CharSequence>(__env, par0), par1, par2));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.append(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(__env, par0), par1, par2));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

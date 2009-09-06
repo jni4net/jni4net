@@ -23,7 +23,7 @@ namespace java.io {
         public FilterOutputStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.@__ctor0, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected FilterOutputStream(global::net.sf.jni4net.jni.JNIEnv env) : 

@@ -42,7 +42,7 @@ namespace System.Collections {
         
         public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -58,7 +58,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IEnumerable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IEnumerable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetEnumerator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

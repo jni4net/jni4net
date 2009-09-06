@@ -220,7 +220,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.Stream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, @__obj);
-            return real.EndRead(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IAsyncResult>(__env, asyncResult));
+            return real.EndRead(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IAsyncResult>(__env, asyncResult));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -231,7 +231,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.Stream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, @__obj);
-            real.EndWrite(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IAsyncResult>(__env, asyncResult));
+            real.EndWrite(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IAsyncResult>(__env, asyncResult));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -241,7 +241,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.Stream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, @__obj);
-            return real.Seek(offset, global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.SeekOrigin>(__env, origin));
+            return real.Seek(offset, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.SeekOrigin>(__env, origin));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -262,7 +262,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.Stream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, @__obj);
-            return real.Read(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Byte[]>(__env, buffer), offset, count);
+            return real.Read(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Byte[]>(__env, buffer), offset, count);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -284,7 +284,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.Stream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, @__obj);
-            real.Write(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Byte[]>(__env, buffer), offset, count);
+            real.Write(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Byte[]>(__env, buffer), offset, count);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -303,7 +303,7 @@ namespace System.IO {
             // (LSystem/IO/Stream;)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, global::System.IO.Stream.Synchronized(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.Stream>(__env, stream)));
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::System.IO.Stream.Synchronized(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(__env, stream)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

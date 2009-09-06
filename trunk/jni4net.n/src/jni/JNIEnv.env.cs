@@ -94,11 +94,6 @@ namespace net.sf.jni4net.jni
             return threadJNIEnv;
         }
 
-        public T Wrap<T>(IntPtr obj) where T : IJavaProxy
-        {
-            return JavaProxiesMap.Wrap<T>(this, obj);
-        }
-
         public static JNIEnv Wrap(IntPtr envi)
         {
             if (envi == IntPtr.Zero)

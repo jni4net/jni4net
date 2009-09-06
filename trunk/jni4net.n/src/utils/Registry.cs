@@ -7,9 +7,18 @@ namespace net.sf.jni4net.utils
 {
     public partial class Registry
     {
-        public RegistryRecord GetRecord(IntPtr obj, JNIEnv env)
+        public RegistryRecord GetRecord(IntPtr obj)
         {
-            Class iface = env.GetObjectClass(obj);
+            return GetRecord(JNIEnv.ThreadEnv, obj);
+        }
+
+        public RegistryRecord GetRecord(JNIEnv env, IntPtr obj)
+        {
+            return GetRecord(env, obj, env.GetObjectClass(obj));
+        }
+
+        public RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
+        {
             lock (this)
             {
                 RegistryRecord res;
@@ -25,7 +34,7 @@ namespace net.sf.jni4net.utils
                 return ResolveNew(iface);
             }
         }
-
+        
         public RegistryRecord GetRecord(object obj)
         {
             Type iface = obj.GetType();
@@ -45,14 +54,39 @@ namespace net.sf.jni4net.utils
             }
         }
 
+        public RegistryRecord GetCLRRecord(Type iface)
+        {
+            lock (this)
+            {
+                RegistryRecord res;
+                if (knownCLR.TryGetValue(iface, out res))
+                {
+                    return res;
+                }
+                return ResolveNew(iface);
+            }
+        }
+
+        public RegistryRecord GetJVMRecord(Class iface)
+        {
+            lock (this)
+            {
+                RegistryRecord res;
+                if (knownJVM.TryGetValue(iface, out res))
+                {
+                    return res;
+                }
+                return ResolveNew(iface);
+            }
+        }
+
         private static Type IsCLR(Class iface, IntPtr obj, JNIEnv env)
         {
-            //TODO return CLR instance
             if (IClrProxy_._class.isAssignableFrom(iface))
             {
                 int handle = __IClrProxy.getClrHandle(env, obj);
-                object o = IntHandle.ToObject(handle);
-                return o.GetType();
+                object real = IntHandle.ToObject(handle);
+                return real.GetType();
             }
             return null;
         }

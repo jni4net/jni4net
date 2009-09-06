@@ -32,7 +32,7 @@ namespace java.lang {
         public NoSuchMethodException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor1, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected NoSuchMethodException(global::net.sf.jni4net.jni.JNIEnv env) : 

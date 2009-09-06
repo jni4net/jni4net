@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using java.lang;
+using net.sf.jni4net.jni;
 using net.sf.jni4net.tested;
 using net.sf.jni4net.utils;
 using NUnit.Framework;
@@ -84,5 +85,17 @@ namespace net.sf.jni4net.test
             Assert.IsNotNull(record);
         }
     
+        [Test]
+        public void TypeCbyCLRProxy  ()
+        {
+            JInterfacesHelper h = new JInterfacesHelper();
+            CWithJavaInterface cwc = h.getCWithJavaInterfaceC(new CWithJavaInterface(0));
+            IJavaProxy val = Bridge.WrapCLR<IJavaProxy>(cwc);
+            RegistryRecord record = Registry.Default.GetRecord(val.Native);
+            Assert.IsNotNull(record);
+        }
+
+        
+
     }
 }

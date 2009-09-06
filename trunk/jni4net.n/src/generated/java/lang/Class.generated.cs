@@ -202,37 +202,37 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/TypeVariable;")]
         public virtual java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.TypeVariable[])(env.ConvertArrayToNet<global::java.lang.reflect.TypeVariable>(env.CallObjectMethod(this, global::java.lang.Class._getTypeParameters0))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.TypeVariable[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getTypeParameters0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;")]
         public virtual global::java.lang.annotation.Annotation getAnnotation(global::java.lang.Class par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.Class._getAnnotation1, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getAnnotation1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/annotation/Annotation;")]
         public virtual java.lang.annotation.Annotation[] getAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.Class._getAnnotations2))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.annotation.Annotation[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getAnnotations2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/annotation/Annotation;")]
         public virtual java.lang.annotation.Annotation[] getDeclaredAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.annotation.Annotation[])(env.ConvertArrayToNet<global::java.lang.annotation.Annotation>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredAnnotations3))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.annotation.Annotation[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredAnnotations3));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Z")]
         public virtual bool isAnnotationPresent(global::java.lang.Class par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.Class._isAnnotationPresent4, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.lang.Class._isAnnotationPresent4, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool isInstance(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.Class._isInstance5, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.lang.Class._isInstance5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -244,31 +244,31 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Class;")]
         public static global::java.lang.Class forName(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallStaticObjectMethod(global::java.lang.Class.staticClass, global::java.lang.Class._forName7, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallStaticObjectMethodPtr(global::java.lang.Class.staticClass, global::java.lang.Class._forName7, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;")]
         public static global::java.lang.Class forName(global::java.lang.String par0, bool par1, global::java.lang.ClassLoader par2) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallStaticObjectMethod(global::java.lang.Class.staticClass, global::java.lang.Class._forName8, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1), new global::net.sf.jni4net.jni.Value(par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallStaticObjectMethodPtr(global::java.lang.Class.staticClass, global::java.lang.Class._forName8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.Class._getName9));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getName9));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Ljava/lang/Class;")]
         public virtual global::java.lang.Class asSubclass(global::java.lang.Class par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._asSubclass10, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._asSubclass10, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object cast(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.Class._cast11, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._cast11, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
@@ -280,193 +280,193 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getCanonicalName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.Class._getCanonicalName13));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getCanonicalName13));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/ClassLoader;")]
         public virtual global::java.lang.ClassLoader getClassLoader() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.ClassLoader>(env.CallObjectMethod(this, global::java.lang.Class._getClassLoader14));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.ClassLoader>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getClassLoader14));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
         public virtual java.lang.Class[] getClasses() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Class[])(env.ConvertArrayToNet<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getClasses15))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.Class[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getClasses15));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public virtual global::java.lang.Class getComponentType() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getComponentType16));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getComponentType16));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;")]
         public virtual global::java.lang.reflect.Constructor getConstructor(java.lang.Class[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Constructor>(env.CallObjectMethod(this, global::java.lang.Class._getConstructor17, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Constructor>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getConstructor17, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Constructor;")]
         public virtual java.lang.reflect.Constructor[] getConstructors() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Constructor[])(env.ConvertArrayToNet<global::java.lang.reflect.Constructor>(env.CallObjectMethod(this, global::java.lang.Class._getConstructors18))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Constructor[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getConstructors18));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
         public virtual java.lang.Class[] getDeclaredClasses() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Class[])(env.ConvertArrayToNet<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredClasses19))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.Class[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredClasses19));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;")]
         public virtual global::java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[] par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Constructor>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredConstructor20, global::net.sf.jni4net.jni.Value.CreateArray(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Constructor>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredConstructor20, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Constructor;")]
         public virtual java.lang.reflect.Constructor[] getDeclaredConstructors() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Constructor[])(env.ConvertArrayToNet<global::java.lang.reflect.Constructor>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredConstructors21))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Constructor[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredConstructors21));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/reflect/Field;")]
         public virtual global::java.lang.reflect.Field getDeclaredField(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Field>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredField22, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Field>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredField22, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Field;")]
         public virtual java.lang.reflect.Field[] getDeclaredFields() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Field[])(env.ConvertArrayToNet<global::java.lang.reflect.Field>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredFields23))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Field[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredFields23));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;")]
         public virtual global::java.lang.reflect.Method getDeclaredMethod(global::java.lang.String par0, java.lang.Class[] par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Method>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredMethod24, new global::net.sf.jni4net.jni.Value(par0), global::net.sf.jni4net.jni.Value.CreateArray(par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Method>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredMethod24, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Method;")]
         public virtual java.lang.reflect.Method[] getDeclaredMethods() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Method[])(env.ConvertArrayToNet<global::java.lang.reflect.Method>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaredMethods25))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Method[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaredMethods25));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public virtual global::java.lang.Class getDeclaringClass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getDeclaringClass26));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getDeclaringClass26));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public virtual global::java.lang.Class getEnclosingClass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getEnclosingClass27));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getEnclosingClass27));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Constructor;")]
         public virtual global::java.lang.reflect.Constructor getEnclosingConstructor() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Constructor>(env.CallObjectMethod(this, global::java.lang.Class._getEnclosingConstructor28));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Constructor>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getEnclosingConstructor28));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Method;")]
         public virtual global::java.lang.reflect.Method getEnclosingMethod() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Method>(env.CallObjectMethod(this, global::java.lang.Class._getEnclosingMethod29));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Method>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getEnclosingMethod29));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Object;")]
         public virtual java.lang.Object[] getEnumConstants() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Object[])(env.ConvertArrayToNet<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.Class._getEnumConstants30))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.Object[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getEnumConstants30));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/reflect/Field;")]
         public virtual global::java.lang.reflect.Field getField(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Field>(env.CallObjectMethod(this, global::java.lang.Class._getField31, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Field>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getField31, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Field;")]
         public virtual java.lang.reflect.Field[] getFields() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Field[])(env.ConvertArrayToNet<global::java.lang.reflect.Field>(env.CallObjectMethod(this, global::java.lang.Class._getFields32))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Field[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getFields32));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Type;")]
         public virtual java.lang.reflect.Type[] getGenericInterfaces() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.Class._getGenericInterfaces33))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getGenericInterfaces33));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/reflect/Type;")]
         public virtual global::java.lang.reflect.Type getGenericSuperclass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.Class._getGenericSuperclass34));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getGenericSuperclass34));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
         public virtual java.lang.Class[] getInterfaces() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Class[])(env.ConvertArrayToNet<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getInterfaces35))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.Class[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getInterfaces35));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;")]
         public virtual global::java.lang.reflect.Method getMethod(global::java.lang.String par0, java.lang.Class[] par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.reflect.Method>(env.CallObjectMethod(this, global::java.lang.Class._getMethod36, new global::net.sf.jni4net.jni.Value(par0), global::net.sf.jni4net.jni.Value.CreateArray(par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Method>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getMethod36, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/reflect/Method;")]
         public virtual java.lang.reflect.Method[] getMethods() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Method[])(env.ConvertArrayToNet<global::java.lang.reflect.Method>(env.CallObjectMethod(this, global::java.lang.Class._getMethods37))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Method[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getMethods37));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public virtual object getPackage() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.lang.Class._getPackage38));
+            return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getPackage38));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]
         public virtual object getProtectionDomain() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::java.lang.Class._getProtectionDomain39));
+            return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getProtectionDomain39));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/net/URL;")]
         public virtual global::java.net.URL getResource(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.net.URL>(env.CallObjectMethod(this, global::java.lang.Class._getResource40, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.net.URL>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getResource40, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/io/InputStream;")]
         public virtual global::java.io.InputStream getResourceAsStream(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.io.InputStream>(env.CallObjectMethod(this, global::java.lang.Class._getResourceAsStream41, new global::net.sf.jni4net.jni.Value(par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.InputStream>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getResourceAsStream41, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Object;")]
         public virtual java.lang.Object[] getSigners() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.Object[])(env.ConvertArrayToNet<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.Class._getSigners42))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.Object[]>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getSigners42));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getSimpleName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.Class._getSimpleName43));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getSimpleName43));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public virtual global::java.lang.Class getSuperclass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.Class._getSuperclass44));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._getSuperclass44));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
@@ -490,7 +490,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Class;)Z")]
         public virtual bool isAssignableFrom(global::java.lang.Class par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.Class._isAssignableFrom48, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::java.lang.Class._isAssignableFrom48, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
@@ -532,7 +532,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
         public virtual global::java.lang.Object newInstance() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.lang.Class._newInstance55));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.lang.Class._newInstance55));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -25,11 +25,13 @@ using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 #endif
 
 namespace java.lang
 {
+    //todo sealed
     public partial class Class
     {
         private long hashCodeCache = long.MinValue;
@@ -99,7 +101,8 @@ namespace java.lang
 
         public new void Invoke(string method, string signature, params object[] args)
         {
-            Env.CallStaticMethod(this, method, signature, args);
+            JNIEnv env = JNIEnv.ThreadEnv;
+            env.CallStaticVoidMethod(clazz, method, signature, Convertor.ConverArgs(env, args));
         }
 
         public new TRes Invoke<TRes>(string method, string signature, params object[] args)
@@ -122,7 +125,7 @@ namespace java.lang
             JNIEnv env = JNIEnv.ThreadEnv;
             MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass",
                                                 "(Ljava/lang/String;)Ljava/lang/Class;");
-            return Bridge.ToCLR<Class>(env.CallStaticObjectMethod(staticClass, id, new Value(name)));
+            return Convertor.OptiJ2CP<Class>(env, env.CallStaticObjectMethodPtr(staticClass, id, Convertor.ParamCJPString(env, name)));
         }
 
         public override bool Equals(object obj)

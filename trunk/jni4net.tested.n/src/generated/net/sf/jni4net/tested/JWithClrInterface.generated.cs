@@ -47,7 +47,7 @@ namespace net.sf.jni4net.tested {
         public JWithClrInterface(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctor12, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctor12, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected JWithClrInterface(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -80,7 +80,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)I")]
         public virtual int CompareTo(object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._CompareTo0, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallIntMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -104,7 +104,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public global::java.lang.Class getClass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._getClass4));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JWithClrInterface._getClass4));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -116,19 +116,19 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait6, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1));
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait7, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait7, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._equals8, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._equals8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -146,7 +146,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._toString11));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JWithClrInterface._toString11));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

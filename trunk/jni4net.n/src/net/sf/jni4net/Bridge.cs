@@ -91,8 +91,8 @@ namespace net.sf.jni4net
             }
             knownAssemblies.Add(assembly, assembly);
             JNIEnv env = JNIEnv.ThreadEnv;
-            JavaProxiesMap.RegisterAssembly(env, assembly);
-            ClrProxiesMap.RegisterAssembly(env, assembly);
+            //JavaProxiesMap.RegisterAssembly(env, assembly);
+            //ClrProxiesMap.RegisterAssembly(env, assembly);
             Registry.Default.RegisterAssembly(assembly, true);
 
             if (Verbose)
@@ -101,53 +101,36 @@ namespace net.sf.jni4net
             }
         }
 
+        public static TRes UnWrapCLR<TRes>(IJavaProxy obj)
+        {
+            return Convertor.OptiJP2C<TRes>(JNIEnv.ThreadEnv, obj.Native);
+        }
+
+        public static TRes WrapCLR<TRes>(object obj)
+            where TRes : class , IJavaProxy
+        {
+            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj) as TRes;
+        }
+
+        /*
         public static TRes ToCLR<TRes>(IJavaProxy obj)
         {
-            var proxy = obj as IClrProxy;
-            if (proxy == null)
-            {
-                return (TRes) obj;
-            }
-            return ClrProxiesMap.ToClr<TRes>(proxy);
+            return Convertor.J2C<TRes>(JNIEnv.ThreadEnv, obj.Native);
         }
 
-        public static object ToCLR(IJavaProxy obj)
+        public static IObject ToJVM(object obj)
         {
-            if (obj == null)
-            {
-                return null;
-            }
-            var proxy = obj as IClrProxy;
-            if (proxy == null)
-            {
-                return obj;
-            }
-            return ClrProxiesMap.ToClr<object>(proxy);
-        }
-
-        public static Object ToJVM(object obj)
-        {
-            var jp = obj as Object;
-            if (jp != null)
-            {
-                return jp;
-            }
-            return ClrProxiesMap.WrapClrObj(JNIEnv.ThreadEnv, obj) as Object;
+            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj);
         }
 
         public static TRes ToJVM<TRes>(object obj) where TRes : class, IObject
         {
-            var jp = obj as Object;
-            if (jp != null)
-            {
-                return jp as TRes;
-            }
-            return ClrProxiesMap.WrapClrObj(JNIEnv.ThreadEnv, obj) as TRes;
-        }
+            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj) as TRes;
+        }*/
 
         public static Class TypeToKnownClass(Type real)
         {
-            return ClrProxiesMap.RealToKnownIface(real);
+            return Registry.Default.GetCLRRecord(real).JVMInterface;
         }
 
         public static string ClrSignature(Type type)
@@ -243,7 +226,8 @@ namespace net.sf.jni4net
 
         public static void InvokeStatic(Class clazz, string method, string signature, params object[] args)
         {
-            JNIEnv.ThreadEnv.CallStaticMethod(clazz, method, signature, args);
+            JNIEnv env = JNIEnv.ThreadEnv;
+            env.CallStaticVoidMethod(clazz, method, signature, Convertor.ConverArgs(env, args));
         }
 
         public static TRes InvokeStatic<TRes>(Class clazz, string method, string signature, params object[] args)

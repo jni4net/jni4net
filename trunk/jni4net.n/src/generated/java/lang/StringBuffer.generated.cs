@@ -37,14 +37,14 @@ namespace java.lang {
         public StringBuffer(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor4, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor4, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)V")]
         public StringBuffer(global::java.lang.CharSequence par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor5, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -58,7 +58,7 @@ namespace java.lang {
         public StringBuffer(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor7, this, new global::net.sf.jni4net.jni.Value(par0));
+            env.NewObject(global::java.lang.StringBuffer.staticClass, global::java.lang.StringBuffer.@__ctor7, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         protected StringBuffer(global::net.sf.jni4net.jni.JNIEnv env) : 
@@ -86,13 +86,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.StringBuffer._toString0));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.StringBuffer._toString0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
         public virtual char charAt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallCharMethod(this, global::java.lang.StringBuffer._charAt1, new global::net.sf.jni4net.jni.Value(par0));
+            return env.CallCharMethod(this, global::java.lang.StringBuffer._charAt1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -104,7 +104,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/lang/CharSequence;")]
         public virtual global::java.lang.CharSequence subSequence(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.CharSequence>(env.CallObjectMethod(this, global::java.lang.StringBuffer._subSequence3, new global::net.sf.jni4net.jni.Value(par0), new global::net.sf.jni4net.jni.Value(par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(env, env.CallObjectMethodPtr(this, global::java.lang.StringBuffer._subSequence3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

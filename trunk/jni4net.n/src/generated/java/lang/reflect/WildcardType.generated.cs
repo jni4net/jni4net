@@ -57,12 +57,12 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.Type[] getLowerBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0));
         }
         
         public java.lang.reflect.Type[] getUpperBounds() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return ((java.lang.reflect.Type[])(env.ConvertArrayToNet<global::java.lang.reflect.Type>(env.CallObjectMethod(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1))));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -79,7 +79,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.WildcardType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.WildcardType>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getLowerBounds());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getLowerBounds());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -90,7 +90,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.WildcardType real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.WildcardType>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getUpperBounds());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getUpperBounds());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

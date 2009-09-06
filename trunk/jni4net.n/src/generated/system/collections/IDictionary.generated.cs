@@ -75,7 +75,7 @@ namespace System.Collections {
         public object SyncRoot {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._SyncRoot2));
+                return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._SyncRoot2));
             }
         }
         
@@ -89,25 +89,25 @@ namespace System.Collections {
         public object this[object key] {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<object>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Item4, new global::net.sf.jni4net.jni.Value(key)));
+                return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Item4, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, key)));
             }
             set {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Item5, new global::net.sf.jni4net.jni.Value(key), new global::net.sf.jni4net.jni.Value(value));
+                env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Item5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, key), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, value));
             }
         }
         
         public global::System.Collections.ICollection Keys {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.ICollection>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Keys6));
+                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Keys6));
             }
         }
         
         public global::System.Collections.ICollection Values {
             get {
                 global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-                return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.ICollection>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._Values7));
+                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Values7));
             }
         }
         
@@ -147,17 +147,17 @@ namespace System.Collections {
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._CopyTo0, new global::net.sf.jni4net.jni.Value(array), new global::net.sf.jni4net.jni.Value(index));
+            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._CopyTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, array), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, index));
         }
         
         public bool Contains(object key) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._Contains8, new global::net.sf.jni4net.jni.Value(key));
+            return env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._Contains8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, key));
         }
         
         public void Add(object key, object value) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Add9, new global::net.sf.jni4net.jni.Value(key), new global::net.sf.jni4net.jni.Value(value));
+            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Add9, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, key), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, value));
         }
         
         public void Clear() {
@@ -167,17 +167,17 @@ namespace System.Collections {
         
         public void Remove(object key) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Remove13, new global::net.sf.jni4net.jni.Value(key));
+            env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Remove13, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, key));
         }
         
         public global::System.Collections.IDictionaryEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IDictionaryEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._GetEnumerator14));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionaryEnumerator>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator14));
         }
         
         global::System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::System.Collections.IEnumerator>(env.CallObjectMethod(this, global::System.Collections.@__IDictionary._GetEnumerator15));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator15));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -208,7 +208,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            ((global::System.Collections.ICollection)(real)).CopyTo(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Array>(__env, array), index);
+            ((global::System.Collections.ICollection)(real)).CopyTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(__env, array), index);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -229,7 +229,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.ICollection)(real)).SyncRoot);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Collections.ICollection)(real)).SyncRoot);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -251,7 +251,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real[global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, key)]);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real[global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, key)]);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -262,7 +262,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            real[global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, key)] = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value);
+            real[global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, key)] = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, value);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -272,7 +272,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Keys);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Keys);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -283,7 +283,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.Values);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Values);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -294,7 +294,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return real.Contains(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, key));
+            return real.Contains(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, key));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -305,7 +305,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            real.Add(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, key), global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, value));
+            real.Add(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, key), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, value));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -347,7 +347,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            real.Remove(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, key));
+            real.Remove(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, key));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -357,7 +357,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetEnumerator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -368,7 +368,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.Collections.IDictionary real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IDictionary>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, ((global::System.Collections.IEnumerable)(real)).GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Collections.IEnumerable)(real)).GetEnumerator());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

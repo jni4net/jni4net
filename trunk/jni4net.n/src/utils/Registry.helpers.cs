@@ -146,7 +146,7 @@ namespace net.sf.jni4net.utils
                         }
                     }
                 }
-                //TODO JNINativeMethod.Register(registrations, jvmProxy, env);
+                JNINativeMethod.Register(registrations, jvmProxy, env);
             }
         }
 
@@ -154,14 +154,22 @@ namespace net.sf.jni4net.utils
         {
             try
             {
-                //TODO record.CLRProxyInitMethod.Invoke(null, new object[] {env, record.JVMInterface});
+                record.CLRProxyInitMethod.Invoke(null, new object[] {env, record.JVMInterface});
             }
             catch (Exception ex)
             {
                 throw new JNIException("Can't initialize proxy " + record.CLRName, ex);
             }
-            //TODO record.JVMStatic.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, record.CLRInterface);
         }
 
+        private void RegisterTypeOf(RegistryRecord record, JNIEnv env)
+        {
+            MethodId constructor = knownCLR[typeof(Type)].JVMConstructor;
+            var h = new Value {_int = IntHandle.Alloc(record.CLRInterface)};
+            IntPtr clazz = Type_._class.native;
+            Value typeInfo = new Value {_object = env.NewObjectPtr(clazz, constructor, Value.Null, h)};
+            env.CallStaticVoidMethod(record.JVMStatic, "InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", new Value[] { Value.Null, typeInfo });
+            //record.JVMStatic.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, record.CLRInterface);
+        }
     }
 }

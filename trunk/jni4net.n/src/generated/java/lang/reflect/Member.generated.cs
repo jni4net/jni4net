@@ -96,12 +96,12 @@ namespace java.lang.reflect {
         
         public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.String>(env.CallObjectMethod(this, global::java.lang.reflect.@__Member._getName1));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member._getName1));
         }
         
         public global::java.lang.Class getDeclaringClass() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Class>(env.CallObjectMethod(this, global::java.lang.reflect.@__Member._getDeclaringClass2));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member._getDeclaringClass2));
         }
         
         public bool isSynthetic() {
@@ -136,7 +136,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.Member real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.Member>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getName());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getName());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -147,7 +147,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.lang.reflect.Member real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.lang.reflect.Member>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.getDeclaringClass());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getDeclaringClass());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

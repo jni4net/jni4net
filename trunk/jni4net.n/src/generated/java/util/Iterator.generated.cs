@@ -68,7 +68,7 @@ namespace java.util {
         
         public global::java.lang.Object next() {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.Bridge.ToCLR<global::java.lang.Object>(env.CallObjectMethod(this, global::java.util.@__Iterator._next1));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Iterator._next1));
         }
         
         public void remove() {
@@ -102,7 +102,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::java.util.Iterator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::java.util.Iterator>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.next());
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.next());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

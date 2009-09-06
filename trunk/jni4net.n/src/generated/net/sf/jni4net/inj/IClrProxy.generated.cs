@@ -56,7 +56,7 @@ namespace net.sf.jni4net.inj {
         
         public virtual void initProxy(int par0) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::net.sf.jni4net.inj.@__IClrProxy._initProxy1, new global::net.sf.jni4net.jni.Value(par0));
+            env.CallVoidMethod(this, global::net.sf.jni4net.inj.@__IClrProxy._initProxy1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {

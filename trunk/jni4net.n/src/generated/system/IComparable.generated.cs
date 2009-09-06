@@ -42,7 +42,7 @@ namespace System {
         
         public int CompareTo(object obj) {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, new global::net.sf.jni4net.jni.Value(obj));
+            return env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, obj));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
@@ -58,7 +58,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IComparable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IComparable>(__env, @__obj);
-            return real.CompareTo(global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Object>(__env, obj));
+            return real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }
