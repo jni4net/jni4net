@@ -40,42 +40,42 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _iterator0;
         
-        protected @__Iterable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Iterable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.@__Iterable.staticClass = staticClass;
-            global::java.lang.@__Iterable._iterator0 = env.GetMethodID(global::java.lang.@__Iterable.staticClass, "iterator", "()Ljava/util/Iterator;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.@__Iterable.staticClass = @__class;
+            global::java.lang.@__Iterable._iterator0 = @__env.GetMethodID(global::java.lang.@__Iterable.staticClass, "iterator", "()Ljava/util/Iterator;");
         }
         
         public global::java.util.Iterator iterator() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Iterator>(env, env.CallObjectMethodPtr(this, global::java.lang.@__Iterable._iterator0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Iterator>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Iterable._iterator0));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Iterable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Iterable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "iterator", "iterator0", "()Ljava/util/Iterator;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "iterator", "iterator0", "()Ljava/util/Iterator;"));
             return methods;
         }
         
-        private static global::System.IntPtr iterator0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr iterator0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/util/Iterator;
             // ()Ljava/util/Iterator;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.Iterable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Iterable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.iterator());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.Iterable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Iterable>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.util.Iterator>(@__env, @__real.iterator());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.@__Iterable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.@__Iterable(@__env);
             }
         }
     }

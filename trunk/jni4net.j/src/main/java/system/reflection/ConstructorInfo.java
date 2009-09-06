@@ -15,8 +15,8 @@ public class ConstructorInfo extends system.reflection.MethodBase {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected ConstructorInfo(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected ConstructorInfo(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     protected ConstructorInfo() {

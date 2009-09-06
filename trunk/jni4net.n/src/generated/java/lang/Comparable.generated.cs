@@ -40,42 +40,42 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
-        protected @__Comparable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Comparable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.@__Comparable.staticClass = staticClass;
-            global::java.lang.@__Comparable._compareTo0 = env.GetMethodID(global::java.lang.@__Comparable.staticClass, "compareTo", "(Ljava/lang/Object;)I");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.@__Comparable.staticClass = @__class;
+            global::java.lang.@__Comparable._compareTo0 = @__env.GetMethodID(global::java.lang.@__Comparable.staticClass, "compareTo", "(Ljava/lang/Object;)I");
         }
         
         public int compareTo(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Comparable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Comparable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "compareTo", "compareTo0", "(Ljava/lang/Object;)I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "compareTo", "compareTo0", "(Ljava/lang/Object;)I"));
             return methods;
         }
         
-        private static int compareTo0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static int compareTo0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)I
             // (Ljava/lang/Object;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.Comparable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Comparable>(__env, @__obj);
-            return real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.Comparable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Comparable>(@__env, @__obj);
+            return @__real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.@__Comparable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.@__Comparable(@__env);
             }
         }
     }

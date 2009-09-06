@@ -15,8 +15,8 @@ public class Guid extends system.ValueType implements system.IFormattable, syste
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Guid(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected Guid(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("([B)V")

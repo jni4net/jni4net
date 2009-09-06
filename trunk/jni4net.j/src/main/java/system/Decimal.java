@@ -15,8 +15,8 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Decimal(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected Decimal(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(I)V")

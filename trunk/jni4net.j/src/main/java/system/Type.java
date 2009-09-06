@@ -15,8 +15,8 @@ public class Type extends system.reflection.MemberInfo {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Type(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected Type(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     protected Type() {

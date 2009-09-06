@@ -29,151 +29,151 @@ namespace System {
         
         internal static global::java.lang.Class staticClass;
         
-        protected @__Guid(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Guid(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.@__Guid.staticClass = staticClass;
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.@__Guid.staticClass = @__class;
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Guid);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Guid);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToString", "ToString0", "(Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "CompareTo", "CompareTo1", "(Lsystem/Object;)I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToByteArray", "ToByteArray2", "()[B"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "Equals", "Equals3", "(Lsystem/Guid;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "CompareTo", "CompareTo4", "(Lsystem/Guid;)I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "NewGuid", "NewGuid5", "()Lsystem/Guid;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToString", "ToString6", "(Ljava/lang/String;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "__ctorGuid0", "__ctorGuid0", "(Lnet/sf/jni4net/inj/IClrProxy;[B)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "__ctorGuid1", "__ctorGuid1", "(Lnet/sf/jni4net/inj/IClrProxy;ISSBBBBBBBB)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "__ctorGuid2", "__ctorGuid2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "__ctorGuid3", "__ctorGuid3", "(Lnet/sf/jni4net/inj/IClrProxy;ISS[B)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString0", "(Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CompareTo", "CompareTo1", "(Lsystem/Object;)I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToByteArray", "ToByteArray2", "()[B"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Equals", "Equals3", "(Lsystem/Guid;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CompareTo", "CompareTo4", "(Lsystem/Guid;)I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "NewGuid", "NewGuid5", "()Lsystem/Guid;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString6", "(Ljava/lang/String;)Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid0", "__ctorGuid0", "(Lnet/sf/jni4net/inj/IClrProxy;[B)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid1", "__ctorGuid1", "(Lnet/sf/jni4net/inj/IClrProxy;ISSBBBBBBBB)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid2", "__ctorGuid2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid3", "__ctorGuid3", "(Lnet/sf/jni4net/inj/IClrProxy;ISS[B)V"));
             return methods;
         }
         
-        private static global::System.IntPtr ToString0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr formatProvider) {
+        private static global::System.IntPtr ToString0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr formatProvider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.IFormattable)(real)).ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, formatProvider)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, ((global::System.IFormattable)(@__real)).ToString(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, formatProvider)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static int CompareTo1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj) {
+        private static int CompareTo1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return ((global::System.IComparable)(real)).CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return ((global::System.IComparable)(@__real)).CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static global::System.IntPtr ToByteArray2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr ToByteArray2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[B
             // ()[B
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ToByteArray());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<byte[]>(@__env, @__real.ToByteArray());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static bool Equals3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr g) {
+        private static bool Equals3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr g) {
             // (Lsystem/Guid;)Z
             // (LSystem/Guid;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return real.Equals(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, g));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return @__real.Equals(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, g));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static int CompareTo4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr value) {
+        private static int CompareTo4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (Lsystem/Guid;)I
             // (LSystem/Guid;)I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, value));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return @__real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, value));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static global::System.IntPtr NewGuid5(global::System.IntPtr @__envi, global::System.IntPtr @__clazz) {
+        private static global::System.IntPtr NewGuid5(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
             // ()Lsystem/Guid;
             // ()LSystem/Guid;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::System.Guid.NewGuid());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Guid>(@__env, global::System.Guid.NewGuid());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr ToString6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr format) {
+        private static global::System.IntPtr ToString6(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format) {
             // (Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ToString(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, format)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, format)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void @__ctorGuid0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr b) {
+        private static void @__ctorGuid0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr b) {
             // ([B)V
             // ([B)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = new global::System.Guid(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Byte[]>(__env, b));
-            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = new global::System.Guid(global::net.sf.jni4net.utils.Convertor.J2C<byte[]>(@__env, b));
+            global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorGuid1(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, uint a, ushort b, ushort c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k) {
+        private static void @__ctorGuid1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, uint a, ushort b, ushort c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k) {
             // (ISSBBBBBBBB)V
             // (LSystem/UInt32;LSystem/UInt16;LSystem/UInt16;BBBBBBBB)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = new global::System.Guid(a, b, c, d, e, f, g, h, i, j, k);
-            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = new global::System.Guid(a, b, c, d, e, f, g, h, i, j, k);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorGuid2(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, global::System.IntPtr g) {
+        private static void @__ctorGuid2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr g) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = new global::System.Guid(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, g));
-            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = new global::System.Guid(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, g));
+            global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void @__ctorGuid3(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj, int a, short b, short c, global::System.IntPtr d) {
+        private static void @__ctorGuid3(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, int a, short b, short c, global::System.IntPtr d) {
             // (ISS[B)V
             // (ISS[B)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Guid real = new global::System.Guid(a, b, c, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Byte[]>(__env, d));
-            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Guid @__real = new global::System.Guid(a, b, c, global::net.sf.jni4net.utils.Convertor.J2C<byte[]>(@__env, d));
+            global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.@__Guid(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.@__Guid(@__env);
             }
         }
     }

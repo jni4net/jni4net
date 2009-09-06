@@ -28,33 +28,33 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Throwable;)V")]
         public RuntimeException(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
         public RuntimeException(global::java.lang.Throwable par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public RuntimeException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor2, this);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor2, this);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public RuntimeException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.RuntimeException.staticClass, global::java.lang.RuntimeException.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
-        protected RuntimeException(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected RuntimeException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
         public new static global::java.lang.Class _class {
@@ -63,18 +63,18 @@ namespace java.lang {
             }
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.RuntimeException.staticClass = staticClass;
-            global::java.lang.RuntimeException.@__ctor0 = env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
-            global::java.lang.RuntimeException.@__ctor1 = env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
-            global::java.lang.RuntimeException.@__ctor2 = env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "()V");
-            global::java.lang.RuntimeException.@__ctor3 = env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/String;)V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.RuntimeException.staticClass = @__class;
+            global::java.lang.RuntimeException.@__ctor0 = @__env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
+            global::java.lang.RuntimeException.@__ctor1 = @__env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.RuntimeException.@__ctor2 = @__env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "()V");
+            global::java.lang.RuntimeException.@__ctor3 = @__env.GetMethodID(global::java.lang.RuntimeException.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.RuntimeException(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.RuntimeException(@__env);
             }
         }
     }

@@ -31,41 +31,41 @@ namespace System.Runtime.Serialization {
         
         internal static global::net.sf.jni4net.jni.MethodId _GetObjectData0;
         
-        protected @__ISerializable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__ISerializable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.Runtime.Serialization.@__ISerializable.staticClass = staticClass;
-            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Ljava/lang/Object;Lsystem/ValueType;)V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.Runtime.Serialization.@__ISerializable.staticClass = @__class;
+            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Ljava/lang/Object;Lsystem/ValueType;)V");
         }
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, context));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, context));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__ISerializable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__ISerializable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetObjectData", "GetObjectData0", "(Ljava/lang/Object;Lsystem/ValueType;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData0", "(Ljava/lang/Object;Lsystem/ValueType;)V"));
             return methods;
         }
         
-        private static void GetObjectData0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
+        private static void GetObjectData0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
             // (Ljava/lang/Object;Lsystem/ValueType;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Runtime.Serialization.ISerializable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.ISerializable>(__env, @__obj);
-            real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.SerializationInfo>(__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.StreamingContext>(__env, context));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Runtime.Serialization.ISerializable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.ISerializable>(@__env, @__obj);
+            @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.Runtime.Serialization.@__ISerializable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.Runtime.Serialization.@__ISerializable(@__env);
             }
         }
     }

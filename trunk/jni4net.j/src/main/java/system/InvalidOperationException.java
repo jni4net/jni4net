@@ -15,8 +15,8 @@ public class InvalidOperationException extends system.SystemException {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected InvalidOperationException(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected InvalidOperationException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("()V")
