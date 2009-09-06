@@ -64,12 +64,6 @@ public class Object implements net.sf.jni4net.inj.IClrProxy, system.IObject {
     @net.sf.jni4net.attributes.ClrMethod("()V")
     private native static void __ctorObject0(net.sf.jni4net.inj.IClrProxy thiz);
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native final system.Type GetType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int GetHashCode();
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String ToString();
     
@@ -81,6 +75,12 @@ public class Object implements net.sf.jni4net.inj.IClrProxy, system.IObject {
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Object;)Z")
     public native static boolean ReferenceEquals(system.Object objA, system.Object objB);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native final system.Type GetType();
     
     public static system.Type typeof() {
         return system.Object.staticType;

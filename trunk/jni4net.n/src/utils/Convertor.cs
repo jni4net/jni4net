@@ -151,16 +151,7 @@ namespace net.sf.jni4net.utils
             Class elemClazz = Registry.Default.GetCLRRecord(type).JVMInterface;
             int length = array.Length;
             IntPtr res;
-            if (typeof(IJavaProxy).IsAssignableFrom(type))
-            {
-                res = env.NewObjectArrayPtr(length, elemClazz.native, null);
-                for (int i = 0; i < length; i++)
-                {
-                    IntPtr item = C2J(env, array.GetValue(i));
-                    env.SetObjectArrayElement(res, i, item);
-                }
-            }
-            else if (typeof(int).IsAssignableFrom(type))
+            if (typeof(int).IsAssignableFrom(type))
             {
                 res = env.NewIntArrayPtr(length);
                 env.SetIntArrayRegion(res, 0, length, (int[])array);
@@ -202,7 +193,12 @@ namespace net.sf.jni4net.utils
             }
             else
             {
-                throw new NotImplementedException();
+                res = env.NewObjectArrayPtr(length, elemClazz.native, null);
+                for (int i = 0; i < length; i++)
+                {
+                    IntPtr item = C2J(env, array.GetValue(i));
+                    env.SetObjectArrayElement(res, i, item);
+                }
             }
             return res;
         }

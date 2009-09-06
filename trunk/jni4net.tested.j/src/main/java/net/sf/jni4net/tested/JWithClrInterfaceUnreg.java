@@ -32,7 +32,7 @@ public class JWithClrInterfaceUnreg implements IComparable, Runnable {
 
 
 	public int CompareTo(system.Object objPar0) {
-		JWithClrInterface other = Bridge.toJVM(objPar0);
+		JWithClrInterface other = Bridge.unwrapJVM(objPar0);
 		if (other == null) {
 			return -1;
 		}

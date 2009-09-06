@@ -17,6 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package net.sf.jni4net;
 
+import net.sf.jni4net.inj.IClrProxy;
+import system.IObject;
+
 @net.sf.jni4net.attributes.ClrType
 public class Bridge extends system.Object {
 
@@ -82,8 +85,13 @@ public class Bridge extends system.Object {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> T toJVM(system.Object objPar0) {
-		return (T) ToJVM(objPar0);
+	public static <T> system.Object wrapJVM(T obj){
+		return WrapJVM(obj);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T> T unwrapJVM(system.Object obj){
+		return (T)UnwrapJVM(obj);
 	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet

@@ -25,6 +25,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.jni
 {
@@ -36,10 +37,10 @@ namespace net.sf.jni4net.jni
             sb.Append('(');
             foreach (ParameterInfo par in thiz.GetParameters())
             {
-                sb.Append(Bridge.ClrSignature(par.ParameterType));
+                sb.Append(Registry.ClrSignature(par.ParameterType));
             }
             sb.Append(')');
-            sb.Append(Bridge.ClrSignature(thiz.ReturnType));
+            sb.Append(Registry.ClrSignature(thiz.ReturnType));
             return sb.ToString();
         }
 
@@ -49,7 +50,7 @@ namespace net.sf.jni4net.jni
             sb.Append('(');
             foreach (ParameterInfo par in thiz.GetParameters())
             {
-                sb.Append(Bridge.ClrSignature(par.ParameterType));
+                sb.Append(Registry.ClrSignature(par.ParameterType));
             }
             sb.Append(')');
             sb.Append('V');
@@ -68,22 +69,22 @@ namespace net.sf.jni4net.jni
                 }
                 if (par.Type.ArrayRank == 1)
                 {
-                    sb.Append(Bridge.GetSignature(par.Type.BaseType + "[]"));
+                    sb.Append(Registry.GetSignature(par.Type.BaseType + "[]"));
                 }
                 else
                 {
-                    sb.Append(Bridge.GetSignature(par.Type.BaseType));
+                    sb.Append(Registry.GetSignature(par.Type.BaseType));
                 }
             }
             sb.Append(')');
 
             if (thiz.ReturnType.ArrayRank == 1)
             {
-                sb.Append(Bridge.GetSignature(thiz.ReturnType.BaseType + "[]"));
+                sb.Append(Registry.GetSignature(thiz.ReturnType.BaseType + "[]"));
             }
             else
             {
-                sb.Append(Bridge.GetSignature(thiz.ReturnType.BaseType));
+                sb.Append(Registry.GetSignature(thiz.ReturnType.BaseType));
             }
             return sb.ToString();
         }
@@ -94,7 +95,7 @@ namespace net.sf.jni4net.jni
             sb.Append('(');
             foreach (CodeParameterDeclarationExpression par in thiz.Parameters)
             {
-                sb.Append(Bridge.GetSignature(par.Type.BaseType));
+                sb.Append(Registry.GetSignature(par.Type.BaseType));
             }
             sb.Append(')');
             return sb.ToString();

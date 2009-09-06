@@ -102,7 +102,7 @@ namespace java.lang
         public new void Invoke(string method, string signature, params object[] args)
         {
             JNIEnv env = JNIEnv.ThreadEnv;
-            env.CallStaticVoidMethod(clazz, method, signature, Convertor.ConverArgs(env, args));
+            env.CallStaticVoidMethod(this, method, signature, Convertor.ConverArgs(env, args));
         }
 
         public new TRes Invoke<TRes>(string method, string signature, params object[] args)

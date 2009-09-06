@@ -238,7 +238,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- bridges -->
   <ClrType TypeName="net.sf.jni4net.Bridge" MergeJavaSource="true">
-	  <MethodModifier MethodName="InvokeStatic" Signature="(Ljava/lang/Class;LSystem/String;LSystem/String;[LSystem/Object;)V" Skip="true"/>
 	  <MethodModifier MethodName="CreateJVM" Signature="([LSystem/String;)V" Skip="true"/>
   </ClrType>
   

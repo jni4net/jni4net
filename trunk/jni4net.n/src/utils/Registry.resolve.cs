@@ -23,7 +23,7 @@ namespace net.sf.jni4net.utils
                 RegistryRecord resi=null;
                 // any interface is better than system.Object
                 current = clazz;
-                while (current != Object_._class)
+                while (current != Object._class)
                 {
                     foreach (Class ifc in current.getInterfaces())
                     {
