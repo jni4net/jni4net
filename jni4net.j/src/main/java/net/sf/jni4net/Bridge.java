@@ -101,6 +101,12 @@ public class Bridge extends system.Object {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;")
+    public native static system.Object WrapJVM(java.lang.Object obj);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Lnet/sf/jni4net/jni/IJavaProxy;")
+    public native static java.lang.Object UnwrapJVM(system.Object obj);
+    
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getVerbose();
     
