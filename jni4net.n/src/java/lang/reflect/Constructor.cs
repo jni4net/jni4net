@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #if !JNI4NET_MINI
 using net.sf.jni4net;
+using net.sf.jni4net.utils;
 
 namespace java.lang.reflect
 {
@@ -33,7 +34,7 @@ namespace java.lang.reflect
             sb.Append('(');
             foreach (Class par in getParameterTypes())
             {
-                sb.Append(Bridge.JavaSignature(par));
+                sb.Append(Registry.JavaSignature(par));
             }
             sb.Append(')');
             sb.Append('V');

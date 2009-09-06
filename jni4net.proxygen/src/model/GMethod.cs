@@ -22,6 +22,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -72,7 +73,7 @@ namespace net.sf.jni4net.proxygen.model
             sb.Append('(');
             for (int i = 0; i < _Parameters.Count; i++)
             {
-                sb.Append(Bridge.GetSignature(_Parameters[i].LowerName));
+                sb.Append(Registry.GetSignature(_Parameters[i].LowerName));
             }
             sb.Append(')');
             return sb.ToString();
@@ -80,12 +81,12 @@ namespace net.sf.jni4net.proxygen.model
 
         public string GetJVMSignature()
         {
-            return GetJVMSignatureNoRet() + Bridge.GetSignature(ReturnType.JVMResolved);
+            return GetJVMSignatureNoRet() + Registry.GetSignature(ReturnType.JVMResolved);
         }
 
         public string GetCLRSignature()
         {
-            return GetCLRSignatureNoRet() + Bridge.GetSignature(ReturnType.CLRResolved);
+            return GetCLRSignatureNoRet() + Registry.GetSignature(ReturnType.CLRResolved);
         }
 
         public string GetJVMSignatureNoRet()
@@ -96,7 +97,7 @@ namespace net.sf.jni4net.proxygen.model
                 sb.Append('(');
                 for (int i = 0; i < _Parameters.Count; i++)
                 {
-                    sb.Append(Bridge.GetSignature(_Parameters[i].JVMResolved));
+                    sb.Append(Registry.GetSignature(_Parameters[i].JVMResolved));
                 }
                 sb.Append(')');
             }
@@ -111,7 +112,7 @@ namespace net.sf.jni4net.proxygen.model
                 sb.Append('(');
                 for (int i = 0; i < _Parameters.Count; i++)
                 {
-                    sb.Append(Bridge.GetSignature(_Parameters[i].CLRResolved));
+                    sb.Append(Registry.GetSignature(_Parameters[i].CLRResolved));
                 }
                 sb.Append(')');
             }

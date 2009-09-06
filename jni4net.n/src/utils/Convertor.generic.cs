@@ -1,8 +1,7 @@
 ﻿using System;
 using java.lang;
-using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
-using String=System.String;
+using String=java.lang.String;
 
 namespace net.sf.jni4net.utils
 {
@@ -14,33 +13,33 @@ namespace net.sf.jni4net.utils
             {
                 return default(T);
             }
-            var clrType = typeof(T);
+            Type clrType = typeof (T);
             //TODO all sealed ?
-            if (clrType == typeof(Class))
+            if (clrType == typeof (Class))
             {
                 var nclazz = new Class(env);
-                ((IJavaProxy)nclazz).Init(env, obj, Class._class);
-                return (T)(object)nclazz;
+                ((IJavaProxy) nclazz).Init(env, obj, Class._class);
+                return (T) (object) nclazz;
             }
-            if (clrType == typeof(String))
+            if (clrType == typeof (String))
             {
-                var nstring = new java.lang.String(env);
-                ((IJavaProxy)nstring).Init(env, obj, java.lang.String._class);
-                return (T)(object)nstring;
+                var nstring = new String(env);
+                ((IJavaProxy) nstring).Init(env, obj, String._class);
+                return (T) (object) nstring;
             }
-            if (clrType == typeof(string))
+            if (clrType == typeof (string))
             {
-                env.ConvertToString(obj);
+                return (T)(object)env.ConvertToString(obj);
             }
-            if (typeof(IJavaProxy).IsAssignableFrom(clrType))
+            if (typeof (IJavaProxy).IsAssignableFrom(clrType))
             {
-                return (T)OptiJ2CP(env, obj);
+                return (T) OptiJ2CP(env, obj);
             }
             if (clrType.IsArray)
             {
-                return (T)(object) J2CArray(env, obj, typeof (T).GetElementType());
+                return (T) (object) J2CArray(env, obj, typeof (T).GetElementType());
             }
-            return (T)J2C(env, obj);
+            return (T) J2C(env, obj);
         }
 
         public static T OptiJ2CP<T>(JNIEnv env, IntPtr obj)
@@ -50,19 +49,19 @@ namespace net.sf.jni4net.utils
             {
                 return default(T);
             }
-            var clrType = typeof(T);
+            Type clrType = typeof (T);
             //TODO all sealed ?
-            if (clrType == typeof(Class))
+            if (clrType == typeof (Class))
             {
                 var nclazz = new Class(env);
-                ((IJavaProxy)nclazz).Init(env, obj, Class._class);
-                return (T)(object)nclazz;
+                ((IJavaProxy) nclazz).Init(env, obj, Class._class);
+                return (T) (object) nclazz;
             }
-            if (clrType == typeof(String))
+            if (clrType == typeof (String))
             {
-                var nstring = new java.lang.String(env);
-                ((IJavaProxy)nstring).Init(env, obj, java.lang.String._class);
-                return (T)(object)nstring;
+                var nstring = new String(env);
+                ((IJavaProxy) nstring).Init(env, obj, String._class);
+                return (T) (object) nstring;
             }
             return OptiJ2CP(env, obj) as T;
         }

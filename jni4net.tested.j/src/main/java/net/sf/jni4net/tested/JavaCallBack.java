@@ -55,7 +55,7 @@ public class JavaCallBack {
 	public static int callBackComparison2() {
 		JWithClrInterface c1=new JWithClrInterface(1);
 		JWithClrInterface c2=new JWithClrInterface(2);
-		return c1.CompareTo(Bridge.ToCLR(c2));
+		return c1.CompareTo(Bridge.wrapJVM(c2));
 	}
 
 	public static int callBackRun() {

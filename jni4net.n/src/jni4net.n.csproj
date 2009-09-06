@@ -60,7 +60,7 @@
     <Compile Include="attributes\JavaProxyAttribute.cs" />
     <Compile Include="jni\JNINativeMethod.cs" />
     <Compile Include="jni\MethodInfoExt.cs" />
-    <Compile Include="net\sf\jni4net\Bridge.cs" />
+    <Compile Include="Bridge.cs" />
     <Compile Include="jni\FieldId.cs" />
     <Compile Include="jni\IJavaProxy.cs" />
     <Compile Include="jni\JavaVM.cs" />
@@ -228,6 +228,7 @@
     <Compile Include="jni\JNIEnv.array.cs" />
     <Compile Include="jni\JNIEnv.convert.cs" />
     <Compile Include="jni\JNIEnv.raw.cs" />
+    <Compile Include="Bridge.convertor.cs" />
     <Compile Include="utils\Convertor.generic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

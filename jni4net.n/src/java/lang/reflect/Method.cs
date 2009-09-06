@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using java.lang.annotation;
 using net.sf.jni4net;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace java.lang.reflect
 {
@@ -35,10 +36,10 @@ namespace java.lang.reflect
             sb.Append('(');
             foreach (Class par in getParameterTypes())
             {
-                sb.Append(Bridge.JavaSignature(par));
+                sb.Append(Registry.JavaSignature(par));
             }
             sb.Append(')');
-            sb.Append(Bridge.JavaSignature(getReturnType()));
+            sb.Append(Registry.JavaSignature(getReturnType()));
             return sb.ToString();
         }
 

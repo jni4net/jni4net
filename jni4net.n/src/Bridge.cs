@@ -36,7 +36,7 @@ using Object=java.lang.Object;
 
 namespace net.sf.jni4net
 {
-    public static class Bridge
+    public static partial class Bridge
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool bindNative = true;
@@ -99,124 +99,6 @@ namespace net.sf.jni4net
             {
                 Console.WriteLine("loaded " + assembly);
             }
-        }
-
-        public static TRes UnWrapCLR<TRes>(IJavaProxy obj)
-        {
-            return Convertor.OptiJP2C<TRes>(JNIEnv.ThreadEnv, obj.Native);
-        }
-
-        public static TRes WrapCLR<TRes>(object obj)
-            where TRes : class , IJavaProxy
-        {
-            return Convertor.C2JObject(JNIEnv.ThreadEnv, obj) as TRes;
-        }
-
-        public static Class TypeToKnownClass(Type real)
-        {
-            return Registry.Default.GetCLRRecord(real).JVMInterface;
-        }
-
-        public static string ClrSignature(Type type)
-        {
-            return GetSignature(type.FullName);
-        }
-
-        public static string GetSignature(string typeName)
-        {
-            string low = typeName.ToLowerInvariant();
-            int arr = low.LastIndexOf("[");
-            string array = "";
-            while (arr != -1)
-            {
-                array += "[";
-                low = low.Substring(0, arr);
-                arr = low.LastIndexOf("[");
-            }
-            switch (low)
-            {
-                case "bool":
-                case "boolean":
-                case "system.boolean":
-                    return array + "Z";
-                case "int":
-                case "int32":
-                case "system.int32":
-                    return array + "I";
-                case "double":
-                case "system.double":
-                    return array + "D";
-                case "float":
-                case "single":
-                case "system.single":
-                    return array + "F";
-                case "short":
-                case "int16":
-                case "system.int16":
-                    return array + "S";
-                case "long":
-                case "int64":
-                case "system.int64":
-                    return array + "J";
-                case "char":
-                case "system.char":
-                    return array + "C";
-                case "byte":
-                case "system.byte":
-                    return array + "B";
-                case "void":
-                case "system.void":
-                    return array + "V";
-                default:
-                    return array + "L" + typeName.Substring(0, low.Length).Replace('.', '/') + ";";
-            }
-        }
-
-        public static string JavaSignature(Class clazz)
-        {
-            string name = clazz.FullName;
-            if (clazz.isPrimitive())
-            {
-                switch (name)
-                {
-                    case "boolean":
-                        return "Z";
-                    case "int":
-                        return "I";
-                    case "double":
-                        return "D";
-                    case "float":
-                        return "F";
-                    case "short":
-                        return "S";
-                    case "long":
-                        return "J";
-                    case "char":
-                        return "C";
-                    case "byte":
-                        return "B";
-                    case "void":
-                        return "V";
-                    default:
-                        throw new NotImplementedException();
-                }
-            }
-            if (clazz.isArray())
-            {
-                return name.Replace('.', '/');
-            }
-            return "L" + name.Replace('.', '/') + ";";
-        }
-
-        public static void InvokeStatic(Class clazz, string method, string signature, params object[] args)
-        {
-            JNIEnv env = JNIEnv.ThreadEnv;
-            env.CallStaticVoidMethod(clazz, method, signature, Convertor.ConverArgs(env, args));
-        }
-
-        public static TRes InvokeStatic<TRes>(Class clazz, string method, string signature, params object[] args)
-        {
-            return JNIEnv.ThreadEnv.CallStaticMethod<TRes>(clazz, method, signature, args);
         }
 
         public static void disposeClrHandle(int clrHandle)
