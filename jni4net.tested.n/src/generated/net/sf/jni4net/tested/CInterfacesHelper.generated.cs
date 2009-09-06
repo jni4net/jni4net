@@ -51,8 +51,8 @@ namespace net.sf.jni4net.tested {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.createCWithJavaInterface(i));
+                global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.createCWithJavaInterface(i));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -62,8 +62,8 @@ namespace net.sf.jni4net.tested {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
-            return global::net.sf.jni4net.utils.ClrProxiesMap.WrapClr(@__env, real.CWithJavaInterfaceUnreg(i));
+                global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
+                return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.CWithJavaInterfaceUnreg(i));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -74,7 +74,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::net.sf.jni4net.tested.CInterfacesHelper real = new global::net.sf.jni4net.tested.CInterfacesHelper();
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         

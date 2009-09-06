@@ -67,7 +67,7 @@ namespace System.Reflection {
             // (Z)[LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -78,7 +78,7 @@ namespace System.Reflection {
             // (LSystem/Type;Z)[LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, ((global::System.Reflection.ICustomAttributeProvider)(real)).GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -89,7 +89,7 @@ namespace System.Reflection {
             // (LSystem/Type;Z)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return ((global::System.Reflection.ICustomAttributeProvider)(real)).IsDefined(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, attributeType), inherit);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -100,7 +100,7 @@ namespace System.Reflection {
             // ()LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.ParameterType);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -111,7 +111,7 @@ namespace System.Reflection {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Name);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -122,7 +122,7 @@ namespace System.Reflection {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.DefaultValue);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -133,7 +133,7 @@ namespace System.Reflection {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.RawDefaultValue);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -144,7 +144,7 @@ namespace System.Reflection {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.Position;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -155,7 +155,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/ParameterAttributes;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Attributes);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -166,7 +166,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/MemberInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Member);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -177,7 +177,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsIn;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -188,7 +188,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsOut;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -199,7 +199,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsLcid;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -210,7 +210,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsRetval;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -221,7 +221,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.IsOptional;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -232,7 +232,7 @@ namespace System.Reflection {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return real.MetadataToken;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -243,7 +243,7 @@ namespace System.Reflection {
             // ()[LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetRequiredCustomModifiers());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -254,7 +254,7 @@ namespace System.Reflection {
             // ()[LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetOptionalCustomModifiers());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -265,7 +265,7 @@ namespace System.Reflection {
             // (LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.ParameterInfo>(__env, @__obj);
+            global::System.Reflection.ParameterInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ParameterInfo>(__env, @__obj);
             ((global::System.Runtime.InteropServices._ParameterInfo)(real)).GetTypeInfo(iTInfo, lcid, ppTInfo);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

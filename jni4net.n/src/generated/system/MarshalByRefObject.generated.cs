@@ -51,7 +51,7 @@ namespace System {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
+            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetLifetimeService());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -62,7 +62,7 @@ namespace System {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
+            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.InitializeLifetimeService());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -73,7 +73,7 @@ namespace System {
             // (LSystem/Type;)LSystem/Runtime/Remoting/ObjRef;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.MarshalByRefObject>(__env, @__obj);
+            global::System.MarshalByRefObject real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.CreateObjRef(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, requestedType)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

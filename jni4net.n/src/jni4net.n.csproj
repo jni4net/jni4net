@@ -75,11 +75,7 @@
     <Compile Include="jni\MethodWrapper.cs" />
     <Compile Include="jni\Structures.cs" />
     <Compile Include="jni\Value.cs" />
-    <Compile Include="utils\ClrProxiesMap.cs" />
-    <Compile Include="utils\ClrProxyMap.register.cs" />
     <Compile Include="utils\IntHandle.cs" />
-    <Compile Include="utils\JavaProxiesMap.cs" />
-    <Compile Include="utils\JavaProxiesMap.register.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs">

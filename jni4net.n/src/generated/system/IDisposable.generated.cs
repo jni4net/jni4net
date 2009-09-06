@@ -57,7 +57,7 @@ namespace System {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IDisposable real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IDisposable>(__env, @__obj);
+            global::System.IDisposable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable>(__env, @__obj);
             real.Dispose();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

@@ -77,7 +77,7 @@ namespace System.Collections {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IEnumerator>(__env, @__obj);
+            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(__env, @__obj);
             return real.MoveNext();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -88,7 +88,7 @@ namespace System.Collections {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IEnumerator>(__env, @__obj);
+            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Current);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -99,7 +99,7 @@ namespace System.Collections {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Collections.IEnumerator>(__env, @__obj);
+            global::System.Collections.IEnumerator real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(__env, @__obj);
             real.Reset();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

@@ -107,7 +107,7 @@ namespace System.Reflection {
             // ()[LSystem/Reflection/ParameterInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetParameters());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -118,7 +118,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/MethodImplAttributes;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetMethodImplementationFlags());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -129,7 +129,7 @@ namespace System.Reflection {
             // ()LSystem/RuntimeMethodHandle;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.MethodHandle);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -140,7 +140,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/MethodAttributes;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Attributes);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -151,7 +151,7 @@ namespace System.Reflection {
             // (LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Globalization.CultureInfo>(__env, culture)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -162,7 +162,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/CallingConventions;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.CallingConvention);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -173,7 +173,7 @@ namespace System.Reflection {
             // ()[LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetGenericArguments());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -184,7 +184,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsGenericMethodDefinition;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -195,7 +195,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.ContainsGenericParameters;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -206,7 +206,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsGenericMethod;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -217,7 +217,7 @@ namespace System.Reflection {
             // (LSystem/Object;[LSystem/Object;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, parameters)));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -228,7 +228,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsPublic;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -239,7 +239,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsPrivate;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -250,7 +250,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsFamily;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -261,7 +261,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsAssembly;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -272,7 +272,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsFamilyAndAssembly;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -283,7 +283,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsFamilyOrAssembly;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -294,7 +294,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsStatic;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -305,7 +305,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsFinal;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -316,7 +316,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsVirtual;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -327,7 +327,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsHideBySig;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -338,7 +338,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsAbstract;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -349,7 +349,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsSpecialName;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -360,7 +360,7 @@ namespace System.Reflection {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return real.IsConstructor;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -371,7 +371,7 @@ namespace System.Reflection {
             // ()LSystem/Reflection/MethodBody;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Reflection.MethodBase>(__env, @__obj);
+            global::System.Reflection.MethodBase real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.MethodBase>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetMethodBody());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

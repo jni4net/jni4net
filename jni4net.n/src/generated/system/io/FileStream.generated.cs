@@ -75,7 +75,7 @@ namespace System.IO {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             return real.IsAsync;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(bool);
@@ -86,7 +86,7 @@ namespace System.IO {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Name);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -97,7 +97,7 @@ namespace System.IO {
             // ()LSystem/Security/AccessControl/FileSecurity;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetAccessControl());
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -108,7 +108,7 @@ namespace System.IO {
             // (LSystem/Security/AccessControl/FileSecurity;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             real.SetAccessControl(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Security.AccessControl.FileSecurity>(__env, fileSecurity));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -118,7 +118,7 @@ namespace System.IO {
             // ()LSystem/IntPtr;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             return ((global::System.IntPtr)(real.Handle));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -129,7 +129,7 @@ namespace System.IO {
             // ()LMicrosoft/Win32/SafeHandles/SafeFileHandle;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.SafeFileHandle);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -140,7 +140,7 @@ namespace System.IO {
             // (JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             real.Lock(position, length);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -150,7 +150,7 @@ namespace System.IO {
             // (JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.IO.FileStream real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.IO.FileStream>(__env, @__obj);
+            global::System.IO.FileStream real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(__env, @__obj);
             real.Unlock(position, length);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -161,7 +161,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -171,7 +171,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -181,7 +181,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileShare>(__env, share));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -191,7 +191,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileShare>(__env, share), bufferSize);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -201,7 +201,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileShare>(__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileOptions>(__env, options));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -211,7 +211,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileShare>(__env, share), bufferSize, useAsync);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -221,7 +221,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileMode>(__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Security.AccessControl.FileSystemRights>(__env, rights), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileShare>(__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileOptions>(__env, options), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Security.AccessControl.FileSecurity>(__env, fileSecurity));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -231,7 +231,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -241,7 +241,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), ownsHandle);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -251,7 +251,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), ownsHandle, bufferSize);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -261,7 +261,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), ownsHandle, bufferSize, isAsync);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -271,7 +271,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access));
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -281,7 +281,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), bufferSize);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
@@ -291,7 +291,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
             global::System.IO.FileStream real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileAccess>(__env, access), bufferSize, isAsync);
-            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);
+            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         

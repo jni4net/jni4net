@@ -59,7 +59,7 @@ namespace System.Security {
             // ()LSystem/Security/Policy/Evidence;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::System.Security.IEvidenceFactory real = global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::System.Security.IEvidenceFactory>(__env, @__obj);
+            global::System.Security.IEvidenceFactory real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Security.IEvidenceFactory>(__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Evidence);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
