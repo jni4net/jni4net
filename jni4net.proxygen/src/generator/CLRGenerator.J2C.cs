@@ -74,10 +74,12 @@ namespace net.sf.jni4net.proxygen.generator
                 var call = new CodeObjectCreateExpression(RealType, callParams.ToArray());
 
                 tgtMethod.Statements.Add(
-                    new CodeVariableDeclarationStatement(RealType, "real", call));
+                    new CodeVariableDeclarationStatement(RealType, realVariableName, call));
+
                 tgtMethod.Statements.Add(
-                    new CodeSnippetStatement(
-                        "            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);"));
+                    new CodeMethodInvokeExpression(
+                        new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                          "InitProxy"), envVariable, objVariable, realVariable));
             }
             else
             {
@@ -89,20 +91,19 @@ namespace net.sf.jni4net.proxygen.generator
                 else
                 {
                     tgtMethod.Statements.Add(
-                        new CodeVariableDeclarationStatement(RealType, "real",
+                        new CodeVariableDeclarationStatement(RealType, realVariableName,
                                                              new CodeSnippetExpression(
                                                                  "global::net.sf.jni4net.utils.Convertor.J2C<global::" +
                                                                  type.CLRResolved +
-                                                                 ">(__env, @__obj)")));
+                                                                 ">(@" + envVariableName + ", @"+objVariableName+")")));
 
                     if (method.DeclaringType != type)
                     {
-                        targetObject = new CodeCastExpression(method.DeclaringType.CLRReference,
-                                                              new CodeVariableReferenceExpression("real"));
+                        targetObject = new CodeCastExpression(method.DeclaringType.CLRReference, realVariable);
                     }
                     else
                     {
-                        targetObject = new CodeVariableReferenceExpression("real");
+                        targetObject = realVariable;
                     }
                 }
                 CodeExpression call;
@@ -153,17 +154,14 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        string wrapperName = "C2J";
-                        /* TODO
-                        if (method.ReturnType == Repository.systemString)
-                        {
-                            wrapperName = "ConvertString";
-                        }*/
-                        callst = new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-                                                                   TypeReferenceEx(typeof (Convertor)),
-                                                                   wrapperName,
-                                                                   new CodeVariableReferenceExpression("__env"),
-                                                                   call));
+                        var callExpression =
+                            new CodeMethodInvokeExpression(
+                                new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                                  "C2J", new[] { method.ReturnType.CLRReference }),
+                                                                  envVariable, call);
+
+                        
+                        callst = new CodeMethodReturnStatement(callExpression);
                         tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }
                 }
@@ -179,7 +177,7 @@ namespace net.sf.jni4net.proxygen.generator
                                                              "Add",
                                                              new CodeMethodInvokeExpression(
                                                                  new CodeMethodReferenceExpression(TypeReferenceEx(typeof (JNINativeMethod)),"Create"),
-                                                                 new CodeVariableReferenceExpression("type"),
+                                                                 new CodeVariableReferenceExpression(typeVariableName),
                                                                  new CodePrimitiveExpression(callbackName),
                                                                  new CodePrimitiveExpression(uName),
                                                                  new CodePrimitiveExpression(callBackSignature)));
@@ -198,7 +196,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             tgtMethod.Statements.Add(
                 new CodeSnippetStatement(
-                    "            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}"
+                    "            }catch (global::System.Exception ex){@"+envVariableName+".ThrowExisting(ex);}"
                     //}
                     ));
 
@@ -212,8 +210,8 @@ namespace net.sf.jni4net.proxygen.generator
         private void GenerateGetEnvJ2C(CodeMemberMethod tgtMethod)
         {
             var env = new CodeVariableDeclarationStatement(
-                new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference), "__env",
-                new CodeSnippetExpression("global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi)"));
+                new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName,
+                new CodeSnippetExpression("global::net.sf.jni4net.jni.JNIEnv.Wrap(@"+envpVariableName+")"));
             tgtMethod.Statements.Add(env);
         }
 
@@ -229,9 +227,14 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else 
                 {
-                    callParams.Add(new CodeSnippetExpression(
-                                       "global::net.sf.jni4net.utils.Convertor.J2C<global::" +
-                                       paramType.CLRResolved + ">(__env, " + method.ParameterNames[p] + ")"));
+                    var callExpression =
+                        new CodeMethodInvokeExpression(
+                            new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                              "J2C", new[] { paramType.CLRReference }),
+                                                              envVariable, new CodeVariableReferenceExpression(method.ParameterNames[p]));
+
+
+                    callParams.Add(callExpression);
                 }
             }
             return callParams;
@@ -240,19 +243,19 @@ namespace net.sf.jni4net.proxygen.generator
         private void GenerateMethodParamsJ2C(CodeMemberMethod tgtMethod, GMethod method)
         {
             var enviParam = new CodeParameterDeclarationExpression(
-                TypeReference(typeof (IntPtr)), "__envi");
+                TypeReference(typeof(IntPtr)), envpVariableName);
             tgtMethod.Parameters.Add(enviParam);
 
             if (method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (IntPtr)), "__clazz");
+                    TypeReference(typeof (IntPtr)), classVariableName);
                 tgtMethod.Parameters.Add(classParam);
             }
             if (!method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (IntPtr)), "__obj");
+                    TypeReference(typeof (IntPtr)), objVariableName);
                 tgtMethod.Parameters.Add(classParam);
             }
 
@@ -277,14 +280,14 @@ namespace net.sf.jni4net.proxygen.generator
             initMethod.Attributes = MemberAttributes.Static | MemberAttributes.Private;
             initMethod.Parameters.Add(
                 new CodeParameterDeclarationExpression(
-                    new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), "env"));
+                    new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName));
             initMethod.Parameters.Add(
                 new CodeParameterDeclarationExpression(
-                    new CodeTypeReference(typeof (Class), CodeTypeReferenceOptions.GlobalReference), "clazz"));
+                    new CodeTypeReference(typeof(Class), CodeTypeReferenceOptions.GlobalReference), classVariableName));
             string wrapper = "__" + type.Name;
             initMethod.Statements.Add(
                 new CodeVariableDeclarationStatement(
-                    new CodeTypeReference(typeof (Type), CodeTypeReferenceOptions.GlobalReference), "type",
+                    new CodeTypeReference(typeof(Type), CodeTypeReferenceOptions.GlobalReference), typeVariableName,
                     new CodeSnippetExpression("typeof(" + wrapper + ")")));
 
             initMethod.Statements.Add(

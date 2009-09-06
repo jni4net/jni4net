@@ -312,13 +312,13 @@ namespace net.sf.jni4net.proxygen.generator
             init.Attributes |= MemberAttributes.Static;
             var jniEnv = new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference);
             var statClass = new CodeTypeReference(typeof (Class));
-            init.Parameters.Add(new CodeParameterDeclarationExpression(jniEnv, "env"));
-            init.Parameters.Add(new CodeParameterDeclarationExpression(statClass, "staticClass"));
+            init.Parameters.Add(new CodeParameterDeclarationExpression(jniEnv, envVariableName));
+            init.Parameters.Add(new CodeParameterDeclarationExpression(statClass, classVariableName));
             init.Statements.Add(
                 new CodeAssignStatement(
                     new CodeFieldReferenceExpression(
                         CurrentTypeEx, "staticClass"),
-                    new CodeVariableReferenceExpression("staticClass")));
+                    new CodeVariableReferenceExpression(classVariableName)));
 
             tgtType.Members.Add(init);
 
@@ -331,7 +331,7 @@ namespace net.sf.jni4net.proxygen.generator
             constructionHelper.BaseTypes.Add(TypeReference(typeof (IConstructionHelper)));
             var createMethod = new CodeMemberMethod();
             createMethod.ReturnType = TypeReference(typeof (IJavaProxy));
-            createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)), "env"));
+            createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)), envVariableName));
             createMethod.Statements.Add(
                 new CodeMethodReturnStatement(new CodeObjectCreateExpression(CurrentType,
                                                                              envVariable)));
