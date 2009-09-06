@@ -4,6 +4,7 @@ using System.Collections;
 using System.Text;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.model;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.proxygen.generator
 {
@@ -66,24 +67,12 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    if (method.ReturnType.IsArray)
-                    {
-                        var expression = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("env"),
-                                                                        "ConvertArrayToNet", invokeExpression);
-                        expression.Method.TypeArguments.Add(method.ReturnType.ArrayElement.CLRReference);
-                        invokeExpression = expression;
-                        var castExpression = new CodeCastExpression(method.ReturnType.CLRReference, invokeExpression);
-                        call = new CodeMethodReturnStatement(castExpression);
-                    }
-                    else
-                    {
-                        var castExpression =
-                            new CodeMethodInvokeExpression(
-                                new CodeMethodReferenceExpression(TypeReferenceEx(typeof (Bridge)),
-                                                                  "ToCLR", new[] {method.ReturnType.CLRReference}),
-                                invokeExpression);
-                        call = new CodeMethodReturnStatement(castExpression);
-                    }
+                    var castExpression =
+                        new CodeMethodInvokeExpression(
+                            new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                              "J2C", new[] { method.ReturnType.CLRReference }),
+                                                              envVariable,invokeExpression);
+                    call = new CodeMethodReturnStatement(castExpression);
                 }
             }
             return call;
@@ -93,7 +82,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             CodeExpression[] expressions = GetExpressionsC2J(method, uName);
             string callName = GetCallNameC2J(method);
-            return new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("env"), callName, expressions);
+            return new CodeMethodInvokeExpression(envVariable, callName, expressions);
         }
 
         private CodeExpression[] GetExpressionsC2J(GMethod method, string uName)
@@ -118,14 +107,14 @@ namespace net.sf.jni4net.proxygen.generator
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
                 CodeExpression expression = new CodeVariableReferenceExpression(paramName);
-                if (parameter.IsArray)
+                if (parameter.CLRType==typeof(string) &&
+                    parameter.JVMType==java.lang.String._class)
                 {
-                    expression = new CodeMethodInvokeExpression(TypeReferenceEx(typeof (Value)), "CreateArray",
-                                                                expression);
+                    expression = new CodeMethodInvokeExpression(TypeReferenceEx(typeof(Convertor)), "ParamCJPString", envVariable, expression);
                 }
                 else
                 {
-                    expression = new CodeObjectCreateExpression(TypeReference(typeof (Value)), expression);
+                    expression = new CodeMethodInvokeExpression(TypeReferenceEx(typeof(Convertor)), "ParamC2J", envVariable, expression);
                 }
                 expressions[i + offset] = expression;
             }
@@ -142,7 +131,7 @@ namespace net.sf.jni4net.proxygen.generator
                 new CodeAssignStatement(
                     new CodeFieldReferenceExpression(CurrentTypeEx, uName),
                     new CodeMethodInvokeExpression(
-                        new CodeVariableReferenceExpression("env"), getmethodidthrow,
+                        envVariable, getmethodidthrow,
                         claxs,
                         new CodePrimitiveExpression(method.JVMName),
                         new CodePrimitiveExpression(method.JVMSignature)));
@@ -173,6 +162,10 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 callName.Insert(0, method.IsField ? "Get" : "Call");
                 callName.Append(method.IsField ? "Field" : "Method");
+                if (method.ReturnType != null && !method.ReturnType.IsPrimitive)
+                {
+                    callName.Append("Ptr");
+                }
             }
             return callName.ToString();
         }

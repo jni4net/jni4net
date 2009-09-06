@@ -334,7 +334,7 @@ namespace net.sf.jni4net.proxygen.generator
             createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)), "env"));
             createMethod.Statements.Add(
                 new CodeMethodReturnStatement(new CodeObjectCreateExpression(CurrentType,
-                                                                             new CodeVariableReferenceExpression("env"))));
+                                                                             envVariable)));
             createMethod.Name = "CreateProxy";
             createMethod.Attributes = MemberAttributes.Public | MemberAttributes.Final;
             constructionHelper.Members.Add(createMethod);
