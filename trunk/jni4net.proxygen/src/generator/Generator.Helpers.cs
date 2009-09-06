@@ -6,7 +6,16 @@ namespace net.sf.jni4net.proxygen.generator
 {
     internal partial class Generator
     {
-        protected CodeVariableReferenceExpression envVariable = new CodeVariableReferenceExpression("env");
+        protected static string realVariableName = "__real";
+        protected static string envVariableName = "__env";
+        protected static string envpVariableName = "__envp";
+        protected static string objVariableName = "__obj";
+        protected static string handleVariableName = "__handle";
+        protected static string classVariableName = "__class";
+        protected static string typeVariableName = "__type";
+        protected CodeVariableReferenceExpression envVariable = new CodeVariableReferenceExpression(envVariableName);
+        protected CodeVariableReferenceExpression objVariable = new CodeVariableReferenceExpression(objVariableName);
+        protected CodeVariableReferenceExpression realVariable = new CodeVariableReferenceExpression(realVariableName);
 
         public static CodeTypeReference TypeReference(string src)
         {
@@ -49,16 +58,16 @@ namespace net.sf.jni4net.proxygen.generator
             var cc = new CodeConstructor();
             cc.Attributes = pub ? MemberAttributes.FamilyOrAssembly : MemberAttributes.Family;
             cc.Parameters.Add(
-                new CodeParameterDeclarationExpression(TypeReference(envType), "env"));
+                new CodeParameterDeclarationExpression(TypeReference(envType), envVariableName));
             if (handle)
             {
                 cc.Parameters.Add(
-                    new CodeParameterDeclarationExpression(TypeReference("int"), "handle"));
+                    new CodeParameterDeclarationExpression(TypeReference("int"), handleVariableName));
             }
             cc.BaseConstructorArgs.Add(envVariable);
             if (handle)
             {
-                cc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("handle"));
+                cc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression(handleVariableName));
             }
             tgtType.Members.Add(cc);
         }
