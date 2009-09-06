@@ -487,7 +487,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Type @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, @__real.FullName);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, @__real.FullName);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -498,7 +498,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Type @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, @__real.Namespace);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, @__real.Namespace);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -509,7 +509,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Type @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, @__real.AssemblyQualifiedName);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, @__real.AssemblyQualifiedName);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

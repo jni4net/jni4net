@@ -552,7 +552,7 @@ namespace System {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, global::System.Console.Title);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, global::System.Console.Title);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -737,7 +737,7 @@ namespace System {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<string>(@__env, global::System.Console.ReadLine());
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, global::System.Console.ReadLine());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
