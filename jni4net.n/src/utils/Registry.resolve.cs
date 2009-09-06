@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using java.lang;
+using Object=java.lang.Object;
 
 namespace net.sf.jni4net.utils
 {
@@ -17,22 +18,45 @@ namespace net.sf.jni4net.utils
                 current = current.getSuperclass();
             }
 
-            if (current == Object_._class)
+            if (current == Object._class)
             {
+                RegistryRecord resi=null;
                 // any interface is better than system.Object
-                bool ifcfound = false;
                 current = clazz;
                 while (current != Object_._class)
                 {
                     foreach (Class ifc in current.getInterfaces())
                     {
-                        if (knownJVM.TryGetValue(ifc, out res))
+                        if (knownJVM.TryGetValue(ifc, out resi))
                         {
-                            ifcfound = true;
+                            res = resi;
+                            fill = new List<Class> { clazz };
+                            if (current != clazz)
+                            {
+                                fill.Add(current);
+                            }
+                            break;
+                        }
+                        foreach (Class ifcin in ifc.getInterfaces())
+                        {
+                            if (knownJVM.TryGetValue(ifcin, out resi))
+                            {
+                                res = resi;
+                                fill = new List<Class> { clazz };
+                                fill.Add(ifc);
+                                if (current != clazz)
+                                {
+                                    fill.Add(current);
+                                }
+                                break;
+                            }
+                        }
+                        if (resi != null)
+                        {
                             break;
                         }
                     }
-                    if (ifcfound)
+                    if (resi!=null)
                     {
                         break;
                     }

@@ -23,7 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
 using java.lang;
+using java.lang.annotation;
 using java.lang.reflect;
+using net.sf.jni4net.tested;
 using NUnit.Framework;
 using Byte=java.lang.Byte;
 using Object=java.lang.Object;
@@ -46,6 +48,14 @@ namespace net.sf.jni4net.test
                 Class returnType = method.getReturnType();
                 Console.WriteLine(method + " " + returnType);
             }
+        }
+
+        [Test]
+        public void ArrayTest2()
+        {
+            Method method = JInterface_._class.getMethod("cdefined", new Class[] {});
+            Annotation[] annotations = method.getAnnotations();
+            Assert.Greater(annotations.Length, 0);
         }
 
         [Test]

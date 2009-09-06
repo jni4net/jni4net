@@ -24,7 +24,8 @@ namespace net.sf.jni4net.utils
             {
                 for (int i = 0; i < length; i++)
                 {
-                    object element = J2C(env, env.GetObjectArrayElementPtr(array, i));
+                    IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                    object element = J2C(env, elementPtr);
                     res.SetValue(element, i);
                 }
             }
@@ -67,7 +68,7 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static object J2C(JNIEnv env, IntPtr obj)
+        private static object J2C(JNIEnv env, IntPtr obj)
         {
             if (obj == IntPtr.Zero)
             {

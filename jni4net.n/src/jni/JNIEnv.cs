@@ -181,10 +181,10 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        public object CallStaticObjectMethod(Class clazz, MethodId methodIdNative, params Value[] args)
+        public TRes CallStaticObjectMethod<TRes>(Class clazz, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = CallStaticObjectMethodPtr(clazz, methodIdNative, args);
-            return Convertor.J2C(this, res);
+            return Convertor.J2C<TRes>(this, res);
         }
 
         public int CallStaticIntMethod(Class clazz, MethodId methodIdNative, params Value[] args)
@@ -261,11 +261,11 @@ namespace net.sf.jni4net.jni
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) CallStaticObjectMethod(clazz, idNative, args);
+                    return CallStaticObjectMethod<TRes>(clazz, idNative, args);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) (string) (String) CallStaticObjectMethod(clazz, idNative, args);
+                    return CallStaticObjectMethod<TRes>(clazz, idNative, args);
                 }
                 if (typeof (int).IsAssignableFrom(typeof (TRes)))
                 {
@@ -323,17 +323,10 @@ namespace net.sf.jni4net.jni
             CallVoidMethod(obj.Native, methodId, args);
         }
 
-        public object CallObjectMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
+        public TRes CallObjectMethod<TRes>(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = CallObjectMethodPtr(obj, methodIdNative, args);
-            return Convertor.J2C(this, res);
-        }
-
-        public object CallObjectMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
-        {
-            IntPtr res = callObjectMethod(native, obj, methodIdNative.native, args);
-            ExceptionTest();
-            return Convertor.J2C(this, res);
+            return Convertor.J2C<TRes>(this, res);
         }
 
         public bool CallBooleanMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
@@ -415,20 +408,6 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private object CallObjectMethod(IJavaProxy obj, string method, string sig, params Value[] args)
-        {
-            Class objectClass = GetObjectClass(obj);
-            if (objectClass != null)
-            {
-                MethodId methodId = GetMethodID(objectClass, method, sig);
-                if (methodId != null)
-                {
-                    return CallObjectMethod(obj, methodId, args);
-                }
-            }
-            throw new ArgumentException();
-        }
-
         private bool CallBooleanMethod(IJavaProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
@@ -464,11 +443,11 @@ namespace net.sf.jni4net.jni
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) CallObjectMethod(obj, idNative, args);
+                    return CallObjectMethod<TRes>(obj, idNative, args);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) (string) (String) CallObjectMethod(obj, idNative, args);
+                    return CallObjectMethod<TRes>(obj, idNative, args);
                 }
                 if (typeof (int).IsAssignableFrom(typeof (TRes)))
                 {
@@ -514,10 +493,10 @@ namespace net.sf.jni4net.jni
 
         #region getters instance
 
-        public object GetObjectField(IJavaProxy obj, FieldId fieldID)
+        public TRes GetObjectField<TRes>(IJavaProxy obj, FieldId fieldID)
         {
             IntPtr res = GetObjectFieldPtr(obj, fieldID);
-            return Convertor.J2C(this, res);
+            return Convertor.J2C<TRes>(this, res);
         }
 
         public bool GetBooleanField(IJavaProxy obj, FieldId fieldID)
@@ -581,20 +560,6 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public object GetObjectField(IJavaProxy obj, string fieldName, string sig)
-        {
-            Class objectClass = obj.GetClass();
-            if (objectClass != null)
-            {
-                FieldId id = GetStaticFieldID(objectClass, fieldName, sig);
-                if (id != null)
-                {
-                    return GetObjectField(obj, id);
-                }
-            }
-            throw new ArgumentException();
-        }
-
         public TRes GetField<TRes>(IJavaProxy obj, string fieldName, string sig)
         {
             FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
@@ -602,11 +567,11 @@ namespace net.sf.jni4net.jni
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) GetObjectField(obj, id);
+                    return GetObjectField<TRes>(obj, id);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) (string) (String) GetObjectField(obj, id);
+                    return GetObjectField<TRes>(obj, id);
                 }
                 if (typeof (int).IsAssignableFrom(typeof (TRes)))
                 {
@@ -885,10 +850,10 @@ namespace net.sf.jni4net.jni
 
         #region getters static
 
-        public object GetStaticObjectField(Class clazz, FieldId fieldID)
+        public TRes GetStaticObjectField<TRes>(Class clazz, FieldId fieldID)
         {
             IntPtr res = GetStaticObjectFieldPtr(clazz, fieldID);
-            return Convertor.J2C(this, res);
+            return Convertor.J2C<TRes>(this, res);
         }
 
 
@@ -966,11 +931,11 @@ namespace net.sf.jni4net.jni
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) GetStaticObjectField(objectClass, id);
+                    return GetStaticObjectField<TRes>(objectClass, id);
                 }
                 if (typeof (string).IsAssignableFrom(typeof (TRes)))
                 {
-                    return (TRes) (object) (string) (String) GetStaticObjectField(objectClass, id);
+                    return GetStaticObjectField<TRes>(objectClass, id);
                 }
                 if (typeof (int).IsAssignableFrom(typeof (TRes)))
                 {

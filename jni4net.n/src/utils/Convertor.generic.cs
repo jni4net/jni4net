@@ -10,7 +10,11 @@ namespace net.sf.jni4net.utils
     {
         public static T J2C<T>(JNIEnv env, IntPtr obj)
         {
-            var clrType = typeof (T);
+            if (obj == IntPtr.Zero)
+            {
+                return default(T);
+            }
+            var clrType = typeof(T);
             //TODO all sealed ?
             if (clrType == typeof(Class))
             {
@@ -23,6 +27,10 @@ namespace net.sf.jni4net.utils
                 var nstring = new java.lang.String(env);
                 ((IJavaProxy)nstring).Init(env, obj, java.lang.String._class);
                 return (T)(object)nstring;
+            }
+            if (clrType == typeof(string))
+            {
+                env.ConvertToString(obj);
             }
             if (typeof(IJavaProxy).IsAssignableFrom(clrType))
             {
@@ -38,6 +46,10 @@ namespace net.sf.jni4net.utils
         public static T OptiJ2CP<T>(JNIEnv env, IntPtr obj)
             where T : class, IJavaProxy
         {
+            if (obj == IntPtr.Zero)
+            {
+                return default(T);
+            }
             var clrType = typeof(T);
             //TODO all sealed ?
             if (clrType == typeof(Class))
