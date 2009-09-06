@@ -6,6 +6,8 @@ namespace net.sf.jni4net.proxygen.generator
 {
     internal partial class Generator
     {
+        protected CodeVariableReferenceExpression envVariable = new CodeVariableReferenceExpression("env");
+
         public static CodeTypeReference TypeReference(string src)
         {
             return new CodeTypeReference(src, CodeTypeReferenceOptions.GlobalReference);
@@ -53,7 +55,7 @@ namespace net.sf.jni4net.proxygen.generator
                 cc.Parameters.Add(
                     new CodeParameterDeclarationExpression(TypeReference("int"), "handle"));
             }
-            cc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("env"));
+            cc.BaseConstructorArgs.Add(envVariable);
             if (handle)
             {
                 cc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("handle"));

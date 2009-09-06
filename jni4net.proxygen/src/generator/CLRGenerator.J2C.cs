@@ -153,13 +153,14 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        string wrapperName = "WrapClr";
+                        string wrapperName = "C2J";
+                        /* TODO
                         if (method.ReturnType == Repository.systemString)
                         {
                             wrapperName = "ConvertString";
-                        }
+                        }*/
                         callst = new CodeMethodReturnStatement(new CodeMethodInvokeExpression(
-                                                                   TypeReferenceEx(typeof (ClrProxiesMap)),
+                                                                   TypeReferenceEx(typeof (Convertor)),
                                                                    wrapperName,
                                                                    new CodeVariableReferenceExpression("__env"),
                                                                    call));
@@ -226,17 +227,11 @@ namespace net.sf.jni4net.proxygen.generator
                 {
                     callParams.Add(new CodeVariableReferenceExpression(method.ParameterNames[p]));
                 }
-                else if (!paramType.IsJVMProxy)
+                else 
                 {
                     callParams.Add(new CodeSnippetExpression(
-                                       "global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::" +
+                                       "global::net.sf.jni4net.utils.Convertor.J2C<global::" +
                                        paramType.CLRResolved + ">(__env, " + method.ParameterNames[p] + ")"));
-                }
-                else
-                {
-                    callParams.Add(new CodeSnippetExpression(
-                                       "global::net.sf.jni4net.utils.JavaProxiesMap.Wrap<global::" + paramType.CLRResolved +
-                                       ">(__env, " + method.ParameterNames[p] + ")"));
                 }
             }
             return callParams;
