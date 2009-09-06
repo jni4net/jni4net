@@ -77,7 +77,7 @@ namespace net.sf.jni4net.proxygen.generator
                     new CodeVariableDeclarationStatement(RealType, "real", call));
                 tgtMethod.Statements.Add(
                     new CodeSnippetStatement(
-                        "            global::net.sf.jni4net.utils.ClrProxiesMap.InitProxy(__env, __obj, real);"));
+                        "            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);"));
             }
             else
             {
@@ -91,7 +91,7 @@ namespace net.sf.jni4net.proxygen.generator
                     tgtMethod.Statements.Add(
                         new CodeVariableDeclarationStatement(RealType, "real",
                                                              new CodeSnippetExpression(
-                                                                 "global::net.sf.jni4net.utils.ClrProxiesMap.ToClr<global::" +
+                                                                 "global::net.sf.jni4net.utils.Convertor.J2C<global::" +
                                                                  type.CLRResolved +
                                                                  ">(__env, @__obj)")));
 
