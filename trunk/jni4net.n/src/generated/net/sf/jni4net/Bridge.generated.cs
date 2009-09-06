@@ -48,13 +48,7 @@ namespace net.sf.jni4net {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "setBindNative", "BindNative5", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly6", "(Ljava/lang/String;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "RegisterAssembly", "RegisterAssembly7", "(Lsystem/reflection/Assembly;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToCLR", "ToCLR8", "(Ljava/lang/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ToJVM", "ToJVM9", "(Lsystem/Object;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "TypeToKnownClass", "TypeToKnownClass10", "(Lsystem/Type;)Ljava/lang/Class;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "ClrSignature", "ClrSignature11", "(Lsystem/Type;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetSignature", "GetSignature12", "(Ljava/lang/String;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "JavaSignature", "JavaSignature13", "(Ljava/lang/Class;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "disposeClrHandle", "disposeClrHandle14", "(I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "disposeClrHandle", "disposeClrHandle8", "(I)V"));
             return methods;
         }
         
@@ -133,68 +127,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        private static global::System.IntPtr ToCLR8(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr obj) {
-            // (Ljava/lang/Object;)Lsystem/Object;
-            // (Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-                throw new System.NotImplementedException();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr ToJVM9(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr obj) {
-            // (Lsystem/Object;)Ljava/lang/Object;
-            // (LSystem/Object;)Ljava/lang/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-                throw new System.NotImplementedException();
-            }
-            catch (global::System.Exception ex) { __env.ThrowExisting(ex); }
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr TypeToKnownClass10(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr real) {
-            // (Lsystem/Type;)Ljava/lang/Class;
-            // (LSystem/Type;)Ljava/lang/Class;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::net.sf.jni4net.Bridge.TypeToKnownClass(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, real)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr ClrSignature11(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr type) {
-            // (Lsystem/Type;)Ljava/lang/String;
-            // (LSystem/Type;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::net.sf.jni4net.Bridge.ClrSignature(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, type)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr GetSignature12(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr typeName) {
-            // (Ljava/lang/String;)Ljava/lang/String;
-            // (LSystem/String;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::net.sf.jni4net.Bridge.GetSignature(global::net.sf.jni4net.utils.Convertor.J2C<global::System.String>(__env, typeName)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr JavaSignature13(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr clazz) {
-            // (Ljava/lang/Class;)Ljava/lang/String;
-            // (Ljava/lang/Class;)LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, global::net.sf.jni4net.Bridge.JavaSignature(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(__env, clazz)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static void disposeClrHandle14(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int clrHandle) {
+        private static void disposeClrHandle8(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, int clrHandle) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

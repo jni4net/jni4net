@@ -53,7 +53,7 @@ namespace net.sf.jni4net.tested {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-                global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
+            global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
             return real.Value;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -64,7 +64,7 @@ namespace net.sf.jni4net.tested {
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-                global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
+            global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
             real.Value = value;
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
@@ -74,11 +74,8 @@ namespace net.sf.jni4net.tested {
             // (Ljava/lang/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-                global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
-            return real.compareTo(
-                global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, objectPar0)
-                )
-                ;
+            global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
+            return real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, objectPar0));
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -88,7 +85,7 @@ namespace net.sf.jni4net.tested {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-                global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
+            global::net.sf.jni4net.tested.CWithJavaInterface real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(__env, @__obj);
             real.run();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
