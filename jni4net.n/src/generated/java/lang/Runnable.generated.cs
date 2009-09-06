@@ -40,41 +40,41 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _run0;
         
-        protected @__Runnable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Runnable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.@__Runnable.staticClass = staticClass;
-            global::java.lang.@__Runnable._run0 = env.GetMethodID(global::java.lang.@__Runnable.staticClass, "run", "()V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.@__Runnable.staticClass = @__class;
+            global::java.lang.@__Runnable._run0 = @__env.GetMethodID(global::java.lang.@__Runnable.staticClass, "run", "()V");
         }
         
         public void run() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.lang.@__Runnable._run0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::java.lang.@__Runnable._run0);
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Runnable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Runnable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "run", "run0", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "run", "run0", "()V"));
             return methods;
         }
         
-        private static void run0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static void run0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.Runnable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Runnable>(__env, @__obj);
-            real.run();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.Runnable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Runnable>(@__env, @__obj);
+            @__real.run();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.@__Runnable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.@__Runnable(@__env);
             }
         }
     }

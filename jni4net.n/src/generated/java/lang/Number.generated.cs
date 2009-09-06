@@ -34,12 +34,12 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Number() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Number.staticClass, global::java.lang.Number.@__ctor6, this);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.Number.staticClass, global::java.lang.Number.@__ctor6, this);
         }
         
-        protected Number(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected Number(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
         public new static global::java.lang.Class _class {
@@ -48,57 +48,57 @@ namespace java.lang {
             }
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.Number.staticClass = staticClass;
-            global::java.lang.Number._byteValue0 = env.GetMethodID(global::java.lang.Number.staticClass, "byteValue", "()B");
-            global::java.lang.Number._doubleValue1 = env.GetMethodID(global::java.lang.Number.staticClass, "doubleValue", "()D");
-            global::java.lang.Number._floatValue2 = env.GetMethodID(global::java.lang.Number.staticClass, "floatValue", "()F");
-            global::java.lang.Number._intValue3 = env.GetMethodID(global::java.lang.Number.staticClass, "intValue", "()I");
-            global::java.lang.Number._longValue4 = env.GetMethodID(global::java.lang.Number.staticClass, "longValue", "()J");
-            global::java.lang.Number._shortValue5 = env.GetMethodID(global::java.lang.Number.staticClass, "shortValue", "()S");
-            global::java.lang.Number.@__ctor6 = env.GetMethodID(global::java.lang.Number.staticClass, "<init>", "()V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.Number.staticClass = @__class;
+            global::java.lang.Number._byteValue0 = @__env.GetMethodID(global::java.lang.Number.staticClass, "byteValue", "()B");
+            global::java.lang.Number._doubleValue1 = @__env.GetMethodID(global::java.lang.Number.staticClass, "doubleValue", "()D");
+            global::java.lang.Number._floatValue2 = @__env.GetMethodID(global::java.lang.Number.staticClass, "floatValue", "()F");
+            global::java.lang.Number._intValue3 = @__env.GetMethodID(global::java.lang.Number.staticClass, "intValue", "()I");
+            global::java.lang.Number._longValue4 = @__env.GetMethodID(global::java.lang.Number.staticClass, "longValue", "()J");
+            global::java.lang.Number._shortValue5 = @__env.GetMethodID(global::java.lang.Number.staticClass, "shortValue", "()S");
+            global::java.lang.Number.@__ctor6 = @__env.GetMethodID(global::java.lang.Number.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]
         public virtual byte byteValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallByteMethod(this, global::java.lang.Number._byteValue0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallByteMethod(this, global::java.lang.Number._byteValue0);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()D")]
         public virtual double doubleValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallDoubleMethod(this, global::java.lang.Number._doubleValue1);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallDoubleMethod(this, global::java.lang.Number._doubleValue1);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()F")]
         public virtual float floatValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallFloatMethod(this, global::java.lang.Number._floatValue2);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallFloatMethod(this, global::java.lang.Number._floatValue2);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int intValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Number._intValue3);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.Number._intValue3);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public virtual long longValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallLongMethod(this, global::java.lang.Number._longValue4);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallLongMethod(this, global::java.lang.Number._longValue4);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()S")]
         public virtual short shortValue() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallShortMethod(this, global::java.lang.Number._shortValue5);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallShortMethod(this, global::java.lang.Number._shortValue5);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.Number(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.Number(@__env);
             }
         }
     }

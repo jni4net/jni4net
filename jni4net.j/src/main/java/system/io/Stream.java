@@ -15,8 +15,8 @@ public class Stream extends system.MarshalByRefObject implements system.IDisposa
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Stream(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected Stream(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     protected Stream() {

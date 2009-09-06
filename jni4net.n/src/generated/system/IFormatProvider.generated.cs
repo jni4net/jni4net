@@ -31,42 +31,42 @@ namespace System {
         
         internal static global::net.sf.jni4net.jni.MethodId _GetFormat0;
         
-        protected @__IFormatProvider(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__IFormatProvider(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.@__IFormatProvider.staticClass = staticClass;
-            global::System.@__IFormatProvider._GetFormat0 = env.GetMethodID(global::System.@__IFormatProvider.staticClass, "GetFormat", "(Lsystem/Type;)Lsystem/Object;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.@__IFormatProvider.staticClass = @__class;
+            global::System.@__IFormatProvider._GetFormat0 = @__env.GetMethodID(global::System.@__IFormatProvider.staticClass, "GetFormat", "(Lsystem/Type;)Lsystem/Object;");
         }
         
         public object GetFormat(global::System.Type formatType) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<object>(env, env.CallObjectMethodPtr(this, global::System.@__IFormatProvider._GetFormat0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, formatType)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormatProvider._GetFormat0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, formatType)));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__IFormatProvider);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__IFormatProvider);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetFormat", "GetFormat0", "(Lsystem/Type;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFormat", "GetFormat0", "(Lsystem/Type;)Lsystem/Object;"));
             return methods;
         }
         
-        private static global::System.IntPtr GetFormat0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr formatType) {
+        private static global::System.IntPtr GetFormat0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr formatType) {
             // (Lsystem/Type;)Lsystem/Object;
             // (LSystem/Type;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IFormatProvider real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetFormat(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(__env, formatType)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, formatType)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.@__IFormatProvider(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.@__IFormatProvider(@__env);
             }
         }
     }

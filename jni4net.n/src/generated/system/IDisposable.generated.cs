@@ -31,41 +31,41 @@ namespace System {
         
         internal static global::net.sf.jni4net.jni.MethodId _Dispose0;
         
-        protected @__IDisposable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__IDisposable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.@__IDisposable.staticClass = staticClass;
-            global::System.@__IDisposable._Dispose0 = env.GetMethodID(global::System.@__IDisposable.staticClass, "Dispose", "()V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.@__IDisposable.staticClass = @__class;
+            global::System.@__IDisposable._Dispose0 = @__env.GetMethodID(global::System.@__IDisposable.staticClass, "Dispose", "()V");
         }
         
         public void Dispose() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::System.@__IDisposable._Dispose0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::System.@__IDisposable._Dispose0);
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__IDisposable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__IDisposable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "Dispose", "Dispose0", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Dispose", "Dispose0", "()V"));
             return methods;
         }
         
-        private static void Dispose0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static void Dispose0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IDisposable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable>(__env, @__obj);
-            real.Dispose();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.IDisposable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable>(@__env, @__obj);
+            @__real.Dispose();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.@__IDisposable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.@__IDisposable(@__env);
             }
         }
     }

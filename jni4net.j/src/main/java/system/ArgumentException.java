@@ -15,8 +15,8 @@ public class ArgumentException extends system.SystemException {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected ArgumentException(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected ArgumentException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("()V")

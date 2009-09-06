@@ -31,42 +31,42 @@ namespace System.Collections {
         
         internal static global::net.sf.jni4net.jni.MethodId _GetEnumerator0;
         
-        protected @__IEnumerable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__IEnumerable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.Collections.@__IEnumerable.staticClass = staticClass;
-            global::System.Collections.@__IEnumerable._GetEnumerator0 = env.GetMethodID(global::System.Collections.@__IEnumerable.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.Collections.@__IEnumerable.staticClass = @__class;
+            global::System.Collections.@__IEnumerable._GetEnumerator0 = @__env.GetMethodID(global::System.Collections.@__IEnumerable.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
         }
         
         public global::System.Collections.IEnumerator GetEnumerator() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(env, env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__IEnumerable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__IEnumerable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetEnumerator", "GetEnumerator0", "()Lsystem/collections/IEnumerator;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetEnumerator", "GetEnumerator0", "()Lsystem/collections/IEnumerator;"));
             return methods;
         }
         
-        private static global::System.IntPtr GetEnumerator0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetEnumerator0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/collections/IEnumerator;
             // ()LSystem/Collections/IEnumerator;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IEnumerable real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerable>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetEnumerator());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Collections.IEnumerable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerable>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Collections.IEnumerator>(@__env, @__real.GetEnumerator());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.Collections.@__IEnumerable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.Collections.@__IEnumerable(@__env);
             }
         }
     }

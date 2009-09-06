@@ -55,96 +55,96 @@ namespace java.lang.annotation {
         
         internal static global::net.sf.jni4net.jni.MethodId _annotationType3;
         
-        protected @__Annotation(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Annotation(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.annotation.@__Annotation.staticClass = staticClass;
-            global::java.lang.annotation.@__Annotation._hashCode0 = env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "hashCode", "()I");
-            global::java.lang.annotation.@__Annotation._equals1 = env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::java.lang.annotation.@__Annotation._toString2 = env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.annotation.@__Annotation._annotationType3 = env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "annotationType", "()Ljava/lang/Class;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.annotation.@__Annotation.staticClass = @__class;
+            global::java.lang.annotation.@__Annotation._hashCode0 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "hashCode", "()I");
+            global::java.lang.annotation.@__Annotation._equals1 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::java.lang.annotation.@__Annotation._toString2 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "toString", "()Ljava/lang/String;");
+            global::java.lang.annotation.@__Annotation._annotationType3 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "annotationType", "()Ljava/lang/Class;");
         }
         
         public int hashCode() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0);
         }
         
         public bool equals(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         public global::java.lang.String toString() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._toString2));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._toString2));
         }
         
         public global::java.lang.Class annotationType() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._annotationType3));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._annotationType3));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Annotation);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Annotation);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hashCode", "hashCode0", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "equals", "equals1", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "toString", "toString2", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "annotationType", "annotationType3", "()Ljava/lang/Class;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "hashCode", "hashCode0", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "equals", "equals1", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "toString", "toString2", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "annotationType", "annotationType3", "()Ljava/lang/Class;"));
             return methods;
         }
         
-        private static int hashCode0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static int hashCode0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
-            return real.hashCode();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
+            return @__real.hashCode();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static bool equals1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static bool equals1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
-            return real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
+            return @__real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static global::System.IntPtr toString2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr toString2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.toString());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String>(@__env, @__real.toString());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr annotationType3(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr annotationType3(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/lang/Class;
             // ()Ljava/lang/Class;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.annotation.Annotation real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.annotationType());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Class>(@__env, @__real.annotationType());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.annotation.@__Annotation(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.annotation.@__Annotation(@__env);
             }
         }
     }

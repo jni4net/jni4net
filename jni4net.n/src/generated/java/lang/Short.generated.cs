@@ -52,19 +52,19 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Short(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor14, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor14, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)V")]
         public Short(short par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor15, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor15, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
-        protected Short(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected Short(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
         public new static global::java.lang.Class _class {
@@ -76,119 +76,119 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("S")]
         public static short MIN_VALUE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticShortField(global::java.lang.Short.staticClass, global::java.lang.Short._MIN_VALUE10);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticShortField(global::java.lang.Short.staticClass, global::java.lang.Short._MIN_VALUE10);
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("S")]
         public static short MAX_VALUE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticShortField(global::java.lang.Short.staticClass, global::java.lang.Short._MAX_VALUE11);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticShortField(global::java.lang.Short.staticClass, global::java.lang.Short._MAX_VALUE11);
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/Class;")]
         public static global::java.lang.Class TYPE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.GetStaticObjectFieldPtr(global::java.lang.Short.staticClass, global::java.lang.Short._TYPE12));
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Short.staticClass, global::java.lang.Short._TYPE12));
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int SIZE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Short.staticClass, global::java.lang.Short._SIZE13);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticIntField(global::java.lang.Short.staticClass, global::java.lang.Short._SIZE13);
             }
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.Short.staticClass = staticClass;
-            global::java.lang.Short._compareTo0 = env.GetMethodID(global::java.lang.Short.staticClass, "compareTo", "(Ljava/lang/Object;)I");
-            global::java.lang.Short._compareTo1 = env.GetMethodID(global::java.lang.Short.staticClass, "compareTo", "(Ljava/lang/Short;)I");
-            global::java.lang.Short._toString2 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "toString", "(S)Ljava/lang/String;");
-            global::java.lang.Short._decode3 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Short;");
-            global::java.lang.Short._valueOf4 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Short;");
-            global::java.lang.Short._valueOf5 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Short;");
-            global::java.lang.Short._valueOf6 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(S)Ljava/lang/Short;");
-            global::java.lang.Short._reverseBytes7 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "reverseBytes", "(S)S");
-            global::java.lang.Short._parseShort8 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "parseShort", "(Ljava/lang/String;I)S");
-            global::java.lang.Short._parseShort9 = env.GetStaticMethodID(global::java.lang.Short.staticClass, "parseShort", "(Ljava/lang/String;)S");
-            global::java.lang.Short._MIN_VALUE10 = env.GetStaticFieldID(global::java.lang.Short.staticClass, "MIN_VALUE", "S");
-            global::java.lang.Short._MAX_VALUE11 = env.GetStaticFieldID(global::java.lang.Short.staticClass, "MAX_VALUE", "S");
-            global::java.lang.Short._TYPE12 = env.GetStaticFieldID(global::java.lang.Short.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Short._SIZE13 = env.GetStaticFieldID(global::java.lang.Short.staticClass, "SIZE", "I");
-            global::java.lang.Short.@__ctor14 = env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Short.@__ctor15 = env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(S)V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.Short.staticClass = @__class;
+            global::java.lang.Short._compareTo0 = @__env.GetMethodID(global::java.lang.Short.staticClass, "compareTo", "(Ljava/lang/Object;)I");
+            global::java.lang.Short._compareTo1 = @__env.GetMethodID(global::java.lang.Short.staticClass, "compareTo", "(Ljava/lang/Short;)I");
+            global::java.lang.Short._toString2 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "toString", "(S)Ljava/lang/String;");
+            global::java.lang.Short._decode3 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Short;");
+            global::java.lang.Short._valueOf4 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Short;");
+            global::java.lang.Short._valueOf5 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Short;");
+            global::java.lang.Short._valueOf6 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "valueOf", "(S)Ljava/lang/Short;");
+            global::java.lang.Short._reverseBytes7 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "reverseBytes", "(S)S");
+            global::java.lang.Short._parseShort8 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "parseShort", "(Ljava/lang/String;I)S");
+            global::java.lang.Short._parseShort9 = @__env.GetStaticMethodID(global::java.lang.Short.staticClass, "parseShort", "(Ljava/lang/String;)S");
+            global::java.lang.Short._MIN_VALUE10 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "MIN_VALUE", "S");
+            global::java.lang.Short._MAX_VALUE11 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "MAX_VALUE", "S");
+            global::java.lang.Short._TYPE12 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "TYPE", "Ljava/lang/Class;");
+            global::java.lang.Short._SIZE13 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "SIZE", "I");
+            global::java.lang.Short.@__ctor14 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Short.@__ctor15 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(S)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Short._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.Short._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Short;)I")]
         public virtual int compareTo(global::java.lang.Short par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Short._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.Short._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)Ljava/lang/String;")]
         public static global::java.lang.String toString(short par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._toString2, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._toString2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Short;")]
         public static global::java.lang.Short decode(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(env, env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._decode3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._decode3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Short;")]
         public static global::java.lang.Short valueOf(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(env, env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf4, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf4, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;I)Ljava/lang/Short;")]
         public static global::java.lang.Short valueOf(global::java.lang.String par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(env, env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)Ljava/lang/Short;")]
         public static global::java.lang.Short valueOf(short par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(env, env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Short>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Short.staticClass, global::java.lang.Short._valueOf6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)S")]
         public static short reverseBytes(short par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._reverseBytes7, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._reverseBytes7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;I)S")]
         public static short parseShort(global::java.lang.String par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._parseShort8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._parseShort8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)S")]
         public static short parseShort(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._parseShort9, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._parseShort9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.Short(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.Short(@__env);
             }
         }
     }

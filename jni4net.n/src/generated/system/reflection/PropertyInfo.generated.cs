@@ -29,264 +29,264 @@ namespace System.Reflection {
         
         internal static global::java.lang.Class staticClass;
         
-        protected @__PropertyInfo(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__PropertyInfo(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::System.Reflection.@__PropertyInfo.staticClass = staticClass;
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::System.Reflection.@__PropertyInfo.staticClass = @__class;
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__PropertyInfo);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__PropertyInfo);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetConstantValue", "GetConstantValue0", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetRawConstantValue", "GetRawConstantValue1", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getPropertyType", "PropertyType2", "()Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "SetValue", "SetValue3", "(Lsystem/Object;Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;" +
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetConstantValue", "GetConstantValue0", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetRawConstantValue", "GetRawConstantValue1", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getPropertyType", "PropertyType2", "()Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetValue", "SetValue3", "(Lsystem/Object;Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;" +
                         "[Lsystem/Object;Lsystem/ICloneable;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetAccessors", "GetAccessors4", "(Z)[Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetGetMethod", "GetGetMethod5", "(Z)Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetSetMethod", "GetSetMethod6", "(Z)Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetIndexParameters", "GetIndexParameters7", "()[Lsystem/reflection/ParameterInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getAttributes", "Attributes8", "()Lsystem/Enum;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getCanRead", "CanRead9", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getCanWrite", "CanWrite10", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetValue", "GetValue11", "(Lsystem/Object;[Lsystem/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetValue", "GetValue12", "(Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object" +
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAccessors", "GetAccessors4", "(Z)[Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetGetMethod", "GetGetMethod5", "(Z)Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSetMethod", "GetSetMethod6", "(Z)Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetIndexParameters", "GetIndexParameters7", "()[Lsystem/reflection/ParameterInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getAttributes", "Attributes8", "()Lsystem/Enum;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getCanRead", "CanRead9", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getCanWrite", "CanWrite10", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetValue", "GetValue11", "(Lsystem/Object;[Lsystem/Object;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetValue", "GetValue12", "(Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object" +
                         ";Lsystem/ICloneable;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "SetValue", "SetValue13", "(Lsystem/Object;Lsystem/Object;[Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetRequiredCustomModifiers", "GetRequiredCustomModifiers14", "()[Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetOptionalCustomModifiers", "GetOptionalCustomModifiers15", "()[Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetAccessors", "GetAccessors16", "()[Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetGetMethod", "GetGetMethod17", "()Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "GetSetMethod", "GetSetMethod18", "()Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "isSpecialName", "IsSpecialName19", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetValue", "SetValue13", "(Lsystem/Object;Lsystem/Object;[Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetRequiredCustomModifiers", "GetRequiredCustomModifiers14", "()[Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetOptionalCustomModifiers", "GetOptionalCustomModifiers15", "()[Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAccessors", "GetAccessors16", "()[Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetGetMethod", "GetGetMethod17", "()Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSetMethod", "GetSetMethod18", "()Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "isSpecialName", "IsSpecialName19", "()Z"));
             return methods;
         }
         
-        private static global::System.IntPtr GetConstantValue0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetConstantValue0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetConstantValue());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetConstantValue());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetRawConstantValue1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetRawConstantValue1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetRawConstantValue());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetRawConstantValue());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr PropertyType2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr PropertyType2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/Type;
             // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.PropertyType);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Type>(@__env, @__real.PropertyType);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void SetValue3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr value, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr index, global::System.IntPtr culture) {
+        private static void SetValue3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr value, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr index, global::System.IntPtr culture) {
             // (Lsystem/Object;Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)V
             // (LSystem/Object;LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            real.SetValue(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, index), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Globalization.CultureInfo>(__env, culture));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            @__real.SetValue(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, index), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Globalization.CultureInfo>(@__env, culture));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static global::System.IntPtr GetAccessors4(global::System.IntPtr @__envi, global::System.IntPtr @__obj, bool nonPublic) {
+        private static global::System.IntPtr GetAccessors4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool nonPublic) {
             // (Z)[Lsystem/reflection/MethodInfo;
             // (Z)[LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetAccessors(nonPublic));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<System.Reflection.MethodInfo[]>(@__env, @__real.GetAccessors(nonPublic));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetGetMethod5(global::System.IntPtr @__envi, global::System.IntPtr @__obj, bool nonPublic) {
+        private static global::System.IntPtr GetGetMethod5(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool nonPublic) {
             // (Z)Lsystem/reflection/MethodInfo;
             // (Z)LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetGetMethod(nonPublic));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Reflection.MethodInfo>(@__env, @__real.GetGetMethod(nonPublic));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetSetMethod6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, bool nonPublic) {
+        private static global::System.IntPtr GetSetMethod6(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool nonPublic) {
             // (Z)Lsystem/reflection/MethodInfo;
             // (Z)LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetSetMethod(nonPublic));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Reflection.MethodInfo>(@__env, @__real.GetSetMethod(nonPublic));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetIndexParameters7(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetIndexParameters7(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[Lsystem/reflection/ParameterInfo;
             // ()[LSystem/Reflection/ParameterInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetIndexParameters());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<System.Reflection.ParameterInfo[]>(@__env, @__real.GetIndexParameters());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr Attributes8(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr Attributes8(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/Reflection/PropertyAttributes;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.Attributes);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Reflection.PropertyAttributes>(@__env, @__real.Attributes);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static bool CanRead9(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static bool CanRead9(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return real.CanRead;
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return @__real.CanRead;
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static bool CanWrite10(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static bool CanWrite10(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return real.CanWrite;
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return @__real.CanWrite;
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static global::System.IntPtr GetValue11(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr index) {
+        private static global::System.IntPtr GetValue11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr index) {
             // (Lsystem/Object;[Lsystem/Object;)Lsystem/Object;
             // (LSystem/Object;[LSystem/Object;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetValue(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, index)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetValue(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, index)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetValue12(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr index, global::System.IntPtr culture) {
+        private static global::System.IntPtr GetValue12(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr index, global::System.IntPtr culture) {
             // (Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
             // (LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetValue(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Binder>(__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, index), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Globalization.CultureInfo>(__env, culture)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetValue(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, index), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Globalization.CultureInfo>(@__env, culture)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void SetValue13(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr value, global::System.IntPtr index) {
+        private static void SetValue13(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr value, global::System.IntPtr index) {
             // (Lsystem/Object;Lsystem/Object;[Lsystem/Object;)V
             // (LSystem/Object;LSystem/Object;[LSystem/Object;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            real.SetValue(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object>(__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Object[]>(__env, index));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            @__real.SetValue(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, index));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static global::System.IntPtr GetRequiredCustomModifiers14(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetRequiredCustomModifiers14(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetRequiredCustomModifiers());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<System.Type[]>(@__env, @__real.GetRequiredCustomModifiers());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetOptionalCustomModifiers15(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetOptionalCustomModifiers15(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetOptionalCustomModifiers());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<System.Type[]>(@__env, @__real.GetOptionalCustomModifiers());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetAccessors16(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetAccessors16(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[Lsystem/reflection/MethodInfo;
             // ()[LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetAccessors());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<System.Reflection.MethodInfo[]>(@__env, @__real.GetAccessors());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetGetMethod17(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetGetMethod17(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/reflection/MethodInfo;
             // ()LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetGetMethod());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Reflection.MethodInfo>(@__env, @__real.GetGetMethod());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr GetSetMethod18(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr GetSetMethod18(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Lsystem/reflection/MethodInfo;
             // ()LSystem/Reflection/MethodInfo;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.GetSetMethod());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Reflection.MethodInfo>(@__env, @__real.GetSetMethod());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static bool IsSpecialName19(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static bool IsSpecialName19(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Reflection.PropertyInfo real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(__env, @__obj);
-            return real.IsSpecialName;
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::System.Reflection.PropertyInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.PropertyInfo>(@__env, @__obj);
+            return @__real.IsSpecialName;
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::System.Reflection.@__PropertyInfo(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::System.Reflection.@__PropertyInfo(@__env);
             }
         }
     }

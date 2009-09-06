@@ -15,8 +15,8 @@ public class BindingFlags extends system.Enum {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected BindingFlags(net.sf.jni4net.inj.INJEnv env, int handle) {
-            super(env, handle);
+    protected BindingFlags(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
     }
     
     protected BindingFlags() {

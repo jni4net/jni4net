@@ -84,19 +84,19 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public Integer(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor30, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor30, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Integer(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor31, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor31, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
-        protected Integer(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected Integer(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
         public new static global::java.lang.Class _class {
@@ -108,231 +108,231 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int MIN_VALUE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._MIN_VALUE26);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._MIN_VALUE26);
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int MAX_VALUE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._MAX_VALUE27);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._MAX_VALUE27);
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("Ljava/lang/Class;")]
         public static global::java.lang.Class TYPE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(env, env.GetStaticObjectFieldPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._TYPE28));
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._TYPE28));
             }
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("I")]
         public static int SIZE {
             get {
-                global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._SIZE29);
+                global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+                return @__env.GetStaticIntField(global::java.lang.Integer.staticClass, global::java.lang.Integer._SIZE29);
             }
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.Integer.staticClass = staticClass;
-            global::java.lang.Integer._compareTo0 = env.GetMethodID(global::java.lang.Integer.staticClass, "compareTo", "(Ljava/lang/Object;)I");
-            global::java.lang.Integer._compareTo1 = env.GetMethodID(global::java.lang.Integer.staticClass, "compareTo", "(Ljava/lang/Integer;)I");
-            global::java.lang.Integer._toHexString2 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toHexString", "(I)Ljava/lang/String;");
-            global::java.lang.Integer._toString3 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toString", "(II)Ljava/lang/String;");
-            global::java.lang.Integer._toString4 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toString", "(I)Ljava/lang/String;");
-            global::java.lang.Integer._decode5 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Integer;");
-            global::java.lang.Integer._valueOf6 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Integer;");
-            global::java.lang.Integer._valueOf7 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(I)Ljava/lang/Integer;");
-            global::java.lang.Integer._valueOf8 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Integer;");
-            global::java.lang.Integer._reverse9 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "reverse", "(I)I");
-            global::java.lang.Integer._reverseBytes10 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "reverseBytes", "(I)I");
-            global::java.lang.Integer._parseInt11 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "parseInt", "(Ljava/lang/String;I)I");
-            global::java.lang.Integer._parseInt12 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "parseInt", "(Ljava/lang/String;)I");
-            global::java.lang.Integer._bitCount13 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "bitCount", "(I)I");
-            global::java.lang.Integer._getInteger14 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;I)Ljava/lang/Integer;");
-            global::java.lang.Integer._getInteger15 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;");
-            global::java.lang.Integer._getInteger16 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;)Ljava/lang/Integer;");
-            global::java.lang.Integer._highestOneBit17 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "highestOneBit", "(I)I");
-            global::java.lang.Integer._lowestOneBit18 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "lowestOneBit", "(I)I");
-            global::java.lang.Integer._numberOfLeadingZeros19 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "numberOfLeadingZeros", "(I)I");
-            global::java.lang.Integer._numberOfTrailingZeros20 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "numberOfTrailingZeros", "(I)I");
-            global::java.lang.Integer._rotateLeft21 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "rotateLeft", "(II)I");
-            global::java.lang.Integer._rotateRight22 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "rotateRight", "(II)I");
-            global::java.lang.Integer._signum23 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "signum", "(I)I");
-            global::java.lang.Integer._toBinaryString24 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toBinaryString", "(I)Ljava/lang/String;");
-            global::java.lang.Integer._toOctalString25 = env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toOctalString", "(I)Ljava/lang/String;");
-            global::java.lang.Integer._MIN_VALUE26 = env.GetStaticFieldID(global::java.lang.Integer.staticClass, "MIN_VALUE", "I");
-            global::java.lang.Integer._MAX_VALUE27 = env.GetStaticFieldID(global::java.lang.Integer.staticClass, "MAX_VALUE", "I");
-            global::java.lang.Integer._TYPE28 = env.GetStaticFieldID(global::java.lang.Integer.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Integer._SIZE29 = env.GetStaticFieldID(global::java.lang.Integer.staticClass, "SIZE", "I");
-            global::java.lang.Integer.@__ctor30 = env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(I)V");
-            global::java.lang.Integer.@__ctor31 = env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(Ljava/lang/String;)V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.Integer.staticClass = @__class;
+            global::java.lang.Integer._compareTo0 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "compareTo", "(Ljava/lang/Object;)I");
+            global::java.lang.Integer._compareTo1 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "compareTo", "(Ljava/lang/Integer;)I");
+            global::java.lang.Integer._toHexString2 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toHexString", "(I)Ljava/lang/String;");
+            global::java.lang.Integer._toString3 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toString", "(II)Ljava/lang/String;");
+            global::java.lang.Integer._toString4 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toString", "(I)Ljava/lang/String;");
+            global::java.lang.Integer._decode5 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Integer;");
+            global::java.lang.Integer._valueOf6 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Integer;");
+            global::java.lang.Integer._valueOf7 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(I)Ljava/lang/Integer;");
+            global::java.lang.Integer._valueOf8 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Integer;");
+            global::java.lang.Integer._reverse9 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "reverse", "(I)I");
+            global::java.lang.Integer._reverseBytes10 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "reverseBytes", "(I)I");
+            global::java.lang.Integer._parseInt11 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "parseInt", "(Ljava/lang/String;I)I");
+            global::java.lang.Integer._parseInt12 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "parseInt", "(Ljava/lang/String;)I");
+            global::java.lang.Integer._bitCount13 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "bitCount", "(I)I");
+            global::java.lang.Integer._getInteger14 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;I)Ljava/lang/Integer;");
+            global::java.lang.Integer._getInteger15 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;");
+            global::java.lang.Integer._getInteger16 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "getInteger", "(Ljava/lang/String;)Ljava/lang/Integer;");
+            global::java.lang.Integer._highestOneBit17 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "highestOneBit", "(I)I");
+            global::java.lang.Integer._lowestOneBit18 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "lowestOneBit", "(I)I");
+            global::java.lang.Integer._numberOfLeadingZeros19 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "numberOfLeadingZeros", "(I)I");
+            global::java.lang.Integer._numberOfTrailingZeros20 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "numberOfTrailingZeros", "(I)I");
+            global::java.lang.Integer._rotateLeft21 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "rotateLeft", "(II)I");
+            global::java.lang.Integer._rotateRight22 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "rotateRight", "(II)I");
+            global::java.lang.Integer._signum23 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "signum", "(I)I");
+            global::java.lang.Integer._toBinaryString24 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toBinaryString", "(I)Ljava/lang/String;");
+            global::java.lang.Integer._toOctalString25 = @__env.GetStaticMethodID(global::java.lang.Integer.staticClass, "toOctalString", "(I)Ljava/lang/String;");
+            global::java.lang.Integer._MIN_VALUE26 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "MIN_VALUE", "I");
+            global::java.lang.Integer._MAX_VALUE27 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "MAX_VALUE", "I");
+            global::java.lang.Integer._TYPE28 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "TYPE", "Ljava/lang/Class;");
+            global::java.lang.Integer._SIZE29 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "SIZE", "I");
+            global::java.lang.Integer.@__ctor30 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(I)V");
+            global::java.lang.Integer.@__ctor31 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Integer._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.Integer._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Integer;)I")]
         public virtual int compareTo(global::java.lang.Integer par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.lang.Integer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.lang.Integer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toHexString(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toHexString2, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toHexString2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/lang/String;")]
         public static global::java.lang.String toString(int par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toString3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toString3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toString(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toString4, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toString4, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Integer;")]
         public static global::java.lang.Integer decode(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._decode5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._decode5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;I)Ljava/lang/Integer;")]
         public static global::java.lang.Integer valueOf(global::java.lang.String par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/Integer;")]
         public static global::java.lang.Integer valueOf(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf7, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Integer;")]
         public static global::java.lang.Integer valueOf(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf8, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._valueOf8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int reverse(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._reverse9, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._reverse9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int reverseBytes(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._reverseBytes10, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._reverseBytes10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;I)I")]
         public static int parseInt(global::java.lang.String par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._parseInt11, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._parseInt11, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)I")]
         public static int parseInt(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._parseInt12, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._parseInt12, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int bitCount(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._bitCount13, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._bitCount13, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;I)Ljava/lang/Integer;")]
         public static global::java.lang.Integer getInteger(global::java.lang.String par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger14, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger14, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;")]
         public static global::java.lang.Integer getInteger(global::java.lang.String par0, global::java.lang.Integer par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger15, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger15, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Integer;")]
         public static global::java.lang.Integer getInteger(global::java.lang.String par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger16, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger16, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int highestOneBit(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._highestOneBit17, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._highestOneBit17, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int lowestOneBit(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._lowestOneBit18, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._lowestOneBit18, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int numberOfLeadingZeros(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._numberOfLeadingZeros19, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._numberOfLeadingZeros19, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int numberOfTrailingZeros(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._numberOfTrailingZeros20, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._numberOfTrailingZeros20, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)I")]
         public static int rotateLeft(int par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._rotateLeft21, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._rotateLeft21, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)I")]
         public static int rotateRight(int par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._rotateRight22, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._rotateRight22, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public static int signum(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._signum23, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return @__env.CallStaticIntMethod(global::java.lang.Integer.staticClass, global::java.lang.Integer._signum23, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toBinaryString(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toBinaryString24, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toBinaryString24, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toOctalString(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(env, env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toOctalString25, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toOctalString25, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.Integer(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.Integer(@__env);
             }
         }
     }

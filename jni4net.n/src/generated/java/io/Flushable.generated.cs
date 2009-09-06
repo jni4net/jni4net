@@ -40,41 +40,41 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _flush0;
         
-        protected @__Flushable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Flushable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.io.@__Flushable.staticClass = staticClass;
-            global::java.io.@__Flushable._flush0 = env.GetMethodID(global::java.io.@__Flushable.staticClass, "flush", "()V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.io.@__Flushable.staticClass = @__class;
+            global::java.io.@__Flushable._flush0 = @__env.GetMethodID(global::java.io.@__Flushable.staticClass, "flush", "()V");
         }
         
         public void flush() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.@__Flushable._flush0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::java.io.@__Flushable._flush0);
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Flushable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Flushable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "flush", "flush0", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "flush", "flush0", "()V"));
             return methods;
         }
         
-        private static void flush0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static void flush0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.io.Flushable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Flushable>(__env, @__obj);
-            real.flush();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.io.Flushable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Flushable>(@__env, @__obj);
+            @__real.flush();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.io.@__Flushable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.io.@__Flushable(@__env);
             }
         }
     }

@@ -105,274 +105,274 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _keySet13;
         
-        protected @__Map(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Map(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.util.@__Map.staticClass = staticClass;
-            global::java.util.@__Map._hashCode0 = env.GetMethodID(global::java.util.@__Map.staticClass, "hashCode", "()I");
-            global::java.util.@__Map._put1 = env.GetMethodID(global::java.util.@__Map.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._clear2 = env.GetMethodID(global::java.util.@__Map.staticClass, "clear", "()V");
-            global::java.util.@__Map._equals3 = env.GetMethodID(global::java.util.@__Map.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._entrySet4 = env.GetMethodID(global::java.util.@__Map.staticClass, "entrySet", "()Ljava/util/Set;");
-            global::java.util.@__Map._get5 = env.GetMethodID(global::java.util.@__Map.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._putAll6 = env.GetMethodID(global::java.util.@__Map.staticClass, "putAll", "(Ljava/util/Map;)V");
-            global::java.util.@__Map._size7 = env.GetMethodID(global::java.util.@__Map.staticClass, "size", "()I");
-            global::java.util.@__Map._values8 = env.GetMethodID(global::java.util.@__Map.staticClass, "values", "()Ljava/util/Collection;");
-            global::java.util.@__Map._remove9 = env.GetMethodID(global::java.util.@__Map.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._containsKey10 = env.GetMethodID(global::java.util.@__Map.staticClass, "containsKey", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._containsValue11 = env.GetMethodID(global::java.util.@__Map.staticClass, "containsValue", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._isEmpty12 = env.GetMethodID(global::java.util.@__Map.staticClass, "isEmpty", "()Z");
-            global::java.util.@__Map._keySet13 = env.GetMethodID(global::java.util.@__Map.staticClass, "keySet", "()Ljava/util/Set;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.util.@__Map.staticClass = @__class;
+            global::java.util.@__Map._hashCode0 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "hashCode", "()I");
+            global::java.util.@__Map._put1 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map._clear2 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "clear", "()V");
+            global::java.util.@__Map._equals3 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map._entrySet4 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "entrySet", "()Ljava/util/Set;");
+            global::java.util.@__Map._get5 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map._putAll6 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "putAll", "(Ljava/util/Map;)V");
+            global::java.util.@__Map._size7 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "size", "()I");
+            global::java.util.@__Map._values8 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "values", "()Ljava/util/Collection;");
+            global::java.util.@__Map._remove9 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map._containsKey10 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsKey", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map._containsValue11 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsValue", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map._isEmpty12 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "isEmpty", "()Z");
+            global::java.util.@__Map._keySet13 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "keySet", "()Ljava/util/Set;");
         }
         
         public int hashCode() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.util.@__Map._hashCode0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.util.@__Map._hashCode0);
         }
         
         public global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._put1, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par1)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._put1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
         }
         
         public void clear() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.@__Map._clear2);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::java.util.@__Map._clear2);
         }
         
         public bool equals(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._equals3, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallBooleanMethod(this, global::java.util.@__Map._equals3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         public global::java.util.Set entrySet() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._entrySet4));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._entrySet4));
         }
         
         public global::java.lang.Object get(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._get5, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._get5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         public void putAll(global::java.util.Map par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.util.@__Map._putAll6, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::java.util.@__Map._putAll6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         public int size() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallIntMethod(this, global::java.util.@__Map._size7);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallIntMethod(this, global::java.util.@__Map._size7);
         }
         
         public global::java.util.Collection values() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Collection>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._values8));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Collection>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._values8));
         }
         
         public global::java.lang.Object remove(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._remove9, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0)));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._remove9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
         }
         
         public bool containsKey(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._containsKey10, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallBooleanMethod(this, global::java.util.@__Map._containsKey10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         public bool containsValue(global::java.lang.Object par0) {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._containsValue11, global::net.sf.jni4net.utils.Convertor.ParamC2J(env, par0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallBooleanMethod(this, global::java.util.@__Map._containsValue11, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
         }
         
         public bool isEmpty() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return env.CallBooleanMethod(this, global::java.util.@__Map._isEmpty12);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return @__env.CallBooleanMethod(this, global::java.util.@__Map._isEmpty12);
         }
         
         public global::java.util.Set keySet() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(env, env.CallObjectMethodPtr(this, global::java.util.@__Map._keySet13));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._keySet13));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Map);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Map);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "hashCode", "hashCode0", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "put", "put1", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "clear", "clear2", "()V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "equals", "equals3", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "entrySet", "entrySet4", "()Ljava/util/Set;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "get", "get5", "(Ljava/lang/Object;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "putAll", "putAll6", "(Ljava/util/Map;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "size", "size7", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "values", "values8", "()Ljava/util/Collection;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "remove", "remove9", "(Ljava/lang/Object;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "containsKey", "containsKey10", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "containsValue", "containsValue11", "(Ljava/lang/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "isEmpty", "isEmpty12", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "keySet", "keySet13", "()Ljava/util/Set;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "hashCode", "hashCode0", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "put", "put1", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "clear", "clear2", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "equals", "equals3", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "entrySet", "entrySet4", "()Ljava/util/Set;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "get", "get5", "(Ljava/lang/Object;)Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "putAll", "putAll6", "(Ljava/util/Map;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "size", "size7", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "values", "values8", "()Ljava/util/Collection;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "remove", "remove9", "(Ljava/lang/Object;)Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "containsKey", "containsKey10", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "containsValue", "containsValue11", "(Ljava/lang/Object;)Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "isEmpty", "isEmpty12", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "keySet", "keySet13", "()Ljava/util/Set;"));
             return methods;
         }
         
-        private static int hashCode0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static int hashCode0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.hashCode();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.hashCode();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static global::System.IntPtr put1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0, global::System.IntPtr par1) {
+        private static global::System.IntPtr put1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0, global::System.IntPtr par1) {
             // (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
             // (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.put(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par1)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object>(@__env, @__real.put(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par1)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void clear2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static void clear2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            real.clear();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            @__real.clear();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static bool equals3(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static bool equals3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static global::System.IntPtr entrySet4(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr entrySet4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/util/Set;
             // ()Ljava/util/Set;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.entrySet());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.util.Set>(@__env, @__real.entrySet());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr get5(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static global::System.IntPtr get5(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Ljava/lang/Object;
             // (Ljava/lang/Object;)Ljava/lang/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.get(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object>(@__env, @__real.get(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void putAll6(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static void putAll6(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/util/Map;)V
             // (Ljava/util/Map;)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            real.putAll(global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            @__real.putAll(global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static int size7(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static int size7(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()I
             // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.size();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.size();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
-        private static global::System.IntPtr values8(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr values8(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/util/Collection;
             // ()Ljava/util/Collection;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.values());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.util.Collection>(@__env, @__real.values());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr remove9(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static global::System.IntPtr remove9(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Ljava/lang/Object;
             // (Ljava/lang/Object;)Ljava/lang/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.remove(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0)));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object>(@__env, @__real.remove(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static bool containsKey10(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static bool containsKey10(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.containsKey(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.containsKey(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static bool containsValue11(global::System.IntPtr @__envi, global::System.IntPtr @__obj, global::System.IntPtr par0) {
+        private static bool containsValue11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
             // (Ljava/lang/Object;)Z
             // (Ljava/lang/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.containsValue(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(__env, par0));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.containsValue(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static bool isEmpty12(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static bool isEmpty12(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Z
             // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return real.isEmpty();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return @__real.isEmpty();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
         
-        private static global::System.IntPtr keySet13(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr keySet13(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/util/Set;
             // ()Ljava/util/Set;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.util.Map real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.keySet());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.util.Map @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Map>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.util.Set>(@__env, @__real.keySet());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.util.@__Map(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.util.@__Map(@__env);
             }
         }
     }

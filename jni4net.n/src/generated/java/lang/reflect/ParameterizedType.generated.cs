@@ -50,78 +50,78 @@ namespace java.lang.reflect {
         
         internal static global::net.sf.jni4net.jni.MethodId _getRawType2;
         
-        protected @__ParameterizedType(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__ParameterizedType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.lang.reflect.@__ParameterizedType.staticClass = staticClass;
-            global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0 = env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getActualTypeArguments", "()[Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__ParameterizedType._getOwnerType1 = env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getOwnerType", "()Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__ParameterizedType._getRawType2 = env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getRawType", "()Ljava/lang/reflect/Type;");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.lang.reflect.@__ParameterizedType.staticClass = @__class;
+            global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getActualTypeArguments", "()[Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__ParameterizedType._getOwnerType1 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getOwnerType", "()Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__ParameterizedType._getRawType2 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getRawType", "()Ljava/lang/reflect/Type;");
         }
         
         public java.lang.reflect.Type[] getActualTypeArguments() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0));
         }
         
         public global::java.lang.reflect.Type getOwnerType() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getOwnerType1));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getOwnerType1));
         }
         
         public global::java.lang.reflect.Type getRawType() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(env, env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getRawType2));
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getRawType2));
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__ParameterizedType);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__ParameterizedType);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getActualTypeArguments", "getActualTypeArguments0", "()[Ljava/lang/reflect/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getOwnerType", "getOwnerType1", "()Ljava/lang/reflect/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getRawType", "getRawType2", "()Ljava/lang/reflect/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getActualTypeArguments", "getActualTypeArguments0", "()[Ljava/lang/reflect/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getOwnerType", "getOwnerType1", "()Ljava/lang/reflect/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getRawType", "getRawType2", "()Ljava/lang/reflect/Type;"));
             return methods;
         }
         
-        private static global::System.IntPtr getActualTypeArguments0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr getActualTypeArguments0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()[Ljava/lang/reflect/Type;
             // ()[Ljava/lang/reflect/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getActualTypeArguments());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<java.lang.reflect.Type[]>(@__env, @__real.getActualTypeArguments());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr getOwnerType1(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr getOwnerType1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/lang/reflect/Type;
             // ()Ljava/lang/reflect/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getOwnerType());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.reflect.Type>(@__env, @__real.getOwnerType());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr getRawType2(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr getRawType2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()Ljava/lang/reflect/Type;
             // ()Ljava/lang/reflect/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.getRawType());
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.reflect.Type>(@__env, @__real.getRawType());
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.lang.reflect.@__ParameterizedType(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.lang.reflect.@__ParameterizedType(@__env);
             }
         }
     }

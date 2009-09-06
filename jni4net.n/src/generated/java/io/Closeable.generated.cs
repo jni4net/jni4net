@@ -40,41 +40,41 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _close0;
         
-        protected @__Closeable(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__Closeable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::java.io.@__Closeable.staticClass = staticClass;
-            global::java.io.@__Closeable._close0 = env.GetMethodID(global::java.io.@__Closeable.staticClass, "close", "()V");
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::java.io.@__Closeable.staticClass = @__class;
+            global::java.io.@__Closeable._close0 = @__env.GetMethodID(global::java.io.@__Closeable.staticClass, "close", "()V");
         }
         
         public void close() {
-            global::net.sf.jni4net.jni.JNIEnv env = this.Env;
-            env.CallVoidMethod(this, global::java.io.@__Closeable._close0);
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            @__env.CallVoidMethod(this, global::java.io.@__Closeable._close0);
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__Closeable);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__Closeable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "close", "close0", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "close", "close0", "()V"));
             return methods;
         }
         
-        private static void close0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+        private static void close0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.io.Closeable real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Closeable>(__env, @__obj);
-            real.close();
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::java.io.Closeable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Closeable>(@__env, @__obj);
+            @__real.close();
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::java.io.@__Closeable(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::java.io.@__Closeable(@__env);
             }
         }
     }

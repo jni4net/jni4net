@@ -70,5 +70,10 @@ namespace net.sf.jni4net.utils
         {
             return (T) OptiJP2C(env, obj);
         }
+
+        public static IntPtr C2J<TRes>(JNIEnv env, object obj)
+        {
+            return C2J(env, obj);
+        }
     }
 }
