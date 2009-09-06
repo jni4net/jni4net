@@ -125,24 +125,6 @@ public class Bridge extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/Assembly;)V")
     public native static void RegisterAssembly(system.reflection.Assembly assembly);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;")
-    public native static system.Object ToCLR(java.lang.Object obj);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Ljava/lang/Object;")
-    public native static java.lang.Object ToJVM(system.Object obj);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Ljava/lang/Class;")
-    public native static java.lang.Class TypeToKnownClass(system.Type real);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/String;")
-    public native static java.lang.String ClrSignature(system.Type type);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/String;")
-    public native static java.lang.String GetSignature(java.lang.String typeName);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Class;)LSystem/String;")
-    public native static java.lang.String JavaSignature(java.lang.Class clazz);
-    
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
     public native static void disposeClrHandle(int clrHandle);
     
