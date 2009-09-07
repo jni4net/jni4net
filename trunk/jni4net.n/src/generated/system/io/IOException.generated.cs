@@ -62,7 +62,7 @@ namespace System.IO {
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message));
+            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -72,7 +72,7 @@ namespace System.IO {
             // (LSystem/String;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message), hresult);
+            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message), hresult);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -82,7 +82,7 @@ namespace System.IO {
             // (LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
+            global::System.IO.IOException @__real = new global::System.IO.IOException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

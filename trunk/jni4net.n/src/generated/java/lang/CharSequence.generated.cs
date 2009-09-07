@@ -74,12 +74,12 @@ namespace java.lang {
         
         public char charAt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((char)(@__env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         public int length() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.@__CharSequence._length2);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.@__CharSequence._length2)));
         }
         
         public global::java.lang.CharSequence subSequence(int par0, int par1) {
@@ -114,7 +114,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
-            return @__real.charAt(par0);
+            return ((char)(@__real.charAt(par0)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(char);
         }
@@ -125,7 +125,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
-            return @__real.length();
+            return ((int)(@__real.length()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }

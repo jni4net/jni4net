@@ -69,7 +69,7 @@ namespace java.lang.reflect {
         public static int PUBLIC {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticIntField(global::java.lang.reflect.Method.staticClass, global::java.lang.reflect.Method._PUBLIC17);
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Method.staticClass, global::java.lang.reflect.Method._PUBLIC17)));
             }
         }
         
@@ -77,7 +77,7 @@ namespace java.lang.reflect {
         public static int DECLARED {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticIntField(global::java.lang.reflect.Method.staticClass, global::java.lang.reflect.Method._DECLARED18);
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Method.staticClass, global::java.lang.reflect.Method._DECLARED18)));
             }
         }
         
@@ -113,7 +113,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int getModifiers() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.reflect.Method._getModifiers1);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.reflect.Method._getModifiers1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -131,13 +131,13 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isSynthetic() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isSynthetic4);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isSynthetic4)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object invoke(global::java.lang.Object par0, java.lang.Object[] par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Method._invoke5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Method._invoke5, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<java.lang.Object[]>(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
@@ -197,13 +197,13 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isBridge() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isBridge15);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isBridge15)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isVarArgs() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isVarArgs16);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isVarArgs16)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

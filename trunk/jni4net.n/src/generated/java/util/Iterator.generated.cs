@@ -63,7 +63,7 @@ namespace java.util {
         
         public bool hasNext() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.@__Iterator._hasNext0);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Iterator._hasNext0)));
         }
         
         public global::java.lang.Object next() {
@@ -91,7 +91,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.util.Iterator @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Iterator>(@__env, @__obj);
-            return @__real.hasNext();
+            return ((bool)(@__real.hasNext()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }

@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
-#if !JNI4NET_MINI
 namespace java.lang
 {
     partial class Integer
@@ -36,4 +35,3 @@ namespace java.lang
         }
     }
 }
-#endif

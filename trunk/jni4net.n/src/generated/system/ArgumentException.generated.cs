@@ -56,7 +56,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.ArgumentException @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.ArgumentException>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, @__real.ParamName);
+            return global::net.sf.jni4net.utils.Convertor.C2JString(@__env, @__real.ParamName);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -76,7 +76,7 @@ namespace System {
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message));
+            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -86,7 +86,7 @@ namespace System {
             // (LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
+            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -96,7 +96,7 @@ namespace System {
             // (LSystem/String;LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, paramName), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
+            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.J2CString(@__env, paramName), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -106,7 +106,7 @@ namespace System {
             // (LSystem/String;LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, message), global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, paramName));
+            global::System.ArgumentException @__real = new global::System.ArgumentException(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.J2CString(@__env, paramName));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

@@ -109,28 +109,28 @@ namespace java.io {
         public File(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor40, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor40, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public File(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor41, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor41, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.io.File>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public File(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor42, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor42, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
         public File(object par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor43, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor43, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0));
         }
         
         protected File(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -147,7 +147,7 @@ namespace java.io {
         public static char separatorChar {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._separatorChar36);
+                return ((char)(@__env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._separatorChar36)));
             }
         }
         
@@ -163,7 +163,7 @@ namespace java.io {
         public static char pathSeparatorChar {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._pathSeparatorChar38);
+                return ((char)(@__env.GetStaticCharField(global::java.io.File.staticClass, global::java.io.File._pathSeparatorChar38)));
             }
         }
         
@@ -226,13 +226,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.File._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.File._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;)I")]
         public virtual int compareTo(global::java.io.File par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.File._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.File._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.io.File>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -244,7 +244,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public virtual long length() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.io.File._length3);
+            return ((long)(@__env.CallLongMethod(this, global::java.io.File._length3)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -262,13 +262,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isAbsolute() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._isAbsolute6);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._isAbsolute6)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool setReadOnly() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._setReadOnly7);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._setReadOnly7)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/String;")]
@@ -280,13 +280,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)[Ljava/lang/String;")]
         public virtual java.lang.String[] list(object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.String[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._list9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.String[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._list9, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool delete() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._delete10);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._delete10)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -298,31 +298,31 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool canRead() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._canRead12);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._canRead12)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool canWrite() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._canWrite13);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._canWrite13)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool createNewFile() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._createNewFile14);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._createNewFile14)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;")]
         public static global::java.io.File createTempFile(global::java.lang.String par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.File>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._createTempFile15, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.File>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._createTempFile15, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;")]
         public static global::java.io.File createTempFile(global::java.lang.String par0, global::java.lang.String par1, global::java.io.File par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.File>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._createTempFile16, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.File>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._createTempFile16, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.io.File>(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -334,7 +334,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool exists() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._exists18);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._exists18)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/io/File;")]
@@ -364,25 +364,25 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isDirectory() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._isDirectory23);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._isDirectory23)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isFile() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._isFile24);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._isFile24)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isHidden() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._isHidden25);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._isHidden25)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public virtual long lastModified() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.io.File._lastModified26);
+            return ((long)(@__env.CallLongMethod(this, global::java.io.File._lastModified26)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/io/File;")]
@@ -394,7 +394,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)[Ljava/io/File;")]
         public virtual java.io.File[] listFiles(object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<java.io.File[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles28, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<java.io.File[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles28, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/io/File;")]
@@ -406,25 +406,25 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool mkdir() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._mkdir30);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._mkdir30)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool mkdirs() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._mkdirs31);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._mkdirs31)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;)Z")]
         public virtual bool renameTo(global::java.io.File par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._renameTo32, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._renameTo32, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.io.File>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)Z")]
         public virtual bool setLastModified(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.File._setLastModified33, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.File._setLastModified33, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()LSystem/Object;")]

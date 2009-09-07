@@ -42,7 +42,7 @@ namespace System {
         
         public object GetFormat(global::System.Type formatType) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormatProvider._GetFormat0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, formatType)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormatProvider._GetFormat0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.Type>(@__env, formatType)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {

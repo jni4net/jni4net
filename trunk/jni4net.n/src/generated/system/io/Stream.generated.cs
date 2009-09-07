@@ -82,7 +82,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.CanRead;
+            return ((bool)(@__real.CanRead));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -93,7 +93,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.CanSeek;
+            return ((bool)(@__real.CanSeek));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -104,7 +104,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.CanTimeout;
+            return ((bool)(@__real.CanTimeout));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -115,7 +115,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.CanWrite;
+            return ((bool)(@__real.CanWrite));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -126,7 +126,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.Length;
+            return ((long)(@__real.Length));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -137,7 +137,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.Position;
+            return ((long)(@__real.Position));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -158,7 +158,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.ReadTimeout;
+            return ((int)(@__real.ReadTimeout));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -179,7 +179,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.WriteTimeout;
+            return ((int)(@__real.WriteTimeout));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -220,7 +220,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.EndRead(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IAsyncResult>(@__env, asyncResult));
+            return ((int)(@__real.EndRead(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.IAsyncResult>(@__env, asyncResult))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -231,7 +231,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            @__real.EndWrite(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IAsyncResult>(@__env, asyncResult));
+            @__real.EndWrite(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.IAsyncResult>(@__env, asyncResult));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -241,7 +241,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.Seek(offset, global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.SeekOrigin>(@__env, origin));
+            return ((long)(@__real.Seek(offset, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.SeekOrigin>(@__env, origin))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -262,7 +262,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.Read(global::net.sf.jni4net.utils.Convertor.J2C<byte[]>(@__env, buffer), offset, count);
+            return ((int)(@__real.Read(global::net.sf.jni4net.utils.Convertor.J2C<byte[]>(@__env, buffer), offset, count)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -273,7 +273,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return @__real.ReadByte();
+            return ((int)(@__real.ReadByte()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }

@@ -79,7 +79,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int limit() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.Buffer._limit1);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._limit1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
@@ -91,7 +91,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int position() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.Buffer._position3);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._position3)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/Buffer;")]
@@ -103,13 +103,13 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int remaining() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.Buffer._remaining5);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._remaining5)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int capacity() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.Buffer._capacity6);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._capacity6)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]
@@ -121,13 +121,13 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public bool hasRemaining() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.nio.Buffer._hasRemaining8);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer._hasRemaining8)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isReadOnly() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.nio.Buffer._isReadOnly9);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer._isReadOnly9)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/Buffer;")]

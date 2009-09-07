@@ -57,7 +57,7 @@ namespace java.util {
         
         public bool hasMoreElements() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.@__Enumeration._hasMoreElements0);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Enumeration._hasMoreElements0)));
         }
         
         public global::java.lang.Object nextElement() {
@@ -79,7 +79,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.util.Enumeration @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Enumeration>(@__env, @__obj);
-            return @__real.hasMoreElements();
+            return ((bool)(@__real.hasMoreElements()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }

@@ -12,7 +12,7 @@ namespace net.sf.jni4net.inj
 
     partial class __IClrProxy
     {
-        public static int getClrHandle(JNIEnv env, IntPtr obj)
+        internal static int getClrHandle(JNIEnv env, IntPtr obj)
         {
             return env.CallIntMethod(obj, _getClrHandle0);
         }

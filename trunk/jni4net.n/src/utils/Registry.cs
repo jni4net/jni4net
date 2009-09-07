@@ -7,16 +7,6 @@ namespace net.sf.jni4net.utils
 {
     public partial class Registry
     {
-        public RegistryRecord GetRecord(IntPtr obj)
-        {
-            return GetRecord(JNIEnv.ThreadEnv, obj);
-        }
-
-        public RegistryRecord GetRecord(JNIEnv env, IntPtr obj)
-        {
-            return GetRecord(env, obj, env.GetObjectClass(obj));
-        }
-
         public RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
         {
             lock (this)

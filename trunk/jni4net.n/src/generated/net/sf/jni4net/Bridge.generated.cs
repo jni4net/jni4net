@@ -59,7 +59,7 @@ namespace net.sf.jni4net {
             // (Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj)));
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -69,7 +69,7 @@ namespace net.sf.jni4net {
             // (LSystem/Object;)Lnet/sf/jni4net/jni/IJavaProxy;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj)));
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -79,7 +79,7 @@ namespace net.sf.jni4net {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.Bridge.Verbose;
+            return ((bool)(global::net.sf.jni4net.Bridge.Verbose));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -98,7 +98,7 @@ namespace net.sf.jni4net {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.Bridge.Debug;
+            return ((bool)(global::net.sf.jni4net.Bridge.Debug));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -117,7 +117,7 @@ namespace net.sf.jni4net {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.Bridge.BindNative;
+            return ((bool)(global::net.sf.jni4net.Bridge.BindNative));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -136,7 +136,7 @@ namespace net.sf.jni4net {
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.Bridge.LoadAndRegisterAssembly(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, assemblyPath));
+            global::net.sf.jni4net.Bridge.LoadAndRegisterAssembly(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, assemblyPath));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
