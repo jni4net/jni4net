@@ -67,22 +67,8 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    CodeTypeReference[] parameters;
-                    if (method.ReturnType == Repository.systemString)
-                    {
-                        parameters = new[] { TypeReference(typeof(java.lang.String)), TypeReference(typeof(string)) };
-                    }
-                    else
-                    {
-                        parameters = new[] { method.ReturnType.CLRReference };
-                    }
-                    CodeMethodInvokeExpression callExpression =
-                        new CodeMethodInvokeExpression(
-                            new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                              "J2C", parameters),
-                            envVariable, invokeExpression);
-
-                    call = new CodeMethodReturnStatement(callExpression);
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("J2C", method.ReturnType, invokeExpression);
+                    call = new CodeMethodReturnStatement(conversionExpression);
                 }
             }
             return call;
@@ -116,17 +102,9 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
-                CodeExpression expression = new CodeVariableReferenceExpression(paramName);
-                if (parameter.CLRType==typeof(string) &&
-                    parameter.JVMType==java.lang.String._class)
-                {
-                    expression = new CodeMethodInvokeExpression(TypeReferenceEx(typeof(Convertor)), "ParamCJPString", envVariable, expression);
-                }
-                else
-                {
-                    expression = new CodeMethodInvokeExpression(TypeReferenceEx(typeof(Convertor)), "ParamC2J", envVariable, expression);
-                }
-                expressions[i + offset] = expression;
+                CodeExpression invokeExpression = new CodeVariableReferenceExpression(paramName);
+                CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("ParamC2J", parameter, invokeExpression);
+                expressions[i + offset] = conversionExpression;
             }
             return expressions;
         }

@@ -342,6 +342,33 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.Members.Add(constructionHelper);
         }
 
+        private CodeMethodInvokeExpression CreateConversionExpression(string conversion, GType paramType, CodeExpression invokeExpression)
+        {
+            CodeTypeReference[] parameters;
+            if (paramType == Repository.systemString)
+            {
+                parameters = new CodeTypeReference[] { };
+                conversion += "String";
+            }
+            else if (paramType.IsPrimitive)
+            {
+                parameters = new CodeTypeReference[] { };
+            }
+            else if (paramType.JVMSubst!=null && paramType.JVMSubst.CLRType != paramType.CLRType)
+            {
+                parameters = new[] { paramType.JVMSubst.CLRReference, paramType.CLRReference };
+            }
+            else
+            {
+                parameters = new[] { paramType.CLRReference };
+            }
+            return new CodeMethodInvokeExpression(
+                new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                  conversion, parameters),
+                envVariable, invokeExpression);
+        }
+
+
         #region Nested type: CodeMemberPropertyEx
 
         private class CodeMemberPropertyEx : CodeMemberProperty

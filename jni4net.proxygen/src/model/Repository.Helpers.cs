@@ -100,14 +100,27 @@ namespace net.sf.jni4net.proxygen.model
             knownNames.Add("bool", RegisterType(typeof (bool)));
             knownNames.Add("boolean", RegisterType(typeof (bool)));
             knownNames.Add("void", RegisterType(typeof (void)));
-            RegisterType(typeof(ulong)).JVMSubst = RegisterClass(Class.getPrimitiveClass("long"));
-            RegisterType(typeof(uint)).JVMSubst = RegisterClass(Class.getPrimitiveClass("int"));
-            RegisterType(typeof(ushort)).JVMSubst = RegisterClass(Class.getPrimitiveClass("short"));
-            RegisterType(typeof(sbyte)).JVMSubst = RegisterClass(Class.getPrimitiveClass("byte"));
-            RegisterClass(Class.getPrimitiveClass("char"));
-            RegisterClass(Class.getPrimitiveClass("double"));
-            RegisterClass(Class.getPrimitiveClass("float"));
-            RegisterClass(Class.getPrimitiveClass("boolean"));
+            GType glong = RegisterClass(Class.getPrimitiveClass("long"));
+            GType gint = RegisterClass(Class.getPrimitiveClass("int"));
+            GType gshort = RegisterClass(Class.getPrimitiveClass("short"));
+            GType gbyte = RegisterClass(Class.getPrimitiveClass("byte"));
+            GType gchar = RegisterClass(Class.getPrimitiveClass("char"));
+            GType gdouble = RegisterClass(Class.getPrimitiveClass("double"));
+            GType gfloat = RegisterClass(Class.getPrimitiveClass("float"));
+            GType gbool = RegisterClass(Class.getPrimitiveClass("boolean"));
+            RegisterType(typeof(ulong)).JVMSubst = glong;
+            RegisterType(typeof(uint)).JVMSubst = gint;
+            RegisterType(typeof(ushort)).JVMSubst = gshort;
+            RegisterType(typeof(sbyte)).JVMSubst = gbyte;
+            RegisterType(typeof(long)).JVMSubst = glong;
+            RegisterType(typeof(int)).JVMSubst = gint;
+            RegisterType(typeof(short)).JVMSubst = gshort;
+            RegisterType(typeof(byte)).JVMSubst = gbyte;
+            RegisterType(typeof(char)).JVMSubst = gchar;
+            RegisterType(typeof(double)).JVMSubst = gdouble;
+            RegisterType(typeof(float)).JVMSubst = gfloat;
+            RegisterType(typeof(bool)).JVMSubst = gbool;
+        
         }
 
         private static void BindKnownTypesPost()
