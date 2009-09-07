@@ -154,22 +154,8 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        CodeTypeReference[] parameters;
-                        if (method.ReturnType == Repository.systemString)
-                        {
-                            parameters = new[] { TypeReference(typeof(java.lang.String)), TypeReference(typeof(string)) };
-                        }
-                        else
-                        {
-                            parameters = new[] { method.ReturnType.CLRReference };
-                        }
-                        CodeMethodInvokeExpression callExpression =
-                            new CodeMethodInvokeExpression(
-                                new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                                  "C2J", parameters),
-                                envVariable, call);
-
-                        callst = new CodeMethodReturnStatement(callExpression);
+                        CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("C2J", method.ReturnType, call);
+                        callst = new CodeMethodReturnStatement(conversionExpression);
                         tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }
                 }
@@ -229,20 +215,15 @@ namespace net.sf.jni4net.proxygen.generator
             for (int p = 0; p < method.Parameters.Count; p++)
             {
                 GType paramType = method.Parameters[p];
+                CodeVariableReferenceExpression invokeExpression = new CodeVariableReferenceExpression(method.ParameterNames[p]);
                 if (paramType.IsPrimitive)
                 {
-                    callParams.Add(new CodeVariableReferenceExpression(method.ParameterNames[p]));
+                    callParams.Add(invokeExpression);
                 }
                 else 
                 {
-                    var callExpression =
-                        new CodeMethodInvokeExpression(
-                            new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                              "J2C", new[] { paramType.CLRReference }),
-                                                              envVariable, new CodeVariableReferenceExpression(method.ParameterNames[p]));
-
-
-                    callParams.Add(callExpression);
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("J2C", paramType, invokeExpression);
+                    callParams.Add(conversionExpression);
                 }
             }
             return callParams;
