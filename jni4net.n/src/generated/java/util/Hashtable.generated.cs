@@ -66,7 +66,7 @@ namespace java.util {
         public Hashtable(global::java.util.Map par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.util.Hashtable.staticClass, global::java.util.Hashtable.@__ctor16, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::java.util.Hashtable.staticClass, global::java.util.Hashtable.@__ctor16, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.util.Map>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
@@ -119,13 +119,13 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.util.Hashtable._hashCode0);
+            return ((int)(@__env.CallIntMethod(this, global::java.util.Hashtable._hashCode0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._put1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._put1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -137,7 +137,7 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.Hashtable._equals3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Hashtable._equals3, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Set;")]
@@ -149,19 +149,19 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._get5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._get5, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Map;)V")]
         public virtual void putAll(global::java.util.Map par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.util.Hashtable._putAll6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.util.Hashtable._putAll6, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.util.Map>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int size() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.util.Hashtable._size7);
+            return ((int)(@__env.CallIntMethod(this, global::java.util.Hashtable._size7)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Collection;")]
@@ -173,25 +173,25 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._remove9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Hashtable._remove9, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool containsKey(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.Hashtable._containsKey10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Hashtable._containsKey10, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool containsValue(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.Hashtable._containsValue11, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Hashtable._containsValue11, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isEmpty() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.Hashtable._isEmpty12);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Hashtable._isEmpty12)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/Set;")]
@@ -203,7 +203,7 @@ namespace java.util {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool contains(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.util.Hashtable._contains14, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Hashtable._contains14, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

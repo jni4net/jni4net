@@ -42,7 +42,7 @@ namespace System.Runtime.Serialization {
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, context));
+            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object, global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.ValueType, global::System.Runtime.Serialization.StreamingContext>(@__env, context));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -58,7 +58,7 @@ namespace System.Runtime.Serialization {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Runtime.Serialization.ISerializable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.ISerializable>(@__env, @__obj);
-            @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
+            @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ValueType, global::System.Runtime.Serialization.StreamingContext>(@__env, context));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         

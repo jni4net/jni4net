@@ -69,7 +69,7 @@ namespace System.Collections {
         public global::System.Collections.DictionaryEntry Entry {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.DictionaryEntry>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Entry5));
+                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.ValueType, global::System.Collections.DictionaryEntry>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Entry5));
             }
         }
         
@@ -85,7 +85,7 @@ namespace System.Collections {
         
         public bool MoveNext() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::System.Collections.@__IDictionaryEnumerator._MoveNext0);
+            return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__IDictionaryEnumerator._MoveNext0)));
         }
         
         public void Reset() {
@@ -111,7 +111,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
-            return ((global::System.Collections.IEnumerator)(@__real)).MoveNext();
+            return ((bool)(((global::System.Collections.IEnumerator)(@__real)).MoveNext()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -165,7 +165,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Collections.DictionaryEntry>(@__env, @__real.Entry);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.ValueType, global::System.Collections.DictionaryEntry>(@__env, @__real.Entry);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

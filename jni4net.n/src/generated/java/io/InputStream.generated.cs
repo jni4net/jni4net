@@ -89,37 +89,37 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int available() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.InputStream._available3);
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._available3)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool markSupported() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.io.InputStream._markSupported4);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.InputStream._markSupported4)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int read() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.InputStream._read5);
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read5)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)I")]
         public virtual int read(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)I")]
         public virtual int read(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)J")]
         public virtual long skip(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.io.InputStream._skip8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((long)(@__env.CallLongMethod(this, global::java.io.InputStream._skip8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

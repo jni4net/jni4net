@@ -62,37 +62,37 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]
         public virtual byte byteValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallByteMethod(this, global::java.lang.Number._byteValue0);
+            return ((byte)(@__env.CallByteMethod(this, global::java.lang.Number._byteValue0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()D")]
         public virtual double doubleValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallDoubleMethod(this, global::java.lang.Number._doubleValue1);
+            return ((double)(@__env.CallDoubleMethod(this, global::java.lang.Number._doubleValue1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()F")]
         public virtual float floatValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallFloatMethod(this, global::java.lang.Number._floatValue2);
+            return ((float)(@__env.CallFloatMethod(this, global::java.lang.Number._floatValue2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int intValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.Number._intValue3);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Number._intValue3)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public virtual long longValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.lang.Number._longValue4);
+            return ((long)(@__env.CallLongMethod(this, global::java.lang.Number._longValue4)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()S")]
         public virtual short shortValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallShortMethod(this, global::java.lang.Number._shortValue5);
+            return ((short)(@__env.CallShortMethod(this, global::java.lang.Number._shortValue5)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

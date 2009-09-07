@@ -59,7 +59,7 @@ namespace java.lang.reflect {
         public static int PUBLIC {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticIntField(global::java.lang.reflect.Constructor.staticClass, global::java.lang.reflect.Constructor._PUBLIC12);
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Constructor.staticClass, global::java.lang.reflect.Constructor._PUBLIC12)));
             }
         }
         
@@ -67,7 +67,7 @@ namespace java.lang.reflect {
         public static int DECLARED {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticIntField(global::java.lang.reflect.Constructor.staticClass, global::java.lang.reflect.Constructor._DECLARED13);
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Constructor.staticClass, global::java.lang.reflect.Constructor._DECLARED13)));
             }
         }
         
@@ -98,7 +98,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int getModifiers() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.reflect.Constructor._getModifiers1);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.reflect.Constructor._getModifiers1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -116,7 +116,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isSynthetic() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.reflect.Constructor._isSynthetic4);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Constructor._isSynthetic4)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]
@@ -128,7 +128,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object newInstance(java.lang.Object[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Constructor._newInstance6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Constructor._newInstance6, global::net.sf.jni4net.utils.Convertor.ParamC2J<java.lang.Object[]>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -158,7 +158,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isVarArgs() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.reflect.Constructor._isVarArgs11);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Constructor._isVarArgs11)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

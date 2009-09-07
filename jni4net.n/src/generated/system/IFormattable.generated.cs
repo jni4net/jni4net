@@ -42,7 +42,7 @@ namespace System {
         
         public string ToString(string format, global::System.IFormatProvider formatProvider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String, string>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormattable._ToString0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, format), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.J2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormattable._ToString0, global::net.sf.jni4net.utils.Convertor.ParamC2JString(@__env, format), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.IFormatProvider>(@__env, formatProvider)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -58,7 +58,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IFormattable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormattable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String, string>(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.J2C<string>(@__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.C2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, formatProvider)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

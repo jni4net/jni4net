@@ -33,7 +33,7 @@ namespace java.lang {
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par3));
+            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par2), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par3));
         }
         
         protected StackTraceElement(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -71,7 +71,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int getLineNumber() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.StackTraceElement._getLineNumber2);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.StackTraceElement._getLineNumber2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -83,7 +83,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isNativeMethod() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.StackTraceElement._isNativeMethod4);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.StackTraceElement._isNativeMethod4)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

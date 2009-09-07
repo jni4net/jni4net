@@ -29,59 +29,59 @@ namespace net.sf.jni4net.tested {
         
         internal static global::java.lang.Class staticClass;
         
-        protected @__CInterfacesHelper(global::net.sf.jni4net.jni.JNIEnv env) : 
-                base(env) {
+        protected @__CInterfacesHelper(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+                base(@__env) {
         }
         
-        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
-            global::net.sf.jni4net.tested.@__CInterfacesHelper.staticClass = staticClass;
+        private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
+            global::net.sf.jni4net.tested.@__CInterfacesHelper.staticClass = @__class;
         }
         
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
-            global::System.Type type = typeof(__CInterfacesHelper);
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+            global::System.Type @__type = typeof(__CInterfacesHelper);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "createCWithJavaInterface", "createCWithJavaInterface0", "(I)Lnet/sf/jni4net/tested/CWithJavaInterface;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "CWithJavaInterfaceUnreg", "CWithJavaInterfaceUnreg1", "(I)Ljava/lang/Comparable;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "__ctorCInterfacesHelper0", "__ctorCInterfacesHelper0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "createCWithJavaInterface", "createCWithJavaInterface0", "(I)Lnet/sf/jni4net/tested/CWithJavaInterface;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CWithJavaInterfaceUnreg", "CWithJavaInterfaceUnreg1", "(I)Ljava/lang/Comparable;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorCInterfacesHelper0", "__ctorCInterfacesHelper0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
             return methods;
         }
         
-        private static global::System.IntPtr createCWithJavaInterface0(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int i) {
+        private static global::System.IntPtr createCWithJavaInterface0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int i) {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.createCWithJavaInterface(i));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::net.sf.jni4net.tested.CWithJavaInterface>(@__env, @__real.createCWithJavaInterface(i));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr CWithJavaInterfaceUnreg1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int i) {
+        private static global::System.IntPtr CWithJavaInterfaceUnreg1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int i) {
             // (I)Ljava/lang/Comparable;
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J(@__env, real.CWithJavaInterfaceUnreg(i));
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Comparable, global::net.sf.jni4net.tested.CWithJavaInterfaceUnreg>(@__env, @__real.CWithJavaInterfaceUnreg(i));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void @__ctorCInterfacesHelper0(global::System.IntPtr @__envi, global::System.IntPtr @__clazz, global::System.IntPtr @__obj) {
+        private static void @__ctorCInterfacesHelper0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj) {
             // ()V
             // ()V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper real = new global::net.sf.jni4net.tested.CInterfacesHelper();
-            global::net.sf.jni4net.utils.Convertor.InitProxy(__env, __obj, real);
-            }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = new global::net.sf.jni4net.tested.CInterfacesHelper();
+            global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
-                return new global::net.sf.jni4net.tested.@__CInterfacesHelper(env);
+            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+                return new global::net.sf.jni4net.tested.@__CInterfacesHelper(@__env);
             }
         }
     }

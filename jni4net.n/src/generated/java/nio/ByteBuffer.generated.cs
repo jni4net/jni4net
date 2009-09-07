@@ -199,85 +199,85 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/nio/ByteBuffer;)I")]
         public virtual int compareTo(global::java.nio.ByteBuffer par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.ByteBuffer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.nio.ByteBuffer>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)S")]
         public virtual short getShort(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((short)(@__env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()S")]
         public virtual short getShort() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort3);
+            return ((short)(@__env.CallShortMethod(this, global::java.nio.ByteBuffer._getShort3)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()C")]
         public virtual char getChar() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar4);
+            return ((char)(@__env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar4)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
         public virtual char getChar(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((char)(@__env.CallCharMethod(this, global::java.nio.ByteBuffer._getChar5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int getInt() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt6);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt6)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
         public virtual int getInt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.ByteBuffer._getInt7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)J")]
         public virtual long getLong(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((long)(@__env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong8, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()J")]
         public virtual long getLong() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong9);
+            return ((long)(@__env.CallLongMethod(this, global::java.nio.ByteBuffer._getLong9)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)F")]
         public virtual float getFloat(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((float)(@__env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()F")]
         public virtual float getFloat() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat11);
+            return ((float)(@__env.CallFloatMethod(this, global::java.nio.ByteBuffer._getFloat11)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)D")]
         public virtual double getDouble(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble12, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((double)(@__env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble12, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()D")]
         public virtual double getDouble() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble13);
+            return ((double)(@__env.CallDoubleMethod(this, global::java.nio.ByteBuffer._getDouble13)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(IS)Ljava/nio/ByteBuffer;")]
@@ -355,13 +355,13 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer put(global::java.nio.ByteBuffer par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put26, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put26, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.nio.ByteBuffer>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer put(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put27, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put27, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(B)Ljava/nio/ByteBuffer;")]
@@ -379,31 +379,31 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
         public global::java.nio.ByteBuffer put(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put30, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._put30, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)B")]
         public virtual byte get(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallByteMethod(this, global::java.nio.ByteBuffer._get31, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((byte)(@__env.CallByteMethod(this, global::java.nio.ByteBuffer._get31, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer get(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._get32, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._get32, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
         public virtual global::java.nio.ByteBuffer get(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._get33, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._get33, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]
         public virtual byte get() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallByteMethod(this, global::java.nio.ByteBuffer._get34);
+            return ((byte)(@__env.CallByteMethod(this, global::java.nio.ByteBuffer._get34)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[B")]
@@ -415,31 +415,31 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int arrayOffset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.nio.ByteBuffer._arrayOffset36);
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.ByteBuffer._arrayOffset36)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public bool hasArray() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.nio.ByteBuffer._hasArray37);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.ByteBuffer._hasArray37)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isDirect() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.nio.ByteBuffer._isDirect38);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.ByteBuffer._isDirect38)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap39, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap39, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)Ljava/nio/ByteBuffer;")]
         public static global::java.nio.ByteBuffer wrap(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap40, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteBuffer.staticClass, global::java.nio.ByteBuffer._wrap40, global::net.sf.jni4net.utils.Convertor.ParamC2J<byte[]>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/nio/ByteBuffer;")]
@@ -517,7 +517,7 @@ namespace java.nio {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)Ljava/nio/ByteBuffer;")]
         public global::java.nio.ByteBuffer order(object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._order53, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.nio.ByteBuffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.ByteBuffer._order53, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteBuffer;")]

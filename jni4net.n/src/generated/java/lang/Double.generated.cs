@@ -76,7 +76,7 @@ namespace java.lang {
         public Double(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0));
         }
         
         protected Double(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -93,7 +93,7 @@ namespace java.lang {
         public static double POSITIVE_INFINITY {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._POSITIVE_INFINITY15);
+                return ((double)(@__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._POSITIVE_INFINITY15)));
             }
         }
         
@@ -101,7 +101,7 @@ namespace java.lang {
         public static double NEGATIVE_INFINITY {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._NEGATIVE_INFINITY16);
+                return ((double)(@__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._NEGATIVE_INFINITY16)));
             }
         }
         
@@ -109,7 +109,7 @@ namespace java.lang {
         public static double NaN {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._NaN17);
+                return ((double)(@__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._NaN17)));
             }
         }
         
@@ -117,7 +117,7 @@ namespace java.lang {
         public static double MAX_VALUE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._MAX_VALUE18);
+                return ((double)(@__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._MAX_VALUE18)));
             }
         }
         
@@ -125,7 +125,7 @@ namespace java.lang {
         public static double MIN_VALUE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._MIN_VALUE19);
+                return ((double)(@__env.GetStaticDoubleField(global::java.lang.Double.staticClass, global::java.lang.Double._MIN_VALUE19)));
             }
         }
         
@@ -133,7 +133,7 @@ namespace java.lang {
         public static int SIZE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return @__env.GetStaticIntField(global::java.lang.Double.staticClass, global::java.lang.Double._SIZE20);
+                return ((int)(@__env.GetStaticIntField(global::java.lang.Double.staticClass, global::java.lang.Double._SIZE20)));
             }
         }
         
@@ -176,31 +176,31 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.Double._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)J")]
         public static long doubleToRawLongBits(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticLongMethod(global::java.lang.Double.staticClass, global::java.lang.Double._doubleToRawLongBits1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((long)(@__env.CallStaticLongMethod(global::java.lang.Double.staticClass, global::java.lang.Double._doubleToRawLongBits1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)J")]
         public static long doubleToLongBits(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticLongMethod(global::java.lang.Double.staticClass, global::java.lang.Double._doubleToLongBits2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((long)(@__env.CallStaticLongMethod(global::java.lang.Double.staticClass, global::java.lang.Double._doubleToLongBits2, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)D")]
         public static double longBitsToDouble(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._longBitsToDouble3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((double)(@__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._longBitsToDouble3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Double;)I")]
         public virtual int compareTo(global::java.lang.Double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Double>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/String;")]
@@ -218,7 +218,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(DD)I")]
         public static int compare(double par0, double par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticIntMethod(global::java.lang.Double.staticClass, global::java.lang.Double._compare7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Double.staticClass, global::java.lang.Double._compare7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/Double;")]
@@ -230,37 +230,37 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Double;")]
         public static global::java.lang.Double valueOf(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf9, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf9, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Z")]
         public static bool isNaN(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticBooleanMethod(global::java.lang.Double.staticClass, global::java.lang.Double._isNaN10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Double.staticClass, global::java.lang.Double._isNaN10, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isNaN() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.Double._isNaN11);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Double._isNaN11)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Z")]
         public static bool isInfinite(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticBooleanMethod(global::java.lang.Double.staticClass, global::java.lang.Double._isInfinite12, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Double.staticClass, global::java.lang.Double._isInfinite12, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
         public virtual bool isInfinite() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.Double._isInfinite13);
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Double._isInfinite13)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)D")]
         public static double parseDouble(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return @__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._parseDouble14, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((double)(@__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._parseDouble14, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0))));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

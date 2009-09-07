@@ -69,12 +69,12 @@ namespace java.lang.annotation {
         
         public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0);
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0)));
         }
         
         public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return @__env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         public global::java.lang.String toString() {
@@ -103,7 +103,7 @@ namespace java.lang.annotation {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
-            return @__real.hashCode();
+            return ((int)(@__real.hashCode()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -114,7 +114,7 @@ namespace java.lang.annotation {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.annotation.Annotation @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.annotation.Annotation>(@__env, @__obj);
-            return @__real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0));
+            return ((bool)(@__real.equals(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, par0))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }

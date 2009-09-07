@@ -46,7 +46,7 @@ namespace System.Collections {
         public int Count {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return @__env.CallIntMethod(this, global::System.Collections.@__ICollection._Count2);
+                return ((int)(@__env.CallIntMethod(this, global::System.Collections.@__ICollection._Count2)));
             }
         }
         
@@ -60,7 +60,7 @@ namespace System.Collections {
         public bool IsSynchronized {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return @__env.CallBooleanMethod(this, global::System.Collections.@__ICollection._IsSynchronized4);
+                return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__ICollection._IsSynchronized4)));
             }
         }
         
@@ -80,7 +80,7 @@ namespace System.Collections {
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, array), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, index));
+            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, index));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -121,7 +121,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return @__real.Count;
+            return ((int)(@__real.Count));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -143,7 +143,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return @__real.IsSynchronized;
+            return ((bool)(@__real.IsSynchronized));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }

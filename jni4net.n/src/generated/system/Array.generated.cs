@@ -155,7 +155,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.ICollection)(@__real)).Count;
+            return ((int)(((global::System.Collections.ICollection)(@__real)).Count));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -177,7 +177,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.ICollection)(@__real)).IsSynchronized;
+            return ((bool)(((global::System.Collections.ICollection)(@__real)).IsSynchronized));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -209,7 +209,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.IList)(@__real)).Add(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(((global::System.Collections.IList)(@__real)).Add(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -220,7 +220,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.IList)(@__real)).Contains(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((bool)(((global::System.Collections.IList)(@__real)).Contains(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -241,7 +241,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.IList)(@__real)).IsReadOnly;
+            return ((bool)(((global::System.Collections.IList)(@__real)).IsReadOnly));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -252,7 +252,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.IList)(@__real)).IsFixedSize;
+            return ((bool)(((global::System.Collections.IList)(@__real)).IsFixedSize));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -263,7 +263,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return ((global::System.Collections.IList)(@__real)).IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(((global::System.Collections.IList)(@__real)).IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -586,7 +586,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.Length;
+            return ((int)(@__real.Length));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -597,7 +597,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.LongLength;
+            return ((long)(@__real.LongLength));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -608,7 +608,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.GetLength(dimension);
+            return ((int)(@__real.GetLength(dimension)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -619,7 +619,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.GetLongLength(dimension);
+            return ((long)(@__real.GetLongLength(dimension)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(long);
         }
@@ -630,7 +630,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.Rank;
+            return ((int)(@__real.Rank));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -641,7 +641,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.GetUpperBound(dimension);
+            return ((int)(@__real.GetUpperBound(dimension)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -652,7 +652,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Array @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, @__obj);
-            return @__real.GetLowerBound(dimension);
+            return ((int)(@__real.GetLowerBound(dimension)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -662,7 +662,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -672,7 +672,7 @@ namespace System {
             // (LSystem/Array;IILSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -682,7 +682,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;LSystem/Collections/IComparer;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            return ((int)(global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -692,7 +692,7 @@ namespace System {
             // (LSystem/Array;IILSystem/Object;LSystem/Collections/IComparer;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            return ((int)(global::System.Array.BinarySearch(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -712,7 +712,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -722,7 +722,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex);
+            return ((int)(global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -732,7 +732,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex, count);
+            return ((int)(global::System.Array.IndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex, count)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -742,7 +742,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            return ((int)(global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -752,7 +752,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;I)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex);
+            return ((int)(global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -762,7 +762,7 @@ namespace System {
             // (LSystem/Array;LSystem/Object;II)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex, count);
+            return ((int)(global::System.Array.LastIndexOf(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value), startIndex, count)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -826,7 +826,7 @@ namespace System {
             // (LSystem/Array;LSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -835,7 +835,7 @@ namespace System {
             // (LSystem/Array;LSystem/Array;LSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, keys), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, items), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, keys), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, items), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -844,7 +844,7 @@ namespace System {
             // (LSystem/Array;IILSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index, length, global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -853,7 +853,7 @@ namespace System {
             // (LSystem/Array;LSystem/Array;IILSystem/Collections/IComparer;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, keys), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, items), index, length, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IComparer>(@__env, comparer));
+            global::System.Array.Sort(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, keys), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, items), index, length, global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Collections.IComparer>(@__env, comparer));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
