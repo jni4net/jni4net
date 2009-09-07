@@ -61,8 +61,10 @@ namespace net.sf.jni4net.test
         [Test]
         public void PrimitiveObjects()
         {
-            var integer = Bridge.WrapCLR<Integer>(1);
-            Assert.AreEqual((Integer)1, integer);
+            var integer = Bridge.WrapCLR<Integer>(13);
+            Assert.AreEqual((Integer)13, integer);
+            int integ = Bridge.UnwrapCLR<int>(integer);
+            Assert.AreEqual(13, integ);
         }
 
         [Test]

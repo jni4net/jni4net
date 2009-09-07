@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using java.lang;
@@ -79,14 +79,23 @@ namespace net.sf.jni4net.utils
             RegisterPrimitiveType("double", typeof (double), typeof (Double));
             RegisterPrimitiveType("void", typeof (void), null);
 
-            Convertor.boolValue = env.GetStaticMethodID(Boolean.staticClass, "valueOf", "(Z)Ljava/lang/Boolean;");
-            Convertor.charValue = env.GetStaticMethodID(Character.staticClass, "valueOf", "(C)Ljava/lang/Character;");
-            Convertor.byteValue = env.GetStaticMethodID(Byte.staticClass, "valueOf", "(B)Ljava/lang/Byte;");
-            Convertor.shortValue = env.GetStaticMethodID(Short.staticClass, "valueOf", "(S)Ljava/lang/Short;");
-            Convertor.intValue = env.GetStaticMethodID(Integer.staticClass, "valueOf", "(I)Ljava/lang/Integer;");
-            Convertor.longValue = env.GetStaticMethodID(Long.staticClass, "valueOf", "(J)Ljava/lang/Long;");
-            Convertor.doubleValue = env.GetStaticMethodID(Double.staticClass, "valueOf", "(D)Ljava/lang/Double;");
-            Convertor.floatValue = env.GetStaticMethodID(Float.staticClass, "valueOf", "(F)Ljava/lang/Float;");
+            Convertor.boolObject = env.GetStaticMethodID(Boolean.staticClass, "valueOf", "(Z)Ljava/lang/Boolean;");
+            Convertor.byteObject = env.GetStaticMethodID(Byte.staticClass, "valueOf", "(B)Ljava/lang/Byte;");
+            Convertor.charObject = env.GetStaticMethodID(Character.staticClass, "valueOf", "(C)Ljava/lang/Character;");
+            Convertor.shortObject = env.GetStaticMethodID(Short.staticClass, "valueOf", "(S)Ljava/lang/Short;");
+            Convertor.intObject = env.GetStaticMethodID(Integer.staticClass, "valueOf", "(I)Ljava/lang/Integer;");
+            Convertor.longObject = env.GetStaticMethodID(Long.staticClass, "valueOf", "(J)Ljava/lang/Long;");
+            Convertor.doubleObject = env.GetStaticMethodID(Double.staticClass, "valueOf", "(D)Ljava/lang/Double;");
+            Convertor.floatObject = env.GetStaticMethodID(Float.staticClass, "valueOf", "(F)Ljava/lang/Float;");
+
+            Convertor.boolValue = env.GetMethodID(Boolean.staticClass, "booleanValue", "()Z");
+            Convertor.byteValue = env.GetMethodID(Byte.staticClass, "byteValue", "()B");
+            Convertor.charValue = env.GetMethodID(Character.staticClass, "charValue", "()C");
+            Convertor.shortValue = env.GetMethodID(Short.staticClass, "shortValue", "()S");
+            Convertor.intValue = env.GetMethodID(Integer.staticClass, "intValue", "()I");
+            Convertor.longValue = env.GetMethodID(Long.staticClass, "longValue", "()J");
+            Convertor.doubleValue = env.GetMethodID(Double.staticClass, "doubleValue", "()D");
+            Convertor.floatValue = env.GetMethodID(Float.staticClass, "floatValue", "()F");
         }
 
         public void RegisterAssembly(Assembly assembly, bool bindJVM)

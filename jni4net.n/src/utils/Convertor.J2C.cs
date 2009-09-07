@@ -85,42 +85,42 @@ namespace net.sf.jni4net.utils
             {
                 return J2CArray(env, obj, clazz);
             }
-            IJavaProxy proxy = OptiJ2CP(env, obj, clazz);
             if (type.IsPrimitive)
             {
-                if (type==typeof(bool))
+                if (type == typeof(bool))
                 {
-                    return ((Boolean) proxy).booleanValue();
+                    return env.CallBooleanMethod(obj, boolValue);
                 }
                 if (type == typeof(char))
                 {
-                    return ((Character)proxy).charValue();
+                    return env.CallCharMethod(obj, charValue);
                 }
                 if (type == typeof(byte))
                 {
-                    return ((Byte)proxy).byteValue();
+                    return env.CallByteMethod(obj, byteValue);
                 }
                 if (type == typeof(short))
                 {
-                    return ((Short)proxy).byteValue();
+                    return env.CallShortMethod(obj, shortValue);
                 }
                 if (type == typeof(int))
                 {
-                    return ((Integer)proxy).byteValue();
+                    return env.CallIntMethod(obj, intValue);
                 }
                 if (type == typeof(long))
                 {
-                    return ((Long)proxy).byteValue();
+                    return env.CallLongMethod(obj, longValue);
                 }
                 if (type == typeof(double))
                 {
-                    return ((Double)proxy).byteValue();
+                    return env.CallDoubleMethod(obj, doubleValue);
                 }
                 if (type == typeof(float))
                 {
-                    return ((Float)proxy).byteValue();
+                    return env.CallFloatMethod(obj, floatValue);
                 }
-            }
+            } 
+            IJavaProxy proxy = OptiJ2CP(env, obj, clazz);
             return proxy;
         }
 

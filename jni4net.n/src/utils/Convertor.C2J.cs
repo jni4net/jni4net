@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
@@ -69,42 +69,42 @@ namespace net.sf.jni4net.utils
                 if (type == typeof (bool))
                 {
                     Value value = ParamC2J(env, (bool) obj);
-                    return env.CallStaticObjectMethodPtr(Boolean.staticClass, boolValue, value);
+                    return env.CallStaticObjectMethodPtr(Boolean.staticClass, boolObject, value);
                 }
                 if (type == typeof (byte))
                 {
                     Value value = ParamC2J(env, (byte) obj);
-                    return env.CallStaticObjectMethodPtr(Byte.staticClass, byteValue, value);
+                    return env.CallStaticObjectMethodPtr(Byte.staticClass, byteObject, value);
                 }
                 if (type == typeof (char))
                 {
                     Value value = ParamC2J(env, (char) obj);
-                    return env.CallStaticObjectMethodPtr(Character.staticClass, charValue, value);
+                    return env.CallStaticObjectMethodPtr(Character.staticClass, charObject, value);
                 }
                 if (type == typeof (short))
                 {
                     Value value = ParamC2J(env, (short) obj);
-                    return env.CallStaticObjectMethodPtr(Short.staticClass, shortValue, value);
+                    return env.CallStaticObjectMethodPtr(Short.staticClass, shortObject, value);
                 }
                 if (type == typeof (int))
                 {
                     Value value = ParamC2J(env, (int) obj);
-                    return env.CallStaticObjectMethodPtr(Integer.staticClass, intValue, value);
+                    return env.CallStaticObjectMethodPtr(Integer.staticClass, intObject, value);
                 }
                 if (type == typeof (long))
                 {
                     Value value = ParamC2J(env, (long) obj);
-                    return env.CallStaticObjectMethodPtr(Long.staticClass, longValue, value);
+                    return env.CallStaticObjectMethodPtr(Long.staticClass, longObject, value);
                 }
                 if (type == typeof (double))
                 {
                     Value value = ParamC2J(env, (double) obj);
-                    return env.CallStaticObjectMethodPtr(Double.staticClass, doubleValue, value);
+                    return env.CallStaticObjectMethodPtr(Double.staticClass, doubleObject, value);
                 }
                 if (type == typeof (float))
                 {
                     Value value = ParamC2J(env, (float) obj);
-                    return env.CallStaticObjectMethodPtr(Float.staticClass, floatValue, value);
+                    return env.CallStaticObjectMethodPtr(Float.staticClass, floatObject, value);
                 }
             }
 

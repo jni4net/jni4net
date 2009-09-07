@@ -7,6 +7,15 @@ namespace net.sf.jni4net.utils
 {
     public static partial class Convertor
     {
+        internal static MethodId boolObject;
+        internal static MethodId byteObject;
+        internal static MethodId charObject;
+        internal static MethodId shortObject;
+        internal static MethodId intObject;
+        internal static MethodId longObject;
+        internal static MethodId doubleObject;
+        internal static MethodId floatObject;
+
         internal static MethodId boolValue;
         internal static MethodId byteValue;
         internal static MethodId charValue;

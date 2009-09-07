@@ -15,7 +15,7 @@ namespace net.sf.jni4net.tested
 
         public int compareTo(Object objectPar0)
         {
-            var other = Bridge.UnrapCLR<CWithJavaInterface>(objectPar0);
+            var other = Bridge.UnwrapCLR<CWithJavaInterface>(objectPar0);
             if (other == null)
             {
                 return -1;
