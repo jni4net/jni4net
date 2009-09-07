@@ -340,6 +340,13 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public bool CallBooleanMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            bool res = callBooleanMethod(native, obj, methodIdNative.native, args) != 0;
+            ExceptionTest();
+            return res;
+        }
+
         public int CallIntMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             int res = callIntMethod(native, obj.Native, methodIdNative.native, args);
@@ -361,9 +368,23 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public short CallShortMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            short res = callShortMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
         public long CallLongMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             long res = callLongMethod(native, obj.Native, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
+        public long CallLongMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            long res = callLongMethod(native, obj, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
@@ -375,9 +396,23 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public byte CallByteMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            byte res = callByteMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
         public double CallDoubleMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             double res = callDoubleMethod(native, obj.Native, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
+        public double CallDoubleMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            double res = callDoubleMethod(native, obj, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
@@ -389,6 +424,13 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public float CallFloatMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            float res = callFloatMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
+
         public char CallCharMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             var res = (char) callCharMethod(native, obj.Native, methodIdNative.native, args);
@@ -396,6 +438,12 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        public char CallCharMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        {
+            var res = (char)callCharMethod(native, obj, methodIdNative.native, args);
+            ExceptionTest();
+            return res;
+        }
 
         private void CallVoidMethod(IJavaProxy obj, string method, string sig, params Value[] args)
         {

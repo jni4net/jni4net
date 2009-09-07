@@ -6,7 +6,7 @@ namespace net.sf.jni4net
 {
     partial class Bridge
     {
-        public static TRes UnrapCLR<TRes>(IJavaProxy obj)
+        public static TRes UnwrapCLR<TRes>(IJavaProxy obj)
         {
             return Convertor.J2C<TRes>(JNIEnv.ThreadEnv, obj.Native);
         }
