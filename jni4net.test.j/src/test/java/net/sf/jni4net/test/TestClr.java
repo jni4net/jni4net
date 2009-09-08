@@ -57,6 +57,11 @@ public class TestClr {
 	}
 
 	@Test()
+	public void testPrimitiveTypes() {
+		JavaCallBack.callBackException();
+	}
+
+	@Test()
 	public void testExceptionType() {
 		JavaCallBack.callBackException();
 	}
