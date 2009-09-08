@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.tested;
 using NUnit.Framework;
 using Byte=java.lang.Byte;
@@ -65,6 +66,38 @@ namespace net.sf.jni4net.test
             Assert.AreEqual((Integer)13, integer);
             int integ = Bridge.UnwrapCLR<int>(integer);
             Assert.AreEqual(13, integ);
+        }
+
+        [Test]
+        public void WrapClrString1()
+        {
+            IClrProxy str1 = Bridge.WrapCLR<IClrProxy>("jni4net");
+            string str2 = Bridge.UnwrapCLR<string>(str1);
+            Assert.AreEqual("jni4net", str2);
+        }
+
+        [Test]
+        public void WrapClrString2()
+        {
+            String s = new String("jni4net");
+            string str2 = Bridge.UnwrapCLR<string>(s);
+            Assert.AreEqual("jni4net", str2);
+        }
+
+        [Test]
+        public void WrapClrString3()
+        {
+            String s = new String("jni4net");
+            String str2 = Bridge.UnwrapCLR<String>(s);
+            Assert.AreEqual((String)"jni4net", str2);
+        }
+
+        [Test]
+        public void WrapClrString4()
+        {
+            IClrProxy str1 = Bridge.WrapCLR<IClrProxy>("jni4net");
+            String str2 = Bridge.UnwrapCLR<String>(str1);
+            Assert.AreEqual((String)"jni4net", str2);
         }
 
         [Test]

@@ -40,34 +40,42 @@ namespace net.sf.jni4net.utils
 
         public static TRes J2C<TRes>(JNIEnv env, IntPtr obj)
         {
+            Class clazz;
             if (obj == IntPtr.Zero)
             {
                 return default(TRes);
             }
             Type clrType = typeof(TRes);
-            //TODO all sealed ?
-            if (clrType == typeof(Class))
-            {
-                return (TRes)(object)J2CClass(env, obj);
-            }
-            if (clrType == typeof(String))
-            {
-                return (TRes)(object)J2CString(env, obj);
-            }
-            if (clrType == typeof(string))
-            {
-                return (TRes)(object)env.ConvertToString(obj);
-            }
             if (typeof(IJavaProxy).IsAssignableFrom(clrType))
             {
-                return (TRes)OptiJ2CP(env, obj, env.GetObjectClass(obj));
+                //TODO all sealed ?
+                if (clrType == typeof(Class))
+                {
+                    return (TRes)(object)J2CClass(env, obj);
+                }
+                clazz = env.GetObjectClass(obj);
+                if (clrType == typeof(String))
+                {
+                    if (clazz == String._class)
+                    {
+                        return (TRes)(object)J2CString(env, obj);
+                    }
+                    return (TRes) (object) env.NewString((string) OptiJP2C(env, obj));
+                }
+                return (TRes)OptiJ2CP(env, obj, clazz);
             }
             if (clrType.IsArray)
             {
                 return (TRes)(object)J2CArray(env, obj, typeof(TRes).GetElementType());
             }
-            Class clazz;
+
+            //TODO all sealed ?
             clazz = env.GetObjectClass(obj);
+            if (clrType == typeof(string) && clazz==String._class)
+            {
+                return (TRes)(object)env.ConvertToString(obj);
+            }
+            
             return (TRes)J2C(env, obj, clazz, clrType);
         }
 
