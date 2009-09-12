@@ -29,6 +29,10 @@ public final class IList_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IList extends system.Object implements system.collections.IList {
     
+    protected __IList(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Collections/IEnumerator;")
     public native system.collections.IEnumerator GetEnumerator();
     

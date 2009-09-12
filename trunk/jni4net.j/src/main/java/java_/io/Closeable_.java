@@ -29,6 +29,10 @@ public final class Closeable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Closeable extends system.Object implements java.io.Closeable {
     
+    protected __Closeable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void close();
 }

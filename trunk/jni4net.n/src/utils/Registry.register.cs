@@ -199,7 +199,11 @@ namespace net.sf.jni4net.utils
             if (proxyName != null)
             {
                 record.JVMProxy = env.FindClassNoThrow(proxyName.Replace('.', '/'));
-                record.JVMConstructor = GetJVMConstructor(env, record.IsInterface, record.JVMProxy);
+                record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
+                if (record.JVMConstructor==null)
+                {
+                    throw new JNIException("Can't find java constructor for " + record.JVMProxy);
+                }
                 knownJVMProxies[record.JVMProxy] = record;
                 knownJVM[record.JVMProxy] = record;
             }

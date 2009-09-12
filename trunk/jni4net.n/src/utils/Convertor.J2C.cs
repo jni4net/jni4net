@@ -62,6 +62,11 @@ namespace net.sf.jni4net.utils
                     }
                     return (TRes) (object) env.NewString((string) OptiJP2C(env, obj));
                 }
+                //This should not happen
+                /*if (IClrProxy_._class.isAssignableFrom(clazz))
+                {
+                    return (TRes)OptiJP2C(env, obj);
+                }*/
                 return (TRes)OptiJ2CP(env, obj, clazz);
             }
             if (clrType.IsArray)
@@ -203,7 +208,8 @@ namespace net.sf.jni4net.utils
         private static object OptiJP2C(JNIEnv env, IntPtr obj)
         {
             int handle = __IClrProxy.getClrHandle(env, obj);
-            return IntHandle.ToObject(handle);
+            object res = IntHandle.ToObject(handle);
+            return res;
         }
 
     }

@@ -29,6 +29,10 @@ public final class Map_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Map extends system.Object implements java.util.Map {
     
+    protected __Map(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native int hashCode();
     
