@@ -286,7 +286,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/StringBuffer;)Ljava/lang/AbstractStringBuilder;")]
         public virtual global::java.lang.AbstractStringBuilder append(global::java.lang.StringBuffer par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._append17, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.StringBuffer>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._append17, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)Ljava/lang/AbstractStringBuilder;")]

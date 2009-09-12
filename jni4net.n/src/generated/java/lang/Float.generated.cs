@@ -210,7 +210,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Float;)I")]
         public virtual int compareTo(global::java.lang.Float par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Float._compareTo4, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Float>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Float._compareTo4, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)Ljava/lang/String;")]
