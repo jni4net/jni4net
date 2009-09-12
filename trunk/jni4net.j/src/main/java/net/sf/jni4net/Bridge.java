@@ -18,7 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy;
-import system.IObject;
+import system.*;
+
+import java.lang.String;
 
 @net.sf.jni4net.attributes.ClrType
 public class Bridge extends system.Object {
@@ -85,13 +87,18 @@ public class Bridge extends system.Object {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> system.Object wrapJVM(T obj){
-		return WrapJVM(obj);
+	public static <TRes,TInput> TRes wrapJVM(TInput obj, Class<TRes> requestedClass){
+		return (TRes)WrapJVM(obj, requestedClass);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> T unwrapJVM(system.Object obj){
-		return (T)UnwrapJVM(obj);
+	public static <TRes> TRes unwrapJVM(system.Object obj, Class<TRes> requestedClass){
+		return (TRes)UnwrapJVM(obj, requestedClass);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <TRes> TRes unwrapJVM(system.Exception obj, Class<TRes> requestedClass){
+		return (TRes)UnwrapJVM(obj, requestedClass);
 	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
@@ -109,11 +116,14 @@ public class Bridge extends system.Object {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;")
-    public native static system.Object WrapJVM(java.lang.Object obj);
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
+    public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Lnet/sf/jni4net/jni/IJavaProxy;")
-    public native static java.lang.Object UnwrapJVM(system.Object obj);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
+    public native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
+    public native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getVerbose();

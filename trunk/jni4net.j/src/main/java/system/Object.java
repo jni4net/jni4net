@@ -34,18 +34,15 @@ public class Object implements net.sf.jni4net.inj.IClrProxy, system.IObject {
 
 	public void initProxy(int handle) {
 		clrHandle = handle;
-		System.out.println("Init "+clrHandle);
 	}
 
 	protected Object(net.sf.jni4net.inj.INJEnv env, int handle) {
 		clrHandle = handle;
-		System.out.println("Create "+clrHandle);
 	}
 
 	@Override
 	protected void finalize() throws Throwable {
 		try {
-			System.out.println("Finalize "+clrHandle);
 			if (clrHandle != 0) {
 				net.sf.jni4net.Bridge.disposeClrHandle(clrHandle);
 				clrHandle = 0;
