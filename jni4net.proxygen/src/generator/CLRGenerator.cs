@@ -262,7 +262,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
             if (!config.SkipSignatures && !isProxy)
             {
-                Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.CLRSignature);
+                Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.JVMSignature);
             }
             tgtMember.Attributes = method.Attributes;
             if (isProxy)
@@ -355,7 +355,7 @@ namespace net.sf.jni4net.proxygen.generator
                 paramType == Repository.javaLangClass)
             {
                 par = new CodeTypeReference[] {};
-                return CCE(prefix + "FinalC2J", par, invokeExpression, false);
+                return CCE(prefix + "FinalCp2J", par, invokeExpression, false);
             }
             if (paramType == Repository.systemString)
             {
@@ -369,15 +369,15 @@ namespace net.sf.jni4net.proxygen.generator
             }
             if (paramType.IsFinal)
             {
-                if (paramType.IsJVMType)
+                if (paramType.IsCLRType)
                 {
                     par = new[] {paramType.CLRReference};
                     return CCE(prefix + "FinalC2Jp", par, invokeExpression, true);
                 }
                 else
                 {
-                    par = new[] { paramType.CLRReference };
-                    return CCE(prefix + "FinalCp2J", par, invokeExpression, true);
+                    par = new CodeTypeReference[] { };
+                    return CCE(prefix + "FinalCp2J", par, invokeExpression, false);
                 }
             }
             if (paramType.JVMSubst != null && paramType.JVMSubst.CLRType != paramType.CLRType)

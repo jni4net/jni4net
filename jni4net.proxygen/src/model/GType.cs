@@ -216,13 +216,13 @@ namespace net.sf.jni4net.proxygen.model
             }
             if (IsCLRType)
             {
-                JVMSubst = Repository.javaLangObject;
-                return Repository.javaLangObject;
+                JVMSubst = Repository.systemObject;
+                return Repository.systemObject;
             }
             else
             {
-                CLRSubst = Repository.systemObject;
-                return Repository.systemObject;
+                CLRSubst = Repository.javaLangObject;
+                return Repository.javaLangObject;
             }
         }
 
