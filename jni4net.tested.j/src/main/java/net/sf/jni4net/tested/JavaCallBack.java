@@ -20,7 +20,8 @@ package net.sf.jni4net.tested;
 
 import net.sf.jni4net.inj.INJException;
 import net.sf.jni4net.Bridge;
-import system.NullReferenceException;
+import system.*;
+import system.Object;
 
 /**
  * @author Pavel Savara (original)
@@ -55,7 +56,8 @@ public class JavaCallBack {
 	public static int callBackComparison2() {
 		JWithClrInterface c1=new JWithClrInterface(1);
 		JWithClrInterface c2=new JWithClrInterface(2);
-		return c1.CompareTo(Bridge.wrapJVM(c2));
+		final system.Object other = Bridge.wrapJVM(c2, Object.class);
+		return c1.CompareTo(other);
 	}
 
 	public static int callBackRun() {

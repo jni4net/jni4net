@@ -32,7 +32,7 @@ namespace net.sf.jni4net.utils
             return proxy;
         }
 
-        public static IntPtr C2J<TInput>(JNIEnv env, TInput obj)
+        public static IntPtr C2J<TBoth>(JNIEnv env, TBoth obj)
         {
             return C2J(env, (object) obj);
         }

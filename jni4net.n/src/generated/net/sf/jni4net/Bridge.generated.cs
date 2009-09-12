@@ -40,41 +40,52 @@ namespace net.sf.jni4net {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__Bridge);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM0", "(Ljava/lang/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM1", "(Lsystem/Object;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getVerbose", "Verbose2", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerbose", "Verbose3", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getDebug", "Debug4", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setDebug", "Debug5", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getBindNative", "BindNative6", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setBindNative", "BindNative7", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly8", "(Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly9", "(Lsystem/reflection/Assembly;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle10", "(I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM0", "(Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM1", "(Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM2", "(Lsystem/Exception;Ljava/lang/Class;)Ljava/lang/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getVerbose", "Verbose3", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerbose", "Verbose4", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getDebug", "Debug5", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setDebug", "Debug6", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getBindNative", "BindNative7", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setBindNative", "BindNative8", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly9", "(Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly10", "(Lsystem/reflection/Assembly;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle11", "(I)V"));
             return methods;
         }
         
-        private static global::System.IntPtr WrapJVM0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj) {
-            // (Ljava/lang/Object;)Lsystem/Object;
-            // (Lnet/sf/jni4net/jni/IJavaProxy;)LSystem/Object;
+        private static global::System.IntPtr WrapJVM0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
+            // (Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;
+            // (Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj)));
+            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr UnwrapJVM1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj) {
-            // (Lsystem/Object;)Ljava/lang/Object;
-            // (LSystem/Object;)Lnet/sf/jni4net/jni/IJavaProxy;
+        private static global::System.IntPtr UnwrapJVM1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
+            // (Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;
+            // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj)));
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static bool Verbose2(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
+        private static global::System.IntPtr UnwrapJVM2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
+            // (Lsystem/Exception;Ljava/lang/Class;)Ljava/lang/Object;
+            // (LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
+            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            return default(global::System.IntPtr);
+        }
+        
+        private static bool Verbose3(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -84,7 +95,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void Verbose3(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
+        private static void Verbose4(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -93,7 +104,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static bool Debug4(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
+        private static bool Debug5(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -103,7 +114,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void Debug5(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
+        private static void Debug6(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -112,7 +123,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static bool BindNative6(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
+        private static bool BindNative7(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -122,7 +133,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void BindNative7(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
+        private static void BindNative8(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -131,7 +142,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void LoadAndRegisterAssembly8(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assemblyPath) {
+        private static void LoadAndRegisterAssembly9(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assemblyPath) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -140,7 +151,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void RegisterAssembly9(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assembly) {
+        private static void RegisterAssembly10(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assembly) {
             // (Lsystem/reflection/Assembly;)V
             // (LSystem/Reflection/Assembly;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -149,7 +160,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void disposeClrHandle10(global::System.IntPtr @__envp, global::System.IntPtr @__class, int clrHandle) {
+        private static void disposeClrHandle11(global::System.IntPtr @__envp, global::System.IntPtr @__class, int clrHandle) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
