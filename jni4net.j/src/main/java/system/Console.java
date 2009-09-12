@@ -33,16 +33,16 @@ public class Console extends system.Object {
     public native static system.MarshalByRefObject getOut();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Text/Encoding;")
-    public native static system.ICloneable getInputEncoding();
+    public native static system.Object getInputEncoding();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Text/Encoding;)V")
-    public native static void setInputEncoding(system.ICloneable value);
+    public native static void setInputEncoding(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Text/Encoding;")
-    public native static system.ICloneable getOutputEncoding();
+    public native static system.Object getOutputEncoding();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Text/Encoding;)V")
-    public native static void setOutputEncoding(system.ICloneable value);
+    public native static void setOutputEncoding(system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native static void Beep();

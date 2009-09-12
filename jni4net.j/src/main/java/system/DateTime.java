@@ -38,7 +38,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(IIILSystem/Globalization/Calendar;)V")
-    public DateTime(int year, int month, int day, system.ICloneable calendar) {
+    public DateTime(int year, int month, int day, system.Object calendar) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.DateTime.__ctorDateTime3(this, year, month, day, calendar);
     }
@@ -56,7 +56,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(IIIIIILSystem/Globalization/Calendar;)V")
-    public DateTime(int year, int month, int day, int hour, int minute, int second, system.ICloneable calendar) {
+    public DateTime(int year, int month, int day, int hour, int minute, int second, system.Object calendar) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.DateTime.__ctorDateTime6(this, year, month, day, hour, minute, second, calendar);
     }
@@ -74,13 +74,13 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(IIIIIIILSystem/Globalization/Calendar;)V")
-    public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, system.ICloneable calendar) {
+    public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, system.Object calendar) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.DateTime.__ctorDateTime9(this, year, month, day, hour, minute, second, millisecond, calendar);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(IIIIIIILSystem/Globalization/Calendar;LSystem/DateTimeKind;)V")
-    public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, system.ICloneable calendar, system.Enum kind) {
+    public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, system.Object calendar, system.Enum kind) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.DateTime.__ctorDateTime10(this, year, month, day, hour, minute, second, millisecond, calendar, kind);
     }
@@ -94,8 +94,8 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     @net.sf.jni4net.attributes.ClrMethod("(III)V")
     private native static void __ctorDateTime2(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day);
     
-    @net.sf.jni4net.attributes.ClrMethod("(IIILsystem/ICloneable;)V")
-    private native static void __ctorDateTime3(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, system.ICloneable calendar);
+    @net.sf.jni4net.attributes.ClrMethod("(IIILsystem/Object;)V")
+    private native static void __ctorDateTime3(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, system.Object calendar);
     
     @net.sf.jni4net.attributes.ClrMethod("(IIIIII)V")
     private native static void __ctorDateTime4(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second);
@@ -103,8 +103,8 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     @net.sf.jni4net.attributes.ClrMethod("(IIIIIILsystem/Enum;)V")
     private native static void __ctorDateTime5(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, system.Enum kind);
     
-    @net.sf.jni4net.attributes.ClrMethod("(IIIIIILsystem/ICloneable;)V")
-    private native static void __ctorDateTime6(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, system.ICloneable calendar);
+    @net.sf.jni4net.attributes.ClrMethod("(IIIIIILsystem/Object;)V")
+    private native static void __ctorDateTime6(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, system.Object calendar);
     
     @net.sf.jni4net.attributes.ClrMethod("(IIIIIII)V")
     private native static void __ctorDateTime7(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond);
@@ -112,11 +112,11 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     @net.sf.jni4net.attributes.ClrMethod("(IIIIIIILsystem/Enum;)V")
     private native static void __ctorDateTime8(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond, system.Enum kind);
     
-    @net.sf.jni4net.attributes.ClrMethod("(IIIIIIILsystem/ICloneable;)V")
-    private native static void __ctorDateTime9(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond, system.ICloneable calendar);
+    @net.sf.jni4net.attributes.ClrMethod("(IIIIIIILsystem/Object;)V")
+    private native static void __ctorDateTime9(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond, system.Object calendar);
     
-    @net.sf.jni4net.attributes.ClrMethod("(IIIIIIILsystem/ICloneable;Lsystem/Enum;)V")
-    private native static void __ctorDateTime10(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond, system.ICloneable calendar, system.Enum kind);
+    @net.sf.jni4net.attributes.ClrMethod("(IIIIIIILsystem/Object;Lsystem/Enum;)V")
+    private native static void __ctorDateTime10(net.sf.jni4net.inj.IClrProxy thiz, int year, int month, int day, int hour, int minute, int second, int millisecond, system.Object calendar, system.Enum kind);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
     public native int CompareTo(system.Object obj);
@@ -176,7 +176,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native system.Object ToType(system.Type conversionType, system.IFormatProvider provider);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(java.lang.Object info, system.ValueType context);
+    public native void GetObjectData(system.Object info, system.ValueType context);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/TimeSpan;)LSystem/DateTime;")
     public native final system.DateTime Add(system.ValueType value);

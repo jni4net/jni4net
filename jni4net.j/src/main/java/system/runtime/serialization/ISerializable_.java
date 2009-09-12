@@ -34,6 +34,6 @@ class __ISerializable extends system.Object implements system.runtime.serializat
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(java.lang.Object info, system.ValueType context);
+    public native void GetObjectData(system.Object info, system.ValueType context);
 }
 //</generated-proxy>

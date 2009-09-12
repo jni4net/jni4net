@@ -91,7 +91,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.reflect.GenericDeclaration>(@__env, @__real.getGenericDeclaration());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.reflect.GenericDeclaration>(@__env, @__real.getGenericDeclaration());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -102,7 +102,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String>(@__env, @__real.getName());
+            return global::net.sf.jni4net.utils.Convertor.FinalCp2J(@__real.getName());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -113,7 +113,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<java.lang.reflect.Type[]>(@__env, @__real.getBounds());
+            return global::net.sf.jni4net.utils.Convertor.ArrayC2J<java.lang.reflect.Type[]>(@__env, @__real.getBounds());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

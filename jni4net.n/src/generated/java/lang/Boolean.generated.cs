@@ -47,14 +47,14 @@ namespace java.lang {
         public Boolean(bool par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor11, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor11, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Boolean(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor12, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0));
+            @__env.NewObject(global::java.lang.Boolean.staticClass, global::java.lang.Boolean.@__ctor12, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
         }
         
         protected Boolean(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -111,37 +111,37 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Boolean._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Boolean._compareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Boolean;)I")]
         public virtual int compareTo(global::java.lang.Boolean par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Boolean._compareTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Boolean>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Boolean._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Boolean>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Z")]
         public static bool getBoolean(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._getBoolean2, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._getBoolean2, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)Ljava/lang/String;")]
         public static global::java.lang.String toString(bool par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._toString3, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._toString3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Boolean;")]
         public static global::java.lang.Boolean valueOf(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Boolean>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._valueOf4, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Boolean>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._valueOf4, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)Ljava/lang/Boolean;")]
         public static global::java.lang.Boolean valueOf(bool par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Boolean>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._valueOf5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Boolean>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._valueOf5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]
@@ -153,7 +153,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Z")]
         public static bool parseBoolean(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._parseBoolean7, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.Boolean.staticClass, global::java.lang.Boolean._parseBoolean7, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

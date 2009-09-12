@@ -66,10 +66,10 @@ public class Stream extends system.MarshalByRefObject implements system.IDisposa
     public native void Flush();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IAsyncResult;)I")
-    public native int EndRead(java.lang.Object asyncResult);
+    public native int EndRead(system.Object asyncResult);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IAsyncResult;)V")
-    public native void EndWrite(java.lang.Object asyncResult);
+    public native void EndWrite(system.Object asyncResult);
     
     @net.sf.jni4net.attributes.ClrMethod("(JLSystem/IO/SeekOrigin;)J")
     public native long Seek(long offset, system.Enum origin);

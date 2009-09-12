@@ -42,10 +42,10 @@ namespace System.IO {
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "isAsync", "IsAsync0", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getName", "Name1", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAccessControl", "GetAccessControl2", "()Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetAccessControl", "SetAccessControl3", "(Ljava/lang/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAccessControl", "GetAccessControl2", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetAccessControl", "SetAccessControl3", "(Lsystem/Object;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getHandle", "Handle4", "()Lsystem/ValueType;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSafeFileHandle", "SafeFileHandle5", "()Lsystem/IDisposable;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSafeFileHandle", "SafeFileHandle5", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Lock", "Lock6", "(JJ)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Unlock", "Unlock7", "(JJ)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream0", "__ctorFileStream0", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;)V"));
@@ -59,14 +59,14 @@ namespace System.IO {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream5", "__ctorFileStream5", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
                         "m/Enum;IZ)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream6", "__ctorFileStream6", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;ILsystem/Enum;Ljava/lang/Object;)V"));
+                        "m/Enum;ILsystem/Enum;Lsystem/Object;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream7", "__ctorFileStream7", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream8", "__ctorFileStream8", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream9", "__ctorFileStream9", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;ZI)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream10", "__ctorFileStream10", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;ZIZ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/IDisposable;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/IDisposable;Lsystem/Enum;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/IDisposable;Lsystem/Enum;IZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;IZ)V"));
             return methods;
         }
         
@@ -87,29 +87,29 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2JString(@__env, @__real.Name);
+            return global::net.sf.jni4net.utils.Convertor.FinalC2J(@__env, @__real.Name);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         private static global::System.IntPtr GetAccessControl2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
-            // ()Ljava/lang/Object;
+            // ()Lsystem/Object;
             // ()LSystem/Security/AccessControl/FileSecurity;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object, global::System.Security.AccessControl.FileSecurity>(@__env, @__real.GetAccessControl());
+            return global::net.sf.jni4net.utils.Convertor.FinalC2Jp<global::System.Security.AccessControl.FileSecurity>(@__env, @__real.GetAccessControl());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         private static void SetAccessControl3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr fileSecurity) {
-            // (Ljava/lang/Object;)V
+            // (Lsystem/Object;)V
             // (LSystem/Security/AccessControl/FileSecurity;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(@__env, @__obj);
-            @__real.SetAccessControl(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
+            @__real.SetAccessControl(global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -125,12 +125,12 @@ namespace System.IO {
         }
         
         private static global::System.IntPtr SafeFileHandle5(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
-            // ()Lsystem/IDisposable;
+            // ()Lsystem/Object;
             // ()LMicrosoft/Win32/SafeHandles/SafeFileHandle;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.FileStream>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.IDisposable, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, @__real.SafeFileHandle);
+            return global::net.sf.jni4net.utils.Convertor.FinalC2Jp<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, @__real.SafeFileHandle);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -216,11 +216,11 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream6(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr rights, global::System.IntPtr share, int bufferSize, global::System.IntPtr options, global::System.IntPtr fileSecurity) {
-            // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;Ljava/lang/Object;)V
+            // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;Lsystem/Object;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/Security/AccessControl/FileSystemRights;LSystem/IO/FileShare;ILSystem/IO/FileOptions;LSystem/Security/AccessControl/FileSecurity;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.Security.AccessControl.FileSystemRights>(@__env, rights), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileShare>(@__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileOptions>(@__env, options), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
+            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.Security.AccessControl.FileSystemRights>(@__env, rights), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileShare>(@__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileOptions>(@__env, options), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -266,31 +266,31 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream11(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
-            // (Lsystem/IDisposable;Lsystem/Enum;)V
+            // (Lsystem/Object;Lsystem/Enum;)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access));
+            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<object, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         private static void @__ctorFileStream12(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize) {
-            // (Lsystem/IDisposable;Lsystem/Enum;I)V
+            // (Lsystem/Object;Lsystem/Enum;I)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access), bufferSize);
+            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<object, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access), bufferSize);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
         private static void @__ctorFileStream13(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize, bool isAsync) {
-            // (Lsystem/IDisposable;Lsystem/Enum;IZ)V
+            // (Lsystem/Object;Lsystem/Enum;IZ)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;IZ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IDisposable, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access), bufferSize, isAsync);
+            global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.J2C<object, global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Enum, global::System.IO.FileAccess>(@__env, access), bufferSize, isAsync);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

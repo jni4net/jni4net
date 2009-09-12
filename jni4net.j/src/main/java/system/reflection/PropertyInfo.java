@@ -33,7 +33,7 @@ public class PropertyInfo extends system.reflection.MemberInfo {
     public native system.Type getPropertyType();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)V")
-    public native void SetValue(system.Object obj, system.Object value, system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] index, system.ICloneable culture);
+    public native void SetValue(system.Object obj, system.Object value, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] index, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo[] GetAccessors(boolean nonPublic);
@@ -60,7 +60,7 @@ public class PropertyInfo extends system.reflection.MemberInfo {
     public native system.Object GetValue(system.Object obj, system.Object[] index);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object GetValue(system.Object obj, system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] index, system.ICloneable culture);
+    public native system.Object GetValue(system.Object obj, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] index, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Object;[LSystem/Object;)V")
     public native void SetValue(system.Object obj, system.Object value, system.Object[] index);

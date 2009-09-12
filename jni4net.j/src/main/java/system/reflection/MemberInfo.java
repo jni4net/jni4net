@@ -48,7 +48,7 @@ public class MemberInfo extends system.Object implements system.reflection.ICust
     public native int getMetadataToken();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Module;")
-    public native system.runtime.serialization.ISerializable getModule();
+    public native system.Object getModule();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
     public native void GetTypeInfo(int iTInfo, int lcid, system.ValueType ppTInfo);

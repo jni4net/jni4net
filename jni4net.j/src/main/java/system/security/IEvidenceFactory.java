@@ -14,6 +14,6 @@ public interface IEvidenceFactory {
     
     //<generated-interface>
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Security/Policy/Evidence;")
-    system.collections.ICollection getEvidence();
+    system.Object getEvidence();
     //</generated-interface>
 }

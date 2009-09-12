@@ -38,29 +38,29 @@ namespace System.Security {
         public global::System.Security.Policy.Evidence Evidence {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection, global::System.Security.Policy.Evidence>(@__env, @__env.CallObjectMethodPtr(this, global::System.Security.@__IEvidenceFactory._Evidence0));
+                return global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Security.Policy.Evidence>(@__env, @__env.CallObjectMethodPtr(this, global::System.Security.@__IEvidenceFactory._Evidence0));
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Security.@__IEvidenceFactory.staticClass = @__class;
-            global::System.Security.@__IEvidenceFactory._Evidence0 = @__env.GetMethodID(global::System.Security.@__IEvidenceFactory.staticClass, "getEvidence", "()Lsystem/collections/ICollection;");
+            global::System.Security.@__IEvidenceFactory._Evidence0 = @__env.GetMethodID(global::System.Security.@__IEvidenceFactory.staticClass, "getEvidence", "()Lsystem/Object;");
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__IEvidenceFactory);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEvidence", "Evidence0", "()Lsystem/collections/ICollection;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEvidence", "Evidence0", "()Lsystem/Object;"));
             return methods;
         }
         
         private static global::System.IntPtr Evidence0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
-            // ()Lsystem/collections/ICollection;
+            // ()Lsystem/Object;
             // ()LSystem/Security/Policy/Evidence;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Security.IEvidenceFactory @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Security.IEvidenceFactory>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Collections.ICollection, global::System.Security.Policy.Evidence>(@__env, @__real.Evidence);
+            return global::net.sf.jni4net.utils.Convertor.FinalC2Jp<global::System.Security.Policy.Evidence>(@__env, @__real.Evidence);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

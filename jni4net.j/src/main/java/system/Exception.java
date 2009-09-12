@@ -68,7 +68,7 @@ public class Exception extends java.lang.RuntimeException implements net.sf.jni4
     private native static void __ctorException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(java.lang.Object info, system.ValueType context);
+    public native void GetObjectData(system.Object info, system.ValueType context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getMessage();

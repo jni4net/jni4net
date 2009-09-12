@@ -33,7 +33,7 @@ namespace java.lang {
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par2), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par3));
+            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
         }
         
         protected StackTraceElement(global::net.sf.jni4net.jni.JNIEnv @__env) : 

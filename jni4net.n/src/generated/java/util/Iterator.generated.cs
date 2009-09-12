@@ -102,7 +102,7 @@ namespace java.util {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.util.Iterator @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Iterator>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Object>(@__env, @__real.next());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.Object>(@__env, @__real.next());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

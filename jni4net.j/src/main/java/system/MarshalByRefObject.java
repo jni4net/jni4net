@@ -30,7 +30,7 @@ public class MarshalByRefObject extends system.Object {
     public native system.Object InitializeLifetimeService();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/Runtime/Remoting/ObjRef;")
-    public native system.runtime.serialization.ISerializable CreateObjRef(system.Type requestedType);
+    public native system.Object CreateObjRef(system.Type requestedType);
     
     public static system.Type typeof() {
         return system.MarshalByRefObject.staticType;

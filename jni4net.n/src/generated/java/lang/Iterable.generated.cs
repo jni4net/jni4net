@@ -67,7 +67,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.Iterable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Iterable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.util.Iterator>(@__env, @__real.iterator());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.util.Iterator>(@__env, @__real.iterator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

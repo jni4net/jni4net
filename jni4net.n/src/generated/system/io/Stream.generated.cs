@@ -54,8 +54,8 @@ namespace System.IO {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setWriteTimeout", "WriteTimeout11", "(I)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Close", "Close12", "()V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Flush", "Flush13", "()V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "EndRead", "EndRead14", "(Ljava/lang/Object;)I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "EndWrite", "EndWrite15", "(Ljava/lang/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "EndRead", "EndRead14", "(Lsystem/Object;)I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "EndWrite", "EndWrite15", "(Lsystem/Object;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Seek", "Seek16", "(JLsystem/Enum;)J"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetLength", "SetLength17", "(J)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Read", "Read18", "([BII)I"));
@@ -215,23 +215,23 @@ namespace System.IO {
         }
         
         private static int EndRead14(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr asyncResult) {
-            // (Ljava/lang/Object;)I
+            // (Lsystem/Object;)I
             // (LSystem/IAsyncResult;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            return ((int)(@__real.EndRead(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.IAsyncResult>(@__env, asyncResult))));
+            return ((int)(@__real.EndRead(global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.IAsyncResult>(@__env, asyncResult))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
         
         private static void EndWrite15(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr asyncResult) {
-            // (Ljava/lang/Object;)V
+            // (Lsystem/Object;)V
             // (LSystem/IAsyncResult;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, @__obj);
-            @__real.EndWrite(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.IAsyncResult>(@__env, asyncResult));
+            @__real.EndWrite(global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.IAsyncResult>(@__env, asyncResult));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -303,7 +303,7 @@ namespace System.IO {
             // (LSystem/IO/Stream;)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.IO.Stream>(@__env, global::System.IO.Stream.Synchronized(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, stream)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.IO.Stream>(@__env, global::System.IO.Stream.Synchronized(global::net.sf.jni4net.utils.Convertor.J2C<global::System.IO.Stream>(@__env, stream)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
