@@ -182,7 +182,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Integer;)I")]
         public virtual int compareTo(global::java.lang.Integer par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Integer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Integer>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Integer._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
@@ -266,7 +266,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;")]
         public static global::java.lang.Integer getInteger(global::java.lang.String par0, global::java.lang.Integer par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger15, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Integer>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Integer>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._getInteger15, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Integer;")]

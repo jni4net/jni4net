@@ -236,14 +236,14 @@ namespace java.lang {
         public String(global::java.lang.StringBuffer par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.String.staticClass, global::java.lang.String.@__ctor72, this, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.StringBuffer>(@__env, par0));
+            @__env.NewObject(global::java.lang.String.staticClass, global::java.lang.String.@__ctor72, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/StringBuilder;)V")]
         public String(global::java.lang.StringBuilder par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.String.staticClass, global::java.lang.String.@__ctor73, this, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.StringBuilder>(@__env, par0));
+            @__env.NewObject(global::java.lang.String.staticClass, global::java.lang.String.@__ctor73, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BIILjava/lang/String;)V")]
@@ -463,7 +463,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/StringBuffer;)Z")]
         public virtual bool contentEquals(global::java.lang.StringBuffer par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.String._contentEquals17, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.StringBuffer>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.String._contentEquals17, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)Ljava/lang/String;")]

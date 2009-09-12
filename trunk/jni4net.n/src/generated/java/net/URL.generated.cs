@@ -86,14 +86,14 @@ namespace java.net {
         public URL(global::java.net.URL par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor21, this, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.net.URL>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor21, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V")]
         public URL(global::java.net.URL par0, global::java.lang.String par1, global::java.lang.Object par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor22, this, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.net.URL>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par2));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctor22, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")]
@@ -249,7 +249,7 @@ namespace java.net {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URL;)Z")]
         public virtual bool sameFile(global::java.net.URL par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.net.URL._sameFile16, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.net.URL>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.net.URL._sameFile16, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URLStreamHandlerFactory;)V")]

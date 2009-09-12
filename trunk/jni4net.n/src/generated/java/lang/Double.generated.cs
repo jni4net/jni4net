@@ -200,7 +200,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Double;)I")]
         public virtual int compareTo(global::java.lang.Double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Double>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/String;")]

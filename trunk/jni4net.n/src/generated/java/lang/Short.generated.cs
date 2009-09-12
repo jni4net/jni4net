@@ -134,7 +134,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Short;)I")]
         public virtual int compareTo(global::java.lang.Short par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Short._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::java.lang.Short>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Short._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)Ljava/lang/String;")]
