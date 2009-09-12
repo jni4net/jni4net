@@ -29,6 +29,10 @@ public final class IDictionary_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IDictionary extends system.Object implements system.collections.IDictionary {
     
+    protected __IDictionary(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;I)V")
     public native void CopyTo(system.Array array, int index);
     

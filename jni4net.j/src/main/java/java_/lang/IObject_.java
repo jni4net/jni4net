@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package java_.lang;
 
+import system.InvalidOperationException;
+
 /**
  * @author Pavel Savara (original)
  */
@@ -40,4 +42,7 @@ public final class IObject_ {
  */
 @net.sf.jni4net.attributes.ClrProxy
 class __IObject implements IObject {
+	protected __IObject(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+			throw new InvalidOperationException("Unexpected call");
+	}
 }

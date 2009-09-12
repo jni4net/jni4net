@@ -29,6 +29,10 @@ public final class Set_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Set extends system.Object implements java.util.Set {
     
+    protected __Set(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Iterator;")
     public native java.util.Iterator iterator();
     

@@ -40,4 +40,7 @@ public final class IObject_ {
  */
 @net.sf.jni4net.attributes.ClrProxy
 class __IObject extends system.Object implements system.IObject {
+	protected __IObject(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+			super(__env, __handle);
+	}
 }

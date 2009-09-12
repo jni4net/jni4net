@@ -28,5 +28,9 @@ public final class Cloneable_ {
 //<generated-proxy>
 @net.sf.jni4net.attributes.ClrProxy
 class __Cloneable extends system.Object implements java.lang.Cloneable {
+    
+    protected __Cloneable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
 }
 //</generated-proxy>

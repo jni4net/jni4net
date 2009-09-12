@@ -29,6 +29,10 @@ public final class AnnotatedElement_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __AnnotatedElement extends system.Object implements java.lang.reflect.AnnotatedElement {
     
+    protected __AnnotatedElement(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;")
     public native java.lang.annotation.Annotation getAnnotation(java.lang.Class par0);
     

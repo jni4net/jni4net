@@ -29,6 +29,10 @@ public final class List_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __List extends system.Object implements java.util.List {
     
+    protected __List(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Iterator;")
     public native java.util.Iterator iterator();
     

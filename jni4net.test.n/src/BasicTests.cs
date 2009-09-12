@@ -217,6 +217,18 @@ namespace net.sf.jni4net.test
             java.lang.System.@out.println("Test");
         }
 
+
+        [Test]
+        public void Wrap()
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            IClrProxy proxy = Bridge.WrapCLR<IClrProxy>(builder);
+            int handle = proxy.getClrHandle();
+            System.Text.StringBuilder res = Bridge.UnwrapCLR<System.Text.StringBuilder>(proxy);
+            Assert.AreSame(builder, res);
+        }
+
+
         public static void Main()
         {
             //var test =  new BridgeTest();

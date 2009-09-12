@@ -29,6 +29,10 @@ public final class ICollection_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __ICollection extends system.Object implements system.collections.ICollection {
     
+    protected __ICollection(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Collections/IEnumerator;")
     public native system.collections.IEnumerator GetEnumerator();
     

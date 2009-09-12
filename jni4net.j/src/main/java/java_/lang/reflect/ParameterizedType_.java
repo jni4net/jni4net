@@ -29,6 +29,10 @@ public final class ParameterizedType_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __ParameterizedType extends system.Object implements java.lang.reflect.ParameterizedType {
     
+    protected __ParameterizedType(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/reflect/Type;")
     public native java.lang.reflect.Type[] getActualTypeArguments();
     

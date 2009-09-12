@@ -31,13 +31,13 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        [Ignore]
         public void jIfaceUnreg()
         {
             var cw1 = new CWithJavaInterfaceUnreg(1);
             var cw2 = new CWithJavaInterfaceUnreg(2);
 
-            Assert.AreEqual(1, cw1.compareTo(Bridge.WrapCLR<Object>(cw2)));
+            Object other = Bridge.WrapCLR<Object>(cw2);
+            Assert.AreEqual(1, cw1.compareTo(other));
 
             cw2.run();
             Assert.AreEqual(3, cw2.Value);

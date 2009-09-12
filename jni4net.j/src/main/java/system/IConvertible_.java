@@ -29,6 +29,10 @@ public final class IConvertible_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IConvertible extends system.Object implements system.IConvertible {
     
+    protected __IConvertible(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/TypeCode;")
     public native system.Enum GetTypeCode();
     

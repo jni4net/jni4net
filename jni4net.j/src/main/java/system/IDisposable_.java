@@ -29,6 +29,10 @@ public final class IDisposable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IDisposable extends system.Object implements system.IDisposable {
     
+    protected __IDisposable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
+    
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void Dispose();
 }

@@ -88,16 +88,9 @@ namespace net.sf.jni4net.utils
         }
 
 
-        private static MethodId GetJVMConstructor(JNIEnv env, bool isInterface, Class proxy)
+        private static MethodId GetJVMConstructor(JNIEnv env, Class proxy)
         {
-            if (isInterface)
-            {
-                return env.GetMethodID(proxy, "<init>", "()V");
-            }
-            else
-            {
-                return env.GetMethodID(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
-            }
+            return env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
         }
 
         private static MethodInfo GetWrapperInitializer(Type wrapperType)

@@ -28,5 +28,9 @@ public final class Serializable_ {
 //<generated-proxy>
 @net.sf.jni4net.attributes.ClrProxy
 class __Serializable extends system.Object implements java.io.Serializable {
+    
+    protected __Serializable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+            super(__env, __handle);
+    }
 }
 //</generated-proxy>
