@@ -69,6 +69,10 @@ namespace net.sf.jni4net.proxygen.model
                 res.IsAbstract = true;
                 res.Attributes |= TypeAttributes.Abstract;
             }
+            if ((classModifiers & ModifierFlags.Final) != 0)
+            {
+                res.IsFinal = true;
+            }
             if ((classModifiers & ModifierFlags.Public) != 0)
             {
                 res.Attributes |= TypeAttributes.Public;

@@ -1,4 +1,5 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.IO;
 using System.Reflection;
@@ -342,6 +343,66 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.Members.Add(constructionHelper);
         }
 
+        private CodeMethodInvokeExpression CEEC2J(string prefix,GType paramType, CodeExpression invokeExpression)
+        {
+            CodeTypeReference[] par;
+            if (paramType.IsPrimitive)
+            {
+                par = new CodeTypeReference[] {};
+                return CCE(prefix + "PrimC2J", par, invokeExpression, false);
+            }
+            if (paramType == Repository.javaLangString ||
+                paramType == Repository.javaLangClass)
+            {
+                par = new CodeTypeReference[] {};
+                return CCE(prefix + "FinalC2J", par, invokeExpression, false);
+            }
+            if (paramType == Repository.systemString)
+            {
+                par = new CodeTypeReference[] {};
+                return CCE(prefix + "FinalC2J", par, invokeExpression, true);
+            }
+            if (paramType.IsArray)
+            {
+                par = new[] {paramType.CLRReference};
+                return CCE(prefix + "ArrayC2J", par, invokeExpression, true);
+            }
+            if (paramType.IsFinal)
+            {
+                if (paramType.IsJVMType)
+                {
+                    par = new[] {paramType.CLRReference};
+                    return CCE(prefix + "FinalC2Jp", par, invokeExpression, true);
+                }
+                else
+                {
+                    par = new[] { paramType.CLRReference };
+                    return CCE(prefix + "FinalCp2J", par, invokeExpression, true);
+                }
+            }
+            if (paramType.JVMSubst != null && paramType.JVMSubst.CLRType != paramType.CLRType)
+            {
+                par = new[] {paramType.JVMSubst.CLRReference, paramType.CLRReference};
+                return CCE(prefix + "ConvC2J", par, invokeExpression, true);
+            }
+            par = new[] {paramType.CLRReference};
+            return CCE(prefix + "SameC2J", par, invokeExpression, true);
+        }
+
+        private CodeMethodInvokeExpression CreateConversionExpressionC2J(GType paramType, CodeExpression invokeExpression)
+        {
+            return CEEC2J("", paramType, invokeExpression);
+        }
+        private CodeMethodInvokeExpression CreateConversionExpressionC2JParam(GType paramType, CodeExpression invokeExpression)
+        {
+            return CEEC2J("Par", paramType, invokeExpression);
+        }
+
+        private CodeMethodInvokeExpression CreateConversionExpressionJ2C(GType paramType, CodeExpression invokeExpression)
+        {
+            return null;
+        }
+
         private CodeMethodInvokeExpression CreateConversionExpression(string conversion, GType paramType, CodeExpression invokeExpression)
         {
             CodeTypeReference[] parameters;
@@ -362,12 +423,26 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 parameters = new[] { paramType.CLRReference };
             }
-            return new CodeMethodInvokeExpression(
-                new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
-                                                  conversion, parameters),
-                envVariable, invokeExpression);
+            return CCE(conversion, parameters, invokeExpression, true);
         }
 
+        private CodeMethodInvokeExpression CCE(string conversion, CodeTypeReference[] parameters, CodeExpression invokeExpression, bool env)
+        {
+            if (env)
+            {
+                return new CodeMethodInvokeExpression(
+                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof (Convertor)),
+                                                      conversion, parameters),
+                    envVariable, invokeExpression);
+            }
+            else
+            {
+                return new CodeMethodInvokeExpression(
+                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                                                      conversion, parameters),
+                    invokeExpression);
+            }
+        }
 
         #region Nested type: CodeMemberPropertyEx
 

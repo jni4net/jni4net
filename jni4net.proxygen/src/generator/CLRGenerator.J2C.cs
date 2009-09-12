@@ -154,7 +154,7 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("C2J", method.ReturnType, call);
+                        CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2J(method.ReturnType, call);
                         callst = new CodeMethodReturnStatement(conversionExpression);
                         tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }

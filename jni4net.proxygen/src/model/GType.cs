@@ -41,6 +41,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool MergeJavaSource { get; set; }
         public bool IsAbstract { get; set; }
         public bool IsArray { get; set; }
+        public bool IsFinal { get; set; }
         public bool IsPrimitive { get; set; }
         public bool IsCLRProxy { get; set; }
         public bool IsJVMProxy { get; set; }

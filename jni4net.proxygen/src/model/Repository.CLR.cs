@@ -51,6 +51,10 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.IsAbstract = true;
             }
+            if (type.IsSealed)
+            {
+                res.IsFinal = true;
+            }
 
             res.LowerName = type.FullName.ToLowerInvariant();
             if (knownNames.ContainsKey(res.LowerName))
