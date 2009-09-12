@@ -367,18 +367,15 @@ namespace net.sf.jni4net.proxygen.generator
                 par = new[] {paramType.CLRReference};
                 return CCE(prefix + "ArrayC2J", par, invokeExpression, true);
             }
-            if (paramType.IsFinal)
+            if (paramType.IsFinal && paramType.IsCLRRealType)
             {
-                if (paramType.IsCLRType)
-                {
-                    par = new[] {paramType.CLRReference};
-                    return CCE(prefix + "FinalC2Jp", par, invokeExpression, true);
-                }
-                else
-                {
-                    par = new CodeTypeReference[] { };
-                    return CCE(prefix + "FinalCp2J", par, invokeExpression, false);
-                }
+                par = new[] { paramType.CLRReference };
+                return CCE(prefix + "FinalC2Jp", par, invokeExpression, true);
+            }
+            if (paramType.IsFinal && paramType.IsJVMRealType)
+            {
+                par = new CodeTypeReference[] {};
+                return CCE(prefix + "FinalCp2J", par, invokeExpression, false);
             }
             if (paramType.JVMSubst != null && paramType.JVMSubst.CLRType != paramType.CLRType)
             {
