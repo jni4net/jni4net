@@ -103,7 +103,7 @@ namespace net.sf.jni4net.proxygen.generator
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
                 CodeExpression invokeExpression = new CodeVariableReferenceExpression(paramName);
-                CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("ParamC2J", parameter, invokeExpression);
+                CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2JParam(parameter, invokeExpression);
                 expressions[i + offset] = conversionExpression;
             }
             return expressions;
