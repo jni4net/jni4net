@@ -55,6 +55,8 @@ namespace net.sf.jni4net.proxygen.model
         internal static GType systemException;
         internal static GType javaLangThrowable;
         internal static GType voidType;
+        internal static GType javaProxy;
+        internal static GType clrProxy;
 
         private static void BindKnownTypesPre()
         {
@@ -90,6 +92,7 @@ namespace net.sf.jni4net.proxygen.model
                 Console.Error.WriteLine("Wrong DLLs ?");
             }
             clrProxyClass = JNIEnv.ThreadEnv.FindClassNoThrow("net/sf/jni4net/inj/IClrProxy");
+            clrProxy = RegisterClass(clrProxyClass);
             knownNames.Add("int", RegisterType(typeof (int)));
             knownNames.Add("long", RegisterType(typeof (long)));
             knownNames.Add("short", RegisterType(typeof (short)));
@@ -139,6 +142,9 @@ namespace net.sf.jni4net.proxygen.model
             systemIObject.CLRSubst = systemObject;
             javaLangIObject = RegisterType(javalangIObjectType);
             javaLangIObject.JVMSubst = javaLangObject;
+            javaProxy = RegisterType(javaProxyType);
+            javaProxy.JVMSubst = javaLangObject;
+            clrProxy.CLRSubst = systemObject;
         }
 
         private static void LoadFile(string file)
