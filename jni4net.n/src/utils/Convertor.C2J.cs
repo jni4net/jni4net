@@ -27,9 +27,7 @@ namespace net.sf.jni4net.utils
             {
                 record = Registry.Default.GetCLRRecord(typeof(IClrProxy));
             }
-            IJavaProxy proxy = record.CLRConstructor.CreateProxy(env);
-            proxy.Init(env, ptr, IClrProxy_._class);
-            return proxy;
+            return record.CreateCLRProxy(env, ptr, IClrProxy_._class);
         }
 
         public static IntPtr C2J<TBoth>(JNIEnv env, TBoth obj)
@@ -109,9 +107,7 @@ namespace net.sf.jni4net.utils
             }
 
             RegistryRecord record = Registry.Default.GetCLRRecord(type);
-            int handle = IntHandle.Alloc(obj);
-            return env.NewObjectPtr(record.JVMProxy.native, record.JVMConstructor, new Value(),
-                                    new Value {_int = handle});
+            return record.CreateJVMProxy(env,obj);
         }
 
         public static IntPtr C2J(JNIEnv env, Array array)
