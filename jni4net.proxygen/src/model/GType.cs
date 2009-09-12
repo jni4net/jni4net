@@ -52,6 +52,8 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsInterface { get; set; }
         public bool IsJVMType { get; set; }
         public bool IsCLRType { get; set; }
+        public bool IsJVMRealType { get; set; }
+        public bool IsCLRRealType { get; set; }
         public string LowerName { get; set; }
         public string Name { get; set; }
         public string CLRFullName { get; set; }
@@ -208,7 +210,7 @@ namespace net.sf.jni4net.proxygen.model
                     JVMSubst = subst;
                     return subst;
                 }
-                if (IsJVMType && IsCLRType)
+                if (IsJVMType && ifc.IsCLRType)
                 {
                     CLRSubst = subst;
                     return subst;

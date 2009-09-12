@@ -111,6 +111,10 @@ namespace net.sf.jni4net.proxygen.model
             res.IsPrimitive = clazz.isPrimitive();
             res.IsInterface = clazz.isInterface();
             res.IsCLRProxy = clrProxyClass!=null && clrProxyClass.isAssignableFrom(clazz);
+            if (!res.IsCLRProxy)
+            {
+                res.IsJVMRealType = true;
+            }
             Class superclass = clazz.getSuperclass();
             if (superclass != null && res.Base == null 
                 && clazz != Object._class 
