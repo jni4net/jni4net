@@ -29,7 +29,7 @@ namespace java.lang {
         public ClassNotFoundException(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -43,7 +43,7 @@ namespace java.lang {
         public ClassNotFoundException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0));
+            @__env.NewObject(global::java.lang.ClassNotFoundException.staticClass, global::java.lang.ClassNotFoundException.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
         }
         
         protected ClassNotFoundException(global::net.sf.jni4net.jni.JNIEnv @__env) : 

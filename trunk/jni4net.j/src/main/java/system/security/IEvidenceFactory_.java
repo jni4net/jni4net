@@ -34,6 +34,6 @@ class __IEvidenceFactory extends system.Object implements system.security.IEvide
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Security/Policy/Evidence;")
-    public native system.collections.ICollection getEvidence();
+    public native system.Object getEvidence();
 }
 //</generated-proxy>

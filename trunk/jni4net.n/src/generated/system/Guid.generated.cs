@@ -60,7 +60,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2JString(@__env, ((global::System.IFormattable)(@__real)).ToString(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.FinalC2J(@__env, ((global::System.IFormattable)(@__real)).ToString(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, formatProvider)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -82,7 +82,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<byte[]>(@__env, @__real.ToByteArray());
+            return global::net.sf.jni4net.utils.Convertor.ArrayC2J<byte[]>(@__env, @__real.ToByteArray());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -114,7 +114,7 @@ namespace System {
             // ()LSystem/Guid;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Guid>(@__env, global::System.Guid.NewGuid());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Guid>(@__env, global::System.Guid.NewGuid());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -125,7 +125,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Guid @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Guid>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, format)));
+            return global::net.sf.jni4net.utils.Convertor.FinalC2J(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, format)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -42,7 +42,7 @@ namespace System {
         
         public int CompareTo(object obj) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, obj))));
+            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, obj))));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {

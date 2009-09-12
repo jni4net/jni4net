@@ -186,10 +186,10 @@ public class Array extends system.Object implements system.ICloneable, system.co
     public native static int BinarySearch(system.Array array, int index, int length, system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Object;LSystem/Collections/IComparer;)I")
-    public native static int BinarySearch(system.Array array, system.Object value, java.lang.Object comparer);
+    public native static int BinarySearch(system.Array array, system.Object value, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;IILSystem/Object;LSystem/Collections/IComparer;)I")
-    public native static int BinarySearch(system.Array array, int index, int length, system.Object value, java.lang.Object comparer);
+    public native static int BinarySearch(system.Array array, int index, int length, system.Object value, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;J)V")
     public native final void CopyTo(system.Array array, long index);
@@ -231,16 +231,16 @@ public class Array extends system.Object implements system.ICloneable, system.co
     public native static void Sort(system.Array keys, system.Array items, int index, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Collections/IComparer;)V")
-    public native static void Sort(system.Array array, java.lang.Object comparer);
+    public native static void Sort(system.Array array, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Array;LSystem/Collections/IComparer;)V")
-    public native static void Sort(system.Array keys, system.Array items, java.lang.Object comparer);
+    public native static void Sort(system.Array keys, system.Array items, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;IILSystem/Collections/IComparer;)V")
-    public native static void Sort(system.Array array, int index, int length, java.lang.Object comparer);
+    public native static void Sort(system.Array array, int index, int length, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Array;IILSystem/Collections/IComparer;)V")
-    public native static void Sort(system.Array keys, system.Array items, int index, int length, java.lang.Object comparer);
+    public native static void Sort(system.Array keys, system.Array items, int index, int length, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native final void Initialize();

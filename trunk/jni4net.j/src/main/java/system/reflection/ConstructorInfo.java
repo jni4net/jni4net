@@ -24,19 +24,19 @@ public class ConstructorInfo extends system.reflection.MethodBase {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object Invoke(system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] parameters, system.ICloneable culture);
+    public native system.Object Invoke(system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] parameters, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/Object;)LSystem/Object;")
     public native final system.Object Invoke(system.Object[] parameters);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object Invoke_2(system.Object obj, system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] parameters, system.ICloneable culture);
+    public native system.Object Invoke_2(system.Object obj, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] parameters, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;[LSystem/Object;)LSystem/Object;")
     public native system.Object Invoke_3(system.Object obj, system.Object[] parameters);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object Invoke_4(system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] parameters, system.ICloneable culture);
+    public native system.Object Invoke_4(system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] parameters, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/Object;)LSystem/Object;")
     public native system.Object Invoke_5(system.Object[] parameters);

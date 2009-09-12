@@ -88,7 +88,8 @@ public class Bridge extends system.Object {
 
 	@SuppressWarnings("unchecked")
 	public static <TRes,TInput> TRes wrapJVM(TInput obj, Class<TRes> requestedClass){
-		return (TRes)WrapJVM(obj, requestedClass);
+		//return (TRes)WrapJVM(obj, requestedClass);
+		return (TRes)null; 
 	}
 
 	@SuppressWarnings("unchecked")
@@ -117,13 +118,13 @@ public class Bridge extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
-    public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
+    public native static system.Object WrapJVM(system.Object obj, java.lang.Class interfaceClass);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-    public native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
+    public native static system.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-    public native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
+    public native static system.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getVerbose();

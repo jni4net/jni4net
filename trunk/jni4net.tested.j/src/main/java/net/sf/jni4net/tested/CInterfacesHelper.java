@@ -32,7 +32,7 @@ public class CInterfacesHelper extends system.Object {
     public native final net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
-    public native final java.lang.Comparable CWithJavaInterfaceUnreg(int i);
+    public native final system.Object CWithJavaInterfaceUnreg(int i);
     
     public static system.Type typeof() {
         return net.sf.jni4net.tested.CInterfacesHelper.staticType;

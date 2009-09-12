@@ -194,16 +194,16 @@ public class String extends system.Object implements system.IComparable, system.
     public native static int Compare(java.lang.String strA, java.lang.String strB, boolean ignoreCase);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;LSystem/Globalization/CultureInfo;LSystem/Globalization/CompareOptions;)I")
-    public native static int Compare(java.lang.String strA, java.lang.String strB, system.ICloneable culture, system.Enum options);
+    public native static int Compare(java.lang.String strA, java.lang.String strB, system.Object culture, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/String;IILSystem/Globalization/CultureInfo;LSystem/Globalization/CompareOptions;)I")
-    public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, system.ICloneable culture, system.Enum options);
+    public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, system.Object culture, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;LSystem/StringComparison;)I")
     public native static int Compare(java.lang.String strA, java.lang.String strB, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;ZLSystem/Globalization/CultureInfo;)I")
-    public native static int Compare(java.lang.String strA, java.lang.String strB, boolean ignoreCase, system.ICloneable culture);
+    public native static int Compare(java.lang.String strA, java.lang.String strB, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/String;II)I")
     public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length);
@@ -212,7 +212,7 @@ public class String extends system.Object implements system.IComparable, system.
     public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, boolean ignoreCase);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/String;IIZLSystem/Globalization/CultureInfo;)I")
-    public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, boolean ignoreCase, system.ICloneable culture);
+    public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/String;IILSystem/StringComparison;)I")
     public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, system.Enum comparisonType);
@@ -236,7 +236,7 @@ public class String extends system.Object implements system.IComparable, system.
     public native final boolean EndsWith(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Globalization/CultureInfo;)Z")
-    public native final boolean EndsWith(java.lang.String value, boolean ignoreCase, system.ICloneable culture);
+    public native final boolean EndsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(C)I")
     public native final int IndexOf(char value);
@@ -329,13 +329,13 @@ public class String extends system.Object implements system.IComparable, system.
     public native final boolean StartsWith(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Globalization/CultureInfo;)Z")
-    public native final boolean StartsWith(java.lang.String value, boolean ignoreCase, system.ICloneable culture);
+    public native final boolean StartsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native final java.lang.String ToLower();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;)LSystem/String;")
-    public native final java.lang.String ToLower(system.ICloneable culture);
+    public native final java.lang.String ToLower(system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native final java.lang.String ToLowerInvariant();
@@ -344,7 +344,7 @@ public class String extends system.Object implements system.IComparable, system.
     public native final java.lang.String ToUpper();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;)LSystem/String;")
-    public native final java.lang.String ToUpper(system.ICloneable culture);
+    public native final java.lang.String ToUpper(system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native final java.lang.String ToUpperInvariant();

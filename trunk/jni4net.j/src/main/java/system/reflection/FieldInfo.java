@@ -48,7 +48,7 @@ public class FieldInfo extends system.reflection.MemberInfo {
     public native system.Object GetRawConstantValue();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Globalization/CultureInfo;)V")
-    public native void SetValue(system.Object obj, system.Object value, system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.ICloneable culture);
+    public native void SetValue(system.Object obj, system.Object value, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/FieldAttributes;")
     public native system.Enum getAttributes();

@@ -202,6 +202,7 @@ namespace net.sf.jni4net.proxygen.model
                     return subst;
                 }
             }
+            /*
             foreach (GType ifc in Interfaces)
             {
                 GType subst = ifc.Resolve();
@@ -215,7 +216,7 @@ namespace net.sf.jni4net.proxygen.model
                     CLRSubst = subst;
                     return subst;
                 }
-            }
+            }*/
             if (IsCLRType)
             {
                 JVMSubst = Repository.systemObject;

@@ -80,7 +80,7 @@ namespace System.Collections {
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, index));
+            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -100,7 +100,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -132,7 +132,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.SyncRoot);
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.SyncRoot);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

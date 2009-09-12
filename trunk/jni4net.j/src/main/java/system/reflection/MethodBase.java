@@ -45,7 +45,7 @@ public class MethodBase extends system.reflection.MemberInfo {
     public native system.Enum getAttributes();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object Invoke(system.Object obj, system.reflection.BindingFlags invokeAttr, java.lang.Object binder, system.Object[] parameters, system.ICloneable culture);
+    public native system.Object Invoke(system.Object obj, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] parameters, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/CallingConventions;")
     public native system.Enum getCallingConvention();
@@ -105,7 +105,7 @@ public class MethodBase extends system.reflection.MemberInfo {
     public native boolean isConstructor();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodBody;")
-    public native java.lang.Object GetMethodBody();
+    public native system.Object GetMethodBody();
     
     public static system.Type typeof() {
         return system.reflection.MethodBase.staticType;

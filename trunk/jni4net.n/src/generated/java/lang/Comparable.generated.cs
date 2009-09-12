@@ -51,7 +51,7 @@ namespace java.lang {
         
         public int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.@__Comparable._compareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {

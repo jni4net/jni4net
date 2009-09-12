@@ -136,7 +136,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.String>(@__env, @__real.getName());
+            return global::net.sf.jni4net.utils.Convertor.FinalCp2J(@__real.getName());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -147,7 +147,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::java.lang.Class>(@__env, @__real.getDeclaringClass());
+            return global::net.sf.jni4net.utils.Convertor.FinalCp2J(@__real.getDeclaringClass());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

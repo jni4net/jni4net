@@ -42,7 +42,7 @@ namespace System {
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetLifetimeService", "GetLifetimeService0", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "InitializeLifetimeService", "InitializeLifetimeService1", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateObjRef", "CreateObjRef2", "(Lsystem/Type;)Lsystem/runtime/serialization/ISerializable;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateObjRef", "CreateObjRef2", "(Lsystem/Type;)Lsystem/Object;"));
             return methods;
         }
         
@@ -52,7 +52,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.MarshalByRefObject @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.GetLifetimeService());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.GetLifetimeService());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -63,18 +63,18 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.MarshalByRefObject @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.InitializeLifetimeService());
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.InitializeLifetimeService());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         private static global::System.IntPtr CreateObjRef2(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr requestedType) {
-            // (Lsystem/Type;)Lsystem/runtime/serialization/ISerializable;
+            // (Lsystem/Type;)Lsystem/Object;
             // (LSystem/Type;)LSystem/Runtime/Remoting/ObjRef;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.MarshalByRefObject @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.MarshalByRefObject>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<global::System.Runtime.Serialization.ISerializable, global::System.Runtime.Remoting.ObjRef>(@__env, @__real.CreateObjRef(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, requestedType)));
+            return global::net.sf.jni4net.utils.Convertor.ConvC2J<object, global::System.Runtime.Remoting.ObjRef>(@__env, @__real.CreateObjRef(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Type>(@__env, requestedType)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

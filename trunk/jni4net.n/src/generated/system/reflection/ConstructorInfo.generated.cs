@@ -40,25 +40,25 @@ namespace System.Reflection {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__ConstructorInfo);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke", "Invoke0", "(Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/IClone" +
-                        "able;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke", "Invoke0", "(Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;)L" +
+                        "system/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke", "Invoke1", "([Lsystem/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_2", "Invoke_22", "(Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object" +
-                        ";Lsystem/ICloneable;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_2", "Invoke_22", "(Lsystem/Object;Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Ls" +
+                        "ystem/Object;)Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_3", "Invoke_33", "(Lsystem/Object;[Lsystem/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_4", "Invoke_44", "(Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/IClone" +
-                        "able;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_4", "Invoke_44", "(Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;)L" +
+                        "system/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Invoke_5", "Invoke_55", "([Lsystem/Object;)Lsystem/Object;"));
             return methods;
         }
         
         private static global::System.IntPtr Invoke0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr parameters, global::System.IntPtr culture) {
-            // (Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
+            // (Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;)Lsystem/Object;
             // (LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ICloneable, global::System.Globalization.CultureInfo>(@__env, culture)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Globalization.CultureInfo>(@__env, culture)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -69,18 +69,18 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, @__real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.Invoke(global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         private static global::System.IntPtr Invoke_22(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr parameters, global::System.IntPtr culture) {
-            // (Lsystem/Object;Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
+            // (Lsystem/Object;Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;)Lsystem/Object;
             // (LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_2(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ICloneable, global::System.Globalization.CultureInfo>(@__env, culture)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_2(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Globalization.CultureInfo>(@__env, culture)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -91,18 +91,18 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_3(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_3(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
         private static global::System.IntPtr Invoke_44(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr invokeAttr, global::System.IntPtr binder, global::System.IntPtr parameters, global::System.IntPtr culture) {
-            // (Lsystem/reflection/BindingFlags;Ljava/lang/Object;[Lsystem/Object;Lsystem/ICloneable;)Lsystem/Object;
+            // (Lsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;)Lsystem/Object;
             // (LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_4(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ICloneable, global::System.Globalization.CultureInfo>(@__env, culture)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_4(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.BindingFlags>(@__env, invokeAttr), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Reflection.Binder>(@__env, binder), global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters), global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Globalization.CultureInfo>(@__env, culture)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -113,7 +113,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ConstructorInfo @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.ConstructorInfo>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.C2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_5(global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
+            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, ((global::System.Runtime.InteropServices._ConstructorInfo)(@__real)).Invoke_5(global::net.sf.jni4net.utils.Convertor.J2C<object[]>(@__env, parameters)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

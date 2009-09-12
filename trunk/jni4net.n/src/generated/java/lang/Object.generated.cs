@@ -84,19 +84,19 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Object._wait4, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            @__env.CallVoidMethod(this, global::java.lang.Object._wait4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Object._wait5, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.lang.Object._wait5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Object._equals6, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Object._equals6, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

@@ -14,6 +14,6 @@ public interface ISerializable {
     
     //<generated-interface>
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    void GetObjectData(java.lang.Object info, system.ValueType context);
+    void GetObjectData(system.Object info, system.ValueType context);
     //</generated-interface>
 }

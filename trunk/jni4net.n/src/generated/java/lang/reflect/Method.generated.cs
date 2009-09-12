@@ -137,7 +137,7 @@ namespace java.lang.reflect {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object invoke(global::java.lang.Object par0, java.lang.Object[] par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Method._invoke5, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<java.lang.Object[]>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.Method._invoke5, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.Object[]>(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/Class;")]

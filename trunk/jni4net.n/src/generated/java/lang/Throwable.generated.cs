@@ -66,13 +66,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Throwable;)V")]
         public Throwable(global::java.lang.String par0, global::java.lang.Throwable par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor20, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor20, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
         public Throwable(global::java.lang.Throwable par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor21, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Throwable>(@__env, par0));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor21, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -84,7 +84,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Throwable(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.String>(@__env, par0));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
         }
         
         public new static global::java.lang.Class _class {
@@ -120,16 +120,16 @@ namespace java.lang {
             global::java.lang.Throwable.@__ctor23 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)V")]
-        public virtual void printStackTrace(object par0) {
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintWriter;)V")]
+        public virtual void printStackTrace(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Throwable._printStackTrace1, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.lang.Throwable._printStackTrace1, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintStream;)V")]
         public virtual void printStackTrace(global::java.io.PrintStream par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Throwable._printStackTrace2, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.io.PrintStream>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.lang.Throwable._printStackTrace2, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.PrintStream>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -177,13 +177,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)Ljava/lang/Throwable;")]
         public virtual global::java.lang.Throwable initCause(global::java.lang.Throwable par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Throwable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Throwable._initCause10, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Throwable>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Throwable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Throwable._initCause10, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/StackTraceElement;)V")]
         public virtual void setStackTrace(java.lang.StackTraceElement[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Throwable._setStackTrace11, global::net.sf.jni4net.utils.Convertor.ParamC2J<java.lang.StackTraceElement[]>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.lang.Throwable._setStackTrace11, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.StackTraceElement[]>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -207,19 +207,19 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Throwable._wait15, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            @__env.CallVoidMethod(this, global::java.lang.Throwable._wait15, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.Throwable._wait16, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.lang.Throwable._wait16, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Throwable._equals17, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Throwable._equals17, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

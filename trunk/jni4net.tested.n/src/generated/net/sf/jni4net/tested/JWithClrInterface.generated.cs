@@ -47,7 +47,7 @@ namespace net.sf.jni4net.tested {
         public JWithClrInterface(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctor12, this, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctor12, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         protected JWithClrInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -77,10 +77,10 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.JWithClrInterface.@__ctor12 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "<init>", "(I)V");
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(LSystem/Object;)I")]
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Lsystem/Object;)I")]
         public virtual int CompareTo(object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParamC2J<object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -116,19 +116,19 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait6, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par1));
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait7, global::net.sf.jni4net.utils.Convertor.ParamC2J(@__env, par0));
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._wait7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._equals8, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._equals8, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

@@ -37,28 +37,28 @@ namespace System.Runtime.Serialization {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Runtime.Serialization.@__ISerializable.staticClass = @__class;
-            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Ljava/lang/Object;Lsystem/ValueType;)V");
+            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Lsystem/Object;Lsystem/ValueType;)V");
         }
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParamC2J<global::java.lang.Object, global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.ParamC2J<global::System.ValueType, global::System.Runtime.Serialization.StreamingContext>(@__env, context));
+            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.ParFinalC2Jp<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__ISerializable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData0", "(Ljava/lang/Object;Lsystem/ValueType;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData0", "(Lsystem/Object;Lsystem/ValueType;)V"));
             return methods;
         }
         
         private static void GetObjectData0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
-            // (Ljava/lang/Object;Lsystem/ValueType;)V
+            // (Lsystem/Object;Lsystem/ValueType;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Runtime.Serialization.ISerializable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Runtime.Serialization.ISerializable>(@__env, @__obj);
-            @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ValueType, global::System.Runtime.Serialization.StreamingContext>(@__env, context));
+            @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.J2C<object, global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.J2C<global::System.ValueType, global::System.Runtime.Serialization.StreamingContext>(@__env, context));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
