@@ -200,9 +200,7 @@ namespace net.sf.jni4net.utils
         private static IJavaProxy OptiJ2CP(JNIEnv env, IntPtr obj, Class clazz)
         {
             RegistryRecord record = Registry.Default.GetRecord(env, obj, clazz);
-            IJavaProxy proxy = record.CLRConstructor.CreateProxy(env);
-            proxy.Init(env, obj, clazz);
-            return proxy;
+            return record.CreateCLRProxy(env, obj, clazz);
         }
 
         private static object OptiJP2C(JNIEnv env, IntPtr obj)
