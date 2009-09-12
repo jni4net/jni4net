@@ -79,6 +79,10 @@ namespace net.sf.jni4net.proxygen.model
             res.IsCLRType = true;
             res.IsInterface = type.IsInterface;
             res.IsJVMProxy = javaProxyType.IsAssignableFrom(type);
+            if (res.IsJVMProxy)
+            {
+                res.IsCLRRealType = true;
+            }
             if (type.BaseType != null && res.Base == null 
                 && type != typeof(object) 
                 && type != typeof(Exception)
