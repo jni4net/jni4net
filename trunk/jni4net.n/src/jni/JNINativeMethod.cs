@@ -51,7 +51,7 @@ namespace net.sf.jni4net.jni
             return Create(methodInfo, javaName, javaSignature);
         }
 
-        public unsafe static void Register(List<JNINativeMethod> registrations, Class jvmProxy, JNIEnv env)
+        public static unsafe void Register(List<JNINativeMethod> registrations, Class jvmProxy, JNIEnv env)
         {
             JNINativeMethod[] methods = registrations.ToArray();
             fixed (JNINativeMethod* m = &(methods[0]))

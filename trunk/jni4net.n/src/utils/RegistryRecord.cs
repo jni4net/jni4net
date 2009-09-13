@@ -1,7 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using System.Reflection;
-using System.Text;
 using java.lang;
 using net.sf.jni4net.jni;
 
@@ -9,26 +29,25 @@ namespace net.sf.jni4net.utils
 {
     public class RegistryRecord
     {
-        public bool IsInterface;
-        public bool IsCLRType;
-        public bool IsJVMClass;
-        public string JVMName;
-        public string CLRName;
-
-        public Type CLRInterface;
-        public Type CLRWrapper;
-        public Type CLRProxy;
-        public Type CLRStatic;
-        public MethodInfo CLRProxyInitMethod;
-        public MethodInfo CLRWrapperInitMethod;
-        public IConstructionHelper CLRConstructor;
         public Assembly CLRAssembly;
+        public IConstructionHelper CLRConstructor;
+        public Type CLRInterface;
+        public string CLRName;
+        public Type CLRProxy;
+        public MethodInfo CLRProxyInitMethod;
+        public Type CLRStatic;
+        public Type CLRWrapper;
+        public MethodInfo CLRWrapperInitMethod;
+        public bool IsCLRType;
+        public bool IsInterface;
+        public bool IsJVMClass;
+        public bool JVMBound;
+        public MethodId JVMConstructor;
 
         public Class JVMInterface;
+        public string JVMName;
         public Class JVMProxy;
         public Class JVMStatic;
-        public MethodId JVMConstructor;
-        public bool JVMBound;
 
         public override string ToString()
         {

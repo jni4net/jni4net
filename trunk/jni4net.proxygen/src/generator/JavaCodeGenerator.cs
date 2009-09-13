@@ -1,4 +1,5 @@
 ﻿#region Copyright (C) 2009 by Pavel Savara
+
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -16,6 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #endregion
 
 using System;
@@ -794,7 +796,7 @@ namespace net.sf.jni4net.proxygen.generator
                     else
                     {
                         output.Write(" extends ");
-                    } 
+                    }
                     OutputType(type);
                     bool clazz = !CurrentClass.IsInterface;
 
@@ -1050,7 +1052,8 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    if (((attributes & (TypeAttributes.Sealed | TypeAttributes.Abstract)) == (TypeAttributes.Sealed | TypeAttributes.Abstract)))
+                    if (((attributes & (TypeAttributes.Sealed | TypeAttributes.Abstract)) ==
+                         (TypeAttributes.Sealed | TypeAttributes.Abstract)))
                     {
                         output.Write("static ");
                     }
@@ -1401,8 +1404,8 @@ namespace net.sf.jni4net.proxygen.generator
         {
             foreach (CodeDirective directive in directives)
             {
-                CodeRegionDirective cdr = directive as CodeRegionDirective;
-                if (cdr!=null)
+                var cdr = directive as CodeRegionDirective;
+                if (cdr != null)
                 {
                     Output.WriteLine(cdr.RegionText);
                 }

@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
-using System.Runtime.InteropServices;
 using net.sf.jni4net.jni;
 
 namespace java.lang
@@ -36,7 +35,7 @@ namespace java.lang
 
         public static implicit operator string(String str)
         {
-            if (str==(String)null)
+            if (str == (String) null)
             {
                 return null;
             }
@@ -120,8 +119,8 @@ namespace java.lang
 
         internal static String CreateProxy(JNIEnv env, IntPtr obj)
         {
-            String proxy = new String(env);
-            ((IJavaProxy)proxy).Init(env, obj, staticClass);
+            var proxy = new String(env);
+            ((IJavaProxy) proxy).Init(env, obj, staticClass);
             return proxy;
         }
     }

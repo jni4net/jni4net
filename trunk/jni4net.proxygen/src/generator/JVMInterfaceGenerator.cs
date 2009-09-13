@@ -100,12 +100,11 @@ namespace net.sf.jni4net.proxygen.generator
                 first.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, sMagicIface));
                 last.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, eMagicIface));
             }
-            else if (last!=null)
+            else if (last != null)
             {
                 last.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, sMagicIface));
                 last.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, eMagicIface));
             }
         }
-
     }
 }

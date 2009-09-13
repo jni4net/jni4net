@@ -1,10 +1,31 @@
+#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
 using System;
 using java.lang;
 using net.sf.jni4net.jni;
 using Boolean=java.lang.Boolean;
 using Byte=java.lang.Byte;
 using Double=java.lang.Double;
-using Exception=System.Exception;
 using String=java.lang.String;
 
 namespace net.sf.jni4net.utils
@@ -33,7 +54,7 @@ namespace net.sf.jni4net.utils
 #endif
 
             var proxy = obj as IJavaProxy;
-            if (proxy != null && typeof(IJavaProxy).IsAssignableFrom(reqType))
+            if (proxy != null && typeof (IJavaProxy).IsAssignableFrom(reqType))
             {
                 if (Bridge.Debug)
                 {
@@ -57,7 +78,7 @@ namespace net.sf.jni4net.utils
             //or with wrapped JVM instances, which should stay wrapped
 
             RegistryRecord record = Registry.GetCLRRecord(realType);
-            if (record.JVMProxy!=null &&  reqType.IsAssignableFrom(record.CLRInterface))
+            if (record.JVMProxy != null && reqType.IsAssignableFrom(record.CLRInterface))
             {
                 return record.CreateJVMProxy(env, obj);
             }

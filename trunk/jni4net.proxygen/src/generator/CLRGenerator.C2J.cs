@@ -1,10 +1,30 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using System.CodeDom;
-using System.Collections;
 using System.Text;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.model;
-using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.proxygen.generator
 {
@@ -42,7 +62,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
             else
             {
-                fieldId = new CodeMemberField(TypeReference(typeof(MethodId)), uName);
+                fieldId = new CodeMemberField(TypeReference(typeof (MethodId)), uName);
             }
             fieldId.Attributes = MemberAttributes.Static | MemberAttributes.FamilyAndAssembly;
             tgtType.Members.Add(fieldId);
@@ -59,7 +79,7 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 if (method.ReturnType.IsPrimitive)
                 {
-                    if (method.ReturnType.JVMSubst!=null)
+                    if (method.ReturnType.JVMSubst != null)
                     {
                         invokeExpression = new CodeCastExpression(method.ReturnType.CLRReference, invokeExpression);
                     }
@@ -67,7 +87,8 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(method.ReturnType, invokeExpression);
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(method.ReturnType,
+                                                                                                    invokeExpression);
                     call = new CodeMethodReturnStatement(conversionExpression);
                 }
             }
@@ -103,7 +124,8 @@ namespace net.sf.jni4net.proxygen.generator
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
                 CodeExpression invokeExpression = new CodeVariableReferenceExpression(paramName);
-                CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2JParam(parameter, invokeExpression);
+                CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2JParam(parameter,
+                                                                                                     invokeExpression);
                 expressions[i + offset] = conversionExpression;
             }
             return expressions;
@@ -164,7 +186,8 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 CodeStatement statement =
                     new CodeVariableDeclarationStatement(
-                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName,
+                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference),
+                        envVariableName,
                         new CodePropertyReferenceExpression(TypeReferenceEx(typeof (JNIEnv)), "ThreadEnv"));
                 tgtStatements.Add(statement);
             }
@@ -172,7 +195,8 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 CodeStatement statement =
                     new CodeVariableDeclarationStatement(
-                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName,
+                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference),
+                        envVariableName,
                         new CodePropertyReferenceExpression
                             (new CodeThisReferenceExpression
                                  (), "Env"));

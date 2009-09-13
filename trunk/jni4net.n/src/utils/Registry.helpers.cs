@@ -1,4 +1,26 @@
-﻿using System;
+#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -44,7 +66,7 @@ namespace net.sf.jni4net.utils
         private static string GetStaticName(string package, string name, bool jvm)
         {
             package = GetPackageName(package, jvm);
-            return package+ "." + name + "_";
+            return package + "." + name + "_";
         }
 
         private static string GetProxyName(string package, string name, bool jvm)
@@ -95,7 +117,8 @@ namespace net.sf.jni4net.utils
 
         private static MethodInfo GetWrapperInitializer(Type wrapperType)
         {
-            MethodInfo initializer = wrapperType.GetMethod("__Init", BindingFlags.Static | BindingFlags.NonPublic, null, new[] { typeof(JNIEnv), typeof(Class) }, null);
+            MethodInfo initializer = wrapperType.GetMethod("__Init", BindingFlags.Static | BindingFlags.NonPublic, null,
+                                                           new[] {typeof (JNIEnv), typeof (Class)}, null);
             if (initializer == null)
             {
                 throw new JNIException("Can't find CLR type init method for " + wrapperType);
@@ -106,7 +129,7 @@ namespace net.sf.jni4net.utils
         private static MethodInfo GetProxyInitializer(Type proxyType)
         {
             MethodInfo initMethod = proxyType.GetMethod("InitJNI", BindingFlags.NonPublic | BindingFlags.Static, null,
-                                                        new[] { typeof(JNIEnv), typeof(Class) }, null);
+                                                        new[] {typeof (JNIEnv), typeof (Class)}, null);
             if (initMethod == null)
             {
                 Console.WriteLine("Can't find .NET InitJNI: method" + proxyType);
@@ -117,7 +140,7 @@ namespace net.sf.jni4net.utils
 
         private static void RegisterNative(MethodInfo initializer, JNIEnv env, Class jvmProxy, Class jvmInterface)
         {
-            List<JNINativeMethod> registrations = (List<JNINativeMethod>) initializer.Invoke(null, new object[] {env, jvmProxy});
+            var registrations = (List<JNINativeMethod>) initializer.Invoke(null, new object[] {env, jvmProxy});
             if (registrations.Count > 0)
             {
                 if (Bridge.Debug)
@@ -157,11 +180,12 @@ namespace net.sf.jni4net.utils
 
         private static void RegisterTypeOf(RegistryRecord record, JNIEnv env)
         {
-            MethodId constructor = knownCLR[typeof(Type)].JVMConstructor;
+            MethodId constructor = knownCLR[typeof (Type)].JVMConstructor;
             var h = new Value {_int = IntHandle.Alloc(record.CLRInterface)};
             IntPtr clazz = Type_._class.native;
-            Value typeInfo = new Value {_object = env.NewObjectPtr(clazz, constructor, Value.Null, h)};
-            env.CallStaticVoidMethod(record.JVMStatic, "InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", new Value[] { Value.Null, typeInfo });
+            var typeInfo = new Value {_object = env.NewObjectPtr(clazz, constructor, Value.Null, h)};
+            env.CallStaticVoidMethod(record.JVMStatic, "InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V",
+                                     new[] {Value.Null, typeInfo});
             //record.JVMStatic.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, record.CLRInterface);
         }
 
@@ -255,6 +279,5 @@ namespace net.sf.jni4net.utils
             }
             return "L" + name.Replace('.', '/') + ";";
         }
-
     }
 }

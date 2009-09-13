@@ -167,7 +167,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([Ljava/lang/Object;)[Ljava/lang/Object;")]
         public virtual java.lang.Object[] objectArray(java.lang.Object[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.Object[], global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaCallInstanceMethods._objectArray8, global::net.sf.jni4net.utils.Convertor.ParArrayFullC2J<java.lang.Object[], java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.Object[], global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaCallInstanceMethods._objectArray8, global::net.sf.jni4net.utils.Convertor.ParArrayFullC2J<java.lang.Object[], global::java.lang.Object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)[C")]

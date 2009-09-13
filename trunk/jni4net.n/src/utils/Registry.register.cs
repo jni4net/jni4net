@@ -1,3 +1,25 @@
+#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -15,14 +37,25 @@ namespace net.sf.jni4net.utils
 {
     partial class Registry
     {
-        private static readonly Dictionary<Type, RegistryRecord> knownCLRWrappers = new Dictionary<Type, RegistryRecord>();
-        private static readonly Dictionary<Type, RegistryRecord> knownCLRProxies = new Dictionary<Type, RegistryRecord>();
-        private static readonly Dictionary<Type, RegistryRecord> knownCLRInterfaces = new Dictionary<Type, RegistryRecord>();
-        private static readonly Dictionary<Type, RegistryRecord> knownCLR = new Dictionary<Type, RegistryRecord>();
-        private static readonly Dictionary<Class, RegistryRecord> knownJVMInterfaces = new Dictionary<Class, RegistryRecord>();
-        private static readonly Dictionary<Class, RegistryRecord> knownJVMProxies = new Dictionary<Class, RegistryRecord>();
-        private static readonly Dictionary<Class, RegistryRecord> knownJVM = new Dictionary<Class, RegistryRecord>();
         private static readonly bool initialized;
+        private static readonly Dictionary<Type, RegistryRecord> knownCLR = new Dictionary<Type, RegistryRecord>();
+
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRInterfaces =
+            new Dictionary<Type, RegistryRecord>();
+
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRProxies =
+            new Dictionary<Type, RegistryRecord>();
+
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRWrappers =
+            new Dictionary<Type, RegistryRecord>();
+
+        private static readonly Dictionary<Class, RegistryRecord> knownJVM = new Dictionary<Class, RegistryRecord>();
+
+        private static readonly Dictionary<Class, RegistryRecord> knownJVMInterfaces =
+            new Dictionary<Class, RegistryRecord>();
+
+        private static readonly Dictionary<Class, RegistryRecord> knownJVMProxies =
+            new Dictionary<Class, RegistryRecord>();
 
         static Registry()
         {
@@ -84,7 +117,7 @@ namespace net.sf.jni4net.utils
 
         public static void RegisterAssembly(Assembly assembly, bool bindJVM)
         {
-            lock (typeof(Registry))
+            lock (typeof (Registry))
             {
                 JNIEnv env = JNIEnv.ThreadEnv;
                 foreach (Type type in assembly.GetTypes())
@@ -184,7 +217,7 @@ namespace net.sf.jni4net.utils
             {
                 record.JVMProxy = env.FindClassNoThrow(proxyName.Replace('.', '/'));
                 record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
-                if (record.JVMConstructor==null)
+                if (record.JVMConstructor == null)
                 {
                     throw new JNIException("Can't find java constructor for " + record.JVMProxy);
                 }

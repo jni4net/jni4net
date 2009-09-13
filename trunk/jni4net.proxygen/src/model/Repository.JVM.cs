@@ -1,22 +1,40 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
-using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
-using Object=java.lang.Object;
-using Type=System.Type;
 
 namespace net.sf.jni4net.proxygen.model
 {
-    partial class Repository
+    internal partial class Repository
     {
         public static List<GType> JVMGenTypes()
         {
-            List<GType> res = new List<GType>();
+            var res = new List<GType>();
             foreach (GType type in all)
             {
                 if (type.IsJVMGenerate && !type.IsInterface)
@@ -43,7 +61,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 return known;
             }
-            GType res = new GType();
+            var res = new GType();
             if (clazz.isArray())
             {
                 res.ArrayElement = RegisterClass(clazz.getComponentType(), null);
@@ -55,15 +73,15 @@ namespace net.sf.jni4net.proxygen.model
                     array += "[]";
                     comp = comp.getComponentType();
                 }
-                res.LowerName = ((string)comp.getName()).ToLowerInvariant() + array;
+                res.LowerName = ((string) comp.getName()).ToLowerInvariant() + array;
             }
             else
             {
-                res.LowerName = ((string)clazz.getName()).ToLowerInvariant();
+                res.LowerName = ((string) clazz.getName()).ToLowerInvariant();
             }
 
             res.Attributes = 0;
-            var classModifiers = (ModifierFlags)clazz.getModifiers();
+            var classModifiers = (ModifierFlags) clazz.getModifiers();
             if ((classModifiers & ModifierFlags.Abstract) != 0)
             {
                 res.IsAbstract = true;
@@ -86,7 +104,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res = knownNames[res.LowerName];
             }
-            if (res.Registration==null && registration!=null)
+            if (res.Registration == null && registration != null)
             {
                 res.Registration = registration;
             }
@@ -110,14 +128,14 @@ namespace net.sf.jni4net.proxygen.model
             res.IsJVMType = true;
             res.IsPrimitive = clazz.isPrimitive();
             res.IsInterface = clazz.isInterface();
-            res.IsCLRProxy = clrProxyClass!=null && clrProxyClass.isAssignableFrom(clazz);
+            res.IsCLRProxy = clrProxyClass != null && clrProxyClass.isAssignableFrom(clazz);
             if (!res.IsCLRProxy)
             {
                 res.IsJVMRealType = true;
             }
             Class superclass = clazz.getSuperclass();
-            if (superclass != null && res.Base == null 
-                && clazz != Object._class 
+            if (superclass != null && res.Base == null
+                && clazz != Object._class
                 && clazz != Throwable._class
                 && res.JVMFullName != "system.Object"
                 && res.JVMFullName != "system.Exception"
@@ -185,13 +203,13 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterJVMField(GType type, Field field, bool register)
         {
-            var modifiers = (ModifierFlags)field.getModifiers();
+            var modifiers = (ModifierFlags) field.getModifiers();
             if ((modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
             {
                 //Console.WriteLine("Skip " + type + "." + method);
                 return;
             }
-            GMethod res = new GMethod();
+            var res = new GMethod();
             res.Type = type;
             res.IsField = true;
             res.Name = field.getName();
@@ -210,9 +228,10 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterJVMMethod(GType type, Method method, bool register)
         {
-            var modifiers = (ModifierFlags)method.getModifiers();
+            var modifiers = (ModifierFlags) method.getModifiers();
             Annotation annotation = HasAnnotation(method, "net.sf.jni4net.attributes.ClrMethod");
-            if (annotation != null || (modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
+            if (annotation != null ||
+                (modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
             {
                 if (annotation == null)
                 {
@@ -221,7 +240,7 @@ namespace net.sf.jni4net.proxygen.model
                 return;
             }
 
-            GMethod res = new GMethod();
+            var res = new GMethod();
             res.Type = type;
             res.Name = method.getName();
             res.JVMName = res.Name;
@@ -231,7 +250,7 @@ namespace net.sf.jni4net.proxygen.model
             for (int i = 0; i < parameterTypes.Length; i++)
             {
                 Class paramType = parameterTypes[i];
-                res.ParameterNames.Add("par" + i);//+ paramType.ShortName
+                res.ParameterNames.Add("par" + i); //+ paramType.ShortName
                 res.Parameters.Add(RegisterClass(paramType));
             }
             ConvertJVMAttributes(type, res, method);
@@ -256,13 +275,13 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterJVMConstructor(GType type, Constructor ctor, bool register)
         {
-            var modifiers = (ModifierFlags)ctor.getModifiers();
+            var modifiers = (ModifierFlags) ctor.getModifiers();
             if ((modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
             {
                 return;
             }
 
-            GMethod res = new GMethod();
+            var res = new GMethod();
             res.Type = type;
             res.Name = "<init>";
             res.JVMName = res.Name;
@@ -274,7 +293,7 @@ namespace net.sf.jni4net.proxygen.model
             for (int i = 0; i < parameterTypes.Length; i++)
             {
                 Class paramType = parameterTypes[i];
-                res.ParameterNames.Add("par" + i);//+ paramType.ShortName
+                res.ParameterNames.Add("par" + i); //+ paramType.ShortName
                 res.Parameters.Add(RegisterClass(paramType));
             }
             ConvertJVMAttributes(type, res, ctor);
@@ -305,7 +324,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void ConvertJVMAttributes(GType type, GMethod res, Member member)
         {
-            ModifierFlags modifiers = (ModifierFlags)member.getModifiers();
+            var modifiers = (ModifierFlags) member.getModifiers();
             res.Attributes = 0;
             if ((modifiers & (ModifierFlags.Public)) != ModifierFlags.None || type.IsInterface)
             {
@@ -325,6 +344,5 @@ namespace net.sf.jni4net.proxygen.model
                 res.Attributes |= MemberAttributes.Final;
             }
         }
-
     }
 }

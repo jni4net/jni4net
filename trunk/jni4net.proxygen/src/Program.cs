@@ -25,7 +25,6 @@ using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Xml.Serialization;
-using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.generator;
 using net.sf.jni4net.proxygen.model;

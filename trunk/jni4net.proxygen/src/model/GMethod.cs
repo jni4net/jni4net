@@ -1,4 +1,5 @@
 ﻿#region Copyright (C) 2009 by Pavel Savara
+
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -16,6 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #endregion
 
 using System.CodeDom;
@@ -28,6 +30,8 @@ namespace net.sf.jni4net.proxygen.model
 {
     internal class GMethod
     {
+        private readonly List<string> _ParameterNames = new List<string>();
+        private readonly List<GType> _Parameters = new List<GType>();
         public bool IsConstructor { get; set; }
         public bool IsField { get; set; }
         public bool IsProperty { get; set; }
@@ -52,14 +56,10 @@ namespace net.sf.jni4net.proxygen.model
         public GType ReturnType { get; set; }
         public MemberAttributes Attributes { get; set; }
 
-        private readonly List<string> _ParameterNames = new List<string>();
-
         public List<string> ParameterNames
         {
             get { return _ParameterNames; }
         }
-
-        private readonly List<GType> _Parameters = new List<GType>();
 
         public List<GType> Parameters
         {
@@ -118,8 +118,8 @@ namespace net.sf.jni4net.proxygen.model
             }
             return sb.ToString();
         }
-        
-        
+
+
         public override string ToString()
         {
             return LowerName;
@@ -128,20 +128,20 @@ namespace net.sf.jni4net.proxygen.model
         public void UpdateNames()
         {
             IsVoid = (ReturnType == Repository.voidType);
-            if (DeclaringType==null)
+            if (DeclaringType == null)
             {
                 DeclaringType = Type;
             }
             if (IsCLRMethod)
             {
-                if (JVMName==null)
+                if (JVMName == null)
                 {
                     JVMName = CLRName;
                 }
             }
             if (IsJVMMethod)
             {
-                if(CLRName==null)
+                if (CLRName == null)
                 {
                     CLRName = JVMName;
                 }
