@@ -63,17 +63,17 @@ namespace java.lang {
         
         public global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append1, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0)));
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append2, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -91,7 +91,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.Appendable>(@__env, @__real.append(par0));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(par0));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -102,7 +102,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -113,7 +113,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, par0), par1, par2));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0), par1, par2));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

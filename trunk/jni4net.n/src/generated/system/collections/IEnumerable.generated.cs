@@ -42,7 +42,7 @@ namespace System.Collections {
         
         public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -58,7 +58,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IEnumerable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.IEnumerator>(@__env, @__real.GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, @__real.GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -60,7 +60,7 @@ namespace net.sf.jni4net {
             // (Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
+            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -70,7 +70,7 @@ namespace net.sf.jni4net {
             // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.ConvC2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -80,7 +80,7 @@ namespace net.sf.jni4net {
             // (LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.ConvC2J<global::java.lang.Object, global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Exception>(@__env, obj), global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, interfaceClass)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Exception>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -147,7 +147,7 @@ namespace net.sf.jni4net {
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.Bridge.LoadAndRegisterAssembly(global::net.sf.jni4net.utils.Convertor.J2CString(@__env, assemblyPath));
+            global::net.sf.jni4net.Bridge.LoadAndRegisterAssembly(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, assemblyPath));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -156,7 +156,7 @@ namespace net.sf.jni4net {
             // (LSystem/Reflection/Assembly;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.Bridge.RegisterAssembly(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Reflection.Assembly>(@__env, assembly));
+            global::net.sf.jni4net.Bridge.RegisterAssembly(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, assembly));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         

@@ -75,7 +75,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.tested.CWithJavaInterface @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CWithJavaInterface>(@__env, @__obj);
-            return ((int)(@__real.compareTo(global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Object>(@__env, objectPar0))));
+            return ((int)(@__real.compareTo(global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, objectPar0))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }

@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 #if !JNI4NET_MINI
+using System;
 using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net;
@@ -125,7 +126,7 @@ namespace java.lang
             JNIEnv env = JNIEnv.ThreadEnv;
             MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass",
                                                 "(Ljava/lang/String;)Ljava/lang/Class;");
-            return Convertor.J2CClass(env, env.CallStaticObjectMethodPtr(staticClass, id, Convertor.ParFinalC2J(env, name)));
+            return Convertor.J2CClass(env, env.CallStaticObjectMethodPtr(staticClass, id, Convertor.ParStrongC2J(env, name)));
         }
 
         public override bool Equals(object obj)
@@ -168,6 +169,13 @@ namespace java.lang
             if ((object) x == null || (object) y == null)
                 return true;
             return !x.equals(y);
+        }
+
+        internal static Class CreateProxy(JNIEnv env, IntPtr obj)
+        {
+            Class proxy = new Class(env);
+            ((IJavaProxy)proxy).Init(env, obj, staticClass);
+            return proxy;
         }
     }
 }

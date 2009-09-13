@@ -1,36 +1,52 @@
-﻿using net.sf.jni4net.jni;
+﻿using System;
+using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static Value ParFinalCp2J(IJavaProxy obj)
+        public static Value ParStrongCp2J(IJavaProxy obj)
         {
-            var res = new Value { _object = FinalCp2J(obj) };
+            var res = new Value { _object = StrongCp2J(obj) };
             return res;
         }
 
-        public static Value ParFinalC2Jp<TBoth>(JNIEnv env, TBoth obj)
+        public static Value ParStrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
         {
-            var res = new Value { _object = FinalC2Jp<TBoth>(env, obj) };
+            var res = new Value { _object = StrongC2Jp<TBoth>(env, obj) };
             return res;
         }
 
-        public static Value ParArrayC2J<TBoth>(JNIEnv env, TBoth obj)
+        public static Value ParArrayFullC2J<TBoth>(JNIEnv env, TBoth obj)
+            where TBoth : class
         {
-            var res = new Value { _object = ArrayC2J<TBoth>(env, obj) };
+            var res = new Value { _object = ArrayFullC2J<TBoth>(env, obj) };
             return res;
         }
 
-        public static Value ParSameC2J<TBoth>(JNIEnv env, TBoth obj)
+        public static Value ParArrayStrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
+            where TBoth : class
         {
-            var res = new Value { _object = SameC2J<TBoth>(env, obj) };
+            var res = new Value { _object = ArrayStrongC2Jp<TBoth>(env, obj) };
             return res;
         }
 
-        public static Value ParFinalC2J(JNIEnv env, string obj)
+        public static Value ParArrayStrongCp2J<TBoth>(JNIEnv env, TBoth obj)
+            where TBoth : class
         {
-            var res = new Value { _object = FinalC2J(env, obj) };
+            var res = new Value { _object = ArrayStrongCp2J<TBoth>(env, obj) };
+            return res;
+        }
+
+        public static Value ParFullC2J<TBoth>(JNIEnv env, TBoth obj)
+        {
+            var res = new Value { _object = FullC2J<TBoth>(env, obj) };
+            return res;
+        }
+
+        public static Value ParStrongC2J(JNIEnv env, string obj)
+        {
+            var res = new Value { _object = StrongC2J(env, obj) };
             return res;
         }
 
@@ -84,28 +100,55 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
+        public static Value ParArrayPrimC2J(JNIEnv env, int[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, bool[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, byte[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, char[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, short[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, long[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParPrimC2J(JNIEnv env, float[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
+        public static Value ParArrayPrimC2J(JNIEnv env, double[] value)
+        {
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
+            return res;
+        }
+
         #endregion
 
-        public static Value[] ConverArgs(JNIEnv env, object[] args)
-        {
-            if (args.Length == 0)
-            {
-                return null;
-            }
-            var jargs = new Value[args.Length];
-            for (int i = 0; i < args.Length; i++)
-            {
-                var sarg = args[i] as string;
-                if (sarg != null)
-                {
-                    jargs[i] = new Value {_object = env.NewStringPtr(sarg)};
-                }
-                else
-                {
-                    jargs[i] = new Value { _object = C2J(env, args[i]) };
-                }
-            }
-            return jargs;
-        }
     }
 }

@@ -205,8 +205,7 @@ namespace net.sf.jni4net.utils
 
         private static object OptiJP2C(JNIEnv env, IntPtr obj)
         {
-            int handle = __IClrProxy.getClrHandle(env, obj);
-            object res = IntHandle.ToObject(handle);
+            object res = __IClrProxy.GetObject(env, obj);
             return res;
         }
 

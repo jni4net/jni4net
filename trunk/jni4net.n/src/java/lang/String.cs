@@ -117,5 +117,12 @@ namespace java.lang
                 return true;
             return !x.Equals(y);
         }
+
+        internal static String CreateProxy(JNIEnv env, IntPtr obj)
+        {
+            String proxy = new String(env);
+            ((IJavaProxy)proxy).Init(env, obj, staticClass);
+            return proxy;
+        }
     }
 }

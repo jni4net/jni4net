@@ -33,7 +33,7 @@ namespace java.lang {
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
+            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
         }
         
         protected StackTraceElement(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -59,13 +59,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getClassName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getClassName0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getClassName0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getFileName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getFileName1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getFileName1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -77,7 +77,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getMethodName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getMethodName3));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getMethodName3));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]

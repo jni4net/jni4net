@@ -63,17 +63,17 @@ namespace java.lang.reflect {
         
         public global::java.lang.reflect.GenericDeclaration getGenericDeclaration() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.GenericDeclaration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getGenericDeclaration0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.GenericDeclaration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getGenericDeclaration0));
         }
         
         public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getName1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getName1));
         }
         
         public java.lang.reflect.Type[] getBounds() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<java.lang.reflect.Type[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getBounds2));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getBounds2));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -91,7 +91,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.reflect.GenericDeclaration>(@__env, @__real.getGenericDeclaration());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.reflect.GenericDeclaration>(@__env, @__real.getGenericDeclaration());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -102,7 +102,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FinalCp2J(@__real.getName());
+            return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getName());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -113,7 +113,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayC2J<java.lang.reflect.Type[]>(@__env, @__real.getBounds());
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.Type[]>(@__env, @__real.getBounds());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -1257,7 +1257,7 @@ namespace net.sf.jni4net.jni
             var ext = ex as Throwable;
             if (ext == null)
             {
-                Throw(Convertor.SameC2J(this, ex));
+                Throw(Convertor.StrongCp2J(ext));
             }
             else
             {

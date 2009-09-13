@@ -96,7 +96,7 @@ public class Enum extends system.ValueType implements system.IComparable, system
     public native static java.lang.String GetName(system.Type enumType, system.Object value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)[LSystem/String;")
-    public native static system.String[] GetNames(system.Type enumType);
+    public native static java.lang.String[] GetNames(system.Type enumType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;LSystem/Object;)LSystem/Object;")
     public native static system.Object ToObject(system.Type enumType, system.Object value);

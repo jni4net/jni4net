@@ -74,8 +74,7 @@ namespace net.sf.jni4net.utils
         {
             if (IClrProxy_._class.isAssignableFrom(iface))
             {
-                int handle = __IClrProxy.getClrHandle(env, obj);
-                object real = IntHandle.ToObject(handle);
+                object real = __IClrProxy.GetObject(env, obj);
                 return real.GetType();
             }
             return null;

@@ -74,7 +74,7 @@ namespace net.sf.jni4net.tested {
         public virtual global::java.lang.String stringField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.GetObjectFieldPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._stringField10));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.GetObjectFieldPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._stringField10));
             }
         }
         
@@ -121,7 +121,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public global::java.lang.Class getClass() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._getClass1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._getClass1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -145,7 +145,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._equals5, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaInstanceFields._equals5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -163,7 +163,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._toString8));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._toString8));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

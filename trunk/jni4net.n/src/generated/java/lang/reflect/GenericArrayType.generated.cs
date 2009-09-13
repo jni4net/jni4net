@@ -51,7 +51,7 @@ namespace java.lang.reflect {
         
         public global::java.lang.reflect.Type getGenericComponentType() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -67,7 +67,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.GenericArrayType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.GenericArrayType>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.reflect.Type>(@__env, @__real.getGenericComponentType());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.reflect.Type>(@__env, @__real.getGenericComponentType());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

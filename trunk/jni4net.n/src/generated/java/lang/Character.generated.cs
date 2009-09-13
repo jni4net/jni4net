@@ -352,7 +352,7 @@ namespace java.lang {
         public static global::java.lang.Class TYPE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Character.staticClass, global::java.lang.Character._TYPE79));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Character.staticClass, global::java.lang.Character._TYPE79));
             }
         }
         
@@ -984,13 +984,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Character._compareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Character._compareTo0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Character;)I")]
         public virtual int compareTo(global::java.lang.Character par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Character._compareTo1, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Character._compareTo1, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Z")]
@@ -1020,7 +1020,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/String;")]
         public static global::java.lang.String toString(char par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._toString6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._toString6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]
@@ -1032,73 +1032,73 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;I)I")]
         public static int codePointAt(global::java.lang.CharSequence par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt8, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt8, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CI)I")]
         public static int codePointAt(char[] par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt9, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt9, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
         public static int codePointAt(char[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt10, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointAt10, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;I)I")]
         public static int codePointBefore(global::java.lang.CharSequence par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore11, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
         public static int codePointBefore(char[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore12, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore12, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CI)I")]
         public static int codePointBefore(char[] par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore13, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointBefore13, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)I")]
         public static int codePointCount(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount14, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount14, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CII)I")]
         public static int codePointCount(char[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount15, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._codePointCount15, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([CIIII)I")]
         public static int offsetByCodePoints(char[] par0, int par1, int par2, int par3, int par4) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints16, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par4))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints16, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par4))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)I")]
         public static int offsetByCodePoints(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints17, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._offsetByCodePoints17, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I[CI)I")]
         public static int toChars(int par0, char[] par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars18, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toChars18, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)[C")]
         public static char[] toChars(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<char[]>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._toChars19, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._toChars19, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)C")]
@@ -1128,7 +1128,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/Character;")]
         public static global::java.lang.Character valueOf(char par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Character>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._valueOf24, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Character>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Character.staticClass, global::java.lang.Character._valueOf24, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)I")]

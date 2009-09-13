@@ -107,13 +107,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)I")]
         public virtual int read(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<byte[]>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read6, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([B)I")]
         public virtual int read(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<byte[]>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read7, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)J")]

@@ -73,37 +73,37 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Class;")]
         public virtual global::java.lang.Class loadClass(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._loadClass0, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._loadClass0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/ClassLoader;")]
         public static global::java.lang.ClassLoader getSystemClassLoader() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.ClassLoader>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemClassLoader1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.ClassLoader>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemClassLoader1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/net/URL;")]
         public virtual global::java.net.URL getResource(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.net.URL>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResource2, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.net.URL>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResource2, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/io/InputStream;")]
         public virtual global::java.io.InputStream getResourceAsStream(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.InputStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResourceAsStream3, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResourceAsStream3, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/net/URL;")]
         public static global::java.net.URL getSystemResource(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.net.URL>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResource4, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.net.URL>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResource4, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/io/InputStream;")]
         public static global::java.io.InputStream getSystemResourceAsStream(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.InputStream>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResourceAsStream5, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResourceAsStream5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -115,25 +115,25 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/ClassLoader;")]
         public global::java.lang.ClassLoader getParent() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.ClassLoader>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getParent7));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.ClassLoader>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getParent7));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/util/Enumeration;")]
         public virtual global::java.util.Enumeration getResources(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResources8, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.ClassLoader._getResources8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/util/Enumeration;")]
         public static global::java.util.Enumeration getSystemResources(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.util.Enumeration>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResources9, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.ClassLoader.staticClass, global::java.lang.ClassLoader._getSystemResources9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Z)V")]
         public virtual void setClassAssertionStatus(global::java.lang.String par0, bool par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.ClassLoader._setClassAssertionStatus10, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
+            @__env.CallVoidMethod(this, global::java.lang.ClassLoader._setClassAssertionStatus10, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
@@ -145,7 +145,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Z)V")]
         public virtual void setPackageAssertionStatus(global::java.lang.String par0, bool par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.lang.ClassLoader._setPackageAssertionStatus12, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
+            @__env.CallVoidMethod(this, global::java.lang.ClassLoader._setPackageAssertionStatus12, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -76,30 +76,6 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        public void WrapClrString2()
-        {
-            String s = new String("jni4net");
-            string str2 = Bridge.UnwrapCLR<string>(s);
-            Assert.AreEqual("jni4net", str2);
-        }
-
-        [Test]
-        public void WrapClrString3()
-        {
-            String s = new String("jni4net");
-            String str2 = Bridge.UnwrapCLR<String>(s);
-            Assert.AreEqual((String)"jni4net", str2);
-        }
-
-        [Test]
-        public void WrapClrString4()
-        {
-            IClrProxy str1 = Bridge.WrapCLR("jni4net");
-            String str2 = Bridge.UnwrapCLR<String>(str1);
-            Assert.AreEqual((String)"jni4net", str2);
-        }
-
-        [Test]
         public void ByteConstructor()
         {
             var b = new Byte(7);

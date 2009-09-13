@@ -10,6 +10,22 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
+        public static IntPtr FullC2J<TBoth>(JNIEnv env, TBoth obj)
+        {
+            return C2J(env, obj);
+        }
+
+        public static IntPtr ArrayFullC2J<TBoth>(JNIEnv env, TBoth obj)
+            where TBoth : class
+        {
+            if (obj == null)
+            {
+                return IntPtr.Zero;
+            }
+            Type elementType = typeof(TBoth).GetElementType();
+            return ArrayC2J(env, (Array)(object)obj, elementType);
+        }
+
         internal static IJavaProxy C2JWrapper(JNIEnv env, object obj)
         {
             Type type = obj.GetType();
@@ -159,5 +175,26 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
+        internal static Value[] ConverArgs(JNIEnv env, object[] args)
+        {
+            if (args.Length == 0)
+            {
+                return null;
+            }
+            var jargs = new Value[args.Length];
+            for (int i = 0; i < args.Length; i++)
+            {
+                var sarg = args[i] as string;
+                if (sarg != null)
+                {
+                    jargs[i] = new Value { _object = env.NewStringPtr(sarg) };
+                }
+                else
+                {
+                    jargs[i] = new Value { _object = C2J(env, args[i]) };
+                }
+            }
+            return jargs;
+        }
     }
 }
