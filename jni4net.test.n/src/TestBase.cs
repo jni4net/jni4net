@@ -27,8 +27,7 @@ using NUnit.Framework;
 
 namespace net.sf.jni4net.test
 {
-    [TestFixture]
-    public class TestBase
+    public abstract class TestBase
     {
         protected JavaVM vm;
         protected JNIEnv env;

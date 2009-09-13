@@ -48,12 +48,12 @@ namespace System.Reflection {
         
         public object[] GetCustomAttributes(bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
         }
         
         public object[] GetCustomAttributes(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
         }
         
         public bool IsDefined(global::System.Type attributeType, bool inherit) {
@@ -76,7 +76,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ICustomAttributeProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Reflection.ICustomAttributeProvider>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<object[], object>(@__env, @__real.GetCustomAttributes(inherit));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<object[], object>(@__env, @__real.GetCustomAttributes(inherit));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -87,7 +87,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.ICustomAttributeProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Reflection.ICustomAttributeProvider>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<object[], object>(@__env, @__real.GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, attributeType), inherit));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<object[], object>(@__env, @__real.GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, attributeType), inherit));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

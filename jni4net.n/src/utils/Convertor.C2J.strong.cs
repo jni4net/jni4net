@@ -9,24 +9,13 @@ namespace net.sf.jni4net.utils
         {
             // ReSharper disable CompareNonConstrainedGenericWithNull
             if (obj == null)
-                // ReSharper restore CompareNonConstrainedGenericWithNull
             {
                 return IntPtr.Zero;
             }
-            RegistryRecord record = Registry.Default.GetCLRRecord(typeof (TBoth));
+            // ReSharper restore CompareNonConstrainedGenericWithNull
+            RegistryRecord record = Registry.GetCLRRecord(obj.GetType());
             return record.CreateJVMProxy(env, obj);
         }
-
-
-        public static IntPtr StrongC2JString(JNIEnv env, string obj)
-        {
-            if (obj == null)
-            {
-                return IntPtr.Zero;
-            }
-            return env.NewStringPtr(obj);
-        }
-
 
         public static IntPtr StrongCp2J(IJavaProxy obj)
         {
@@ -35,6 +24,15 @@ namespace net.sf.jni4net.utils
                 return IntPtr.Zero;
             }
             return obj.Native;
+        }
+
+        public static IntPtr StrongC2JString(JNIEnv env, string obj)
+        {
+            if (obj == null)
+            {
+                return IntPtr.Zero;
+            }
+            return env.NewStringPtr(obj);
         }
     }
 }

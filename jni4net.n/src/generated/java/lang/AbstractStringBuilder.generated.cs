@@ -274,7 +274,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Ljava/lang/AbstractStringBuilder;")]
         public virtual global::java.lang.AbstractStringBuilder append(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._append15, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._append15, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder;")]
@@ -436,7 +436,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(ILjava/lang/Object;)Ljava/lang/AbstractStringBuilder;")]
         public virtual global::java.lang.AbstractStringBuilder insert(int par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._insert42, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.AbstractStringBuilder>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.AbstractStringBuilder._insert42, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I[CII)Ljava/lang/AbstractStringBuilder;")]

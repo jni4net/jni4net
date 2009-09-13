@@ -44,7 +44,7 @@ namespace net.sf.jni4net
             Type type = obj.GetType();
             JNIEnv env = JNIEnv.ThreadEnv;
 
-            RegistryRecord record = Registry.Default.GetCLRRecord(type);
+            RegistryRecord record = Registry.GetCLRRecord(type);
             IntPtr ptr = record.CreateJVMProxy(env, obj);
             return __IClrProxy.CreateProxy(env, ptr, record.JVMProxy);
         }
@@ -109,12 +109,12 @@ namespace net.sf.jni4net
 
         public static IJavaProxy UnwrapJVM(object obj, Class interfaceClass)
         {
-            return Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
+            return null;// Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
         }
 
         public static IJavaProxy UnwrapJVM(System.Exception obj, Class interfaceClass)
         {
-            return Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
+            return null;//Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
         }
     }
 }

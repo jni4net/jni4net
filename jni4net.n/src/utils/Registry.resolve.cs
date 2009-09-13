@@ -7,7 +7,7 @@ namespace net.sf.jni4net.utils
 {
     partial class Registry
     {
-        private RegistryRecord ResolveNew(Class clazz)
+        private static RegistryRecord ResolveNew(Class clazz)
         {
             var fill = new List<Class>(){clazz};
             Class current = clazz.getSuperclass();
@@ -71,7 +71,7 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        private RegistryRecord ResolveNew(Type type)
+        private static RegistryRecord ResolveNew(Type type)
         {
             var fill = new List<Type>() { type };
             Type current = type.BaseType;

@@ -143,7 +143,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void RegisterStaticAndMethods(RegistryRecord record, JNIEnv env)
+        private static void RegisterStaticAndMethods(RegistryRecord record, JNIEnv env)
         {
             try
             {
@@ -155,7 +155,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void RegisterTypeOf(RegistryRecord record, JNIEnv env)
+        private static void RegisterTypeOf(RegistryRecord record, JNIEnv env)
         {
             MethodId constructor = knownCLR[typeof(Type)].JVMConstructor;
             var h = new Value {_int = IntHandle.Alloc(record.CLRInterface)};

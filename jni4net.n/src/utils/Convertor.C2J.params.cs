@@ -16,10 +16,10 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static Value ParArrayFullC2J<TBoth>(JNIEnv env, TBoth obj)
+        public static Value ParArrayFullC2J<TBoth,TElem>(JNIEnv env, TBoth obj)
             where TBoth : class
         {
-            var res = new Value {_object = ArrayFullC2J(env, obj)};
+            var res = new Value { _object = ArrayFullC2J<TBoth, TElem>(env, obj) };
             return res;
         }
 

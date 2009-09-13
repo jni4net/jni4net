@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.tested;
@@ -17,7 +15,7 @@ namespace net.sf.jni4net.test
         public void TypeString()
         {
             var value = "test";
-            RegistryRecord record = Registry.Default.GetRecord(value);
+            RegistryRecord record = Registry.GetRecord(value);
             Assert.IsNotNull(record);
         }
 
@@ -25,14 +23,14 @@ namespace net.sf.jni4net.test
         public void TypeInt()
         {
             var value = 1;
-            RegistryRecord record = Registry.Default.GetRecord(value);
+            RegistryRecord record = Registry.GetRecord(value);
             Assert.IsNotNull(record);
         }
 
         [Test]
         public void TypeJInt()
         {
-            RegistryRecord record = Registry.Default.GetRecord(Integer._class);
+            RegistryRecord record = Registry.GetRecord(Integer._class);
             Assert.IsNotNull(record);
         }
 
@@ -40,7 +38,7 @@ namespace net.sf.jni4net.test
         public void TypeJInt2()
         {
             Integer i=new Integer(1);
-            RegistryRecord record = Registry.Default.GetRecord(i);
+            RegistryRecord record = Registry.GetRecord(i);
             Assert.IsNotNull(record);
         }
 
@@ -48,7 +46,7 @@ namespace net.sf.jni4net.test
         public void TypeEx()
         {
             var i = new Exception();
-            RegistryRecord record = Registry.Default.GetRecord(i);
+            RegistryRecord record = Registry.GetRecord(i);
             Assert.IsNotNull(record);
         }
 
@@ -56,7 +54,7 @@ namespace net.sf.jni4net.test
         public void TypeTh()
         {
             var i = new Throwable();
-            RegistryRecord record = Registry.Default.GetRecord(i);
+            RegistryRecord record = Registry.GetRecord(i);
             Assert.IsNotNull(record);
         }
 
@@ -72,7 +70,7 @@ namespace net.sf.jni4net.test
         public void TypeNewIface()
         {
             MyClass val=new MyClass();
-            RegistryRecord record = Registry.Default.GetRecord(val);
+            RegistryRecord record = Registry.GetRecord(val);
             Assert.IsNotNull(record);
         }
 
@@ -81,7 +79,7 @@ namespace net.sf.jni4net.test
         {
             JInterfacesHelper h = new JInterfacesHelper();
             var val = h.createJWithClrInterfaceExt(0);
-            RegistryRecord record = Registry.Default.GetRecord(val);
+            RegistryRecord record = Registry.GetRecord(val);
             Assert.IsNotNull(record);
         }
     
@@ -91,7 +89,7 @@ namespace net.sf.jni4net.test
             JInterfacesHelper h = new JInterfacesHelper();
             CWithJavaInterface cwc = h.getCWithJavaInterfaceC(new CWithJavaInterface(0));
             IJavaProxy val = Bridge.WrapCLR(cwc);
-            RegistryRecord record = Registry.Default.GetRecord(JNIEnv.ThreadEnv, val.Native, val.getClass());
+            RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, val.Native, val.getClass());
             Assert.IsNotNull(record);
         }
 

@@ -93,7 +93,7 @@ namespace net.sf.jni4net
             JNIEnv env = JNIEnv.ThreadEnv;
             //JavaProxiesMap.RegisterAssembly(env, assembly);
             //ClrProxiesMap.RegisterAssembly(env, assembly);
-            Registry.Default.RegisterAssembly(assembly, true);
+            Registry.RegisterAssembly(assembly, true);
 
             if (Verbose)
             {

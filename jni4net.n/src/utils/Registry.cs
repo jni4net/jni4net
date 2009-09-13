@@ -7,9 +7,9 @@ namespace net.sf.jni4net.utils
 {
     public partial class Registry
     {
-        public RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
+        public static RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
         {
-            lock (this)
+            lock (typeof(Registry))
             {
                 RegistryRecord res;
                 if (knownJVM.TryGetValue(iface, out res))
@@ -25,10 +25,10 @@ namespace net.sf.jni4net.utils
             }
         }
         
-        public RegistryRecord GetRecord(object obj)
+        public static RegistryRecord GetRecord(object obj)
         {
             Type iface = obj.GetType();
-            lock (this)
+            lock (typeof(Registry))
             {
                 RegistryRecord res;
                 if (knownCLR.TryGetValue(iface, out res))
@@ -44,9 +44,9 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        public RegistryRecord GetCLRRecord(Type iface)
+        public static RegistryRecord GetCLRRecord(Type iface)
         {
-            lock (this)
+            lock (typeof(Registry))
             {
                 RegistryRecord res;
                 if (knownCLR.TryGetValue(iface, out res))
@@ -57,9 +57,9 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        public RegistryRecord GetJVMRecord(Class iface)
+        public static RegistryRecord GetJVMRecord(Class iface)
         {
-            lock (this)
+            lock (typeof(Registry))
             {
                 RegistryRecord res;
                 if (knownJVM.TryGetValue(iface, out res))

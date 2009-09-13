@@ -28,7 +28,7 @@ namespace net.sf.jni4net.utils
                 return default(TRes);
             }
             Class clazz = env.GetObjectClass(obj);
-            RegistryRecord record = Registry.Default.GetJVMRecord(clazz);
+            RegistryRecord record = Registry.GetJVMRecord(clazz);
             return (TRes) record.CreateCLRProxy(env, obj, clazz);
         }
 
@@ -70,5 +70,6 @@ namespace net.sf.jni4net.utils
         }
 
         #endregion
+
     }
 }

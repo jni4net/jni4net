@@ -15,33 +15,17 @@ namespace net.sf.jni4net.utils
 {
     partial class Registry
     {
-        #region Singleton
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRWrappers = new Dictionary<Type, RegistryRecord>();
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRProxies = new Dictionary<Type, RegistryRecord>();
+        private static readonly Dictionary<Type, RegistryRecord> knownCLRInterfaces = new Dictionary<Type, RegistryRecord>();
+        private static readonly Dictionary<Type, RegistryRecord> knownCLR = new Dictionary<Type, RegistryRecord>();
+        private static readonly Dictionary<Class, RegistryRecord> knownJVMInterfaces = new Dictionary<Class, RegistryRecord>();
+        private static readonly Dictionary<Class, RegistryRecord> knownJVMProxies = new Dictionary<Class, RegistryRecord>();
+        private static readonly Dictionary<Class, RegistryRecord> knownJVM = new Dictionary<Class, RegistryRecord>();
+        private static readonly bool initialized;
 
-        private static Registry defaultRegistry = new Registry();
-
-        public static Registry Default
+        static Registry()
         {
-            get { return defaultRegistry; }
-        }
-
-        #endregion
-
-        private readonly Dictionary<Type, RegistryRecord> knownCLRWrappers = new Dictionary<Type, RegistryRecord>();
-        private readonly Dictionary<Type, RegistryRecord> knownCLRProxies = new Dictionary<Type, RegistryRecord>();
-        private readonly Dictionary<Type, RegistryRecord> knownCLRInterfaces = new Dictionary<Type, RegistryRecord>();
-        private readonly Dictionary<Type, RegistryRecord> knownCLR = new Dictionary<Type, RegistryRecord>();
-        private readonly Dictionary<Class, RegistryRecord> knownJVMInterfaces = new Dictionary<Class, RegistryRecord>();
-        private readonly Dictionary<Class, RegistryRecord> knownJVMProxies = new Dictionary<Class, RegistryRecord>();
-        private readonly Dictionary<Class, RegistryRecord> knownJVM = new Dictionary<Class, RegistryRecord>();
-        private readonly bool initialized;
-
-        public Registry()
-        {
-            if (Default == null)
-            {
-                defaultRegistry = this;
-            }
-
             JNIEnv env = JNIEnv.ThreadEnv;
             RegisterType(typeof (Class), true, env);
             RegisterType(typeof (Object), true, env);
@@ -98,9 +82,9 @@ namespace net.sf.jni4net.utils
             Convertor.floatValue = env.GetMethodID(Float.staticClass, "floatValue", "()F");
         }
 
-        public void RegisterAssembly(Assembly assembly, bool bindJVM)
+        public static void RegisterAssembly(Assembly assembly, bool bindJVM)
         {
-            lock (this)
+            lock (typeof(Registry))
             {
                 JNIEnv env = JNIEnv.ThreadEnv;
                 foreach (Type type in assembly.GetTypes())
@@ -110,7 +94,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void RegisterPrimitiveType(string clazzName, Type type, Type jvmBoxed)
+        private static void RegisterPrimitiveType(string clazzName, Type type, Type jvmBoxed)
         {
             var record = new RegistryRecord();
             Class clazz = Class.getPrimitiveClass(clazzName);
@@ -135,7 +119,7 @@ namespace net.sf.jni4net.utils
             //knownCLR[record.CLRInterface] = record;
         }
 
-        private void RegisterType(Type type, bool bindJVM, JNIEnv env)
+        private static void RegisterType(Type type, bool bindJVM, JNIEnv env)
         {
             RegistryRecord record = null;
             RegisterWrapper(type, ref record);
@@ -150,7 +134,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void BindJvm(RegistryRecord record, JNIEnv env)
+        private static void BindJvm(RegistryRecord record, JNIEnv env)
         {
             RegisterClass(record, env);
             if (record.CLRProxy != null)
@@ -172,7 +156,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void RegisterClass(RegistryRecord record, JNIEnv env)
+        private static void RegisterClass(RegistryRecord record, JNIEnv env)
         {
             string package = record.CLRInterface.Namespace;
             string className = record.CLRInterface.Name;
@@ -209,14 +193,14 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private void RegisterClassToMap(RegistryRecord record)
+        private static void RegisterClassToMap(RegistryRecord record)
         {
             knownJVMInterfaces[record.JVMInterface] = record;
             knownJVM[record.JVMInterface] = record;
             knownJVM[record.JVMStatic] = record;
         }
 
-        private void RegisterInterfaceProxy(Type proxyType, ref RegistryRecord record)
+        private static void RegisterInterfaceProxy(Type proxyType, ref RegistryRecord record)
         {
             JavaProxyAttribute javaProxyAttribute = GetJavaProxyAttribute(proxyType);
             if (javaProxyAttribute == null)
@@ -237,7 +221,7 @@ namespace net.sf.jni4net.utils
             knownCLR[record.CLRStatic] = record;
         }
 
-        private void RegisterClassProxy(Type proxyType, ref RegistryRecord record)
+        private static void RegisterClassProxy(Type proxyType, ref RegistryRecord record)
         {
             JavaClassAttribute javaClassAttribute = GetJavaClassAttribute(proxyType);
             if (javaClassAttribute == null)
@@ -250,7 +234,7 @@ namespace net.sf.jni4net.utils
             record.CLRStatic = proxyType;
         }
 
-        private void RegisterProxy(Type proxyType, Type interfaceType, ref RegistryRecord record)
+        private static void RegisterProxy(Type proxyType, Type interfaceType, ref RegistryRecord record)
         {
             if (record == null)
             {
@@ -279,7 +263,7 @@ namespace net.sf.jni4net.utils
             knownCLR[proxyType] = record;
         }
 
-        private void RegisterWrapper(Type wrapperType, ref RegistryRecord record)
+        private static void RegisterWrapper(Type wrapperType, ref RegistryRecord record)
         {
             ClrWrapperAttribute wrapperAttribute = GetClrWrapperAttribute(wrapperType);
             if (wrapperAttribute == null)
