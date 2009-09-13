@@ -1,12 +1,32 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using System.CodeDom;
-using System.Collections;
 using System.Collections.Generic;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.model;
 using net.sf.jni4net.utils;
-using Object=java.lang.Object;
 
 namespace net.sf.jni4net.proxygen.generator
 {
@@ -56,7 +76,7 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateMethodParamsJ2C(tgtMethod, method);
             GenerateGetEnvJ2C(tgtMethod);
             GenerateMethodCallPrologJ2C(tgtMethod);
-            
+
             GenerateCallJ2C(tgtMethod, method);
 
             GenerateMethodCallEpilogJ2C(tgtMethod, method);
@@ -78,7 +98,7 @@ namespace net.sf.jni4net.proxygen.generator
 
                 tgtMethod.Statements.Add(
                     new CodeMethodInvokeExpression(
-                        new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
+                        new CodeMethodReferenceExpression(TypeReferenceEx(typeof (Convertor)),
                                                           "InitProxy"), envVariable, objVariable, realVariable));
             }
             else
@@ -92,7 +112,7 @@ namespace net.sf.jni4net.proxygen.generator
                 {
                     CodeExpression expression = CreateConversionExpressionJ2C(type, objVariable);
                     tgtMethod.Statements.Add(
-                        new CodeVariableDeclarationStatement(RealType, realVariableName,expression));
+                        new CodeVariableDeclarationStatement(RealType, realVariableName, expression));
 
                     if (method.DeclaringType != type)
                     {
@@ -151,7 +171,8 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                     else
                     {
-                        CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2J(method.ReturnType, call);
+                        CodeMethodInvokeExpression conversionExpression =
+                            CreateConversionExpressionC2J(method.ReturnType, call);
                         callst = new CodeMethodReturnStatement(conversionExpression);
                         tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
                     }
@@ -162,12 +183,15 @@ namespace net.sf.jni4net.proxygen.generator
 
         private void GenerateMethodRegistrationJ2C(GMethod method, string uName)
         {
-            string callbackName = method.IsConstructor ? uName :  method.JVMName;
-            string callBackSignature = method.IsConstructor ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/IClrProxy;") : method.JVMSignature;
+            string callbackName = method.IsConstructor ? uName : method.JVMName;
+            string callBackSignature = method.IsConstructor
+                                           ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/IClrProxy;")
+                                           : method.JVMSignature;
             var registation = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("methods"),
                                                              "Add",
                                                              new CodeMethodInvokeExpression(
-                                                                 new CodeMethodReferenceExpression(TypeReferenceEx(typeof (JNINativeMethod)),"Create"),
+                                                                 new CodeMethodReferenceExpression(
+                                                                     TypeReferenceEx(typeof (JNINativeMethod)), "Create"),
                                                                  new CodeVariableReferenceExpression(typeVariableName),
                                                                  new CodePrimitiveExpression(callbackName),
                                                                  new CodePrimitiveExpression(uName),
@@ -187,7 +211,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             tgtMethod.Statements.Add(
                 new CodeSnippetStatement(
-                    "            }catch (global::System.Exception ex){@"+envVariableName+".ThrowExisting(ex);}"
+                    "            }catch (global::System.Exception ex){@" + envVariableName + ".ThrowExisting(ex);}"
                     //}
                     ));
 
@@ -201,8 +225,8 @@ namespace net.sf.jni4net.proxygen.generator
         private void GenerateGetEnvJ2C(CodeMemberMethod tgtMethod)
         {
             var env = new CodeVariableDeclarationStatement(
-                new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName,
-                new CodeSnippetExpression("global::net.sf.jni4net.jni.JNIEnv.Wrap(@"+envpVariableName+")"));
+                new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName,
+                new CodeSnippetExpression("global::net.sf.jni4net.jni.JNIEnv.Wrap(@" + envpVariableName + ")"));
             tgtMethod.Statements.Add(env);
         }
 
@@ -212,14 +236,15 @@ namespace net.sf.jni4net.proxygen.generator
             for (int p = 0; p < method.Parameters.Count; p++)
             {
                 GType paramType = method.Parameters[p];
-                CodeVariableReferenceExpression invokeExpression = new CodeVariableReferenceExpression(method.ParameterNames[p]);
+                var invokeExpression = new CodeVariableReferenceExpression(method.ParameterNames[p]);
                 if (paramType.IsPrimitive)
                 {
                     callParams.Add(invokeExpression);
                 }
-                else 
+                else
                 {
-                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(paramType, invokeExpression);
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(paramType,
+                                                                                                    invokeExpression);
                     callParams.Add(conversionExpression);
                 }
             }
@@ -229,7 +254,7 @@ namespace net.sf.jni4net.proxygen.generator
         private void GenerateMethodParamsJ2C(CodeMemberMethod tgtMethod, GMethod method)
         {
             var enviParam = new CodeParameterDeclarationExpression(
-                TypeReference(typeof(IntPtr)), envpVariableName);
+                TypeReference(typeof (IntPtr)), envpVariableName);
             tgtMethod.Parameters.Add(enviParam);
 
             if (method.IsStatic || method.IsConstructor)
@@ -260,7 +285,8 @@ namespace net.sf.jni4net.proxygen.generator
 
         public void GenerateWrapperInitJ2C()
         {
-            CodeTypeReference returnType = TypeReference("System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>");
+            CodeTypeReference returnType =
+                TypeReference("System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>");
             initMethod = new CodeMemberMethod();
             initMethod.Name = "__Init";
             initMethod.Attributes = MemberAttributes.Static | MemberAttributes.Private;
@@ -269,11 +295,11 @@ namespace net.sf.jni4net.proxygen.generator
                     new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference), envVariableName));
             initMethod.Parameters.Add(
                 new CodeParameterDeclarationExpression(
-                    new CodeTypeReference(typeof(Class), CodeTypeReferenceOptions.GlobalReference), classVariableName));
+                    new CodeTypeReference(typeof (Class), CodeTypeReferenceOptions.GlobalReference), classVariableName));
             string wrapper = "__" + type.Name;
             initMethod.Statements.Add(
                 new CodeVariableDeclarationStatement(
-                    new CodeTypeReference(typeof(Type), CodeTypeReferenceOptions.GlobalReference), typeVariableName,
+                    new CodeTypeReference(typeof (Type), CodeTypeReferenceOptions.GlobalReference), typeVariableName,
                     new CodeSnippetExpression("typeof(" + wrapper + ")")));
 
             initMethod.Statements.Add(

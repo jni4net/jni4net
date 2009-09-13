@@ -26,12 +26,10 @@ using System.Runtime.InteropServices;
 using java.lang;
 using java.lang.reflect;
 using java_.lang;
-using net.sf.jni4net.inj;
 using net.sf.jni4net.utils;
 using Exception=System.Exception;
 using Object=java.lang.Object;
 using String=java.lang.String;
-using Type=System.Type;
 
 namespace net.sf.jni4net.jni
 {
@@ -86,7 +84,7 @@ namespace net.sf.jni4net.jni
 
         internal Class GetObjectClass(IntPtr obj)
         {
-            if (obj==IntPtr.Zero)
+            if (obj == IntPtr.Zero)
             {
                 return null;
             }
@@ -440,7 +438,7 @@ namespace net.sf.jni4net.jni
 
         public char CallCharMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
         {
-            var res = (char)callCharMethod(native, obj, methodIdNative.native, args);
+            var res = (char) callCharMethod(native, obj, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
@@ -1175,7 +1173,6 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
             return Convertor.FullJ2C<IJavaProxy>(this, res);
         }
-
 
         #endregion
 

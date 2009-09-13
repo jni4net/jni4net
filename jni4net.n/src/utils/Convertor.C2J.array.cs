@@ -1,4 +1,26 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using java.lang;
 using net.sf.jni4net.jni;
 using String=java.lang.String;
@@ -15,24 +37,24 @@ namespace net.sf.jni4net.utils
                 return IntPtr.Zero;
             }
 #if  DEBUG
-            if (!typeof(TBoth).IsArray)
+            if (!typeof (TBoth).IsArray)
             {
                 throw new ArgumentException("Must be array type");
             }
-            if (typeof(TBoth).GetElementType() != typeof(TElem))
+            if (typeof (TBoth).GetElementType() != typeof (TElem))
             {
-                throw new ArgumentException("Must be array of type" + typeof(TElem));
+                throw new ArgumentException("Must be array of type" + typeof (TElem));
             }
 #endif
-            var array = (Array)(object)obj;
+            var array = (Array) (object) obj;
             int length = array.Length;
-            Type elementType = typeof(TBoth).GetElementType();
+            Type elementType = typeof (TBoth).GetElementType();
             Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
 
             IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
             for (int i = 0; i < length; i++)
             {
-                IntPtr item = FullC2J(env, (TElem)array.GetValue(i));
+                IntPtr item = FullC2J(env, (TElem) array.GetValue(i));
                 env.SetObjectArrayElement(res, i, item);
             }
             return res;

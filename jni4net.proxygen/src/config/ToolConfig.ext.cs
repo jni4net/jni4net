@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -64,7 +64,7 @@ namespace net.sf.jni4net.proxygen.config
             {
                 foreach (MethodModifier method in MethodModifier)
                 {
-                    if (name == method.MethodName && signature == method.Signature && method.Return!=null)
+                    if (name == method.MethodName && signature == method.Signature && method.Return != null)
                     {
                         ret = method.Return;
                         return true;
@@ -81,7 +81,7 @@ namespace net.sf.jni4net.proxygen.config
             {
                 foreach (MethodModifier method in MethodModifier)
                 {
-                    if (name == method.MethodName && signature == method.Signature && method.Interface!=null)
+                    if (name == method.MethodName && signature == method.Signature && method.Interface != null)
                     {
                         ret = method.Interface;
                         return true;
@@ -111,7 +111,7 @@ namespace net.sf.jni4net.proxygen.config
 
         public bool IsIgnoredInterface(string name)
         {
-            if (IgnoreInterface!=null)
+            if (IgnoreInterface != null)
             {
                 foreach (TypeReference reference in IgnoreInterface)
                 {
@@ -123,6 +123,5 @@ namespace net.sf.jni4net.proxygen.config
             }
             return false;
         }
-    
     }
 }

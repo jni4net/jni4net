@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
-using System;
 using System.CodeDom;
 
 namespace net.sf.jni4net.proxygen.generator
@@ -29,28 +28,28 @@ namespace net.sf.jni4net.proxygen.generator
     {
         public static void AddAttribute(CodeTypeDeclaration declaration, string attr)
         {
-            declaration.CustomAttributes.Add(new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference)));
+            declaration.CustomAttributes.Add(
+                new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference)));
         }
 
         public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, object value)
         {
-            var declaration = AddAttribute(tgtMethodCLR, attr);
+            CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
             declaration.Arguments.Add(new CodeAttributeArgument(new CodePrimitiveExpression(value)));
         }
 
         public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer)
         {
-            var declaration = AddAttribute(tgtMethodCLR, attr);
+            CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
             declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer)));
         }
 
         public static CodeAttributeDeclaration AddAttribute(CodeTypeMember tgtMethodCLR, string attr)
         {
-            CodeAttributeDeclaration declaration =
+            var declaration =
                 new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference));
             tgtMethodCLR.CustomAttributes.Add(declaration);
             return declaration;
         }
-
     }
 }

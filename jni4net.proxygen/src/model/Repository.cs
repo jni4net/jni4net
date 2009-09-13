@@ -1,4 +1,5 @@
 #region Copyright (C) 2009 by Pavel Savara
+
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -16,37 +17,32 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #endregion
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using java.lang;
-using java.lang.annotation;
-using java.lang.reflect;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
-using net.sf.jni4net.proxygen.generator;
-using net.sf.jni4net.utils;
-using Type=System.Type;
 
 namespace net.sf.jni4net.proxygen.model
 {
     internal partial class Repository
     {
-        public static ToolConfig config;
-        private static readonly Dictionary<Type, GType> knownTypes = new Dictionary<Type, GType>();
+        private static readonly List<GType> all = new List<GType>();
         private static readonly Dictionary<Class, GType> knownClasses = new Dictionary<Class, GType>();
         private static readonly Dictionary<string, GType> knownNames = new Dictionary<string, GType>();
+        private static readonly Dictionary<Type, GType> knownTypes = new Dictionary<Type, GType>();
+        public static ToolConfig config;
         private static List<Assembly> knownAssemblies = new List<Assembly>();
-        private static List<GType> all = new List<GType>();
 
         public static void Analyze()
         {
             foreach (GType type in new List<GType>(all))
             {
-                PreLoadMethods(type, false,false);
+                PreLoadMethods(type, false, false);
             }
             foreach (GType type in new List<GType>(all))
             {
@@ -101,7 +97,7 @@ namespace net.sf.jni4net.proxygen.model
 
         public static List<GType> GetGenInterfaces()
         {
-            List<GType> res = new List<GType>();
+            var res = new List<GType>();
             foreach (GType type in all)
             {
                 if ((type.IsJVMGenerate || type.IsCLRGenerate) && type.IsInterface)
@@ -186,7 +182,8 @@ namespace net.sf.jni4net.proxygen.model
                     }
                     else if (clrWrapperA != null && type.IsSealed && type.Name.StartsWith("__"))
                     {
-                        Type realType = clrWrapperA.GetType().GetProperty("InterfaceType").GetValue(clrWrapperA, null) as Type;
+                        var realType =
+                            clrWrapperA.GetType().GetProperty("InterfaceType").GetValue(clrWrapperA, null) as Type;
                         if (realType != null)
                         {
                             string clazzName = GetInterfaceName(type);
@@ -226,7 +223,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterTypes()
         {
-            foreach (var registration in config.ClrType)
+            foreach (TypeRegistration registration in config.ClrType)
             {
                 Type type = null;
                 foreach (Assembly a in knownAssemblies)
@@ -249,6 +246,5 @@ namespace net.sf.jni4net.proxygen.model
                 reg.MergeJavaSource = registration.MergeJavaSource;
             }
         }
-    
     }
 }

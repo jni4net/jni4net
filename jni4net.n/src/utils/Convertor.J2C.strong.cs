@@ -1,4 +1,26 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
@@ -16,7 +38,7 @@ namespace net.sf.jni4net.utils
                 return default(TRes);
             }
             object res = __IClrProxy.GetObject(env, obj);
-            return (TRes)res;
+            return (TRes) res;
         }
 
 
@@ -41,12 +63,12 @@ namespace net.sf.jni4net.utils
                 return null;
             }
             object res = __IClrProxy.GetObject(env, obj);
-            return (string)res;
+            return (string) res;
         }
 
         public static String StrongJ2CpString(JNIEnv env, IntPtr obj)
         {
-            if (obj==IntPtr.Zero)
+            if (obj == IntPtr.Zero)
             {
                 return null;
             }
@@ -64,12 +86,11 @@ namespace net.sf.jni4net.utils
 
         public static Object StrongJ2CpObject(JNIEnv env, IntPtr obj)
         {
-            Object res = new Object(env);
-            ((IJavaProxy)res).Init(env, obj, Object._class);
+            var res = new Object(env);
+            ((IJavaProxy) res).Init(env, obj, Object._class);
             return res;
         }
 
         #endregion
-
     }
 }

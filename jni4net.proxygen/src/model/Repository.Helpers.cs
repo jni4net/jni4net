@@ -37,26 +37,26 @@ namespace net.sf.jni4net.proxygen.model
 {
     internal partial class Repository
     {
-        private static Type javaProxyType;
+        internal static GType clrProxy;
+        private static Class clrProxyClass;
+        private static Type clrWrapperAttr;
         private static Type javaClassAttr;
         private static Type javaInterfaceAttr;
-        private static Type javaMethodAttribute;
-        private static Type clrWrapperAttr;
-        private static Type javalangIObjectType;
-        private static Class clrProxyClass;
-        internal static GType javaLangObject;
-        internal static GType javaLangIObject;
         internal static GType javaLangClass;
+        internal static GType javaLangIObject;
+        private static Type javalangIObjectType;
+        internal static GType javaLangObject;
         internal static GType javaLangString;
-        internal static GType systemObject;
-        internal static GType systemIObject;
-        internal static GType systemType;
-        internal static GType systemString;
-        internal static GType systemException;
         internal static GType javaLangThrowable;
-        internal static GType voidType;
+        private static Type javaMethodAttribute;
         internal static GType javaProxy;
-        internal static GType clrProxy;
+        private static Type javaProxyType;
+        internal static GType systemException;
+        internal static GType systemIObject;
+        internal static GType systemObject;
+        internal static GType systemString;
+        internal static GType systemType;
+        internal static GType voidType;
 
         private static void BindKnownTypesPre()
         {
@@ -111,28 +111,27 @@ namespace net.sf.jni4net.proxygen.model
             GType gdouble = RegisterClass(Class.getPrimitiveClass("double"));
             GType gfloat = RegisterClass(Class.getPrimitiveClass("float"));
             GType gbool = RegisterClass(Class.getPrimitiveClass("boolean"));
-            RegisterType(typeof(ulong)).JVMSubst = glong;
-            RegisterType(typeof(uint)).JVMSubst = gint;
-            RegisterType(typeof(ushort)).JVMSubst = gshort;
-            RegisterType(typeof(sbyte)).JVMSubst = gbyte;
-            RegisterType(typeof(long)).JVMSubst = glong;
-            RegisterType(typeof(int)).JVMSubst = gint;
-            RegisterType(typeof(short)).JVMSubst = gshort;
-            RegisterType(typeof(byte)).JVMSubst = gbyte;
-            RegisterType(typeof(char)).JVMSubst = gchar;
-            RegisterType(typeof(double)).JVMSubst = gdouble;
-            RegisterType(typeof(float)).JVMSubst = gfloat;
-            RegisterType(typeof(bool)).JVMSubst = gbool;
-        
+            RegisterType(typeof (ulong)).JVMSubst = glong;
+            RegisterType(typeof (uint)).JVMSubst = gint;
+            RegisterType(typeof (ushort)).JVMSubst = gshort;
+            RegisterType(typeof (sbyte)).JVMSubst = gbyte;
+            RegisterType(typeof (long)).JVMSubst = glong;
+            RegisterType(typeof (int)).JVMSubst = gint;
+            RegisterType(typeof (short)).JVMSubst = gshort;
+            RegisterType(typeof (byte)).JVMSubst = gbyte;
+            RegisterType(typeof (char)).JVMSubst = gchar;
+            RegisterType(typeof (double)).JVMSubst = gdouble;
+            RegisterType(typeof (float)).JVMSubst = gfloat;
+            RegisterType(typeof (bool)).JVMSubst = gbool;
         }
 
         private static void BindKnownTypesPost()
         {
             voidType = RegisterClass(Class.getPrimitiveClass("void"));
-            systemObject = RegisterType(typeof(object));
-            systemString = RegisterType(typeof(string));
-            systemType = RegisterType(typeof(Type));
-            systemException = RegisterType(typeof(Exception));
+            systemObject = RegisterType(typeof (object));
+            systemString = RegisterType(typeof (string));
+            systemType = RegisterType(typeof (Type));
+            systemException = RegisterType(typeof (Exception));
             javaLangObject = RegisterClass(Object._class);
             javaLangString = RegisterClass(String._class);
             javaLangClass = RegisterClass(Class._class);
@@ -242,17 +241,17 @@ namespace net.sf.jni4net.proxygen.model
                 return;
             }
             type.IsMethodsPreLoaded = true;
-            
+
             forceJVM |= (type.IsCLRGenerate && type.IsJVMType);
             forceCLR |= (type.IsJVMGenerate && type.IsCLRType);
 
-            if (type.Registration != null && type.Registration.IgnoreInterface!=null)
+            if (type.Registration != null && type.Registration.IgnoreInterface != null)
             {
                 foreach (TypeReference ifcName in type.Registration.IgnoreInterface)
                 {
                     foreach (GType ifc in type.Interfaces)
                     {
-                        if (ifc.LowerName==ifcName.TypeName.ToLowerInvariant())
+                        if (ifc.LowerName == ifcName.TypeName.ToLowerInvariant())
                         {
                             type.Interfaces.Remove(ifc);
                             break;
@@ -262,9 +261,9 @@ namespace net.sf.jni4net.proxygen.model
             }
 
 
-            if ((forceCLR || forceJVM) && type.Base!=null)
+            if ((forceCLR || forceJVM) && type.Base != null)
             {
-                PreLoadMethods(type.Base, forceCLR,forceJVM);
+                PreLoadMethods(type.Base, forceCLR, forceJVM);
             }
             if (forceJVM)
             {
@@ -280,6 +279,7 @@ namespace net.sf.jni4net.proxygen.model
                 type.IsLoadCLRMethods = true;
             }
         }
+
         private static void LoadMethods(GType type)
         {
             if (type.IsMethodsLoaded)
@@ -290,7 +290,7 @@ namespace net.sf.jni4net.proxygen.model
             foreach (GType ifc in type.Interfaces)
             {
                 LoadMethods(ifc);
-                foreach (KeyValuePair<string, GMethod> pair in ifc.AllMethods)
+                foreach (var pair in ifc.AllMethods)
                 {
                     if (!type.AllMethods.ContainsKey(pair.Key))
                     {
@@ -305,7 +305,7 @@ namespace net.sf.jni4net.proxygen.model
                 LoadMethods(type.Base);
                 if (!type.IsRootType)
                 {
-                    foreach (KeyValuePair<string, GMethod> pair in type.Base.AllMethods)
+                    foreach (var pair in type.Base.AllMethods)
                     {
                         if (!type.AllMethods.ContainsKey(pair.Key))
                         {
@@ -328,28 +328,26 @@ namespace net.sf.jni4net.proxygen.model
                 RegisterCLRMethods(type, true);
                 RegisterCLRConstructors(type, true);
             }
-
-        
         }
 
         private static bool TestCLRType(Type type)
         {
-            return type.IsByRef || type.IsPointer || typeof(Delegate).IsAssignableFrom(type);
+            return type.IsByRef || type.IsPointer || typeof (Delegate).IsAssignableFrom(type);
         }
 
         private static bool UseMethodModifier(GType type, GMethod res, string name, string signature, ref bool force)
         {
-            var fskip = false;
+            bool fskip = false;
             if (type.Registration != null)
             {
                 MethodModifier modifier;
                 if (type.Registration.GetModifier(name, signature, out modifier))
                 {
-                    if (modifier.Return!=null)
+                    if (modifier.Return != null)
                     {
                         res.ReturnType = knownNames[modifier.Return.ToLowerInvariant()];
                     }
-                    if (modifier.Interface!=null)
+                    if (modifier.Interface != null)
                     {
                         res.UseExplicitInterface = true;
                         res.DeclaringType = knownNames[modifier.Interface.ToLowerInvariant()];
@@ -398,8 +396,8 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 foreach (GMethod skip in type.SkippedMethods)
                 {
-                    var s = x(skip);
-                    if (s==sig)
+                    string s = x(skip);
+                    if (s == sig)
                     {
                         type.Methods.Add(skip);
                         type.MethodsWithInterfaces.Add(skip);
@@ -408,7 +406,7 @@ namespace net.sf.jni4net.proxygen.model
                         break;
                     }
                 }
-                type.AllMethods.Add(res.DeclaringType.Name+"."+sig, res);
+                type.AllMethods.Add(res.DeclaringType.Name + "." + sig, res);
             }
             type.MethodsWithInterfaces.Add(res);
             type.Methods.Add(res);

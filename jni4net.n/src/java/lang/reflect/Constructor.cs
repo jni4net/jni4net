@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 #if !JNI4NET_MINI
-using net.sf.jni4net;
 using net.sf.jni4net.utils;
 
 namespace java.lang.reflect
@@ -42,4 +41,5 @@ namespace java.lang.reflect
         }
     }
 }
+
 #endif

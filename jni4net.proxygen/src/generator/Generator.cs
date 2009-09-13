@@ -28,8 +28,8 @@ namespace net.sf.jni4net.proxygen.generator
 {
     internal abstract partial class Generator
     {
-        protected GType type;
         public static ToolConfig config;
+        protected GType type;
 
         protected Generator(GType type)
         {
@@ -45,13 +45,15 @@ namespace net.sf.jni4net.proxygen.generator
         protected void SetCurrentType(string current, string real, string proxy)
         {
             CurrentType = new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference);
-            CurrentTypeEx = new CodeTypeReferenceExpression(new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference));
+            CurrentTypeEx =
+                new CodeTypeReferenceExpression(new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference));
             RealType = new CodeTypeReference(real, CodeTypeReferenceOptions.GlobalReference);
-            RealTypeEx = new CodeTypeReferenceExpression(new CodeTypeReference(real, CodeTypeReferenceOptions.GlobalReference));
+            RealTypeEx =
+                new CodeTypeReferenceExpression(new CodeTypeReference(real, CodeTypeReferenceOptions.GlobalReference));
 
             ProxyType = new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference);
-            ProxyTypeEx = new CodeTypeReferenceExpression(new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference));
-
+            ProxyTypeEx =
+                new CodeTypeReferenceExpression(new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference));
         }
 
 

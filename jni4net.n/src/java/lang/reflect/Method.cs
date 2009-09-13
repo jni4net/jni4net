@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #if !JNI4NET_MINI
 using java.lang.annotation;
-using net.sf.jni4net;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
 

@@ -1,4 +1,5 @@
 ﻿#region Copyright (C) 2009 by Pavel Savara
+
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -16,12 +17,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 #endregion
 
 using System;
-using System.Reflection;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Reflection;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
@@ -31,13 +33,13 @@ namespace net.sf.jni4net.proxygen.model
 {
     internal class GType
     {
+        private readonly List<GType> _allInterfaces = new List<GType>();
         private readonly Dictionary<string, GMethod> _allMethods = new Dictionary<string, GMethod>();
-        private readonly List<GMethod> _skippedMethods = new List<GMethod>();
-        private readonly List<GMethod> _methods = new List<GMethod>();
-        private readonly List<GMethod> _methodsWithInterfaces = new List<GMethod>();
         private readonly List<GMethod> _constructors = new List<GMethod>();
         private readonly List<GType> _interfaces = new List<GType>();
-        private readonly List<GType> _allInterfaces = new List<GType>();
+        private readonly List<GMethod> _methods = new List<GMethod>();
+        private readonly List<GMethod> _methodsWithInterfaces = new List<GMethod>();
+        private readonly List<GMethod> _skippedMethods = new List<GMethod>();
 
         public bool MergeJavaSource { get; set; }
         public bool IsAbstract { get; set; }
@@ -97,57 +99,65 @@ namespace net.sf.jni4net.proxygen.model
 
         public Dictionary<string, GMethod> AllMethods
         {
-            get
-            {
-                return _allMethods;
-            }
+            get { return _allMethods; }
         }
 
         public List<GMethod> SkippedMethods
         {
-            get
-            {
-                return _skippedMethods;
-            }
+            get { return _skippedMethods; }
         }
 
         public List<GMethod> Methods
         {
-            get
-            {
-                return _methods;
-            }
+            get { return _methods; }
         }
 
         public List<GMethod> MethodsWithInterfaces
         {
-            get
-            {
-                return _methodsWithInterfaces;
-            }
+            get { return _methodsWithInterfaces; }
         }
 
         public List<GMethod> Constructors
         {
-            get
-            {
-                return _constructors;
-            }
+            get { return _constructors; }
         }
 
         public List<GType> Interfaces
         {
-            get
-            {
-                return _interfaces;
-            }
+            get { return _interfaces; }
         }
 
         public List<GType> AllInterfaces
         {
+            get { return _allInterfaces; }
+        }
+
+        public bool IsRootType
+        {
             get
             {
-                return _allInterfaces;
+                return this == Repository.systemObject
+                       || this == Repository.systemException
+                       || this == Repository.javaLangThrowable
+                       || this == Repository.javaLangObject;
+            }
+        }
+
+        public bool IsJVMRootType
+        {
+            get
+            {
+                return this == Repository.javaLangThrowable
+                       || this == Repository.javaLangObject;
+            }
+        }
+
+        public bool IsCLRRootType
+        {
+            get
+            {
+                return this == Repository.systemObject
+                       || this == Repository.systemException;
             }
         }
 
@@ -162,7 +172,7 @@ namespace net.sf.jni4net.proxygen.model
                 return this;
             if (IsCLRType && IsJVMType)
                 return this;
-            if (IsCLRType && JVMSubst!=null)
+            if (IsCLRType && JVMSubst != null)
             {
                 return JVMSubst;
             }
@@ -172,7 +182,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             if (IsArray)
             {
-                if (ArrayElement.CLRType == typeof(string))
+                if (ArrayElement.CLRType == typeof (string))
                 {
                     JVMSubst = Repository.RegisterClass(String._class).MakeArray();
                     return JVMSubst;
@@ -197,7 +207,7 @@ namespace net.sf.jni4net.proxygen.model
                 GType subst = Base.Resolve();
                 if (!subst.IsRootType)
                 {
-                    if(IsCLRType)
+                    if (IsCLRType)
                     {
                         JVMSubst = subst;
                     }
@@ -232,35 +242,6 @@ namespace net.sf.jni4net.proxygen.model
             {
                 CLRSubst = Repository.javaLangObject;
                 return Repository.javaLangObject;
-            }
-        }
-
-        public bool IsRootType
-        {
-            get
-            {
-                return this == Repository.systemObject
-                       || this == Repository.systemException
-                       || this == Repository.javaLangThrowable
-                       || this == Repository.javaLangObject;
-            }
-        }
-
-        public bool IsJVMRootType
-        {
-            get
-            {
-                return this == Repository.javaLangThrowable
-                       || this == Repository.javaLangObject;
-            }
-        }
-
-        public bool IsCLRRootType
-        {
-            get
-            {
-                return this == Repository.systemObject
-                       || this == Repository.systemException;
             }
         }
 
@@ -299,7 +280,7 @@ namespace net.sf.jni4net.proxygen.model
             JVMNamespaceExt = JVMNamespace;
             if (JVMNamespace.StartsWith("java."))
             {
-                JVMNamespaceExt = "java_."+ JVMNamespace.Substring(5);
+                JVMNamespaceExt = "java_." + JVMNamespace.Substring(5);
             }
             /* TODO
             if (IsJVMGenerate)

@@ -1,21 +1,45 @@
-﻿using System;
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#endregion
+
+using System;
 using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using java.lang;
 using net.sf.jni4net.proxygen.config;
-using Exception=System.Exception;
-using Object=java.lang.Object;
-using String=java.lang.String;
 
 namespace net.sf.jni4net.proxygen.model
 {
-    partial class Repository
+    internal partial class Repository
     {
+        #region Delegates
+
+        public delegate string RegSkip(GMethod skip);
+
+        #endregion
+
         public static List<GType> CLRGenTypes()
         {
-            List<GType> res = new List<GType>();
+            var res = new List<GType>();
             foreach (GType type in all)
             {
                 if (type.IsCLRGenerate && !type.IsInterface)
@@ -30,6 +54,7 @@ namespace net.sf.jni4net.proxygen.model
         {
             return RegisterType(type, null);
         }
+
         internal static GType RegisterType(Type type, TypeRegistration registration)
         {
             if (knownTypes.ContainsKey(type))
@@ -41,7 +66,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 return known;
             }
-            GType res = new GType();
+            var res = new GType();
             if (type.IsArray)
             {
                 res.ArrayElement = RegisterType(type.GetElementType());
@@ -70,7 +95,7 @@ namespace net.sf.jni4net.proxygen.model
             res.CLRType = type;
             if (res.IsArray)
             {
-                res.CLRFullName = type.GetElementType().FullName+ "[]";
+                res.CLRFullName = type.GetElementType().FullName + "[]";
             }
             else
             {
@@ -84,9 +109,9 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.IsCLRRealType = true;
             }
-            if (type.BaseType != null && res.Base == null 
-                && type != typeof(object) 
-                && type != typeof(Exception)
+            if (type.BaseType != null && res.Base == null
+                && type != typeof (object)
+                && type != typeof (Exception)
                 && type.FullName != "java.lang.Throwable"
                 && type.FullName != "java.lang.Object"
                 )
@@ -115,42 +140,53 @@ namespace net.sf.jni4net.proxygen.model
             {
                 Type sub;
                 Type supGeneric = type.GetGenericTypeDefinition();
-                if (typeof(IComparable<>).IsAssignableFrom(supGeneric))
+                if (typeof (IComparable<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(IComparable);
-                    res.LowerName = ("System.IComparable<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (IComparable);
+                    res.LowerName =
+                        ("System.IComparable<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
                 }
-                else if (typeof(IEnumerable<>).IsAssignableFrom(supGeneric))
+                else if (typeof (IEnumerable<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(IEnumerable);
-                    res.LowerName = ("System.Collections.Generic.IEnumerable<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (IEnumerable);
+                    res.LowerName =
+                        ("System.Collections.Generic.IEnumerable<" + type.GetGenericArguments()[0].Name + ">").
+                            ToLowerInvariant();
                 }
-                else if (typeof(IEnumerator<>).IsAssignableFrom(supGeneric))
+                else if (typeof (IEnumerator<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(IEnumerator);
-                    res.LowerName = ("System.Collections.Generic.IEnumerator<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (IEnumerator);
+                    res.LowerName =
+                        ("System.Collections.Generic.IEnumerator<" + type.GetGenericArguments()[0].Name + ">").
+                            ToLowerInvariant();
                 }
-                else if (typeof(IEquatable<>).IsAssignableFrom(supGeneric))
+                else if (typeof (IEquatable<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(object);
-                    res.LowerName = ("System.Collections.Generic.IEquatable<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (object);
+                    res.LowerName =
+                        ("System.Collections.Generic.IEquatable<" + type.GetGenericArguments()[0].Name + ">").
+                            ToLowerInvariant();
                 }
-                else if (typeof(ICollection<>).IsAssignableFrom(supGeneric))
+                else if (typeof (ICollection<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(ICollection);
-                    res.LowerName = ("System.Collections.Generic.ICollection<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (ICollection);
+                    res.LowerName =
+                        ("System.Collections.Generic.ICollection<" + type.GetGenericArguments()[0].Name + ">").
+                            ToLowerInvariant();
                 }
-                else if (typeof(IList<>).IsAssignableFrom(supGeneric))
+                else if (typeof (IList<>).IsAssignableFrom(supGeneric))
                 {
-                    sub = typeof(IList);
-                    res.LowerName = ("System.Collections.Generic.IList<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
+                    sub = typeof (IList);
+                    res.LowerName =
+                        ("System.Collections.Generic.IList<" + type.GetGenericArguments()[0].Name + ">").
+                            ToLowerInvariant();
                 }
                 else
                 {
                     sub = type.BaseType;
                     if (sub == null)
                     {
-                        sub = typeof(object);
+                        sub = typeof (object);
                     }
                 }
                 res.JVMSubst = RegisterType(sub);
@@ -170,7 +206,7 @@ namespace net.sf.jni4net.proxygen.model
                     continue;
                 }
                 RegisterCLRConstructor(type, constructor, register);
-            }            
+            }
         }
 
         private static void RegisterCLRMethods(GType type, bool register)
@@ -178,8 +214,8 @@ namespace net.sf.jni4net.proxygen.model
             Type clrType = type.CLRType;
             foreach (MethodInfo method in clrType.GetMethods())
             {
-                if (method.DeclaringType == type.CLRType 
-                    || type.CLRType == typeof(Exception))
+                if (method.DeclaringType == type.CLRType
+                    || type.CLRType == typeof (Exception))
                 {
                     RegisterCLRMethod(type, method, register);
                 }
@@ -199,7 +235,7 @@ namespace net.sf.jni4net.proxygen.model
         private static void RegisterCLRMethod(GType type, MethodInfo method, bool register)
         {
             object attr = HasAttribute(method, javaMethodAttribute);
-            
+
             if (method.IsGenericMethod || !method.IsPublic || attr != null)
             {
                 if (attr == null && config.Verbose)
@@ -220,7 +256,7 @@ namespace net.sf.jni4net.proxygen.model
                     return;
                 }
             }
-            
+
             GMethod res = RegisterCLRCall(type, method);
             if (res == null || TestCLRType(method.ReturnType))
             {
@@ -258,7 +294,7 @@ namespace net.sf.jni4net.proxygen.model
                 res.Name = method.Name;
                 res.JVMName = method.Name.Replace("_", "");
                 res.CLRName = res.CLRProperty.Name;
-                if (res.CLRProperty.PropertyType == typeof(bool) && res.JVMName.StartsWith("getIs"))
+                if (res.CLRProperty.PropertyType == typeof (bool) && res.JVMName.StartsWith("getIs"))
                 {
                     res.JVMName = "is" + res.JVMName.Substring(5);
                 }
@@ -280,8 +316,6 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        public delegate string RegSkip(GMethod skip);
-
         private static string skipJVM(GMethod skip)
         {
             return skip.Name + skip.GetJVMSignatureNoRet();
@@ -290,7 +324,7 @@ namespace net.sf.jni4net.proxygen.model
         private static void RegisterCLRConstructor(GType type, ConstructorInfo method, bool register)
         {
             GMethod res = RegisterCLRCall(type, method);
-            if (res==null)
+            if (res == null)
             {
                 // skip
                 return;
@@ -311,7 +345,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static GMethod RegisterCLRCall(GType type, MethodBase method)
         {
-            GMethod res = new GMethod();
+            var res = new GMethod();
             res.Type = type;
             res.Name = method.Name;
             res.CLRName = method.Name;
@@ -326,14 +360,14 @@ namespace net.sf.jni4net.proxygen.model
                 res.ParameterNames.Add(info.Name);
                 res.Parameters.Add(RegisterType(info.ParameterType));
             }
-            res.ReturnType = RegisterType(typeof(void));
+            res.ReturnType = RegisterType(typeof (void));
 
             ConvertCLRAttributes(type, res, method);
             res.LowerName = (res.JVMName + res.GetSignatureLowerNoRet());
 
             return res;
         }
-        
+
         private static object HasAttribute(MethodInfo method, Type attribute)
         {
             object[] objects = method.GetCustomAttributes(false);
@@ -437,7 +471,7 @@ namespace net.sf.jni4net.proxygen.model
                     return property;
                 }
             }
-            if (!clazz.IsInterface && clazz.BaseType == typeof(object))
+            if (!clazz.IsInterface && clazz.BaseType == typeof (object))
             {
                 property = FindProperty(f, clazz.BaseType, pname);
                 if (property != null)
@@ -448,6 +482,5 @@ namespace net.sf.jni4net.proxygen.model
 
             return null;
         }
-
     }
 }

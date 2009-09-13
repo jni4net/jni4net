@@ -162,9 +162,9 @@ namespace java.lang
 
         public static bool operator ==(Throwable a, IJavaProxy b)
         {
-            if ((object) a == null && (object) b == null)
+            if ((object) a == null && b == null)
                 return true;
-            if ((object) a == null || (object) b == null)
+            if ((object) a == null || b == null)
                 return false;
             return a.Env.IsSameObject(a, b);
             //return a.native == b.native;
@@ -172,9 +172,9 @@ namespace java.lang
 
         public static bool operator !=(Throwable a, IJavaProxy b)
         {
-            if ((object) a == null && (object) b == null)
+            if ((object) a == null && b == null)
                 return false;
-            if ((object) a == null || (object) b == null)
+            if ((object) a == null || b == null)
                 return true;
             return !a.Env.IsSameObject(a, b);
             //return a.native != b.native;
