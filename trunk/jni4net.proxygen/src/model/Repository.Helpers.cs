@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -359,6 +360,10 @@ namespace net.sf.jni4net.proxygen.model
                     if (modifier.RenameCLR != null)
                     {
                         res.JVMName = modifier.RenameCLR;
+                    }
+                    if (modifier.Hide)
+                    {
+                        res.Attributes = (res.Attributes & (MemberAttributes.VTableMask|MemberAttributes.ScopeMask)) | MemberAttributes.Private;
                     }
                     if (modifier.Skip)
                     {

@@ -180,7 +180,7 @@ namespace net.sf.jni4net.utils
             }
             if (initialized)
             {
-                if (record.CLRWrapper != null)
+                if (Bridge.BindNative && record.CLRWrapper != null)
                 {
                     RegisterNative(record.CLRWrapperInitMethod, env, record.JVMProxy, record.JVMInterface);
                 }

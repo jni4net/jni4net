@@ -45,9 +45,9 @@ namespace net.sf.jni4net {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM2", "(Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM3", "(Lsystem/Exception;Ljava/lang/Class;)Ljava/lang/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getVerbose", "Verbose4", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerbose", "Verbose5", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerboseImpl", "Verbose5", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getDebug", "Debug6", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setDebug", "Debug7", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setDebugImpl", "Debug7", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getBindNative", "BindNative8", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setBindNative", "BindNative9", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly10", "(Ljava/lang/String;)V"));

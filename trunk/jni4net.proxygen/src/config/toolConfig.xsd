@@ -38,6 +38,7 @@
     <xs:attribute name="MethodName" type="xs:string" use="required"/>
     <xs:attribute name="Signature" type="xs:string" use="required"/>
     <xs:attribute name="Skip" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="Hide" type="xs:boolean" use="optional" default="false"/>
     <xs:attribute name="Force" type="xs:boolean" use="optional" default="false"/>
     <xs:attribute name="Return" type="xs:string" use="optional"/>
     <xs:attribute name="Interface" type="xs:string" use="optional"/>
