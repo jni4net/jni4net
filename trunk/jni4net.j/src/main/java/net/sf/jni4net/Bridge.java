@@ -18,73 +18,44 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy;
-import system.*;
 
 import java.lang.String;
 
 @net.sf.jni4net.attributes.ClrType
 public class Bridge extends system.Object {
 
-	private static boolean isRegistered;
+	static boolean isRegistered;
 
 	public static boolean verbose;
 
 	public static void init() throws java.io.IOException {
-		init(findDefaultDll());
-	}
-
-	public static String getVersion() {
-		return VersionReader.getVersion();
-	}
-
-	public static String getNVersion() {
-		return VersionReader.getNVersion();
+		init(CLRLoader.findDefaultDll());
 	}
 
 	public static void init(String fileOrDirectory) {
-		if (!isRegistered) {
-			if (new java.io.File(fileOrDirectory).isDirectory()) {
-				init(fileOrDirectory + "/jni4net.n-" + getNVersion() + ".dll");
-				return;
-			}
-			try {
-				System.load(fileOrDirectory);
-				final int res = initDotNet(verbose);
-				if (res != 0) {
-					System.err.println("Can't initialize jni4net Bridge");
-					throw new net.sf.jni4net.inj.INJException("Can't initialize jni4net Bridge");
-				}
-				isRegistered = true;
-			} catch (Throwable th) {
-				System.err.println("Can't initialize jni4net Bridge" + th.getMessage());
-				throw new net.sf.jni4net.inj.INJException("Can't initialize jni4net Bridge", th);
-			}
-		}
+		CLRLoader.init(fileOrDirectory);
+	}
+
+	public static synchronized String getVersion() {
+		return CLRLoader.getVersion();
 	}
 
 	public static synchronized boolean isRegistered() {
 		return isRegistered;
 	}
 
-	private static String findDefaultDll() throws java.io.IOException {
-		final java.security.CodeSource source = Bridge.class.getProtectionDomain().getCodeSource();
-		final String file = source.getLocation().getFile();
-
-		java.io.File path;
-		if (file.endsWith("classes/")) {
-			final String base = file.substring(0, file.length() - 8).replaceAll("jni4net.j", "jni4net.n") + "jni4net.n";
-			path = new java.io.File(base + "-" + getNVersion() + ".dll");
-			if (!path.exists()) {
-				throw new Error("Can't find " + path);
-			}
-		} else if (file.endsWith(".jar")) {
-			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n");
-			path = new java.io.File(base + ".dll");
-		} else {
-			throw new Error("Can't find " + file);
-		}
-		return path.getCanonicalPath();
+	public static boolean IsCLRInstance(Object obj){
+		return !IsJVMInstance(obj); 
 	}
+	
+	public static boolean IsJVMInstance(Object obj){
+		if (IClrProxy.class.isAssignableFrom(obj.getClass())){
+			//TODO double wrap
+			return false;
+		}
+		return true;
+	}
+
 
 	@SuppressWarnings("unchecked")
 	public static <TRes,TInput> TRes wrapJVM(TInput obj, Class<TRes> requestedClass){
@@ -103,7 +74,7 @@ public class Bridge extends system.Object {
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
 	@net.sf.jni4net.attributes.ClrMethod("()V")
-	private static native int initDotNet(boolean verbose);
+	static native int initDotNet(boolean verbose);
 
 	//<generated-proxy>
     private static system.Type staticType;
@@ -115,12 +86,6 @@ public class Bridge extends system.Object {
     protected Bridge() {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native static boolean IsCLRInstance(system.Object obj);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native static boolean IsJVMInstance(system.Object obj);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/Object;")
     public native static net.sf.jni4net.inj.IClrProxy WrapCLR(system.Object obj);
