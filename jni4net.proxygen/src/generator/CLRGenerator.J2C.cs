@@ -90,12 +90,9 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
+                    CodeExpression expression = CreateConversionExpressionJ2C(type, objVariable);
                     tgtMethod.Statements.Add(
-                        new CodeVariableDeclarationStatement(RealType, realVariableName,
-                                                             new CodeSnippetExpression(
-                                                                 "global::net.sf.jni4net.utils.Convertor.J2C<global::" +
-                                                                 type.CLRResolved +
-                                                                 ">(@" + envVariableName + ", @"+objVariableName+")")));
+                        new CodeVariableDeclarationStatement(RealType, realVariableName,expression));
 
                     if (method.DeclaringType != type)
                     {
@@ -222,7 +219,7 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else 
                 {
-                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpression("J2C", paramType, invokeExpression);
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(paramType, invokeExpression);
                     callParams.Add(conversionExpression);
                 }
             }
