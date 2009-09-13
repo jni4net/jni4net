@@ -369,12 +369,12 @@ namespace net.sf.jni4net.proxygen.generator
                     par = new CodeTypeReference[] { };
                     return CCE("ArrayStrongJp2CString", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && element.IsCLRRealType)
+                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType)
                 {
                     par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                     return CCE("ArrayStrongJp2C", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && element.IsJVMRealType)
+                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType)
                 {
                     par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                     return CCE("ArrayStrongJ2Cp", par, invokeExpression, true);
@@ -402,12 +402,12 @@ namespace net.sf.jni4net.proxygen.generator
                 par = new CodeTypeReference[] { };
                 return CCE("StrongJp2CString", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && paramType.IsCLRRealType)
+            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
             {
                 par = new[] { paramType.CLRReference };
                 return CCE("StrongJp2C", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && paramType.IsJVMRealType)
+            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType)
             {
                 par = new [] { paramType.CLRReference };
                 return CCE("StrongJ2Cp", par, invokeExpression, true);
@@ -441,17 +441,17 @@ namespace net.sf.jni4net.proxygen.generator
                     par = new CodeTypeReference[] { };
                     return CCE(prefix + "ArrayStrongC2JString", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && element.IsCLRRealType)
+                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType)
                 {
                     par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                     return CCE(prefix + "ArrayStrongC2Jp", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && element.IsJVMRealType)
+                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType)
                 {
                     par = new CodeTypeReference[] { };
                     return CCE(prefix + "ArrayStrongCp2J", par, invokeExpression, true);
                 }
-                par = new[] { paramType.CLRReference };
+                par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                 return CCE(prefix + "ArrayFullC2J", par, invokeExpression, true);
             }
             if (paramType.IsPrimitive)
@@ -470,12 +470,12 @@ namespace net.sf.jni4net.proxygen.generator
                 par = new CodeTypeReference[] { };
                 return CCE(prefix + "StrongC2JString", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && paramType.IsCLRRealType)
+            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
             {
                 par = new[] { paramType.CLRReference };
                 return CCE(prefix + "StrongC2Jp", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && paramType.IsJVMRealType)
+            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType)
             {
                 par = new CodeTypeReference[] {};
                 return CCE(prefix + "StrongCp2J", par, invokeExpression, false);
