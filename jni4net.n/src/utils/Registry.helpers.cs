@@ -151,18 +151,22 @@ namespace net.sf.jni4net.utils
                         string s = Marshal.PtrToStringAnsi(registration.signature);
                         if (env.GetMethodIDNoThrow(jvmInterface, n, s) == null)
                         {
-                            try
+                            if (env.GetStaticMethodIDNoThrow(jvmInterface, n, s) == null)
                             {
-                                env.GetStaticMethodID(jvmInterface, n, s);
-                            }
-                            catch (Exception ex2)
-                            {
-                                Console.Error.WriteLine(ex2);
+                                throw new JNIException("Can't find native method" + registration.name + "()" +
+                                                       registration.signature + " in class " + jvmInterface);
                             }
                         }
                     }
                 }
-                JNINativeMethod.Register(registrations, jvmProxy, env);
+                try
+                {
+                    JNINativeMethod.Register(registrations, jvmProxy, env);
+                }
+                catch (Exception ex)
+                {
+                    throw new JNIException("Failed binding native methods for " + jvmInterface, ex);
+                }
             }
         }
 

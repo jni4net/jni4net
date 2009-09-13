@@ -100,6 +100,16 @@ namespace net.sf.jni4net.jni
             return new MethodId(res);
         }
 
+        public MethodId GetStaticMethodIDNoThrow(Class clazz, string name, string sig)
+        {
+            IntPtr res = getStaticMethodID.Invoke(native, clazz.native, name, sig);
+            if (ExceptionRead())
+            {
+                return null;
+            }
+            return new MethodId(res);
+        }
+
         public MethodId GetMethodID(Class clazz, string name, string sig)
         {
             IntPtr res = getMethodID.Invoke(native, clazz.native, name, sig);

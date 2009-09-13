@@ -18,15 +18,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy;
+import net.sf.jni4net.inj.IClrProxy_;
 
 import java.lang.String;
+
+import system.IObject;
 
 @net.sf.jni4net.attributes.ClrType
 public class Bridge extends system.Object {
 
 	static boolean isRegistered;
 
-	public static boolean verbose;
+	static boolean verbose;
+	static boolean debug;
 
 	public static void init() throws java.io.IOException {
 		init(CLRLoader.findDefaultDll());
@@ -34,6 +38,20 @@ public class Bridge extends system.Object {
 
 	public static void init(String fileOrDirectory) {
 		CLRLoader.init(fileOrDirectory);
+	}
+
+	public static void setDebug(boolean value){
+		debug=value;
+		if (isRegistered){
+			setDebugImpl(value);
+		}
+	}
+
+	public static void setVerbose(boolean value){
+		verbose=value;
+		if (isRegistered){
+			setVerboseImpl(value);
+		}
 	}
 
 	public static synchronized String getVersion() {
@@ -49,9 +67,9 @@ public class Bridge extends system.Object {
 	}
 	
 	public static boolean IsJVMInstance(Object obj){
-		if (IClrProxy.class.isAssignableFrom(obj.getClass())){
-			//TODO double wrap
-			return false;
+		if (IObject.class.isAssignableFrom(obj.getClass())){
+			IObject o=(IObject)obj;
+			return IClrProxy_.typeof().IsAssignableFrom(o.GetType());
 		}
 		return true;
 	}
@@ -73,8 +91,8 @@ public class Bridge extends system.Object {
 	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
-	@net.sf.jni4net.attributes.ClrMethod("()V")
-	static native int initDotNet(boolean verbose);
+	@net.sf.jni4net.attributes.ClrMethod("(BB)V")
+	static native int initDotNet(boolean verbose, boolean debug);
 
 	//<generated-proxy>
     private static system.Type staticType;
@@ -103,13 +121,13 @@ public class Bridge extends system.Object {
     public native static boolean getVerbose();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native static void setVerbose(boolean value);
+    private native static void setVerboseImpl(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getDebug();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native static void setDebug(boolean value);
+    private native static void setDebugImpl(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getBindNative();

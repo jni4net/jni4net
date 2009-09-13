@@ -109,8 +109,9 @@ namespace net.sf.jni4net
         #region Initialization
 
         [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
-        internal static int initDotNet(IntPtr envi, IntPtr clazz, bool verbose)
+        internal static int initDotNet(IntPtr envi, IntPtr clazz, bool verbose, bool debug)
         {
+            Debug = debug;
             Verbose = verbose;
             JNIEnv env;
             try

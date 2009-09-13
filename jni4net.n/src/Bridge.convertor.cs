@@ -36,12 +36,7 @@ namespace net.sf.jni4net
             IJavaProxy proxy = obj as IJavaProxy;
             if (proxy!=null)
             {
-                IClrProxy clrProxy = proxy as IClrProxy;
-                if (clrProxy != null)
-                {
-                    return true;
-                }
-                return false;
+                return proxy is IClrProxy;
             }
             return true;
         }
