@@ -76,7 +76,7 @@ namespace java.lang {
         public Double(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
+            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Double(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -141,7 +141,7 @@ namespace java.lang {
         public static global::java.lang.Class TYPE {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Class>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Double.staticClass, global::java.lang.Double._TYPE21));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Double.staticClass, global::java.lang.Double._TYPE21));
             }
         }
         
@@ -176,7 +176,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)J")]
@@ -200,19 +200,19 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Double;)I")]
         public virtual int compareTo(global::java.lang.Double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Double._compareTo4, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/String;")]
         public static global::java.lang.String toHexString(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._toHexString5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._toHexString5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/String;")]
         public static global::java.lang.String toString(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._toString6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._toString6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(DD)I")]
@@ -224,13 +224,13 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Ljava/lang/Double;")]
         public static global::java.lang.Double valueOf(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/Double;")]
         public static global::java.lang.Double valueOf(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf9, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Double>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Double.staticClass, global::java.lang.Double._valueOf9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)Z")]
@@ -260,7 +260,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)D")]
         public static double parseDouble(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return ((double)(@__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._parseDouble14, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0))));
+            return ((double)(@__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._parseDouble14, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -42,7 +42,7 @@ namespace System {
         
         public int CompareTo(object obj) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, obj))));
+            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, obj))));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -58,7 +58,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.IComparable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IComparable>(@__env, @__obj);
-            return ((int)(@__real.CompareTo(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, obj))));
+            return ((int)(@__real.CompareTo(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, obj))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }

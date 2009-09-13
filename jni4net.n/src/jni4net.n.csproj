@@ -240,6 +240,7 @@
     <Compile Include="utils\Convertor.C2J.strong.cs" />
     <Compile Include="utils\Convertor.J2C.cs" />
     <Compile Include="utils\Convertor.J2C.params.cs" />
+    <Compile Include="utils\Convertor.J2C.strong.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

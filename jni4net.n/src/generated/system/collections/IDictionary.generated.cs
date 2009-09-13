@@ -75,7 +75,7 @@ namespace System.Collections {
         public object SyncRoot {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._SyncRoot2));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._SyncRoot2));
             }
         }
         
@@ -89,25 +89,25 @@ namespace System.Collections {
         public object this[object key] {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Item4, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, key)));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Item4, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, key)));
             }
             set {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Item5, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, value));
+                @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Item5, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, value));
             }
         }
         
         public global::System.Collections.ICollection Keys {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Keys6));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.ICollection>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Keys6));
             }
         }
         
         public global::System.Collections.ICollection Values {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Values7));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.ICollection>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._Values7));
             }
         }
         
@@ -147,17 +147,17 @@ namespace System.Collections {
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._CopyTo0, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
+            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._CopyTo0, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
         }
         
         public bool Contains(object key) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._Contains8, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, key))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__IDictionary._Contains8, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, key))));
         }
         
         public void Add(object key, object value) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Add9, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, value));
+            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Add9, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, value));
         }
         
         public void Clear() {
@@ -167,17 +167,17 @@ namespace System.Collections {
         
         public void Remove(object key) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Remove13, global::net.sf.jni4net.utils.Convertor.ParSameC2J<object>(@__env, key));
+            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionary._Remove13, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<object>(@__env, key));
         }
         
         public global::System.Collections.IDictionaryEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator14));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator14));
         }
         
         global::System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator15));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionary._GetEnumerator15));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -208,7 +208,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            ((global::System.Collections.ICollection)(@__real)).CopyTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index);
+            ((global::System.Collections.ICollection)(@__real)).CopyTo(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Array>(@__env, array), index);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -229,7 +229,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, ((global::System.Collections.ICollection)(@__real)).SyncRoot);
+            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, ((global::System.Collections.ICollection)(@__real)).SyncRoot);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -251,7 +251,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real[global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, key)]);
+            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, @__real[global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, key)]);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -262,7 +262,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            @__real[global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, key)] = global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value);
+            @__real[global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, key)] = global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -272,7 +272,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.ICollection>(@__env, @__real.Keys);
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.ICollection>(@__env, @__real.Keys);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -283,7 +283,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.ICollection>(@__env, @__real.Values);
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.ICollection>(@__env, @__real.Values);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -294,7 +294,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return ((bool)(@__real.Contains(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, key))));
+            return ((bool)(@__real.Contains(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, key))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -305,7 +305,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            @__real.Add(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, value));
+            @__real.Add(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, key), global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -347,7 +347,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            @__real.Remove(global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, key));
+            @__real.Remove(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, key));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -357,7 +357,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.IDictionaryEnumerator>(@__env, @__real.GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IDictionaryEnumerator>(@__env, @__real.GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -368,7 +368,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.IDictionary @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IDictionary>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

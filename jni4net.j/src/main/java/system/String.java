@@ -107,10 +107,10 @@ public class String extends system.Object implements system.IComparable, system.
     public native system.collections.IEnumerator GetEnumerator();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;)LSystem/String;")
-    public native static java.lang.String Join(java.lang.String separator, system.String[] value);
+    public native static java.lang.String Join(java.lang.String separator, java.lang.String[] value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;II)LSystem/String;")
-    public native static java.lang.String Join(java.lang.String separator, system.String[] value, int startIndex, int count);
+    public native static java.lang.String Join(java.lang.String separator, java.lang.String[] value, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
     public native boolean Equals(java.lang.String value);
@@ -143,22 +143,22 @@ public class String extends system.Object implements system.IComparable, system.
     public native final int getLength();
     
     @net.sf.jni4net.attributes.ClrMethod("([C)[LSystem/String;")
-    public native final system.String[] Split(char[] separator);
+    public native final java.lang.String[] Split(char[] separator);
     
     @net.sf.jni4net.attributes.ClrMethod("([CI)[LSystem/String;")
-    public native final system.String[] Split(char[] separator, int count);
+    public native final java.lang.String[] Split(char[] separator, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("([CLSystem/StringSplitOptions;)[LSystem/String;")
-    public native final system.String[] Split(char[] separator, system.Enum options);
+    public native final java.lang.String[] Split(char[] separator, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([CILSystem/StringSplitOptions;)[LSystem/String;")
-    public native final system.String[] Split(char[] separator, int count, system.Enum options);
+    public native final java.lang.String[] Split(char[] separator, int count, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;LSystem/StringSplitOptions;)[LSystem/String;")
-    public native final system.String[] Split(system.String[] separator, system.Enum options);
+    public native final java.lang.String[] Split(java.lang.String[] separator, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;ILSystem/StringSplitOptions;)[LSystem/String;")
-    public native final system.String[] Split(system.String[] separator, int count, system.Enum options);
+    public native final java.lang.String[] Split(java.lang.String[] separator, int count, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/String;")
     public native final java.lang.String Substring(int startIndex);
@@ -410,7 +410,7 @@ public class String extends system.Object implements system.IComparable, system.
     public native static java.lang.String Concat(java.lang.String str0, java.lang.String str1, java.lang.String str2, java.lang.String str3);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)LSystem/String;")
-    public native static java.lang.String Concat(system.String[] values);
+    public native static java.lang.String Concat(java.lang.String[] values);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/String;")
     public native static java.lang.String Intern(java.lang.String str);

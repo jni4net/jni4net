@@ -53,7 +53,7 @@ namespace System.Collections {
         public object SyncRoot {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.J2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._SyncRoot3));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._SyncRoot3));
             }
         }
         
@@ -75,12 +75,12 @@ namespace System.Collections {
         
         public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._GetEnumerator0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._GetEnumerator0));
         }
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
+            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -100,7 +100,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -111,7 +111,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            @__real.CopyTo(global::net.sf.jni4net.utils.Convertor.J2C<global::System.Array>(@__env, array), index);
+            @__real.CopyTo(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Array>(@__env, array), index);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -132,7 +132,7 @@ namespace System.Collections {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.ICollection>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<object>(@__env, @__real.SyncRoot);
+            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, @__real.SyncRoot);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

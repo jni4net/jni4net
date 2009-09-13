@@ -1,6 +1,7 @@
 using System;
 using java.lang;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.inj
 {
@@ -13,9 +14,16 @@ namespace net.sf.jni4net.inj
 
     partial class __IClrProxy
     {
-        internal static int getClrHandle(JNIEnv env, IntPtr obj)
+        static int getClrHandle(JNIEnv env, IntPtr obj)
         {
             return env.CallIntMethod(obj, _getClrHandle0);
+        }
+
+        internal static object GetObject(JNIEnv env, IntPtr obj)
+        {
+            int handle = getClrHandle(env, obj);
+            object real = IntHandle.ToObject(handle);
+            return real;
         }
 
         internal static IClrProxy CreateProxy(JNIEnv env, IntPtr obj, Class clazz)

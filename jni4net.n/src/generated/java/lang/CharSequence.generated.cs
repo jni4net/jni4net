@@ -69,7 +69,7 @@ namespace java.lang {
         
         public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.String>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._toString0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._toString0));
         }
         
         public char charAt(int par0) {
@@ -84,7 +84,7 @@ namespace java.lang {
         
         public global::java.lang.CharSequence subSequence(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._subSequence3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._subSequence3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -103,7 +103,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FinalCp2J(@__real.toString());
+            return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.toString());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -136,7 +136,7 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.SameC2J<global::java.lang.CharSequence>(@__env, @__real.subSequence(par0, par1));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.CharSequence>(@__env, @__real.subSequence(par0, par1));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

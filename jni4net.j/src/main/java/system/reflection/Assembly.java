@@ -186,7 +186,7 @@ public class Assembly extends system.Object implements system.security.IEvidence
     public native system.io.FileStream[] GetFiles(boolean getResourceModules);
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native system.String[] GetManifestResourceNames();
+    public native java.lang.String[] GetManifestResourceNames();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Assembly;")
     public native static system.reflection.Assembly GetExecutingAssembly();

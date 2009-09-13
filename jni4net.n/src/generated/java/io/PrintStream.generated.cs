@@ -91,49 +91,49 @@ namespace java.io {
         public PrintStream(global::java.io.File par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor28, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.File>(@__env, par0));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor28, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;Z)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor29, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.OutputStream>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor29, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;ZLjava/lang/String;)V")]
         public PrintStream(global::java.io.OutputStream par0, bool par1, global::java.lang.String par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor30, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.OutputStream>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par2));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor30, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor31, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor31, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)V")]
         public PrintStream(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor32, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor32, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public PrintStream(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor33, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.File>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor33, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
         public PrintStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor34, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.io.OutputStream>(@__env, par0));
+            @__env.NewObject(global::java.io.PrintStream.staticClass, global::java.io.PrintStream.@__ctor34, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected PrintStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -188,19 +188,19 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)Ljava/lang/Appendable;")]
         public virtual global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)Ljava/lang/Appendable;")]
         public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append1, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;")]
         public virtual global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append2, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._append2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -242,19 +242,19 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public virtual void println(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._println9, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._println9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public virtual void println(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._println10, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._println10, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)V")]
         public virtual void println(char[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._println11, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._println11, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
@@ -272,13 +272,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;")]
         public virtual global::java.io.PrintStream format(global::java.lang.Object par0, global::java.lang.String par1, java.lang.Object[] par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._format14, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.Object[]>(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._format14, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;")]
         public virtual global::java.io.PrintStream format(global::java.lang.String par0, java.lang.Object[] par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._format15, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.Object[]>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._format15, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par1)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
@@ -296,13 +296,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public virtual void print(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._print18, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._print18, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public virtual void print(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._print19, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._print19, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
@@ -314,7 +314,7 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([C)V")]
         public virtual void print(char[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::java.io.PrintStream._print21, global::net.sf.jni4net.utils.Convertor.ParArrayC2J<char[]>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.PrintStream._print21, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
@@ -344,13 +344,13 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;")]
         public virtual global::java.io.PrintStream printf(global::java.lang.Object par0, global::java.lang.String par1, java.lang.Object[] par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._printf26, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.Object[]>(@__env, par2)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._printf26, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par2)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;")]
         public virtual global::java.io.PrintStream printf(global::java.lang.String par0, java.lang.Object[] par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._printf27, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayC2J<java.lang.Object[]>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.PrintStream._printf27, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par1)));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

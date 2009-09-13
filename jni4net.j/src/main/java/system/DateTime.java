@@ -308,7 +308,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native static system.DateTime ParseExact(java.lang.String s, java.lang.String format, system.IFormatProvider provider, system.Enum style);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;)LSystem/DateTime;")
-    public native static system.DateTime ParseExact(java.lang.String s, system.String[] formats, system.IFormatProvider provider, system.Enum style);
+    public native static system.DateTime ParseExact(java.lang.String s, java.lang.String[] formats, system.IFormatProvider provider, system.Enum style);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)LSystem/TimeSpan;")
     public native final system.ValueType Subtract(system.DateTime value);
@@ -347,16 +347,16 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native final system.DateTime ToUniversalTime();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native final system.String[] GetDateTimeFormats();
+    public native final java.lang.String[] GetDateTimeFormats();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IFormatProvider;)[LSystem/String;")
-    public native final system.String[] GetDateTimeFormats(system.IFormatProvider provider);
+    public native final java.lang.String[] GetDateTimeFormats(system.IFormatProvider provider);
     
     @net.sf.jni4net.attributes.ClrMethod("(C)[LSystem/String;")
-    public native final system.String[] GetDateTimeFormats(char format);
+    public native final java.lang.String[] GetDateTimeFormats(char format);
     
     @net.sf.jni4net.attributes.ClrMethod("(CLSystem/IFormatProvider;)[LSystem/String;")
-    public native final system.String[] GetDateTimeFormats(char format, system.IFormatProvider provider);
+    public native final java.lang.String[] GetDateTimeFormats(char format, system.IFormatProvider provider);
     
     public static system.Type typeof() {
         return system.DateTime.staticType;

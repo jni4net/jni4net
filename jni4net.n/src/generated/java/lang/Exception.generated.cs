@@ -29,14 +29,14 @@ namespace java.lang {
         public Exception(global::java.lang.String par0, global::java.lang.Throwable par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
         public Exception(global::java.lang.Throwable par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParSameC2J<global::java.lang.Throwable>(@__env, par0));
+            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -50,7 +50,7 @@ namespace java.lang {
         public Exception(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParFinalCp2J(par0));
+            @__env.NewObject(global::java.lang.Exception.staticClass, global::java.lang.Exception.@__ctor3, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Exception(global::net.sf.jni4net.jni.JNIEnv @__env) : 

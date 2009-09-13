@@ -87,7 +87,7 @@ public class Type extends system.reflection.MemberInfo {
     public native static system.Object getDefaultBinder();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;[LSystem/Reflection/ParameterModifier;LSystem/Globalization/CultureInfo;[LSystem/String;)LSystem/Object;")
-    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.ValueType[] modifiers, system.Object culture, system.String[] namedParameters);
+    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.ValueType[] modifiers, system.Object culture, java.lang.String[] namedParameters);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
     public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.Object culture);
