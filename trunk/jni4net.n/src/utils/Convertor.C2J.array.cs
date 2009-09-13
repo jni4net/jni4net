@@ -7,6 +7,37 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
+        public static IntPtr ArrayFullC2J<TBoth, TElem>(JNIEnv env, TBoth obj)
+            where TBoth : class
+        {
+            if (obj == null)
+            {
+                return IntPtr.Zero;
+            }
+#if  DEBUG
+            if (!typeof(TBoth).IsArray)
+            {
+                throw new ArgumentException("Must be array type");
+            }
+            if (typeof(TBoth).GetElementType() != typeof(TElem))
+            {
+                throw new ArgumentException("Must be array of type" + typeof(TElem));
+            }
+#endif
+            var array = (Array)(object)obj;
+            int length = array.Length;
+            Type elementType = typeof(TBoth).GetElementType();
+            Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
+
+            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
+            for (int i = 0; i < length; i++)
+            {
+                IntPtr item = FullC2J(env, (TElem)array.GetValue(i));
+                env.SetObjectArrayElement(res, i, item);
+            }
+            return res;
+        }
+
         public static IntPtr ArrayStrongC2Jp<TBoth, TElem>(JNIEnv env, TBoth obj)
             where TBoth : class
             //should be where TBoth : Array
@@ -28,7 +59,7 @@ namespace net.sf.jni4net.utils
             var array = (Array) (object) obj;
             int length = array.Length;
             Type elementType = typeof (TBoth).GetElementType();
-            Class elemClazz = Registry.Default.GetCLRRecord(elementType).JVMInterface;
+            Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
 
             IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
             for (int i = 0; i < length; i++)
@@ -56,7 +87,7 @@ namespace net.sf.jni4net.utils
             var array = (Array) (object) obj;
             int length = array.Length;
             Type elementType = typeof (TBoth).GetElementType();
-            Class elemClazz = Registry.Default.GetCLRRecord(elementType).JVMInterface;
+            Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
             IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
             for (int i = 0; i < length; i++)
             {

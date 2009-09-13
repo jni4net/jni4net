@@ -71,7 +71,7 @@ namespace System {
             // (LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.InvalidOperationException @__real = new global::System.InvalidOperationException(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Exception>(@__env, innerException));
+            global::System.InvalidOperationException @__real = new global::System.InvalidOperationException(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

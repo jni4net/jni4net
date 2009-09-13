@@ -82,7 +82,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Enum @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Enum>(@__env, @__obj);
-            return ((int)(((global::System.IComparable)(@__real)).CompareTo(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, obj))));
+            return ((int)(((global::System.IComparable)(@__real)).CompareTo(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, obj))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
         }
@@ -280,7 +280,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Enum @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Enum>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, ((global::System.IConvertible)(@__real)).ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, ((global::System.IConvertible)(@__real)).ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -290,7 +290,7 @@ namespace System {
             // (LSystem/Type;LSystem/String;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -300,7 +300,7 @@ namespace System {
             // (LSystem/Type;LSystem/String;Z)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value), ignoreCase));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.Parse(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value), ignoreCase));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -330,7 +330,7 @@ namespace System {
             // (LSystem/Type;LSystem/Object;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Enum.GetName(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value)));
+            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Enum.GetName(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -350,7 +350,7 @@ namespace System {
             // (LSystem/Type;LSystem/Object;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value)));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -360,7 +360,7 @@ namespace System {
             // (LSystem/Type;LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return ((bool)(global::System.Enum.IsDefined(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value))));
+            return ((bool)(global::System.Enum.IsDefined(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
         }
@@ -370,7 +370,7 @@ namespace System {
             // (LSystem/Type;LSystem/Object;LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Enum.Format(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format)));
+            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Enum.Format(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value), global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -391,7 +391,7 @@ namespace System {
             // (LSystem/Type;LSystem/SByte;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -401,7 +401,7 @@ namespace System {
             // (LSystem/Type;S)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -411,7 +411,7 @@ namespace System {
             // (LSystem/Type;I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -421,7 +421,7 @@ namespace System {
             // (LSystem/Type;J)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
+            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::System.Enum.ToObject(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, enumType), value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -91,7 +91,7 @@ namespace java.lang.reflect {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.Type[]>(@__env, @__real.getActualTypeArguments());
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__real.getActualTypeArguments());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }

@@ -83,7 +83,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public static void voidMethod(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod1, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
@@ -119,7 +119,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._equals7, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JavaCallStaticMethods._equals7, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
