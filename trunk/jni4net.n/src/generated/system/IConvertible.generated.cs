@@ -165,7 +165,7 @@ namespace System {
         
         public string ToString(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToString15, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToString15, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
         }
         
         public object ToType(global::System.Type conversionType, global::System.IFormatProvider provider) {

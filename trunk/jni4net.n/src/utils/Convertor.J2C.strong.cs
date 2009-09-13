@@ -56,6 +56,16 @@ namespace net.sf.jni4net.utils
 
         #region Well known
 
+        public static string StrongJ2CString(JNIEnv env, IntPtr obj)
+        {
+            if (obj == IntPtr.Zero)
+            {
+                return null;
+            }
+            string res = env.ConvertToString(obj);
+            return res;
+        }
+
         public static string StrongJp2CString(JNIEnv env, IntPtr obj)
         {
             if (obj == IntPtr.Zero)

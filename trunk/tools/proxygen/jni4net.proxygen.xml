@@ -241,6 +241,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	  <MethodModifier MethodName="CreateJVM" Signature="([LSystem/String;)V" Skip="true"/>
 	  <MethodModifier MethodName="IsCLRInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
 	  <MethodModifier MethodName="IsJVMInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
+	  <MethodModifier MethodName="WrapCLR" Signature="(LSystem/Object;)LSystem/Object;" Skip="true"/>
 	  <MethodModifier MethodName="set_Verbose" Signature="(Z)V" RenameJVM="setVerboseImpl" Hide="true"/>
 	  <MethodModifier MethodName="set_Debug" Signature="(Z)V" RenameJVM="setDebugImpl" Hide="true"/>
   </ClrType>

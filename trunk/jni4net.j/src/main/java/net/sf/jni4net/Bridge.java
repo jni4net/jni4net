@@ -17,7 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package net.sf.jni4net;
 
-import net.sf.jni4net.inj.IClrProxy;
 import net.sf.jni4net.inj.IClrProxy_;
 
 import java.lang.String;
@@ -62,11 +61,11 @@ public class Bridge extends system.Object {
 		return isRegistered;
 	}
 
-	public static boolean IsCLRInstance(Object obj){
-		return !IsJVMInstance(obj); 
+	public static boolean isCLRInstance(Object obj){
+		return !isJVMInstance(obj);
 	}
 	
-	public static boolean IsJVMInstance(Object obj){
+	public static boolean isJVMInstance(Object obj){
 		if (IObject.class.isAssignableFrom(obj.getClass())){
 			IObject o=(IObject)obj;
 			return IClrProxy_.typeof().IsAssignableFrom(o.GetType());
@@ -91,8 +90,8 @@ public class Bridge extends system.Object {
 	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
-	@net.sf.jni4net.attributes.ClrMethod("(BB)V")
-	static native int initDotNet(boolean verbose, boolean debug);
+	@net.sf.jni4net.attributes.ClrMethod("()I")
+	static native int initDotNet();
 
 	//<generated-proxy>
     private static system.Type staticType;
@@ -104,9 +103,6 @@ public class Bridge extends system.Object {
     protected Bridge() {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/Object;")
-    public native static net.sf.jni4net.inj.IClrProxy WrapCLR(system.Object obj);
     
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
     public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);

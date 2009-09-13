@@ -120,6 +120,23 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
+        public static string[] ArrayStrongJ2CString(JNIEnv env, IntPtr array)
+        {
+            if (array == IntPtr.Zero)
+            {
+                return null;
+            }
+            int length = env.GetArrayLength(array);
+            var res = new string[length];
+            for (int i = 0; i < length; i++)
+            {
+                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                string element = StrongJ2CString(env, elementPtr);
+                res.SetValue(element, i);
+            }
+            return res;
+        }
+
         public static Class[] ArrayStrongJ2CpClass(JNIEnv env, IntPtr array)
         {
             if (array == IntPtr.Zero)

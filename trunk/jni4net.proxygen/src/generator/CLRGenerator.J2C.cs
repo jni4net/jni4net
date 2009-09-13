@@ -243,7 +243,7 @@ namespace net.sf.jni4net.proxygen.generator
                 }
                 else
                 {
-                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2C(paramType,
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2CParam(paramType,
                                                                                                     invokeExpression);
                     callParams.Add(conversionExpression);
                 }

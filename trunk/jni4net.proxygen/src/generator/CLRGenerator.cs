@@ -366,8 +366,17 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.Members.Add(constructionHelper);
         }
 
-        private CodeMethodInvokeExpression CreateConversionExpressionJ2C(GType paramType,
-                                                                         CodeExpression invokeExpression)
+        private CodeMethodInvokeExpression CreateConversionExpressionJ2C(GType paramType, CodeExpression invokeExpression)
+        {
+            return CEEJ2C(paramType, invokeExpression, false);
+        }
+
+        private CodeMethodInvokeExpression CreateConversionExpressionJ2CParam(GType paramType, CodeExpression invokeExpression)
+        {
+            return CEEJ2C(paramType, invokeExpression, true);
+        }
+
+        private CodeMethodInvokeExpression CEEJ2C(GType paramType, CodeExpression invokeExpression, bool param)
         {
             CodeTypeReference[] par;
             if (paramType.IsArray)
@@ -383,15 +392,15 @@ namespace net.sf.jni4net.proxygen.generator
                     par = new CodeTypeReference[] {};
                     return CCE("ArrayStrongJ2CpString", par, invokeExpression, true);
                 }
+                if (element == Repository.systemString)
+                {
+                    par = new CodeTypeReference[] { };
+                    return CCE("ArrayStrongJ2CString", par, invokeExpression, true);
+                }
                 if (element == Repository.javaLangClass)
                 {
                     par = new CodeTypeReference[] {};
                     return CCE("ArrayStrongJ2CpClass", par, invokeExpression, true);
-                }
-                if (element == Repository.systemString)
-                {
-                    par = new CodeTypeReference[] {};
-                    return CCE("ArrayStrongJp2CString", par, invokeExpression, true);
                 }
                 if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType)
                 {
@@ -416,15 +425,15 @@ namespace net.sf.jni4net.proxygen.generator
                 par = new CodeTypeReference[] {};
                 return CCE("StrongJ2CpString", par, invokeExpression, true);
             }
+            if (paramType == Repository.systemString)
+            {
+                par = new CodeTypeReference[] { };
+                return CCE("StrongJ2CString", par, invokeExpression, true);
+            }
             if (paramType == Repository.javaLangClass)
             {
                 par = new CodeTypeReference[] {};
                 return CCE("StrongJ2CpClass", par, invokeExpression, true);
-            }
-            if (paramType == Repository.systemString)
-            {
-                par = new CodeTypeReference[] {};
-                return CCE("StrongJp2CString", par, invokeExpression, true);
             }
             if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
             {
