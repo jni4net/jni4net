@@ -37,7 +37,7 @@ public class TestClr {
 	public static void setup() throws IOException {
 		Bridge.verbose = true;
 		Bridge.init(new File("../jni4net.tested.n/target").getCanonicalPath());
-		Bridge.LoadAndRegisterAssembly(new File("../jni4net.tested.n/target/jni4net.tested.n-" + Bridge.getNVersion() + ".dll").getAbsolutePath());
+		Bridge.LoadAndRegisterAssembly(new File("../jni4net.tested.n/target/jni4net.tested.n-" + Bridge.getVersion() + ".dll").getAbsolutePath());
 	}
 
 
