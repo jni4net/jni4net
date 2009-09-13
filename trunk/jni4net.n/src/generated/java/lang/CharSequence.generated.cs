@@ -102,7 +102,7 @@ namespace java.lang {
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
+            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.toString());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -113,7 +113,7 @@ namespace java.lang {
             // (I)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
+            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__obj);
             return ((char)(@__real.charAt(par0)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(char);
@@ -124,7 +124,7 @@ namespace java.lang {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
+            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__obj);
             return ((int)(@__real.length()));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
@@ -135,7 +135,7 @@ namespace java.lang {
             // (II)Ljava/lang/CharSequence;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.CharSequence>(@__env, @__obj);
+            global::java.lang.CharSequence @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.CharSequence>(@__env, @__real.subSequence(par0, par1));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

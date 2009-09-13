@@ -51,7 +51,7 @@ namespace net.sf.jni4net.tested {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterface;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.tested.CWithJavaInterface>(@__env, @__real.createCWithJavaInterface(i));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -62,7 +62,7 @@ namespace net.sf.jni4net.tested {
             // (I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.tested.CWithJavaInterfaceUnreg>(@__env, @__real.CWithJavaInterfaceUnreg(i));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

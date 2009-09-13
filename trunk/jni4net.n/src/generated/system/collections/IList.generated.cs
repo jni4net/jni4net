@@ -203,7 +203,7 @@ namespace System.Collections {
             // ()LSystem/Collections/IEnumerator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -214,7 +214,7 @@ namespace System.Collections {
             // (LSystem/Array;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             ((global::System.Collections.ICollection)(@__real)).CopyTo(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Array>(@__env, array), index);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -224,7 +224,7 @@ namespace System.Collections {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((int)(((global::System.Collections.ICollection)(@__real)).Count));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
@@ -235,7 +235,7 @@ namespace System.Collections {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, ((global::System.Collections.ICollection)(@__real)).SyncRoot);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -246,7 +246,7 @@ namespace System.Collections {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((bool)(((global::System.Collections.ICollection)(@__real)).IsSynchronized));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
@@ -257,7 +257,7 @@ namespace System.Collections {
             // (I)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, @__real[index]);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -268,7 +268,7 @@ namespace System.Collections {
             // (ILSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             @__real[index] = global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -278,7 +278,7 @@ namespace System.Collections {
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((int)(@__real.Add(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
@@ -289,7 +289,7 @@ namespace System.Collections {
             // (LSystem/Object;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((bool)(@__real.Contains(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
@@ -300,7 +300,7 @@ namespace System.Collections {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             @__real.Clear();
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -310,7 +310,7 @@ namespace System.Collections {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((bool)(@__real.IsReadOnly));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
@@ -321,7 +321,7 @@ namespace System.Collections {
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((bool)(@__real.IsFixedSize));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
@@ -332,7 +332,7 @@ namespace System.Collections {
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             return ((int)(@__real.IndexOf(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(int);
@@ -343,7 +343,7 @@ namespace System.Collections {
             // (ILSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             @__real.Insert(index, global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -353,7 +353,7 @@ namespace System.Collections {
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             @__real.Remove(global::net.sf.jni4net.utils.Convertor.StrongJp2C<object>(@__env, value));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -363,7 +363,7 @@ namespace System.Collections {
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IList>(@__env, @__obj);
+            global::System.Collections.IList @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IList>(@__env, @__obj);
             @__real.RemoveAt(index);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

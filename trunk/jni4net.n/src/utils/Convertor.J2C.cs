@@ -2,43 +2,14 @@
 using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
-using Boolean=java.lang.Boolean;
-using Byte=java.lang.Byte;
-using Double=java.lang.Double;
-using Object=java.lang.Object;
 using String=java.lang.String;
 
 namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static Class J2CClass(JNIEnv env, IntPtr obj)
-        {
-            Class res = new Class(env);
-            ((IJavaProxy)res).Init(env, obj, Class._class);
-            return res;
-        }
 
-        public static String J2CString(JNIEnv env, IntPtr obj)
-        {
-            String res = new String(env);
-            ((IJavaProxy)res).Init(env, obj, String._class);
-            return res;
-        }
-
-        public static Object J2CObject(JNIEnv env, IntPtr obj)
-        {
-            Object res = new Object(env);
-            ((IJavaProxy)res).Init(env, obj, Object._class);
-            return res;
-        }
-
-        public static TRes J2C<TInput, TRes>(JNIEnv env, IntPtr obj)
-        {
-            return J2C<TRes>(env, obj);
-        }
-
-        public static TRes J2C<TRes>(JNIEnv env, IntPtr obj)
+        public static TRes FullJ2C<TRes>(JNIEnv env, IntPtr obj)
         {
             Class clazz;
             if (obj == IntPtr.Zero)
@@ -51,14 +22,14 @@ namespace net.sf.jni4net.utils
                 //TODO all sealed ?
                 if (clrType == typeof(Class))
                 {
-                    return (TRes)(object)J2CClass(env, obj);
+                    return (TRes)(object)StrongJ2CpClass(env, obj);
                 }
                 clazz = env.GetObjectClass(obj);
                 if (clrType == typeof(String))
                 {
                     if (clazz == String._class)
                     {
-                        return (TRes)(object)J2CString(env, obj);
+                        return (TRes)(object)StrongJ2CpString(env, obj);
                     }
                     return (TRes) (object) env.NewString((string) OptiJP2C(env, obj));
                 }

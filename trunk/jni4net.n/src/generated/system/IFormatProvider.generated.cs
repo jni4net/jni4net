@@ -57,7 +57,7 @@ namespace System {
             // (LSystem/Type;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.IFormatProvider>(@__env, @__obj);
+            global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, formatType)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

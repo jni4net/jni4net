@@ -171,7 +171,7 @@ namespace java.lang {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/lang/StackTraceElement;")]
         public virtual java.lang.StackTraceElement[] getStackTrace() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.lang.StackTraceElement[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Throwable._getStackTrace9));
+            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.lang.StackTraceElement[], global::java.lang.StackTraceElement>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Throwable._getStackTrace9));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)Ljava/lang/Throwable;")]

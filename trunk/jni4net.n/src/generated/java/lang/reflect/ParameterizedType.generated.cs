@@ -63,7 +63,7 @@ namespace java.lang.reflect {
         
         public java.lang.reflect.Type[] getActualTypeArguments() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0));
         }
         
         public global::java.lang.reflect.Type getOwnerType() {
@@ -90,7 +90,7 @@ namespace java.lang.reflect {
             // ()[Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.Type[]>(@__env, @__real.getActualTypeArguments());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -101,7 +101,7 @@ namespace java.lang.reflect {
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.reflect.Type>(@__env, @__real.getOwnerType());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -112,7 +112,7 @@ namespace java.lang.reflect {
             // ()Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
+            global::java.lang.reflect.ParameterizedType @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.ParameterizedType>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.reflect.Type>(@__env, @__real.getRawType());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

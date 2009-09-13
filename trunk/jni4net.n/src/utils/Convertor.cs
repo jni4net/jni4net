@@ -1,5 +1,4 @@
 ﻿using System;
-using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 

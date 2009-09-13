@@ -66,7 +66,7 @@ namespace java.io {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.io.Closeable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.io.Closeable>(@__env, @__obj);
+            global::java.io.Closeable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.io.Closeable>(@__env, @__obj);
             @__real.close();
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

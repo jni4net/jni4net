@@ -552,7 +552,7 @@ namespace System {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2J(@__env, global::System.Console.Title);
+            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.Title);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -737,7 +737,7 @@ namespace System {
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2J(@__env, global::System.Console.ReadLine());
+            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.ReadLine());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
@@ -891,7 +891,7 @@ namespace System {
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Console.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[]>(@__env, arg));
+            global::System.Console.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[], object>(@__env, arg));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -936,7 +936,7 @@ namespace System {
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Console.Write(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[]>(@__env, arg));
+            global::System.Console.Write(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayStrongJp2C<object[], object>(@__env, arg));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         

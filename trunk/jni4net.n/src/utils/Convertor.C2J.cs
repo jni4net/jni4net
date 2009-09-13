@@ -123,6 +123,7 @@ namespace net.sf.jni4net.utils
             Class elemClazz = Registry.Default.GetCLRRecord(elementType).JVMInterface;
             int length = array.Length;
             IntPtr res;
+            //TODO signed types
             if (typeof (int) == elementType)
             {
                 res = env.NewIntArrayPtr(length);

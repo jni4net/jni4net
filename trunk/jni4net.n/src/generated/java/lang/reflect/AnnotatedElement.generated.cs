@@ -74,12 +74,12 @@ namespace java.lang.reflect {
         
         public java.lang.annotation.Annotation[] getAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.annotation.Annotation[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__AnnotatedElement._getAnnotations1));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__AnnotatedElement._getAnnotations1));
         }
         
         public java.lang.annotation.Annotation[] getDeclaredAnnotations() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.annotation.Annotation[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__AnnotatedElement._getDeclaredAnnotations2));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__AnnotatedElement._getDeclaredAnnotations2));
         }
         
         public bool isAnnotationPresent(global::java.lang.Class par0) {
@@ -102,7 +102,7 @@ namespace java.lang.reflect {
             // (Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
+            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.annotation.Annotation>(@__env, @__real.getAnnotation(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0)));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -113,7 +113,7 @@ namespace java.lang.reflect {
             // ()[Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
+            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[]>(@__env, @__real.getAnnotations());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -124,7 +124,7 @@ namespace java.lang.reflect {
             // ()[Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
+            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[]>(@__env, @__real.getDeclaredAnnotations());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
@@ -135,7 +135,7 @@ namespace java.lang.reflect {
             // (Ljava/lang/Class;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
+            global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
             return ((bool)(@__real.isAnnotationPresent(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0))));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(bool);
