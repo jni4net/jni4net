@@ -150,7 +150,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Exception @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, @__obj);
-            @__real.HelpLink = global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value);
+            @__real.HelpLink = global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, value);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -171,7 +171,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Exception @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, @__obj);
-            @__real.Source = global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, value);
+            @__real.Source = global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, value);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
@@ -234,7 +234,7 @@ namespace System {
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Exception @__real = new global::System.Exception(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, message));
+            global::System.Exception @__real = new global::System.Exception(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -244,7 +244,7 @@ namespace System {
             // (LSystem/String;LSystem/Exception;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Exception @__real = new global::System.Exception(global::net.sf.jni4net.utils.Convertor.StrongJp2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, innerException));
+            global::System.Exception @__real = new global::System.Exception(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

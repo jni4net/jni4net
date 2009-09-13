@@ -60,6 +60,13 @@ namespace net.sf.jni4net.jni
 
         #region reflection
 
+        public IntPtr FindClassPtr(string name)
+        {
+            IntPtr clazz = findClass.Invoke(native, name);
+            ExceptionTest();
+            return clazz;
+        }
+
         public Class FindClass(string name)
         {
             IntPtr clazz = findClass.Invoke(native, name);
@@ -168,10 +175,16 @@ namespace net.sf.jni4net.jni
 
 #endif
 
+        public IntPtr GetStaticFieldIDPtr(IntPtr clazz, string name, string sig)
+        {
+            IntPtr res = getStaticFieldID.Invoke(native, clazz, name, sig);
+            ExceptionTest();
+            return res;
+        }
+
         public FieldId GetStaticFieldID(Class clazz, string name, string sig)
         {
-            IntPtr res = getStaticFieldID.Invoke(native, clazz.native, name, sig);
-            ExceptionTest();
+            IntPtr res = GetStaticFieldIDPtr(clazz.native, name, sig);
             return new FieldId(res);
         }
 
@@ -917,11 +930,16 @@ namespace net.sf.jni4net.jni
         }
 
 
-        public bool GetStaticBooleanField(Class clazz, FieldId fieldID)
+        public bool GetStaticBooleanField(IntPtr clazz, IntPtr fieldID)
         {
-            bool res = getStaticBooleanField(native, clazz.native, fieldID.native) != 0;
+            bool res = getStaticBooleanField(native, clazz, fieldID) != 0;
             ExceptionTest();
             return res;
+        }
+
+        public bool GetStaticBooleanField(Class clazz, FieldId fieldID)
+        {
+            return GetStaticBooleanField(clazz.native, fieldID.native);
         }
 
         public byte GetStaticByteField(Class clazz, FieldId fieldID)
@@ -1248,7 +1266,7 @@ namespace net.sf.jni4net.jni
             IntPtr occurred = ExceptionOccurred();
             if (IntPtr.Zero != occurred)
             {
-                if (Bridge.Verbose)
+                if (Bridge.Verbose && Bridge.Debug)
                 {
                     ExceptionDescribe();
                 }

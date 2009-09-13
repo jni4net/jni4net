@@ -81,13 +81,13 @@ namespace net.sf.jni4net
             {
                 if (Verbose)
                 {
-                    Console.WriteLine("skipped " + assembly);
+                    Console.WriteLine("skipped " + assembly + " from " + assembly.Location);
                 }
                 return;
             }
             if (Verbose)
             {
-                Console.WriteLine("loading " + assembly);
+                Console.WriteLine("loading " + assembly + " from " + assembly.Location);
             }
             knownAssemblies.Add(assembly, assembly);
             JNIEnv env = JNIEnv.ThreadEnv;
@@ -97,7 +97,7 @@ namespace net.sf.jni4net
 
             if (Verbose)
             {
-                Console.WriteLine("loaded " + assembly);
+                Console.WriteLine("loaded " + assembly + " from " + assembly.Location);
             }
         }
 
@@ -109,10 +109,8 @@ namespace net.sf.jni4net
         #region Initialization
 
         [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
-        internal static int initDotNet(IntPtr envi, IntPtr clazz, bool verbose, bool debug)
+        internal static int initDotNet(IntPtr envi, IntPtr clazz)
         {
-            Debug = debug;
-            Verbose = verbose;
             JNIEnv env;
             try
             {
@@ -123,8 +121,18 @@ namespace net.sf.jni4net
                 Console.Error.WriteLine("Can't bind env");
                 return -1;
             }
+            IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
+            IntPtr vb = env.GetStaticFieldIDPtr(br, "verbose", "Z");
+            Verbose = env.GetStaticBooleanField(br, vb);
+            IntPtr db = env.GetStaticFieldIDPtr(br, "debug", "Z");
+            Debug = env.GetStaticBooleanField(br, db);
+            
             try
             {
+                if (Verbose)
+                {
+                    Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
+                }
                 Init(env);
                 if (Verbose)
                 {

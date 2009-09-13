@@ -38,7 +38,8 @@ public class TestClr {
 		Bridge.setVerbose(true);
 		Bridge.setDebug(true);
 		Bridge.init(new File("../jni4net.tested.n/target").getCanonicalPath());
-		Bridge.LoadAndRegisterAssembly(new File("../jni4net.tested.n/target/jni4net.tested.n-" + Bridge.getVersion() + ".dll").getAbsolutePath());
+		final String path = new File("../jni4net.tested.n/target/jni4net.tested.n-" + Bridge.getVersion() + ".dll").getCanonicalFile().getAbsolutePath();
+		Bridge.LoadAndRegisterAssembly(path);
 	}
 
 
