@@ -246,6 +246,24 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
+        public bool IsJVMRootType
+        {
+            get
+            {
+                return this == Repository.javaLangThrowable
+                       || this == Repository.javaLangObject;
+            }
+        }
+
+        public bool IsCLRRootType
+        {
+            get
+            {
+                return this == Repository.systemObject
+                       || this == Repository.systemException;
+            }
+        }
+
         public void UpdateNames()
         {
             foreach (GType ifc in Interfaces)
