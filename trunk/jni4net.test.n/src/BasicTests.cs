@@ -62,8 +62,7 @@ namespace net.sf.jni4net.test
         [Test]
         public void PrimitiveObjects()
         {
-            var integer = Bridge.WrapCLR<Integer>(13);
-            Assert.AreEqual((Integer)13, integer);
+            IClrProxy integer = Bridge.WrapCLR(13);
             int integ = Bridge.UnwrapCLR<int>(integer);
             Assert.AreEqual(13, integ);
         }
@@ -71,7 +70,7 @@ namespace net.sf.jni4net.test
         [Test]
         public void WrapClrString1()
         {
-            IClrProxy str1 = Bridge.WrapCLR<IClrProxy>("jni4net");
+            IClrProxy str1 = Bridge.WrapCLR("jni4net");
             string str2 = Bridge.UnwrapCLR<string>(str1);
             Assert.AreEqual("jni4net", str2);
         }
@@ -95,7 +94,7 @@ namespace net.sf.jni4net.test
         [Test]
         public void WrapClrString4()
         {
-            IClrProxy str1 = Bridge.WrapCLR<IClrProxy>("jni4net");
+            IClrProxy str1 = Bridge.WrapCLR("jni4net");
             String str2 = Bridge.UnwrapCLR<String>(str1);
             Assert.AreEqual((String)"jni4net", str2);
         }
@@ -222,7 +221,7 @@ namespace net.sf.jni4net.test
         public void Wrap()
         {
             System.Text.StringBuilder builder = new System.Text.StringBuilder();
-            IClrProxy proxy = Bridge.WrapCLR<IClrProxy>(builder);
+            IClrProxy proxy = Bridge.WrapCLR(builder);
             int handle = proxy.getClrHandle();
             System.Text.StringBuilder res = Bridge.UnwrapCLR<System.Text.StringBuilder>(proxy);
             Assert.AreSame(builder, res);

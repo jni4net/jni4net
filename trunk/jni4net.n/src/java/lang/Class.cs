@@ -125,7 +125,7 @@ namespace java.lang
             JNIEnv env = JNIEnv.ThreadEnv;
             MethodId id = env.GetStaticMethodID(staticClass, "getPrimitiveClass",
                                                 "(Ljava/lang/String;)Ljava/lang/Class;");
-            return Convertor.J2CClass(env, env.CallStaticObjectMethodPtr(staticClass, id, Convertor.ParamC2JString(env, name)));
+            return Convertor.J2CClass(env, env.CallStaticObjectMethodPtr(staticClass, id, Convertor.ParFinalC2J(env, name)));
         }
 
         public override bool Equals(object obj)
