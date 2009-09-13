@@ -7,6 +7,7 @@ using java.lang;
 using net.sf.jni4net.proxygen.config;
 using Exception=System.Exception;
 using Object=java.lang.Object;
+using String=java.lang.String;
 
 namespace net.sf.jni4net.proxygen.model
 {

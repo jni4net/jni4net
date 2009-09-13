@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
+using String=java.lang.String;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -171,6 +172,11 @@ namespace net.sf.jni4net.proxygen.model
             }
             if (IsArray)
             {
+                if (ArrayElement.CLRType == typeof(string))
+                {
+                    JVMSubst = Repository.RegisterClass(String._class).MakeArray();
+                    return JVMSubst;
+                }
                 GType subst = ArrayElement.Resolve().MakeArray();
                 if (IsCLRType)
                 {
@@ -325,12 +331,16 @@ namespace net.sf.jni4net.proxygen.model
         {
             if (IsCLRType)
             {
-                return Repository.RegisterType(CLRType.MakeArrayType());
+                GType array = Repository.RegisterType(CLRType.MakeArrayType());
+                array.ArrayElement = this;
+                return array;
             }
             else
             {
                 Class arrClass = JNIEnv.ThreadEnv.NewObjectArray(0, JVMType, null).getClass();
-                return Repository.RegisterClass(arrClass);
+                GType array = Repository.RegisterClass(arrClass);
+                array.ArrayElement = this;
+                return array;
             }
         }
     }
