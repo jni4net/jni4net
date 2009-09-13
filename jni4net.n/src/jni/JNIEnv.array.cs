@@ -13,55 +13,55 @@ namespace net.sf.jni4net.jni
         public Object NewObjectArray(int len, Class clazz, IJavaProxy init)
         {
             IntPtr res = NewObjectArrayPtr(len, clazz.native, init);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewBooleanArray(int len)
         {
             IntPtr res = NewBooleanArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewByteArray(int len)
         {
             IntPtr res = NewByteArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewShortArray(int len)
         {
             IntPtr res = NewShortArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewCharArray(int len)
         {
             IntPtr res = NewCharArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewIntArray(int len)
         {
             IntPtr res = NewIntArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewLongArray(int len)
         {
             IntPtr res = NewLongArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewFloatArray(int len)
         {
             IntPtr res = NewFloatArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewDoubleArray(int len)
         {
             IntPtr res = NewDoubleArrayPtr(len);
-            return Convertor.J2CObject(this, res);
+            return Convertor.StrongJ2CpObject(this, res);
         }
 
         #endregion

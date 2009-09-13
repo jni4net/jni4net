@@ -57,7 +57,7 @@ namespace System {
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.ICloneable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.ICloneable>(@__env, @__obj);
+            global::System.ICloneable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.ICloneable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<object>(@__env, @__real.Clone());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

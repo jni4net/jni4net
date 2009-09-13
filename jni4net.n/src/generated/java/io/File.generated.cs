@@ -388,19 +388,19 @@ namespace java.io {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/io/File;")]
         public virtual java.io.File[] listFiles() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles27));
+            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[], global::java.io.File>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles27));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/FilenameFilter;)[Ljava/io/File;")]
         public virtual java.io.File[] listFiles(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[]>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles28, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[], global::java.io.File>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._listFiles28, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()[Ljava/io/File;")]
         public static java.io.File[] listRoots() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[]>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._listRoots29));
+            return global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2Cp<java.io.File[], global::java.io.File>(@__env, @__env.CallStaticObjectMethodPtr(global::java.io.File.staticClass, global::java.io.File._listRoots29));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Z")]

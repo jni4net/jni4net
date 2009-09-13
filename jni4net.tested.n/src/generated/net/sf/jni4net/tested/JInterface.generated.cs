@@ -87,7 +87,7 @@ namespace net.sf.jni4net.tested {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
+            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
             @__real.runForrestRun();
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -97,7 +97,7 @@ namespace net.sf.jni4net.tested {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
+            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
             @__real.run();
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
@@ -107,7 +107,7 @@ namespace net.sf.jni4net.tested {
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
+            global::net.sf.jni4net.tested.JInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.JInterface>(@__env, @__obj);
             @__real.cdefined();
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }

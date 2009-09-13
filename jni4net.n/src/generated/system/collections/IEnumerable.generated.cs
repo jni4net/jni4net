@@ -57,7 +57,7 @@ namespace System.Collections {
             // ()LSystem/Collections/IEnumerator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Collections.IEnumerable @__real = global::net.sf.jni4net.utils.Convertor.J2C<global::System.Collections.IEnumerable>(@__env, @__obj);
+            global::System.Collections.IEnumerable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, @__real.GetEnumerator());
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);

@@ -102,7 +102,7 @@ namespace net.sf.jni4net
             IClrProxy clrProxy = obj as IClrProxy;
             if (clrProxy!=null)
             {
-                return Convertor.J2C<object>(JNIEnv.ThreadEnv, obj.Native);
+                return Convertor.FullJ2C<object>(JNIEnv.ThreadEnv, obj.Native);
             }
             return obj;
         }

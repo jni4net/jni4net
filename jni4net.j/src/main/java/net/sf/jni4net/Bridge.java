@@ -116,6 +116,15 @@ public class Bridge extends system.Object {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native static boolean IsCLRInstance(system.Object obj);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native static boolean IsJVMInstance(system.Object obj);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/Object;")
+    public native static net.sf.jni4net.inj.IClrProxy WrapCLR(system.Object obj);
+    
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
     public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
     

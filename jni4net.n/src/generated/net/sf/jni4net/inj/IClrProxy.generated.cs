@@ -72,7 +72,7 @@ namespace net.sf.jni4net.inj {
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-            global::net.sf.jni4net.inj.IClrProxy real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.inj.IClrProxy>(__env, @__obj);
+                global::net.sf.jni4net.inj.IClrProxy real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.inj.IClrProxy>(__env, @__obj);
             return real.getClrHandle();
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
             return default(int);
@@ -83,7 +83,7 @@ namespace net.sf.jni4net.inj {
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
             try {
-                global::net.sf.jni4net.inj.IClrProxy real = global::net.sf.jni4net.utils.Convertor.J2C<global::net.sf.jni4net.inj.IClrProxy>(__env, @__obj);
+                global::net.sf.jni4net.inj.IClrProxy real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.inj.IClrProxy>(__env, @__obj);
             real.initProxy(par0);
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }

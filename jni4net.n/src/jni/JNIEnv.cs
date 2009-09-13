@@ -66,7 +66,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr clazz = findClass.Invoke(native, name);
             ExceptionTest();
-            return Convertor.J2CClass(this, clazz);
+            return Convertor.StrongJ2CpClass(this, clazz);
         }
 
         public Class FindClassNoThrow(string name)
@@ -76,7 +76,7 @@ namespace net.sf.jni4net.jni
             {
                 return null;
             }
-            return Convertor.J2CClass(this, clazz);
+            return Convertor.StrongJ2CpClass(this, clazz);
         }
 
         public Class GetObjectClass(IJavaProxy obj)
@@ -92,7 +92,7 @@ namespace net.sf.jni4net.jni
             }
             IntPtr res = getObjectClass.Invoke(native, obj);
             ExceptionTest();
-            return Convertor.J2CClass(this, res);
+            return Convertor.StrongJ2CpClass(this, res);
         }
 
         public MethodId GetStaticMethodID(Class clazz, string name, string sig)
@@ -133,7 +133,7 @@ namespace net.sf.jni4net.jni
             IntPtr res = toReflectedField.Invoke(native, cls.native, fieldID.native,
                                                  isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
-            return Convertor.J2C<Field>(this, res);
+            return Convertor.StrongJ2Cp<Field>(this, res);
         }
 
         public Method ToReflectedMethod(Class cls, MethodId methodId, bool isStatic)
@@ -141,7 +141,7 @@ namespace net.sf.jni4net.jni
             IntPtr res = toReflectedMethod.Invoke(native, cls.native, methodId.native,
                                                   isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
-            return Convertor.J2C<Method>(this, res);
+            return Convertor.StrongJ2Cp<Method>(this, res);
         }
 
         public MethodId FromReflectedMethod(Method methodId)
@@ -188,7 +188,7 @@ namespace net.sf.jni4net.jni
         public TRes CallStaticObjectMethod<TRes>(Class clazz, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = CallStaticObjectMethodPtr(clazz, methodIdNative, args);
-            return Convertor.J2C<TRes>(this, res);
+            return Convertor.FullJ2C<TRes>(this, res);
         }
 
         public int CallStaticIntMethod(Class clazz, MethodId methodIdNative, params Value[] args)
@@ -330,7 +330,7 @@ namespace net.sf.jni4net.jni
         public TRes CallObjectMethod<TRes>(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = CallObjectMethodPtr(obj, methodIdNative, args);
-            return Convertor.J2C<TRes>(this, res);
+            return Convertor.FullJ2C<TRes>(this, res);
         }
 
         public bool CallBooleanMethod(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
@@ -548,7 +548,7 @@ namespace net.sf.jni4net.jni
         public TRes GetObjectField<TRes>(IJavaProxy obj, FieldId fieldID)
         {
             IntPtr res = GetObjectFieldPtr(obj, fieldID);
-            return Convertor.J2C<TRes>(this, res);
+            return Convertor.FullJ2C<TRes>(this, res);
         }
 
         public bool GetBooleanField(IJavaProxy obj, FieldId fieldID)
@@ -905,7 +905,7 @@ namespace net.sf.jni4net.jni
         public TRes GetStaticObjectField<TRes>(Class clazz, FieldId fieldID)
         {
             IntPtr res = GetStaticObjectFieldPtr(clazz, fieldID);
-            return Convertor.J2C<TRes>(this, res);
+            return Convertor.FullJ2C<TRes>(this, res);
         }
 
 
@@ -1038,7 +1038,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = newDirectByteBuffer.Invoke(native, address, capacity);
             ExceptionTest();
-            return Convertor.J2C<IJavaProxy>(this, res);
+            return Convertor.FullJ2C<IJavaProxy>(this, res);
         }
 
         public void* GetDirectBufferAddress(Object buf)
@@ -1062,7 +1062,7 @@ namespace net.sf.jni4net.jni
         public String NewString(string unicode)
         {
             IntPtr res = NewStringPtr(unicode);
-            return Convertor.J2CString(this, res);
+            return Convertor.StrongJ2CpString(this, res);
         }
 
         internal string ConvertToString(IntPtr javaString)
@@ -1152,7 +1152,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = allocObject(native, clazz.native);
             ExceptionTest();
-            return Convertor.J2C<IJavaProxy>(this, res);
+            return Convertor.FullJ2C<IJavaProxy>(this, res);
         }
 
         public void NewObject(Class clazz, MethodId methodID, IJavaProxy obj, params Value[] args)
@@ -1173,7 +1173,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
-            return Convertor.J2C<IJavaProxy>(this, res);
+            return Convertor.FullJ2C<IJavaProxy>(this, res);
         }
 
 
@@ -1232,7 +1232,7 @@ namespace net.sf.jni4net.jni
             {
                 //ExceptionDescribe();
                 ExceptionClear();
-                throw Convertor.J2C<Exception>(this, occurred);
+                throw Convertor.FullJ2C<Exception>(this, occurred);
             }
         }
 
