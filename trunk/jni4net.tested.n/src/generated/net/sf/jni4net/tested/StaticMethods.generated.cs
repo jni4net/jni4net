@@ -41,7 +41,7 @@ namespace net.sf.jni4net.tested {
             global::System.Type @__type = typeof(__StaticMethods);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "add", "add0", "(II)I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorStaticMethods0", "__ctorStaticMethods0", "(Lnet/sf/jni4net/inj/ICClrProxy;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorStaticMethods0", "__ctorStaticMethods0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
             return methods;
         }
         
@@ -67,7 +67,7 @@ namespace net.sf.jni4net.tested {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.tested.@__StaticMethods(@__env);
             }
         }

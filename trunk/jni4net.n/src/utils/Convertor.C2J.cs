@@ -53,8 +53,8 @@ namespace net.sf.jni4net.utils
             }
 #endif
 
-            var proxy = obj as ICJvmProxy;
-            if (proxy != null && typeof (ICJvmProxy).IsAssignableFrom(reqType))
+            var proxy = obj as IJvmProxy;
+            if (proxy != null && typeof (IJvmProxy).IsAssignableFrom(reqType))
             {
                 if (Bridge.Debug)
                 {

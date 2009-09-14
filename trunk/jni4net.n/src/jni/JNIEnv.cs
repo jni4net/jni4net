@@ -84,7 +84,7 @@ namespace net.sf.jni4net.jni
             return Convertor.StrongJ2CpClass(this, clazz);
         }
 
-        public Class GetObjectClass(ICJvmProxy obj)
+        public Class GetObjectClass(IJvmProxy obj)
         {
             return GetObjectClass(obj.Native);
         }
@@ -343,18 +343,18 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        public void CallVoidMethod(ICJvmProxy obj, MethodId methodId, params Value[] args)
+        public void CallVoidMethod(IJvmProxy obj, MethodId methodId, params Value[] args)
         {
             CallVoidMethod(obj.Native, methodId, args);
         }
 
-        public TRes CallObjectMethod<TRes>(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public TRes CallObjectMethod<TRes>(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = CallObjectMethodPtr(obj, methodIdNative, args);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
-        public bool CallBooleanMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public bool CallBooleanMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             bool res = callBooleanMethod(native, obj.Native, methodIdNative.native, args) != 0;
             ExceptionTest();
@@ -368,7 +368,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public int CallIntMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public int CallIntMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             int res = callIntMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -382,7 +382,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public short CallShortMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public short CallShortMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             short res = callShortMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -396,7 +396,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public long CallLongMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public long CallLongMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             long res = callLongMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -410,7 +410,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public byte CallByteMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public byte CallByteMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             byte res = callByteMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -424,7 +424,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public double CallDoubleMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public double CallDoubleMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             double res = callDoubleMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -438,7 +438,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public float CallFloatMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public float CallFloatMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             float res = callFloatMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -452,7 +452,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public char CallCharMethod(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public char CallCharMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             var res = (char) callCharMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
@@ -466,7 +466,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        private void CallVoidMethod(ICJvmProxy obj, string method, string sig, params Value[] args)
+        private void CallVoidMethod(IJvmProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
             if (objectClass != null)
@@ -481,7 +481,7 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private bool CallBooleanMethod(ICJvmProxy obj, string method, string sig, params Value[] args)
+        private bool CallBooleanMethod(IJvmProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
             if (objectClass != null)
@@ -495,7 +495,7 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private int CallIntMethod(ICJvmProxy obj, string method, string sig, params Value[] args)
+        private int CallIntMethod(IJvmProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
             if (objectClass != null)
@@ -509,7 +509,7 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private TRes CallMethod<TRes>(ICJvmProxy obj, string method, string sig, params Value[] args)
+        private TRes CallMethod<TRes>(IJvmProxy obj, string method, string sig, params Value[] args)
         {
             MethodId idNative = GetMethodID(GetObjectClass(obj), method, sig);
             if (idNative != null)
@@ -566,41 +566,41 @@ namespace net.sf.jni4net.jni
 
         #region getters instance
 
-        public TRes GetObjectField<TRes>(ICJvmProxy obj, FieldId fieldID)
+        public TRes GetObjectField<TRes>(IJvmProxy obj, FieldId fieldID)
         {
             IntPtr res = GetObjectFieldPtr(obj, fieldID);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
-        public bool GetBooleanField(ICJvmProxy obj, FieldId fieldID)
+        public bool GetBooleanField(IJvmProxy obj, FieldId fieldID)
         {
             bool res = getBooleanField(native, obj.Native, fieldID.native) != 0;
             ExceptionTest();
             return res;
         }
 
-        public byte GetByteField(ICJvmProxy obj, FieldId fieldID)
+        public byte GetByteField(IJvmProxy obj, FieldId fieldID)
         {
             byte res = getByteField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public short GetShortField(ICJvmProxy obj, FieldId fieldID)
+        public short GetShortField(IJvmProxy obj, FieldId fieldID)
         {
             short res = getShortField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public long GetLongField(ICJvmProxy obj, FieldId fieldID)
+        public long GetLongField(IJvmProxy obj, FieldId fieldID)
         {
             long res = getLongField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public int GetIntField(ICJvmProxy obj, FieldId fieldID)
+        public int GetIntField(IJvmProxy obj, FieldId fieldID)
         {
             return GetIntField(obj.Native, fieldID);
         }
@@ -612,28 +612,28 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public double GetDoubleField(ICJvmProxy obj, FieldId fieldID)
+        public double GetDoubleField(IJvmProxy obj, FieldId fieldID)
         {
             double res = getDoubleField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public float GetFloatField(ICJvmProxy obj, FieldId fieldID)
+        public float GetFloatField(IJvmProxy obj, FieldId fieldID)
         {
             float res = getFloatField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public char GetCharField(ICJvmProxy obj, FieldId fieldID)
+        public char GetCharField(IJvmProxy obj, FieldId fieldID)
         {
             var res = (char) getCharField(native, obj.Native, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public TRes GetField<TRes>(ICJvmProxy obj, string fieldName, string sig)
+        public TRes GetField<TRes>(IJvmProxy obj, string fieldName, string sig)
         {
             FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
             if (id != null)
@@ -691,61 +691,61 @@ namespace net.sf.jni4net.jni
 
         #region setters instance
 
-        internal void SetObjectField(ICJvmProxy obj, FieldId fieldID, ICJvmProxy value)
+        internal void SetObjectField(IJvmProxy obj, FieldId fieldID, IJvmProxy value)
         {
             setObjectField(native, obj.Native, fieldID.native, value.Native);
             ExceptionTest();
         }
 
-        internal void SetIntField(ICJvmProxy obj, FieldId fieldID, int value)
+        internal void SetIntField(IJvmProxy obj, FieldId fieldID, int value)
         {
             setIntField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetBooleanField(ICJvmProxy obj, FieldId fieldID, bool value)
+        internal void SetBooleanField(IJvmProxy obj, FieldId fieldID, bool value)
         {
             setBooleanField(native, obj.Native, fieldID.native, value ? (byte) 1 : (byte) 0);
             ExceptionTest();
         }
 
-        internal void SetByteField(ICJvmProxy obj, FieldId fieldID, byte value)
+        internal void SetByteField(IJvmProxy obj, FieldId fieldID, byte value)
         {
             setByteField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetCharField(ICJvmProxy obj, FieldId fieldID, char value)
+        internal void SetCharField(IJvmProxy obj, FieldId fieldID, char value)
         {
             setCharField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetShortField(ICJvmProxy obj, FieldId fieldID, short value)
+        internal void SetShortField(IJvmProxy obj, FieldId fieldID, short value)
         {
             setShortField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetLongField(ICJvmProxy obj, FieldId fieldID, long value)
+        internal void SetLongField(IJvmProxy obj, FieldId fieldID, long value)
         {
             setLongField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetFloatField(ICJvmProxy obj, FieldId fieldID, float value)
+        internal void SetFloatField(IJvmProxy obj, FieldId fieldID, float value)
         {
             setFloatField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetDoubleField(ICJvmProxy obj, FieldId fieldID, double value)
+        internal void SetDoubleField(IJvmProxy obj, FieldId fieldID, double value)
         {
             setDoubleField(native, obj.Native, fieldID.native, value);
             ExceptionTest();
         }
 
-        public void SetField<T>(ICJvmProxy obj, string fieldName, string sig, T value)
+        public void SetField<T>(IJvmProxy obj, string fieldName, string sig, T value)
         {
             FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
             if (id != null)
@@ -807,7 +807,7 @@ namespace net.sf.jni4net.jni
 
         #region setters static
 
-        internal void SetStaticObjectField(Class clazz, FieldId fieldID, ICJvmProxy value)
+        internal void SetStaticObjectField(Class clazz, FieldId fieldID, IJvmProxy value)
         {
             setStaticObjectField(native, clazz.native, fieldID.native, value.Native);
             ExceptionTest();
@@ -1069,7 +1069,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = newDirectByteBuffer.Invoke(native, address, capacity);
             ExceptionTest();
-            return Convertor.FullJ2C<ICJvmProxy>(this, res);
+            return Convertor.FullJ2C<IJvmProxy>(this, res);
         }
 
         public void* GetDirectBufferAddress(Object buf)
@@ -1147,7 +1147,7 @@ namespace net.sf.jni4net.jni
             }
         }
 
-        internal void DeleteGlobalRef(ICJvmProxy gref)
+        internal void DeleteGlobalRef(IJvmProxy gref)
         {
             if (gref == null || gref.Native == IntPtr.Zero)
             {
@@ -1168,7 +1168,7 @@ namespace net.sf.jni4net.jni
             //optimized away ExceptionTest();
         }
 
-        public bool IsSameObject(ICJvmProxy o1, ICJvmProxy o2)
+        public bool IsSameObject(IJvmProxy o1, IJvmProxy o2)
         {
             bool res = isSameObject(native, o1.Native, o2.Native) != 0;
             ExceptionTest();
@@ -1183,10 +1183,10 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = allocObject(native, clazz.native);
             ExceptionTest();
-            return Convertor.FullJ2C<ICJvmProxy>(this, res);
+            return Convertor.FullJ2C<IJvmProxy>(this, res);
         }
 
-        public void NewObject(Class clazz, MethodId methodID, ICJvmProxy obj, params Value[] args)
+        public void NewObject(Class clazz, MethodId methodID, IJvmProxy obj, params Value[] args)
         {
             IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
@@ -1204,7 +1204,7 @@ namespace net.sf.jni4net.jni
         {
             IntPtr res = newObject(native, clazz.native, methodID.native, args);
             ExceptionTest();
-            return Convertor.FullJ2C<ICJvmProxy>(this, res);
+            return Convertor.FullJ2C<IJvmProxy>(this, res);
         }
 
         #endregion

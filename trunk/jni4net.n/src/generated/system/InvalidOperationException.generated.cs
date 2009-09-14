@@ -40,9 +40,9 @@ namespace System {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__InvalidOperationException);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException0", "__ctorInvalidOperationException0", "(Lnet/sf/jni4net/inj/ICClrProxy;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException1", "__ctorInvalidOperationException1", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException2", "__ctorInvalidOperationException2", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Exception;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException0", "__ctorInvalidOperationException0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException1", "__ctorInvalidOperationException1", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorInvalidOperationException2", "__ctorInvalidOperationException2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Exception;)V"));
             return methods;
         }
         
@@ -78,7 +78,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__InvalidOperationException(@__env);
             }
         }

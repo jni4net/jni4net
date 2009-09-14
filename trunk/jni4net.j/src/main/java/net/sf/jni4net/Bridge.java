@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 package net.sf.jni4net;
 
-import net.sf.jni4net.inj.ICClrProxy_;
+import net.sf.jni4net.inj.IClrProxy_;
 import net.sf.jni4net.inj.INJException;
 
 import java.lang.String;
@@ -69,7 +69,7 @@ public class Bridge extends system.Object {
 	public static boolean isJVMInstance(Object obj){
 		if (IObject.class.isAssignableFrom(obj.getClass())){
 			IObject o=(IObject)obj;
-			return ICClrProxy_.typeof().IsAssignableFrom(o.GetType());
+			return IClrProxy_.typeof().IsAssignableFrom(o.GetType());
 		}
 		return true;
 	}
@@ -86,7 +86,7 @@ public class Bridge extends system.Object {
 	@SuppressWarnings("unchecked")
 	public static <TRes> TRes unwrapJVM(system.Object obj, Class<TRes> requestedClass){
 		//TODO optimize assert ?
-		if (!ICClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
+		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
 			throw new INJException("Can't unwrap JVM instance");
 		}
 		return (TRes)UnwrapJVM(obj, requestedClass);
@@ -95,7 +95,7 @@ public class Bridge extends system.Object {
 	@SuppressWarnings("unchecked")
 	public static <TRes> TRes unwrapJVM(system.Exception obj, Class<TRes> requestedClass){
 		//TODO optimize assert ?
-		if (!ICClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
+		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
 			throw new INJException("Can't unwrap JVM instance");
 		}
 		return (TRes)UnwrapJVM(obj, requestedClass);

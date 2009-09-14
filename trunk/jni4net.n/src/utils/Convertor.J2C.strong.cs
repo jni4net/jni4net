@@ -37,13 +37,13 @@ namespace net.sf.jni4net.utils
             {
                 return default(TRes);
             }
-            object res = __ICClrProxy.GetObject(env, obj);
+            object res = __IClrProxy.GetObject(env, obj);
             return (TRes) res;
         }
 
 
         public static TRes StrongJ2Cp<TRes>(JNIEnv env, IntPtr obj)
-            where TRes : ICJvmProxy
+            where TRes : IJvmProxy
         {
             if (obj == IntPtr.Zero)
             {
@@ -72,7 +72,7 @@ namespace net.sf.jni4net.utils
             {
                 return null;
             }
-            object res = __ICClrProxy.GetObject(env, obj);
+            object res = __IClrProxy.GetObject(env, obj);
             return (string) res;
         }
 
@@ -97,7 +97,7 @@ namespace net.sf.jni4net.utils
         public static Object StrongJ2CpObject(JNIEnv env, IntPtr obj)
         {
             var res = new Object(env);
-            ((ICJvmProxy) res).Init(env, obj, Object._class);
+            ((IJvmProxy) res).Init(env, obj, Object._class);
             return res;
         }
 

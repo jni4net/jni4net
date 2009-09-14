@@ -15,22 +15,20 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+package net.sf.jni4net.jni;
 
-package net.sf.jni4net.inj;
-
-import system.IObject;
+import net.sf.jni4net.inj.IClrProxy;
 
 /**
  * @author Pavel Savara (original)
  */
-public interface ICClrProxy {
-	int getClrHandle();
+public interface IJvmProxy extends IClrProxy {
 
-	void initProxy(int handle);
+	long getNative();
 
+	void setNative(long value);
 
-    //<generated-interface>
+	void Init(system.Object env, long obj, java.lang.Class clazz);
 
-    //</generated-interface>
-
+	java.lang.Class GetClass();
 }

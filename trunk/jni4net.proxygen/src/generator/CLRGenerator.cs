@@ -353,7 +353,7 @@ namespace net.sf.jni4net.proxygen.generator
             var constructionHelper = new CodeTypeDeclaration("ContructionHelper");
             constructionHelper.BaseTypes.Add(TypeReference(typeof (IConstructionHelper)));
             var createMethod = new CodeMemberMethod();
-            createMethod.ReturnType = TypeReference(typeof (ICJvmProxy));
+            createMethod.ReturnType = TypeReference(typeof (IJvmProxy));
             createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)),
                                                                                envVariableName));
             createMethod.Statements.Add(

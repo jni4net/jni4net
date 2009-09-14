@@ -34,10 +34,10 @@ namespace net.sf.jni4net
     {
         public static bool IsCLRInstance(object obj)
         {
-            var proxy = obj as ICJvmProxy;
+            var proxy = obj as IJvmProxy;
             if (proxy != null)
             {
-                return proxy is ICClrProxy;
+                return proxy is IClrProxy;
             }
             return true;
         }
@@ -47,10 +47,10 @@ namespace net.sf.jni4net
             return !IsCLRInstance(obj);
         }
 
-        public static ICClrProxy WrapCLR(object obj)
+        public static IClrProxy WrapCLR(object obj)
         {
-            var proxy = obj as ICJvmProxy;
-            var clrProxy = proxy as ICClrProxy;
+            var proxy = obj as IJvmProxy;
+            var clrProxy = proxy as IClrProxy;
             if (proxy != null)
             {
                 if (clrProxy != null)
@@ -64,12 +64,12 @@ namespace net.sf.jni4net
 
             RegistryRecord record = Registry.GetCLRRecord(type);
             IntPtr ptr = record.CreateJVMProxy(env, obj);
-            return __ICClrProxy.CreateProxy(env, ptr, record.JVMProxy);
+            return __IClrProxy.CreateProxy(env, ptr, record.JVMProxy);
         }
 
-        public static TRes UnwrapCLR<TRes>(ICJvmProxy obj)
+        public static TRes UnwrapCLR<TRes>(IJvmProxy obj)
         {
-            var clrProxy = obj as ICClrProxy;
+            var clrProxy = obj as IClrProxy;
             if (clrProxy == null)
             {
                 throw new JNIException("Can't unwrap JVM instance");
@@ -84,7 +84,7 @@ namespace net.sf.jni4net
         private static IntPtr WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj, IntPtr interfaceClass)
         {
             // (Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;
-            // (Lnet/sf/jni4net/jni/ICJvmProxy;Ljava/lang/Class;)LSystem/Object;
+            // (Lnet/sf/jni4net/jni/IJvmProxy;Ljava/lang/Class;)LSystem/Object;
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
             {
@@ -102,11 +102,11 @@ namespace net.sf.jni4net
         private static IntPtr UnwrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj, IntPtr interfaceClass)
         {
             // (Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;
-            // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/ICJvmProxy;
+            // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJvmProxy;
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
             {
-                ICJvmProxy real = (ICJvmProxy)__ICClrProxy.GetObject(env, obj);
+                IJvmProxy real = (IJvmProxy)__IClrProxy.GetObject(env, obj);
                 return real.Native;
             }
             catch (Exception ex)

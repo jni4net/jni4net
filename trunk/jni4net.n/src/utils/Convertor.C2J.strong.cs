@@ -39,7 +39,7 @@ namespace net.sf.jni4net.utils
             return record.CreateJVMProxy(env, obj);
         }
 
-        public static IntPtr StrongCp2J(ICJvmProxy obj)
+        public static IntPtr StrongCp2J(IJvmProxy obj)
         {
             if (obj == null)
             {

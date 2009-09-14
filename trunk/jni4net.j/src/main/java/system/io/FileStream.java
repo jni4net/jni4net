@@ -62,25 +62,25 @@ public class FileStream extends system.io.Stream {
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(LSystem/IntPtr;LSystem/IO/FileAccess;)V")
-    public FileStream(system.ValueType handle, system.Enum access) {
+    public FileStream(long handle, system.Enum access) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.io.FileStream.__ctorFileStream7(this, handle, access);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(LSystem/IntPtr;LSystem/IO/FileAccess;Z)V")
-    public FileStream(system.ValueType handle, system.Enum access, boolean ownsHandle) {
+    public FileStream(long handle, system.Enum access, boolean ownsHandle) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.io.FileStream.__ctorFileStream8(this, handle, access, ownsHandle);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(LSystem/IntPtr;LSystem/IO/FileAccess;ZI)V")
-    public FileStream(system.ValueType handle, system.Enum access, boolean ownsHandle, int bufferSize) {
+    public FileStream(long handle, system.Enum access, boolean ownsHandle, int bufferSize) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.io.FileStream.__ctorFileStream9(this, handle, access, ownsHandle, bufferSize);
     }
     
     @net.sf.jni4net.attributes.ClrConstructor("(LSystem/IntPtr;LSystem/IO/FileAccess;ZIZ)V")
-    public FileStream(system.ValueType handle, system.Enum access, boolean ownsHandle, int bufferSize, boolean isAsync) {
+    public FileStream(long handle, system.Enum access, boolean ownsHandle, int bufferSize, boolean isAsync) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
         system.io.FileStream.__ctorFileStream10(this, handle, access, ownsHandle, bufferSize, isAsync);
     }
@@ -104,46 +104,46 @@ public class FileStream extends system.io.Stream {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;)V")
-    private native static void __ctorFileStream0(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode);
+    private native static void __ctorFileStream0(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V")
-    private native static void __ctorFileStream1(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access);
+    private native static void __ctorFileStream1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;)V")
-    private native static void __ctorFileStream2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share);
+    private native static void __ctorFileStream2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;I)V")
-    private native static void __ctorFileStream3(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize);
+    private native static void __ctorFileStream3(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;)V")
-    private native static void __ctorFileStream4(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize, system.Enum options);
+    private native static void __ctorFileStream4(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;IZ)V")
-    private native static void __ctorFileStream5(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize, boolean useAsync);
+    private native static void __ctorFileStream5(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum access, system.Enum share, int bufferSize, boolean useAsync);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;Lsystem/Object;)V")
-    private native static void __ctorFileStream6(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum rights, system.Enum share, int bufferSize, system.Enum options, system.Object fileSecurity);
+    private native static void __ctorFileStream6(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String path, system.Enum mode, system.Enum rights, system.Enum share, int bufferSize, system.Enum options, system.Object fileSecurity);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lsystem/ValueType;Lsystem/Enum;)V")
-    private native static void __ctorFileStream7(net.sf.jni4net.inj.ICClrProxy thiz, system.ValueType handle, system.Enum access);
+    @net.sf.jni4net.attributes.ClrMethod("(JLsystem/Enum;)V")
+    private native static void __ctorFileStream7(net.sf.jni4net.inj.IClrProxy thiz, long handle, system.Enum access);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lsystem/ValueType;Lsystem/Enum;Z)V")
-    private native static void __ctorFileStream8(net.sf.jni4net.inj.ICClrProxy thiz, system.ValueType handle, system.Enum access, boolean ownsHandle);
+    @net.sf.jni4net.attributes.ClrMethod("(JLsystem/Enum;Z)V")
+    private native static void __ctorFileStream8(net.sf.jni4net.inj.IClrProxy thiz, long handle, system.Enum access, boolean ownsHandle);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lsystem/ValueType;Lsystem/Enum;ZI)V")
-    private native static void __ctorFileStream9(net.sf.jni4net.inj.ICClrProxy thiz, system.ValueType handle, system.Enum access, boolean ownsHandle, int bufferSize);
+    @net.sf.jni4net.attributes.ClrMethod("(JLsystem/Enum;ZI)V")
+    private native static void __ctorFileStream9(net.sf.jni4net.inj.IClrProxy thiz, long handle, system.Enum access, boolean ownsHandle, int bufferSize);
     
-    @net.sf.jni4net.attributes.ClrMethod("(Lsystem/ValueType;Lsystem/Enum;ZIZ)V")
-    private native static void __ctorFileStream10(net.sf.jni4net.inj.ICClrProxy thiz, system.ValueType handle, system.Enum access, boolean ownsHandle, int bufferSize, boolean isAsync);
+    @net.sf.jni4net.attributes.ClrMethod("(JLsystem/Enum;ZIZ)V")
+    private native static void __ctorFileStream10(net.sf.jni4net.inj.IClrProxy thiz, long handle, system.Enum access, boolean ownsHandle, int bufferSize, boolean isAsync);
     
     @net.sf.jni4net.attributes.ClrMethod("(Lsystem/Object;Lsystem/Enum;)V")
-    private native static void __ctorFileStream11(net.sf.jni4net.inj.ICClrProxy thiz, system.Object handle, system.Enum access);
+    private native static void __ctorFileStream11(net.sf.jni4net.inj.IClrProxy thiz, system.Object handle, system.Enum access);
     
     @net.sf.jni4net.attributes.ClrMethod("(Lsystem/Object;Lsystem/Enum;I)V")
-    private native static void __ctorFileStream12(net.sf.jni4net.inj.ICClrProxy thiz, system.Object handle, system.Enum access, int bufferSize);
+    private native static void __ctorFileStream12(net.sf.jni4net.inj.IClrProxy thiz, system.Object handle, system.Enum access, int bufferSize);
     
     @net.sf.jni4net.attributes.ClrMethod("(Lsystem/Object;Lsystem/Enum;IZ)V")
-    private native static void __ctorFileStream13(net.sf.jni4net.inj.ICClrProxy thiz, system.Object handle, system.Enum access, int bufferSize, boolean isAsync);
+    private native static void __ctorFileStream13(net.sf.jni4net.inj.IClrProxy thiz, system.Object handle, system.Enum access, int bufferSize, boolean isAsync);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean isAsync();
@@ -158,7 +158,7 @@ public class FileStream extends system.io.Stream {
     public native final void SetAccessControl(system.Object fileSecurity);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IntPtr;")
-    public native system.ValueType getHandle();
+    public native long getHandle();
     
     @net.sf.jni4net.attributes.ClrMethod("()LMicrosoft/Win32/SafeHandles/SafeFileHandle;")
     public native system.Object getSafeFileHandle();

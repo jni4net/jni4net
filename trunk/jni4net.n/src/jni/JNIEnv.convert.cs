@@ -44,22 +44,22 @@ namespace net.sf.jni4net.jni
             return CallStaticMethod<TRes>(clazz, method, sig, Convertor.ConverArgs(this, args));
         }
 
-        public void CallVoidMethod(ICJvmProxy obj, string method, string signature, params object[] args)
+        public void CallVoidMethod(IJvmProxy obj, string method, string signature, params object[] args)
         {
             CallVoidMethod(obj, method, signature, Convertor.ConverArgs(this, args));
         }
 
-        public bool CallBooleanMethod(ICJvmProxy obj, string method, string sig, params object[] args)
+        public bool CallBooleanMethod(IJvmProxy obj, string method, string sig, params object[] args)
         {
             return CallBooleanMethod(obj, method, sig, Convertor.ConverArgs(this, args));
         }
 
-        public int CallIntMethod(ICJvmProxy obj, string method, string signature, params object[] args)
+        public int CallIntMethod(IJvmProxy obj, string method, string signature, params object[] args)
         {
             return CallIntMethod(obj, method, signature, Convertor.ConverArgs(this, args));
         }
 
-        public TRes CallMethod<TRes>(ICJvmProxy obj, string method, string sig, params object[] args)
+        public TRes CallMethod<TRes>(IJvmProxy obj, string method, string sig, params object[] args)
         {
             return CallMethod<TRes>(obj, method, sig, Convertor.ConverArgs(this, args));
         }

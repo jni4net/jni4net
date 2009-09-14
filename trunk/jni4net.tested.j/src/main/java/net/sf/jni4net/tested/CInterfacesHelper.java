@@ -26,7 +26,7 @@ public class CInterfacesHelper extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorCInterfacesHelper0(net.sf.jni4net.inj.ICClrProxy thiz);
+    private native static void __ctorCInterfacesHelper0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterface;")
     public native final net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);

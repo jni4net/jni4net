@@ -60,9 +60,9 @@ namespace net.sf.jni4net.utils
             return env.NewObjectPtr(JVMProxy.native, JVMConstructor, new Value(), new Value {_int = handle});
         }
 
-        internal ICJvmProxy CreateCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
+        internal IJvmProxy CreateCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
         {
-            ICJvmProxy proxy = CLRConstructor.CreateProxy(env);
+            IJvmProxy proxy = CLRConstructor.CreateProxy(env);
             proxy.Init(env, obj, clazz);
             return proxy;
         }

@@ -122,17 +122,17 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetDateTimeFormats", "GetDateTimeFormats77", "(Lsystem/IFormatProvider;)[Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetDateTimeFormats", "GetDateTimeFormats78", "(C)[Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetDateTimeFormats", "GetDateTimeFormats79", "(CLsystem/IFormatProvider;)[Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime0", "__ctorDateTime0", "(Lnet/sf/jni4net/inj/ICClrProxy;J)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime1", "__ctorDateTime1", "(Lnet/sf/jni4net/inj/ICClrProxy;JLsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime2", "__ctorDateTime2", "(Lnet/sf/jni4net/inj/ICClrProxy;III)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime3", "__ctorDateTime3", "(Lnet/sf/jni4net/inj/ICClrProxy;IIILsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime4", "__ctorDateTime4", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIII)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime5", "__ctorDateTime5", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIILsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime6", "__ctorDateTime6", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIILsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime7", "__ctorDateTime7", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIII)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime8", "__ctorDateTime8", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIIILsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime9", "__ctorDateTime9", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIIILsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime10", "__ctorDateTime10", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIIIIILsystem/Object;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime0", "__ctorDateTime0", "(Lnet/sf/jni4net/inj/IClrProxy;J)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime1", "__ctorDateTime1", "(Lnet/sf/jni4net/inj/IClrProxy;JLsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime2", "__ctorDateTime2", "(Lnet/sf/jni4net/inj/IClrProxy;III)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime3", "__ctorDateTime3", "(Lnet/sf/jni4net/inj/IClrProxy;IIILsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime4", "__ctorDateTime4", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIII)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime5", "__ctorDateTime5", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIILsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime6", "__ctorDateTime6", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIILsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime7", "__ctorDateTime7", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIII)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime8", "__ctorDateTime8", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIIILsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime9", "__ctorDateTime9", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIIILsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDateTime10", "__ctorDateTime10", "(Lnet/sf/jni4net/inj/IClrProxy;IIIIIIILsystem/Object;Lsystem/Enum;)V"));
             return methods;
         }
         
@@ -1109,7 +1109,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__DateTime(@__env);
             }
         }

@@ -44,16 +44,16 @@ public class IOException extends system.SystemException {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorIOException0(net.sf.jni4net.inj.ICClrProxy thiz);
+    private native static void __ctorIOException0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
-    private native static void __ctorIOException1(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message);
+    private native static void __ctorIOException1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;I)V")
-    private native static void __ctorIOException2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, int hresult);
+    private native static void __ctorIOException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, int hresult);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Exception;)V")
-    private native static void __ctorIOException3(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, system.Exception innerException);
+    private native static void __ctorIOException3(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
     
     public static system.Type typeof() {
         return system.io.IOException.staticType;

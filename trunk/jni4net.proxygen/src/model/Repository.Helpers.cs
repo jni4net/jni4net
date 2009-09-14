@@ -63,7 +63,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 if (javaProxyType == null)
                 {
-                    javaProxyType = assembly.GetType("net.sf.jni4net.jni.ICJvmProxy");
+                    javaProxyType = assembly.GetType("net.sf.jni4net.jni.IJvmProxy");
                 }
                 if (javaClassAttr == null)
                 {
@@ -90,7 +90,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 Console.Error.WriteLine("Wrong DLLs ?");
             }
-            clrProxyClass = JNIEnv.ThreadEnv.FindClassNoThrow("net/sf/jni4net/inj/ICClrProxy");
+            clrProxyClass = JNIEnv.ThreadEnv.FindClassNoThrow("net/sf/jni4net/inj/IClrProxy");
             clrProxy = RegisterClass(clrProxyClass);
             knownNames.Add("int", RegisterType(typeof (int)));
             knownNames.Add("long", RegisterType(typeof (long)));
@@ -122,6 +122,7 @@ namespace net.sf.jni4net.proxygen.model
             RegisterType(typeof (double)).JVMSubst = gdouble;
             RegisterType(typeof (float)).JVMSubst = gfloat;
             RegisterType(typeof (bool)).JVMSubst = gbool;
+            RegisterType(typeof(IntPtr)).JVMSubst = glong;
         }
 
         private static void BindKnownTypesPost()
@@ -197,7 +198,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             if (config.AssemblyReference == null || config.AssemblyReference.Length == 0)
             {
-                knownAssemblies.Add(typeof (ICJvmProxy).Assembly);
+                knownAssemblies.Add(typeof (IJvmProxy).Assembly);
             }
         }
 

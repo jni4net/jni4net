@@ -208,7 +208,7 @@ namespace java.util {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.Hashtable(@__env);
             }
         }

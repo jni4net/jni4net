@@ -47,10 +47,10 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CompareTo", "CompareTo4", "(Lsystem/Guid;)I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "NewGuid", "NewGuid5", "()Lsystem/Guid;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString6", "(Ljava/lang/String;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid0", "__ctorGuid0", "(Lnet/sf/jni4net/inj/ICClrProxy;[B)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid1", "__ctorGuid1", "(Lnet/sf/jni4net/inj/ICClrProxy;ISSBBBBBBBB)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid2", "__ctorGuid2", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid3", "__ctorGuid3", "(Lnet/sf/jni4net/inj/ICClrProxy;ISS[B)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid0", "__ctorGuid0", "(Lnet/sf/jni4net/inj/IClrProxy;[B)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid1", "__ctorGuid1", "(Lnet/sf/jni4net/inj/IClrProxy;ISSBBBBBBBB)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid2", "__ctorGuid2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorGuid3", "__ctorGuid3", "(Lnet/sf/jni4net/inj/IClrProxy;ISS[B)V"));
             return methods;
         }
         
@@ -172,7 +172,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__Guid(@__env);
             }
         }
