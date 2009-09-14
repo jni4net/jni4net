@@ -66,7 +66,7 @@ namespace net.sf.jni4net.utils
             RegisterType(typeof (__Type), true, env);
             RegisterType(typeof (__Object), true, env);
             RegisterType(typeof (__String), true, env);
-            RegisterType(typeof (__IClrProxy), true, env);
+            RegisterType(typeof (__ICClrProxy), true, env);
             initialized = true;
 
             BindJvm(knownCLR[typeof (Class)], env);
@@ -75,7 +75,7 @@ namespace net.sf.jni4net.utils
             BindJvm(knownCLR[typeof (__Type)], env);
             BindJvm(knownCLR[typeof (__Object)], env);
             BindJvm(knownCLR[typeof (__String)], env);
-            BindJvm(knownCLR[typeof (__IClrProxy)], env);
+            BindJvm(knownCLR[typeof (__ICClrProxy)], env);
 
             RegisterType(typeof (Boolean), true, env);
             RegisterType(typeof (Byte), true, env);
@@ -212,7 +212,15 @@ namespace net.sf.jni4net.utils
                 staticName = interfaceName;
             }
             record.JVMInterface = env.FindClassNoThrow(interfaceName.Replace('.', '/'));
+            if (record.JVMInterface == null)
+            {
+                throw new JNIException("Can't find java class for " + interfaceName);
+            }
             record.JVMStatic = env.FindClassNoThrow(staticName.Replace('.', '/'));
+            if (record.JVMStatic == null)
+            {
+                throw new JNIException("Can't find java class for " + staticName);
+            }
             if (proxyName != null)
             {
                 record.JVMProxy = env.FindClassNoThrow(proxyName.Replace('.', '/'));

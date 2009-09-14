@@ -50,19 +50,19 @@ public class ArgumentException extends system.SystemException {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorArgumentException0(net.sf.jni4net.inj.IClrProxy thiz);
+    private native static void __ctorArgumentException0(net.sf.jni4net.inj.ICClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
-    private native static void __ctorArgumentException1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message);
+    private native static void __ctorArgumentException1(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Exception;)V")
-    private native static void __ctorArgumentException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
+    private native static void __ctorArgumentException2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, system.Exception innerException);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Ljava/lang/String;Lsystem/Exception;)V")
-    private native static void __ctorArgumentException3(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, java.lang.String paramName, system.Exception innerException);
+    private native static void __ctorArgumentException3(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, java.lang.String paramName, system.Exception innerException);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Ljava/lang/String;)V")
-    private native static void __ctorArgumentException4(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, java.lang.String paramName);
+    private native static void __ctorArgumentException4(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, java.lang.String paramName);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getParamName();

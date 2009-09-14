@@ -64,7 +64,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal IntPtr NewObjectArrayPtr(int len, IntPtr clazz, IJavaProxy init)
+        internal IntPtr NewObjectArrayPtr(int len, IntPtr clazz, ICJvmProxy init)
         {
             IntPtr res = newObjectArray(native, len, clazz, init == null ? IntPtr.Zero : init.Native);
             ExceptionTest();
@@ -120,14 +120,14 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public IntPtr CallObjectMethodPtr(IJavaProxy obj, MethodId methodIdNative, params Value[] args)
+        public IntPtr CallObjectMethodPtr(ICJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
             IntPtr res = callObjectMethod(native, obj.Native, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public IntPtr GetObjectFieldPtr(IJavaProxy obj, FieldId fieldID)
+        public IntPtr GetObjectFieldPtr(ICJvmProxy obj, FieldId fieldID)
         {
             IntPtr res = getObjectField(native, obj.Native, fieldID.native);
             ExceptionTest();

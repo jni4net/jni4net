@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -298,7 +298,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
             }
 
-            if (IsCLRGenerate && CLRType!=typeof(IClrProxy))
+            if (IsCLRGenerate && CLRType!=typeof(ICClrProxy))
             {
                 if (Base != null && !Base.IsCLRType && !Base.IsCLRGenerate)
                 {

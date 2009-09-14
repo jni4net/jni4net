@@ -48,25 +48,25 @@ namespace System.IO {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSafeFileHandle", "SafeFileHandle5", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Lock", "Lock6", "(JJ)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Unlock", "Unlock7", "(JJ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream0", "__ctorFileStream0", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream1", "__ctorFileStream1", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream2", "__ctorFileStream2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream3", "__ctorFileStream3", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream4", "__ctorFileStream4", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;ILsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream5", "__ctorFileStream5", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;IZ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream6", "__ctorFileStream6", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
-                        "m/Enum;ILsystem/Enum;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream7", "__ctorFileStream7", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream8", "__ctorFileStream8", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream9", "__ctorFileStream9", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;ZI)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream10", "__ctorFileStream10", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/ValueType;Lsystem/Enum;ZIZ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;IZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream0", "__ctorFileStream0", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream1", "__ctorFileStream1", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream2", "__ctorFileStream2", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
+                        "em/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream3", "__ctorFileStream3", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
+                        "em/Enum;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream4", "__ctorFileStream4", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
+                        "em/Enum;ILsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream5", "__ctorFileStream5", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
+                        "em/Enum;IZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream6", "__ctorFileStream6", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
+                        "em/Enum;ILsystem/Enum;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream7", "__ctorFileStream7", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream8", "__ctorFileStream8", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream9", "__ctorFileStream9", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;ZI)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream10", "__ctorFileStream10", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;ZIZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;IZ)V"));
             return methods;
         }
         
@@ -297,7 +297,7 @@ namespace System.IO {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.IO.@__FileStream(@__env);
             }
         }

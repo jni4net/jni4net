@@ -94,12 +94,12 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToUInt64", "ToUInt6451", "(Lsystem/Decimal;)J"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToSingle", "ToSingle52", "(Lsystem/Decimal;)F"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Truncate", "Truncate53", "(Lsystem/Decimal;)Lsystem/Decimal;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal0", "__ctorDecimal0", "(Lnet/sf/jni4net/inj/IClrProxy;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal1", "__ctorDecimal1", "(Lnet/sf/jni4net/inj/IClrProxy;J)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal2", "__ctorDecimal2", "(Lnet/sf/jni4net/inj/IClrProxy;F)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal3", "__ctorDecimal3", "(Lnet/sf/jni4net/inj/IClrProxy;D)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal4", "__ctorDecimal4", "(Lnet/sf/jni4net/inj/IClrProxy;[I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal5", "__ctorDecimal5", "(Lnet/sf/jni4net/inj/IClrProxy;IIIZB)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal0", "__ctorDecimal0", "(Lnet/sf/jni4net/inj/ICClrProxy;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal1", "__ctorDecimal1", "(Lnet/sf/jni4net/inj/ICClrProxy;J)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal2", "__ctorDecimal2", "(Lnet/sf/jni4net/inj/ICClrProxy;F)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal3", "__ctorDecimal3", "(Lnet/sf/jni4net/inj/ICClrProxy;D)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal4", "__ctorDecimal4", "(Lnet/sf/jni4net/inj/ICClrProxy;[I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorDecimal5", "__ctorDecimal5", "(Lnet/sf/jni4net/inj/ICClrProxy;IIIZB)V"));
             return methods;
         }
         
@@ -727,7 +727,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__Decimal(@__env);
             }
         }

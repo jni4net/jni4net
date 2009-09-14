@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -353,7 +353,7 @@ namespace net.sf.jni4net.proxygen.generator
             var constructionHelper = new CodeTypeDeclaration("ContructionHelper");
             constructionHelper.BaseTypes.Add(TypeReference(typeof (IConstructionHelper)));
             var createMethod = new CodeMemberMethod();
-            createMethod.ReturnType = TypeReference(typeof (IJavaProxy));
+            createMethod.ReturnType = TypeReference(typeof (ICJvmProxy));
             createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)),
                                                                                envVariableName));
             createMethod.Statements.Add(

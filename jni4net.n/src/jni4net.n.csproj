@@ -62,7 +62,7 @@
     <Compile Include="jni\MethodInfoExt.cs" />
     <Compile Include="Bridge.cs" />
     <Compile Include="jni\FieldId.cs" />
-    <Compile Include="jni\IJavaProxy.cs" />
+    <Compile Include="jni\ICJvmProxy.cs" />
     <Compile Include="jni\JavaVM.cs" />
     <Compile Include="jni\JavaVM.delegates.cs" />
     <Compile Include="jni\JavaVMInitArgs.cs" />
@@ -196,7 +196,7 @@
     <Compile Include="generated\system\SystemException.generated.cs" />
     <Compile Include="generated\system\Type.generated.cs" />
     <Compile Include="generated\system\ValueType.generated.cs" />
-    <Compile Include="inj\IClrProxy.cs" />
+    <Compile Include="inj\ICClrProxy.cs" />
     <Compile Include="java\lang\Class.cs" />
     <Compile Include="java\lang\Integer.cs" />
     <Compile Include="java\lang\IObject.cs" />

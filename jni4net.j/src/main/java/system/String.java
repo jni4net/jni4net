@@ -38,13 +38,13 @@ public class String extends system.Object implements system.IComparable, system.
     }
     
     @net.sf.jni4net.attributes.ClrMethod("([CII)V")
-    private native static void __ctorString0(net.sf.jni4net.inj.IClrProxy thiz, char[] value, int startIndex, int length);
+    private native static void __ctorString0(net.sf.jni4net.inj.ICClrProxy thiz, char[] value, int startIndex, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)V")
-    private native static void __ctorString1(net.sf.jni4net.inj.IClrProxy thiz, char[] value);
+    private native static void __ctorString1(net.sf.jni4net.inj.ICClrProxy thiz, char[] value);
     
     @net.sf.jni4net.attributes.ClrMethod("(CI)V")
-    private native static void __ctorString2(net.sf.jni4net.inj.IClrProxy thiz, char c, int count);
+    private native static void __ctorString2(net.sf.jni4net.inj.ICClrProxy thiz, char c, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
     public native int CompareTo(system.Object obj);

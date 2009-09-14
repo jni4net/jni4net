@@ -120,7 +120,7 @@ namespace java.lang
         internal static String CreateProxy(JNIEnv env, IntPtr obj)
         {
             var proxy = new String(env);
-            ((IJavaProxy) proxy).Init(env, obj, staticClass);
+            ((ICJvmProxy) proxy).Init(env, obj, staticClass);
             return proxy;
         }
     }

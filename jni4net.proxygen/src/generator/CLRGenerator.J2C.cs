@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -185,7 +185,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             string callbackName = method.IsConstructor ? uName : method.JVMName;
             string callBackSignature = method.IsConstructor
-                                           ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/IClrProxy;")
+                                           ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/ICClrProxy;")
                                            : method.JVMSignature;
             var registation = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("methods"),
                                                              "Add",

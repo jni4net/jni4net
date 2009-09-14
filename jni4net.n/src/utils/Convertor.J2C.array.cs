@@ -66,7 +66,7 @@ namespace net.sf.jni4net.utils
         }
 
         public static TRes ArrayStrongJ2Cp<TRes, TElem>(JNIEnv env, IntPtr array)
-            where TElem : IJavaProxy
+            where TElem : ICJvmProxy
             where TRes : class //should be TRes : Array
         {
             if (array == IntPtr.Zero)

@@ -175,7 +175,7 @@ namespace java.lang
         internal static Class CreateProxy(JNIEnv env, IntPtr obj)
         {
             var proxy = new Class(env);
-            ((IJavaProxy) proxy).Init(env, obj, staticClass);
+            ((ICJvmProxy) proxy).Init(env, obj, staticClass);
             return proxy;
         }
     }

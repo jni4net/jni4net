@@ -166,9 +166,9 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Concat", "Concat121", "([Ljava/lang/String;)Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Intern", "Intern122", "(Ljava/lang/String;)Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "IsInterned", "IsInterned123", "(Ljava/lang/String;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString0", "__ctorString0", "(Lnet/sf/jni4net/inj/IClrProxy;[CII)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString1", "__ctorString1", "(Lnet/sf/jni4net/inj/IClrProxy;[C)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString2", "__ctorString2", "(Lnet/sf/jni4net/inj/IClrProxy;CI)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString0", "__ctorString0", "(Lnet/sf/jni4net/inj/ICClrProxy;[CII)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString1", "__ctorString1", "(Lnet/sf/jni4net/inj/ICClrProxy;[C)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorString2", "__ctorString2", "(Lnet/sf/jni4net/inj/ICClrProxy;CI)V"));
             return methods;
         }
         
@@ -1533,7 +1533,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__String(@__env);
             }
         }
