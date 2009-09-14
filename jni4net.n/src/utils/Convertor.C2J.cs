@@ -54,8 +54,14 @@ namespace net.sf.jni4net.utils
 #endif
 
             var proxy = obj as IJvmProxy;
-            if (proxy != null && typeof (IJvmProxy).IsAssignableFrom(reqType))
+            if (proxy != null)
             {
+                if (!typeof(IJvmProxy).IsAssignableFrom(reqType))
+                {
+                    //now we do double wrap
+                    RegistryRecord recordW = Registry.GetCLRRecord(typeof(IJvmProxy));
+                    return recordW.CreateJVMProxy(env, obj);
+                }
                 if (Bridge.Debug)
                 {
                     Class clazzT = env.GetObjectClass(proxy.Native);
@@ -75,10 +81,8 @@ namespace net.sf.jni4net.utils
             }
 
             //Now we deal only with CLR instances
-            //or with wrapped JVM instances, which should stay wrapped
-
             RegistryRecord record = Registry.GetCLRRecord(realType);
-            if (record.JVMProxy != null && reqType.IsAssignableFrom(record.CLRInterface))
+            if (reqType.IsAssignableFrom(record.CLRInterface))
             {
                 return record.CreateJVMProxy(env, obj);
             }

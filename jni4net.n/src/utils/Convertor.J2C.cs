@@ -53,9 +53,13 @@ namespace net.sf.jni4net.utils
                 return (TRes) (object) StrongJp2CString(env, obj);
             }
 
-            if (!typeof (IJvmProxy).IsAssignableFrom(reqType)
-                && IClrProxy_._class.isAssignableFrom(clazz))
+            if (IClrProxy_._class.isAssignableFrom(clazz))
             {
+                if (typeof(IJvmProxy).IsAssignableFrom(reqType))
+                {
+                    //now we double wrap
+                    return (TRes)__IClrProxy.CreateProxy(env, obj, IClrProxy_._class);
+                }
                 object res = __IClrProxy.GetObject(env, obj);
                 if (Bridge.Debug)
                 {
@@ -68,8 +72,7 @@ namespace net.sf.jni4net.utils
                 return (TRes) res;
             }
 
-            //now we deal only with JVM instances, 
-            // or with wrapped CLR instances, which should stay wrapped
+            //now we deal only with JVM instances
             RegistryRecord record = Registry.GetJVMRecord(clazz);
             if (reqType.IsAssignableFrom(record.CLRInterface))
             {
