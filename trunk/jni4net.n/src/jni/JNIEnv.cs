@@ -819,10 +819,15 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
+        internal void SetStaticBooleanField(IntPtr clazz, IntPtr fieldID, bool value)
+        {
+            setStaticBooleanField(native, native, native, value ? (byte)1 : (byte)0);
+            ExceptionTest();
+        }
+
         internal void SetStaticBooleanField(Class clazz, FieldId fieldID, bool value)
         {
-            setStaticBooleanField(native, clazz.native, fieldID.native, value ? (byte) 1 : (byte) 0);
-            ExceptionTest();
+            SetStaticBooleanField(clazz.native, fieldID.native, value);
         }
 
         internal void SetStaticByteField(Class clazz, FieldId fieldID, byte value)
@@ -1282,7 +1287,7 @@ namespace net.sf.jni4net.jni
             var ext = ex as Throwable;
             if (ext == null)
             {
-                Throw(Convertor.StrongCp2J(ext));
+                Throw(Convertor.StrongC2Jp(this, ex));
             }
             else
             {

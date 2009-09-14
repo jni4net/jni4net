@@ -40,9 +40,6 @@ namespace net.sf.jni4net {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__Bridge);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM0", "(Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM1", "(Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM2", "(Lsystem/Exception;Ljava/lang/Class;)Ljava/lang/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getVerbose", "Verbose3", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerboseImpl", "Verbose4", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getDebug", "Debug5", "()Z"));
@@ -55,35 +52,6 @@ namespace net.sf.jni4net {
             return methods;
         }
         
-        private static global::System.IntPtr WrapJVM0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
-            // (Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;
-            // (Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, global::net.sf.jni4net.Bridge.WrapJVM(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.jni.IJavaProxy>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr UnwrapJVM1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
-            // (Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;
-            // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
-        
-        private static global::System.IntPtr UnwrapJVM2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr obj, global::System.IntPtr interfaceClass) {
-            // (Lsystem/Exception;Ljava/lang/Class;)Ljava/lang/Object;
-            // (LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::net.sf.jni4net.jni.IJavaProxy>(@__env, global::net.sf.jni4net.Bridge.UnwrapJVM(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, obj), global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, interfaceClass)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(global::System.IntPtr);
-        }
         
         private static bool Verbose3(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
             // ()Z

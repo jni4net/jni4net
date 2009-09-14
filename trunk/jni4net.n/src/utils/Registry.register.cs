@@ -322,7 +322,7 @@ namespace net.sf.jni4net.utils
             }
             record.CLRInterface = interfaceType;
             record.CLRWrapper = wrapperType;
-            record.CLRWrapperInitMethod = GetWrapperInitializer(wrapperType);
+            record.CLRWrapperInitMethod = GetWrapperInitializer(wrapperType, "__Init");
             record.CLRName = interfaceType.FullName;
             record.JVMName = interfaceType.Namespace.ToLowerInvariant() + "." + interfaceType.Name;
 

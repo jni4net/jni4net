@@ -152,23 +152,27 @@ namespace net.sf.jni4net
 
         internal static void Init(JNIEnv env)
         {
-            // rather neat. When called like Clr->Java->Clr this dll gets loaded twice.
-            // which means two separate sets CLR of classes and static members
-            RegisterAssembly(typeof (Bridge).Assembly);
-            Class clazz = null;
             if (BindNative)
             {
-                clazz = env.FindClass("net/sf/jni4net/Bridge");
-                if (clazz == null)
-                {
-                    return;
-                }
-                var isRegistered = clazz.GetFieldValue<bool>("isRegistered", "Z");
+                IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
+                IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
+                var isRegistered = env.GetStaticBooleanField(br, ir);
                 if (isRegistered)
                 {
+                    // rather neat. When called like Clr->Java->Clr this dll gets loaded twice.
+                    // which means two separate sets CLR of classes and static members
+                    if (Verbose)
+                    {
+                        Console.WriteLine("Already initialized jni4net core before");
+                    }
                     return;
                 }
             }
+
+            RegisterAssembly(typeof(Bridge).Assembly);
+            MethodInfo initializer = Registry.GetWrapperInitializer(typeof (__Bridge), "__Init2");
+            RegistryRecord record = Registry.GetCLRRecord(typeof (Bridge));
+            Registry.RegisterNative(initializer, env, record.JVMProxy, record.JVMInterface);
 
             if (Verbose)
             {
@@ -176,7 +180,9 @@ namespace net.sf.jni4net
             }
             if (BindNative)
             {
-                clazz.SetFieldValue("isRegistered", "Z", true);
+                IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
+                IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
+                env.SetStaticBooleanField(br, ir, true);
             }
         }
 
