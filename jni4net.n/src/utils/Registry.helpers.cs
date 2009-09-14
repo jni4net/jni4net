@@ -115,9 +115,9 @@ namespace net.sf.jni4net.utils
             return env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
         }
 
-        private static MethodInfo GetWrapperInitializer(Type wrapperType)
+        internal static MethodInfo GetWrapperInitializer(Type wrapperType, string name)
         {
-            MethodInfo initializer = wrapperType.GetMethod("__Init", BindingFlags.Static | BindingFlags.NonPublic, null,
+            MethodInfo initializer = wrapperType.GetMethod(name, BindingFlags.Static | BindingFlags.NonPublic, null,
                                                            new[] {typeof (JNIEnv), typeof (Class)}, null);
             if (initializer == null)
             {
@@ -138,7 +138,7 @@ namespace net.sf.jni4net.utils
             return initMethod;
         }
 
-        private static void RegisterNative(MethodInfo initializer, JNIEnv env, Class jvmProxy, Class jvmInterface)
+        internal static void RegisterNative(MethodInfo initializer, JNIEnv env, Class jvmProxy, Class jvmInterface)
         {
             var registrations = (List<JNINativeMethod>) initializer.Invoke(null, new object[] {env, jvmProxy});
             if (registrations.Count > 0)

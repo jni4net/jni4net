@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy_;
+import net.sf.jni4net.inj.INJException;
 
 import java.lang.String;
 
@@ -76,22 +77,42 @@ public class Bridge extends system.Object {
 
 	@SuppressWarnings("unchecked")
 	public static <TRes,TInput> TRes wrapJVM(TInput obj, Class<TRes> requestedClass){
+		if (IObject.class.isAssignableFrom(obj.getClass())){
+			throw new INJException("Can't wrap CLR instance");
+		}
 		return (TRes)WrapJVM(obj, requestedClass);
 	}
 
 	@SuppressWarnings("unchecked")
 	public static <TRes> TRes unwrapJVM(system.Object obj, Class<TRes> requestedClass){
+		//TODO optimize assert ?
+		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
+			throw new INJException("Can't unwrap JVM instance");
+		}
 		return (TRes)UnwrapJVM(obj, requestedClass);
 	}
 
 	@SuppressWarnings("unchecked")
 	public static <TRes> TRes unwrapJVM(system.Exception obj, Class<TRes> requestedClass){
+		//TODO optimize assert ?
+		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
+			throw new INJException("Can't unwrap JVM instance");
+		}
 		return (TRes)UnwrapJVM(obj, requestedClass);
 	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
 	@net.sf.jni4net.attributes.ClrMethod("()I")
 	static native int initDotNet();
+
+	@net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
+	public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
+
+	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
+	public native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
+
+	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
+	public native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
 
 	//<generated-proxy>
     private static system.Type staticType;
@@ -103,15 +124,6 @@ public class Bridge extends system.Object {
     protected Bridge() {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
-    public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-    public native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-    public native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native static boolean getVerbose();

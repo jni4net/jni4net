@@ -21,11 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Collections.Generic;
 using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
-using String=java.lang.String;
+using Exception=System.Exception;
 
 namespace net.sf.jni4net
 {
@@ -33,8 +34,8 @@ namespace net.sf.jni4net
     {
         public static bool IsCLRInstance(object obj)
         {
-            IJavaProxy proxy = obj as IJavaProxy;
-            if (proxy!=null)
+            var proxy = obj as IJavaProxy;
+            if (proxy != null)
             {
                 return proxy is IClrProxy;
             }
@@ -48,8 +49,8 @@ namespace net.sf.jni4net
 
         public static IClrProxy WrapCLR(object obj)
         {
-            IJavaProxy proxy = obj as IJavaProxy;
-            IClrProxy clrProxy = proxy as IClrProxy;
+            var proxy = obj as IJavaProxy;
+            var clrProxy = proxy as IClrProxy;
             if (proxy != null)
             {
                 if (clrProxy != null)
@@ -68,70 +69,60 @@ namespace net.sf.jni4net
 
         public static TRes UnwrapCLR<TRes>(IJavaProxy obj)
         {
-            IClrProxy clrProxy = obj as IClrProxy;
+            var clrProxy = obj as IClrProxy;
             if (clrProxy == null)
             {
                 throw new JNIException("Can't unwrap JVM instance");
             }
             int handle = clrProxy.getClrHandle();
-            return (TRes)IntHandle.ToObject(handle);
+            return (TRes) IntHandle.ToObject(handle);
+        }
+    }
+
+    internal partial class __Bridge
+    {
+        private static IntPtr WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj, IntPtr interfaceClass)
+        {
+            // (Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;
+            // (Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;
+            JNIEnv env = JNIEnv.Wrap(__envp);
+            try
+            {
+                Class clazz = Convertor.StrongJ2CpClass(env, interfaceClass);
+                RegistryRecord record = Registry.GetJVMRecord(clazz);
+                return record.CreateCLRProxy(env, obj, clazz).Native;
+            }
+            catch (Exception ex)
+            {
+                env.ThrowExisting(ex);
+            }
+            return default(IntPtr);
         }
 
-        /*public static TRes Convert<TRes>(IJavaProxy obj)
+        private static IntPtr UnwrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj, IntPtr interfaceClass)
         {
-            IClrProxy clrProxy = obj as IClrProxy;
-            Type reqType = typeof(TRes);
-            Type inType = obj.GetType();
-            if (reqType==inType)
+            // (Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;
+            // (LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;
+            JNIEnv env = JNIEnv.Wrap(__envp);
+            try
             {
-                return (TRes) obj;
+                IJavaProxy real = (IJavaProxy)__IClrProxy.GetObject(env, obj);
+                return real.Native;
             }
-            if (reqType==typeof(string))
+            catch (Exception ex)
             {
-                if (clrProxy!=null)
-                {
-                    object real = UnwrapCLR<object>(obj);
-                    Type realType = real.GetType();
-                    if (!reqType.IsAssignableFrom(realType))
-                    {
-                        throw new InvalidCastException("Can't cast " + realType + " to " + reqType);
-                    }
-                    return (TRes)real;
-                }
-                if (inType == typeof(String))
-                {
-                    return (TRes)(object)(string)(String) obj;
-                }
+                env.ThrowExisting(ex);
             }
-            if (typeof(IJavaProxy).IsAssignableFrom(reqType))
-            {
-                
-            }
-            if (reqType.IsPrimitive)
-            {
-                
-            }
-            Class clazz = obj.getClass();
-        }*/
-
-        public static object WrapJVM(IJavaProxy obj, Class interfaceClass)
-        {
-            IClrProxy clrProxy = obj as IClrProxy;
-            if (clrProxy!=null)
-            {
-                return Convertor.FullJ2C<object>(JNIEnv.ThreadEnv, obj.Native);
-            }
-            return obj;
+            return default(IntPtr);
         }
 
-        public static IJavaProxy UnwrapJVM(object obj, Class interfaceClass)
+        private static List<JNINativeMethod> __Init2(JNIEnv @__env, Class @__class)
         {
-            return null;// Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
-        }
-
-        public static IJavaProxy UnwrapJVM(System.Exception obj, Class interfaceClass)
-        {
-            return null;//Convertor.C2JWrapper(JNIEnv.ThreadEnv, obj);
+            Type @__type = typeof (__Bridge);
+            var methods = new List<JNINativeMethod>();
+            methods.Add(JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM", "(Ljava/lang/Object;Ljava/lang/Class;)Lsystem/Object;"));
+            methods.Add(JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM", "(Lsystem/Object;Ljava/lang/Class;)Ljava/lang/Object;"));
+            return methods;
         }
     }
 }
