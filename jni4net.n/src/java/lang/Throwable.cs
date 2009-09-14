@@ -27,7 +27,7 @@ using net.sf.jni4net.jni;
 
 namespace java.lang
 {
-    partial class Throwable : global::System.Exception, ICJvmProxy
+    partial class Throwable : global::System.Exception, IJvmProxy
     {
         internal Class clazz;
         private JavaVM javaVM;
@@ -82,15 +82,15 @@ namespace java.lang
             get { return getMessage(); }
         }
 
-        #region ICJvmProxy Members
+        #region IJvmProxy Members
 
-        IntPtr ICJvmProxy.Native
+        IntPtr IJvmProxy.Native
         {
             get { return native; }
             set { native = value; }
         }
 
-        void ICJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
+        void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
             native = env.NewGlobalRef(obj);
@@ -98,7 +98,7 @@ namespace java.lang
             javaVM = env.GetJavaVM();
         }
 
-        Class ICJvmProxy.GetClass()
+        Class IJvmProxy.GetClass()
         {
             if (clazz == null)
             {
@@ -160,7 +160,7 @@ namespace java.lang
             Dispose();
         }
 
-        public static bool operator ==(Throwable a, ICJvmProxy b)
+        public static bool operator ==(Throwable a, IJvmProxy b)
         {
             if ((object) a == null && b == null)
                 return true;
@@ -170,7 +170,7 @@ namespace java.lang
             //return a.native == b.native;
         }
 
-        public static bool operator !=(Throwable a, ICJvmProxy b)
+        public static bool operator !=(Throwable a, IJvmProxy b)
         {
             if ((object) a == null && b == null)
                 return false;
@@ -185,7 +185,7 @@ namespace java.lang
             JNIEnv env = Env;
             if ((_toString5 == null))
             {
-                _toString5 = env.GetMethodID(((ICJvmProxy) this).GetClass(), "toString", "()Ljava/lang/String;");
+                _toString5 = env.GetMethodID(((IJvmProxy) this).GetClass(), "toString", "()Ljava/lang/String;");
             }
             return toString();
         }

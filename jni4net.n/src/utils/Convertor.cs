@@ -49,7 +49,7 @@ namespace net.sf.jni4net.utils
         public static void InitProxy(JNIEnv env, IntPtr obj, object real)
         {
             int handle = IntHandle.Alloc(real);
-            env.CallVoidMethod(obj, __ICClrProxy._initProxy1, new Value {_int = handle});
+            env.CallVoidMethod(obj, __IClrProxy._initProxy1, new Value {_int = handle});
         }
     }
 }

@@ -185,7 +185,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             string callbackName = method.IsConstructor ? uName : method.JVMName;
             string callBackSignature = method.IsConstructor
-                                           ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/ICClrProxy;")
+                                           ? method.JVMSignature.Replace("(", "(Lnet/sf/jni4net/inj/IClrProxy;")
                                            : method.JVMSignature;
             var registation = new CodeMethodInvokeExpression(new CodeVariableReferenceExpression("methods"),
                                                              "Add",

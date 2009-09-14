@@ -41,12 +41,12 @@ namespace System {
             global::System.Type @__type = typeof(__ArgumentException);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getParamName", "ParamName0", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException0", "__ctorArgumentException0", "(Lnet/sf/jni4net/inj/ICClrProxy;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException1", "__ctorArgumentException1", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException2", "__ctorArgumentException2", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Exception;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException3", "__ctorArgumentException3", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Ljava/lang/String;Lsystem/Excep" +
-                        "tion;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException4", "__ctorArgumentException4", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException0", "__ctorArgumentException0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException1", "__ctorArgumentException1", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException2", "__ctorArgumentException2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Exception;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException3", "__ctorArgumentException3", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Ljava/lang/String;Lsystem/Except" +
+                        "ion;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorArgumentException4", "__ctorArgumentException4", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Ljava/lang/String;)V"));
             return methods;
         }
         
@@ -113,7 +113,7 @@ namespace System {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__ArgumentException(@__env);
             }
         }

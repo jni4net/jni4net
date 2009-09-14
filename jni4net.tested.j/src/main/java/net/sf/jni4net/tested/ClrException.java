@@ -26,7 +26,7 @@ public class ClrException extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorClrException0(net.sf.jni4net.inj.ICClrProxy thiz);
+    private native static void __ctorClrException0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native static void NoException();

@@ -20,13 +20,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static Value ParStrongCp2J(ICJvmProxy obj)
+        public static Value ParStrongCp2J(IJvmProxy obj)
         {
             var res = new Value {_object = StrongCp2J(obj)};
             return res;
@@ -100,6 +101,12 @@ namespace net.sf.jni4net.utils
         public static Value ParPrimC2J(short value)
         {
             var res = new Value {_short = value};
+            return res;
+        }
+
+        public static Value ParPrimC2J(IntPtr value)
+        {
+            var res = new Value { _long = value.ToInt64() };
             return res;
         }
 

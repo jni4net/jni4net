@@ -53,10 +53,10 @@ namespace net.sf.jni4net.utils
                 return (TRes) (object) StrongJp2CString(env, obj);
             }
 
-            if (!typeof (ICJvmProxy).IsAssignableFrom(reqType)
-                && ICClrProxy_._class.isAssignableFrom(clazz))
+            if (!typeof (IJvmProxy).IsAssignableFrom(reqType)
+                && IClrProxy_._class.isAssignableFrom(clazz))
             {
-                object res = __ICClrProxy.GetObject(env, obj);
+                object res = __IClrProxy.GetObject(env, obj);
                 if (Bridge.Debug)
                 {
                     Type realType = res.GetType();

@@ -122,7 +122,7 @@ namespace net.sf.jni4net.proxygen.generator
             // inject thiz parameter
             var tgtParameter = new CodeParameterDeclarationExpression();
             tgtParameter.Name = "thiz";
-            tgtParameter.Type = TypeReference(typeof (ICClrProxy));
+            tgtParameter.Type = TypeReference(typeof (IClrProxy));
             tgtMethod.Parameters.Add(tgtParameter);
 
             GenerateParameters(constructor, tgtMethod);

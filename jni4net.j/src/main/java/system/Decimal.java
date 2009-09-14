@@ -56,22 +56,22 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    private native static void __ctorDecimal0(net.sf.jni4net.inj.ICClrProxy thiz, int value);
+    private native static void __ctorDecimal0(net.sf.jni4net.inj.IClrProxy thiz, int value);
     
     @net.sf.jni4net.attributes.ClrMethod("(J)V")
-    private native static void __ctorDecimal1(net.sf.jni4net.inj.ICClrProxy thiz, long value);
+    private native static void __ctorDecimal1(net.sf.jni4net.inj.IClrProxy thiz, long value);
     
     @net.sf.jni4net.attributes.ClrMethod("(F)V")
-    private native static void __ctorDecimal2(net.sf.jni4net.inj.ICClrProxy thiz, float value);
+    private native static void __ctorDecimal2(net.sf.jni4net.inj.IClrProxy thiz, float value);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)V")
-    private native static void __ctorDecimal3(net.sf.jni4net.inj.ICClrProxy thiz, double value);
+    private native static void __ctorDecimal3(net.sf.jni4net.inj.IClrProxy thiz, double value);
     
     @net.sf.jni4net.attributes.ClrMethod("([I)V")
-    private native static void __ctorDecimal4(net.sf.jni4net.inj.ICClrProxy thiz, int[] bits);
+    private native static void __ctorDecimal4(net.sf.jni4net.inj.IClrProxy thiz, int[] bits);
     
     @net.sf.jni4net.attributes.ClrMethod("(IIIZB)V")
-    private native static void __ctorDecimal5(net.sf.jni4net.inj.ICClrProxy thiz, int lo, int mid, int hi, boolean isNegative, byte scale);
+    private native static void __ctorDecimal5(net.sf.jni4net.inj.IClrProxy thiz, int lo, int mid, int hi, boolean isNegative, byte scale);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/IFormatProvider;)LSystem/String;")
     public native java.lang.String ToString(java.lang.String format, system.IFormatProvider formatProvider);

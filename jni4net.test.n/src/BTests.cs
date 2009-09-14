@@ -88,7 +88,7 @@ namespace net.sf.jni4net.test
         {
             JInterfacesHelper h = new JInterfacesHelper();
             CWithJavaInterface cwc = h.getCWithJavaInterfaceC(new CWithJavaInterface(0));
-            ICJvmProxy val = Bridge.WrapCLR(cwc);
+            IJvmProxy val = Bridge.WrapCLR(cwc);
             RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, val.Native, val.getClass());
             Assert.IsNotNull(record);
         }

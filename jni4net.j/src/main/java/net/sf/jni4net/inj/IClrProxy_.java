@@ -10,26 +10,26 @@
 package net.sf.jni4net.inj;
 
 @net.sf.jni4net.attributes.ClrTypeInfo
-public final class ICClrProxy_ {
+public final class IClrProxy_ {
     
     //<generated-static>
     private static system.Type staticType;
     
     public static system.Type typeof() {
-        return ICClrProxy_.staticType;
+        return IClrProxy_.staticType;
     }
     
     private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
-        ICClrProxy_.staticType = staticType;
+        IClrProxy_.staticType = staticType;
     }
     //</generated-static>
 }
 
 //<generated-proxy>
 @net.sf.jni4net.attributes.ClrProxy
-class __ICClrProxy extends system.Object implements ICClrProxy {
+class __IClrProxy extends system.Object implements IClrProxy {
     
-	protected __ICClrProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+	protected __IClrProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
 			super(__env, __handle);
 	}
 

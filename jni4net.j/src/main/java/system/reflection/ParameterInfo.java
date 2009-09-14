@@ -78,7 +78,7 @@ public class ParameterInfo extends system.Object implements system.reflection.IC
     public native system.Type[] GetOptionalCustomModifiers();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
-    public native void GetTypeInfo(int iTInfo, int lcid, system.ValueType ppTInfo);
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
     
     public static system.Type typeof() {
         return system.reflection.ParameterInfo.staticType;

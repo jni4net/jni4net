@@ -94,7 +94,7 @@ namespace net.sf.jni4net.utils
 
         public static IntPtr ArrayStrongCp2J<TBoth>(JNIEnv env, TBoth obj)
             where TBoth : class
-            //should be where TBoth : ICJvmProxy[]
+            //should be where TBoth : IJvmProxy[]
         {
             if (obj == null)
             {
@@ -113,7 +113,7 @@ namespace net.sf.jni4net.utils
             IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
             for (int i = 0; i < length; i++)
             {
-                IntPtr item = StrongCp2J((ICJvmProxy) array.GetValue(i));
+                IntPtr item = StrongCp2J((IJvmProxy) array.GetValue(i));
                 env.SetObjectArrayElement(res, i, item);
             }
             return res;

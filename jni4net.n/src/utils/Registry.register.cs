@@ -66,7 +66,7 @@ namespace net.sf.jni4net.utils
             RegisterType(typeof (__Type), true, env);
             RegisterType(typeof (__Object), true, env);
             RegisterType(typeof (__String), true, env);
-            RegisterType(typeof (__ICClrProxy), true, env);
+            RegisterType(typeof (__IClrProxy), true, env);
             initialized = true;
 
             BindJvm(knownCLR[typeof (Class)], env);
@@ -75,7 +75,7 @@ namespace net.sf.jni4net.utils
             BindJvm(knownCLR[typeof (__Type)], env);
             BindJvm(knownCLR[typeof (__Object)], env);
             BindJvm(knownCLR[typeof (__String)], env);
-            BindJvm(knownCLR[typeof (__ICClrProxy)], env);
+            BindJvm(knownCLR[typeof (__IClrProxy)], env);
 
             RegisterType(typeof (Boolean), true, env);
             RegisterType(typeof (Byte), true, env);

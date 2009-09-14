@@ -44,29 +44,29 @@ namespace System.IO {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getName", "Name1", "()Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAccessControl", "GetAccessControl2", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetAccessControl", "SetAccessControl3", "(Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getHandle", "Handle4", "()Lsystem/ValueType;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getHandle", "Handle4", "()J"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSafeFileHandle", "SafeFileHandle5", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Lock", "Lock6", "(JJ)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Unlock", "Unlock7", "(JJ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream0", "__ctorFileStream0", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream1", "__ctorFileStream1", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream2", "__ctorFileStream2", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
-                        "em/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream3", "__ctorFileStream3", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
-                        "em/Enum;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream4", "__ctorFileStream4", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
-                        "em/Enum;ILsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream5", "__ctorFileStream5", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
-                        "em/Enum;IZ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream6", "__ctorFileStream6", "(Lnet/sf/jni4net/inj/ICClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyst" +
-                        "em/Enum;ILsystem/Enum;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream7", "__ctorFileStream7", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream8", "__ctorFileStream8", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream9", "__ctorFileStream9", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;ZI)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream10", "__ctorFileStream10", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/ValueType;Lsystem/Enum;ZIZ)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/ICClrProxy;Lsystem/Object;Lsystem/Enum;IZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream0", "__ctorFileStream0", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream1", "__ctorFileStream1", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream2", "__ctorFileStream2", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
+                        "m/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream3", "__ctorFileStream3", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
+                        "m/Enum;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream4", "__ctorFileStream4", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
+                        "m/Enum;ILsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream5", "__ctorFileStream5", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
+                        "m/Enum;IZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream6", "__ctorFileStream6", "(Lnet/sf/jni4net/inj/IClrProxy;Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsyste" +
+                        "m/Enum;ILsystem/Enum;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream7", "__ctorFileStream7", "(Lnet/sf/jni4net/inj/IClrProxy;JLsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream8", "__ctorFileStream8", "(Lnet/sf/jni4net/inj/IClrProxy;JLsystem/Enum;Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream9", "__ctorFileStream9", "(Lnet/sf/jni4net/inj/IClrProxy;JLsystem/Enum;ZI)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream10", "__ctorFileStream10", "(Lnet/sf/jni4net/inj/IClrProxy;JLsystem/Enum;ZIZ)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream11", "__ctorFileStream11", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream12", "__ctorFileStream12", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorFileStream13", "__ctorFileStream13", "(Lnet/sf/jni4net/inj/IClrProxy;Lsystem/Object;Lsystem/Enum;IZ)V"));
             return methods;
         }
         
@@ -114,7 +114,7 @@ namespace System.IO {
         }
         
         private static global::System.IntPtr Handle4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
-            // ()Lsystem/ValueType;
+            // ()J
             // ()LSystem/IntPtr;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -226,7 +226,7 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream7(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
-            // (Lsystem/ValueType;Lsystem/Enum;)V
+            // (JLsystem/Enum;)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -236,7 +236,7 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream8(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle) {
-            // (Lsystem/ValueType;Lsystem/Enum;Z)V
+            // (JLsystem/Enum;Z)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -246,7 +246,7 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream9(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize) {
-            // (Lsystem/ValueType;Lsystem/Enum;ZI)V
+            // (JLsystem/Enum;ZI)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZI)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -256,7 +256,7 @@ namespace System.IO {
         }
         
         private static void @__ctorFileStream10(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize, bool isAsync) {
-            // (Lsystem/ValueType;Lsystem/Enum;ZIZ)V
+            // (JLsystem/Enum;ZIZ)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZIZ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -297,7 +297,7 @@ namespace System.IO {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.IO.@__FileStream(@__env);
             }
         }

@@ -789,7 +789,7 @@ namespace net.sf.jni4net.proxygen.generator
                 if (enumerator.MoveNext())
                 {
                     var type = (CodeTypeReference) enumerator.Current;
-                    if (type.BaseType == "net.sf.jni4net.inj.ICClrProxy" && !CurrentClass.IsInterface)
+                    if (type.BaseType == "net.sf.jni4net.inj.IClrProxy" && !CurrentClass.IsInterface)
                     {
                         output.Write(" implements ");
                     }

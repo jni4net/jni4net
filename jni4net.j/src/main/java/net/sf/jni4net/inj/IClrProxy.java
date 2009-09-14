@@ -15,19 +15,18 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-package system;
+
+package net.sf.jni4net.inj;
+
+import system.IObject;
 
 /**
  * @author Pavel Savara (original)
  */
-public interface IObject {
+public interface IClrProxy extends IObject {
 
-	java.lang.String ToString();
+	int getClrHandle();
 
-	boolean Equals(system.Object objPar0);
-
-	int GetHashCode();
-
-	system.Type GetType();
+	void initProxy(int handle);
 
 }

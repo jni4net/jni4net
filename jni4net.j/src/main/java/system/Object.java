@@ -18,10 +18,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package system;
 
-import net.sf.jni4net.inj.ICClrProxy;
+import net.sf.jni4net.inj.IClrProxy;
 
 @net.sf.jni4net.attributes.ClrType
-public class Object implements ICClrProxy, system.IObject {
+public class Object implements IClrProxy, system.IObject {
     
 	private int clrHandle;
 
@@ -64,7 +64,7 @@ public class Object implements ICClrProxy, system.IObject {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorObject0(net.sf.jni4net.inj.ICClrProxy thiz);
+    private native static void __ctorObject0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String ToString();

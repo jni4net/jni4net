@@ -44,16 +44,16 @@ public class Guid extends system.ValueType implements system.IFormattable, syste
     }
     
     @net.sf.jni4net.attributes.ClrMethod("([B)V")
-    private native static void __ctorGuid0(net.sf.jni4net.inj.ICClrProxy thiz, byte[] b);
+    private native static void __ctorGuid0(net.sf.jni4net.inj.IClrProxy thiz, byte[] b);
     
     @net.sf.jni4net.attributes.ClrMethod("(ISSBBBBBBBB)V")
-    private native static void __ctorGuid1(net.sf.jni4net.inj.ICClrProxy thiz, int a, short b, short c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k);
+    private native static void __ctorGuid1(net.sf.jni4net.inj.IClrProxy thiz, int a, short b, short c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
-    private native static void __ctorGuid2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String g);
+    private native static void __ctorGuid2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String g);
     
     @net.sf.jni4net.attributes.ClrMethod("(ISS[B)V")
-    private native static void __ctorGuid3(net.sf.jni4net.inj.ICClrProxy thiz, int a, short b, short c, byte[] d);
+    private native static void __ctorGuid3(net.sf.jni4net.inj.IClrProxy thiz, int a, short b, short c, byte[] d);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/IFormatProvider;)LSystem/String;")
     public native java.lang.String ToString(java.lang.String format, system.IFormatProvider formatProvider);

@@ -26,7 +26,7 @@ public class StaticMethods extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorStaticMethods0(net.sf.jni4net.inj.ICClrProxy thiz);
+    private native static void __ctorStaticMethods0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(II)I")
     public native static int add(int a, int b);

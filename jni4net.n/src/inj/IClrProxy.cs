@@ -22,15 +22,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using java.lang;
-using java_.lang;
+using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
-namespace net.sf.jni4net.jni
+namespace net.sf.jni4net.inj
 {
-    public interface ICJvmProxy : IObject
+    public partial interface IClrProxy : IJvmProxy
     {
-        IntPtr Native { get; set; }
-        void Init(JNIEnv env, IntPtr obj, Class clazz);
+        int getClrHandle();
 
-        Class GetClass();
+        void initProxy(int par0);
+    }
+
+    internal partial class __IClrProxy
+    {
+        private static int getClrHandle(JNIEnv env, IntPtr obj)
+        {
+            return env.CallIntMethod(obj, _getClrHandle0);
+        }
+
+        internal static object GetObject(JNIEnv env, IntPtr obj)
+        {
+            int handle = getClrHandle(env, obj);
+            object real = IntHandle.ToObject(handle);
+            return real;
+        }
+
+        internal static IClrProxy CreateProxy(JNIEnv env, IntPtr obj, Class clazz)
+        {
+            IClrProxy proxy = new __IClrProxy(env);
+            proxy.Init(env, obj, clazz);
+            return proxy;
+        }
     }
 }

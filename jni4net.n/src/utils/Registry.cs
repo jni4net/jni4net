@@ -94,9 +94,9 @@ namespace net.sf.jni4net.utils
 
         private static Type IsCLR(Class iface, IntPtr obj, JNIEnv env)
         {
-            if (ICClrProxy_._class.isAssignableFrom(iface))
+            if (IClrProxy_._class.isAssignableFrom(iface))
             {
-                object real = __ICClrProxy.GetObject(env, obj);
+                object real = __IClrProxy.GetObject(env, obj);
                 return real.GetType();
             }
             return null;
@@ -104,7 +104,7 @@ namespace net.sf.jni4net.utils
 
         private static Class IsJVM(object obj)
         {
-            var proxy = obj as ICJvmProxy;
+            var proxy = obj as IJvmProxy;
             if (proxy != null)
             {
                 return proxy.GetClass();

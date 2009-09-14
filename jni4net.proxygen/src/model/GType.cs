@@ -298,7 +298,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
             }
 
-            if (IsCLRGenerate && CLRType!=typeof(ICClrProxy))
+            if (IsCLRGenerate && CLRType!=typeof(IClrProxy))
             {
                 if (Base != null && !Base.IsCLRType && !Base.IsCLRGenerate)
                 {
