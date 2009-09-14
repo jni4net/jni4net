@@ -53,11 +53,9 @@ namespace net.sf.jni4net.test
             var cw1 = new JWithClrInterface(1);
             var cw2 = new JWithClrInterface(2);
 
-            Object proxy = Bridge.WrapCLR(cw1);
-            JWithClrInterface cw1a  = Bridge.UnwrapCLR<JWithClrInterface>(proxy);
-            Assert.AreEqual(cw1, cw1a);
+            int res = cw1.CompareTo(cw2);
 
-            Assert.AreEqual(1, cw1.CompareTo(cw2));
+            Assert.AreEqual(1, res);
 
             cw2.run();
             Assert.AreEqual(3, cw2.getValue());
