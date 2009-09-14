@@ -12,6 +12,11 @@ package system;
 @net.sf.jni4net.attributes.ClrType
 public class String extends system.Object implements system.IComparable, system.ICloneable, system.IConvertible, system.collections.IEnumerable {
     
+	public String(java.lang.String value) {
+			super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
+		//TODO Bridge.Convert
+	}
+
     //<generated-proxy>
     private static system.Type staticType;
     

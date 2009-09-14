@@ -48,7 +48,6 @@ namespace net.sf.jni4net {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setBindNative", "BindNative5", "(Z)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly6", "(Ljava/lang/String;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly7", "(Lsystem/reflection/Assembly;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle8", "(I)V"));
             return methods;
         }
         
@@ -124,15 +123,6 @@ namespace net.sf.jni4net {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.Bridge.RegisterAssembly(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, assembly));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-        }
-        
-        private static void disposeClrHandle8(global::System.IntPtr @__envp, global::System.IntPtr @__class, int clrHandle) {
-            // (I)V
-            // (I)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::net.sf.jni4net.Bridge.disposeClrHandle(clrHandle);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         

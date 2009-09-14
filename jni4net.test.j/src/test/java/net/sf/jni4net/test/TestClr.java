@@ -19,16 +19,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net.test;
 
 import net.sf.jni4net.Bridge;
+import net.sf.jni4net.inj.INJException;
 import net.sf.jni4net.tested.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Assert;
-import system.NullReferenceException;
-import system.Type;
+import system.*;
 import system.reflection.Assembly;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.String;
+
 import static org.hamcrest.CoreMatchers.*;
 
 public class TestClr {
@@ -71,6 +73,26 @@ public class TestClr {
 	@Test()
 	public void testCtor() {
 		StaticMethods sm=new StaticMethods(); 
+	}
+
+	@Test()
+	public void testWrap() {
+		String s="sdfs";
+		system.Object object = Bridge.wrapJVM(s);
+		String res=Bridge.unwrapJVM(object);
+		Assert.assertThat(res, equalTo(s));
+	}
+
+	@Test(expected = INJException.class)
+	public void testWrapCant() {
+		system.String s=new system.String("afsadf");
+		Bridge.wrapJVM(s);
+	}
+
+	@Test(expected = INJException.class)
+	public void testWrapCant2() {
+		system.String s=new system.String("afsadf");
+		Bridge.unwrapJVM(s);
 	}
 
 	@Test()

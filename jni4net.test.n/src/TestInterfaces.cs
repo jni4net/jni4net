@@ -1,5 +1,6 @@
 ﻿using System;
 using java.lang;
+using java_.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.tested;
@@ -52,7 +53,7 @@ namespace net.sf.jni4net.test
             var cw1 = new JWithClrInterface(1);
             var cw2 = new JWithClrInterface(2);
 
-            IClrProxy proxy = Bridge.WrapCLR(cw1);
+            Object proxy = Bridge.WrapCLR(cw1);
             JWithClrInterface cw1a  = Bridge.UnwrapCLR<JWithClrInterface>(proxy);
             Assert.AreEqual(cw1, cw1a);
 
@@ -82,7 +83,7 @@ namespace net.sf.jni4net.test
         public void cIfaceCanString()
         {
             var cw1 = "sdfd";
-            IClrProxy proxy = Bridge.WrapCLR(cw1);
+            Object proxy = Bridge.WrapCLR(cw1);
             Class clazz = proxy.getClass();
             Assert.AreEqual(System.String_._class, clazz);
             object res = Bridge.UnwrapCLR<object>(proxy);
@@ -93,7 +94,7 @@ namespace net.sf.jni4net.test
         public void cIfaceCanInt()
         {
             var cw1 = 1;
-            IClrProxy proxy = Bridge.WrapCLR(cw1);
+            Object proxy = Bridge.WrapCLR(cw1);
             Class clazz = proxy.getClass();
             //TODO Assert.AreEqual(System.Int32_._class, clazz);
             object res = Bridge.UnwrapCLR<object>(proxy);
