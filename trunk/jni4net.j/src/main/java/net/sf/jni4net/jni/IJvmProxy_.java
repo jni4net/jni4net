@@ -23,6 +23,11 @@ public final class IJvmProxy_ {
         IJvmProxy_.staticType = staticType;
     }
     //</generated-static>
+
+	public static system.Object createProxy(int clrHandle){
+		return new __IJvmProxy(null, clrHandle);
+	}
+
 }
 
 //<generated-proxy>

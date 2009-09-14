@@ -31,7 +31,7 @@ public class JWithClrInterface implements IComparable, Runnable {
 
 
 	public int CompareTo(system.Object objPar0) {
-		JWithClrInterface other = Bridge.unwrapJVM(objPar0, JWithClrInterface.class);
+		JWithClrInterface other = Bridge.unwrapJVM(objPar0);
 		if (other==null)
 		{
 			return -1;

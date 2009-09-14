@@ -223,6 +223,7 @@
     <Compile Include="utils\RegistryRecord.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bridge.JVM.convertor.cs" />
     <Compile Include="generated\net\sf\jni4net\jni\ICJvmProxy.generated.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -236,7 +237,7 @@
     <Compile Include="jni\JNIEnv.array.cs" />
     <Compile Include="jni\JNIEnv.convert.cs" />
     <Compile Include="jni\JNIEnv.raw.cs" />
-    <Compile Include="Bridge.convertor.cs" />
+    <Compile Include="Bridge.CLR.convertor.cs" />
     <Compile Include="utils\Convertor.C2J.array.cs" />
     <Compile Include="utils\Convertor.C2J.cs" />
     <Compile Include="utils\Convertor.C2J.strong.cs" />

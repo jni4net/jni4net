@@ -137,7 +137,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
     <IgnoreInterface TypeName="system.IObject"/>
   </ClrType>
-  <ClrType TypeName="System.String">
+  <ClrType TypeName="System.String" MergeJavaSource="true">
 	  <MethodModifier MethodName="GetEnumerator" Signature="()LSystem/CharEnumerator;" Skip="true"/>
   </ClrType>
   <ClrType TypeName="System.Type"/>

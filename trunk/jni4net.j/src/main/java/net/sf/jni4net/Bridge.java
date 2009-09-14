@@ -19,6 +19,8 @@ package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy_;
 import net.sf.jni4net.inj.INJException;
+import net.sf.jni4net.jni.IJvmProxy;
+import net.sf.jni4net.jni.IJvmProxy_;
 
 import java.lang.String;
 
@@ -75,44 +77,35 @@ public class Bridge extends system.Object {
 	}
 
 
-	@SuppressWarnings("unchecked")
-	public static <TRes,TInput> TRes wrapJVM(TInput obj, Class<TRes> requestedClass){
+	public static system.Object wrapJVM(Object obj){
 		if (IObject.class.isAssignableFrom(obj.getClass())){
+			if (IJvmProxy.class.isAssignableFrom(obj.getClass())){
+				return (system.Object)obj; 
+			}
 			throw new INJException("Can't wrap CLR instance");
 		}
-		return (TRes)WrapJVM(obj, requestedClass);
+		final int clrHandle = WrapJVM(obj);
+		return IJvmProxy_.createProxy(clrHandle);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <TRes> TRes unwrapJVM(system.Object obj, Class<TRes> requestedClass){
-		//TODO optimize assert ?
-		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
+	public static <TRes> TRes unwrapJVM(system.Object obj){
+		if (!IJvmProxy.class.isAssignableFrom(obj.getClass())){
 			throw new INJException("Can't unwrap JVM instance");
 		}
-		return (TRes)UnwrapJVM(obj, requestedClass);
+		int clrHandle=obj.getClrHandle();
+		return (TRes)UnwrapJVM(clrHandle);
 	}
 
-	@SuppressWarnings("unchecked")
-	public static <TRes> TRes unwrapJVM(system.Exception obj, Class<TRes> requestedClass){
-		//TODO optimize assert ?
-		if (!IClrProxy_.typeof().IsAssignableFrom(obj.GetType())){
-			throw new INJException("Can't unwrap JVM instance");
-		}
-		return (TRes)UnwrapJVM(obj, requestedClass);
-	}
+	//TODO public static system.String convert(String obj){}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
-	@net.sf.jni4net.attributes.ClrMethod("()I")
 	static native int initDotNet();
 
-	@net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
-	native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
-
-	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-	native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
-
-	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-	native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
+	//these are conversion helpers
+	native static int WrapJVM(java.lang.Object obj);
+	native static java.lang.Object UnwrapJVM(int obj);
+	//TODO native static int Convert(String obj);
 
 	//<generated-proxy>
     private static system.Type staticType;

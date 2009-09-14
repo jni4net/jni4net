@@ -1,10 +1,13 @@
 using System;
 using java.lang;
+using java_.lang;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.tested;
 using net.sf.jni4net.utils;
 using NUnit.Framework;
 using Exception=System.Exception;
+using Object=java.lang.Object;
 
 namespace net.sf.jni4net.test
 {
@@ -84,12 +87,12 @@ namespace net.sf.jni4net.test
         }
     
         [Test]
-        public void TypeCbyCLRProxy  ()
+        public void TypeCbyCLRProxy()
         {
             JInterfacesHelper h = new JInterfacesHelper();
             CWithJavaInterface cwc = h.getCWithJavaInterfaceC(new CWithJavaInterface(0));
-            IJvmProxy val = Bridge.WrapCLR(cwc);
-            RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, val.Native, val.getClass());
+            Object val = Bridge.WrapCLR(cwc);
+            RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, ((IClrProxy)val).Native, val.getClass());
             Assert.IsNotNull(record);
         }
 

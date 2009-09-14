@@ -101,11 +101,6 @@ namespace net.sf.jni4net
             }
         }
 
-        public static void disposeClrHandle(int clrHandle)
-        {
-            IntHandle.Free(clrHandle);
-        }
-
         #region Initialization
 
         [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
@@ -170,9 +165,7 @@ namespace net.sf.jni4net
             }
 
             RegisterAssembly(typeof(Bridge).Assembly);
-            MethodInfo initializer = Registry.GetWrapperInitializer(typeof (__Bridge), "__Init2");
-            RegistryRecord record = Registry.GetCLRRecord(typeof (Bridge));
-            Registry.RegisterNative(initializer, env, record.JVMProxy, record.JVMInterface);
+            __Bridge.Init(env);
 
             if (Verbose)
             {
