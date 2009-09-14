@@ -9,6 +9,8 @@
 
 package net.sf.jni4net.tested;
 
+import net.sf.jni4net.inj.ICClrProxy;
+
 @net.sf.jni4net.attributes.ClrType
 public class ClrException extends system.Object {
     
@@ -26,7 +28,7 @@ public class ClrException extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorClrException0(net.sf.jni4net.inj.IClrProxy thiz);
+    private native static void __ctorClrException0(ICClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native static void NoException();

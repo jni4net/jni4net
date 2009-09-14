@@ -38,13 +38,13 @@ public class NotSupportedException extends system.SystemException {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorNotSupportedException0(net.sf.jni4net.inj.IClrProxy thiz);
+    private native static void __ctorNotSupportedException0(net.sf.jni4net.inj.ICClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
-    private native static void __ctorNotSupportedException1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message);
+    private native static void __ctorNotSupportedException1(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Exception;)V")
-    private native static void __ctorNotSupportedException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
+    private native static void __ctorNotSupportedException2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, system.Exception innerException);
     
     public static system.Type typeof() {
         return system.NotSupportedException.staticType;

@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -122,7 +122,7 @@ namespace net.sf.jni4net.proxygen.generator
             // inject thiz parameter
             var tgtParameter = new CodeParameterDeclarationExpression();
             tgtParameter.Name = "thiz";
-            tgtParameter.Type = TypeReference(typeof (IClrProxy));
+            tgtParameter.Type = TypeReference(typeof (ICClrProxy));
             tgtMethod.Parameters.Add(tgtParameter);
 
             GenerateParameters(constructor, tgtMethod);

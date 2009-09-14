@@ -31,7 +31,7 @@ namespace net.sf.jni4net.jni
     {
         #region NewArray
 
-        public Object NewObjectArray(int len, Class clazz, IJavaProxy init)
+        public Object NewObjectArray(int len, Class clazz, ICJvmProxy init)
         {
             IntPtr res = NewObjectArrayPtr(len, clazz.native, init);
             return Convertor.StrongJ2CpObject(this, res);
@@ -251,7 +251,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public void SetObjectArrayElement(Object array, int index, IJavaProxy val)
+        public void SetObjectArrayElement(Object array, int index, ICJvmProxy val)
         {
             SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.Native);
         }

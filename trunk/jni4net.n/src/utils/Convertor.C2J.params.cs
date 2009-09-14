@@ -26,7 +26,7 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static Value ParStrongCp2J(IJavaProxy obj)
+        public static Value ParStrongCp2J(ICJvmProxy obj)
         {
             var res = new Value {_object = StrongCp2J(obj)};
             return res;

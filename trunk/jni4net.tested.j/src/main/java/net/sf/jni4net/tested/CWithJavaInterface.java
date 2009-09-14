@@ -9,6 +9,8 @@
 
 package net.sf.jni4net.tested;
 
+import net.sf.jni4net.inj.ICClrProxy;
+
 @net.sf.jni4net.attributes.ClrType
 public class CWithJavaInterface extends system.Object implements java.lang.Comparable, java.lang.Runnable {
     
@@ -26,7 +28,7 @@ public class CWithJavaInterface extends system.Object implements java.lang.Compa
     }
     
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    private native static void __ctorCWithJavaInterface0(net.sf.jni4net.inj.IClrProxy thiz, int value);
+    private native static void __ctorCWithJavaInterface0(ICClrProxy thiz, int value);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native final int getValue();

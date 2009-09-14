@@ -26,6 +26,6 @@ namespace net.sf.jni4net.utils
 {
     public interface IConstructionHelper
     {
-        IJavaProxy CreateProxy(JNIEnv env);
+        ICJvmProxy CreateProxy(JNIEnv env);
     }
 }

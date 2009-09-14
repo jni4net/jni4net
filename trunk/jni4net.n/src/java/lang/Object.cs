@@ -26,7 +26,7 @@ using net.sf.jni4net.jni;
 
 namespace java.lang
 {
-    public partial class Object : IJavaProxy
+    public partial class Object : ICJvmProxy
     {
         internal Class clazz;
         private JavaVM javaVM;
@@ -61,15 +61,15 @@ namespace java.lang
 
         #endregion
 
-        #region IJavaProxy Members
+        #region ICJvmProxy Members
 
-        IntPtr IJavaProxy.Native
+        IntPtr ICJvmProxy.Native
         {
             get { return native; }
             set { native = value; }
         }
 
-        void IJavaProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
+        void ICJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
             native = env.NewGlobalRef(obj);
@@ -86,9 +86,9 @@ namespace java.lang
 
         #endregion
 
-        #region IJavaProxy Members
+        #region ICJvmProxy Members
 
-        Class IJavaProxy.GetClass()
+        Class ICJvmProxy.GetClass()
         {
             if (clazz == null)
             {

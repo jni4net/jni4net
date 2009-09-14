@@ -9,6 +9,8 @@
 
 package net.sf.jni4net.tested;
 
+import net.sf.jni4net.inj.ICClrProxy;
+
 @net.sf.jni4net.attributes.ClrType
 public class StaticMethods extends system.Object {
     
@@ -26,7 +28,7 @@ public class StaticMethods extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorStaticMethods0(net.sf.jni4net.inj.IClrProxy thiz);
+    private native static void __ctorStaticMethods0(ICClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(II)I")
     public native static int add(int a, int b);

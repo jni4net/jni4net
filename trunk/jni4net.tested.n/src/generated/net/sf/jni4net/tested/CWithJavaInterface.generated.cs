@@ -44,7 +44,7 @@ namespace net.sf.jni4net.tested {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setValue", "Value1", "(I)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "compareTo", "compareTo2", "(Ljava/lang/Object;)I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "run", "run3", "()V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorCWithJavaInterface0", "__ctorCWithJavaInterface0", "(Lnet/sf/jni4net/inj/IClrProxy;I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorCWithJavaInterface0", "__ctorCWithJavaInterface0", "(Lnet/sf/jni4net/inj/ICClrProxy;I)V"));
             return methods;
         }
         
@@ -102,7 +102,7 @@ namespace net.sf.jni4net.tested {
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
-            public global::net.sf.jni4net.jni.IJavaProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
+            public global::net.sf.jni4net.jni.ICJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.tested.@__CWithJavaInterface(@__env);
             }
         }

@@ -10,30 +10,30 @@
 package net.sf.jni4net.inj;
 
 @net.sf.jni4net.attributes.ClrTypeInfo
-public final class IClrProxy_ {
+public final class ICClrProxy_ {
     
     //<generated-static>
     private static system.Type staticType;
     
     public static system.Type typeof() {
-        return net.sf.jni4net.inj.IClrProxy_.staticType;
+        return ICClrProxy_.staticType;
     }
     
     private static void InitJNI(net.sf.jni4net.inj.INJEnv env, system.Type staticType) {
-        net.sf.jni4net.inj.IClrProxy_.staticType = staticType;
+        ICClrProxy_.staticType = staticType;
     }
     //</generated-static>
 }
 
 //<generated-proxy>
 @net.sf.jni4net.attributes.ClrProxy
-class __IClrProxy extends system.Object implements net.sf.jni4net.inj.IClrProxy {
+class __ICClrProxy extends system.Object implements ICClrProxy {
     
-	protected __IClrProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+	protected __ICClrProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
 			super(__env, __handle);
 	}
 
-    @net.sf.jni4net.attributes.ClrMethod("()I")
+	@net.sf.jni4net.attributes.ClrMethod("()I")
     public native int getClrHandle();
     
     @net.sf.jni4net.attributes.ClrMethod("(I)V")

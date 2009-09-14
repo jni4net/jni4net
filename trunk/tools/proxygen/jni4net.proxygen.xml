@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- basics -->
   <JavaClass TypeName="java.lang.Object">
-    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.ICJvmProxy"/>
     <IgnoreInterface TypeName="java_.lang.IObject"/>
   </JavaClass>
   <JavaClass TypeName="java.lang.Class"/>
@@ -97,7 +97,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- exceptions -->
   <JavaClass TypeName="java.lang.Throwable">
-    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.ICJvmProxy"/>
     <IgnoreInterface TypeName="java_.lang.IObject"/>
   </JavaClass>
   <JavaClass TypeName="java.lang.Error"/>
@@ -134,7 +134,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   
   <!-- basics -->
   <ClrType TypeName="System.Object" MergeJavaSource="true">
-    <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
+    <IgnoreInterface TypeName="net.sf.jni4net.inj.ICClrProxy"/>
     <IgnoreInterface TypeName="system.IObject"/>
   </ClrType>
   <ClrType TypeName="System.String">
@@ -167,7 +167,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- exceptions -->
   <ClrType TypeName="System.Exception" MergeJavaSource="true">
-    <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
+    <IgnoreInterface TypeName="net.sf.jni4net.inj.ICClrProxy"/>
     <IgnoreInterface TypeName="system.IObject"/>
     <MethodModifier MethodName="get_StackTrace" Signature="()LSystem/String;" RenameJVM="getStackTraceNet"/>
   </ClrType>
@@ -246,8 +246,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	  <MethodModifier MethodName="set_Debug" Signature="(Z)V" RenameJVM="setDebugImpl" Hide="true"/>
   </ClrType>
   <!-- 
-  <ClrType TypeName="net.sf.jni4net.inj.IClrProxy" MergeJavaSource="true">
-    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJavaProxy"/>
+  <ClrType TypeName="net.sf.jni4net.inj.ICClrProxy" MergeJavaSource="true">
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.ICJvmProxy"/>
     <IgnoreInterface TypeName="java_.lang.IObject"/>
   </ClrType>
   -->

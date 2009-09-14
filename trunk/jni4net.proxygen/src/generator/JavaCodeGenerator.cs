@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of tools for jni4net - bridge between Java and .NET
@@ -789,7 +789,7 @@ namespace net.sf.jni4net.proxygen.generator
                 if (enumerator.MoveNext())
                 {
                     var type = (CodeTypeReference) enumerator.Current;
-                    if (type.BaseType == "net.sf.jni4net.inj.IClrProxy" && !CurrentClass.IsInterface)
+                    if (type.BaseType == "net.sf.jni4net.inj.ICClrProxy" && !CurrentClass.IsInterface)
                     {
                         output.Write(" implements ");
                     }

@@ -1,12 +1,10 @@
-#region Copyright (C) 2009 by Pavel Savara
-
-/*
+/* Copyright (C) 2009 by Pavel Savara
 This file is part of jni4net library - bridge between Java and .NET
 http://jni4net.sourceforge.net/
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as 
-published by the Free Software Foundation, either version 3 
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 3
 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
@@ -18,19 +16,21 @@ You should have received a copy of the GNU Lesser General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#endregion
+package net.sf.jni4net.inj;
 
-using System;
-using java.lang;
-using java_.lang;
+import system.IObject;
 
-namespace net.sf.jni4net.jni
-{
-    public interface IJavaProxy : IObject
-    {
-        IntPtr Native { get; set; }
-        void Init(JNIEnv env, IntPtr obj, Class clazz);
+/**
+ * @author Pavel Savara (original)
+ */
+public interface ICClrProxy {
+	int getClrHandle();
 
-        Class GetClass();
-    }
+	void initProxy(int handle);
+
+
+    //<generated-interface>
+
+    //</generated-interface>
+
 }

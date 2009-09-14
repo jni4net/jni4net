@@ -27,14 +27,14 @@ using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.inj
 {
-    public partial interface IClrProxy : IJavaProxy
+    public partial interface ICClrProxy : ICJvmProxy
     {
         int getClrHandle();
 
         void initProxy(int par0);
     }
 
-    internal partial class __IClrProxy
+    internal partial class __ICClrProxy
     {
         private static int getClrHandle(JNIEnv env, IntPtr obj)
         {
@@ -48,9 +48,9 @@ namespace net.sf.jni4net.inj
             return real;
         }
 
-        internal static IClrProxy CreateProxy(JNIEnv env, IntPtr obj, Class clazz)
+        internal static ICClrProxy CreateProxy(JNIEnv env, IntPtr obj, Class clazz)
         {
-            IClrProxy proxy = new __IClrProxy(env);
+            ICClrProxy proxy = new __ICClrProxy(env);
             proxy.Init(env, obj, clazz);
             return proxy;
         }

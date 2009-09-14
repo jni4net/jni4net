@@ -18,8 +18,10 @@
 
 package system;
 
-@net.sf.jni4net.attributes.ClrType
-public class Exception extends java.lang.RuntimeException implements net.sf.jni4net.inj.IClrProxy, system.IObject {
+	import net.sf.jni4net.inj.ICClrProxy;
+
+	@net.sf.jni4net.attributes.ClrType
+public class Exception extends java.lang.RuntimeException implements ICClrProxy, system.IObject {
 
 	private int clrHandle;
 
@@ -59,13 +61,13 @@ public class Exception extends java.lang.RuntimeException implements net.sf.jni4
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    private native static void __ctorException0(net.sf.jni4net.inj.IClrProxy thiz);
+    private native static void __ctorException0(net.sf.jni4net.inj.ICClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
-    private native static void __ctorException1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message);
+    private native static void __ctorException1(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Exception;)V")
-    private native static void __ctorException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
+    private native static void __ctorException2(net.sf.jni4net.inj.ICClrProxy thiz, java.lang.String message, system.Exception innerException);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
     public native void GetObjectData(system.Object info, system.ValueType context);
