@@ -172,7 +172,6 @@
     <Compile Include="generated\system\IFormatProvider.generated.cs" />
     <Compile Include="generated\system\IFormattable.generated.cs" />
     <Compile Include="generated\system\InvalidOperationException.generated.cs" />
-    <Compile Include="generated\system\IObject.generated.cs" />
     <Compile Include="generated\system\io\FileStream.generated.cs" />
     <Compile Include="generated\system\io\IOException.generated.cs" />
     <Compile Include="generated\system\io\Stream.generated.cs" />
@@ -212,7 +211,6 @@
     <Compile Include="jni\ByteBufferNet.cs" />
     <Compile Include="jni\JNIEnv.env.cs" />
     <Compile Include="jni\JNIEnv.functions.cs" />
-    <Compile Include="system\IObject.cs" />
     <Compile Include="system\__Exception.cs" />
     <Compile Include="system\__Object.cs" />
     <Compile Include="utils\Convertor.cs" />
