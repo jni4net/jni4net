@@ -19,6 +19,7 @@ package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy_;
 import net.sf.jni4net.inj.INJException;
+import net.sf.jni4net.inj.IClrProxy;
 
 import java.lang.String;
 
@@ -106,13 +107,13 @@ public class Bridge extends system.Object {
 	static native int initDotNet();
 
 	@net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/IJavaProxy;Ljava/lang/Class;)LSystem/Object;")
-	public native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
+	native static system.Object WrapJVM(java.lang.Object obj, java.lang.Class interfaceClass);
 
 	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-	public native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
+	native static java.lang.Object UnwrapJVM(system.Object obj, java.lang.Class interfaceClass);
 
 	@net.sf.jni4net.attributes.ClrMethod("(LSystem/Exception;Ljava/lang/Class;)Lnet/sf/jni4net/jni/IJavaProxy;")
-	public native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
+	native static java.lang.Object UnwrapJVM(system.Exception obj, java.lang.Class interfaceClass);
 
 	//<generated-proxy>
     private static system.Type staticType;

@@ -1262,7 +1262,8 @@ namespace net.sf.jni4net.jni
             {
                 //ExceptionDescribe();
                 ExceptionClear();
-                throw Convertor.FullJ2C<Exception>(this, occurred);
+                Exception exception = Convertor.FullJ2C<Exception>(this, occurred);
+                throw exception;
             }
         }
 
