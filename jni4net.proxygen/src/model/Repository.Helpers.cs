@@ -28,7 +28,6 @@ using System.Reflection;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
-using system;
 using Exception=System.Exception;
 using Object=java.lang.Object;
 using String=java.lang.String;
@@ -53,7 +52,6 @@ namespace net.sf.jni4net.proxygen.model
         internal static GType javaProxy;
         private static Type javaProxyType;
         internal static GType systemException;
-        internal static GType systemIObject;
         internal static GType systemObject;
         internal static GType systemString;
         internal static GType systemType;
@@ -138,8 +136,6 @@ namespace net.sf.jni4net.proxygen.model
             javaLangClass = RegisterClass(Class._class);
             javaLangThrowable = RegisterClass(Throwable._class);
             systemString.JVMSubst = javaLangString;
-            systemIObject = RegisterType(typeof (IObject));
-            systemIObject.CLRSubst = systemObject;
             javaLangIObject = RegisterType(javalangIObjectType);
             javaLangIObject.JVMSubst = javaLangObject;
             javaProxy = RegisterType(javaProxyType);
