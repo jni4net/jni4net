@@ -60,6 +60,13 @@ public class JavaCallBack {
 		return c1.CompareTo(other);
 	}
 
+	public static int callBackComparison3() {
+		JWithClrInterfaceUnreg c1=new JWithClrInterfaceUnreg(1);
+		JWithClrInterfaceUnreg c2=new JWithClrInterfaceUnreg(2);
+		final system.Object other = Bridge.wrapJVM(c2);
+		return c1.CompareTo(other);
+	}
+
 	public static int callBackRun() {
 		CWithJavaInterface c1=new CWithJavaInterface (2);
 		c1.run();

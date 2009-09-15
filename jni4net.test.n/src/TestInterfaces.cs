@@ -100,11 +100,10 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        [Ignore]
         public void cIfaceUnreg()
         {
             IComparable cw1 = testInstance.createJWithClrInterfaceUnreg(1);
-            IComparable cw2 = testInstance.createJWithClrInterfaceUnreg(1);
+            IComparable cw2 = testInstance.createJWithClrInterfaceUnreg(2);
 
             Assert.AreEqual(1, cw1.CompareTo(cw2));
 
