@@ -107,6 +107,12 @@ public class TestClr {
 		Assert.assertThat(res, is(1));
 	}
 
+	@Test()
+	public void testJWithClrInterfaceUnreg() {
+		int res= JavaCallBack.callBackComparison3();
+		Assert.assertThat(res, is(1));
+	}
+
 	//SLOW @Test()
 	public void testGarbage() {
 		long[] longs;
