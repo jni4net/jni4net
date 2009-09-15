@@ -110,13 +110,30 @@ namespace net.sf.jni4net.test
             ((Object) cw2).Invoke<int>("run", "()V");
             Assert.AreEqual(3, ((Object)cw2).Invoke<int>("getValue","()I"));
         }
-        
+
+        [Test]
+        public void cIfaceUnreg2()
+        {
+            IComparable comparable = testInstance.createJWithClrInterfaceUnreg(1);
+            Runnable cw1 = Bridge.Cast<Runnable>(comparable);
+            cw1.run();
+            cw1.run();
+            cw1.run();
+            var cw2 = testInstance.createJWithClrInterfaceUnreg(4);
+
+            Assert.AreEqual(0, cw2.CompareTo(cw1));
+
+            cw1.run();
+            Assert.AreEqual((String)"5", cw1.ToString());
+        }
+
+
         [Test]
         public void Interfaces1()
         {
             CWithJavaInterface a = new CWithJavaInterface(4);
-            Runnable cw = testInstance.getCWithJavaInterface((Runnable)a);
-            CWithJavaInterface cwi = (CWithJavaInterface)testInstance.getCWithJavaInterfaceC(a);
+            Runnable cw = testInstance.getCWithJavaInterface(a);
+            CWithJavaInterface cwi = testInstance.getCWithJavaInterfaceC(a);
             cwi.run();
             cw.run();
             CWithJavaInterface tt = cw as CWithJavaInterface;
