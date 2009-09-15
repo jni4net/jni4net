@@ -39,6 +39,10 @@ public class JInterfacesHelper {
 		return new JWithClrInterfaceUnreg(i);
 	}
 
+	public Runnable createJWithClrInterfaceUnregRun (int i){
+		return new JWithClrInterfaceUnreg(i);
+	}
+
 	public JWithClrInterface createJWithClrInterfaceExt(int i){
 		return new JWithClrInterfaceExt(i);
 	}

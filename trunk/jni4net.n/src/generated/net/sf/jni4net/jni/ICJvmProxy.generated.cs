@@ -64,8 +64,14 @@ namespace net.sf.jni4net.jni {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             @__env.CallVoidMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._Init2, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::net.sf.jni4net.jni.JNIEnv>(@__env, env), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(obj), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(clazz));
         }
-        
-        public global::java.lang.Class GetClass() {
+
+        public void Copy(global::net.sf.jni4net.jni.JNIEnv env, global::System.IntPtr obj, global::java.lang.Class clazz)
+        {
+            throw new global::System.NotImplementedException();
+        }
+
+        public global::java.lang.Class GetClass()
+        {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.jni.__IJvmProxy._GetClass3));
         }

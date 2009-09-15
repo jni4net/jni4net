@@ -66,5 +66,12 @@ namespace net.sf.jni4net.utils
             proxy.Init(env, obj, clazz);
             return proxy;
         }
+
+        internal IJvmProxy CopyCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
+        {
+            IJvmProxy proxy = CLRConstructor.CreateProxy(env);
+            proxy.Copy(env, obj, clazz);
+            return proxy;
+        }
     }
 }

@@ -101,7 +101,7 @@ namespace net.sf.jni4net
             {
                 throw new InvalidCastException("Can't cast JVM instance of " + proxy.getClass() + " to " + reqType);
             }
-            IJvmProxy res = record.CreateCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle, record.JVMInterface);
+            IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle, record.JVMInterface);
             return (TRes) res;
         }
     }

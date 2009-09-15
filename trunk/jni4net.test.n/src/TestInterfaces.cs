@@ -127,6 +127,22 @@ namespace net.sf.jni4net.test
             Assert.AreEqual((String)"5", cw1.ToString());
         }
 
+        [Test]
+        public void cIfaceUnreg3()
+        {
+            Runnable runnable = testInstance.createJWithClrInterfaceUnregRun(1);
+            runnable.run();
+            runnable.run();
+            runnable.run();
+            var cw2 = testInstance.createJWithClrInterfaceUnreg(4);
+
+            IComparable comparable = Bridge.Cast<IComparable>(runnable);
+
+            Assert.AreEqual(0, comparable.CompareTo(cw2));
+
+            runnable.run();
+            Assert.AreEqual((String)"5", runnable.ToString());
+        }
 
         [Test]
         public void Interfaces1()

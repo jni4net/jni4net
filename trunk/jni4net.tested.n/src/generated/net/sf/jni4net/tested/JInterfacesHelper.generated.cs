@@ -25,33 +25,35 @@ namespace net.sf.jni4net.tested {
         
         internal static global::net.sf.jni4net.jni.MethodId _createJWithClrInterfaceUnreg3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _createJWithClrInterfaceExt4;
+        internal static global::net.sf.jni4net.jni.MethodId _createJWithClrInterfaceUnregRun4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hashCode5;
+        internal static global::net.sf.jni4net.jni.MethodId _createJWithClrInterfaceExt5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getClass6;
+        internal static global::net.sf.jni4net.jni.MethodId _hashCode6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wait7;
+        internal static global::net.sf.jni4net.jni.MethodId _getClass7;
         
         internal static global::net.sf.jni4net.jni.MethodId _wait8;
         
         internal static global::net.sf.jni4net.jni.MethodId _wait9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _equals10;
+        internal static global::net.sf.jni4net.jni.MethodId _wait10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _notify11;
+        internal static global::net.sf.jni4net.jni.MethodId _equals11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _notifyAll12;
+        internal static global::net.sf.jni4net.jni.MethodId _notify12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString13;
+        internal static global::net.sf.jni4net.jni.MethodId _notifyAll13;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor14;
+        internal static global::net.sf.jni4net.jni.MethodId _toString14;
+        
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor15;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JInterfacesHelper() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, global::net.sf.jni4net.tested.JInterfacesHelper.@__ctor14, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, global::net.sf.jni4net.tested.JInterfacesHelper.@__ctor15, this);
         }
         
         protected JInterfacesHelper(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -71,17 +73,18 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.JInterfacesHelper._getCWithJavaInterface1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "getCWithJavaInterface", "(Ljava/lang/Runnable;)Ljava/lang/Runnable;");
             global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterface2 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "createJWithClrInterface", "(I)Lnet/sf/jni4net/tested/JWithClrInterface;");
             global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceUnreg3 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "createJWithClrInterfaceUnreg", "(I)Lsystem/IComparable;");
-            global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceExt4 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "createJWithClrInterfaceExt", "(I)Lnet/sf/jni4net/tested/JWithClrInterface;");
-            global::net.sf.jni4net.tested.JInterfacesHelper._hashCode5 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "hashCode", "()I");
-            global::net.sf.jni4net.tested.JInterfacesHelper._getClass6 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "getClass", "()Ljava/lang/Class;");
-            global::net.sf.jni4net.tested.JInterfacesHelper._wait7 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "()V");
-            global::net.sf.jni4net.tested.JInterfacesHelper._wait8 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "(JI)V");
-            global::net.sf.jni4net.tested.JInterfacesHelper._wait9 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "(J)V");
-            global::net.sf.jni4net.tested.JInterfacesHelper._equals10 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::net.sf.jni4net.tested.JInterfacesHelper._notify11 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "notify", "()V");
-            global::net.sf.jni4net.tested.JInterfacesHelper._notifyAll12 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "notifyAll", "()V");
-            global::net.sf.jni4net.tested.JInterfacesHelper._toString13 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "toString", "()Ljava/lang/String;");
-            global::net.sf.jni4net.tested.JInterfacesHelper.@__ctor14 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceUnregRun4 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "createJWithClrInterfaceUnregRun", "(I)Ljava/lang/Runnable;");
+            global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceExt5 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "createJWithClrInterfaceExt", "(I)Lnet/sf/jni4net/tested/JWithClrInterface;");
+            global::net.sf.jni4net.tested.JInterfacesHelper._hashCode6 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "hashCode", "()I");
+            global::net.sf.jni4net.tested.JInterfacesHelper._getClass7 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "getClass", "()Ljava/lang/Class;");
+            global::net.sf.jni4net.tested.JInterfacesHelper._wait8 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "()V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._wait9 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "(JI)V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._wait10 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "wait", "(J)V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._equals11 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::net.sf.jni4net.tested.JInterfacesHelper._notify12 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "notify", "()V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._notifyAll13 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "notifyAll", "()V");
+            global::net.sf.jni4net.tested.JInterfacesHelper._toString14 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "toString", "()Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JInterfacesHelper.@__ctor15 = @__env.GetMethodID(global::net.sf.jni4net.tested.JInterfacesHelper.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Lnet/sf/jni4net/tested/CWithJavaInterface;)Lnet/sf/jni4net/tested/CWithJavaInter" +
@@ -109,64 +112,70 @@ namespace net.sf.jni4net.tested {
             return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IComparable>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceUnreg3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
+        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/Runnable;")]
+        public virtual global::java.lang.Runnable createJWithClrInterfaceUnregRun(int par0) {
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Runnable>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceUnregRun4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+        }
+        
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Lnet/sf/jni4net/tested/JWithClrInterface;")]
         public virtual global::net.sf.jni4net.tested.JWithClrInterface createJWithClrInterfaceExt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::net.sf.jni4net.tested.JWithClrInterface>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceExt4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::net.sf.jni4net.tested.JWithClrInterface>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._createJWithClrInterfaceExt5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._hashCode5)));
+            return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._hashCode6)));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Class;")]
         public global::java.lang.Class getClass() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._getClass6));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._getClass7));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public void wait() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait7);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait8);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(JI)V")]
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait9, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(J)V")]
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait9, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._wait10, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)Z")]
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._equals10, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._equals11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public void notify() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._notify11);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._notify12);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public void notifyAll() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._notifyAll12);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JInterfacesHelper._notifyAll13);
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._toString13));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JInterfacesHelper._toString14));
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

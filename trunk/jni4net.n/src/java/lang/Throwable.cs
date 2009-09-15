@@ -98,6 +98,13 @@ namespace java.lang
             javaVM = env.GetJavaVM();
         }
 
+        void IJvmProxy.Copy(JNIEnv env, IntPtr obj, Class clazs)
+        {
+            clazz = clazs;
+            JVMHandle = env.NewGlobalRef(obj);
+            javaVM = env.GetJavaVM();
+        }
+
         Class IJvmProxy.GetClass()
         {
             if (clazz == null)
