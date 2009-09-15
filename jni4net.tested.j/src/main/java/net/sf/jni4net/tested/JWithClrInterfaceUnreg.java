@@ -46,4 +46,8 @@ public class JWithClrInterfaceUnreg implements IComparable, Runnable {
 	public void run() {
 		value++;
 	}
+
+	public String toString(){
+		return Integer.toString(value);
+	}
 }
