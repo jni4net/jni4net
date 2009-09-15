@@ -32,6 +32,8 @@ namespace net.sf.jni4net.jni
 
         void Init(JNIEnv env, IntPtr obj, Class clazz);
 
+        void Copy(JNIEnv env, IntPtr obj, Class clazz);
+
         Class GetClass();
     }
 }
