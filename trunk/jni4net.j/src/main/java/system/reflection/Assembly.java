@@ -15,7 +15,7 @@ public class Assembly extends system.Object implements system.security.IEvidence
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Assembly(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected Assembly(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

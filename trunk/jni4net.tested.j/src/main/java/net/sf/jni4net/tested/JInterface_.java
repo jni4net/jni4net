@@ -29,7 +29,7 @@ public final class JInterface_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __JInterface extends system.Object implements net.sf.jni4net.tested.JInterface {
     
-    protected __JInterface(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __JInterface(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

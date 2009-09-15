@@ -15,7 +15,7 @@ public class ParameterInfo extends system.Object implements system.reflection.IC
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected ParameterInfo(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected ParameterInfo(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

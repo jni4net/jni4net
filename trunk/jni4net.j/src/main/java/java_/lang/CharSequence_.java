@@ -29,7 +29,7 @@ public final class CharSequence_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __CharSequence extends system.Object implements java.lang.CharSequence {
     
-    protected __CharSequence(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __CharSequence(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

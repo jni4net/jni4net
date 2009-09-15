@@ -29,7 +29,7 @@ public final class Annotation_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Annotation extends system.Object implements java.lang.annotation.Annotation {
     
-    protected __Annotation(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Annotation(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

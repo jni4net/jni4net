@@ -15,7 +15,7 @@ public class MemberInfo extends system.Object implements system.reflection.ICust
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected MemberInfo(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected MemberInfo(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

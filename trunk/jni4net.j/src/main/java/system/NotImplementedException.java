@@ -15,7 +15,7 @@ public class NotImplementedException extends system.SystemException {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected NotImplementedException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected NotImplementedException(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

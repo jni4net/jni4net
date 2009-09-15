@@ -30,7 +30,7 @@ namespace java.lang
     {
         internal Class clazz;
         private JavaVM javaVM;
-        internal IntPtr native;
+        internal IntPtr jvmHandle;
 
         protected internal Object(JNIEnv env)
         {
@@ -47,7 +47,7 @@ namespace java.lang
 
         public virtual void Dispose()
         {
-            if (native != IntPtr.Zero)
+            if (jvmHandle != IntPtr.Zero)
             {
                 JNIEnv env = JNIEnv.GetEnvNoThrow(javaVM);
                 // we don't crash if JVM is gone already
@@ -63,16 +63,16 @@ namespace java.lang
 
         #region IJvmProxy Members
 
-        IntPtr IJvmProxy.Native
+        IntPtr IJvmProxy.JvmHandle
         {
-            get { return native; }
-            set { native = value; }
+            get { return jvmHandle; }
+            set { jvmHandle = value; }
         }
 
         void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
-            native = env.NewGlobalRef(obj);
+            jvmHandle = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
             javaVM = env.GetJavaVM();
         }

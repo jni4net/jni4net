@@ -29,7 +29,7 @@ public final class Type_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Type extends system.Object implements java.lang.reflect.Type {
     
-    protected __Type(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Type(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
 }

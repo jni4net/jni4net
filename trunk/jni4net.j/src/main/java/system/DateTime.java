@@ -15,7 +15,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected DateTime(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected DateTime(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

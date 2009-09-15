@@ -29,7 +29,7 @@ public final class Appendable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Appendable extends system.Object implements java.lang.Appendable {
     
-    protected __Appendable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Appendable(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

@@ -37,7 +37,7 @@ namespace net.sf.jni4net
 
     internal partial class __Bridge
     {
-        private static int WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj)
+        private static long WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj)
         {
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
@@ -54,13 +54,13 @@ namespace net.sf.jni4net
             return 0;
         }
 
-        private static IntPtr UnwrapJVM(IntPtr __envp, IntPtr __class, int clrHandle)
+        private static IntPtr UnwrapJVM(IntPtr __envp, IntPtr __class, long clrHandle)
         {
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
             {
                 IJvmProxy jvmProxy = (IJvmProxy)IntHandle.ToObject(clrHandle);
-                return jvmProxy.Native;
+                return jvmProxy.JvmHandle;
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace net.sf.jni4net
             return default(IntPtr);
         }
 
-        private static void disposeClrHandle(IntPtr @__envp, IntPtr @__class, int clrHandle)
+        private static void disposeClrHandle(IntPtr @__envp, IntPtr @__class, long clrHandle)
         {
             JNIEnv @__env = JNIEnv.Wrap(@__envp);
             try
@@ -86,9 +86,9 @@ namespace net.sf.jni4net
         {
             Type @__type = typeof (__Bridge);
             var methods = new List<JNINativeMethod>();
-            methods.Add(JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM", "(Ljava/lang/Object;)I"));
-            methods.Add(JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM", "(I)Ljava/lang/Object;"));
-            methods.Add(JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle", "(I)V"));
+            methods.Add(JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM", "(Ljava/lang/Object;)J"));
+            methods.Add(JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM", "(J)Ljava/lang/Object;"));
+            methods.Add(JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle", "(J)V"));
             return methods;
         }
 

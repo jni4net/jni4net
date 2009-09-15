@@ -83,7 +83,7 @@ namespace net.sf.jni4net.proxygen.generator
             if (handle)
             {
                 cc.Parameters.Add(
-                    new CodeParameterDeclarationExpression(TypeReference("int"), handleVariableName));
+                    new CodeParameterDeclarationExpression(TypeReference("long"), handleVariableName));
             }
             cc.BaseConstructorArgs.Add(envVariable);
             if (handle)

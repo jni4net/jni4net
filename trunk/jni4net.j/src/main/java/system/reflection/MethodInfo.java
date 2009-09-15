@@ -15,7 +15,7 @@ public class MethodInfo extends system.reflection.MethodBase {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected MethodInfo(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected MethodInfo(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

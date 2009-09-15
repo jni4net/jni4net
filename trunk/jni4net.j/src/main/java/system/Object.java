@@ -23,22 +23,22 @@ import net.sf.jni4net.inj.IClrProxy;
 @net.sf.jni4net.attributes.ClrType
 public class Object implements IClrProxy, system.IObject {
     
-	private int clrHandle;
+	private long clrHandle;
 
 	@Override
 	public java.lang.String toString() {
 		return ToString();
 	}
 
-	public int getClrHandle() {
+	public long getClrHandle() {
 		return clrHandle;
 	}
 
-	public void initProxy(int handle) {
+	public void initProxy(long handle) {
 		clrHandle = handle;
 	}
 
-	protected Object(net.sf.jni4net.inj.INJEnv env, int handle) {
+	protected Object(net.sf.jni4net.inj.INJEnv env, long handle) {
 		clrHandle = handle;
 	}
 

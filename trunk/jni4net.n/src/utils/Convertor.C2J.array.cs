@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of jni4net library - bridge between Java and .NET
@@ -51,7 +51,7 @@ namespace net.sf.jni4net.utils
             Type elementType = typeof (TBoth).GetElementType();
             Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
 
-            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
+            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
                 IntPtr item = FullC2J(env, (TElem) array.GetValue(i));
@@ -83,7 +83,7 @@ namespace net.sf.jni4net.utils
             Type elementType = typeof (TBoth).GetElementType();
             Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
 
-            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
+            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
                 IntPtr item = StrongC2Jp(env, (TElem) array.GetValue(i));
@@ -110,7 +110,7 @@ namespace net.sf.jni4net.utils
             int length = array.Length;
             Type elementType = typeof (TBoth).GetElementType();
             Class elemClazz = Registry.GetCLRRecord(elementType).JVMInterface;
-            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.native, null);
+            IntPtr res = env.NewObjectArrayPtr(length, elemClazz.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
                 IntPtr item = StrongCp2J((IJvmProxy) array.GetValue(i));
@@ -128,7 +128,7 @@ namespace net.sf.jni4net.utils
                 return IntPtr.Zero;
             }
             int length = array.Length;
-            IntPtr res = env.NewObjectArrayPtr(length, String._class.native, null);
+            IntPtr res = env.NewObjectArrayPtr(length, String._class.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
                 IntPtr item = env.NewStringPtr(array[i]);

@@ -29,7 +29,7 @@ public final class TypeVariable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __TypeVariable extends system.Object implements java.lang.reflect.TypeVariable {
     
-    protected __TypeVariable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __TypeVariable(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

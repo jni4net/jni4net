@@ -24,7 +24,7 @@ public final class IJvmProxy_ {
     }
     //</generated-static>
 
-	public static system.Object createProxy(int clrHandle){
+	public static system.Object createProxy(long clrHandle){
 		return new __IJvmProxy(null, clrHandle);
 	}
 
@@ -34,15 +34,15 @@ public final class IJvmProxy_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IJvmProxy extends system.Object implements IJvmProxy {
     
-    protected __IJvmProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IJvmProxy(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IntPtr;")
-    public native long getNative();
+    public native long getJvmHandle();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IntPtr;)V")
-    public native void setNative(long value);
+    public native void setJvmHandle(long value);
     
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/JNIEnv;LSystem/IntPtr;Ljava/lang/Class;)V")
     public native void Init(system.Object env, long obj, java.lang.Class clazz);

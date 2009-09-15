@@ -28,19 +28,19 @@ namespace net.sf.jni4net.utils
     //TODO solve this for 64bit platform
     public static class IntHandle
     {
-        public static void Free(int ptr)
+        public static void Free(long ptr)
         {
             GCHandle tgt = GCHandle.FromIntPtr(new IntPtr(ptr));
             tgt.Free();
         }
 
-        public static object ToObject(int ptr)
+        public static object ToObject(long ptr)
         {
             GCHandle tgt = GCHandle.FromIntPtr(new IntPtr(ptr));
             return tgt.Target;
         }
 
-        public static int Alloc(object real)
+        public static long Alloc(object real)
         {
             GCHandle handle = GCHandle.Alloc(real);
             return GCHandle.ToIntPtr(handle).ToInt32();

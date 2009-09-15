@@ -42,7 +42,7 @@ public final class IObject_ {
  */
 @net.sf.jni4net.attributes.ClrProxy
 class __IObject implements IObject {
-	protected __IObject(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+	protected __IObject(net.sf.jni4net.inj.INJEnv __env, long __handle) {
 			throw new InvalidOperationException("Unexpected call");
 	}
 }

@@ -29,7 +29,7 @@ public final class Collection_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Collection extends system.Object implements java.util.Collection {
     
-    protected __Collection(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Collection(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

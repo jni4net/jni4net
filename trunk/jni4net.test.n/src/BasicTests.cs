@@ -199,7 +199,7 @@ namespace net.sf.jni4net.test
         {
             System.Text.StringBuilder builder = new System.Text.StringBuilder();
             Object proxy = Bridge.WrapCLR(builder);
-            int handle = ((IClrProxy)proxy).getClrHandle();
+            long handle = ((IClrProxy)proxy).getClrHandle();
             System.Text.StringBuilder res = Bridge.UnwrapCLR<System.Text.StringBuilder>(proxy);
             Assert.AreSame(builder, res);
         }

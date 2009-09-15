@@ -15,7 +15,7 @@ public class CWithJavaInterface extends system.Object implements java.lang.Compa
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected CWithJavaInterface(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected CWithJavaInterface(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     
