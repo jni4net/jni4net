@@ -26,13 +26,10 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using java.lang;
-using java_.lang;
-using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
 using selvin.exportdllattribute;
 using Exception=System.Exception;
-using Object=java.lang.Object;
 
 namespace net.sf.jni4net
 {
@@ -124,15 +121,7 @@ namespace net.sf.jni4net
             
             try
             {
-                if (Verbose)
-                {
-                    Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
-                }
                 Init(env);
-                if (Verbose)
-                {
-                    Console.WriteLine("core loaded from " + typeof (Bridge).Assembly.Location);
-                }
             }
             catch (Exception ex)
             {
@@ -147,6 +136,14 @@ namespace net.sf.jni4net
 
         internal static void Init(JNIEnv env)
         {
+            if (init)
+            {
+                return;
+            }
+            if (Verbose)
+            {
+                Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
+            }
             if (BindNative)
             {
                 IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
@@ -176,8 +173,19 @@ namespace net.sf.jni4net
                 IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
                 IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
                 env.SetStaticBooleanField(br, ir, true);
+                if (!env.GetStaticBooleanField(br, ir))
+                {
+                    Console.Error.WriteLine("Can't mark bridge");
+                }
             }
+            if (Verbose)
+            {
+                Console.WriteLine("core loaded from " + typeof(Bridge).Assembly.Location);
+            }
+            init = true;
         }
+
+        private static bool init;
 
         #endregion
     }

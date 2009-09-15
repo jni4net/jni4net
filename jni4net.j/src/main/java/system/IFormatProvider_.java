@@ -29,7 +29,7 @@ public final class IFormatProvider_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IFormatProvider extends system.Object implements system.IFormatProvider {
     
-    protected __IFormatProvider(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IFormatProvider(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

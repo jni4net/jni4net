@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of jni4net library - bridge between Java and .NET
@@ -33,7 +33,7 @@ namespace net.sf.jni4net.jni
 
         public Object NewObjectArray(int len, Class clazz, IJvmProxy init)
         {
-            IntPtr res = NewObjectArrayPtr(len, clazz.native, init);
+            IntPtr res = NewObjectArrayPtr(len, clazz.jvmHandle, init);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
@@ -93,7 +93,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (int* ptr = &buf[0])
             {
-                setIntArrayRegion(native, array, start, len, ptr);
+                setIntArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -102,7 +102,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (bool* ptr = &buf[0])
             {
-                setBooleanArrayRegion(native, array, start, len, (byte*) ptr);
+                setBooleanArrayRegion(envPtr, array, start, len, (byte*) ptr);
             }
             ExceptionTest();
         }
@@ -111,7 +111,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (byte* ptr = &buf[0])
             {
-                setByteArrayRegion(native, array, start, len, ptr);
+                setByteArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -120,7 +120,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (char* ptr = &buf[0])
             {
-                setCharArrayRegion(native, array, start, len, ptr);
+                setCharArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -129,7 +129,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (short* ptr = &buf[0])
             {
-                setShortArrayRegion(native, array, start, len, ptr);
+                setShortArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -138,7 +138,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (long* ptr = &buf[0])
             {
-                setLongArrayRegion(native, array, start, len, ptr);
+                setLongArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -147,7 +147,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (float* ptr = &buf[0])
             {
-                setFloatArrayRegion(native, array, start, len, ptr);
+                setFloatArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -156,7 +156,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (double* ptr = &buf[0])
             {
-                setDoubleArrayRegion(native, array, start, len, ptr);
+                setDoubleArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -169,7 +169,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (int* ptr = &buf[0])
             {
-                getIntArrayRegion(native, array, start, len, ptr);
+                getIntArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -178,7 +178,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (char* ptr = &buf[0])
             {
-                getCharArrayRegion(native, array, start, len, ptr);
+                getCharArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -187,7 +187,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (byte* ptr = &buf[0])
             {
-                getByteArrayRegion(native, array, start, len, ptr);
+                getByteArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -196,7 +196,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (short* ptr = &buf[0])
             {
-                getShortArrayRegion(native, array, start, len, ptr);
+                getShortArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -205,7 +205,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (long* ptr = &buf[0])
             {
-                getLongArrayRegion(native, array, start, len, ptr);
+                getLongArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -214,7 +214,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (float* ptr = &buf[0])
             {
-                getFloatArrayRegion(native, array, start, len, ptr);
+                getFloatArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -223,7 +223,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (double* ptr = &buf[0])
             {
-                getDoubleArrayRegion(native, array, start, len, ptr);
+                getDoubleArrayRegion(envPtr, array, start, len, ptr);
             }
             ExceptionTest();
         }
@@ -232,7 +232,7 @@ namespace net.sf.jni4net.jni
         {
             fixed (bool* ptr = &buf[0])
             {
-                getBooleanArrayRegion(native, array, start, len, (byte*) ptr);
+                getBooleanArrayRegion(envPtr, array, start, len, (byte*) ptr);
             }
             ExceptionTest();
         }
@@ -241,29 +241,29 @@ namespace net.sf.jni4net.jni
 
         internal int GetArrayLength(Object array)
         {
-            return GetArrayLength(array.native);
+            return GetArrayLength(array.jvmHandle);
         }
 
         internal int GetArrayLength(IntPtr array)
         {
-            int res = getArrayLength(native, array);
+            int res = getArrayLength(envPtr, array);
             ExceptionTest();
             return res;
         }
 
         public void SetObjectArrayElement(Object array, int index, IJvmProxy val)
         {
-            SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.Native);
+            SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.JvmHandle);
         }
 
         public void SetObjectArrayElement(Object array, int index, IntPtr val)
         {
-            SetObjectArrayElement(array.native, index, val);
+            SetObjectArrayElement(array.jvmHandle, index, val);
         }
 
         public void SetObjectArrayElement(IntPtr array, int index, IntPtr val)
         {
-            setObjectArrayElement(native, array, index, val);
+            setObjectArrayElement(envPtr, array, index, val);
             ExceptionTest();
         }
     }

@@ -64,14 +64,14 @@ namespace net.sf.jni4net.utils
                 }
                 if (Bridge.Debug)
                 {
-                    Class clazzT = env.GetObjectClass(proxy.Native);
+                    Class clazzT = env.GetObjectClass(proxy.JvmHandle);
                     RegistryRecord recordT = Registry.GetCLRRecord(reqType);
                     if (!recordT.JVMInterface.isAssignableFrom(clazzT))
                     {
                         throw new InvalidCastException("Can't cast JVM instance " + clazzT + " to " + reqType);
                     }
                 }
-                return proxy.Native;
+                return proxy.JvmHandle;
             }
 
             Type realType = obj.GetType();

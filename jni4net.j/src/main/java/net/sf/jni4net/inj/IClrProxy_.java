@@ -29,14 +29,14 @@ public final class IClrProxy_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IClrProxy extends system.Object implements IClrProxy {
     
-	protected __IClrProxy(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+	protected __IClrProxy(net.sf.jni4net.inj.INJEnv __env, long __handle) {
 			super(__env, __handle);
 	}
 
 	@net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int getClrHandle();
+    public native long getClrHandle();
     
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    public native void initProxy(int par0);
+    public native void initProxy(long par0);
 }
 //</generated-proxy>

@@ -31,13 +31,13 @@ namespace net.sf.jni4net.jni
         private static JavaVM defaultVM;
         [ThreadStatic] private static JNIEnv threadJNIEnv;
 
-        private readonly IntPtr native;
+        private readonly IntPtr envPtr;
         private JNINativeInterface functions;
         private JavaVM javaVM;
 
         internal JNIEnv(IntPtr native)
         {
-            this.native = native;
+            this.envPtr = native;
             functions = *(*(JavaPtr*) native.ToPointer()).functions;
             InitMethods();
             if (defaultVM == null)
@@ -99,7 +99,7 @@ namespace net.sf.jni4net.jni
             {
                 return null;
             }
-            if (threadJNIEnv != null && envi == threadJNIEnv.native)
+            if (threadJNIEnv != null && envi == threadJNIEnv.envPtr)
             {
                 return threadJNIEnv;
             }

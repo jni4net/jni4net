@@ -15,7 +15,7 @@ public class Enum extends system.ValueType implements system.IComparable, system
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected Enum(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected Enum(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

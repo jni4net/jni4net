@@ -29,7 +29,7 @@ public final class IEnumerator_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IEnumerator extends system.Object implements system.collections.IEnumerator {
     
-    protected __IEnumerator(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IEnumerator(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

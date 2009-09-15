@@ -29,21 +29,21 @@ namespace net.sf.jni4net.inj
 {
     public partial interface IClrProxy : IJvmProxy
     {
-        int getClrHandle();
+        long getClrHandle();
 
-        void initProxy(int par0);
+        void initProxy(long par0);
     }
 
     internal partial class __IClrProxy
     {
-        private static int getClrHandle(JNIEnv env, IntPtr obj)
+        private static long getClrHandle(JNIEnv env, IntPtr obj)
         {
             return env.CallIntMethod(obj, _getClrHandle0);
         }
 
         internal static object GetObject(JNIEnv env, IntPtr obj)
         {
-            int handle = getClrHandle(env, obj);
+            long handle = getClrHandle(env, obj);
             object real = IntHandle.ToObject(handle);
             return real;
         }

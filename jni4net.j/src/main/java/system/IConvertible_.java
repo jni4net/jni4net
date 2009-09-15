@@ -29,7 +29,7 @@ public final class IConvertible_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IConvertible extends system.Object implements system.IConvertible {
     
-    protected __IConvertible(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IConvertible(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

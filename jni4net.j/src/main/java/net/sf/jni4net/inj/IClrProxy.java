@@ -25,8 +25,8 @@ import system.IObject;
  */
 public interface IClrProxy extends IObject {
 
-	int getClrHandle();
+	long getClrHandle();
 
-	void initProxy(int handle);
+	void initProxy(long handle);
 
 }

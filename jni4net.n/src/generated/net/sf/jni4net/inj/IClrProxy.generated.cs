@@ -45,16 +45,18 @@ namespace net.sf.jni4net.inj {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv env, java.lang.Class staticClass) {
             global::net.sf.jni4net.inj.__IClrProxy.staticClass = staticClass;
-            global::net.sf.jni4net.inj.__IClrProxy._getClrHandle0 = env.GetMethodID(global::net.sf.jni4net.inj.__IClrProxy.staticClass, "getClrHandle", "()I");
-            global::net.sf.jni4net.inj.__IClrProxy._initProxy1 = env.GetMethodID(global::net.sf.jni4net.inj.__IClrProxy.staticClass, "initProxy", "(I)V");
+            global::net.sf.jni4net.inj.__IClrProxy._getClrHandle0 = env.GetMethodID(global::net.sf.jni4net.inj.__IClrProxy.staticClass, "getClrHandle", "()J");
+            global::net.sf.jni4net.inj.__IClrProxy._initProxy1 = env.GetMethodID(global::net.sf.jni4net.inj.__IClrProxy.staticClass, "initProxy", "(J)V");
         }
-        
-        public virtual int getClrHandle() {
+
+        public virtual long getClrHandle()
+        {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             return env.CallIntMethod(this, global::net.sf.jni4net.inj.__IClrProxy._getClrHandle0);
         }
-        
-        public virtual void initProxy(int par0) {
+
+        public virtual void initProxy(long par0)
+        {
             global::net.sf.jni4net.jni.JNIEnv env = this.Env;
             env.CallVoidMethod(this, global::net.sf.jni4net.inj.__IClrProxy._initProxy1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
@@ -62,12 +64,13 @@ namespace net.sf.jni4net.inj {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv env, global::java.lang.Class clazz) {
             global::System.Type type = typeof(__IClrProxy);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getClrHandle", "getClrHandle0", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "initProxy", "initProxy1", "(I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "getClrHandle", "getClrHandle0", "()J"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(type, "initProxy", "initProxy1", "(J)V"));
             return methods;
         }
-        
-        private static int getClrHandle0(global::System.IntPtr @__envi, global::System.IntPtr @__obj) {
+
+        private static long getClrHandle0(global::System.IntPtr @__envi, global::System.IntPtr @__obj)
+        {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);
@@ -78,7 +81,7 @@ namespace net.sf.jni4net.inj {
             return default(int);
         }
         
-        private static void initProxy1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, int par0) {
+        private static void initProxy1(global::System.IntPtr @__envi, global::System.IntPtr @__obj, long par0) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envi);

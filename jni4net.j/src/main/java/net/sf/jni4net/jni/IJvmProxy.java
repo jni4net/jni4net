@@ -24,9 +24,9 @@ import net.sf.jni4net.inj.IClrProxy;
  */
 public interface IJvmProxy extends IClrProxy {
 
-	long getNative();
+	long getJvmHandle();
 
-	void setNative(long value);
+	void setJvmHandle(long value);
 
 	void Init(system.Object env, long obj, java.lang.Class clazz);
 

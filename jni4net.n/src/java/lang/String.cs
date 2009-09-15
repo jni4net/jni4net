@@ -40,7 +40,7 @@ namespace java.lang
                 return null;
             }
             JNIEnv env = JNIEnv.ThreadEnv;
-            return env.ConvertToString(str.native);
+            return env.ConvertToString(str.jvmHandle);
         }
 
         public override bool Equals(object obj)

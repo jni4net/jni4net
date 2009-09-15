@@ -1,4 +1,4 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2009 by Pavel Savara
 
 /*
 This file is part of jni4net library - bridge between Java and .NET
@@ -45,7 +45,7 @@ namespace net.sf.jni4net.utils
             {
                 return IntPtr.Zero;
             }
-            return obj.Native;
+            return obj.JvmHandle;
         }
 
         public static IntPtr StrongC2JString(JNIEnv env, string obj)

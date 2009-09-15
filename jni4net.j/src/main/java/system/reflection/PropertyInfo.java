@@ -15,7 +15,7 @@ public class PropertyInfo extends system.reflection.MemberInfo {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected PropertyInfo(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected PropertyInfo(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

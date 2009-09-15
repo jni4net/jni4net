@@ -15,7 +15,7 @@ public class SystemException extends system.Exception {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected SystemException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected SystemException(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

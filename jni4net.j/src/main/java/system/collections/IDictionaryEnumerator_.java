@@ -29,7 +29,7 @@ public final class IDictionaryEnumerator_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IDictionaryEnumerator extends system.Object implements system.collections.IDictionaryEnumerator {
     
-    protected __IDictionaryEnumerator(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IDictionaryEnumerator(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

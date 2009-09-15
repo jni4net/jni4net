@@ -29,7 +29,7 @@ public final class GenericArrayType_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __GenericArrayType extends system.Object implements java.lang.reflect.GenericArrayType {
     
-    protected __GenericArrayType(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __GenericArrayType(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

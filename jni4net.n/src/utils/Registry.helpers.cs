@@ -112,7 +112,7 @@ namespace net.sf.jni4net.utils
 
         private static MethodId GetJVMConstructor(JNIEnv env, Class proxy)
         {
-            return env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;I)V");
+            return env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;J)V");
         }
 
         internal static MethodInfo GetWrapperInitializer(Type wrapperType, string name)
@@ -185,8 +185,8 @@ namespace net.sf.jni4net.utils
         private static void RegisterTypeOf(RegistryRecord record, JNIEnv env)
         {
             MethodId constructor = knownCLR[typeof (Type)].JVMConstructor;
-            var h = new Value {_int = IntHandle.Alloc(record.CLRInterface)};
-            IntPtr clazz = Type_._class.native;
+            var h = new Value {_long = IntHandle.Alloc(record.CLRInterface)};
+            IntPtr clazz = Type_._class.jvmHandle;
             var typeInfo = new Value {_object = env.NewObjectPtr(clazz, constructor, Value.Null, h)};
             env.CallStaticVoidMethod(record.JVMStatic, "InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V",
                                      new[] {Value.Null, typeInfo});

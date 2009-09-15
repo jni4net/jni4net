@@ -20,7 +20,7 @@ public class String extends system.Object implements system.IComparable, system.
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected String(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected String(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

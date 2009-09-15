@@ -29,7 +29,7 @@ public final class ICustomAttributeProvider_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __ICustomAttributeProvider extends system.Object implements system.reflection.ICustomAttributeProvider {
     
-    protected __ICustomAttributeProvider(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __ICustomAttributeProvider(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

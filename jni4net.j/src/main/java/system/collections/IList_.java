@@ -29,7 +29,7 @@ public final class IList_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IList extends system.Object implements system.collections.IList {
     
-    protected __IList(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IList(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

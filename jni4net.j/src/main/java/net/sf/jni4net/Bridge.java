@@ -84,7 +84,7 @@ public class Bridge extends system.Object {
 			}
 			throw new INJException("Can't wrap CLR instance");
 		}
-		final int clrHandle = WrapJVM(obj);
+		final long clrHandle = WrapJVM(obj);
 		return IJvmProxy_.createProxy(clrHandle);
 	}
 
@@ -93,7 +93,7 @@ public class Bridge extends system.Object {
 		if (!IJvmProxy.class.isAssignableFrom(obj.getClass())){
 			throw new INJException("Can't unwrap JVM instance");
 		}
-		int clrHandle=obj.getClrHandle();
+		long clrHandle=obj.getClrHandle();
 		return (TRes)UnwrapJVM(clrHandle);
 	}
 
@@ -103,14 +103,15 @@ public class Bridge extends system.Object {
 	static native int initDotNet();
 
 	//these are conversion helpers
-	native static int WrapJVM(java.lang.Object obj);
-	native static java.lang.Object UnwrapJVM(int obj);
+	native static long WrapJVM(java.lang.Object obj);
+	native static java.lang.Object UnwrapJVM(long obj);
+    public native static void disposeClrHandle(long clrHandle);
 	//TODO native static int Convert(String obj);
 
 	//<generated-proxy>
     private static system.Type staticType;
     
-    protected Bridge(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected Bridge(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     
@@ -141,9 +142,6 @@ public class Bridge extends system.Object {
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/Assembly;)V")
     public native static void RegisterAssembly(system.reflection.Assembly assembly);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    public native static void disposeClrHandle(int clrHandle);
     
     public static system.Type typeof() {
         return net.sf.jni4net.Bridge.staticType;

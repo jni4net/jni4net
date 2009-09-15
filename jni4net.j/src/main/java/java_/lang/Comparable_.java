@@ -29,7 +29,7 @@ public final class Comparable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Comparable extends system.Object implements java.lang.Comparable {
     
-    protected __Comparable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Comparable(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

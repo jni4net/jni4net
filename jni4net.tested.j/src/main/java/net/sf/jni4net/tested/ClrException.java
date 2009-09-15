@@ -15,7 +15,7 @@ public class ClrException extends system.Object {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected ClrException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected ClrException(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

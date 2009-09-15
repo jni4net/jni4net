@@ -29,7 +29,7 @@ public final class IEvidenceFactory_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __IEvidenceFactory extends system.Object implements system.security.IEvidenceFactory {
     
-    protected __IEvidenceFactory(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __IEvidenceFactory(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

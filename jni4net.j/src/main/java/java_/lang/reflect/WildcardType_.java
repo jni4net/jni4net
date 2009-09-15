@@ -29,7 +29,7 @@ public final class WildcardType_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __WildcardType extends system.Object implements java.lang.reflect.WildcardType {
     
-    protected __WildcardType(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __WildcardType(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

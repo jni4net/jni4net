@@ -29,7 +29,7 @@ public final class GenericDeclaration_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __GenericDeclaration extends system.Object implements java.lang.reflect.GenericDeclaration {
     
-    protected __GenericDeclaration(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __GenericDeclaration(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

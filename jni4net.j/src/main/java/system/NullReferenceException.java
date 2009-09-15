@@ -15,7 +15,7 @@ public class NullReferenceException extends system.SystemException {
     //<generated-proxy>
     private static system.Type staticType;
     
-    protected NullReferenceException(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected NullReferenceException(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

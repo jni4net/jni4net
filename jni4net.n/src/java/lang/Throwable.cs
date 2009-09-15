@@ -31,7 +31,7 @@ namespace java.lang
     {
         internal Class clazz;
         private JavaVM javaVM;
-        internal IntPtr native;
+        internal IntPtr JVMHandle;
 
         protected internal Throwable(JNIEnv env)
         {
@@ -84,16 +84,16 @@ namespace java.lang
 
         #region IJvmProxy Members
 
-        IntPtr IJvmProxy.Native
+        IntPtr IJvmProxy.JvmHandle
         {
-            get { return native; }
-            set { native = value; }
+            get { return JVMHandle; }
+            set { JVMHandle = value; }
         }
 
         void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
-            native = env.NewGlobalRef(obj);
+            JVMHandle = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
             javaVM = env.GetJavaVM();
         }
@@ -110,7 +110,7 @@ namespace java.lang
 
         public void Dispose()
         {
-            if (native != IntPtr.Zero)
+            if (JVMHandle != IntPtr.Zero)
             {
                 JNIEnv env;
                 JNIResult result = javaVM.AttachCurrentThreadAsDaemon(out env, null);
@@ -167,7 +167,7 @@ namespace java.lang
             if ((object) a == null || b == null)
                 return false;
             return a.Env.IsSameObject(a, b);
-            //return a.native == b.native;
+            //return a.jvmHandle == b.jvmHandle;
         }
 
         public static bool operator !=(Throwable a, IJvmProxy b)
@@ -177,7 +177,7 @@ namespace java.lang
             if ((object) a == null || b == null)
                 return true;
             return !a.Env.IsSameObject(a, b);
-            //return a.native != b.native;
+            //return a.jvmHandle != b.jvmHandle;
         }
 
         public override string ToString()

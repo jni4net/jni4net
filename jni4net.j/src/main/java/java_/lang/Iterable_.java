@@ -29,7 +29,7 @@ public final class Iterable_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Iterable extends system.Object implements java.lang.Iterable {
     
-    protected __Iterable(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Iterable(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

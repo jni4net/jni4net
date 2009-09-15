@@ -29,9 +29,9 @@ namespace net.sf.jni4net.jni {
         
         internal static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Native0;
+        internal static global::net.sf.jni4net.jni.MethodId _JvmHandle0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Native1;
+        internal static global::net.sf.jni4net.jni.MethodId _JvmHandle1;
         
         internal static global::net.sf.jni4net.jni.MethodId _Init2;
         
@@ -41,21 +41,21 @@ namespace net.sf.jni4net.jni {
                 base(@__env) {
         }
         
-        public global::System.IntPtr Native {
+        public global::System.IntPtr JvmHandle {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return ((global::System.IntPtr)(@__env.CallLongMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._Native0)));
+                return ((global::System.IntPtr)(@__env.CallLongMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._JvmHandle0)));
             }
             set {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                @__env.CallVoidMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._Native1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(value));
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._JvmHandle1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(value));
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.jni.__IJvmProxy.staticClass = @__class;
-            global::net.sf.jni4net.jni.__IJvmProxy._Native0 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "getNative", "()J");
-            global::net.sf.jni4net.jni.__IJvmProxy._Native1 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "setNative", "(J)V");
+            global::net.sf.jni4net.jni.__IJvmProxy._JvmHandle0 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "getJvmHandle", "()J");
+            global::net.sf.jni4net.jni.__IJvmProxy._JvmHandle1 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "setJvmHandle", "(J)V");
             global::net.sf.jni4net.jni.__IJvmProxy._Init2 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "Init", "(Lsystem/Object;JLjava/lang/Class;)V");
             global::net.sf.jni4net.jni.__IJvmProxy._GetClass3 = @__env.GetMethodID(global::net.sf.jni4net.jni.__IJvmProxy.staticClass, "GetClass", "()Ljava/lang/Class;");
         }
@@ -69,35 +69,36 @@ namespace net.sf.jni4net.jni {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.jni.__IJvmProxy._GetClass3));
         }
-        
-        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
+
+        private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class)
+        {
             global::System.Type @__type = typeof(__IJvmProxy);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getNative", "Native0", "()J"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setNative", "Native1", "(J)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getJvmHandle", "JvmHandle0", "()J"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setJvmHandle", "JvmHandle1", "(J)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Init", "Init2", "(Lsystem/Object;JLjava/lang/Class;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetClass", "GetClass3", "()Ljava/lang/Class;"));
             return methods;
         }
         
-        private static global::System.IntPtr Native0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr JvmHandle0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
             // ()J
             // ()LSystem/IntPtr;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.jni.IJvmProxy @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.jni.IJvmProxy>(@__env, @__obj);
-            return ((global::System.IntPtr)(@__real.Native));
+            return ((global::System.IntPtr)(@__real.JvmHandle));
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
             return default(global::System.IntPtr);
         }
         
-        private static void Native1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
+        private static void JvmHandle1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
             // (J)V
             // (LSystem/IntPtr;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.jni.IJvmProxy @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.jni.IJvmProxy>(@__env, @__obj);
-            @__real.Native = value;
+            @__real.JvmHandle = value;
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         

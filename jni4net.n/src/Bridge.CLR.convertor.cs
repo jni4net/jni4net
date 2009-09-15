@@ -72,7 +72,7 @@ namespace net.sf.jni4net
             {
                 throw new JNIException("Can't unwrap JVM instance");
             }
-            int handle = clrProxy.getClrHandle();
+            long handle = clrProxy.getClrHandle();
             object res = IntHandle.ToObject(handle);
             Type type = res.GetType();
             Type reqType = typeof(TRes);

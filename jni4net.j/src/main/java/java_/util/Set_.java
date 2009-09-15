@@ -29,7 +29,7 @@ public final class Set_ {
 @net.sf.jni4net.attributes.ClrProxy
 class __Set extends system.Object implements java.util.Set {
     
-    protected __Set(net.sf.jni4net.inj.INJEnv __env, int __handle) {
+    protected __Set(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
     }
     

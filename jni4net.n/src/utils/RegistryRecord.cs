@@ -56,8 +56,8 @@ namespace net.sf.jni4net.utils
 
         internal IntPtr CreateJVMProxy(JNIEnv env, object obj)
         {
-            int handle = IntHandle.Alloc(obj);
-            return env.NewObjectPtr(JVMProxy.native, JVMConstructor, new Value(), new Value {_int = handle});
+            long handle = IntHandle.Alloc(obj);
+            return env.NewObjectPtr(JVMProxy.jvmHandle, JVMConstructor, new Value(), new Value {_long = handle});
         }
 
         internal IJvmProxy CreateCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
