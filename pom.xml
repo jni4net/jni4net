@@ -19,10 +19,6 @@
         <module>jni4net.tested.n</module>
         <module>jni4net.test.j</module>
         <module>jni4net.test.n</module>
-        <module>selvin.exportdll</module>
-        <module>selvin.exportdllattribute</module>
-        <!--
-        -->
     </modules>
     <repositories>
         <repository>
