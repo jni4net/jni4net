@@ -88,7 +88,7 @@ class CLRLoader {
 
 	public static synchronized String getVersion() {
 		if (nversion == null) {
-			nversion = getProperty("jni4net.nversion");
+			nversion = getProperty("jni4net.version");
 		}
 		return nversion;
 	}

@@ -312,6 +312,46 @@
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: net.sf.jni4net:jni4net.j:0.2.0.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.j/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.jni4net:jni4net.tested.j:0.2.0.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <UsedPathMacros>
     <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />
