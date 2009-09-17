@@ -19,6 +19,7 @@ package net.sf.jni4net;
 
 import net.sf.jni4net.inj.IClrProxy_;
 import net.sf.jni4net.inj.INJException;
+import net.sf.jni4net.inj.IClrProxy;
 import net.sf.jni4net.jni.IJvmProxy;
 import net.sf.jni4net.jni.IJvmProxy_;
 
@@ -97,7 +98,24 @@ public class Bridge extends system.Object {
 		return (TRes)UnwrapJVM(clrHandle);
 	}
 
-	//TODO public static system.String convert(String obj){}
+	public static system.String convert(String obj){
+		return new system.String(obj);
+	}
+
+	public static String convert(system.String obj){
+		return obj.toString();
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <TRes> TRes cast(Object obj, Class<TRes> expectedInterface){
+		if (!IClrProxy.class.isAssignableFrom(obj.getClass())){
+			throw new INJException("Can't cast JVM instance");
+		}
+		if (IJvmProxy.class.isAssignableFrom(obj.getClass())){
+			throw new INJException("Can't cast JVM instance");
+		}
+		return (TRes)Cast(obj, expectedInterface);
+	}
 
 	// this is registered by convention to Java_net_sf_jni4net_Bridge_initDotNet
 	static native int initDotNet();
@@ -105,8 +123,9 @@ public class Bridge extends system.Object {
 	//these are conversion helpers
 	native static long WrapJVM(java.lang.Object obj);
 	native static java.lang.Object UnwrapJVM(long obj);
-    public native static void disposeClrHandle(long clrHandle);
-	//TODO native static int Convert(String obj);
+	public native static long Convert(String obj);
+    public native static void DisposeClrHandle(long clrHandle);
+	native static net.sf.jni4net.inj.IClrProxy Cast(Object obj, java.lang.Class expectedInterface);
 
 	//<generated-proxy>
     private static system.Type staticType;

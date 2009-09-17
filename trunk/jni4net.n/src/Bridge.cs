@@ -26,6 +26,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using java.lang;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
 using selvin.exportdllattribute;

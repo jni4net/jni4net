@@ -69,17 +69,56 @@ namespace net.sf.jni4net
             return default(IntPtr);
         }
 
-        private static void disposeClrHandle(IntPtr @__envp, IntPtr @__class, long clrHandle)
+        private static long Convert(IntPtr __envp, IntPtr __class, IntPtr str)
         {
-            JNIEnv @__env = JNIEnv.Wrap(@__envp);
+            JNIEnv env = JNIEnv.Wrap(__envp);
+            try
+            {
+                string value = env.ConvertToString(str);
+                return IntHandle.Alloc(value);
+            }
+            catch (Exception ex)
+            {
+                env.ThrowExisting(ex);
+            }
+            return default(long);
+        }
+
+        private static void DisposeClrHandle(IntPtr @__envp, IntPtr @__class, long clrHandle)
+        {
+            JNIEnv env = JNIEnv.Wrap(@__envp);
             try
             {
                 IntHandle.Free(clrHandle);
             }
             catch (Exception ex)
             {
-                @__env.ThrowExisting(ex);
+                env.ThrowExisting(ex);
             }
+        }
+
+        private static IntPtr Cast(IntPtr @__envp, IntPtr @__class, IntPtr obj, IntPtr expectedInterface)
+        {
+            JNIEnv env = JNIEnv.Wrap(@__envp);
+            try
+            {
+                Class expectedInterfaceClass = Convertor.StrongJ2CpClass(env, expectedInterface);
+                object real = __IClrProxy.GetObject(env, obj);
+                Type type = real.GetType();
+                RegistryRecord record = Registry.GetJVMRecord(expectedInterfaceClass);
+                Type reqType = record.CLRInterface;
+                if (!reqType.IsAssignableFrom(type))
+                {
+                    throw new InvalidCastException("Can't convert instance of CLR type " + type + " to " + reqType);
+                }
+
+                return record.CreateJVMProxy(env, real);
+            }
+            catch (Exception ex)
+            {
+                env.ThrowExisting(ex);
+            }
+            return default(IntPtr);
         }
 
         private static List<JNINativeMethod> __Init2(JNIEnv @__env, Class @__class)
@@ -87,8 +126,10 @@ namespace net.sf.jni4net
             Type @__type = typeof (__Bridge);
             var methods = new List<JNINativeMethod>();
             methods.Add(JNINativeMethod.Create(@__type, "WrapJVM", "WrapJVM", "(Ljava/lang/Object;)J"));
+            methods.Add(JNINativeMethod.Create(@__type, "Convert", "Convert", "(Ljava/lang/String;)J"));
             methods.Add(JNINativeMethod.Create(@__type, "UnwrapJVM", "UnwrapJVM", "(J)Ljava/lang/Object;"));
-            methods.Add(JNINativeMethod.Create(@__type, "disposeClrHandle", "disposeClrHandle", "(J)V"));
+            methods.Add(JNINativeMethod.Create(@__type, "DisposeClrHandle", "DisposeClrHandle", "(J)V"));
+            methods.Add(JNINativeMethod.Create(@__type, "Cast", "Cast", "(Ljava/lang/Object;Ljava/lang/Class;)Lnet/sf/jni4net/inj/IClrProxy;"));
             return methods;
         }
 

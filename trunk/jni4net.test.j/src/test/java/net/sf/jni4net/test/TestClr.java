@@ -25,6 +25,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Assert;
 import system.*;
+import system.Object;
 import system.reflection.Assembly;
 
 import java.io.File;
@@ -93,6 +94,24 @@ public class TestClr {
 	public void testWrapCant2() {
 		system.String s=new system.String("afsadf");
 		Bridge.unwrapJVM(s);
+	}
+
+	@Test()
+	public void testCast() {
+		CInterfacesHelper he=new CInterfacesHelper();
+		final Object object = he.CWithJavaInterfaceUnreg(1);
+		final Object object2 = he.CWithJavaInterfaceUnreg(2);
+		final Runnable runnable = Bridge.cast(object, Runnable.class);
+		final Comparable comparable = Bridge.cast(object, Comparable.class);
+		runnable.run();
+		Assert.assertThat(comparable.compareTo(object2), equalTo(0));
+	}
+
+	@Test()
+	public void testString() {
+		String s="ahoj";
+		system.String ss=new system.String(s);
+		Assert.assertThat(ss.toString(), equalTo(s));		
 	}
 
 	@Test()

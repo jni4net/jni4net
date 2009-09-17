@@ -18,9 +18,9 @@
 
 package system;
 
-	import net.sf.jni4net.inj.IClrProxy;
+import net.sf.jni4net.inj.IClrProxy;
 
-	@net.sf.jni4net.attributes.ClrType
+@net.sf.jni4net.attributes.ClrType
 public class Exception extends java.lang.RuntimeException implements IClrProxy, system.IObject {
 
 	private long clrHandle;
@@ -42,7 +42,19 @@ public class Exception extends java.lang.RuntimeException implements IClrProxy, 
 		clrHandle = handle;
 	}
 
-    //<generated-proxy>
+	@Override
+	protected void finalize() throws Throwable {
+		try {
+			if (clrHandle != 0) {
+				net.sf.jni4net.Bridge.DisposeClrHandle(clrHandle);
+				clrHandle = 0;
+			}
+		} finally {
+			super.finalize();
+		}
+	}
+
+	//<generated-proxy>
     private static system.Type staticType;
     
     @net.sf.jni4net.attributes.ClrConstructor("()V")
