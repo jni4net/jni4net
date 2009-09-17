@@ -13,8 +13,11 @@ package system;
 public class String extends system.Object implements system.IComparable, system.ICloneable, system.IConvertible, system.collections.IEnumerable {
     
 	public String(java.lang.String value) {
-			super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
-		//TODO Bridge.Convert
+			super(((net.sf.jni4net.inj.INJEnv)(null)), net.sf.jni4net.Bridge.Convert(value));
+	}
+
+	public String(long __handle, net.sf.jni4net.inj.INJEnv __env) {
+			super(__env, __handle);
 	}
 
     //<generated-proxy>
