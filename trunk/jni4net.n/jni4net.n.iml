@@ -9,8 +9,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="selvin.exportdllattribute" />
-    <orderEntry type="module" module-name="selvin.exportdll" />
   </component>
 </module>
 

@@ -238,8 +238,6 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" filepath="$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" filepath="$PROJECT_DIR$/jni4net.tested.j/jni4net.tested.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" filepath="$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" />
-      <module fileurl="file://$PROJECT_DIR$/selvin.exportdll/selvin.exportdll.iml" filepath="$PROJECT_DIR$/selvin.exportdll/selvin.exportdll.iml" />
-      <module fileurl="file://$PROJECT_DIR$/selvin.exportdllattribute/selvin.exportdllattribute.iml" filepath="$PROJECT_DIR$/selvin.exportdllattribute/selvin.exportdllattribute.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
