@@ -31,9 +31,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <ClassPath>lib/xml-apis-1.3.04.jar</ClassPath>
   <ClassPath>lib/commons-logging-1.0.4.jar</ClassPath>
 
-  <ClassPath>../../jni4net.j/target/classes</ClassPath>
-  <AssemblyReference>..\..\jni4net.n\target\jni4net.n-0.3.0.0.dll</AssemblyReference>
-
   <JavaClass TypeName="org.apache.fop.apps.Fop"/>
   <JavaClass TypeName="org.apache.fop.apps.MimeConstants"/>
   <JavaClass TypeName="org.apache.fop.apps.FopFactory"/>

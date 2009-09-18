@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="jni4net.n-0.3.0.0, Version=0.3.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\jni4net.n-0.3.0.0.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -59,12 +63,13 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\jni4net.n\src\jni4net.n.csproj">
-      <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n</Name>
-    </ProjectReference>
+    <Content Include="..\..\lib\jni4net.j-0.3.0.0.jar">
+      <Link>jni4net.j-0.3.0.0.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="java_\io\" />
     <Folder Include="org\apache\xmlgraphics\image\loader\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -75,4 +80,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

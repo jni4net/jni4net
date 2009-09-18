@@ -68,6 +68,9 @@
     <None Include="config\toolConfig.xsd">
       <CustomToolNamespace>net.sf.jni4net.tool.config</CustomToolNamespace>
     </None>
+    <Compile Include="..\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="generator\CLRClassGenerator.cs" />
     <Compile Include="generator\CLRGenerator.C2J.cs" />
     <Compile Include="generator\CLRGenerator.J2C.cs" />
@@ -88,4 +91,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
+echo [assembly: System.Reflection.AssemblyVersion("0.3.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+</PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

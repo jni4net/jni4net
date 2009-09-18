@@ -254,7 +254,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)\..\..\tools\lib\selvin.exportdll-0.2.0.0.exe $(TargetPath) . . $(ProjectDir)/../../tools/keys/jni4net.snk /Debug</PostBuildEvent>
+    <PostBuildEvent>$(SolutionDir)\tools\lib\selvin.exportdll-0.2.0.0.exe $(TargetPath) . . $(SolutionDir)/tools/keys/jni4net.snk /Debug</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.3.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>

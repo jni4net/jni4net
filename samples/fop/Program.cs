@@ -15,25 +15,28 @@ namespace fop
         private static void Main(string[] args)
         {
             Bridge.BindNative = false;
+            string jarLocation = Bridge.FindJar();
             Bridge.CreateJVM("-Djava.class.path="
-                + "../../jni4net.j/target/classes;"
-                + "lib/fop.jar;"
-                + "lib/avalon-framework-4.2.0.jar;"
-                + "lib/batik-all-1.7.jar;"
-                + "lib/commons-io-1.3.1.jar;"
-                + "lib/commons-logging-1.0.4.jar;"
-                + "lib/serializer-2.7.0.jar;"
-                + "lib/xalan-2.7.0.jar;"
-                + "lib/xercesImpl-2.7.1.jar;"
-                + "lib/xml-apis-1.3.04.jar;"
-                + "lib/xml-apis-ext-1.3.04.jar;"
-                + "lib/xmlgraphics-commons-1.3.1.jar;"
+                + jarLocation + ";"
+                + "../../lib/fop.jar;"
+                + "../../lib/avalon-framework-4.2.0.jar;"
+                + "../../lib/batik-all-1.7.jar;"
+                + "../../lib/commons-io-1.3.1.jar;"
+                + "../../lib/commons-logging-1.0.4.jar;"
+                + "../../lib/serializer-2.7.0.jar;"
+                + "../../lib/xalan-2.7.0.jar;"
+                + "../../lib/xercesImpl-2.7.1.jar;"
+                + "../../lib/xml-apis-1.3.04.jar;"
+                + "../../lib/xml-apis-ext-1.3.04.jar;"
+                + "../../lib/xmlgraphics-commons-1.3.1.jar;"
                 );
 
+            Bridge.BindNative = false;
+            Bridge.BindStatic = false;
             Bridge.RegisterAssembly(typeof(Program).Assembly);
 
-            string inFileName = "data/jni4net.fo";
-            string outFileName = "data/jni4net.pdf";
+            string inFileName = "../../data/jni4net.fo";
+            string outFileName = "../../data/jni4net.pdf";
 
             OutputStream output = null;
             try
