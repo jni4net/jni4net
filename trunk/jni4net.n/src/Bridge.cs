@@ -38,6 +38,7 @@ namespace net.sf.jni4net
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool bindNative = true;
+        private static bool bindStatic = true;
         public static bool Verbose { get; set; }
         public static bool Debug { get; set; }
 
@@ -45,6 +46,12 @@ namespace net.sf.jni4net
         {
             get { return bindNative; }
             set { bindNative = value; }
+        }
+
+        public static bool BindStatic
+        {
+            get { return bindStatic; }
+            set { bindStatic = value; }
         }
 
         public static void CreateJVM(params string[] options)
@@ -57,6 +64,22 @@ namespace net.sf.jni4net
         public static void CreateJVM(out JavaVM jvm, out JNIEnv env, params string[] options)
         {
             JNI.CreateJavaVM(out jvm, out env, true, options);
+        }
+
+        public static string FindJar()
+        {
+            string dll = typeof(Bridge).Assembly.Location;
+            string jar = dll.Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
+            if (File.Exists(jar))
+            {
+                return jar;
+            }
+            if (dll.Contains("jni4net.proxygen\\target"))
+            {
+                string dir = Path.GetDirectoryName(dll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
+                return dir;
+            }
+            return null;
         }
 
         public static void LoadAndRegisterAssembly(string assemblyPath)

@@ -166,7 +166,7 @@ namespace net.sf.jni4net.proxygen.model
         {
             knownAssemblies = new List<Assembly>();
             knownAssemblies.Add(typeof (object).Assembly);
-            if (config.AssemblyReference != null)
+            if (config.AssemblyReference != null && config.AssemblyReference.Length>0)
             {
                 foreach (string reference in config.AssemblyReference)
                 {
@@ -196,7 +196,7 @@ namespace net.sf.jni4net.proxygen.model
                     }
                 }
             }
-            if (config.AssemblyReference == null || config.AssemblyReference.Length == 0)
+            else
             {
                 knownAssemblies.Add(typeof (IJvmProxy).Assembly);
             }
@@ -207,9 +207,9 @@ namespace net.sf.jni4net.proxygen.model
             JNIEnv env;
             JavaVM vm;
             var cp = new StringBuilder();
-            if (config.ClassPath != null)
+            cp.Append("-Djava.class.path=");
+            if (config.ClassPath != null && config.ClassPath.Length > 0)
             {
-                cp.Append("-Djava.class.path=");
                 foreach (string classPath in config.ClassPath)
                 {
                     if (!Directory.Exists(classPath) && !File.Exists(classPath))
@@ -223,13 +223,17 @@ namespace net.sf.jni4net.proxygen.model
                     cp.Append(classPath);
                     cp.Append(';');
                 }
-                cp.Length--;
-                Bridge.CreateJVM(out vm, out env, cp.ToString());
+            }
+            string jar = Bridge.FindJar();
+            if (jar!=null)
+            {
+                cp.Append(jar);
             }
             else
             {
-                Bridge.CreateJVM(out vm, out env);
+                cp.Length--;
             }
+            Bridge.CreateJVM(out vm, out env, cp.ToString());
         }
 
         private static void PreLoadMethods(GType type, bool forceCLR, bool forceJVM)
