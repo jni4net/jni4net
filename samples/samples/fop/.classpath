@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="**/_svn/**" kind="src" path="java"/>
+	<classpathentry kind="lib" path="../../lib/jni4net.j-0.3.0.0.jar" sourcepath="../../../jni4net.j/src/main/java"/>
+	<classpathentry kind="lib" path="lib/fop.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
