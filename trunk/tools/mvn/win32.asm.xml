@@ -49,7 +49,7 @@
     </files>
     <fileSets>
         <fileSet>
-            <directory>samples</directory>
+            <directory>samples/samples</directory>
             <outputDirectory>samples</outputDirectory>
             <excludes>
                 <exclude>_ReSharper*/**</exclude>
