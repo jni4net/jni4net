@@ -24,6 +24,7 @@ import net.sf.jni4net.jni.IJvmProxy;
 import net.sf.jni4net.jni.IJvmProxy_;
 
 import java.lang.String;
+import java.io.IOException;
 
 import system.IObject;
 
@@ -39,7 +40,7 @@ public class Bridge extends system.Object {
 		init(CLRLoader.findDefaultDll());
 	}
 
-	public static void init(String fileOrDirectory) {
+	public static void init(String fileOrDirectory) throws IOException {
 		CLRLoader.init(fileOrDirectory);
 	}
 
