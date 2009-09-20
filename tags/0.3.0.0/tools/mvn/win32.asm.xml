@@ -1,0 +1,83 @@
+<assembly>
+    <id>win32</id>
+    <formats>
+        <format>dir</format>
+        <format>zip</format>
+    </formats>
+    
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <moduleSets>
+
+        <!-- libraries -->
+        <moduleSet>
+            <includes>
+                <include>net.sf.jni4net:jni4net.j</include>
+                <include>net.sf.jni4net:jni4net.n</include>
+            </includes>
+            <binaries>
+                <outputDirectory>lib</outputDirectory>
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+
+        <!-- bin -->
+        <moduleSet>
+            <includes>
+                <include>net.sf.jni4net:jni4net.proxygen</include>
+            </includes>
+            <binaries>
+                <outputDirectory>bin</outputDirectory>
+                <outputFileNameMapping>proxygen.${module.extension}</outputFileNameMapping>
+                <includeDependencies>false</includeDependencies>
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+    </moduleSets>
+    <files>
+        <file>
+            <source>license\proxygen-GPL.3.0.txt</source>
+            <outputDirectory>bin</outputDirectory>
+        </file>
+        <file>
+            <source>license\jni4net.j-LGPL-3.0.txt</source>
+            <outputDirectory>lib</outputDirectory>
+        </file>
+        <file>
+            <source>license\jni4net.n-LGPL-3.0.txt</source>
+            <outputDirectory>lib</outputDirectory>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>samples/samples</directory>
+            <outputDirectory>samples</outputDirectory>
+            <excludes>
+                <exclude>_ReSharper*/**</exclude>
+                <exclude>**/Debug/**</exclude>
+                <exclude>**/Release/**</exclude>
+                <exclude>**/obj/**</exclude>
+                <exclude>**/*.suo</exclude>
+                <exclude>**/*.user</exclude>
+                <exclude>**/*.log</exclude>
+                <exclude>plugins/**</exclude>
+                <exclude>**/*.iws</exclude>
+                <exclude>**/*.iml</exclude>
+                <exclude>**/*.ipr</exclude>
+                <exclude>**/*.bak</exclude>
+                <exclude>**/Thumbs.db</exclude>
+                <exclude>**/~*</exclude>
+                <exclude>**/.*</exclude>
+                <exclude>**/.*</exclude>
+                <exclude>**/_svn/**</exclude>
+                <exclude>**/.svn/**</exclude>
+                <exclude>**/.metadata/**</exclude>
+                <exclude>**/target/**</exclude>
+                <exclude>tools/lib/**</exclude>
+                <exclude>**/*.jkey</exclude>
+                <exclude>**/*.snk</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>
+
+

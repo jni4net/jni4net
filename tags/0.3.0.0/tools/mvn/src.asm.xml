@@ -1,0 +1,37 @@
+<assembly>
+    <id>src</id>
+    <formats>
+        <format>dir</format>
+        <format>zip</format>
+    </formats>
+
+    <fileSets>
+        <fileSet>
+            <excludes>
+                <exclude>_ReSharper*/**</exclude>
+                <exclude>**/Debug/**</exclude>
+                <exclude>**/Release/**</exclude>
+                <exclude>**/obj/**</exclude>
+                <exclude>**/*.suo</exclude>
+                <exclude>**/*.user</exclude>
+                <exclude>**/*.log</exclude>
+                <exclude>plugins/**</exclude>
+                <exclude>**/*.iws</exclude>
+                <exclude>**/*.iml</exclude>
+                <exclude>**/*.ipr</exclude>
+                <exclude>**/*.bak</exclude>
+                <exclude>**/Thumbs.db</exclude>
+                <exclude>**/~*</exclude>
+                <exclude>**/.*</exclude>
+                <exclude>**/.*</exclude>
+                <exclude>**/_svn/**</exclude>
+                <exclude>**/.svn/**</exclude>
+                <exclude>**/.metadata/**</exclude>
+                <exclude>**/target/**</exclude>
+                <exclude>tools/lib/**</exclude>
+                <exclude>**/*.jkey</exclude>
+                <exclude>**/*.snk</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>
