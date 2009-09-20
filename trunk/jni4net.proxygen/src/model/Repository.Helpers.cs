@@ -226,7 +226,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void LoadClasspath()
         {
-            BridgeSetup setup=new BridgeSetup();
+            BridgeSetup setup=new BridgeSetup(false);
             setup.BindNative = false;
             setup.BindStatic = true;
 
