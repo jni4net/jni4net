@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using java.io;
 using javax.xml.transform;
 using javax.xml.transform.sax;
@@ -9,24 +10,40 @@ using File=java.io.File;
 
 namespace fop
 {
-    internal class Program
+    public class Program
     {
         /// <summary>
-        /// Start this from directory \samples\fop\
+        /// Start this from directory \samples\samples\fop\
+        /// with \samples\lib populated with jni4net.j.jar and jni4net.n.dll
+        /// and with \samples\samples\fop\lib populated with FOP jar files.
         /// </summary>
-        private static void Main(string[] args)
+        private static void Main()
         {
-            BridgeSetup setup= new BridgeSetup();
-            setup.BindStatic = false;
+            FixStartupDirectory();
+
+            var setup = new BridgeSetup();
+
+            // setup Java classpath to find jni4net.j
             setup.AddBridgeClassPath();
-            setup.AddAllJarsClassPath("../../lib");
+
+            // setup Java classpath to find FOP libraries
+            setup.AddAllJarsClassPath("lib");
+
+            // we don't need to call back from Java
+            setup.BindStatic = false;
+
+            //now we create JVM and bind jni4net core
             Bridge.CreateJVM(setup);
 
-            Bridge.RegisterAssembly(typeof(Program).Assembly);
+            //now we bind all proxies of FOP objects
+            //which are compiled in this assembly
+            Bridge.RegisterAssembly(typeof (Program).Assembly);
 
-            string inFileName = "../../data/jni4net.fo";
-            string outFileName = "../../data/jni4net.pdf";
+            const string inFileName = "data/jni4net.fo";
+            const string outFileName = "data/jni4net.pdf";
 
+
+            //Below is just plain Copy&Paste of FOP basic sample java code
             OutputStream output = null;
             try
             {
@@ -61,6 +78,16 @@ namespace fop
                 {
                     output.close();
                 }
+            }
+        }
+
+        private static void FixStartupDirectory()
+        {
+            if (Environment.CurrentDirectory.ToLowerInvariant().EndsWith(@"bin\debug")
+                || Environment.CurrentDirectory.ToLowerInvariant().EndsWith(@"bin\release"))
+            {
+                // to be able to find all files, we step up two levels
+                Environment.CurrentDirectory = Path.GetFullPath(Environment.CurrentDirectory + @"\..\..");
             }
         }
     }
