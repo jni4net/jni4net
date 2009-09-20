@@ -123,6 +123,7 @@ namespace net.sf.jni4net
                     return dir;
                 }
             }
+            TextWriter writer = Console.Out;
             throw new JNIException("Can't find " + jar);
         }
 

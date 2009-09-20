@@ -142,6 +142,9 @@ public class Bridge extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("()Lnet/sf/jni4net/BridgeSetup;")
     public native static net.sf.jni4net.BridgeSetup getSetup();
     
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/BridgeSetup;)Lnet/sf/jni4net/jni/JNIEnv;")
+    public native static system.Object CreateJVM(net.sf.jni4net.BridgeSetup setup);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
     public native static void LoadAndRegisterAssembly(java.lang.String assemblyPath);
     

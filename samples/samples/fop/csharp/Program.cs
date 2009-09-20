@@ -30,11 +30,11 @@ namespace fop
             // we don't need to call back from Java
             setup.BindStatic = false;
 
-            //now we create JVM and bind jni4net core
+            // now we create JVM and bind jni4net core
             Bridge.CreateJVM(setup);
 
-            //now we bind all proxies of FOP objects
-            //which are compiled in this assembly
+            // now we bind all proxies of FOP objects
+            // which are compiled in this assembly
             Bridge.RegisterAssembly(typeof (Program).Assembly);
 
             const string inFileName = "data/jni4net.fo";
@@ -71,7 +71,7 @@ namespace fop
             }
             finally
             {
-                //Clean-up
+                // Clean-up
                 if (output != null)
                 {
                     output.close();
@@ -81,11 +81,10 @@ namespace fop
 
         private static void FixStartupDirectory()
         {
-            if (Environment.CurrentDirectory.ToLowerInvariant().EndsWith(@"bin\debug")
-                || Environment.CurrentDirectory.ToLowerInvariant().EndsWith(@"bin\release"))
+            if (Environment.CurrentDirectory.ToLowerInvariant().EndsWith(@"target"))
             {
                 // to be able to find all files, we step up two levels
-                Environment.CurrentDirectory = Path.GetFullPath(Environment.CurrentDirectory + @"\..\..");
+                Environment.CurrentDirectory = Path.GetFullPath(Environment.CurrentDirectory + @"\..");
             }
         }
     }

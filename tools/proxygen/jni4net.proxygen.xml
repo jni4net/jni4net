@@ -183,6 +183,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <ClrType TypeName="System.IO.FileStream"/>
   <ClrType TypeName="System.IO.Stream"/>
   <ClrType TypeName="System.Console"/>
+  <ClrType TypeName="System.Environment"/>
+  <ClrType TypeName="System.IO.TextWriter"/>
+  <ClrType TypeName="System.IO.TextReader"/>
 
   <!-- colections -->
   <ClrType TypeName="System.Collections.IList"/>

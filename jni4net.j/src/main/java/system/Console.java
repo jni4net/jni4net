@@ -24,13 +24,13 @@ public class Console extends system.Object {
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IO/TextWriter;")
-    public native static system.MarshalByRefObject getError();
+    public native static system.io.TextWriter getError();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IO/TextReader;")
-    public native static system.MarshalByRefObject getIn();
+    public native static system.io.TextReader getIn();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IO/TextWriter;")
-    public native static system.MarshalByRefObject getOut();
+    public native static system.io.TextWriter getOut();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Text/Encoding;")
     public native static system.Object getInputEncoding();
@@ -198,13 +198,13 @@ public class Console extends system.Object {
     public native static system.io.Stream OpenStandardOutput(int bufferSize);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IO/TextReader;)V")
-    public native static void SetIn(system.MarshalByRefObject newIn);
+    public native static void SetIn(system.io.TextReader newIn);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IO/TextWriter;)V")
-    public native static void SetOut(system.MarshalByRefObject newOut);
+    public native static void SetOut(system.io.TextWriter newOut);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IO/TextWriter;)V")
-    public native static void SetError(system.MarshalByRefObject newError);
+    public native static void SetError(system.io.TextWriter newError);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native static int Read();
