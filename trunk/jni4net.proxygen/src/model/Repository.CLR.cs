@@ -122,15 +122,19 @@ namespace net.sf.jni4net.proxygen.model
             {
                 if (!ifc.IsAssignableFrom(type.BaseType))
                 {
-                    GType gifc = RegisterType(ifc);
-                    if (!res.Interfaces.Contains(gifc))
+                    if (!TestCLRTypeStrong(ifc))
                     {
-                        if (res.IsInterface && res.Base == null)
+                        GType gifc = RegisterType(ifc);
+                        if (!res.Interfaces.Contains(gifc))
                         {
-                            res.Base = gifc;
+
+                            if (res.IsInterface && res.Base == null)
+                            {
+                                res.Base = gifc;
+                            }
+                            res.Interfaces.Add(gifc);
+                            res.AllInterfaces.Add(gifc);
                         }
-                        res.Interfaces.Add(gifc);
-                        res.AllInterfaces.Add(gifc);
                     }
                 }
             }

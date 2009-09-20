@@ -144,51 +144,73 @@ namespace net.sf.jni4net.proxygen.model
             clrProxy.CLRSubst = systemObject;
         }
 
-        private static void LoadFile(string file)
+        private static Assembly LoadFile(string file)
         {
             string path = Path.GetFullPath(file);
             try
             {
-                knownAssemblies.Add(Assembly.LoadFrom(path));
+                Assembly assembly = Assembly.LoadFrom(path);
+                knownAssemblies.Add(assembly);
                 if (config.Verbose)
                 {
                     Console.WriteLine("Loaded " + path);
                 }
+                return assembly;
             }
             catch (java.lang.Exception)
             {
                 Console.Error.WriteLine("Can't load " + path);
                 //ignore
+                return null;
             }
         }
 
         private static void LoadAssemblies()
         {
+            bool found = false;
             knownAssemblies = new List<Assembly>();
             knownAssemblies.Add(typeof (object).Assembly);
             if (config.AssemblyReference != null && config.AssemblyReference.Length>0)
             {
+                Assembly assembly;
                 foreach (string reference in config.AssemblyReference)
                 {
                     if (Directory.Exists(reference))
                     {
                         foreach (string file in Directory.GetFiles(reference, "*.dll"))
                         {
-                            LoadFile(file);
+                            assembly = LoadFile(file);
+                            if (assembly.GetType(typeof (IJvmProxy).FullName, false)!=null)
+                            {
+                                found = true;
+                            }
                         }
                         foreach (string file in Directory.GetFiles(reference, "*.exe"))
                         {
-                            LoadFile(file);
+                            assembly = LoadFile(file);
+                            if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
+                            {
+                                found = true;
+                            }
                         }
                     }
                     else if (File.Exists(reference) || reference.Contains("..") || reference.Contains("\\") ||
                              reference.Contains("//"))
                     {
-                        LoadFile(reference);
+                        assembly=LoadFile(reference);
+                        if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
+                        {
+                            found = true;
+                        }
                     }
                     else
                     {
-                        knownAssemblies.Add(Assembly.Load(reference));
+                        assembly = Assembly.Load(reference);
+                        if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
+                        {
+                            found = true;
+                        }
+                        knownAssemblies.Add(assembly);
                         if (config.Verbose)
                         {
                             Console.WriteLine("Loaded " + reference);
@@ -196,7 +218,7 @@ namespace net.sf.jni4net.proxygen.model
                     }
                 }
             }
-            else
+            if (!found)
             {
                 knownAssemblies.Add(typeof (IJvmProxy).Assembly);
             }
@@ -315,9 +337,21 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
+        private static bool TestCLRTypeStrong(Type type)
+        {
+            bool nested = false;
+            if (type.IsNested)
+            {
+                nested = TestCLRType(type.DeclaringType);
+            }
+            return nested || (!type.IsPublic) || TestCLRType(type);
+        }
+
         private static bool TestCLRType(Type type)
         {
-            return type.IsByRef || type.IsPointer || typeof (Delegate).IsAssignableFrom(type);
+            return type.IsByRef 
+                || type.IsPointer
+                || typeof (Delegate).IsAssignableFrom(type);
         }
 
         private static bool UseMethodModifier(GType type, GMethod res, string name, string signature, ref bool force)

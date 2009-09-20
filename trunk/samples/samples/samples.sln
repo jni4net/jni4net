@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fop", "fop\fop.csproj", "{1160D75E-9B26-4B79-A092-FCE1A9FD48E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms", "winforms\winforms.csproj", "{B384D92F-EFA0-473C-B9A9-250113849064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{1160D75E-9B26-4B79-A092-FCE1A9FD48E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1160D75E-9B26-4B79-A092-FCE1A9FD48E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1160D75E-9B26-4B79-A092-FCE1A9FD48E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B384D92F-EFA0-473C-B9A9-250113849064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B384D92F-EFA0-473C-B9A9-250113849064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B384D92F-EFA0-473C-B9A9-250113849064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B384D92F-EFA0-473C-B9A9-250113849064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

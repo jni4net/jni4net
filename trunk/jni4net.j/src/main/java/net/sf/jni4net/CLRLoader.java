@@ -20,6 +20,7 @@ package net.sf.jni4net;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.File;
 import java.net.URL;
 import java.util.Properties;
 
@@ -29,10 +30,10 @@ import java.util.Properties;
 class CLRLoader {
 	private static String nversion;
 
-	public static void init(String fileOrDirectory) {
+	public static void 	init(String fileOrDirectory) throws IOException {
 		if (!Bridge.isRegistered) {
 			if (new java.io.File(fileOrDirectory).isDirectory()) {
-				init(fileOrDirectory + "/jni4net.n-" + getVersion() + ".dll");
+				init(new File(fileOrDirectory + "/jni4net.n-" + getVersion() + ".dll").getAbsoluteFile().getCanonicalPath());
 				return;
 			}
 			try {
