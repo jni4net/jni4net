@@ -29,26 +29,26 @@ namespace net.sf.jni4net.test
 {
     public abstract class TestBase
     {
-        protected JavaVM vm;
         protected JNIEnv env;
 
         [TestFixtureSetUp]
         public virtual void Setup()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-            Bridge.Verbose = true;
-            Bridge.Debug = true;
+            BridgeSetup setup=new BridgeSetup {Verbose = true, Debug = true};
             if (Environment.CurrentDirectory.EndsWith("target"))
             {
-                Bridge.CreateJVM(out vm, out env,
-                                 "-Djava.class.path=../../jni4net.j/target/classes;../../jni4net.tested.j/target/classes;../../jni4net.test.j/target/test-classes");
+                setup.AddClassPath("../../jni4net.j/target/classes");
+                setup.AddClassPath("../../jni4net.tested.j/target/classes");
+                setup.AddClassPath("../../jni4net.test.j/target/test-classes");
             }
             else
             {
-                Console.WriteLine("Current Directory "+Environment.CurrentDirectory);
-                Bridge.CreateJVM(out vm, out env,
-                                 "-Djava.class.path=../../../jni4net.j/target/classes;../../../jni4net.tested.j/target/classes;../../../jni4net.test.j/target/test-classes");
+                setup.AddClassPath("../../../jni4net.j/target/classes");
+                setup.AddClassPath("../../../jni4net.tested.j/target/classes");
+                setup.AddClassPath("../../../jni4net.test.j/target/test-classes");
             }
+            env = Bridge.CreateJVM(setup);
             Bridge.RegisterAssembly(typeof(TestBase).Assembly);
             Bridge.RegisterAssembly(typeof(JavaInstanceFields).Assembly);
         }

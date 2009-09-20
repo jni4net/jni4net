@@ -40,75 +40,23 @@ namespace net.sf.jni4net {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__Bridge);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getVerbose", "Verbose0", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setVerboseImpl", "Verbose1", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getDebug", "Debug2", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setDebugImpl", "Debug3", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getBindNative", "BindNative4", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setBindNative", "BindNative5", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly6", "(Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly7", "(Lsystem/reflection/Assembly;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSetup", "Setup0", "()Lnet/sf/jni4net/BridgeSetup;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly1", "(Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly2", "(Lsystem/reflection/Assembly;)V"));
             return methods;
         }
         
-        private static bool Verbose0(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Z
-            // ()Z
+        private static global::System.IntPtr Setup0(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
+            // ()Lnet/sf/jni4net/BridgeSetup;
+            // ()Lnet/sf/jni4net/BridgeSetup;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            return ((bool)(global::net.sf.jni4net.Bridge.Verbose));
+            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.BridgeSetup>(@__env, global::net.sf.jni4net.Bridge.Setup);
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(bool);
+            return default(global::System.IntPtr);
         }
         
-        private static void Verbose1(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
-            // (Z)V
-            // (Z)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::net.sf.jni4net.Bridge.Verbose = value;
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-        }
-        
-        private static bool Debug2(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Z
-            // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            return ((bool)(global::net.sf.jni4net.Bridge.Debug));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(bool);
-        }
-        
-        private static void Debug3(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
-            // (Z)V
-            // (Z)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::net.sf.jni4net.Bridge.Debug = value;
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-        }
-        
-        private static bool BindNative4(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Z
-            // ()Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            return ((bool)(global::net.sf.jni4net.Bridge.BindNative));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-            return default(bool);
-        }
-        
-        private static void BindNative5(global::System.IntPtr @__envp, global::System.IntPtr @__class, bool value) {
-            // (Z)V
-            // (Z)V
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::net.sf.jni4net.Bridge.BindNative = value;
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
-        }
-        
-        private static void LoadAndRegisterAssembly6(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assemblyPath) {
+        private static void LoadAndRegisterAssembly1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assemblyPath) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -117,7 +65,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
         }
         
-        private static void RegisterAssembly7(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assembly) {
+        private static void RegisterAssembly2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr assembly) {
             // (Lsystem/reflection/Assembly;)V
             // (LSystem/Reflection/Assembly;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

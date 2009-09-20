@@ -173,14 +173,14 @@ namespace net.sf.jni4net.utils
             if (record.CLRProxy != null)
             {
                 RegisterStaticAndMethods(record, env);
-                if (initialized && Bridge.BindStatic)
+                if (initialized && Bridge.Setup.BindStatic)
                 {
                     RegisterTypeOf(record, env);
                 }
             }
             if (initialized)
             {
-                if (Bridge.BindNative && record.CLRWrapper != null)
+                if (Bridge.Setup.BindNative && record.CLRWrapper != null)
                 {
                     RegisterNative(record.CLRWrapperInitMethod, env, record.JVMProxy, record.JVMInterface);
                 }
@@ -217,11 +217,11 @@ namespace net.sf.jni4net.utils
                 throw new JNIException("Can't find java class for " + interfaceName);
             }
             record.JVMStatic = env.FindClassNoThrow(staticName.Replace('.', '/'));
-            if (record.JVMStatic == null && Bridge.BindStatic)
+            if (record.JVMStatic == null && Bridge.Setup.BindStatic)
             {
                 throw new JNIException("Can't find java class for " + staticName);
             }
-            if (proxyName != null && Bridge.BindStatic)
+            if (proxyName != null && Bridge.Setup.BindStatic)
             {
                 record.JVMProxy = env.FindClassNoThrow(proxyName.Replace('.', '/'));
                 record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);

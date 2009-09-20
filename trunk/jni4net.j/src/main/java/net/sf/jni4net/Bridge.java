@@ -46,14 +46,14 @@ public class Bridge extends system.Object {
 	public static void setDebug(boolean value){
 		debug=value;
 		if (isRegistered){
-			setDebugImpl(value);
+			getSetup().setDebug(value);
 		}
 	}
 
 	public static void setVerbose(boolean value){
 		verbose=value;
 		if (isRegistered){
-			setVerboseImpl(value);
+			getSetup().setVerbose(value);
 		}
 	}
 
@@ -138,23 +138,8 @@ public class Bridge extends system.Object {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native static boolean getVerbose();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    private native static void setVerboseImpl(boolean value);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native static boolean getDebug();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    private native static void setDebugImpl(boolean value);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native static boolean getBindNative();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native static void setBindNative(boolean value);
+    @net.sf.jni4net.attributes.ClrMethod("()Lnet/sf/jni4net/BridgeSetup;")
+    public native static net.sf.jni4net.BridgeSetup getSetup();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
     public native static void LoadAndRegisterAssembly(java.lang.String assemblyPath);

@@ -56,13 +56,13 @@ namespace net.sf.jni4net.utils
             var proxy = obj as IJvmProxy;
             if (proxy != null)
             {
-                if (!typeof(IJvmProxy).IsAssignableFrom(reqType))
+                if (!reqType.IsInterface && !typeof(IJvmProxy).IsAssignableFrom(reqType))
                 {
                     //now we do double wrap
                     RegistryRecord recordW = Registry.GetCLRRecord(typeof(IJvmProxy));
                     return recordW.CreateJVMProxy(env, obj);
                 }
-                if (Bridge.Debug)
+                if (Bridge.Setup.Debug)
                 {
                     Class clazzT = env.GetObjectClass(proxy.JvmHandle);
                     RegistryRecord recordT = Registry.GetCLRRecord(reqType);
@@ -87,7 +87,7 @@ namespace net.sf.jni4net.utils
                 return record.CreateJVMProxy(env, obj);
             }
             record = Registry.GetCLRRecord(reqType);
-            if (Bridge.Debug)
+            if (Bridge.Setup.Debug)
             {
                 if (!record.CLRInterface.IsAssignableFrom(realType))
                 {

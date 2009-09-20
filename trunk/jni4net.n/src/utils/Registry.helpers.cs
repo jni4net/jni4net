@@ -143,7 +143,7 @@ namespace net.sf.jni4net.utils
             var registrations = (List<JNINativeMethod>) initializer.Invoke(null, new object[] {env, jvmProxy});
             if (registrations.Count > 0)
             {
-                if (Bridge.Debug)
+                if (Bridge.Setup.Debug)
                 {
                     foreach (JNINativeMethod registration in registrations)
                     {
