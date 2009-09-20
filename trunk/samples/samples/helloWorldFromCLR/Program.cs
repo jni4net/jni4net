@@ -10,6 +10,7 @@ namespace helloWorldFromCLR
         private static void Main()
         {
             // create bridge, with default setup
+            // it will lookup jni4net.j.jar next to jni4net.n.dll
             Bridge.CreateJVM(new BridgeSetup());
 
             // here you go!
@@ -23,7 +24,7 @@ namespace helloWorldFromCLR
             Enumeration enumeration = javaSystemProperties.keys();
             while (enumeration.hasMoreElements())
             {
-                // there java hash table is not generic and returns Object
+                // there hash table is not generic and returns java.lang.Object
                 // but we know is should be java.lang.String, so we could cast
                 var key = (java.lang.String) enumeration.nextElement();
                 java.lang.System.@out.print(key);
@@ -39,7 +40,7 @@ namespace helloWorldFromCLR
                 java.lang.System.@out.println(valueToString);
             }
 
-            // Java output stream is really stream
+            // Java output is really Stream
             PrintStream stream = java.lang.System.@out;
 
             // it implements java.io.Flushable interface

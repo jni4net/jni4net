@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>target\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>target\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,28 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="javax\xml\transform\Result.generated.cs" />
-    <Compile Include="javax\xml\transform\sax\SAXResult.generated.cs" />
-    <Compile Include="javax\xml\transform\Source.generated.cs" />
-    <Compile Include="javax\xml\transform\stream\StreamSource.generated.cs" />
-    <Compile Include="javax\xml\transform\Transformer.generated.cs" />
-    <Compile Include="javax\xml\transform\TransformerException.generated.cs" />
-    <Compile Include="javax\xml\transform\TransformerFactory.generated.cs" />
-    <Compile Include="java\io\BufferedOutputStream.generated.cs" />
-    <Compile Include="java\io\FileOutputStream.generated.cs" />
-    <Compile Include="org\apache\fop\apps\Fop.generated.cs" />
-    <Compile Include="org\apache\fop\apps\FopFactory.generated.cs" />
-    <Compile Include="org\apache\fop\apps\MimeConstants.generated.cs" />
-    <Compile Include="Program.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="..\..\lib\jni4net.j-0.3.0.0.jar">
       <Link>jni4net.j-0.3.0.0.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="org\apache\xmlgraphics\image\loader\" />
+    <Compile Include="csharp\javax\xml\transform\Result.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\sax\SAXResult.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\Source.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\stream\StreamSource.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\Transformer.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\TransformerException.generated.cs" />
+    <Compile Include="csharp\javax\xml\transform\TransformerFactory.generated.cs" />
+    <Compile Include="csharp\java\io\BufferedOutputStream.generated.cs" />
+    <Compile Include="csharp\java\io\FileOutputStream.generated.cs" />
+    <Compile Include="csharp\org\apache\fop\apps\Fop.generated.cs" />
+    <Compile Include="csharp\org\apache\fop\apps\FopFactory.generated.cs" />
+    <Compile Include="csharp\org\apache\fop\apps\MimeConstants.generated.cs" />
+    <Compile Include="csharp\Program.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

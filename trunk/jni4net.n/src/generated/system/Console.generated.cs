@@ -40,9 +40,9 @@ namespace System {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__Console);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getError", "Error0", "()Lsystem/MarshalByRefObject;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getIn", "In1", "()Lsystem/MarshalByRefObject;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getOut", "Out2", "()Lsystem/MarshalByRefObject;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getError", "Error0", "()Lsystem/io/TextWriter;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getIn", "In1", "()Lsystem/io/TextReader;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getOut", "Out2", "()Lsystem/io/TextWriter;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getInputEncoding", "InputEncoding3", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setInputEncoding", "InputEncoding4", "(Lsystem/Object;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getOutputEncoding", "OutputEncoding5", "()Lsystem/Object;"));
@@ -98,9 +98,9 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardInput", "OpenStandardInput55", "(I)Lsystem/io/Stream;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput56", "()Lsystem/io/Stream;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput57", "(I)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetIn", "SetIn58", "(Lsystem/MarshalByRefObject;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetOut", "SetOut59", "(Lsystem/MarshalByRefObject;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetError", "SetError60", "(Lsystem/MarshalByRefObject;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetIn", "SetIn58", "(Lsystem/io/TextReader;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetOut", "SetOut59", "(Lsystem/io/TextWriter;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetError", "SetError60", "(Lsystem/io/TextWriter;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Read", "Read61", "()I"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReadLine", "ReadLine62", "()Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine63", "()V"));
@@ -142,7 +142,7 @@ namespace System {
         }
         
         private static global::System.IntPtr Error0(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Lsystem/MarshalByRefObject;
+            // ()Lsystem/io/TextWriter;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -152,7 +152,7 @@ namespace System {
         }
         
         private static global::System.IntPtr In1(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Lsystem/MarshalByRefObject;
+            // ()Lsystem/io/TextReader;
             // ()LSystem/IO/TextReader;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -162,7 +162,7 @@ namespace System {
         }
         
         private static global::System.IntPtr Out2(global::System.IntPtr @__envp, global::System.IntPtr @__class) {
-            // ()Lsystem/MarshalByRefObject;
+            // ()Lsystem/io/TextWriter;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -696,7 +696,7 @@ namespace System {
         }
         
         private static void SetIn58(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr newIn) {
-            // (Lsystem/MarshalByRefObject;)V
+            // (Lsystem/io/TextReader;)V
             // (LSystem/IO/TextReader;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -705,7 +705,7 @@ namespace System {
         }
         
         private static void SetOut59(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr newOut) {
-            // (Lsystem/MarshalByRefObject;)V
+            // (Lsystem/io/TextWriter;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
@@ -714,7 +714,7 @@ namespace System {
         }
         
         private static void SetError60(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr newError) {
-            // (Lsystem/MarshalByRefObject;)V
+            // (Lsystem/io/TextWriter;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project relativePaths="true" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
@@ -215,19 +215,21 @@
     </group>
   </component>
   <component name="ProjectDetails">
-    <option name="projectName" value="winforms" />
+    <option name="projectName" value="samples" />
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project://D:\Sf\jni4net\trunk2\samples\samples\winforms\winforms.ipr" />
+    <option name="state" value="project://D:\Sf\jni4net\trunk2\samples\samples\samples.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/winforms.iml" filepath="$PROJECT_DIR$/winforms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fop/fop.iml" filepath="$PROJECT_DIR$/fop/fop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloWorldFromJVM/helloWorldFromJVM.iml" filepath="$PROJECT_DIR$/helloWorldFromJVM/helloWorldFromJVM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/winforms/winforms.iml" filepath="$PROJECT_DIR$/winforms/winforms.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/target" />
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RmicSettings">
     <option name="IS_EANABLED" value="false" />
@@ -240,11 +242,30 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="svn" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />
     <find-history />
+  </component>
+  <component name="libraryTable">
+    <library name="lib">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/fop/lib/xalan-2.7.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/commons-io-1.3.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/xml-apis-ext-1.3.04.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/serializer-2.7.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/batik-all-1.7.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/fop.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/xml-apis-1.3.04.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/xercesImpl-2.7.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/commons-logging-1.0.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/xmlgraphics-commons-1.3.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/fop/lib/avalon-framework-4.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

@@ -25,17 +25,32 @@ public class BridgeSetup extends system.Object {
         net.sf.jni4net.BridgeSetup.__ctorBridgeSetup0(this);
     }
     
+    @net.sf.jni4net.attributes.ClrConstructor("(Z)V")
+    public BridgeSetup(boolean autoAddBridgeClassPath) {
+            super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
+        net.sf.jni4net.BridgeSetup.__ctorBridgeSetup1(this, autoAddBridgeClassPath);
+    }
+    
     @net.sf.jni4net.attributes.ClrConstructor("([LSystem/String;)V")
     public BridgeSetup(java.lang.String[] jvmOptions) {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
-        net.sf.jni4net.BridgeSetup.__ctorBridgeSetup1(this, jvmOptions);
+        net.sf.jni4net.BridgeSetup.__ctorBridgeSetup2(this, jvmOptions);
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     private native static void __ctorBridgeSetup0(net.sf.jni4net.inj.IClrProxy thiz);
     
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    private native static void __ctorBridgeSetup1(net.sf.jni4net.inj.IClrProxy thiz, boolean autoAddBridgeClassPath);
+    
     @net.sf.jni4net.attributes.ClrMethod("([Ljava/lang/String;)V")
-    private native static void __ctorBridgeSetup1(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String[] jvmOptions);
+    private native static void __ctorBridgeSetup2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String[] jvmOptions);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native final boolean getBindCLRTypes();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    public native final void setBindCLRTypes(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native final boolean getVerbose();
