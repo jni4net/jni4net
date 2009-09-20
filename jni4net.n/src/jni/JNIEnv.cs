@@ -74,6 +74,16 @@ namespace net.sf.jni4net.jni
             return Convertor.StrongJ2CpClass(this, clazz);
         }
 
+        public IntPtr FindClassPtrNoThrow(string name)
+        {
+            IntPtr clazz = findClass.Invoke(envPtr, name);
+            if (ExceptionRead())
+            {
+                return IntPtr.Zero;
+            }
+            return clazz;
+        }
+
         public Class FindClassNoThrow(string name)
         {
             IntPtr clazz = findClass.Invoke(envPtr, name);

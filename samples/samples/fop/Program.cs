@@ -21,10 +21,8 @@ namespace fop
         {
             FixStartupDirectory();
 
-            var setup = new BridgeSetup();
-
-            // setup Java classpath to find jni4net.j
-            setup.AddBridgeClassPath();
+            // automaticaly setup Java classpath to find jni4net.j
+            var setup = new BridgeSetup(true);
 
             // setup Java classpath to find FOP libraries
             setup.AddAllJarsClassPath("lib");

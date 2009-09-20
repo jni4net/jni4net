@@ -35,7 +35,7 @@ namespace net.sf.jni4net.test
         public virtual void Setup()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-            BridgeSetup setup=new BridgeSetup {Verbose = true, Debug = true};
+            BridgeSetup setup=new BridgeSetup (false){Verbose = true, Debug = true};
             if (Environment.CurrentDirectory.EndsWith("target"))
             {
                 setup.AddClassPath("../../jni4net.j/target/classes");

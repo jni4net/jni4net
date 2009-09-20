@@ -172,7 +172,10 @@ namespace net.sf.jni4net.utils
             RegisterClass(record, env);
             if (record.CLRProxy != null)
             {
-                RegisterStaticAndMethods(record, env);
+                if (record.IsJVMClass || Bridge.Setup.BindCLRTypes)
+                {
+                    RegisterStaticAndMethods(record, env);
+                }
                 if (initialized && Bridge.Setup.BindStatic)
                 {
                     RegisterTypeOf(record, env);
@@ -211,10 +214,13 @@ namespace net.sf.jni4net.utils
                 proxyName = interfaceName;
                 staticName = interfaceName;
             }
-            record.JVMInterface = env.FindClassNoThrow(interfaceName.Replace('.', '/'));
-            if (record.JVMInterface == null)
+            if (Bridge.Setup.BindCLRTypes || record.IsJVMClass)
             {
-                throw new JNIException("Can't find java class for " + interfaceName);
+                record.JVMInterface = env.FindClassNoThrow(interfaceName.Replace('.', '/'));
+                if (record.JVMInterface == null)
+                {
+                    throw new JNIException("Can't find java class for " + interfaceName);
+                }
             }
             record.JVMStatic = env.FindClassNoThrow(staticName.Replace('.', '/'));
             if (record.JVMStatic == null && Bridge.Setup.BindStatic)
@@ -236,8 +242,11 @@ namespace net.sf.jni4net.utils
 
         private static void RegisterClassToMap(RegistryRecord record)
         {
-            knownJVMInterfaces[record.JVMInterface] = record;
-            knownJVM[record.JVMInterface] = record;
+            if (record.JVMInterface != null)
+            {
+                knownJVMInterfaces[record.JVMInterface] = record;
+                knownJVM[record.JVMInterface] = record;
+            }
             if (record.JVMStatic != null)
             {
                 knownJVM[record.JVMStatic] = record;

@@ -13,6 +13,7 @@ namespace net.sf.jni4net
         private readonly List<string> jvmOptions;
         private readonly List<string> jvmCLassPath;
 
+        public bool BindCLRTypes { get; set; }
         public bool Verbose { get; set; }
         public bool Debug { get; set; }
         public bool BindNative
@@ -39,7 +40,7 @@ namespace net.sf.jni4net
             get
             {
                 List<string> res = new List<string>(jvmOptions);
-                if(jvmCLassPath.Count>0)
+                if(JVMCLassPath.Length>0)
                 {
                     StringBuilder sb = new StringBuilder("-Djava.class.path=");
                     foreach (string path in JVMCLassPath)
@@ -100,17 +101,28 @@ namespace net.sf.jni4net
         }
 
         public BridgeSetup()
+            : this(true)
+        {
+        }
+
+        public BridgeSetup(bool autoAddBridgeClassPath)
         {
             BindStatic = true;
             BindNative = true;
+            BindCLRTypes = true;
             jvmCLassPath = new List<string>();
             jvmOptions = new List<string>();
+            if (autoAddBridgeClassPath)
+            {
+                AddBridgeClassPath();
+            }
         }
 
         public BridgeSetup(params string[] jvmOptions)
         {
             BindStatic = true;
             BindNative = true;
+            BindCLRTypes = true;
             this.jvmOptions = new List<string>(jvmOptions);
             jvmCLassPath = new List<string>();
         }
