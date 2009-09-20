@@ -1272,7 +1272,7 @@ namespace net.sf.jni4net.jni
             IntPtr occurred = ExceptionOccurred();
             if (IntPtr.Zero != occurred)
             {
-                if (Bridge.Verbose && Bridge.Debug)
+                if (Bridge.Setup.Verbose && Bridge.Setup.Debug)
                 {
                     ExceptionDescribe();
                 }

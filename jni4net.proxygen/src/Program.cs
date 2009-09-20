@@ -83,8 +83,6 @@ namespace net.sf.jni4net.proxygen
             var ser = new XmlSerializer(typeof (ToolConfig));
             string config = args[0];
             var cfg = ser.Deserialize(new FileStream(config, FileMode.Open)) as ToolConfig;
-            Bridge.BindNative = false;
-
             Generator.config = cfg;
             Repository.config = cfg;
             Repository.Register();

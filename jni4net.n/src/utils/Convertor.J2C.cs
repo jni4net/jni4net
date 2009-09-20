@@ -55,13 +55,13 @@ namespace net.sf.jni4net.utils
 
             if (IClrProxy_._class.isAssignableFrom(clazz))
             {
-                if (typeof(IJvmProxy).IsAssignableFrom(reqType))
+                if (!reqType.IsInterface && typeof(IJvmProxy).IsAssignableFrom(reqType))
                 {
                     //now we double wrap
                     return (TRes)__IClrProxy.CreateProxy(env, obj, IClrProxy_._class);
                 }
                 object res = __IClrProxy.GetObject(env, obj);
-                if (Bridge.Debug)
+                if (Bridge.Setup.Debug)
                 {
                     Type realType = res.GetType();
                     if (!reqType.IsAssignableFrom(realType))
@@ -79,7 +79,7 @@ namespace net.sf.jni4net.utils
                 return (TRes) record.CreateCLRProxy(env, obj, clazz);
             }
             record = Registry.GetCLRRecord(reqType);
-            if (Bridge.Debug)
+            if (Bridge.Setup.Debug)
             {
                 if (!record.JVMInterface.isAssignableFrom(clazz))
                 {

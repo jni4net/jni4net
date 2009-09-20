@@ -204,36 +204,19 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void LoadClasspath()
         {
-            JNIEnv env;
-            JavaVM vm;
-            var cp = new StringBuilder();
-            cp.Append("-Djava.class.path=");
+            BridgeSetup setup=new BridgeSetup();
+            setup.BindNative = false;
+            setup.BindStatic = true;
+
             if (config.ClassPath != null && config.ClassPath.Length > 0)
             {
                 foreach (string classPath in config.ClassPath)
                 {
-                    if (!Directory.Exists(classPath) && !File.Exists(classPath))
-                    {
-                        Console.Error.WriteLine("Can't find " + Path.GetFullPath(classPath));
-                    }
-                    else if (config.Verbose)
-                    {
-                        Console.WriteLine("Adding " + Path.GetFullPath(classPath));
-                    }
-                    cp.Append(classPath);
-                    cp.Append(';');
+                    setup.AddClassPath(classPath);
                 }
             }
-            string jar = Bridge.FindJar();
-            if (jar!=null)
-            {
-                cp.Append(jar);
-            }
-            else
-            {
-                cp.Length--;
-            }
-            Bridge.CreateJVM(out vm, out env, cp.ToString());
+            setup.AddBridgeClassPath();
+            Bridge.CreateJVM(setup);
         }
 
         private static void PreLoadMethods(GType type, bool forceCLR, bool forceJVM)

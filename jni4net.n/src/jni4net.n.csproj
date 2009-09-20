@@ -224,6 +224,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bridge.JVM.convertor.cs" />
+    <Compile Include="BridgeSetup.cs" />
+    <Compile Include="generated\net\sf\jni4net\BridgeSetup.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\jni\ICJvmProxy.generated.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -131,7 +131,6 @@ namespace net.sf.jni4net.jni
             }
             jvm = new JavaVM(njvm);
             env = new JNIEnv(nenv);
-            Bridge.Init(env);
         }
 
         #region Nested type: Dll

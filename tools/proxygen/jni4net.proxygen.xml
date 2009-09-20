@@ -237,13 +237,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
   <!-- bridges -->
+  <ClrType TypeName="net.sf.jni4net.BridgeSetup"/>
   <ClrType TypeName="net.sf.jni4net.Bridge" MergeJavaSource="true">
+	  <MethodModifier MethodName="CreateJVM" Signature="(Lnet/sf/jni4net/BridgeSetup;)V" Skip="true"/>
 	  <MethodModifier MethodName="CreateJVM" Signature="([LSystem/String;)V" Skip="true"/>
 	  <MethodModifier MethodName="IsCLRInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
 	  <MethodModifier MethodName="IsJVMInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
 	  <MethodModifier MethodName="WrapCLR" Signature="(LSystem/Object;)Ljava/lang/Object;" Skip="true"/>
-	  <MethodModifier MethodName="set_Verbose" Signature="(Z)V" RenameJVM="setVerboseImpl" Hide="true"/>
-	  <MethodModifier MethodName="set_Debug" Signature="(Z)V" RenameJVM="setDebugImpl" Hide="true"/>
+	  <MethodModifier MethodName="FindJar" Signature="()LSystem/String;" Skip="true"/>
+	  <MethodModifier MethodName="GetVersion" Signature="()LSystem/String;" Skip="true"/>
   </ClrType>
   <!-- 
   <ClrType TypeName="net.sf.jni4net.jni.IJvmProxy" MergeJavaSource="true">

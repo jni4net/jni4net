@@ -31,10 +31,6 @@ using Exception=System.Exception;
 
 namespace net.sf.jni4net
 {
-    partial class Bridge
-    {
-    }
-
     internal partial class __Bridge
     {
         private static long WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj)
@@ -135,9 +131,12 @@ namespace net.sf.jni4net
 
         internal static void Init(JNIEnv env)
         {
-            MethodInfo initializer = Registry.GetWrapperInitializer(typeof (__Bridge), "__Init2");
-            RegistryRecord record = Registry.GetCLRRecord(typeof (Bridge));
-            Registry.RegisterNative(initializer, env, record.JVMProxy, record.JVMInterface);
+            if (Bridge.Setup.BindNative)
+            {
+                MethodInfo initializer = Registry.GetWrapperInitializer(typeof(__Bridge), "__Init2");
+                RegistryRecord record = Registry.GetCLRRecord(typeof(Bridge));
+                Registry.RegisterNative(initializer, env, record.JVMProxy, record.JVMInterface);
+            }
         }
     }
 }

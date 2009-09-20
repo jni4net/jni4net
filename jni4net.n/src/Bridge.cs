@@ -37,33 +37,58 @@ namespace net.sf.jni4net
     public static partial class Bridge
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
-        private static bool bindNative = true;
-        private static bool bindStatic = true;
-        public static bool Verbose { get; set; }
-        public static bool Debug { get; set; }
+        private static bool jvmLoaded;
+        private static bool clrLoaded;
+        private static BridgeSetup setup;
 
-        public static bool BindNative
+        public static BridgeSetup Setup
         {
-            get { return bindNative; }
-            set { bindNative = value; }
+            get
+            {
+                return setup;
+            }
         }
 
-        public static bool BindStatic
+        public static JNIEnv CreateJVM(BridgeSetup setup)
         {
-            get { return bindStatic; }
-            set { bindStatic = value; }
+            if (jvmLoaded && setup.Verbose)
+            {
+                Console.Error.WriteLine("Already initilized");
+                return JNIEnv.ThreadEnv;
+            }
+            Bridge.setup = setup;
+            JavaVM jvm;
+            JNIEnv env;
+            JNI.CreateJavaVM(out jvm, out env, true, Bridge.setup.JVMOptions);
+            BindCore(env, Bridge.setup);
+            jvmLoaded = true;
+            return env;
         }
 
         public static void CreateJVM(params string[] options)
         {
+            if (jvmLoaded)
+            {
+                throw new JNIException("Already initilized");
+            }
+            setup = new BridgeSetup(options);
             JavaVM jvm;
             JNIEnv env;
-            JNI.CreateJavaVM(out jvm, out env, true, options);
+            JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
+            BindCore(env, Bridge.setup);
+            jvmLoaded = true;
         }
 
         public static void CreateJVM(out JavaVM jvm, out JNIEnv env, params string[] options)
         {
-            JNI.CreateJavaVM(out jvm, out env, true, options);
+            if (jvmLoaded)
+            {
+                throw new JNIException("Already initilized");
+            }
+            setup = new BridgeSetup(options);
+            JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
+            BindCore(env, Bridge.setup);
+            jvmLoaded = true;
         }
 
         public static string FindJar()
@@ -77,9 +102,33 @@ namespace net.sf.jni4net
             if (dll.Contains("jni4net.proxygen\\target"))
             {
                 string dir = Path.GetDirectoryName(dll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
-                return dir;
+                if (Directory.Exists(dir))
+                {
+                    return dir;
+                }
             }
-            return null;
+            if (dll.Contains("jni4net.n\\target"))
+            {
+                string dir = Path.GetDirectoryName(dll).Replace("jni4net.n", "jni4net.j") + "\\classes";
+                if (Directory.Exists(dir))
+                {
+                    return dir;
+                }
+            }
+            if (dll.Contains("jni4net.test.n\\target"))
+            {
+                string dir = Path.GetDirectoryName(dll).Replace("jni4net.test.n", "jni4net.j").Replace("jni4net.n", "jni4net.j") + "\\classes";
+                if (Directory.Exists(dir))
+                {
+                    return dir;
+                }
+            }
+            throw new JNIException("Can't find jni4net.j-" + GetVersion() + ".jar");
+        }
+
+        public static string GetVersion()
+        {
+            return typeof (Bridge).Assembly.GetName().Version.ToString();
         }
 
         public static void LoadAndRegisterAssembly(string assemblyPath)
@@ -100,13 +149,13 @@ namespace net.sf.jni4net
         {
             if (knownAssemblies.ContainsKey(assembly))
             {
-                if (Verbose)
+                if (Setup.Verbose)
                 {
                     Console.WriteLine("skipped " + assembly + " from " + assembly.Location);
                 }
                 return;
             }
-            if (Verbose)
+            if (Setup.Verbose)
             {
                 Console.WriteLine("loading " + assembly + " from " + assembly.Location);
             }
@@ -116,7 +165,7 @@ namespace net.sf.jni4net
             //ClrProxiesMap.RegisterAssembly(env, assembly);
             Registry.RegisterAssembly(assembly, true);
 
-            if (Verbose)
+            if (Setup.Verbose)
             {
                 Console.WriteLine("loaded " + assembly + " from " + assembly.Location);
             }
@@ -139,13 +188,18 @@ namespace net.sf.jni4net
             }
             IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
             IntPtr vb = env.GetStaticFieldIDPtr(br, "verbose", "Z");
-            Verbose = env.GetStaticBooleanField(br, vb);
             IntPtr db = env.GetStaticFieldIDPtr(br, "debug", "Z");
-            Debug = env.GetStaticBooleanField(br, db);
-            
+            BridgeSetup newSetup=new BridgeSetup
+                                     {
+                                         Verbose = env.GetStaticBooleanField(br, vb),
+                                         Debug = env.GetStaticBooleanField(br, db),
+                                         BindStatic = true,
+                                         BindNative = true
+                                     };
+
             try
             {
-                Init(env);
+                BindCore(env,newSetup);
             }
             catch (Exception ex)
             {
@@ -158,41 +212,23 @@ namespace net.sf.jni4net
             return 0;
         }
 
-        internal static void Init(JNIEnv env)
+        internal static void BindCore(JNIEnv env, BridgeSetup newSetup)
         {
-            if (init)
+            if (CheckAlreadyLoaded(newSetup, env))
             {
                 return;
             }
-            if (Verbose)
-            {
-                Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
-            }
-            if (BindNative)
-            {
-                IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
-                IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
-                var isRegistered = env.GetStaticBooleanField(br, ir);
-                if (isRegistered)
-                {
-                    // rather neat. When called like Clr->Java->Clr this dll gets loaded twice.
-                    // which means two separate sets CLR of classes and static members
-                    if (Verbose)
-                    {
-                        Console.WriteLine("Already initialized jni4net core before");
-                    }
-                    return;
-                }
-            }
+
+            setup = newSetup;
 
             RegisterAssembly(typeof(Bridge).Assembly);
             __Bridge.Init(env);
 
-            if (Verbose)
+            if (Setup.Verbose)
             {
                 Console.WriteLine("Initialized jni4net core");
             }
-            if (BindNative)
+            if (Setup.BindNative)
             {
                 IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
                 IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
@@ -202,14 +238,41 @@ namespace net.sf.jni4net
                     Console.Error.WriteLine("Can't mark bridge");
                 }
             }
-            if (Verbose)
+            if (Setup.Verbose)
             {
                 Console.WriteLine("core loaded from " + typeof(Bridge).Assembly.Location);
             }
-            init = true;
+            clrLoaded = true;
         }
 
-        private static bool init;
+        private static bool CheckAlreadyLoaded(BridgeSetup newSetup, JNIEnv env)
+        {
+            if (clrLoaded)
+            {
+                return true;
+            }
+            if (newSetup.Verbose)
+            {
+                Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
+            }
+            if (newSetup.BindNative)
+            {
+                IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
+                IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
+                var isRegistered = env.GetStaticBooleanField(br, ir);
+                if (isRegistered)
+                {
+                    // rather neat. When called like Clr->Java->Clr this dll gets loaded twice.
+                    // which means two separate sets CLR of classes and static members
+                    if (newSetup.Verbose)
+                    {
+                        Console.WriteLine("Already initialized jni4net core before");
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
 
         #endregion
     }
