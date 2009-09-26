@@ -44,6 +44,7 @@ namespace selvin.exportdll
                 string ilasmpath = @"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe";
                 string keypath = null;
                 bool debug = false;
+                bool x64 = false;
                 if (args.Length > 1 && args[1]!=".")
                 {
                     ildasmpath = args[1];
@@ -60,6 +61,11 @@ namespace selvin.exportdll
                 {
                     if (args[4] == "/Debug")
                         debug = true;
+                }
+                if (args.Length > 5)
+                {
+                    if (args[5] == "/x64")
+                        x64 = true;
                 }
                 string filepath = Path.GetFullPath(args[0]);
                 string path = Path.GetDirectoryName(filepath);
@@ -136,6 +142,7 @@ namespace selvin.exportdll
                     var classnames = new Stack<string>();
                     var externassembly = new List<string>();
                     ParserState state = ParserState.Normal;
+                    string bits = x64 ? "64" : "32";
                     while (!sr.EndOfStream)
                     {
                         string line = sr.ReadLine();
@@ -146,10 +153,17 @@ namespace selvin.exportdll
                             case ParserState.Normal:
                                 if (trimedline.StartsWith(".corflags"))
                                 {
-                                    wholeilfile.Add(".corflags 0x00000002");
-                                    wholeilfile.Add(string.Format(".vtfixup [{0}] int32 fromunmanaged at VT_01",
+                                    if (x64) 
+                                    { 
+                                        wholeilfile.Add(".corflags 0x00000008"); 
+                                    }
+                                    else
+                                    {
+                                        wholeilfile.Add(".corflags 0x00000002");
+                                    }
+                                    wholeilfile.Add(string.Format(".vtfixup [{0}] int" + bits + " fromunmanaged at VT_01",
                                                                   exportscount));
-                                    wholeilfile.Add(string.Format(".data VT_01 = int32[{0}]", exportscount));
+                                    wholeilfile.Add(string.Format(".data VT_01 = int" + bits + "[{0}]", exportscount));
                                     Console.WriteLine("Adding vtfixup.");
                                     addilne = false;
                                 }
@@ -325,6 +339,10 @@ namespace selvin.exportdll
                     if (keypath!=null)
                     {
                         arguments += " /KEY=" + keypath;
+                    }
+                    if (x64)
+                    {
+                        arguments += " /X64";
                     }
                     Console.WriteLine("Compiling file with arguments '{0}'", arguments);
                     info = new ProcessStartInfo(ilasmpath, arguments);

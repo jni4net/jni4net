@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selvin.exportdll", "selvin.exportdll\src\selvin.exportdll.csproj", "{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selvin.exportdllattribute", "selvin.exportdllattribute\src\selvin.exportdllattribute.csproj", "{EAF9A4CD-0965-44C3-8570-09063E4D5E79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF9A4CD-0965-44C3-8570-09063E4D5E79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
