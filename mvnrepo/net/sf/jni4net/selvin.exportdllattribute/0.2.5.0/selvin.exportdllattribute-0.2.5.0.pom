@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>selvin</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>0.2.5.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>selvin.exportdllattribute</artifactId>
+    <version>0.2.5.0</version>
+    <packaging>dotnet:library</packaging>
+    <name>Dll Export helper tool - build time</name>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.nmaven.plugins</groupId>
+                <artifactId>maven-dotnet-compiler-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>0.17robocode</version>
+                <configuration>
+                    <aditionalOptions>/nowarn:1591 /keyfile:${basedir}/../tools/keys/exportdll.snk</aditionalOptions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
