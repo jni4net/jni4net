@@ -21,14 +21,14 @@
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>selvin.exportdllattribute</artifactId>
-            <version>0.2.0.0</version>
+            <version>0.2.5.0</version>
             <type>dotnet:library</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>selvin.exportdll</artifactId>
-            <version>0.2.0.0</version>
+            <version>0.2.5.0</version>
             <type>dotnet:exe</type>
             <scope>provided</scope>
         </dependency>
@@ -55,15 +55,15 @@
                         <configuration>
                             <tasks>
                                 <resolveArtifact property="exportdll" groupId="net.sf.jni4net"
-                                                 artifactId="selvin.exportdll" version="0.2.0.0"
+                                                 artifactId="selvin.exportdll" version="0.2.5.0"
                                                  type="dotnet:exe"/>
                                 <resolveArtifact property="exportdllattribute" groupId="net.sf.jni4net"
-                                                 artifactId="selvin.exportdllattribute" version="0.2.0.0"
+                                                 artifactId="selvin.exportdllattribute" version="0.2.5.0"
                                                  type="dotnet:library"/>
                                 <copy file="${exportdll}" todir="target/tool"/>
                                 <copy file="${exportdllattribute}" todir="target/tool"/>
                                 <exec executable="cmd.exe" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-0.2.0.0.exe jni4net.n-${jni4net.version}.dll . . ${basedir}/../tools/keys/jni4net.snk"/>
+                                    <arg value="/c tool\selvin.exportdll-0.2.5.0.exe jni4net.n-${jni4net.version}.dll . . ${basedir}/../tools/keys/jni4net.snk /Release /x32"/>
                                 </exec>
                             </tasks>
                         </configuration>
