@@ -32,12 +32,6 @@
             <type>dotnet:exe</type>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>net.sf.jni4net</groupId>
-            <artifactId>jni4net.n</artifactId>
-            <version>0.3.0.0</version>
-            <type>dotnet:library</type>
-        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -66,12 +60,8 @@
                                 <resolveArtifact property="exportdllattribute" groupId="net.sf.jni4net"
                                                  artifactId="selvin.exportdllattribute" version="0.2.5.0"
                                                  type="dotnet:library"/>
-                                <resolveArtifact property="jni4net.n" groupId="net.sf.jni4net"
-                                                 artifactId="jni4net.n" version="${jni4net.version}"
-                                                 type="dotnet:library"/>
                                 <copy file="${exportdll}" todir="target/tool"/>
                                 <copy file="${exportdllattribute}" todir="target/tool"/>
-                                <copy file="${jni4net.n}" todir="target"/>
                                 <exec executable="cmd.exe" failonerror="true" dir="target">
                                     <arg value="/c tool\selvin.exportdll-0.2.5.0.exe jni4net.n.w64-${jni4net.version}.dll . . ${basedir}/../tools/keys/jni4net.snk /Release /x64"/>
                                 </exec>
