@@ -8,7 +8,7 @@
     <ProjectGuid>{30D2C100-1E4A-4CA4-B0BC-AEEA5BE5DADB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>selvin.exportdll</RootNamespace>
-    <AssemblyName>selvin.exportdll-0.2.0.0</AssemblyName>
+    <AssemblyName>selvin.exportdll-0.2.5.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>

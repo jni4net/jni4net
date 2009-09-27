@@ -8,7 +8,7 @@
     <ProjectGuid>{EAF9A4CD-0965-44C3-8570-09063E4D5E79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>selvin.exportdllattribute</RootNamespace>
-    <AssemblyName>selvin.exportdllattribute-0.2.0.0</AssemblyName>
+    <AssemblyName>selvin.exportdllattribute-0.2.5.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
