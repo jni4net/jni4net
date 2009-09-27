@@ -56,17 +56,17 @@ class CLRLoader {
 
 	static String findDefaultDll() throws java.io.IOException {
 		final java.security.CodeSource source = Bridge.class.getProtectionDomain().getCodeSource();
-		final String file = source.getLocation().getFile();
+		final String file = new File(source.getLocation().getFile()).getAbsoluteFile().getCanonicalPath();
 
         java.io.File path;
-		if (file.endsWith("classes/")) {
-			final String base = file.substring(0, file.length() - 8).replaceAll("jni4net.j", "jni4net.n") + "jni4net.n";
+		if (file.endsWith("classes")) {
+			final String base = file.substring(0, file.length() - 7).replaceAll("jni4net.j", "jni4net.n."+getPlatform()) + "/jni4net.n";
 			path = new java.io.File(base + "."+ getPlatform()+ "-" + getVersion() + ".dll");
 			if (!path.exists()) {
 				throw new Error("Can't find " + path);
 			}
 		} else if (file.endsWith(".jar")) {
-			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n");
+			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform());
 			path = new java.io.File(base + ".dll");
 		} else {
 			throw new Error("Can't find " + file);

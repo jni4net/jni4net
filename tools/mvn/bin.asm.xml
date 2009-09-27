@@ -1,5 +1,5 @@
 <assembly>
-    <id>win32</id>
+    <id>bin</id>
     <formats>
         <format>dir</format>
         <format>zip</format>
@@ -13,6 +13,8 @@
             <includes>
                 <include>net.sf.jni4net:jni4net.j</include>
                 <include>net.sf.jni4net:jni4net.n</include>
+                <include>net.sf.jni4net:jni4net.n.w32</include>
+                <include>net.sf.jni4net:jni4net.n.w64</include>
             </includes>
             <binaries>
                 <outputDirectory>lib</outputDirectory>

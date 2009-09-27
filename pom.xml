@@ -146,7 +146,7 @@
                     <finalName>${project.artifactId}-${project.version}</finalName>
                     <ignoreDirFormatExtensions>true</ignoreDirFormatExtensions>
                     <descriptors>
-                        <descriptor>tools/mvn/win32.asm.xml</descriptor>
+                        <descriptor>tools/mvn/bin.asm.xml</descriptor>
                         <descriptor>tools/mvn/src.asm.xml</descriptor>
                     </descriptors>
                 </configuration>
