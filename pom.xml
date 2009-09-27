@@ -14,6 +14,8 @@
     <modules>
         <module>jni4net.j</module>
         <module>jni4net.n</module>
+        <module>jni4net.n.w64</module>
+        <module>jni4net.n.w32</module>
         <module>jni4net.proxygen</module>
         <module>jni4net.tested.j</module>
         <module>jni4net.tested.n</module>

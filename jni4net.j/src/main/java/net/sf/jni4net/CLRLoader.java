@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package net.sf.jni4net;
 
+import system.NotSupportedException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.File;
@@ -28,12 +30,13 @@ import java.util.Properties;
  * @author Pavel Savara (original)
  */
 class CLRLoader {
-	private static String nversion;
+	private static String version;
+    private static String platform;
 
-	public static void 	init(String fileOrDirectory) throws IOException {
+    public static void 	init(String fileOrDirectory) throws IOException {
 		if (!Bridge.isRegistered) {
 			if (new java.io.File(fileOrDirectory).isDirectory()) {
-				init(new File(fileOrDirectory + "/jni4net.n-" + getVersion() + ".dll").getAbsoluteFile().getCanonicalPath());
+				init(new File(fileOrDirectory + "/jni4net.n."+getPlatform()+"-" + getVersion() + ".dll").getAbsoluteFile().getCanonicalPath());
 				return;
 			}
 			try {
@@ -55,10 +58,10 @@ class CLRLoader {
 		final java.security.CodeSource source = Bridge.class.getProtectionDomain().getCodeSource();
 		final String file = source.getLocation().getFile();
 
-		java.io.File path;
+        java.io.File path;
 		if (file.endsWith("classes/")) {
 			final String base = file.substring(0, file.length() - 8).replaceAll("jni4net.j", "jni4net.n") + "jni4net.n";
-			path = new java.io.File(base + "-" + getVersion() + ".dll");
+			path = new java.io.File(base + "."+ getPlatform()+ "-" + getVersion() + ".dll");
 			if (!path.exists()) {
 				throw new Error("Can't find " + path);
 			}
@@ -87,10 +90,24 @@ class CLRLoader {
 		return null;
 	}
 
+    public static synchronized String getPlatform() {
+        if (platform == null) {
+            String model = System.getProperty("sun.arch.data.model");
+            String os = System.getProperty("os.name").toLowerCase();
+            if (os.startsWith("windows")) {
+                platform = "w";
+            } else {
+                throw new NotSupportedException("Platform not supported " + os);
+            }
+            platform += model;
+        }
+        return platform;
+    }
+
 	public static synchronized String getVersion() {
-		if (nversion == null) {
-			nversion = getProperty("jni4net.version");
+		if (version == null) {
+			version = getProperty("jni4net.version");
 		}
-		return nversion;
+		return version;
 	}
 }

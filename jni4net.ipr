@@ -233,6 +233,8 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.iml" filepath="$PROJECT_DIR$/jni4net.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.j/jni4net.j.iml" filepath="$PROJECT_DIR$/jni4net.j/jni4net.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n/jni4net.n.iml" filepath="$PROJECT_DIR$/jni4net.n/jni4net.n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" filepath="$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" filepath="$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" filepath="$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" filepath="$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" />
@@ -299,17 +301,6 @@
         <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: junit:junit:4.5">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: net.sf.jni4net:jni4net.j:0.2.0.0">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/jni4net.j/pom.xml!/" />
@@ -348,6 +339,17 @@
         <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
         <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
         <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: junit:junit:4.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
