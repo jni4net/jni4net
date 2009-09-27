@@ -11,6 +11,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="jni4net.j" exported="" />
     <orderEntry type="module" module-name="jni4net.n" exported="" />
+    <orderEntry type="module" module-name="jni4net.n.w64" exported="" />
+    <orderEntry type="module" module-name="jni4net.n.w32" exported="" />
     <orderEntry type="module" module-name="jni4net.tested.j" exported="" />
   </component>
 </module>

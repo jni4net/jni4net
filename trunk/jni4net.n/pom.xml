@@ -17,22 +17,6 @@
         <name>jni4net</name>
         <url>http://jni4net.sf.net</url>
     </organization>
-    <dependencies>
-        <dependency>
-            <groupId>net.sf.jni4net</groupId>
-            <artifactId>selvin.exportdllattribute</artifactId>
-            <version>0.2.5.0</version>
-            <type>dotnet:library</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.jni4net</groupId>
-            <artifactId>selvin.exportdll</artifactId>
-            <version>0.2.5.0</version>
-            <type>dotnet:exe</type>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>
         <plugins>
@@ -44,34 +28,6 @@
                 <configuration>
                     <aditionalOptions>/unsafe /nowarn:1591,0114,0628,0109,0169,0618,0108 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
-                <artifactId>maven-antrun-extended-plugin</artifactId>
-                <version>1.39</version>
-                <executions>
-                    <execution>
-                        <phase>process-classes</phase>
-                        <configuration>
-                            <tasks>
-                                <resolveArtifact property="exportdll" groupId="net.sf.jni4net"
-                                                 artifactId="selvin.exportdll" version="0.2.5.0"
-                                                 type="dotnet:exe"/>
-                                <resolveArtifact property="exportdllattribute" groupId="net.sf.jni4net"
-                                                 artifactId="selvin.exportdllattribute" version="0.2.5.0"
-                                                 type="dotnet:library"/>
-                                <copy file="${exportdll}" todir="target/tool"/>
-                                <copy file="${exportdllattribute}" todir="target/tool"/>
-                                <exec executable="cmd.exe" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-0.2.5.0.exe jni4net.n-${jni4net.version}.dll . . ${basedir}/../tools/keys/jni4net.snk /Release /x32"/>
-                                </exec>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

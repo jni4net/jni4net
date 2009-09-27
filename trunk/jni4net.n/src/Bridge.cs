@@ -24,12 +24,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using java.lang;
-using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
-using selvin.exportdllattribute;
 using Exception=System.Exception;
 
 namespace net.sf.jni4net
@@ -174,8 +171,7 @@ namespace net.sf.jni4net
 
         #region Initialization
 
-        [ExportDll("Java_net_sf_jni4net_Bridge_initDotNet", CallingConvention.StdCall)]
-        internal static int initDotNet(IntPtr envi, IntPtr clazz)
+        internal static int initDotNetImpl(IntPtr envi, IntPtr clazz)
         {
             JNIEnv env;
             try

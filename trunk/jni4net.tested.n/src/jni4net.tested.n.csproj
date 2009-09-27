@@ -70,6 +70,14 @@
     <Compile Include="StaticMethods.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\jni4net.n.w32\src\jni4net.n.w32.csproj">
+      <Project>{774AED55-B9EC-457D-8EEB-1B2481C578B2}</Project>
+      <Name>jni4net.n.w32</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jni4net.n.w64\src\jni4net.n.w64.csproj">
+      <Project>{774AED55-B9EC-447D-8EEB-1B2481C578B2}</Project>
+      <Name>jni4net.n.w64</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n\src\jni4net.n.csproj">
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
       <Name>jni4net.n</Name>

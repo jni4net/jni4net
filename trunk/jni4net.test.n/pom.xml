@@ -31,6 +31,18 @@
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n.w64</artifactId>
+            <version>0.3.0.0</version>
+            <type>dotnet:library</type>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n.w32</artifactId>
+            <version>0.3.0.0</version>
+            <type>dotnet:library</type>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.tested.n</artifactId>
             <version>0.3.0.0</version>
             <type>dotnet:library</type>

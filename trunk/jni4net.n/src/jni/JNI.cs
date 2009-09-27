@@ -57,6 +57,10 @@ namespace net.sf.jni4net.jni
                 {
                     jvmDir = Path.Combine(javaHome, @"jre\bin\client\");
                 }
+                if (!Directory.Exists(jvmDir))
+                {
+                    jvmDir = Path.Combine(javaHome, @"jre\bin\server\");
+                }
 
                 string oldDirectory = Directory.GetCurrentDirectory();
                 try
