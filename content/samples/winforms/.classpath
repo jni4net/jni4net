@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="**/_svn/**" kind="src" path="java"/>
-	<classpathentry kind="lib" path="D:/Sf/jni4net/trunk2/samples/lib/jni4net.j-0.3.0.0.jar"/>
-	<classpathentry kind="lib" path="lib/fop.jar"/>
+	<classpathentry kind="lib" path="D:/Sf/jni4net/trunk2/samples/lib/jni4net.j-0.4.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

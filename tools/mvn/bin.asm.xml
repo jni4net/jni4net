@@ -41,17 +41,16 @@
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
-            <source>license\jni4net.j-LGPL-3.0.txt</source>
+            <source>license\jni4net-LGPL-3.0.txt</source>
             <outputDirectory>lib</outputDirectory>
         </file>
         <file>
-            <source>license\jni4net.n-LGPL-3.0.txt</source>
-            <outputDirectory>lib</outputDirectory>
+            <source>content\Read.Me.txt</source>
         </file>
     </files>
     <fileSets>
         <fileSet>
-            <directory>samples/samples</directory>
+            <directory>content/samples</directory>
             <outputDirectory>samples</outputDirectory>
             <excludes>
                 <exclude>_ReSharper*/**</exclude>
