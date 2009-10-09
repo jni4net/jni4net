@@ -55,11 +55,19 @@ namespace net.sf.jni4net.jni
                 jvmDir = Path.Combine(javaHome, @"bin\client\");
                 if (!Directory.Exists(jvmDir))
                 {
+                    jvmDir = Path.Combine(javaHome, @"bin\server\");
+                }
+                if (!Directory.Exists(jvmDir))
+                {
                     jvmDir = Path.Combine(javaHome, @"jre\bin\client\");
                 }
                 if (!Directory.Exists(jvmDir))
                 {
                     jvmDir = Path.Combine(javaHome, @"jre\bin\server\");
+                }
+                if (!Directory.Exists(jvmDir))
+                {
+                    throw new JNIException("JAVA_HOME environment jariable is not set");
                 }
 
                 string oldDirectory = Directory.GetCurrentDirectory();
