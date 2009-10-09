@@ -64,6 +64,7 @@
                 <exclude>**/*.iws</exclude>
                 <exclude>**/*.iml</exclude>
                 <exclude>**/*.ipr</exclude>
+                <exclude>**/*.jar</exclude>
                 <exclude>**/*.bak</exclude>
                 <exclude>**/Thumbs.db</exclude>
                 <exclude>**/~*</exclude>
