@@ -1,6 +1,7 @@
 Visit and read http://jni4net.sf.net
 Make sure you understand GPL and LGPL licenses.
-Talk back at jni4net@googlegroups.com
+Talk back at jni4net@googlegroups.com or pavel.savara@gmail.com
+
 
 ----------------
 To use this bridge for deployment you need:
@@ -8,16 +9,25 @@ To use this bridge for deployment you need:
 - JRE 1.5 or later
 - .NET Runtime 2.0 or later
 - JAVA_HOME environment set properly, 
-  On 64bit system, make sure that you use 64bit Java installation
 
+
+----------------
+On 64bit system, make sure that you use 64bit Java installation. 
+On console run:
+java -version
+and verify that your PATH leads to 64bit (server) version of Java
+
+
+----------------
 To use this bridge for development you need as well:
 - JDK 1.5 or above
 - .NET SDK 3.5 or above
 
-Good to have
+Good to have (for samples)
 - Visual Studio 2008 (Express edition works as well)
 - Ant build tool
 - Eclipse or any other Java IDE
+- csc.exe and javac.exe on PATH
 
 
 ----------------
