@@ -4,14 +4,15 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project basedir="." default="build" name="helloWorldFromJVM">
+<project basedir="." default="build" name="fop">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.5"/>
     <property name="source" value="1.5"/>
-    <path id="helloWorldFromJVM.classpath">
+    <path id="fop.classpath">
         <pathelement location="target/classes"/>
-        <pathelement location="../../lib/jni4net.j-0.3.0.0.jar"/>
+        <pathelement location="../../lib/jni4net.j-0.4.0.0.jar"/>
+        <pathelement location="lib/fop.jar"/>
     </path>
     <target name="init">
         <mkdir dir="target/classes"/>
@@ -30,13 +31,8 @@
         <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" source="${source}" target="${target}">
             <src path="java"/>
             <exclude name="**/_svn/**"/>
-            <classpath refid="helloWorldFromJVM.classpath"/>
+            <classpath refid="fop.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target name="Program (1)">
-        <java classname="Program" failonerror="true" fork="yes">
-            <classpath refid="helloWorldFromJVM.classpath"/>
-        </java>
-    </target>
 </project>

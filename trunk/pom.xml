@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net</artifactId>
-    <version>0.3.0.0</version>
+    <version>0.4.0.0</version>
     <packaging>pom</packaging>
     <name>JNI 4 .NET</name>
     <organization>
@@ -162,7 +162,7 @@
 			            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 			         </manifest>
 			         <manifestEntries>
-			            <jni4net.version>0.3.0.0</jni4net.version>
+			            <jni4net.version>0.4.0.0</jni4net.version>
 			         </manifestEntries>
 			      </archive>
 			   </configuration>

@@ -37,7 +37,7 @@ public class Program {
 		Bridge.init();
 
 		// here you go!
-		Console.WriteLine("Hello .NET world!");
+		Console.WriteLine("Hello .NET world!\n");
 
 		// OK, simple hello is boring, let's play with System.Environment
 		// they are Hashtable realy

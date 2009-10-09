@@ -11,7 +11,7 @@
     <property name="source" value="1.5"/>
     <path id="winforms.classpath">
         <pathelement location="target/classes"/>
-        <pathelement location="../../lib/jni4net.j-0.3.0.0.jar"/>
+        <pathelement location="../../lib/jni4net.j-0.4.0.0.jar"/>
     </path>
     <target name="init">
         <mkdir dir="target/classes"/>

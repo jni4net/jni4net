@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<jni4net-proxygen xmlns="http://jni4net.sf.net/0.3.0.0/toolConfig.xsd">
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.4.0.0/toolConfig.xsd">
   <TargetDirJvm>java/src</TargetDirJvm>
   <TargetDirClr>csharp</TargetDirClr>
   <AssemblyReference>System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</AssemblyReference>
