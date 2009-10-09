@@ -4,10 +4,10 @@ Talk back at jni4net@googlegroups.com or pavel.savara@gmail.com
 
 
 ----------------
-To use this bridge for deployment you need:
-- Windows (unixes and Mono are not supported yet)
-- JRE 1.5 or later
+To use this bridge at runtime you need:
+- Windows 32 or 64 bit (unixes and Mono are not supported yet)
 - .NET Runtime 2.0 or later
+- JRE 1.5 or later
 - JAVA_HOME environment set properly, 
 
 
