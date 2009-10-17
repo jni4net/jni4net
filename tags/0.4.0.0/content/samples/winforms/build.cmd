@@ -1,0 +1,3 @@
+mkdir target\classes
+javac -cp ../../lib/jni4net.j-0.4.0.0.jar -d target/classes java\Program.java java\src\system\componentmodel\Component.java java\src\system\drawing\Point.java java\src\system\drawing\Size.java java\src\system\drawing\SizeF.java java\src\system\windows\forms\Application.java java\src\system\windows\forms\AutoScaleMode.java java\src\system\windows\forms\Button.java java\src\system\windows\forms\ContainerControl.java java\src\system\windows\forms\Control.java java\src\system\windows\forms\Form.java java\src\system\windows\forms\layout\ArrangedElementCollection.java java\src\system\windows\forms\ScrollableControl.java java\TestForm.java
+
