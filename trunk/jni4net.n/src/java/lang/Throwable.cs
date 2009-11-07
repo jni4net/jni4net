@@ -31,7 +31,7 @@ namespace java.lang
     {
         internal Class clazz;
         private JavaVM javaVM;
-        internal IntPtr JVMHandle;
+        internal IntPtr jvmHandle;
 
         protected internal Throwable(JNIEnv env)
         {
@@ -86,14 +86,14 @@ namespace java.lang
 
         IntPtr IJvmProxy.JvmHandle
         {
-            get { return JVMHandle; }
-            set { JVMHandle = value; }
+            get { return jvmHandle; }
+            set { jvmHandle = value; }
         }
 
         void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
-            JVMHandle = env.NewGlobalRef(obj);
+            jvmHandle = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
             javaVM = env.GetJavaVM();
         }
@@ -101,7 +101,7 @@ namespace java.lang
         void IJvmProxy.Copy(JNIEnv env, IntPtr obj, Class clazs)
         {
             clazz = clazs;
-            JVMHandle = env.NewGlobalRef(obj);
+            jvmHandle = env.NewGlobalRef(obj);
             javaVM = env.GetJavaVM();
         }
 
@@ -115,9 +115,9 @@ namespace java.lang
             return clazz;
         }
 
-        public void Dispose()
+        void IJvmProxy.Dispose()
         {
-            if (JVMHandle != IntPtr.Zero)
+            if (jvmHandle != IntPtr.Zero)
             {
                 JNIEnv env;
                 JNIResult result = javaVM.AttachCurrentThreadAsDaemon(out env, null);
@@ -126,6 +126,7 @@ namespace java.lang
                     env.DeleteGlobalRef(this);
                 }
                 // we don't crash if JVM is gone already
+                jvmHandle = IntPtr.Zero;
             }
             GC.SuppressFinalize(this);
         }
@@ -164,7 +165,7 @@ namespace java.lang
 
         ~Throwable()
         {
-            Dispose();
+            ((IJvmProxy)this).Dispose();
         }
 
         public static bool operator ==(Throwable a, IJvmProxy b)

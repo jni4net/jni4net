@@ -28,12 +28,14 @@ namespace net.sf.jni4net.jni
 {
     public interface IJvmProxy : IObject
     {
+        Class GetClass();
+
         IntPtr JvmHandle { get; set; }
 
         void Init(JNIEnv env, IntPtr obj, Class clazz);
 
         void Copy(JNIEnv env, IntPtr obj, Class clazz);
 
-        Class GetClass();
+        void Dispose();
     }
 }

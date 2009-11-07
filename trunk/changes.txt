@@ -1,0 +1,4 @@
+Version 0.5
+-----------
+
++ java.lang.Object proxy is no more IDisposable. There is rather IJvmProxy.Dispose()

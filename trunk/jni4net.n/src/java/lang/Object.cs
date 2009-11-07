@@ -43,24 +43,6 @@ namespace java.lang
 
         #region Reference handling
 
-        #region IDisposable Members
-
-        public virtual void Dispose()
-        {
-            if (jvmHandle != IntPtr.Zero)
-            {
-                JNIEnv env = JNIEnv.GetEnvNoThrow(javaVM);
-                // we don't crash if JVM is gone already
-                if (env != null)
-                {
-                    env.DeleteGlobalRef(this);
-                }
-            }
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion
-
         #region IJvmProxy Members
 
         IntPtr IJvmProxy.JvmHandle
@@ -84,11 +66,26 @@ namespace java.lang
             javaVM = env.GetJavaVM();
         }
 
+        void IJvmProxy.Dispose()
+        {
+            if (jvmHandle != IntPtr.Zero)
+            {
+                JNIEnv env = JNIEnv.GetEnvNoThrow(javaVM);
+                // we don't crash if JVM is gone already
+                if (env != null)
+                {
+                    env.DeleteGlobalRef(this);
+                }
+                jvmHandle = IntPtr.Zero;
+            }
+            GC.SuppressFinalize(this);
+        }
+
         #endregion
 
         ~Object()
         {
-            Dispose();
+            ((IJvmProxy)this).Dispose();
         }
 
         #endregion
