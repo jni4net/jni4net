@@ -1,4 +1,14 @@
-﻿/*
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+It's derived work on top of OpenJDK 
+*/
+
+#endregion
+#region Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
+/*
  * Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -6,8 +16,8 @@
  * under the terms of the GNU General Public License version 2 only, as
  * published by the Free Software Foundation.
  *
- * This code is distributed in the hope that it will be useful, but WITHoutt
- * ANY WARRANTY; withoutt even the implied warranty of MERCHANTABILITY or
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
  * version 2 for more details (a copy is included in the LICENSE file that
  * accompanied this code).
@@ -20,13 +30,7 @@
  * CA 95054 USA or visit www.sun.com if you need additional information or
  * have any questions.
  */
-
-/* Type-specific source code for unit test
- *
- * Regenerate the BasicX classes via genBasic.sh whenever this file changes.
- * We check in the generated source files so that the test tree can be used
- * independently of the rest of the source tree.
- */
+#endregion
 
 using System;
 using java.lang;
@@ -42,6 +46,12 @@ using Exception=System.Exception;
 
 namespace net.sf.jni4net.test.BB
 {
+    /* Type-specific source code for unit test
+     *
+     * Regenerate the BasicX classes via genBasic.sh whenever this file changes.
+     * We check in the generated source files so that the test tree can be used
+     * independently of the rest of the source tree.
+     */
     public class BasicByte : Basic
     {
         private static void relGet(ByteBuffer b)

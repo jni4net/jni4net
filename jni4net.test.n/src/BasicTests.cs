@@ -45,7 +45,7 @@ using StringBuilder=java.lang.StringBuilder;
 namespace net.sf.jni4net.test
 {
     [TestFixture]
-    public unsafe class BasicTests : TestBase
+    public class BasicTests : TestBase
     {
         [Test]
         public void ArrayTest()

@@ -1,4 +1,5 @@
-﻿/*
+﻿#region Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
+/*
  * Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -22,6 +23,16 @@
  * CA 95054 USA or visit www.sun.com if you need additional information or
  * have any questions.
  */
+
+#endregion
+#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+*/
+
+#endregion
 
 using java.lang;
 using java.nio;

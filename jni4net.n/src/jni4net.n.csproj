@@ -8,7 +8,7 @@
     <ProjectGuid>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>net.sf.jni4net</RootNamespace>
-    <AssemblyName>jni4net.n-0.4.0.0</AssemblyName>
+    <AssemblyName>jni4net.n-0.5.0.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
@@ -270,7 +270,7 @@
     <PostBuildEvent>
     </PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
-echo [assembly: System.Reflection.AssemblyVersion("0.4.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+echo [assembly: System.Reflection.AssemblyVersion("0.5.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>
   </PropertyGroup>
 </Project>
