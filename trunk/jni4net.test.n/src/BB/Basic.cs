@@ -1,4 +1,14 @@
-﻿/*
+﻿#region Copyright (C) 2009 by Pavel Savara
+
+/*
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+It's derived work on top of OpenJDK 
+*/
+
+#endregion
+#region Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
+/*
  * Copyright 2000-2008 Sun Microsystems, Inc.  All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -20,15 +30,7 @@
  * CA 95054 USA or visit www.sun.com if you need additional information or
  * have any questions.
  */
-
-/* @test
- * @summary Unit test for buffers
- * @bug 4413135 4414911 4416536 4416562 4418782 4471053 4472779 4490253 4523725
- *      4526177 4463011 4660660 4661219 4663521 4782970 4804304 4938424 6231529
- *      6221101 6234263 6535542 6591971 6593946 6795561
- * @author Mark Reinhold
- */
-
+#endregion
 
 using System;
 using java.io;
@@ -43,6 +45,13 @@ using String=java.lang.String;
 
 namespace net.sf.jni4net.test.BB
 {
+    /* @test
+     * @summary Unit test for buffers
+     * @bug 4413135 4414911 4416536 4416562 4418782 4471053 4472779 4490253 4523725
+     *      4526177 4463011 4660660 4661219 4663521 4782970 4804304 4938424 6231529
+     *      6221101 6234263 6535542 6591971 6593946 6795561
+     * @author Mark Reinhold
+     */
     public class Basic
     {
         internal static PrintStream outt = java.lang.System.err;
