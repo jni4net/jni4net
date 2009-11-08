@@ -36,6 +36,8 @@ namespace net.sf.jni4net.jni
 
         void Copy(JNIEnv env, IntPtr obj, Class clazz);
 
+        void Copy(JNIEnv env, IJvmProxy src);
+
         void Dispose();
     }
 }

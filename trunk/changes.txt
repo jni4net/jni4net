@@ -2,3 +2,4 @@ Version 0.5
 -----------
 
 + java.lang.Object proxy is no more IDisposable. There is rather IJvmProxy.Dispose()
++ implemented java.nio.ByteBuffer as direct buffer on CLR byte[], as well as net.sf.jni4net.nio.HeapByteBuffer for fast CLR local access

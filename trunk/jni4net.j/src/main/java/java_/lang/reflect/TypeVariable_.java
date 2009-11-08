@@ -33,13 +33,13 @@ class __TypeVariable extends system.Object implements java.lang.reflect.TypeVari
             super(__env, __handle);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/reflect/GenericDeclaration;")
-    public native java.lang.reflect.GenericDeclaration getGenericDeclaration();
-    
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/String;")
     public native java.lang.String getName();
     
     @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/reflect/Type;")
     public native java.lang.reflect.Type[] getBounds();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/reflect/GenericDeclaration;")
+    public native java.lang.reflect.GenericDeclaration getGenericDeclaration();
 }
 //</generated-proxy>

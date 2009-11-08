@@ -81,6 +81,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.net.URL"/>
   <JavaClass TypeName="java.nio.Buffer"/>
   <JavaClass TypeName="java.nio.ByteBuffer"/>
+  <JavaClass TypeName="java.nio.ByteOrder"/>
   <JavaClass TypeName="java.lang.System"/>
   <JavaClass TypeName="java.lang.CharSequence"/>
 
@@ -109,6 +110,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.lang.RuntimeException"/>
   <JavaClass TypeName="java.lang.StackTraceElement"/>
   <JavaClass TypeName="java.lang.ClassNotFoundException"/>
+  <JavaClass TypeName="java.lang.IllegalArgumentException"/>
+  <JavaClass TypeName="java.lang.IndexOutOfBoundsException"/>
+  <JavaClass TypeName="java.lang.UnsupportedOperationException"/>
+  <JavaClass TypeName="java.lang.NullPointerException"/>
+  <JavaClass TypeName="java.nio.BufferOverflowException"/>
+  <JavaClass TypeName="java.nio.BufferUnderflowException"/>
+  <JavaClass TypeName="java.nio.InvalidMarkException"/>
+  <JavaClass TypeName="java.nio.ReadOnlyBufferException"/>
+  
+ 
 
   <!-- reflection -->
   <JavaClass TypeName="java.lang.reflect.Constructor">

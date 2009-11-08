@@ -22,21 +22,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
+using java.nio;
 using java_.lang;
 using net.sf.jni4net.inj;
+using net.sf.jni4net.jni;
+using net.sf.jni4net.nio;
+using net.sf.jni4net.test.BB;
 using net.sf.jni4net.tested;
 using NUnit.Framework;
 using Byte=java.lang.Byte;
+using ByteBuffer=java.nio.ByteBuffer;
 using Object=java.lang.Object;
 using String=java.lang.String;
+using StringBuilder=java.lang.StringBuilder;
 
 namespace net.sf.jni4net.test
 {
     [TestFixture]
-    public class BasicTests : TestBase
+    public unsafe class BasicTests : TestBase
     {
         [Test]
         public void ArrayTest()
@@ -100,7 +109,7 @@ namespace net.sf.jni4net.test
         public void Dispose()
         {
             String s1 = env.NewString("test");
-            s1.Dispose();
+            ((IJvmProxy)s1).Dispose();
         }
 
         [Test]
@@ -117,7 +126,7 @@ namespace net.sf.jni4net.test
 
             foreach (String s in list)
             {
-                s.Dispose();
+                ((IJvmProxy)s).Dispose();
             }
             DateTime end = DateTime.Now;
 
@@ -204,6 +213,95 @@ namespace net.sf.jni4net.test
             Assert.AreSame(builder, res);
         }
 
+        private byte[] PrepareData()
+        {
+            byte[] myLovelyData = new byte[2048];
+            myLovelyData[0] = 0x00;
+            myLovelyData[1] = 0x01;
+            myLovelyData[0xfe] = 0xfe;
+            myLovelyData[0xff] = 0xff;
+            char expected;
+            using (var bw = new BinaryWriter(new MemoryStream(myLovelyData, 0, 2048, true, true), Encoding.Unicode))
+            {
+                bw.Seek(0x1CC, SeekOrigin.Begin);
+                bw.Write('Ž');
+
+                bw.Seek(0x1aa, SeekOrigin.Begin);
+                bw.Write(0.112233d);
+            }
+            using (var br = new BinaryReader(new MemoryStream(myLovelyData, 0, 2048, true, true), Encoding.Unicode))
+            {
+                br.BaseStream.Seek(0xfe, SeekOrigin.Begin);
+                Assert.AreEqual(0xfe, br.ReadByte());
+                br.BaseStream.Seek(0x1CC, SeekOrigin.Begin);
+                expected = br.ReadChar();
+            }
+            return myLovelyData;
+        }
+
+        [Test]
+        public void BB()
+        {
+            byte[] myLovelyData = PrepareData();
+
+            GCHandle pin = GCHandle.Alloc(myLovelyData, GCHandleType.Pinned);
+            IntPtr ptr = Marshal.UnsafeAddrOfPinnedArrayElement(myLovelyData, 0);
+            ByteBuffer buffer = JNIEnv.ThreadEnv.NewDirectByteBuffer(ptr, 2048);
+            buffer.order(ByteOrder.LITTLE_ENDIAN);
+
+            Assert.AreEqual(0x00, buffer.get());
+            Assert.AreEqual(0x01, buffer.get());
+            buffer.position(0xfe);
+            Assert.AreEqual(0xfe, buffer.get());
+            Assert.AreEqual(0xff, buffer.get());
+            buffer.position(0x1CC);
+            Assert.AreEqual('Ž', buffer.getChar());
+            buffer.position(0x1aa);
+            Assert.AreEqual(0.112233d, buffer.getDouble());
+        }
+
+
+        [Test]
+        public void BBwrap()
+        {
+            byte[] myLovelyData = PrepareData();
+
+            ByteBufferClr buffer=new ByteBufferClr(myLovelyData);
+
+            Assert.AreEqual(0x00, buffer.get());
+            Assert.AreEqual(0x01, buffer.get());
+            buffer.position(0xfe);
+            Assert.AreEqual(0xfe, buffer.get());
+            Assert.AreEqual(0xff, buffer.get());
+            buffer.position(0x1CC);
+            Assert.AreEqual('Ž', buffer.getChar());
+            buffer.position(0x1aa);
+            Assert.AreEqual(0.112233d, buffer.getDouble());
+        }
+
+        [Test]
+        public void BB4net()
+        {
+            byte[] myLovelyData = PrepareData();
+
+            nio.ByteBuffer buffer = nio.ByteBuffer.wrap(myLovelyData);
+
+            Assert.AreEqual(0x00, buffer.get());
+            Assert.AreEqual(0x01, buffer.get());
+            buffer.position(0xfe);
+            Assert.AreEqual(0xfe, buffer.get());
+            Assert.AreEqual(0xff, buffer.get());
+            buffer.position(0x1CC);
+            Assert.AreEqual('Ž', buffer.getChar());
+            buffer.position(0x1aa);
+            Assert.AreEqual(0.112233d, buffer.getDouble());
+        }
+
+        [Test]
+        public void BBJdk()
+        {
+            BasicByte.test();            
+        }
 
         public static void Main()
         {

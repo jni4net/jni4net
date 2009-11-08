@@ -57,11 +57,11 @@ class __Collection extends system.Object implements java.util.Collection {
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native int size();
     
-    @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/Object;")
-    public native java.lang.Object[] toArray();
-    
     @net.sf.jni4net.attributes.ClrMethod("([Ljava/lang/Object;)[Ljava/lang/Object;")
     public native java.lang.Object[] toArray(java.lang.Object[] par0);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/Object;")
+    public native java.lang.Object[] toArray();
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean remove(java.lang.Object par0);

@@ -25,6 +25,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using java.lang;
 using java.lang.reflect;
+using java.nio;
 using java_.lang;
 using net.sf.jni4net.utils;
 using Exception=System.Exception;
@@ -1075,11 +1076,11 @@ namespace net.sf.jni4net.jni
 
         #region buffer
 
-        public IObject NewDirectByteBuffer(void* address, long capacity)
+        public ByteBuffer NewDirectByteBuffer(IntPtr address, long capacity)
         {
             IntPtr res = newDirectByteBuffer.Invoke(envPtr, address, capacity);
             ExceptionTest();
-            return Convertor.FullJ2C<IJvmProxy>(this, res);
+            return Convertor.StrongJ2Cp<ByteBuffer>(this, res);
         }
 
         public void* GetDirectBufferAddress(Object buf)
@@ -1223,7 +1224,7 @@ namespace net.sf.jni4net.jni
 
         public void Throw(Throwable ex)
         {
-            IntPtr ptr = ex.JVMHandle;
+            IntPtr ptr = ex.jvmHandle;
             Throw(ptr);
         }
 
