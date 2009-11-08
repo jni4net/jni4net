@@ -173,11 +173,12 @@ namespace net.sf.jni4net.proxygen.model
             if (config.AssemblyReference != null && config.AssemblyReference.Length>0)
             {
                 Assembly assembly;
-                foreach (string reference in config.AssemblyReference)
+                foreach (var reference in config.AssemblyReference)
                 {
-                    if (Directory.Exists(reference))
+                    string pathOrName = reference.Assembly;
+                    if (Directory.Exists(pathOrName))
                     {
-                        foreach (string file in Directory.GetFiles(reference, "*.dll"))
+                        foreach (string file in Directory.GetFiles(pathOrName, "*.dll"))
                         {
                             assembly = LoadFile(file);
                             if (assembly.GetType(typeof (IJvmProxy).FullName, false)!=null)
@@ -185,7 +186,7 @@ namespace net.sf.jni4net.proxygen.model
                                 found = true;
                             }
                         }
-                        foreach (string file in Directory.GetFiles(reference, "*.exe"))
+                        foreach (string file in Directory.GetFiles(pathOrName, "*.exe"))
                         {
                             assembly = LoadFile(file);
                             if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
@@ -194,10 +195,10 @@ namespace net.sf.jni4net.proxygen.model
                             }
                         }
                     }
-                    else if (File.Exists(reference) || reference.Contains("..") || reference.Contains("\\") ||
-                             reference.Contains("//"))
+                    else if (File.Exists(pathOrName) || pathOrName.Contains("..") || pathOrName.Contains("\\") ||
+                             pathOrName.Contains("//"))
                     {
-                        assembly=LoadFile(reference);
+                        assembly = LoadFile(pathOrName);
                         if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
                         {
                             found = true;
@@ -205,7 +206,7 @@ namespace net.sf.jni4net.proxygen.model
                     }
                     else
                     {
-                        assembly = Assembly.Load(reference);
+                        assembly = Assembly.Load(pathOrName);
                         if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
                         {
                             found = true;
@@ -232,9 +233,9 @@ namespace net.sf.jni4net.proxygen.model
 
             if (config.ClassPath != null && config.ClassPath.Length > 0)
             {
-                foreach (string classPath in config.ClassPath)
+                foreach (var classPath in config.ClassPath)
                 {
-                    setup.AddClassPath(classPath);
+                    setup.AddClassPath(classPath.Path);
                 }
             }
             setup.AddBridgeClassPath();

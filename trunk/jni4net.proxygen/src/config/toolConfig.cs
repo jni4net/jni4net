@@ -32,9 +32,9 @@ namespace net.sf.jni4net.proxygen.config {
         
         private bool skipInterfaceTypeInfoField;
         
-        private string[] classPathField;
+        private ClassPath[] classPathField;
         
-        private string[] assemblyReferenceField;
+        private AssemblyReference[] assemblyReferenceField;
         
         private bool verboseField;
         
@@ -92,7 +92,7 @@ namespace net.sf.jni4net.proxygen.config {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ClassPath")]
-        public string[] ClassPath {
+        public ClassPath[] ClassPath {
             get {
                 return this.classPathField;
             }
@@ -103,7 +103,7 @@ namespace net.sf.jni4net.proxygen.config {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AssemblyReference")]
-        public string[] AssemblyReference {
+        public AssemblyReference[] AssemblyReference {
             get {
                 return this.assemblyReferenceField;
             }
@@ -152,114 +152,36 @@ namespace net.sf.jni4net.proxygen.config {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.5.0.0/toolConfig.xsd")]
-    public partial class TypeRegistration {
+    public partial class ClassPath {
         
-        private TypeReference[] ignoreInterfaceField;
+        private string pathField;
         
-        private MethodModifier[] methodModifierField;
+        private bool generateField;
         
-        private string typeNameField;
-        
-        private bool noMethodsField;
-        
-        private bool syncInterfaceField;
-        
-        private bool mergeJavaSourceField;
-        
-        public TypeRegistration() {
-            this.noMethodsField = false;
-            this.syncInterfaceField = false;
-            this.mergeJavaSourceField = false;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("IgnoreInterface")]
-        public TypeReference[] IgnoreInterface {
-            get {
-                return this.ignoreInterfaceField;
-            }
-            set {
-                this.ignoreInterfaceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("MethodModifier")]
-        public MethodModifier[] MethodModifier {
-            get {
-                return this.methodModifierField;
-            }
-            set {
-                this.methodModifierField = value;
-            }
+        public ClassPath() {
+            this.generateField = false;
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string TypeName {
+        public string Path {
             get {
-                return this.typeNameField;
+                return this.pathField;
             }
             set {
-                this.typeNameField = value;
+                this.pathField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool NoMethods {
+        public bool Generate {
             get {
-                return this.noMethodsField;
+                return this.generateField;
             }
             set {
-                this.noMethodsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool SyncInterface {
-            get {
-                return this.syncInterfaceField;
-            }
-            set {
-                this.syncInterfaceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool MergeJavaSource {
-            get {
-                return this.mergeJavaSourceField;
-            }
-            set {
-                this.mergeJavaSourceField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.1432")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.5.0.0/toolConfig.xsd")]
-    public partial class TypeReference {
-        
-        private string typeNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string TypeName {
-            get {
-                return this.typeNameField;
-            }
-            set {
-                this.typeNameField = value;
+                this.generateField = value;
             }
         }
     }
@@ -395,6 +317,164 @@ namespace net.sf.jni4net.proxygen.config {
             }
             set {
                 this.renameCLRField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.1432")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.5.0.0/toolConfig.xsd")]
+    public partial class TypeReference {
+        
+        private string typeNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TypeName {
+            get {
+                return this.typeNameField;
+            }
+            set {
+                this.typeNameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.1432")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.5.0.0/toolConfig.xsd")]
+    public partial class TypeRegistration {
+        
+        private TypeReference[] ignoreInterfaceField;
+        
+        private MethodModifier[] methodModifierField;
+        
+        private string typeNameField;
+        
+        private bool noMethodsField;
+        
+        private bool syncInterfaceField;
+        
+        private bool mergeJavaSourceField;
+        
+        public TypeRegistration() {
+            this.noMethodsField = false;
+            this.syncInterfaceField = false;
+            this.mergeJavaSourceField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("IgnoreInterface")]
+        public TypeReference[] IgnoreInterface {
+            get {
+                return this.ignoreInterfaceField;
+            }
+            set {
+                this.ignoreInterfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MethodModifier")]
+        public MethodModifier[] MethodModifier {
+            get {
+                return this.methodModifierField;
+            }
+            set {
+                this.methodModifierField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TypeName {
+            get {
+                return this.typeNameField;
+            }
+            set {
+                this.typeNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool NoMethods {
+            get {
+                return this.noMethodsField;
+            }
+            set {
+                this.noMethodsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool SyncInterface {
+            get {
+                return this.syncInterfaceField;
+            }
+            set {
+                this.syncInterfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool MergeJavaSource {
+            get {
+                return this.mergeJavaSourceField;
+            }
+            set {
+                this.mergeJavaSourceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.1432")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.5.0.0/toolConfig.xsd")]
+    public partial class AssemblyReference {
+        
+        private string assemblyField;
+        
+        private bool generateField;
+        
+        public AssemblyReference() {
+            this.generateField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Assembly {
+            get {
+                return this.assemblyField;
+            }
+            set {
+                this.assemblyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Generate {
+            get {
+                return this.generateField;
+            }
+            set {
+                this.generateField = value;
             }
         }
     }

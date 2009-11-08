@@ -46,6 +46,8 @@ namespace net.sf.jni4net.proxygen
                 {
                     Console.WriteLine();
                     Console.WriteLine("usage: proxygen.exe path\\to\\<config>.xml");
+                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.jar -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
+                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.dll -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
                     return -1;
                 }
 
