@@ -303,6 +303,15 @@ namespace net.sf.jni4net.test
             BasicByte.test();            
         }
 
+        [Test]
+        public void Throwable()
+        {
+            NullPointerException npe = new NullPointerException("tst");
+            NullPointerException npe2 = new NullPointerException("tst2");
+            Assert.IsTrue(npe.Equals(npe));
+            Assert.IsFalse(npe.Equals(npe2));
+        }
+
         public static void Main()
         {
             //var test =  new BridgeTest();

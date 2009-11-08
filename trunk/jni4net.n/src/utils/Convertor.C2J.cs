@@ -142,6 +142,7 @@ namespace net.sf.jni4net.utils
             throw new InvalidOperationException("Unknown simple type" + type);
         }
 
+        //TODO, too bad. Conversion doesn''t work, because args are CLR object
         internal static Value[] ConverArgs(JNIEnv env, object[] args)
         {
             if (args.Length == 0)
