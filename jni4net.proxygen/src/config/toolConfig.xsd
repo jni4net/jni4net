@@ -15,8 +15,8 @@
       <xs:element name="TargetDirClr" type="xs:string" maxOccurs="1" minOccurs="1"/>
       <xs:element name="SkipSignatures"  type="xs:boolean" default="false" minOccurs="0"/>
       <xs:element name="SkipInterfaceTypeInfo"  type="xs:boolean" default="false" minOccurs="0"/>
-      <xs:element name="ClassPath" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
-      <xs:element name="AssemblyReference" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="ClassPath" type="jni4net:ClassPath" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="AssemblyReference" type="jni4net:AssemblyReference" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element name="Verbose"  type="xs:boolean" default="false" minOccurs="0"/>
       <xs:element name="JavaClass"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element name="ClrType"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
@@ -48,6 +48,16 @@
 
   <xs:complexType name="TypeReference">
     <xs:attribute name="TypeName" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="AssemblyReference">
+    <xs:attribute name="Assembly" type="xs:string" use="optional"/>
+    <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+  <xs:complexType name="ClassPath">
+    <xs:attribute name="Path" type="xs:string" use="required"/>
+    <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
   </xs:complexType>
 
 </xs:schema>
