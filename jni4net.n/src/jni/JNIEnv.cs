@@ -492,7 +492,7 @@ namespace net.sf.jni4net.jni
             throw new ArgumentException();
         }
 
-        private bool CallBooleanMethod(IJvmProxy obj, string method, string sig, params Value[] args)
+        public bool CallBooleanMethod(IJvmProxy obj, string method, string sig, params Value[] args)
         {
             Class objectClass = GetObjectClass(obj);
             if (objectClass != null)

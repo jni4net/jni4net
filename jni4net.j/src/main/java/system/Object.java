@@ -25,11 +25,6 @@ public class Object implements IClrProxy, system.IObject {
     
 	private long clrHandle;
 
-	@Override
-	public java.lang.String toString() {
-		return ToString();
-	}
-
 	public long getClrHandle() {
 		return clrHandle;
 	}
@@ -41,6 +36,21 @@ public class Object implements IClrProxy, system.IObject {
 	protected Object(net.sf.jni4net.inj.INJEnv env, long handle) {
 		clrHandle = handle;
 	}
+
+    @Override
+    public java.lang.String toString() {
+        return ToString();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o){
+        return o instanceof Object && Equals((Object) o);
+    }
+
+    @Override
+    public int hashCode(){
+        return GetHashCode();
+    }
 
 	@Override
 	protected void finalize() throws Throwable {

@@ -56,6 +56,15 @@ public class TestClr {
 		ClrException.NoException();
 	}
 
+    @Test()
+    public void testExceptionEqals() {
+        NullReferenceException nre=new NullReferenceException("test");
+        NullReferenceException nre2=new NullReferenceException("test2");
+
+        Assert.assertTrue(nre.equals(nre));
+        Assert.assertFalse(nre.equals(nre2));
+    }
+
 	@Test(expected = NullReferenceException.class)
 	public void testException() {
 		ClrException.ThrowBack();

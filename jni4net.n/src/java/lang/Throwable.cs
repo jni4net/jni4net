@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Diagnostics;
 using System.Reflection;
+using net.sf.jni4net;
 using net.sf.jni4net.jni;
 
 namespace java.lang
@@ -158,16 +159,19 @@ namespace java.lang
 
         public override bool Equals(object obj)
         {
-            var other = obj as Object;
+            var other = obj as Throwable;
             if (other == null)
             {
                 return false;
             }
-            return Env.CallBooleanMethod(this, "equals", "(Ljava/lang/Object;)Z", (Object) obj);
+            var value = new Value {_object = ((IJvmProxy) other).JvmHandle};
+            //TODO optimizie
+            return Env.CallBooleanMethod(this, "equals", "(Ljava/lang/Object;)Z", value);
         }
 
         public override int GetHashCode()
         {
+            //TODO optimizie
             return Env.CallIntMethod(this, "hashCode", "()I");
         }
 

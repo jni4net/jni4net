@@ -19,16 +19,12 @@
 package system;
 
 import net.sf.jni4net.inj.IClrProxy;
+import net.sf.jni4net.Bridge;
 
-@net.sf.jni4net.attributes.ClrType
+    @net.sf.jni4net.attributes.ClrType
 public class Exception extends java.lang.RuntimeException implements IClrProxy, system.IObject {
 
 	private long clrHandle;
-
-	@Override
-	public java.lang.String toString() {
-		return ToString();
-	}
 
 	public long getClrHandle() {
 		return clrHandle;
@@ -41,6 +37,22 @@ public class Exception extends java.lang.RuntimeException implements IClrProxy, 
 	protected Exception(net.sf.jni4net.inj.INJEnv env, long handle) {
 		clrHandle = handle;
 	}
+
+    @Override
+    public java.lang.String toString() {
+        return ToString();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o){
+        return o instanceof Exception && Equals(Bridge.cast(o, Object.class));
+    }
+
+    @Override
+    public int hashCode(){
+        return GetHashCode();
+    }
+
 
 	@Override
 	protected void finalize() throws Throwable {
