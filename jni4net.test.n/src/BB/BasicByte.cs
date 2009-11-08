@@ -290,6 +290,8 @@ namespace net.sf.jni4net.test.BB
         }
 
 
+        private delegate void Action();
+
         private static void tryCatch(Buffer b, Type ex, Action thunk)
         {
             bool caught = false;

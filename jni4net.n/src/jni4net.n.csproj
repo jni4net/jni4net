@@ -247,7 +247,6 @@
     <Compile Include="jni\JNIEnv.convert.cs" />
     <Compile Include="jni\JNIEnv.raw.cs" />
     <Compile Include="Bridge.CLR.convertor.cs" />
-    <Compile Include="nio\Bits.cs" />
     <Compile Include="nio\Buffer.cs" />
     <Compile Include="nio\ByteBuffer.cs" />
     <Compile Include="nio\ByteBufferClr.cs" />
