@@ -57,11 +57,11 @@ class __List extends system.Object implements java.util.List {
     @net.sf.jni4net.attributes.ClrMethod("()I")
     public native int size();
     
-    @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/Object;")
-    public native java.lang.Object[] toArray();
-    
     @net.sf.jni4net.attributes.ClrMethod("([Ljava/lang/Object;)[Ljava/lang/Object;")
     public native java.lang.Object[] toArray(java.lang.Object[] par0);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/Object;")
+    public native java.lang.Object[] toArray();
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)Z")
     public native boolean remove(java.lang.Object par0);
@@ -102,10 +102,10 @@ class __List extends system.Object implements java.util.List {
     @net.sf.jni4net.attributes.ClrMethod("(II)Ljava/util/List;")
     public native java.util.List subList(int par0, int par1);
     
-    @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Iterator;")
-    public native java.util.ListIterator listIterator();
-    
     @net.sf.jni4net.attributes.ClrMethod("(I)Ljava/util/Iterator;")
     public native java.util.ListIterator listIterator(int par0);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/util/Iterator;")
+    public native java.util.ListIterator listIterator();
 }
 //</generated-proxy>

@@ -819,7 +819,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: NewDirectByteBuffer
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-            internal delegate IntPtr NewDirectByteBuffer(IntPtr thiz, void* address, long capacity);
+            internal delegate IntPtr NewDirectByteBuffer(IntPtr thiz, IntPtr address, long capacity);
 
             #endregion
 

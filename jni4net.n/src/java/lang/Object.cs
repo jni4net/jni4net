@@ -66,6 +66,14 @@ namespace java.lang
             javaVM = env.GetJavaVM();
         }
 
+        void IJvmProxy.Copy(JNIEnv env, IJvmProxy src)
+        {
+            var srco = ((Object)src);
+            jvmHandle = env.NewGlobalRef(srco.jvmHandle);
+            clazz = srco.clazz;
+            javaVM = srco.javaVM;
+        }
+
         void IJvmProxy.Dispose()
         {
             if (jvmHandle != IntPtr.Zero)
@@ -94,8 +102,10 @@ namespace java.lang
 
         Class IJvmProxy.GetClass()
         {
+            //TODO synchronize
             if (clazz == null)
             {
+                //TODO optimize ?
                 FieldInfo field = GetType().GetField("staticClass", BindingFlags.Static | BindingFlags.NonPublic);
                 return (Class) field.GetValue(null);
             }

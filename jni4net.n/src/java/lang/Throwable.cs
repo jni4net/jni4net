@@ -105,6 +105,14 @@ namespace java.lang
             javaVM = env.GetJavaVM();
         }
 
+        void IJvmProxy.Copy(JNIEnv env, IJvmProxy src)
+        {
+            var srco = ((Throwable)src);
+            jvmHandle = env.NewGlobalRef(srco.jvmHandle);
+            clazz = srco.clazz;
+            javaVM = srco.javaVM;
+        }
+
         Class IJvmProxy.GetClass()
         {
             if (clazz == null)
@@ -191,9 +199,9 @@ namespace java.lang
         public override string ToString()
         {
             JNIEnv env = Env;
-            if ((_toString5 == null))
+            if ((_toString4 == null))
             {
-                _toString5 = env.GetMethodID(((IJvmProxy) this).GetClass(), "toString", "()Ljava/lang/String;");
+                _toString4 = env.GetMethodID(((IJvmProxy)this).GetClass(), "toString", "()Ljava/lang/String;");
             }
             return toString();
         }
