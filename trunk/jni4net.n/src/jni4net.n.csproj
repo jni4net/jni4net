@@ -218,8 +218,10 @@
     <Compile Include="utils\RegistryRecord.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adaptors\Adapt.cs" />
     <Compile Include="Bridge.JVM.convertor.cs" />
     <Compile Include="BridgeSetup.cs" />
+    <Compile Include="generated\java\io\FileInputStream.generated.cs" />
     <Compile Include="generated\java\lang\IllegalArgumentException.generated.cs" />
     <Compile Include="generated\java\lang\IndexOutOfBoundsException.generated.cs" />
     <Compile Include="generated\java\lang\NullPointerException.generated.cs" />
@@ -229,6 +231,8 @@
     <Compile Include="generated\java\nio\ByteOrder.generated.cs" />
     <Compile Include="generated\java\nio\InvalidMarkException.generated.cs" />
     <Compile Include="generated\java\nio\ReadOnlyBufferException.generated.cs" />
+    <Compile Include="generated\java\util\zip\ZipEntry.generated.cs" />
+    <Compile Include="generated\java\util\zip\ZipInputStream.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\BridgeSetup.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\jni\ICJvmProxy.generated.cs">
       <SubType>Code</SubType>

@@ -42,7 +42,7 @@ namespace net.sf.jni4net.proxygen
                 Console.WriteLine("jni4net.proxygen - Copyright (C) 2009 Pavel Savara - licensed under GPLv3");
 
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                if (args.Length < 1 || !File.Exists(args[0]))
+                if (args.Length < 1 || (!File.Exists(args[0])) && !Directory.Exists(args[0]))
                 {
                     Console.WriteLine();
                     Console.WriteLine("usage: proxygen.exe path\\to\\<config>.xml");
@@ -82,9 +82,59 @@ namespace net.sf.jni4net.proxygen
 
         private static int Work(string[] args)
         {
-            var ser = new XmlSerializer(typeof (ToolConfig));
-            string config = args[0];
-            var cfg = ser.Deserialize(new FileStream(config, FileMode.Open)) as ToolConfig;
+            ToolConfig cfg;
+            string ext = Path.GetExtension(args[0]).ToLowerInvariant();
+            if (ext==".xml")
+            {
+                string config = args[0];
+                var ser = new XmlSerializer(typeof(ToolConfig));
+                cfg = ser.Deserialize(new FileStream(config, FileMode.Open)) as ToolConfig;
+            }
+            else if (ext == ".dll" || ext == ".jar" || Directory.Exists(args[0]))
+            {
+                cfg = new ToolConfig();
+                string workDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                Directory.CreateDirectory(workDir);
+                string clr = Path.Combine(workDir,"clr");
+                string jvm = Path.Combine(workDir, "jvm");
+                Directory.CreateDirectory(clr);
+                Directory.CreateDirectory(jvm);
+                cfg.TargetDirClr = clr;
+                cfg.TargetDirJvm = jvm;
+                int addcp = (ext == ".jar" || Directory.Exists(args[0]))? 1 : 0;
+                int adddp = ext == ".dll" ? 1 : 0;
+                if (args[1] == "-cp")
+                {
+                    string[] cps = args[2].Split(';');
+                    cfg.ClassPath = new ClassPath[cps.Length+addcp];
+                    for (int i = 0; i < cps.Length; i++)
+                    {
+                        cfg.ClassPath[i] = new ClassPath() {Path = cps[i]};
+                    }
+                    if (ext == ".jar" || Directory.Exists(args[0]))
+                    {
+                        cfg.ClassPath[cps.Length] = new ClassPath() { Path = args[0], Generate = true };
+                    }
+                }
+                if (args[3] == "-dp")
+                {
+                    string[] dps = args[4].Split(';');
+                    cfg.AssemblyReference = new AssemblyReference[dps.Length+adddp];
+                    for (int i = 0; i < dps.Length; i++)
+                    {
+                        cfg.AssemblyReference[i] = new AssemblyReference() { Assembly = dps[i] };
+                    }
+                    if (ext == ".dll")
+                    {
+                        cfg.AssemblyReference[dps.Length] = new AssemblyReference() { Assembly = args[0], Generate = true};
+                    }
+                }
+            }
+            else
+            {
+                return -1;
+            }
+
             Generator.config = cfg;
             Repository.config = cfg;
             Repository.Register();

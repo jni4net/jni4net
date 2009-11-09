@@ -63,6 +63,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <!-- io,nio,net -->
   <JavaClass TypeName="java.io.InputStream"/>
   <JavaClass TypeName="java.io.OutputStream"/>
+  <JavaClass TypeName="java.io.FileInputStream"/>
   <JavaClass TypeName="java.io.PrintStream">
   <!-- 
   -->
@@ -70,6 +71,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;" Return="java.lang.Appendable"/>
 	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;)Ljava/io/PrintStream;" Return="java.lang.Appendable"/>
   </JavaClass>
+  <JavaClass TypeName="java.util.zip.ZipInputStream"/>
+  <JavaClass TypeName="java.util.zip.ZipEntry"/>
   <JavaClass TypeName="java.io.Closeable"/>
   <JavaClass TypeName="java.io.Flushable"/>
   <JavaClass TypeName="java.io.Serializable"/>

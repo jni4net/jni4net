@@ -22,10 +22,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Reflection;
+using java.io;
 using java.lang;
+using java.util.zip;
+using net.sf.jni4net.adaptors;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
+using File=System.IO.File;
+using String=java.lang.String;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -37,6 +44,9 @@ namespace net.sf.jni4net.proxygen.model
         private static readonly Dictionary<Type, GType> knownTypes = new Dictionary<Type, GType>();
         public static ToolConfig config;
         private static List<Assembly> knownAssemblies = new List<Assembly>();
+
+        private static List<Assembly> generateAssemblies = new List<Assembly>();
+        private static List<string> generateCp = new List<string>();
 
         public static void Analyze()
         {
@@ -156,6 +166,59 @@ namespace net.sf.jni4net.proxygen.model
             if (config.ClrType != null)
             {
                 RegisterTypes();
+            }
+
+            foreach (Assembly assembly in generateAssemblies)
+            {
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (type.IsPublic)
+                    {
+                        TypeRegistration registration=new TypeRegistration();
+                        registration.TypeName = type.FullName;
+                        GType reg = RegisterType(type, registration);
+                        reg.IsJVMGenerate = true;
+                        reg.IsSkipCLRInterface = !registration.SyncInterface;
+                        reg.MergeJavaSource = registration.MergeJavaSource;
+                    }
+                }
+            }
+
+            foreach (string classPath in generateCp)
+            {
+                if (Directory.Exists(classPath))
+                {
+                    string path = Path.GetFullPath(classPath);
+                    foreach (string classFile in Directory.GetFiles(path, "*.class", SearchOption.AllDirectories))
+                    {
+                        if (!classFile.Contains("$"))
+                        {
+                            string name = classFile.Substring(path.Length+1);
+                            string clazzName = name.Replace('\\', '/').Substring(0, name.Length - (".class".Length));
+                            RegisterClass(clazzName);
+                        }
+                    }
+                }
+                else if (File.Exists(classPath) && Path.GetExtension(classPath)==".jar")
+                {
+                    using (var fis = Adapt.Disposable(new FileInputStream(classPath)))
+                    {
+                        using (var zis = Adapt.Disposable(new ZipInputStream(fis.Real)))
+                        {
+                            ZipEntry entry = zis.Real.getNextEntry();
+                            while (entry!=null)
+                            {
+                                string name = entry.getName();
+                                if (!entry.isDirectory() && name.EndsWith(".class") && !name.Contains("$"))
+                                {
+                                    string clazzName = name.Substring(0, name.Length - (".class".Length));
+                                    RegisterClass(clazzName);
+                                }
+                                entry = zis.Real.getNextEntry();
+                            }
+                        }
+                    }
+                }
             }
         }
 

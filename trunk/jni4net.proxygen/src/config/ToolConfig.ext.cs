@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System.Reflection;
+
 namespace net.sf.jni4net.proxygen.config
 {
     partial class ToolConfig
