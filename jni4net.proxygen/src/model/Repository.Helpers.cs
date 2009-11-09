@@ -26,12 +26,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using java.lang;
+using java.lang.reflect;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
 using Exception=System.Exception;
 using Object=java.lang.Object;
 using String=java.lang.String;
 using StringBuilder=System.Text.StringBuilder;
+using Type=System.Type;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -167,62 +169,63 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void LoadAssemblies()
         {
-            bool found = false;
+            bool foundJni4net = false;
             knownAssemblies = new List<Assembly>();
             knownAssemblies.Add(typeof (object).Assembly);
             if (config.AssemblyReference != null && config.AssemblyReference.Length>0)
             {
-                Assembly assembly;
                 foreach (var reference in config.AssemblyReference)
                 {
+                    Assembly assembly=null;
                     string pathOrName = reference.Assembly;
                     if (Directory.Exists(pathOrName))
                     {
                         foreach (string file in Directory.GetFiles(pathOrName, "*.dll"))
                         {
                             assembly = LoadFile(file);
-                            if (assembly.GetType(typeof (IJvmProxy).FullName, false)!=null)
-                            {
-                                found = true;
-                            }
+                            foundJni4net |= TestJni4net(assembly);
                         }
                         foreach (string file in Directory.GetFiles(pathOrName, "*.exe"))
                         {
                             assembly = LoadFile(file);
-                            if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
-                            {
-                                found = true;
-                            }
+                            foundJni4net |= TestJni4net(assembly);
                         }
                     }
                     else if (File.Exists(pathOrName) || pathOrName.Contains("..") || pathOrName.Contains("\\") ||
                              pathOrName.Contains("//"))
                     {
                         assembly = LoadFile(pathOrName);
-                        if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
-                        {
-                            found = true;
-                        }
+                        foundJni4net |= TestJni4net(assembly);
                     }
                     else
                     {
                         assembly = Assembly.Load(pathOrName);
-                        if (assembly.GetType(typeof(IJvmProxy).FullName, false) != null)
-                        {
-                            found = true;
-                        }
+                        foundJni4net |= TestJni4net(assembly);
                         knownAssemblies.Add(assembly);
                         if (config.Verbose)
                         {
                             Console.WriteLine("Loaded " + reference);
                         }
                     }
+                    if (reference.Generate)
+                    {
+                        generateAssemblies.Add(assembly);
+                    }
                 }
             }
-            if (!found)
+            if (!foundJni4net)
             {
                 knownAssemblies.Add(typeof (IJvmProxy).Assembly);
             }
+        }
+
+        private static bool TestJni4net(Assembly assembly)
+        {
+            if (assembly.GetType(typeof (IJvmProxy).FullName, false)!=null)
+            {
+                return true;
+            }
+            return false;
         }
 
         private static void LoadClasspath()
@@ -236,6 +239,10 @@ namespace net.sf.jni4net.proxygen.model
                 foreach (var classPath in config.ClassPath)
                 {
                     setup.AddClassPath(classPath.Path);
+                    if (classPath.Generate)
+                    {
+                        generateCp.Add(classPath.Path);
+                    }
                 }
             }
             setup.AddBridgeClassPath();
@@ -445,6 +452,20 @@ namespace net.sf.jni4net.proxygen.model
             }
             clazzName = clazzName.Replace('.', '/');
             return clazzName;
+        }
+
+        private static void RegisterClass(string clazzName)
+        {
+            Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
+            if (clazz != null && ((ModifierFlags)clazz.getModifiers() & ModifierFlags.Public) != 0)
+            {
+                TypeRegistration registration = new TypeRegistration();
+                registration.TypeName = clazzName;
+                GType reg = RegisterClass(clazz, registration);
+                reg.IsCLRGenerate = true;
+                reg.IsSkipJVMInterface = !registration.SyncInterface;
+                reg.MergeJavaSource = registration.MergeJavaSource;
+            }
         }
     }
 }

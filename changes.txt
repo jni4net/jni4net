@@ -5,3 +5,5 @@ Version 0.5
 + implemented java.nio.ByteBuffer as direct buffer on CLR byte[], as well as net.sf.jni4net.nio.HeapByteBuffer for fast CLR local access
 + implemented missing equals and hashcode methods
 + changed format of proxygen config to ver 0.5. References and classpath format changed.
++ created CloseableToIDisposable adapter
++ implemented .dll and .jar exploration in proxygen
