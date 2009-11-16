@@ -48,11 +48,32 @@ namespace net.sf.jni4net.proxygen.model
         private static List<Assembly> generateAssemblies = new List<Assembly>();
         private static List<string> generateCp = new List<string>();
 
+        public static IList<Assembly> KnownAssemblies
+        {
+            get
+            {
+                Assembly[] res = new Assembly[knownAssemblies.Count];
+                knownAssemblies.CopyTo(res, 0);
+                return res;
+            }
+        }
+
         public static void Analyze()
         {
+            systemObject.Interfaces.Clear();
+            javaLangObject.Interfaces.Clear();
+            jvmProxy.Interfaces.Clear();
+            clrProxy.Interfaces.Clear();
+            javaLangThrowable.Interfaces.Clear();
+            systemException.Interfaces.Clear();
+
             foreach (GType type in new List<GType>(all))
             {
-                PreLoadMethods(type, false, false);
+                FlagLoadMethods(type, false, false);
+            }
+            foreach (GType type in new List<GType>(all))
+            {
+                PreLoadMethods(type);
             }
             foreach (GType type in new List<GType>(all))
             {
@@ -232,7 +253,7 @@ namespace net.sf.jni4net.proxygen.model
                     object javaInterfaceA = HasAttribute(type, javaInterfaceAttr);
                     object clrWrapperA = HasAttribute(type, clrWrapperAttr);
                     object javaClassA = HasAttribute(type, javaClassAttr);
-                    if ((javaProxyType.IsAssignableFrom(type) && javaClassA != null) ||
+                    if ((jvmProxyType.IsAssignableFrom(type) && javaClassA != null) ||
                         (type.IsInterface && javaInterfaceA != null))
                     {
                         string clazzName = GetInterfaceName(type);
@@ -273,7 +294,7 @@ namespace net.sf.jni4net.proxygen.model
                 if (clazz != null)
                 {
                     GType reg = RegisterClass(clazz, registration);
-                    reg.IsCLRGenerate = true;
+                    reg.IsCLRGenerate = registration.Generate;
                     reg.IsSkipJVMInterface = !registration.SyncInterface;
                     reg.MergeJavaSource = registration.MergeJavaSource;
                 }
@@ -304,7 +325,7 @@ namespace net.sf.jni4net.proxygen.model
                     throw new JNIException("Can't load type" + registration.TypeName);
                 }
                 GType reg = RegisterType(type, registration);
-                reg.IsJVMGenerate = true;
+                reg.IsJVMGenerate = registration.Generate;
                 reg.IsSkipCLRInterface = !registration.SyncInterface;
                 reg.MergeJavaSource = registration.MergeJavaSource;
             }

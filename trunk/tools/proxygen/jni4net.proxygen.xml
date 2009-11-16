@@ -235,6 +235,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <ClrType TypeName="System.Reflection.ConstructorInfo"/>
   <ClrType TypeName="System.Reflection.MethodInfo"/>
   <ClrType TypeName="System.Reflection.PropertyInfo"/>
+  <ClrType TypeName="System.Runtime.InteropServices._FieldInfo" Generate="false">
+	  <MethodModifier MethodName="SetValueDirect" Signature="(LSystem/TypedReference;LSystem/Object;)V" Skip="true"/>
+	  <MethodModifier MethodName="GetValueDirect" Signature="(LSystem/TypedReference;)LSystem/Object;" Skip="true"/>
+  </ClrType>
   <ClrType TypeName="System.Reflection.FieldInfo">
 	  <MethodModifier MethodName="SetValueDirect" Signature="(LSystem/TypedReference;LSystem/Object;)V" Skip="true"/>
 	  <MethodModifier MethodName="GetValueDirect" Signature="(LSystem/TypedReference;)LSystem/Object;" Skip="true"/>

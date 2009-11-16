@@ -211,7 +211,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             tgtMethod.Statements.Add(
                 new CodeSnippetStatement(
-                    "            }catch (global::System.Exception ex){@" + envVariableName + ".ThrowExisting(ex);}"
+                    "            }catch (global::System.Exception __ex){@" + envVariableName + ".ThrowExisting(__ex);}"
                     //}
                     ));
 

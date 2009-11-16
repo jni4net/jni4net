@@ -51,21 +51,23 @@ namespace net.sf.jni4net.proxygen.model
         internal static GType javaLangString;
         internal static GType javaLangThrowable;
         private static Type javaMethodAttribute;
-        internal static GType javaProxy;
-        private static Type javaProxyType;
+        internal static GType jvmProxy;
+        private static Type jvmProxyType;
         internal static GType systemException;
         internal static GType systemObject;
+        internal static GType systemIObject;
         internal static GType systemString;
         internal static GType systemType;
         internal static GType voidType;
+        internal static GType throwable;
 
         private static void BindKnownTypesPre()
         {
             foreach (Assembly assembly in knownAssemblies)
             {
-                if (javaProxyType == null)
+                if (jvmProxyType == null)
                 {
-                    javaProxyType = assembly.GetType("net.sf.jni4net.jni.IJvmProxy");
+                    jvmProxyType = assembly.GetType("net.sf.jni4net.jni.IJvmProxy");
                 }
                 if (javaClassAttr == null)
                 {
@@ -94,6 +96,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             clrProxyClass = JNIEnv.ThreadEnv.FindClassNoThrow("net/sf/jni4net/inj/IClrProxy");
             clrProxy = RegisterClass(clrProxyClass);
+            systemIObject = RegisterClass(JNIEnv.ThreadEnv.FindClassNoThrow("system/IObject"));
             knownNames.Add("int", RegisterType(typeof (int)));
             knownNames.Add("long", RegisterType(typeof (long)));
             knownNames.Add("short", RegisterType(typeof (short)));
@@ -141,8 +144,8 @@ namespace net.sf.jni4net.proxygen.model
             systemString.JVMSubst = javaLangString;
             javaLangIObject = RegisterType(javalangIObjectType);
             javaLangIObject.JVMSubst = javaLangObject;
-            javaProxy = RegisterType(javaProxyType);
-            javaProxy.JVMSubst = javaLangObject;
+            jvmProxy = RegisterType(jvmProxyType);
+            jvmProxy.JVMSubst = javaLangObject;
             clrProxy.CLRSubst = systemObject;
         }
 
@@ -249,16 +252,48 @@ namespace net.sf.jni4net.proxygen.model
             Bridge.CreateJVM(setup);
         }
 
-        private static void PreLoadMethods(GType type, bool forceCLR, bool forceJVM)
+        /// <summary>
+        /// Propagate method loading
+        /// </summary>
+        private static void FlagLoadMethods(GType type, bool forceCLR, bool forceJVM)
+        {
+            forceJVM |= type.IsCLRGenerate;
+            forceJVM &= type.IsJVMType;
+            forceCLR |= type.IsJVMGenerate;
+            forceCLR &= type.IsCLRType;
+
+            if ((forceCLR || forceJVM))
+            {
+                foreach (GType ifc in type.Interfaces)
+                {
+                    FlagLoadMethods(ifc, forceCLR, forceJVM);
+                }
+                if (type.Base != null)
+                {
+                    FlagLoadMethods(type.Base, forceCLR, forceJVM);
+                }
+                if (forceJVM)
+                {
+                    type.IsLoadJVMMethods = true;
+                }
+                if (forceCLR)
+                {
+                    type.IsLoadCLRMethods = true;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Prefetch types of parameters
+        /// </summary>
+        private static void PreLoadMethods(GType type)
         {
             if (type.IsMethodsPreLoaded)
             {
                 return;
             }
             type.IsMethodsPreLoaded = true;
-
-            forceJVM |= (type.IsCLRGenerate && type.IsJVMType);
-            forceCLR |= (type.IsJVMGenerate && type.IsCLRType);
 
             if (type.Registration != null && type.Registration.IgnoreInterface != null)
             {
@@ -275,26 +310,35 @@ namespace net.sf.jni4net.proxygen.model
                 }
             }
 
-
-            if ((forceCLR || forceJVM) && type.Base != null)
+            if (type.IsLoadCLRMethods || type.IsLoadJVMMethods)
             {
-                PreLoadMethods(type.Base, forceCLR, forceJVM);
-            }
-            if (forceJVM)
-            {
-                type.IsLoadJVMMethods = true;
-                RegisterJVMConstructors(type, false);
-                RegisterJVMMethods(type, false);
-                RegisterJVMFields(type, false);
-            }
-            if (forceCLR)
-            {
-                RegisterCLRMethods(type, false);
-                RegisterCLRConstructors(type, false);
-                type.IsLoadCLRMethods = true;
+                foreach (GType ifc in type.Interfaces)
+                {
+                    PreLoadMethods(ifc);
+                }
+                if (type.Base != null)
+                {
+                    PreLoadMethods(type.Base);
+                }
+                if (type.IsLoadJVMMethods)
+                {
+                    //dry registration
+                    RegisterJVMConstructors(type, false);
+                    RegisterJVMMethods(type, false);
+                    RegisterJVMFields(type, false);
+                }
+                if (type.IsLoadCLRMethods)
+                {
+                    //dry registration
+                    RegisterCLRMethods(type, false);
+                    RegisterCLRConstructors(type, false);
+                }
             }
         }
 
+        /// <summary>
+        /// Load and register methods
+        /// </summary>
         private static void LoadMethods(GType type)
         {
             if (type.IsMethodsLoaded)

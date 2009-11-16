@@ -46,8 +46,8 @@ namespace net.sf.jni4net.proxygen
                 {
                     Console.WriteLine();
                     Console.WriteLine("usage: proxygen.exe path\\to\\<config>.xml");
-                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.jar -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
-                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.dll -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
+                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.jar -wd work\\directory -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
+                    Console.WriteLine("usage: proxygen.exe path\\to\\<library>.dll -wd work\\directory -cp java\\dependencies;comma\\separated;classpath -dp .NET\\dependencies;comma\\separated;assemblies");
                     return -1;
                 }
 
@@ -84,7 +84,10 @@ namespace net.sf.jni4net.proxygen
         {
             ToolConfig cfg;
             string ext = Path.GetExtension(args[0]).ToLowerInvariant();
-            if (ext==".xml")
+            string workDir = null;
+            string clr = null;
+            string jvm = null;
+            if (ext == ".xml")
             {
                 string config = args[0];
                 var ser = new XmlSerializer(typeof(ToolConfig));
@@ -93,19 +96,28 @@ namespace net.sf.jni4net.proxygen
             else if (ext == ".dll" || ext == ".jar" || Directory.Exists(args[0]))
             {
                 cfg = new ToolConfig();
-                string workDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                if (args[1] == "-wd")
+                {
+                    workDir = args[2];
+                }
+                else
+                {
+                    workDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                    Console.WriteLine("writing to " + workDir);
+                }
                 Directory.CreateDirectory(workDir);
-                string clr = Path.Combine(workDir,"clr");
-                string jvm = Path.Combine(workDir, "jvm");
+                clr = Path.Combine(workDir, "clr");
+                jvm = Path.Combine(workDir, "jvm");
                 Directory.CreateDirectory(clr);
                 Directory.CreateDirectory(jvm);
                 cfg.TargetDirClr = clr;
                 cfg.TargetDirJvm = jvm;
-                int addcp = (ext == ".jar" || Directory.Exists(args[0]))? 1 : 0;
+                int addcp = (ext == ".jar" || Directory.Exists(args[0])) ? 1 : 0;
                 int adddp = ext == ".dll" ? 1 : 0;
-                if (args[1] == "-cp")
+
+                if (args[3] == "-cp")
                 {
-                    string[] cps = args[2].Split(';');
+                    string[] cps = args[4].Split(';');
                     cfg.ClassPath = new ClassPath[cps.Length+addcp];
                     for (int i = 0; i < cps.Length; i++)
                     {
@@ -116,9 +128,10 @@ namespace net.sf.jni4net.proxygen
                         cfg.ClassPath[cps.Length] = new ClassPath() { Path = args[0], Generate = true };
                     }
                 }
-                if (args[3] == "-dp")
+
+                if (args[5] == "-dp")
                 {
-                    string[] dps = args[4].Split(';');
+                    string[] dps = args[6].Split(';');
                     cfg.AssemblyReference = new AssemblyReference[dps.Length+adddp];
                     for (int i = 0; i < dps.Length; i++)
                     {
@@ -141,6 +154,78 @@ namespace net.sf.jni4net.proxygen
             Repository.Analyze();
             Generator.GenerateAll();
             Console.WriteLine("proxygen done");
+
+
+            if (workDir != null)
+            {
+                string fname = Path.GetFileNameWithoutExtension(args[0]);
+                using (var jw = new StreamWriter(Path.Combine(workDir, "build.cmd")))
+                {
+                    jw.WriteLine("@echo off");
+                    jw.WriteLine("if not exist target mkdir target");
+                    jw.WriteLine("if not exist target\\classes mkdir target\\classes");
+                    jw.WriteLine();
+                    jw.WriteLine();
+                    
+                    jw.WriteLine("echo compile classes");
+                    jw.Write("javac -nowarn -d target\\classes -sourcepath jvm -cp ");
+                    foreach (string cp in Bridge.Setup.JVMCLassPath)
+                    {
+                        jw.Write(cp);
+                        jw.Write(";");
+                    }
+                    jw.Write(" ");
+                    foreach (string file in Directory.GetFiles(jvm, "*.java", SearchOption.AllDirectories))
+                    {
+                        int i = file.IndexOf("\\jvm\\");
+                        string output = file.Substring(i+1);
+                        jw.Write(output);
+                        jw.Write(" ");
+                    }
+                    jw.WriteLine();
+                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                    jw.WriteLine();
+                    jw.WriteLine();
+
+                    jw.WriteLine("echo " + fname + ".j4n.jar ");
+                    jw.Write("jar cvf target\\");
+                    jw.Write(fname + ".j4n.jar ");
+                    foreach (string file in Directory.GetFiles(jvm, "*.java", SearchOption.AllDirectories))
+                    {
+                        jw.Write(" -C target\\classes ");
+                        int i = file.IndexOf("\\jvm\\");
+                        string output = file.Substring(i+5).Replace(".java", ".class");
+                        jw.Write(output);
+                        jw.Write(" ");
+                    }
+                    jw.Write(" > nul ");
+                    jw.WriteLine();
+                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                    jw.WriteLine();
+                    jw.WriteLine();
+
+
+                    jw.WriteLine("echo " + fname + ".j4n.dll ");
+                    jw.Write("csc /nologo /warn:0 /t:library /out:target\\");
+                    jw.Write(fname + ".j4n.dll ");
+                    jw.Write("/recurse:clr\\*.cs ");
+
+                    foreach (Assembly assembly in Repository.KnownAssemblies)
+                    {
+                        if (typeof(Program).Assembly != assembly)
+                        {
+                            jw.Write(" /reference:");
+                            jw.Write(assembly.Location);
+                        }
+                    }
+                    jw.WriteLine();
+                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                    jw.WriteLine();
+                    jw.WriteLine();
+                    jw.WriteLine(":end");
+                }
+            }
+
             return 0;
         }
     }

@@ -162,6 +162,10 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterJVMConstructors(GType type, bool register)
         {
+            if (type.IsAbstract)
+            {
+                return;
+            }
             Class clazz = type.JVMType;
             foreach (Constructor ctor in clazz.getConstructors())
             {
