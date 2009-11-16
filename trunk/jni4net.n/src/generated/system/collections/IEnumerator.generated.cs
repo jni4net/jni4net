@@ -79,7 +79,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__obj);
             return ((bool)(@__real.MoveNext()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -90,7 +90,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Current);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -101,7 +101,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__obj);
             @__real.Reset();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

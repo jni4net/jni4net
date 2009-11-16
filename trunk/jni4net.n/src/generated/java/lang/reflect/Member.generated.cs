@@ -126,7 +126,7 @@ namespace java.lang.reflect {
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
             return ((int)(@__real.getModifiers()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -137,7 +137,7 @@ namespace java.lang.reflect {
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getName());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -148,7 +148,7 @@ namespace java.lang.reflect {
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getDeclaringClass());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -159,7 +159,7 @@ namespace java.lang.reflect {
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
             return ((bool)(@__real.isSynthetic()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         

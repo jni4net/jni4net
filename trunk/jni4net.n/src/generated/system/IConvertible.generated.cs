@@ -203,7 +203,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.TypeCode>(@__env, @__real.GetTypeCode());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -214,7 +214,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((bool)(@__real.ToBoolean(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -225,7 +225,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((char)(@__real.ToChar(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(char);
         }
         
@@ -236,7 +236,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((sbyte)(@__real.ToSByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(sbyte);
         }
         
@@ -247,7 +247,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((byte)(@__real.ToByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(byte);
         }
         
@@ -258,7 +258,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((short)(@__real.ToInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(short);
         }
         
@@ -269,7 +269,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((ushort)(@__real.ToUInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(ushort);
         }
         
@@ -280,7 +280,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((int)(@__real.ToInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -291,7 +291,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((uint)(@__real.ToUInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(uint);
         }
         
@@ -302,7 +302,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((long)(@__real.ToInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(long);
         }
         
@@ -313,7 +313,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((ulong)(@__real.ToUInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(ulong);
         }
         
@@ -324,7 +324,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((float)(@__real.ToSingle(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(float);
         }
         
@@ -335,7 +335,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return ((double)(@__real.ToDouble(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(double);
         }
         
@@ -346,7 +346,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, @__real.ToDecimal(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -357,7 +357,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.DateTime>(@__env, @__real.ToDateTime(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -368,7 +368,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -379,7 +379,7 @@ namespace System {
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

@@ -35,15 +35,6 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _markSupported8;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor9;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public InputStream() : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.InputStream.staticClass, global::java.io.InputStream.@__ctor9, this);
-        }
-        
         protected InputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -65,7 +56,6 @@ namespace java.io {
             global::java.io.InputStream._available6 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "available", "()I");
             global::java.io.InputStream._skip7 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "skip", "(J)J");
             global::java.io.InputStream._markSupported8 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "markSupported", "()Z");
-            global::java.io.InputStream.@__ctor9 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

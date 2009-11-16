@@ -53,7 +53,7 @@ namespace System {
             try {
             global::System.NotImplementedException @__real = new global::System.NotImplementedException();
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorNotImplementedException1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr message) {
@@ -63,7 +63,7 @@ namespace System {
             try {
             global::System.NotImplementedException @__real = new global::System.NotImplementedException(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorNotImplementedException2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr message, global::System.IntPtr inner) {
@@ -73,7 +73,7 @@ namespace System {
             try {
             global::System.NotImplementedException @__real = new global::System.NotImplementedException(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, inner));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

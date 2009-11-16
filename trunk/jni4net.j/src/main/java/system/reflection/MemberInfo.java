@@ -32,6 +32,21 @@ public class MemberInfo extends system.Object implements system.reflection.ICust
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
     public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String ToString();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean Equals(system.Object other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type GetType();
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
     public native system.Enum getMemberType();
     
@@ -49,9 +64,6 @@ public class MemberInfo extends system.Object implements system.reflection.ICust
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Module;")
     public native system.Object getModule();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
-    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
     
     public static system.Type typeof() {
         return system.reflection.MemberInfo.staticType;

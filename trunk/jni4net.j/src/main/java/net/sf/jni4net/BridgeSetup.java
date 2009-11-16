@@ -47,52 +47,52 @@ public class BridgeSetup extends system.Object {
     private native static void __ctorBridgeSetup2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String[] jvmOptions);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getBindCLRTypes();
+    public native boolean getBindCLRTypes();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native final void setBindCLRTypes(boolean value);
+    public native void setBindCLRTypes(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getVerbose();
+    public native boolean getVerbose();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native final void setVerbose(boolean value);
+    public native void setVerbose(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getDebug();
+    public native boolean getDebug();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native final void setDebug(boolean value);
+    public native void setDebug(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getBindNative();
+    public native boolean getBindNative();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native final void setBindNative(boolean value);
+    public native void setBindNative(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean getBindStatic();
+    public native boolean getBindStatic();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
-    public native final void setBindStatic(boolean value);
+    public native void setBindStatic(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native final java.lang.String[] getJVMOptions();
+    public native java.lang.String[] getJVMOptions();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native final java.lang.String[] getJVMCLassPath();
+    public native java.lang.String[] getJVMCLassPath();
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native final void AddBridgeClassPath();
+    public native void AddBridgeClassPath();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
-    public native final void AddClassPath(java.lang.String jarOrClassRoot);
+    public native void AddClassPath(java.lang.String jarOrClassRoot);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)V")
-    public native final void AddJVMOption(java.lang.String name, java.lang.String value);
+    public native void AddJVMOption(java.lang.String name, java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
-    public native final void AddAllJarsClassPath(java.lang.String directory);
+    public native void AddAllJarsClassPath(java.lang.String directory);
     
     public static system.Type typeof() {
         return net.sf.jni4net.BridgeSetup.staticType;

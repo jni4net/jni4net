@@ -130,6 +130,12 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;")
     public native system.Object ToType(system.Type conversionType, system.IFormatProvider provider);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)I")
+    public native int CompareTo(system.Decimal other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)Z")
+    public native boolean Equals(system.Decimal other);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)J")
     public native static long ToOACurrency(system.Decimal value);
     
@@ -145,14 +151,8 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;LSystem/Decimal;)I")
     public native static int Compare(system.Decimal d1, system.Decimal d2);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)I")
-    public native int CompareTo(system.Decimal value);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;")
     public native static system.Decimal Divide(system.Decimal d1, system.Decimal d2);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)Z")
-    public native boolean Equals(system.Decimal value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;LSystem/Decimal;)Z")
     public native static boolean Equals(system.Decimal d1, system.Decimal d2);
@@ -161,7 +161,7 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     public native static system.Decimal Floor(system.Decimal d);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/String;")
-    public native final java.lang.String ToString(java.lang.String format);
+    public native java.lang.String ToString(java.lang.String format);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Decimal;")
     public native static system.Decimal Parse(java.lang.String s);

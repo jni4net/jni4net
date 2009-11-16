@@ -59,7 +59,7 @@ namespace System {
             try {
             global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, formatType)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

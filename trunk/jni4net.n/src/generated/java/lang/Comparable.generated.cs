@@ -68,7 +68,7 @@ namespace java.lang {
             try {
             global::java.lang.Comparable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Comparable>(@__env, @__obj);
             return ((int)(@__real.compareTo(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         

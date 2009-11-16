@@ -77,7 +77,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return ((bool)(@__real.IsAsync));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -88,7 +88,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.Name);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -99,7 +99,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Security.AccessControl.FileSecurity>(@__env, @__real.GetAccessControl());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -110,7 +110,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             @__real.SetAccessControl(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static global::System.IntPtr Handle4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -120,7 +120,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return ((global::System.IntPtr)(@__real.Handle));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -131,7 +131,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, @__real.SafeFileHandle);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -142,7 +142,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             @__real.Lock(position, length);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Unlock7(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long position, long length) {
@@ -152,7 +152,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             @__real.Unlock(position, length);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode) {
@@ -162,7 +162,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access) {
@@ -172,7 +172,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share) {
@@ -182,7 +182,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileShare>(@__env, share));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream3(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize) {
@@ -192,7 +192,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileShare>(@__env, share), bufferSize);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream4(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize, global::System.IntPtr options) {
@@ -202,7 +202,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileShare>(@__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileOptions>(@__env, options));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream5(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize, bool useAsync) {
@@ -212,7 +212,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileShare>(@__env, share), bufferSize, useAsync);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream6(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr rights, global::System.IntPtr share, int bufferSize, global::System.IntPtr options, global::System.IntPtr fileSecurity) {
@@ -222,7 +222,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, path), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileMode>(@__env, mode), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Security.AccessControl.FileSystemRights>(@__env, rights), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileShare>(@__env, share), bufferSize, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileOptions>(@__env, options), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Security.AccessControl.FileSecurity>(@__env, fileSecurity));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream7(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
@@ -232,7 +232,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream8(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle) {
@@ -242,7 +242,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), ownsHandle);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream9(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize) {
@@ -252,7 +252,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), ownsHandle, bufferSize);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream10(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize, bool isAsync) {
@@ -262,7 +262,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(handle, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), ownsHandle, bufferSize, isAsync);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream11(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
@@ -272,7 +272,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream12(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize) {
@@ -282,7 +282,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), bufferSize);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorFileStream13(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize, bool isAsync) {
@@ -292,7 +292,7 @@ namespace System.IO {
             try {
             global::System.IO.FileStream @__real = new global::System.IO.FileStream(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, handle), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileAccess>(@__env, access), bufferSize, isAsync);
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

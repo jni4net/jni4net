@@ -93,9 +93,6 @@ public class Exception extends java.lang.RuntimeException implements IClrProxy, 
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;Lsystem/Exception;)V")
     private native static void __ctorException2(net.sf.jni4net.inj.IClrProxy thiz, java.lang.String message, system.Exception innerException);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(system.Object info, system.ValueType context);
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getMessage();
     
@@ -128,6 +125,9 @@ public class Exception extends java.lang.RuntimeException implements IClrProxy, 
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String ToString();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
+    public native void GetObjectData(system.Object info, system.ValueType context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type GetType();

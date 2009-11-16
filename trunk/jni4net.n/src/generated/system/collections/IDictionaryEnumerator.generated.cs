@@ -112,7 +112,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             return ((bool)(((global::System.Collections.IEnumerator)(@__real)).MoveNext()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -123,7 +123,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, ((global::System.Collections.IEnumerator)(@__real)).Current);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -134,7 +134,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             ((global::System.Collections.IEnumerator)(@__real)).Reset();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static global::System.IntPtr Key3(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -144,7 +144,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Key);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -155,7 +155,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -166,7 +166,7 @@ namespace System.Collections {
             try {
             global::System.Collections.IDictionaryEnumerator @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IDictionaryEnumerator>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Collections.DictionaryEntry>(@__env, @__real.Entry);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

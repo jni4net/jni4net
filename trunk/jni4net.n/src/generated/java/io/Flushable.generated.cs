@@ -68,7 +68,7 @@ namespace java.io {
             try {
             global::java.io.Flushable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.io.Flushable>(@__env, @__obj);
             @__real.flush();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

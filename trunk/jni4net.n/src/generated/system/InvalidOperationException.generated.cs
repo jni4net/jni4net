@@ -53,7 +53,7 @@ namespace System {
             try {
             global::System.InvalidOperationException @__real = new global::System.InvalidOperationException();
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorInvalidOperationException1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr message) {
@@ -63,7 +63,7 @@ namespace System {
             try {
             global::System.InvalidOperationException @__real = new global::System.InvalidOperationException(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorInvalidOperationException2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr message, global::System.IntPtr innerException) {
@@ -73,7 +73,7 @@ namespace System {
             try {
             global::System.InvalidOperationException @__real = new global::System.InvalidOperationException(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, message), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Exception>(@__env, innerException));
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

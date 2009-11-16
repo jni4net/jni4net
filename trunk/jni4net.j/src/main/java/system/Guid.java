@@ -61,20 +61,20 @@ public class Guid extends system.ValueType implements system.IFormattable, syste
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)I")
     public native int CompareTo(system.Object obj);
     
-    @net.sf.jni4net.attributes.ClrMethod("()[B")
-    public native final byte[] ToByteArray();
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;)I")
+    public native int CompareTo(system.Guid other);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;)Z")
-    public native boolean Equals(system.Guid g);
+    public native boolean Equals(system.Guid other);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;)I")
-    public native int CompareTo(system.Guid value);
+    @net.sf.jni4net.attributes.ClrMethod("()[B")
+    public native byte[] ToByteArray();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Guid;")
     public native static system.Guid NewGuid();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/String;")
-    public native final java.lang.String ToString(java.lang.String format);
+    public native java.lang.String ToString(java.lang.String format);
     
     public static system.Type typeof() {
         return system.Guid.staticType;

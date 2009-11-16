@@ -27,15 +27,6 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _write4;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor5;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public OutputStream() : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.OutputStream.staticClass, global::java.io.OutputStream.@__ctor5, this);
-        }
-        
         protected OutputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -53,7 +44,6 @@ namespace java.io {
             global::java.io.OutputStream._write2 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([B)V");
             global::java.io.OutputStream._write3 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([BII)V");
             global::java.io.OutputStream._write4 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "(I)V");
-            global::java.io.OutputStream.@__ctor5 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

@@ -28,17 +28,17 @@ public class CWithJavaInterface extends system.Object implements java.lang.Compa
     @net.sf.jni4net.attributes.ClrMethod("(I)V")
     private native static void __ctorCWithJavaInterface0(net.sf.jni4net.inj.IClrProxy thiz, int value);
     
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getValue();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(I)V")
-    public native final void setValue(int value);
-    
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/Object;)I")
-    public native int compareTo(java.lang.Object objectPar0);
+    public native int compareTo(java.lang.Object par0);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void run();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int getValue();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)V")
+    public native void setValue(int value);
     
     public static system.Type typeof() {
         return net.sf.jni4net.tested.CWithJavaInterface.staticType;
