@@ -104,7 +104,7 @@ namespace net.sf.jni4net.proxygen.model
             res.Attributes = type.Attributes;
             res.IsCLRType = true;
             res.IsInterface = type.IsInterface;
-            res.IsJVMProxy = javaProxyType.IsAssignableFrom(type);
+            res.IsJVMProxy = jvmProxyType.IsAssignableFrom(type);
             if (!res.IsJVMProxy)
             {
                 res.IsCLRRealType = true;
@@ -201,6 +201,10 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterCLRConstructors(GType type, bool register)
         {
+            if (type.IsAbstract)
+            {
+                return;
+            }
             Type clrType = type.CLRType;
             foreach (ConstructorInfo constructor in clrType.GetConstructors())
             {
@@ -429,7 +433,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             else if (!method.IsVirtual && !method.IsAbstract && !type.IsInterface)
             {
-                res.Attributes |= MemberAttributes.Final;
+                //TODO res.Attributes |= MemberAttributes.Final;
             }
         }
 

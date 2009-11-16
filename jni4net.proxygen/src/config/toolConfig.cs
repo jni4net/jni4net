@@ -363,10 +363,13 @@ namespace net.sf.jni4net.proxygen.config {
         
         private bool mergeJavaSourceField;
         
+        private bool generateField;
+        
         public TypeRegistration() {
             this.noMethodsField = false;
             this.syncInterfaceField = false;
             this.mergeJavaSourceField = false;
+            this.generateField = true;
         }
         
         /// <remarks/>
@@ -435,6 +438,18 @@ namespace net.sf.jni4net.proxygen.config {
             }
             set {
                 this.mergeJavaSourceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool Generate {
+            get {
+                return this.generateField;
+            }
+            set {
+                this.generateField = value;
             }
         }
     }

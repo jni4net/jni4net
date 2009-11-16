@@ -46,6 +46,16 @@ namespace net.sf.jni4net
             }
         }
 
+        public static IList<Assembly> KnownAssemblies
+        {
+            get
+            {
+                Assembly[] res=new Assembly[knownAssemblies.Count];
+                knownAssemblies.Keys.CopyTo(res, 0);
+                return res;
+            }
+        }
+
         public static JNIEnv CreateJVM(BridgeSetup setup)
         {
             if (jvmLoaded && setup.Verbose)

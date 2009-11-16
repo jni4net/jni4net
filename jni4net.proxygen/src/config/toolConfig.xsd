@@ -32,6 +32,7 @@
     <xs:attribute name="NoMethods" default="false" use="optional" type="xs:boolean"/>
     <xs:attribute name="SyncInterface" default="false" use="optional" type="xs:boolean"/>
     <xs:attribute name="MergeJavaSource" default="false" use="optional" type="xs:boolean"/>
+    <xs:attribute name="Generate" default="true" use="optional" type="xs:boolean"/>
   </xs:complexType>
 
   <xs:complexType name="MethodModifier">
