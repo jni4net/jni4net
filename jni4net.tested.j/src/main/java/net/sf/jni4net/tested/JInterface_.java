@@ -34,10 +34,10 @@ class __JInterface extends system.Object implements net.sf.jni4net.tested.JInter
     }
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native void runForrestRun();
+    public native void run();
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native void run();
+    public native void runForrestRun();
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void cdefined();

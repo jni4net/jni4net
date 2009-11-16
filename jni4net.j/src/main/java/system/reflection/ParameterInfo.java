@@ -32,6 +32,9 @@ public class ParameterInfo extends system.Object implements system.reflection.IC
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
     public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type getParameterType();
     
@@ -54,31 +57,28 @@ public class ParameterInfo extends system.Object implements system.reflection.IC
     public native system.reflection.MemberInfo getMember();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isIn();
+    public native boolean isIn();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isOut();
+    public native boolean isOut();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isLcid();
+    public native boolean isLcid();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isRetval();
+    public native boolean isRetval();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isOptional();
+    public native boolean isOptional();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getMetadataToken();
+    public native int getMetadataToken();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetRequiredCustomModifiers();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetOptionalCustomModifiers();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
-    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
     
     public static system.Type typeof() {
         return system.reflection.ParameterInfo.staticType;

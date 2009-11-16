@@ -29,10 +29,10 @@ public class CInterfacesHelper extends system.Object {
     private native static void __ctorCInterfacesHelper0(net.sf.jni4net.inj.IClrProxy thiz);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterface;")
-    public native final net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);
+    public native net.sf.jni4net.tested.CWithJavaInterface createCWithJavaInterface(int i);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
-    public native final system.Object CWithJavaInterfaceUnreg(int i);
+    public native system.Object CWithJavaInterfaceUnreg(int i);
     
     public static system.Type typeof() {
         return net.sf.jni4net.tested.CInterfacesHelper.staticType;

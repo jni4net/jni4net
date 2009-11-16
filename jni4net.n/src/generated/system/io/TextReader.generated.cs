@@ -59,7 +59,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             ((global::System.IDisposable)(@__real)).Dispose();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Close1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -69,7 +69,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             @__real.Close();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static int Peek2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -79,7 +79,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return ((int)(@__real.Peek()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -90,7 +90,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return ((int)(@__real.Read()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -101,7 +101,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return ((int)(@__real.Read(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -112,7 +112,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadToEnd());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -123,7 +123,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return ((int)(@__real.ReadBlock(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -134,7 +134,7 @@ namespace System.IO {
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadLine());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -144,7 +144,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextReader>(@__env, global::System.IO.TextReader.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, reader)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

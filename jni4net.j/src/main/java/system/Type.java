@@ -23,89 +23,53 @@ public class Type extends system.reflection.MemberInfo {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodBase;")
-    public native system.reflection.MethodBase getDeclaringMethod();
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
-    public native static system.Type GetType(java.lang.String typeName, boolean throwOnError, boolean ignoreCase);
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String ToString();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
-    public native static system.Type GetType(java.lang.String typeName, boolean throwOnError);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean Equals(system.Object other);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
-    public native static system.Type GetType(java.lang.String typeName);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
-    public native static system.Type ReflectionOnlyGetType(java.lang.String typeName, boolean throwIfNotFound, boolean ignoreCase);
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type MakePointerType();
+    public native system.Type GetType();
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Runtime/InteropServices/StructLayoutAttribute;")
-    public native system.Object getStructLayoutAttribute();
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
+    public native system.Enum getMemberType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String getName();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type MakeByRefType();
+    public native system.Type getDeclaringType();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type MakeArrayType();
+    public native system.Type getReflectedType();
     
-    @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/Type;")
-    public native system.Type MakeArrayType(int rank);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(system.Type attributeType, boolean inherit);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
-    public native static system.Type GetTypeFromProgID(java.lang.String progID);
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(boolean inherit);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
-    public native static system.Type GetTypeFromProgID(java.lang.String progID, boolean throwOnError);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)LSystem/Type;")
-    public native static system.Type GetTypeFromProgID(java.lang.String progID, java.lang.String server);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;Z)LSystem/Type;")
-    public native static system.Type GetTypeFromProgID(java.lang.String progID, java.lang.String server, boolean throwOnError);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;)LSystem/Type;")
-    public native static system.Type GetTypeFromCLSID(system.Guid clsid);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;Z)LSystem/Type;")
-    public native static system.Type GetTypeFromCLSID(system.Guid clsid, boolean throwOnError);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;LSystem/String;)LSystem/Type;")
-    public native static system.Type GetTypeFromCLSID(system.Guid clsid, java.lang.String server);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;LSystem/String;Z)LSystem/Type;")
-    public native static system.Type GetTypeFromCLSID(system.Guid clsid, java.lang.String server, boolean throwOnError);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/TypeCode;")
-    public native static system.Enum GetTypeCode(system.Type type);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
+    public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Guid;")
     public native system.Guid getGUID();
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Binder;")
-    public native static system.Object getDefaultBinder();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;[LSystem/Reflection/ParameterModifier;LSystem/Globalization/CultureInfo;[LSystem/String;)LSystem/Object;")
-    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.ValueType[] modifiers, system.Object culture, java.lang.String[] namedParameters);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
-    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.Object culture);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;)LSystem/Object;")
-    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args);
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Module;")
+    public native system.Object getModule();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Assembly;")
     public native system.reflection.Assembly getAssembly();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/RuntimeTypeHandle;")
     public native system.ValueType getTypeHandle();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/RuntimeTypeHandle;")
-    public native static system.ValueType GetTypeHandle(system.Object o);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeTypeHandle;)LSystem/Type;")
-    public native static system.Type GetTypeFromHandle(system.ValueType handle);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getFullName();
@@ -122,6 +86,93 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type getBaseType();
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/ConstructorInfo;")
+    public native system.reflection.ConstructorInfo[] GetConstructors(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
+    public native system.Type GetInterface(java.lang.String name, boolean ignoreCase);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
+    public native system.Type[] GetInterfaces();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/EventInfo;")
+    public native system.reflection.MemberInfo GetEvent(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/EventInfo;")
+    public native system.reflection.MemberInfo[] GetEvents();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/EventInfo;")
+    public native system.reflection.MemberInfo[] GetEvents(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Type;")
+    public native system.Type[] GetNestedTypes(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Type;")
+    public native system.Type GetNestedType(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/MemberTypes;LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
+    public native system.reflection.MemberInfo[] GetMember(java.lang.String name, system.Enum type, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/MemberInfo;")
+    public native system.reflection.MemberInfo[] GetDefaultMembers();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type GetElementType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
+    public native boolean IsSubclassOf(system.Type c);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean IsInstanceOfType(system.Object o);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
+    public native boolean IsAssignableFrom(system.Type c);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/Reflection/InterfaceMapping;")
+    public native system.ValueType GetInterfaceMap(system.Type interfaceType);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/MethodInfo;")
+    public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Type[] types, system.ValueType[] modifiers);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/MethodInfo;")
+    public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MethodInfo;")
+    public native system.reflection.MethodInfo[] GetMethods(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/FieldInfo;")
+    public native system.reflection.FieldInfo GetField(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/FieldInfo;")
+    public native system.reflection.FieldInfo[] GetFields(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/PropertyInfo;")
+    public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Type;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/PropertyInfo;")
+    public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Type returnType, system.Type[] types, system.ValueType[] modifiers);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/PropertyInfo;")
+    public native system.reflection.PropertyInfo[] GetProperties(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
+    public native system.reflection.MemberInfo[] GetMember(java.lang.String name, system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
+    public native system.reflection.MemberInfo[] GetMembers(system.reflection.BindingFlags bindingAttr);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;[LSystem/Reflection/ParameterModifier;LSystem/Globalization/CultureInfo;[LSystem/String;)LSystem/Object;")
+    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.ValueType[] modifiers, system.Object culture, java.lang.String[] namedParameters);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type getUnderlyingSystemType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
+    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args, system.Object culture);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Object;[LSystem/Object;)LSystem/Object;")
+    public native system.Object InvokeMember(java.lang.String name, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object target, system.Object[] args);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Reflection/CallingConventions;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/ConstructorInfo;")
     public native system.reflection.ConstructorInfo GetConstructor(system.reflection.BindingFlags bindingAttr, system.Object binder, system.Enum callConvention, system.Type[] types, system.ValueType[] modifiers);
     
@@ -134,17 +185,11 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/ConstructorInfo;")
     public native system.reflection.ConstructorInfo[] GetConstructors();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/ConstructorInfo;")
-    public native system.reflection.ConstructorInfo[] GetConstructors(system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/ConstructorInfo;")
     public native system.reflection.ConstructorInfo getTypeInitializer();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Reflection/CallingConventions;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Enum callConvention, system.Type[] types, system.ValueType[] modifiers);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/MethodInfo;")
-    public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Type[] types, system.ValueType[] modifiers);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.Type[] types, system.ValueType[] modifiers);
@@ -152,20 +197,11 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/Type;)LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.Type[] types);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/MethodInfo;")
-    public native system.reflection.MethodInfo GetMethod(java.lang.String name, system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetMethod(java.lang.String name);
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo[] GetMethods();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MethodInfo;")
-    public native system.reflection.MethodInfo[] GetMethods(system.reflection.BindingFlags bindingAttr);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/FieldInfo;")
-    public native system.reflection.FieldInfo GetField(java.lang.String name, system.reflection.BindingFlags bindingAttr);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/FieldInfo;")
     public native system.reflection.FieldInfo GetField(java.lang.String name);
@@ -173,38 +209,14 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/FieldInfo;")
     public native system.reflection.FieldInfo[] GetFields();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/FieldInfo;")
-    public native system.reflection.FieldInfo[] GetFields(system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
     public native system.Type GetInterface(java.lang.String name);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
-    public native system.Type GetInterface(java.lang.String name, boolean ignoreCase);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
-    public native system.Type[] GetInterfaces();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/EventInfo;")
     public native system.reflection.MemberInfo GetEvent(java.lang.String name);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/EventInfo;")
-    public native system.reflection.MemberInfo GetEvent(java.lang.String name, system.reflection.BindingFlags bindingAttr);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/EventInfo;")
-    public native system.reflection.MemberInfo[] GetEvents();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/EventInfo;")
-    public native system.reflection.MemberInfo[] GetEvents(system.reflection.BindingFlags bindingAttr);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Type;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/PropertyInfo;")
-    public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Type returnType, system.Type[] types, system.ValueType[] modifiers);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Type;[LSystem/Type;[LSystem/Reflection/ParameterModifier;)LSystem/Reflection/PropertyInfo;")
     public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.Type returnType, system.Type[] types, system.ValueType[] modifiers);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/PropertyInfo;")
-    public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.reflection.BindingFlags bindingAttr);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Type;[LSystem/Type;)LSystem/Reflection/PropertyInfo;")
     public native system.reflection.PropertyInfo GetProperty(java.lang.String name, system.Type returnType, system.Type[] types);
@@ -218,53 +230,23 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/PropertyInfo;")
     public native system.reflection.PropertyInfo GetProperty(java.lang.String name);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/PropertyInfo;")
-    public native system.reflection.PropertyInfo[] GetProperties(system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/PropertyInfo;")
     public native system.reflection.PropertyInfo[] GetProperties();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetNestedTypes();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Type;")
-    public native system.Type[] GetNestedTypes(system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
     public native system.Type GetNestedType(java.lang.String name);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Type;")
-    public native system.Type GetNestedType(java.lang.String name, system.reflection.BindingFlags bindingAttr);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)[LSystem/Reflection/MemberInfo;")
     public native system.reflection.MemberInfo[] GetMember(java.lang.String name);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
-    public native system.reflection.MemberInfo[] GetMember(java.lang.String name, system.reflection.BindingFlags bindingAttr);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/MemberTypes;LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
-    public native system.reflection.MemberInfo[] GetMember(java.lang.String name, system.Enum type, system.reflection.BindingFlags bindingAttr);
-    
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/MemberInfo;")
     public native system.reflection.MemberInfo[] GetMembers();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/BindingFlags;)[LSystem/Reflection/MemberInfo;")
-    public native system.reflection.MemberInfo[] GetMembers(system.reflection.BindingFlags bindingAttr);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/MemberInfo;")
-    public native system.reflection.MemberInfo[] GetDefaultMembers();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isNested();
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/TypeAttributes;")
     public native system.Enum getAttributes();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/GenericParameterAttributes;")
-    public native system.Enum getGenericParameterAttributes();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean isVisible();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean isNotPublic();
@@ -339,24 +321,6 @@ public class Type extends system.reflection.MemberInfo {
     public native boolean isArray();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean isGenericType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean isGenericTypeDefinition();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean isGenericParameter();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int getGenericParameterPosition();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean getContainsGenericParameters();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
-    public native system.Type[] GetGenericParameterConstraints();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean isByRef();
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
@@ -377,11 +341,104 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean isMarshalByRef();
     
-    @net.sf.jni4net.attributes.ClrMethod("([LSystem/Type;)LSystem/Type;")
-    public native system.Type MakeGenericType(system.Type[] typeArguments);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
+    public native boolean Equals(system.Type o);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodBase;")
+    public native system.reflection.MethodBase getDeclaringMethod();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
+    public native static system.Type GetType(java.lang.String typeName, boolean throwOnError, boolean ignoreCase);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
+    public native static system.Type GetType(java.lang.String typeName, boolean throwOnError);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
+    public native static system.Type GetType(java.lang.String typeName);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
+    public native static system.Type ReflectionOnlyGetType(java.lang.String typeName, boolean throwIfNotFound, boolean ignoreCase);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type GetElementType();
+    public native system.Type MakePointerType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Runtime/InteropServices/StructLayoutAttribute;")
+    public native system.Object getStructLayoutAttribute();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type MakeByRefType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type MakeArrayType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/Type;")
+    public native system.Type MakeArrayType(int rank);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
+    public native static system.Type GetTypeFromProgID(java.lang.String progID);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
+    public native static system.Type GetTypeFromProgID(java.lang.String progID, boolean throwOnError);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)LSystem/Type;")
+    public native static system.Type GetTypeFromProgID(java.lang.String progID, java.lang.String server);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;Z)LSystem/Type;")
+    public native static system.Type GetTypeFromProgID(java.lang.String progID, java.lang.String server, boolean throwOnError);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;)LSystem/Type;")
+    public native static system.Type GetTypeFromCLSID(system.Guid clsid);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;Z)LSystem/Type;")
+    public native static system.Type GetTypeFromCLSID(system.Guid clsid, boolean throwOnError);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;LSystem/String;)LSystem/Type;")
+    public native static system.Type GetTypeFromCLSID(system.Guid clsid, java.lang.String server);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;LSystem/String;Z)LSystem/Type;")
+    public native static system.Type GetTypeFromCLSID(system.Guid clsid, java.lang.String server, boolean throwOnError);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/TypeCode;")
+    public native static system.Enum GetTypeCode(system.Type type);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Binder;")
+    public native static system.Object getDefaultBinder();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/RuntimeTypeHandle;")
+    public native static system.ValueType GetTypeHandle(system.Object o);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeTypeHandle;)LSystem/Type;")
+    public native static system.Type GetTypeFromHandle(system.ValueType handle);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isNested();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/GenericParameterAttributes;")
+    public native system.Enum getGenericParameterAttributes();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isVisible();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isGenericType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isGenericTypeDefinition();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isGenericParameter();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int getGenericParameterPosition();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean getContainsGenericParameters();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
+    public native system.Type[] GetGenericParameterConstraints();
+    
+    @net.sf.jni4net.attributes.ClrMethod("([LSystem/Type;)LSystem/Type;")
+    public native system.Type MakeGenericType(system.Type[] typeArguments);
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetGenericArguments();
@@ -389,26 +446,8 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type GetGenericTypeDefinition();
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type getUnderlyingSystemType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
-    public native boolean IsSubclassOf(system.Type c);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native boolean IsInstanceOfType(system.Object o);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
-    public native boolean IsAssignableFrom(system.Type c);
-    
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/Object;)[LSystem/Type;")
     public native static system.Type[] GetTypeArray(system.Object[] args);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)Z")
-    public native boolean Equals(system.Type o);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/Reflection/InterfaceMapping;")
-    public native system.ValueType GetInterfaceMap(system.Type interfaceType);
     
     public static system.Type typeof() {
         return system.Type.staticType;

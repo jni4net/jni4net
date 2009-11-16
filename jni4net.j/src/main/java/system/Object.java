@@ -92,7 +92,7 @@ public class Object implements IClrProxy, system.IObject {
     public native int GetHashCode();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native final system.Type GetType();
+    public native system.Type GetType();
     
     public static system.Type typeof() {
         return system.Object.staticType;

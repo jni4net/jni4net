@@ -77,7 +77,7 @@ namespace System.Reflection {
             try {
             global::System.Reflection.ICustomAttributeProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Reflection.ICustomAttributeProvider>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<object[], object>(@__env, @__real.GetCustomAttributes(inherit));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -88,7 +88,7 @@ namespace System.Reflection {
             try {
             global::System.Reflection.ICustomAttributeProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Reflection.ICustomAttributeProvider>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<object[], object>(@__env, @__real.GetCustomAttributes(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, attributeType), inherit));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -99,7 +99,7 @@ namespace System.Reflection {
             try {
             global::System.Reflection.ICustomAttributeProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Reflection.ICustomAttributeProvider>(@__env, @__obj);
             return ((bool)(@__real.IsDefined(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, attributeType), inherit)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         

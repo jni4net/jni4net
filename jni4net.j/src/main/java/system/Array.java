@@ -111,73 +111,73 @@ public class Array extends system.Object implements system.ICloneable, system.co
     public native static void Clear(system.Array array, int index, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("([I)LSystem/Object;")
-    public native final system.Object GetValue(int[] indices);
+    public native system.Object GetValue(int[] indices);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/Object;")
-    public native final system.Object GetValue(int index);
+    public native system.Object GetValue(int index);
     
     @net.sf.jni4net.attributes.ClrMethod("(II)LSystem/Object;")
-    public native final system.Object GetValue(int index1, int index2);
+    public native system.Object GetValue(int index1, int index2);
     
     @net.sf.jni4net.attributes.ClrMethod("(III)LSystem/Object;")
-    public native final system.Object GetValue(int index1, int index2, int index3);
+    public native system.Object GetValue(int index1, int index2, int index3);
     
     @net.sf.jni4net.attributes.ClrMethod("(J)LSystem/Object;")
-    public native final system.Object GetValue(long index);
+    public native system.Object GetValue(long index);
     
     @net.sf.jni4net.attributes.ClrMethod("(JJ)LSystem/Object;")
-    public native final system.Object GetValue(long index1, long index2);
+    public native system.Object GetValue(long index1, long index2);
     
     @net.sf.jni4net.attributes.ClrMethod("(JJJ)LSystem/Object;")
-    public native final system.Object GetValue(long index1, long index2, long index3);
+    public native system.Object GetValue(long index1, long index2, long index3);
     
     @net.sf.jni4net.attributes.ClrMethod("([J)LSystem/Object;")
-    public native final system.Object GetValue(long[] indices);
+    public native system.Object GetValue(long[] indices);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;I)V")
-    public native final void SetValue(system.Object value, int index);
+    public native void SetValue(system.Object value, int index);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;II)V")
-    public native final void SetValue(system.Object value, int index1, int index2);
+    public native void SetValue(system.Object value, int index1, int index2);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;III)V")
-    public native final void SetValue(system.Object value, int index1, int index2, int index3);
+    public native void SetValue(system.Object value, int index1, int index2, int index3);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;[I)V")
-    public native final void SetValue(system.Object value, int[] indices);
+    public native void SetValue(system.Object value, int[] indices);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;J)V")
-    public native final void SetValue(system.Object value, long index);
+    public native void SetValue(system.Object value, long index);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;JJ)V")
-    public native final void SetValue(system.Object value, long index1, long index2);
+    public native void SetValue(system.Object value, long index1, long index2);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;JJJ)V")
-    public native final void SetValue(system.Object value, long index1, long index2, long index3);
+    public native void SetValue(system.Object value, long index1, long index2, long index3);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;[J)V")
-    public native final void SetValue(system.Object value, long[] indices);
+    public native void SetValue(system.Object value, long[] indices);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getLength();
+    public native int getLength();
     
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long getLongLength();
+    public native long getLongLength();
     
     @net.sf.jni4net.attributes.ClrMethod("(I)I")
-    public native final int GetLength(int dimension);
+    public native int GetLength(int dimension);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)J")
-    public native final long GetLongLength(int dimension);
+    public native long GetLongLength(int dimension);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getRank();
+    public native int getRank();
     
     @net.sf.jni4net.attributes.ClrMethod("(I)I")
-    public native final int GetUpperBound(int dimension);
+    public native int GetUpperBound(int dimension);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)I")
-    public native final int GetLowerBound(int dimension);
+    public native int GetLowerBound(int dimension);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Object;)I")
     public native static int BinarySearch(system.Array array, system.Object value);
@@ -192,7 +192,7 @@ public class Array extends system.Object implements system.ICloneable, system.co
     public native static int BinarySearch(system.Array array, int index, int length, system.Object value, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;J)V")
-    public native final void CopyTo(system.Array array, long index);
+    public native void CopyTo(system.Array array, long index);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Array;LSystem/Object;)I")
     public native static int IndexOf(system.Array array, system.Object value);
@@ -243,7 +243,7 @@ public class Array extends system.Object implements system.ICloneable, system.co
     public native static void Sort(system.Array keys, system.Array items, int index, int length, system.Object comparer);
     
     @net.sf.jni4net.attributes.ClrMethod("()V")
-    public native final void Initialize();
+    public native void Initialize();
     
     public static system.Type typeof() {
         return system.Array.staticType;

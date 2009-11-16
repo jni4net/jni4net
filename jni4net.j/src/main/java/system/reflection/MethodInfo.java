@@ -23,17 +23,113 @@ public class MethodInfo extends system.reflection.MethodBase {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String ToString();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean Equals(system.Object other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type GetType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
+    public native system.Enum getMemberType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String getName();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type getDeclaringType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type getReflectedType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(system.Type attributeType, boolean inherit);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(boolean inherit);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
+    public native boolean IsDefined(system.Type attributeType, boolean inherit);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/ParameterInfo;")
+    public native system.reflection.ParameterInfo[] GetParameters();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodImplAttributes;")
+    public native system.Enum GetMethodImplementationFlags();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/RuntimeMethodHandle;")
+    public native system.ValueType getMethodHandle();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodAttributes;")
+    public native system.Enum getAttributes();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/CallingConventions;")
+    public native system.Enum getCallingConvention();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;)LSystem/Object;")
+    public native system.Object Invoke(system.Object obj, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object[] parameters, system.Object culture);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isPublic();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isPrivate();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isFamily();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isAssembly();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isFamilyAndAssembly();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isFamilyOrAssembly();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isStatic();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isFinal();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isVirtual();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isHideBySig();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isAbstract();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isSpecialName();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean isConstructor();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;[LSystem/Object;)LSystem/Object;")
+    public native system.Object Invoke(system.Object obj, system.Object[] parameters);
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type getReturnType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/ParameterInfo;")
-    public native system.reflection.ParameterInfo getReturnParameter();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/ICustomAttributeProvider;")
     public native system.reflection.ICustomAttributeProvider getReturnTypeCustomAttributes();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetBaseDefinition();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/ParameterInfo;")
+    public native system.reflection.ParameterInfo getReturnParameter();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo GetGenericMethodDefinition();

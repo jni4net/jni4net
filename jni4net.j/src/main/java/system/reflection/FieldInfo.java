@@ -23,20 +23,41 @@ public class FieldInfo extends system.reflection.MemberInfo {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeFieldHandle;)LSystem/Reflection/FieldInfo;")
-    public native static system.reflection.FieldInfo GetFieldFromHandle(system.ValueType handle);
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeFieldHandle;LSystem/RuntimeTypeHandle;)LSystem/Reflection/FieldInfo;")
-    public native static system.reflection.FieldInfo GetFieldFromHandle(system.ValueType handle, system.ValueType declaringType);
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String ToString();
     
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
-    public native system.Type[] GetRequiredCustomModifiers();
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean Equals(system.Object other);
     
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
-    public native system.Type[] GetOptionalCustomModifiers();
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/RuntimeFieldHandle;")
-    public native system.ValueType getFieldHandle();
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type GetType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
+    public native system.Enum getMemberType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String getName();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type getDeclaringType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type getReflectedType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(system.Type attributeType, boolean inherit);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Object;")
+    public native system.Object[] GetCustomAttributes(boolean inherit);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
+    public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type getFieldType();
@@ -44,11 +65,11 @@ public class FieldInfo extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)LSystem/Object;")
     public native system.Object GetValue(system.Object obj);
     
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Object;")
-    public native system.Object GetRawConstantValue();
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;LSystem/Object;LSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;LSystem/Globalization/CultureInfo;)V")
     public native void SetValue(system.Object obj, system.Object value, system.reflection.BindingFlags invokeAttr, system.Object binder, system.Object culture);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/RuntimeFieldHandle;")
+    public native system.ValueType getFieldHandle();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/FieldAttributes;")
     public native system.Enum getAttributes();
@@ -91,6 +112,21 @@ public class FieldInfo extends system.reflection.MemberInfo {
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean isPinvokeImpl();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeFieldHandle;)LSystem/Reflection/FieldInfo;")
+    public native static system.reflection.FieldInfo GetFieldFromHandle(system.ValueType handle);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/RuntimeFieldHandle;LSystem/RuntimeTypeHandle;)LSystem/Reflection/FieldInfo;")
+    public native static system.reflection.FieldInfo GetFieldFromHandle(system.ValueType handle, system.ValueType declaringType);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
+    public native system.Type[] GetRequiredCustomModifiers();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
+    public native system.Type[] GetOptionalCustomModifiers();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Object;")
+    public native system.Object GetRawConstantValue();
     
     public static system.Type typeof() {
         return system.reflection.FieldInfo.staticType;

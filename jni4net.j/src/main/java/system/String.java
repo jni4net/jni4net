@@ -114,17 +114,20 @@ public class String extends system.Object implements system.IComparable, system.
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Collections/IEnumerator;")
     public native system.collections.IEnumerator GetEnumerator();
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)I")
+    public native int CompareTo(java.lang.String other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
+    public native boolean Equals(java.lang.String other);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;)LSystem/String;")
     public native static java.lang.String Join(java.lang.String separator, java.lang.String[] value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;II)LSystem/String;")
     public native static java.lang.String Join(java.lang.String separator, java.lang.String[] value, int startIndex, int count);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
-    public native boolean Equals(java.lang.String value);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/StringComparison;)Z")
-    public native final boolean Equals(java.lang.String value, system.Enum comparisonType);
+    public native boolean Equals(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)Z")
     public native static boolean Equals(java.lang.String a, java.lang.String b);
@@ -133,67 +136,67 @@ public class String extends system.Object implements system.IComparable, system.
     public native static boolean Equals(java.lang.String a, java.lang.String b, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)C")
-    public native final char getChars(int index);
+    public native char getChars(int index);
     
     @net.sf.jni4net.attributes.ClrMethod("(I[CII)V")
-    public native final void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count);
+    public native void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("()[C")
-    public native final char[] ToCharArray();
+    public native char[] ToCharArray();
     
     @net.sf.jni4net.attributes.ClrMethod("(II)[C")
-    public native final char[] ToCharArray(int startIndex, int length);
+    public native char[] ToCharArray(int startIndex, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
     public native static boolean IsNullOrEmpty(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getLength();
+    public native int getLength();
     
     @net.sf.jni4net.attributes.ClrMethod("([C)[LSystem/String;")
-    public native final java.lang.String[] Split(char[] separator);
+    public native java.lang.String[] Split(char[] separator);
     
     @net.sf.jni4net.attributes.ClrMethod("([CI)[LSystem/String;")
-    public native final java.lang.String[] Split(char[] separator, int count);
+    public native java.lang.String[] Split(char[] separator, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("([CLSystem/StringSplitOptions;)[LSystem/String;")
-    public native final java.lang.String[] Split(char[] separator, system.Enum options);
+    public native java.lang.String[] Split(char[] separator, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([CILSystem/StringSplitOptions;)[LSystem/String;")
-    public native final java.lang.String[] Split(char[] separator, int count, system.Enum options);
+    public native java.lang.String[] Split(char[] separator, int count, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;LSystem/StringSplitOptions;)[LSystem/String;")
-    public native final java.lang.String[] Split(java.lang.String[] separator, system.Enum options);
+    public native java.lang.String[] Split(java.lang.String[] separator, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;ILSystem/StringSplitOptions;)[LSystem/String;")
-    public native final java.lang.String[] Split(java.lang.String[] separator, int count, system.Enum options);
+    public native java.lang.String[] Split(java.lang.String[] separator, int count, system.Enum options);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/String;")
-    public native final java.lang.String Substring(int startIndex);
+    public native java.lang.String Substring(int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(II)LSystem/String;")
-    public native final java.lang.String Substring(int startIndex, int length);
+    public native java.lang.String Substring(int startIndex, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)LSystem/String;")
-    public native final java.lang.String Trim(char[] trimChars);
+    public native java.lang.String Trim(char[] trimChars);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)LSystem/String;")
-    public native final java.lang.String TrimStart(char[] trimChars);
+    public native java.lang.String TrimStart(char[] trimChars);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)LSystem/String;")
-    public native final java.lang.String TrimEnd(char[] trimChars);
+    public native java.lang.String TrimEnd(char[] trimChars);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean IsNormalized();
+    public native boolean IsNormalized();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Text/NormalizationForm;)Z")
-    public native final boolean IsNormalized(system.Enum normalizationForm);
+    public native boolean IsNormalized(system.Enum normalizationForm);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String Normalize();
+    public native java.lang.String Normalize();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Text/NormalizationForm;)LSystem/String;")
-    public native final java.lang.String Normalize(system.Enum normalizationForm);
+    public native java.lang.String Normalize(system.Enum normalizationForm);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)I")
     public native static int Compare(java.lang.String strA, java.lang.String strB);
@@ -225,9 +228,6 @@ public class String extends system.Object implements system.IComparable, system.
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/String;IILSystem/StringComparison;)I")
     public native static int Compare(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length, system.Enum comparisonType);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)I")
-    public native int CompareTo(java.lang.String strB);
-    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)I")
     public native static int CompareOrdinal(java.lang.String strA, java.lang.String strB);
     
@@ -235,145 +235,145 @@ public class String extends system.Object implements system.IComparable, system.
     public native static int CompareOrdinal(java.lang.String strA, int indexA, java.lang.String strB, int indexB, int length);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
-    public native final boolean Contains(java.lang.String value);
+    public native boolean Contains(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
-    public native final boolean EndsWith(java.lang.String value);
+    public native boolean EndsWith(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/StringComparison;)Z")
-    public native final boolean EndsWith(java.lang.String value, system.Enum comparisonType);
+    public native boolean EndsWith(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Globalization/CultureInfo;)Z")
-    public native final boolean EndsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
+    public native boolean EndsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(C)I")
-    public native final int IndexOf(char value);
+    public native int IndexOf(char value);
     
     @net.sf.jni4net.attributes.ClrMethod("(CI)I")
-    public native final int IndexOf(char value, int startIndex);
+    public native int IndexOf(char value, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(CII)I")
-    public native final int IndexOf(char value, int startIndex, int count);
+    public native int IndexOf(char value, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)I")
-    public native final int IndexOfAny(char[] anyOf);
+    public native int IndexOfAny(char[] anyOf);
     
     @net.sf.jni4net.attributes.ClrMethod("([CI)I")
-    public native final int IndexOfAny(char[] anyOf, int startIndex);
+    public native int IndexOfAny(char[] anyOf, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("([CII)I")
-    public native final int IndexOfAny(char[] anyOf, int startIndex, int count);
+    public native int IndexOfAny(char[] anyOf, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)I")
-    public native final int IndexOf(java.lang.String value);
+    public native int IndexOf(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;I)I")
-    public native final int IndexOf(java.lang.String value, int startIndex);
+    public native int IndexOf(java.lang.String value, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;II)I")
-    public native final int IndexOf(java.lang.String value, int startIndex, int count);
+    public native int IndexOf(java.lang.String value, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/StringComparison;)I")
-    public native final int IndexOf(java.lang.String value, system.Enum comparisonType);
+    public native int IndexOf(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/StringComparison;)I")
-    public native final int IndexOf(java.lang.String value, int startIndex, system.Enum comparisonType);
+    public native int IndexOf(java.lang.String value, int startIndex, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;IILSystem/StringComparison;)I")
-    public native final int IndexOf(java.lang.String value, int startIndex, int count, system.Enum comparisonType);
+    public native int IndexOf(java.lang.String value, int startIndex, int count, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(C)I")
-    public native final int LastIndexOf(char value);
+    public native int LastIndexOf(char value);
     
     @net.sf.jni4net.attributes.ClrMethod("(CI)I")
-    public native final int LastIndexOf(char value, int startIndex);
+    public native int LastIndexOf(char value, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(CII)I")
-    public native final int LastIndexOf(char value, int startIndex, int count);
+    public native int LastIndexOf(char value, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("([C)I")
-    public native final int LastIndexOfAny(char[] anyOf);
+    public native int LastIndexOfAny(char[] anyOf);
     
     @net.sf.jni4net.attributes.ClrMethod("([CI)I")
-    public native final int LastIndexOfAny(char[] anyOf, int startIndex);
+    public native int LastIndexOfAny(char[] anyOf, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("([CII)I")
-    public native final int LastIndexOfAny(char[] anyOf, int startIndex, int count);
+    public native int LastIndexOfAny(char[] anyOf, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)I")
-    public native final int LastIndexOf(java.lang.String value);
+    public native int LastIndexOf(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;I)I")
-    public native final int LastIndexOf(java.lang.String value, int startIndex);
+    public native int LastIndexOf(java.lang.String value, int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;II)I")
-    public native final int LastIndexOf(java.lang.String value, int startIndex, int count);
+    public native int LastIndexOf(java.lang.String value, int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/StringComparison;)I")
-    public native final int LastIndexOf(java.lang.String value, system.Enum comparisonType);
+    public native int LastIndexOf(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ILSystem/StringComparison;)I")
-    public native final int LastIndexOf(java.lang.String value, int startIndex, system.Enum comparisonType);
+    public native int LastIndexOf(java.lang.String value, int startIndex, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;IILSystem/StringComparison;)I")
-    public native final int LastIndexOf(java.lang.String value, int startIndex, int count, system.Enum comparisonType);
+    public native int LastIndexOf(java.lang.String value, int startIndex, int count, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/String;")
-    public native final java.lang.String PadLeft(int totalWidth);
+    public native java.lang.String PadLeft(int totalWidth);
     
     @net.sf.jni4net.attributes.ClrMethod("(IC)LSystem/String;")
-    public native final java.lang.String PadLeft(int totalWidth, char paddingChar);
+    public native java.lang.String PadLeft(int totalWidth, char paddingChar);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/String;")
-    public native final java.lang.String PadRight(int totalWidth);
+    public native java.lang.String PadRight(int totalWidth);
     
     @net.sf.jni4net.attributes.ClrMethod("(IC)LSystem/String;")
-    public native final java.lang.String PadRight(int totalWidth, char paddingChar);
+    public native java.lang.String PadRight(int totalWidth, char paddingChar);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)Z")
-    public native final boolean StartsWith(java.lang.String value);
+    public native boolean StartsWith(java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/StringComparison;)Z")
-    public native final boolean StartsWith(java.lang.String value, system.Enum comparisonType);
+    public native boolean StartsWith(java.lang.String value, system.Enum comparisonType);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Globalization/CultureInfo;)Z")
-    public native final boolean StartsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
+    public native boolean StartsWith(java.lang.String value, boolean ignoreCase, system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToLower();
+    public native java.lang.String ToLower();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;)LSystem/String;")
-    public native final java.lang.String ToLower(system.Object culture);
+    public native java.lang.String ToLower(system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToLowerInvariant();
+    public native java.lang.String ToLowerInvariant();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToUpper();
+    public native java.lang.String ToUpper();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;)LSystem/String;")
-    public native final java.lang.String ToUpper(system.Object culture);
+    public native java.lang.String ToUpper(system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToUpperInvariant();
+    public native java.lang.String ToUpperInvariant();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String Trim();
+    public native java.lang.String Trim();
     
     @net.sf.jni4net.attributes.ClrMethod("(ILSystem/String;)LSystem/String;")
-    public native final java.lang.String Insert(int startIndex, java.lang.String value);
+    public native java.lang.String Insert(int startIndex, java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(CC)LSystem/String;")
-    public native final java.lang.String Replace(char oldChar, char newChar);
+    public native java.lang.String Replace(char oldChar, char newChar);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)LSystem/String;")
-    public native final java.lang.String Replace(java.lang.String oldValue, java.lang.String newValue);
+    public native java.lang.String Replace(java.lang.String oldValue, java.lang.String newValue);
     
     @net.sf.jni4net.attributes.ClrMethod("(II)LSystem/String;")
-    public native final java.lang.String Remove(int startIndex, int count);
+    public native java.lang.String Remove(int startIndex, int count);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/String;")
-    public native final java.lang.String Remove(int startIndex);
+    public native java.lang.String Remove(int startIndex);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Object;)LSystem/String;")
     public native static java.lang.String Format(java.lang.String format, system.Object arg0);

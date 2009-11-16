@@ -191,7 +191,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.util.Iterator>(@__env, ((global::java.lang.Iterable)(@__real)).iterator());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -202,7 +202,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((int)(((global::java.util.Collection)(@__real)).hashCode()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -213,7 +213,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).add(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -224,7 +224,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             ((global::java.util.Collection)(@__real)).clear();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static bool equals4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr par0) {
@@ -234,7 +234,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).equals(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -245,7 +245,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).contains(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -256,7 +256,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).addAll(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -267,7 +267,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((int)(((global::java.util.Collection)(@__real)).size()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -278,7 +278,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.Object[], global::java.lang.Object>(@__env, ((global::java.util.Collection)(@__real)).toArray(global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.Object[], global::java.lang.Object>(@__env, par0)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -289,7 +289,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.Object[], global::java.lang.Object>(@__env, ((global::java.util.Collection)(@__real)).toArray());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -300,7 +300,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).remove(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -311,7 +311,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).isEmpty()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -322,7 +322,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).containsAll(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -333,7 +333,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).removeAll(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -344,7 +344,7 @@ namespace java.util {
             try {
             global::java.util.Set @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__obj);
             return ((bool)(((global::java.util.Collection)(@__real)).retainAll(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, par0))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         

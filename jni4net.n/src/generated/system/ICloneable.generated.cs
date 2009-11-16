@@ -59,7 +59,7 @@ namespace System {
             try {
             global::System.ICloneable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.ICloneable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Clone());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

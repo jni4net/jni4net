@@ -39,6 +39,18 @@ public class Assembly extends system.Object implements system.security.IEvidence
     public native void GetObjectData(system.Object info, system.ValueType context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String ToString();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
+    public native boolean Equals(system.Object other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()I")
+    public native int GetHashCode();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
+    public native system.Type GetType();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getCodeBase();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
@@ -53,23 +65,14 @@ public class Assembly extends system.Object implements system.security.IEvidence
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getFullName();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)LSystem/String;")
-    public native static java.lang.String CreateQualifiedName(java.lang.String assemblyName, java.lang.String typeName);
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MethodInfo;")
     public native system.reflection.MethodInfo getEntryPoint();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/Reflection/Assembly;")
-    public native static system.reflection.Assembly GetAssembly(system.Type type);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Type;")
     public native system.Type GetType(java.lang.String name);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Type;")
     public native system.Type GetType(java.lang.String name, boolean throwOnError);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
-    public native system.Type GetType(java.lang.String name, boolean throwOnError, boolean ignoreCase);
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetExportedTypes();
@@ -83,14 +86,77 @@ public class Assembly extends system.Object implements system.security.IEvidence
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/IO/Stream;")
     public native system.io.Stream GetManifestResourceStream(java.lang.String name);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/IO/FileStream;")
+    public native system.io.FileStream GetFile(java.lang.String name);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/IO/FileStream;")
+    public native system.io.FileStream[] GetFiles();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/IO/FileStream;")
+    public native system.io.FileStream[] GetFiles(boolean getResourceModules);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
+    public native java.lang.String[] GetManifestResourceNames();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/ManifestResourceInfo;")
+    public native system.Object GetManifestResourceInfo(java.lang.String resourceName);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String getLocation();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
+    public native system.Type GetType(java.lang.String name, boolean throwOnError, boolean ignoreCase);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;)LSystem/Reflection/Assembly;")
     public native system.reflection.Assembly GetSatelliteAssembly(system.Object culture);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Globalization/CultureInfo;LSystem/Version;)LSystem/Reflection/Assembly;")
     public native system.reflection.Assembly GetSatelliteAssembly(system.Object culture, system.Object version);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[B)LSystem/Reflection/Module;")
+    public native system.Object LoadModule(java.lang.String moduleName, byte[] rawModule);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[B[B)LSystem/Reflection/Module;")
+    public native system.Object LoadModule(java.lang.String moduleName, byte[] rawModule, byte[] rawSymbolStore);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Object;")
+    public native system.Object CreateInstance(java.lang.String typeName);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Object;")
+    public native system.Object CreateInstance(java.lang.String typeName, boolean ignoreCase);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;[LSystem/Object;)LSystem/Object;")
+    public native system.Object CreateInstance(java.lang.String typeName, boolean ignoreCase, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Object[] args, system.Object culture, system.Object[] activationAttributes);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/Module;")
+    public native system.Object[] GetLoadedModules();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Reflection/Module;")
+    public native system.Object[] GetLoadedModules(boolean getResourceModules);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/Module;")
+    public native system.Object[] GetModules();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Reflection/Module;")
+    public native system.Object[] GetModules(boolean getResourceModules);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/Module;")
+    public native system.Object GetModule(java.lang.String name);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/AssemblyName;")
+    public native system.Object[] GetReferencedAssemblies();
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean getGlobalAssemblyCache();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;)LSystem/String;")
+    public native static java.lang.String CreateQualifiedName(java.lang.String assemblyName, java.lang.String typeName);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;)LSystem/Reflection/Assembly;")
+    public native static system.reflection.Assembly GetAssembly(system.Type type);
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Module;")
-    public native final system.Object getManifestModule();
+    public native system.Object getManifestModule();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/Assembly;")
     public native static system.reflection.Assembly LoadFrom(java.lang.String assemblyFile);
@@ -146,48 +212,6 @@ public class Assembly extends system.Object implements system.security.IEvidence
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;")
     public native static system.reflection.Assembly LoadFile(java.lang.String path, system.Object securityEvidence);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[B)LSystem/Reflection/Module;")
-    public native system.Object LoadModule(java.lang.String moduleName, byte[] rawModule);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[B[B)LSystem/Reflection/Module;")
-    public native system.Object LoadModule(java.lang.String moduleName, byte[] rawModule, byte[] rawSymbolStore);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Object;")
-    public native system.Object CreateInstance(java.lang.String typeName);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;Z)LSystem/Object;")
-    public native system.Object CreateInstance(java.lang.String typeName, boolean ignoreCase);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZLSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;[LSystem/Object;)LSystem/Object;")
-    public native system.Object CreateInstance(java.lang.String typeName, boolean ignoreCase, system.reflection.BindingFlags bindingAttr, system.Object binder, system.Object[] args, system.Object culture, system.Object[] activationAttributes);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/Module;")
-    public native system.Object[] GetLoadedModules();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Reflection/Module;")
-    public native system.Object[] GetLoadedModules(boolean getResourceModules);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/Module;")
-    public native system.Object[] GetModules();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Reflection/Module;")
-    public native system.Object[] GetModules(boolean getResourceModules);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/Module;")
-    public native system.Object GetModule(java.lang.String name);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/IO/FileStream;")
-    public native system.io.FileStream GetFile(java.lang.String name);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/IO/FileStream;")
-    public native system.io.FileStream[] GetFiles();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/IO/FileStream;")
-    public native system.io.FileStream[] GetFiles(boolean getResourceModules);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native java.lang.String[] GetManifestResourceNames();
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Assembly;")
     public native static system.reflection.Assembly GetExecutingAssembly();
     
@@ -197,23 +221,11 @@ public class Assembly extends system.Object implements system.security.IEvidence
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/Assembly;")
     public native static system.reflection.Assembly GetEntryAssembly();
     
-    @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/AssemblyName;")
-    public native system.Object[] GetReferencedAssemblies();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/Reflection/ManifestResourceInfo;")
-    public native system.Object GetManifestResourceInfo(java.lang.String resourceName);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native java.lang.String getLocation();
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getImageRuntimeVersion();
     
-    @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native boolean getGlobalAssemblyCache();
-    
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long getHostContext();
+    public native long getHostContext();
     
     public static system.Type typeof() {
         return system.reflection.Assembly.staticType;

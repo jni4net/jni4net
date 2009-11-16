@@ -178,44 +178,44 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
     public native void GetObjectData(system.Object info, system.ValueType context);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)I")
+    public native int CompareTo(system.DateTime other);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)Z")
+    public native boolean Equals(system.DateTime other);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/TimeSpan;)LSystem/DateTime;")
-    public native final system.DateTime Add(system.ValueType value);
+    public native system.DateTime Add(system.ValueType value);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)LSystem/DateTime;")
-    public native final system.DateTime AddDays(double value);
+    public native system.DateTime AddDays(double value);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)LSystem/DateTime;")
-    public native final system.DateTime AddHours(double value);
+    public native system.DateTime AddHours(double value);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)LSystem/DateTime;")
-    public native final system.DateTime AddMilliseconds(double value);
+    public native system.DateTime AddMilliseconds(double value);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)LSystem/DateTime;")
-    public native final system.DateTime AddMinutes(double value);
+    public native system.DateTime AddMinutes(double value);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/DateTime;")
-    public native final system.DateTime AddMonths(int months);
+    public native system.DateTime AddMonths(int months);
     
     @net.sf.jni4net.attributes.ClrMethod("(D)LSystem/DateTime;")
-    public native final system.DateTime AddSeconds(double value);
+    public native system.DateTime AddSeconds(double value);
     
     @net.sf.jni4net.attributes.ClrMethod("(J)LSystem/DateTime;")
-    public native final system.DateTime AddTicks(long value);
+    public native system.DateTime AddTicks(long value);
     
     @net.sf.jni4net.attributes.ClrMethod("(I)LSystem/DateTime;")
-    public native final system.DateTime AddYears(int value);
+    public native system.DateTime AddYears(int value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;LSystem/DateTime;)I")
     public native static int Compare(system.DateTime t1, system.DateTime t2);
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)I")
-    public native int CompareTo(system.DateTime value);
-    
     @net.sf.jni4net.attributes.ClrMethod("(II)I")
     public native static int DaysInMonth(int year, int month);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)Z")
-    public native boolean Equals(system.DateTime value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;LSystem/DateTime;)Z")
     public native static boolean Equals(system.DateTime t1, system.DateTime t2);
@@ -233,40 +233,40 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native static system.DateTime FromOADate(double d);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
-    public native final boolean IsDaylightSavingTime();
+    public native boolean IsDaylightSavingTime();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;LSystem/DateTimeKind;)LSystem/DateTime;")
     public native static system.DateTime SpecifyKind(system.DateTime value, system.Enum kind);
     
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long ToBinary();
+    public native long ToBinary();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
-    public native final system.DateTime getDate();
+    public native system.DateTime getDate();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getDay();
+    public native int getDay();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DayOfWeek;")
-    public native final system.Enum getDayOfWeek();
+    public native system.Enum getDayOfWeek();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getDayOfYear();
+    public native int getDayOfYear();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getHour();
+    public native int getHour();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTimeKind;")
-    public native final system.Enum getKind();
+    public native system.Enum getKind();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getMillisecond();
+    public native int getMillisecond();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getMinute();
+    public native int getMinute();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getMonth();
+    public native int getMonth();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
     public native static system.DateTime getNow();
@@ -275,19 +275,19 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native static system.DateTime getUtcNow();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getSecond();
+    public native int getSecond();
     
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long getTicks();
+    public native long getTicks();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/TimeSpan;")
-    public native final system.ValueType getTimeOfDay();
+    public native system.ValueType getTimeOfDay();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
     public native static system.DateTime getToday();
     
     @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native final int getYear();
+    public native int getYear();
     
     @net.sf.jni4net.attributes.ClrMethod("(I)Z")
     public native static boolean IsLeapYear(int year);
@@ -311,52 +311,52 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native static system.DateTime ParseExact(java.lang.String s, java.lang.String[] formats, system.IFormatProvider provider, system.Enum style);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)LSystem/TimeSpan;")
-    public native final system.ValueType Subtract(system.DateTime value);
+    public native system.ValueType Subtract(system.DateTime value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/TimeSpan;)LSystem/DateTime;")
-    public native final system.DateTime Subtract(system.ValueType value);
+    public native system.DateTime Subtract(system.ValueType value);
     
     @net.sf.jni4net.attributes.ClrMethod("()D")
-    public native final double ToOADate();
+    public native double ToOADate();
     
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long ToFileTime();
+    public native long ToFileTime();
     
     @net.sf.jni4net.attributes.ClrMethod("()J")
-    public native final long ToFileTimeUtc();
+    public native long ToFileTimeUtc();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
-    public native final system.DateTime ToLocalTime();
+    public native system.DateTime ToLocalTime();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToLongDateString();
+    public native java.lang.String ToLongDateString();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToLongTimeString();
+    public native java.lang.String ToLongTimeString();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToShortDateString();
+    public native java.lang.String ToShortDateString();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String ToShortTimeString();
+    public native java.lang.String ToShortTimeString();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)LSystem/String;")
-    public native final java.lang.String ToString(java.lang.String format);
+    public native java.lang.String ToString(java.lang.String format);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
-    public native final system.DateTime ToUniversalTime();
+    public native system.DateTime ToUniversalTime();
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
-    public native final java.lang.String[] GetDateTimeFormats();
+    public native java.lang.String[] GetDateTimeFormats();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IFormatProvider;)[LSystem/String;")
-    public native final java.lang.String[] GetDateTimeFormats(system.IFormatProvider provider);
+    public native java.lang.String[] GetDateTimeFormats(system.IFormatProvider provider);
     
     @net.sf.jni4net.attributes.ClrMethod("(C)[LSystem/String;")
-    public native final java.lang.String[] GetDateTimeFormats(char format);
+    public native java.lang.String[] GetDateTimeFormats(char format);
     
     @net.sf.jni4net.attributes.ClrMethod("(CLSystem/IFormatProvider;)[LSystem/String;")
-    public native final java.lang.String[] GetDateTimeFormats(char format, system.IFormatProvider provider);
+    public native java.lang.String[] GetDateTimeFormats(char format, system.IFormatProvider provider);
     
     public static system.Type typeof() {
         return system.DateTime.staticType;

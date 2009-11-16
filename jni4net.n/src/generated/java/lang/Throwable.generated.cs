@@ -13,7 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public partial class Throwable : global::java.io.Serializable {
+    public partial class Throwable {
         
         internal static global::java.lang.Class staticClass;
         

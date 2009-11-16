@@ -59,7 +59,7 @@ namespace System.Runtime.Serialization {
             try {
             global::System.Runtime.Serialization.ISerializable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Runtime.Serialization.ISerializable>(@__env, @__obj);
             @__real.GetObjectData(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

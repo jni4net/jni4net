@@ -89,7 +89,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             ((global::System.IDisposable)(@__real)).Dispose();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static global::System.IntPtr FormatProvider1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -99,7 +99,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IFormatProvider>(@__env, @__real.FormatProvider);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -110,7 +110,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Close();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Flush3(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -120,7 +120,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Flush();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static global::System.IntPtr Encoding4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -130,7 +130,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, @__real.Encoding);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -141,7 +141,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.NewLine);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -152,7 +152,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.NewLine = global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static global::System.IntPtr Synchronized7(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr writer) {
@@ -161,7 +161,7 @@ namespace System.IO {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.IO.TextWriter.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, writer)));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -172,7 +172,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write9(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer) {
@@ -182,7 +182,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write10(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer, int index, int count) {
@@ -192,7 +192,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
@@ -202,7 +202,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write12(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int value) {
@@ -212,7 +212,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write13(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long value) {
@@ -222,7 +222,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write14(global::System.IntPtr @__envp, global::System.IntPtr @__obj, float value) {
@@ -232,7 +232,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write15(global::System.IntPtr @__envp, global::System.IntPtr @__obj, double value) {
@@ -242,7 +242,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write16(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -252,7 +252,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write17(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -262,7 +262,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write18(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -272,7 +272,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write19(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0) {
@@ -282,7 +282,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write20(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1) {
@@ -292,7 +292,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg1));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write21(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2) {
@@ -302,7 +302,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg1), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg2));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void Write22(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg) {
@@ -312,7 +312,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.Write(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, arg));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine23(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
@@ -322,7 +322,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine();
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine24(global::System.IntPtr @__envp, global::System.IntPtr @__obj, char value) {
@@ -332,7 +332,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine25(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer) {
@@ -342,7 +342,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine26(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer, int index, int count) {
@@ -352,7 +352,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine27(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
@@ -362,7 +362,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine28(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int value) {
@@ -372,7 +372,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine29(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long value) {
@@ -382,7 +382,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine30(global::System.IntPtr @__envp, global::System.IntPtr @__obj, float value) {
@@ -392,7 +392,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine31(global::System.IntPtr @__envp, global::System.IntPtr @__obj, double value) {
@@ -402,7 +402,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(value);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine32(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -412,7 +412,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine33(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -422,7 +422,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine34(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
@@ -432,7 +432,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, value));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine35(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0) {
@@ -442,7 +442,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine36(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1) {
@@ -452,7 +452,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg1));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine37(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg0, global::System.IntPtr arg1, global::System.IntPtr arg2) {
@@ -462,7 +462,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg0), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg1), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, arg2));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void WriteLine38(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr arg) {
@@ -472,7 +472,7 @@ namespace System.IO {
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
             @__real.WriteLine(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, arg));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

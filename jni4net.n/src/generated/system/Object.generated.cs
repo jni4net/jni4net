@@ -53,7 +53,7 @@ namespace System {
             try {
             object @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ToString());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -64,7 +64,7 @@ namespace System {
             try {
             object @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__obj);
             return ((bool)(@__real.Equals(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, obj))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -74,7 +74,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return ((bool)(object.Equals(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, objA), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, objB))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -84,7 +84,7 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return ((bool)(object.ReferenceEquals(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, objA), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, objB))));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(bool);
         }
         
@@ -95,7 +95,7 @@ namespace System {
             try {
             object @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__obj);
             return ((int)(@__real.GetHashCode()));
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(int);
         }
         
@@ -106,7 +106,7 @@ namespace System {
             try {
             object @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Type>(@__env, @__real.GetType());
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         
@@ -117,7 +117,7 @@ namespace System {
             try {
             object @__real = new object();
             global::net.sf.jni4net.utils.Convertor.InitProxy(@__env, @__obj, @__real);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

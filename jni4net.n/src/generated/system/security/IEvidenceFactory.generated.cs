@@ -61,7 +61,7 @@ namespace System.Security {
             try {
             global::System.Security.IEvidenceFactory @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Security.IEvidenceFactory>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Security.Policy.Evidence>(@__env, @__real.Evidence);
-            }catch (global::System.Exception ex){@__env.ThrowExisting(ex);}
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return default(global::System.IntPtr);
         }
         

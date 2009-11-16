@@ -31,15 +31,6 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _isEmpty6;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor7;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public Dictionary() : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.util.Dictionary.staticClass, global::java.util.Dictionary.@__ctor7, this);
-        }
-        
         protected Dictionary(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -59,7 +50,6 @@ namespace java.util {
             global::java.util.Dictionary._elements4 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "elements", "()Ljava/util/Enumeration;");
             global::java.util.Dictionary._keys5 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "keys", "()Ljava/util/Enumeration;");
             global::java.util.Dictionary._isEmpty6 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "isEmpty", "()Z");
-            global::java.util.Dictionary.@__ctor7 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")]

@@ -29,15 +29,6 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _shortValue5;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor6;
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
-        public Number() : 
-                base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Number.staticClass, global::java.lang.Number.@__ctor6, this);
-        }
-        
         protected Number(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -56,7 +47,6 @@ namespace java.lang {
             global::java.lang.Number._intValue3 = @__env.GetMethodID(global::java.lang.Number.staticClass, "intValue", "()I");
             global::java.lang.Number._longValue4 = @__env.GetMethodID(global::java.lang.Number.staticClass, "longValue", "()J");
             global::java.lang.Number._shortValue5 = @__env.GetMethodID(global::java.lang.Number.staticClass, "shortValue", "()S");
-            global::java.lang.Number.@__ctor6 = @__env.GetMethodID(global::java.lang.Number.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()B")]

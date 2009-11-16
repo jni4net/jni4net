@@ -149,13 +149,13 @@ public class FileStream extends system.io.Stream {
     public native boolean isAsync();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native final java.lang.String getName();
+    public native java.lang.String getName();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Security/AccessControl/FileSecurity;")
-    public native final system.Object GetAccessControl();
+    public native system.Object GetAccessControl();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Security/AccessControl/FileSecurity;)V")
-    public native final void SetAccessControl(system.Object fileSecurity);
+    public native void SetAccessControl(system.Object fileSecurity);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IntPtr;")
     public native long getHandle();
