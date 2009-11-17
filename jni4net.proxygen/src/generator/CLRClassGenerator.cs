@@ -41,6 +41,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             var tgtType = new CodeTypeDeclaration(type.Name);
             SetCurrentType(type.CLRNamespace + "." + type.Name);
+            AddTypeCLR(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = type.Attributes & TypeAttributes.VisibilityMask;
             tgtType.IsPartial = true;

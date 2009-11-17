@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System.CodeDom;
+using System.Collections.Generic;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.model;
 
@@ -28,13 +29,18 @@ namespace net.sf.jni4net.proxygen.generator
 {
     internal abstract partial class Generator
     {
+        public static List<string> filesCLR = new List<string>();
+        public static List<string> filesJVM = new List<string>();
+        public static Dictionary<string, string> TypesCLR = new Dictionary<string, string>();
+        public static Dictionary<string, string> TypesJVM = new Dictionary<string, string>();
+
         public static ToolConfig config;
         protected GType type;
 
         protected Generator(GType type)
         {
             this.type = type;
-            SetCurrentType(type.Name);
+            SetCurrentType(type.CLRNamespace + "." + type.Name);
         }
 
         protected void SetCurrentType(string current)
@@ -42,8 +48,25 @@ namespace net.sf.jni4net.proxygen.generator
             SetCurrentType(current, current, current);
         }
 
+        protected void AddTypeCLR(string type)
+        {
+            if (!TypesCLR.ContainsKey(type))
+            {
+                TypesCLR.Add(type,type);
+            }
+        }
+
+        protected void AddTypeJVM(string type)
+        {
+            if (!TypesJVM.ContainsKey(type))
+            {
+                TypesJVM.Add(type, type);
+            }
+        }
+
         protected void SetCurrentType(string current, string real, string proxy)
         {
+            
             CurrentType = new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference);
             CurrentTypeEx =
                 new CodeTypeReferenceExpression(new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference));

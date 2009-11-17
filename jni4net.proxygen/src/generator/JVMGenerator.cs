@@ -152,6 +152,7 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 sw.Write(newFile);
             }
+            filesJVM.Add(javaFile);
         }
 
         protected virtual string GetFileName(string dirJava)
@@ -274,6 +275,7 @@ namespace net.sf.jni4net.proxygen.generator
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
             SetCurrentType(type.JVMNamespaceExt + ".__" + type.Name, type.JVMNamespace + "." + type.Name,
                            type.JVMNamespaceExt + ".__" + type.Name);
+            AddTypeJVM(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;
             Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrProxy");
