@@ -25,6 +25,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using System.Xml;
 using System.Xml.Serialization;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.generator;
@@ -83,69 +84,67 @@ namespace net.sf.jni4net.proxygen
         private static int Work(string[] args)
         {
             ToolConfig cfg;
-            string ext = Path.GetExtension(args[0]).ToLowerInvariant();
+            string mainEntry = args[0];
+            string ext = Path.GetExtension(mainEntry).ToLowerInvariant();
             string workDir = null;
             string clr = null;
             string jvm = null;
             if (ext == ".xml")
             {
-                string config = args[0];
                 var ser = new XmlSerializer(typeof(ToolConfig));
-                cfg = ser.Deserialize(new FileStream(config, FileMode.Open)) as ToolConfig;
-            }
-            else if (ext == ".dll" || ext == ".jar" || Directory.Exists(args[0]))
-            {
-                cfg = new ToolConfig();
-                if (args[1] == "-wd")
+                using (var reader = new FileStream(mainEntry, FileMode.Open))
                 {
-                    workDir = args[2];
-                }
-                else
-                {
-                    workDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-                    Console.WriteLine("writing to " + workDir);
-                }
-                Directory.CreateDirectory(workDir);
-                clr = Path.Combine(workDir, "clr");
-                jvm = Path.Combine(workDir, "jvm");
-                Directory.CreateDirectory(clr);
-                Directory.CreateDirectory(jvm);
-                cfg.TargetDirClr = clr;
-                cfg.TargetDirJvm = jvm;
-                int addcp = (ext == ".jar" || Directory.Exists(args[0])) ? 1 : 0;
-                int adddp = ext == ".dll" ? 1 : 0;
-
-                if (args[3] == "-cp")
-                {
-                    string[] cps = args[4].Split(';');
-                    cfg.ClassPath = new ClassPath[cps.Length+addcp];
-                    for (int i = 0; i < cps.Length; i++)
-                    {
-                        cfg.ClassPath[i] = new ClassPath() {Path = cps[i]};
-                    }
-                    if (ext == ".jar" || Directory.Exists(args[0]))
-                    {
-                        cfg.ClassPath[cps.Length] = new ClassPath() { Path = args[0], Generate = true };
-                    }
-                }
-
-                if (args[5] == "-dp")
-                {
-                    string[] dps = args[6].Split(';');
-                    cfg.AssemblyReference = new AssemblyReference[dps.Length+adddp];
-                    for (int i = 0; i < dps.Length; i++)
-                    {
-                        cfg.AssemblyReference[i] = new AssemblyReference() { Assembly = dps[i] };
-                    }
-                    if (ext == ".dll")
-                    {
-                        cfg.AssemblyReference[dps.Length] = new AssemblyReference() { Assembly = args[0], Generate = true};
-                    }
+                    cfg = ser.Deserialize(reader) as ToolConfig;
                 }
             }
             else
             {
-                return -1;
+                bool isDll = ext == ".dll";
+                bool isCp = ext == ".jar" || Directory.Exists(mainEntry);
+                if (isDll || isCp)
+                {
+                    cfg = new ToolConfig();
+                    workDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                    for (int i = 1; i < args.Length;i++ )
+                    {
+                        if (args.Length > i + 1)
+                        {
+                            ParseWd(ref workDir, args[i], args[i + 1]);
+                            ParseCp(mainEntry, cfg, isCp, args[i], args[i + 1]);
+                            ParseDl(mainEntry, cfg, isDll, args[i], args[i + 1]);
+                        }
+                    }
+                    if (isDll)
+                    {
+                        if (cfg.AssemblyReference==null)
+                        {
+                            cfg.AssemblyReference=new AssemblyReference[1];
+                        }
+                        cfg.AssemblyReference[cfg.AssemblyReference.Length - 1] = new AssemblyReference() { Assembly = mainEntry, Generate = true };
+                    }
+                    if (isCp)
+                    {
+                        if (cfg.ClassPath == null)
+                        {
+                            cfg.ClassPath = new ClassPath[1];
+                        }
+                        cfg.ClassPath[cfg.ClassPath.Length - 1] = new ClassPath() { Path = mainEntry, Generate = true };
+                    }
+
+
+
+                    Directory.CreateDirectory(workDir);
+                    clr = Path.Combine(workDir, "clr");
+                    jvm = Path.Combine(workDir, "jvm");
+                    Directory.CreateDirectory(clr);
+                    Directory.CreateDirectory(jvm);
+                    cfg.TargetDirClr = clr;
+                    cfg.TargetDirJvm = jvm;
+                }
+                else
+                {
+                    return -1;
+                }
             }
 
             Generator.config = cfg;
@@ -158,75 +157,124 @@ namespace net.sf.jni4net.proxygen
 
             if (workDir != null)
             {
-                string fname = Path.GetFileNameWithoutExtension(args[0]);
-                using (var jw = new StreamWriter(Path.Combine(workDir, "build.cmd")))
+                string fname = Path.GetFileNameWithoutExtension(mainEntry);
+                WriteBuild(workDir, jvm, fname);
+
+                var ser = new XmlSerializer(typeof (ToolConfig));
+                using (var fs = new FileStream(Path.Combine(workDir, fname + ".proxygen.xml"), FileMode.Create))
                 {
-                    jw.WriteLine("@echo off");
-                    jw.WriteLine("if not exist target mkdir target");
-                    jw.WriteLine("if not exist target\\classes mkdir target\\classes");
-                    jw.WriteLine();
-                    jw.WriteLine();
-                    
-                    jw.WriteLine("echo compile classes");
-                    jw.Write("javac -nowarn -d target\\classes -sourcepath jvm -cp ");
-                    foreach (string cp in Bridge.Setup.JVMCLassPath)
+                    using (XmlWriter xw = XmlWriter.Create(fs, new XmlWriterSettings {Indent = true}))
                     {
-                        jw.Write(cp);
-                        jw.Write(";");
+                        ser.Serialize(xw, cfg);
                     }
-                    jw.Write(" ");
-                    foreach (string file in Directory.GetFiles(jvm, "*.java", SearchOption.AllDirectories))
-                    {
-                        int i = file.IndexOf("\\jvm\\");
-                        string output = file.Substring(i+1);
-                        jw.Write(output);
-                        jw.Write(" ");
-                    }
-                    jw.WriteLine();
-                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
-                    jw.WriteLine();
-                    jw.WriteLine();
-
-                    jw.WriteLine("echo " + fname + ".j4n.jar ");
-                    jw.Write("jar cvf target\\");
-                    jw.Write(fname + ".j4n.jar ");
-                    foreach (string file in Directory.GetFiles(jvm, "*.java", SearchOption.AllDirectories))
-                    {
-                        jw.Write(" -C target\\classes ");
-                        int i = file.IndexOf("\\jvm\\");
-                        string output = file.Substring(i+5).Replace(".java", ".class");
-                        jw.Write(output);
-                        jw.Write(" ");
-                    }
-                    jw.Write(" > nul ");
-                    jw.WriteLine();
-                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
-                    jw.WriteLine();
-                    jw.WriteLine();
-
-
-                    jw.WriteLine("echo " + fname + ".j4n.dll ");
-                    jw.Write("csc /nologo /warn:0 /t:library /out:target\\");
-                    jw.Write(fname + ".j4n.dll ");
-                    jw.Write("/recurse:clr\\*.cs ");
-
-                    foreach (Assembly assembly in Repository.KnownAssemblies)
-                    {
-                        if (typeof(Program).Assembly != assembly)
-                        {
-                            jw.Write(" /reference:");
-                            jw.Write(assembly.Location);
-                        }
-                    }
-                    jw.WriteLine();
-                    jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
-                    jw.WriteLine();
-                    jw.WriteLine();
-                    jw.WriteLine(":end");
                 }
             }
 
             return 0;
+        }
+
+        private static void WriteBuild(string workDir, string jvm, string fname)
+        {
+            using (var jw = new StreamWriter(Path.Combine(workDir, "build.cmd")))
+            {
+                jw.WriteLine("@echo off");
+                jw.WriteLine("if not exist target mkdir target");
+                jw.WriteLine("if not exist target\\classes mkdir target\\classes");
+                jw.WriteLine();
+                jw.WriteLine();
+                    
+                jw.WriteLine("echo compile classes");
+                jw.Write("javac -nowarn -d target\\classes -sourcepath jvm -cp ");
+                foreach (string cp in Bridge.Setup.JVMCLassPath)
+                {
+                    jw.Write(cp);
+                    jw.Write(";");
+                }
+                jw.Write(" ");
+                foreach (string file in Generator.filesJVM)
+                {
+                    int i = file.IndexOf("\\jvm\\");
+                    string output = file.Substring(i+1);
+                    jw.Write(output);
+                    jw.Write(" ");
+                }
+                jw.WriteLine();
+                jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                jw.WriteLine();
+                jw.WriteLine();
+
+                jw.WriteLine("echo " + fname + ".j4n.jar ");
+                jw.Write("jar cvf ");
+                jw.Write(fname + ".j4n.jar ");
+                foreach (string file in Generator.TypesJVM.Values)
+                {
+                    jw.Write(" -C target\\classes ");
+                    string output = file.Replace(".", "\\") + ".class";
+                    jw.Write(output);
+                    jw.Write(" ");
+                }
+                jw.Write(" > nul ");
+                jw.WriteLine();
+                jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                jw.WriteLine();
+                jw.WriteLine();
+
+
+                jw.WriteLine("echo " + fname + ".j4n.dll ");
+                jw.Write("csc /nologo /warn:0 /t:library /out:");
+                jw.Write(fname + ".j4n.dll ");
+                jw.Write("/recurse:clr\\*.cs ");
+
+                foreach (Assembly assembly in Repository.KnownAssemblies)
+                {
+                    if (typeof(Program).Assembly != assembly)
+                    {
+                        jw.Write(" /reference:");
+                        jw.Write(assembly.Location);
+                    }
+                }
+                jw.WriteLine();
+                jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
+                jw.WriteLine();
+                jw.WriteLine();
+                jw.WriteLine(":end");
+            }
+        }
+
+        private static void ParseWd(ref string workDir, string swtch, string args)
+        {
+            if (swtch == "-wd")
+            {
+                workDir = args;
+            }
+        }
+
+        private static void ParseDl(string mainEntry, ToolConfig cfg, bool isDll, string swtch, string args)
+        {
+            if (swtch == "-dp")
+            {
+                int adddp = isDll ? 1 : 0;
+                string[] dps = args.Split(';');
+                cfg.AssemblyReference = new AssemblyReference[dps.Length+adddp];
+                for (int i = 0; i < dps.Length; i++)
+                {
+                    cfg.AssemblyReference[i] = new AssemblyReference() { Assembly = dps[i] };
+                }
+            }
+        }
+
+        private static void ParseCp(string mainEntry, ToolConfig cfg, bool isCp, string swtch, string args)
+        {
+            if (swtch == "-cp")
+            {
+                int addcp = (isCp) ? 1 : 0;
+                string[] cps = args.Split(';');
+                cfg.ClassPath = new ClassPath[cps.Length+addcp];
+                for (int i = 0; i < cps.Length; i++)
+                {
+                    cfg.ClassPath[i] = new ClassPath() {Path = cps[i]};
+                }
+            }
         }
     }
 }

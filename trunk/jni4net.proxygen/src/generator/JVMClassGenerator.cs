@@ -37,6 +37,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             var tgtType = new CodeTypeDeclaration(type.Name);
             SetCurrentType(type.JVMNamespace + "." + type.Name);
+            AddTypeJVM(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = type.Attributes & TypeAttributes.VisibilityMask;
             /*if (type.IsAbstract)

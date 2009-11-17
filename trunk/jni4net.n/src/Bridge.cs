@@ -37,6 +37,7 @@ namespace net.sf.jni4net
         private static bool jvmLoaded;
         private static bool clrLoaded;
         private static BridgeSetup setup;
+        private static string homeDir = Path.GetDirectoryName(typeof(Bridge).Assembly.Location);
 
         public static BridgeSetup Setup
         {
@@ -148,7 +149,15 @@ namespace net.sf.jni4net
             }
             else
             {
-                assembly = Assembly.Load(assemblyPath);
+                string current = Path.Combine(homeDir, assemblyPath);
+                if (File.Exists(current))
+                {
+                    assembly = Assembly.LoadFrom(current);
+                }
+                else
+                {
+                    assembly = Assembly.Load(assemblyPath);
+                }
             }
             RegisterAssembly(assembly);
         }

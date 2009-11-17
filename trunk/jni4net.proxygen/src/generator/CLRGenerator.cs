@@ -68,6 +68,7 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 sw.Write(newFile);
             }
+            filesCLR.Add(csFile);
         }
 
         /// <summary>
@@ -118,6 +119,7 @@ namespace net.sf.jni4net.proxygen.generator
             var tgtType = new CodeTypeDeclaration(type.Name + "_");
             SetCurrentType(type.CLRNamespace + "." + type.Name + "_", type.CLRNamespace + "." + type.Name,
                            type.CLRNamespace + ".__" + type.Name);
+            AddTypeCLR(CurrentType.BaseType);
             tgtType.IsPartial = true;
             nameSpace.Types.Add(tgtType);
 
@@ -147,6 +149,7 @@ namespace net.sf.jni4net.proxygen.generator
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
             SetCurrentType(type.CLRNamespace + ".__" + type.Name
                            , type.CLRNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
+            AddTypeCLR(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic | TypeAttributes.Sealed;
             Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaProxyAttribute", type.CLRReference);

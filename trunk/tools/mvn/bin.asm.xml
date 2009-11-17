@@ -45,7 +45,7 @@
             <outputDirectory>lib</outputDirectory>
         </file>
         <file>
-            <source>content\Read.Me.txt</source>
+            <source>content\ReadMe.txt</source>
         </file>
     </files>
     <fileSets>
