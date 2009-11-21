@@ -1,0 +1,47 @@
+		</div>
+		<div id="Logo">
+			<a href="http://jni4net.sourceforge.net/" title="jni4net - bridge between Java and .NET">
+				<img src="pics/jni4net143x123.png" alt="jni4net logo"/>
+			</a>
+		</div>
+		<div id="Menu">
+		<br/>
+		
+  			<div class="suckerdiv">
+			    <ul id="jni4netNavigation">
+			      <li class="MenuLi"><a href="/index.shtml">Home</a></li>
+			      <li class="MenuLi"><a href="https://sourceforge.net/projects/jni4net/files/">Download</a></li>
+			      <li class="MenuLi"><a href="http://zamboch.blogspot.com/search/label/jni4net">News</a></li>
+			      <li class="MenuLi"><a href="http://sourceforge.net/projects/jni4net/">SF hosting</a></li>
+			      <li class="MenuLi"><a href="http://code.google.com/p/jni4net/source/browse/#svn/trunk">G hosting</a></li>
+			      <li class="MenuLi"><a href="http://jni4net.googlecode.com/svn/trunk/">Sources</a></li>
+			      <li class="MenuLi"><a href="http://groups.google.com/group/jni4net?hl=en">Discussion</a></li>
+			      <li class="MenuLi"><a href="/links.shtml">Links</a></li>
+			    </ul>
+			</div>
+			
+			<br/>
+			<br/>
+			<a href="http://sourceforge.net/projects/jni4net" title="Hosted on SourceForge.net">
+			<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=174312&amp;type=1" width="88" height="31" alt="SourceForge.net" />
+			<br/>
+			<!-- TODO white ?
+			<script type="text/javascript" src="http://www.ohloh.net/p/343909/widgets/project_thin_badge.js"></script>
+			-->
+			</a>
+			<br/>
+
+		</div>
+		
+		
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-116874-11");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>jni4net - bridge between Java and .NET</title>
+		<link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon"/>
+		<script type='text/javascript' src='style/menu.js'></script>
+		<link rel="stylesheet" href="style/style.css"/>
+		<link rel="stylesheet" href="style/menu.css"/>
+		<link rel="stylesheet" type="text/css" href="style/csharp.css" />
+	  <meta name="keywords" content="Java .NET C# JVM CLR JNI PInvoke bridge interop broker object OOP proxy marshaling marshaller open-source"/>
+	  <meta name="robots" content="all, follow"/>
+	  <meta name="creator" content="Pavel (dot) Savara (at) gmail (dot) com"/>
+	  <meta name="description" content="jni4net is bridge between Java and .NET (interprocess, fast, object oriented, open-source)"/>
+	</head>
+	<body>
+<div id="Content">
+	<h1>jni4net</h1>
+	<div>&nbsp;&nbsp;&nbsp; bridge between Java and .NET (interprocess, fast, object oriented, open-source)<br/><br/></div>
