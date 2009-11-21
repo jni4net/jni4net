@@ -41,6 +41,10 @@ namespace selvin.exportdll
 
                 string ildasmpath = @"C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\ildasm.exe";
                 string ilasmpath = @"C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe";
+                if (!File.Exists(ildasmpath))
+                {
+                    ildasmpath = @"C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin\ildasm.exe";
+                }
                 string keypath = null;
                 bool debug = false;
                 bool x64 = false;
