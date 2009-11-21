@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><metadata>
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
   <groupId>net.sf.jni4net</groupId>
   <artifactId>selvin</artifactId>
   <version>0.2.5.0</version>
@@ -6,6 +7,6 @@
     <versions>
       <version>0.2.5.0</version>
     </versions>
-    <lastUpdated>20090927224903</lastUpdated>
+    <lastUpdated>20091121190240</lastUpdated>
   </versioning>
 </metadata>
