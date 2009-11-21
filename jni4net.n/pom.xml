@@ -26,7 +26,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/unsafe /nowarn:1591,0114,0628,0109,0169,0618,0108 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
+                    <aditionalOptions>/unsafe /warn:0 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
             </plugin>
         </plugins>

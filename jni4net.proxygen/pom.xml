@@ -40,7 +40,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/unsafe /nowarn:1591,0219,0436</aditionalOptions>
+                    <aditionalOptions>/unsafe /win32icon:${basedir}/src/favicon.ico /warn:0 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
             </plugin>
             <plugin>

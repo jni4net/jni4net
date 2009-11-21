@@ -56,7 +56,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/unsafe /nowarn:1591,0436,0169</aditionalOptions>
+                    <aditionalOptions>/unsafe /warn:0</aditionalOptions>
                 </configuration>
             </plugin>
             <plugin>
