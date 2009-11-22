@@ -20,25 +20,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
+using java.io;
+
 namespace net.sf.jni4net.adaptors
 {
-    public static partial class Adapt
+    public partial class Adapt
     {
-    }
-
-    public abstract class Adaptor<TReal>
-    {
-        public Adaptor(TReal closeable)
+        public static Disposable<T> Disposable<T>(T closeable)
+            where T : Closeable
         {
-            this.closeable = closeable;
-        }
-
-        private TReal closeable;
-
-        public TReal Real
-        {
-            get { return closeable; }
+            return new Disposable<T>(closeable);
         }
     }
 
+    public class Disposable<T> : Adaptor<T>, IDisposable
+        where T : Closeable
+    {
+        public Disposable(T closeable)
+            : base(closeable)
+        {
+        }
+
+        public void Dispose()
+        {
+            Real.close();
+        }
+    }
 }
