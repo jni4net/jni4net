@@ -48,6 +48,9 @@
             <source>content\ReadMe.txt</source>
         </file>
         <file>
+            <source>changes.txt</source>
+        </file>
+        <file>
             <source>content\samples\myJavaDemoCalc\work\myJavaDemoCalc.jar</source>
             <outputDirectory>samples\myJavaDemoCalc\work</outputDirectory>
         </file>
