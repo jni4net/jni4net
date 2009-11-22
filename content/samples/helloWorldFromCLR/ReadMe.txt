@@ -5,6 +5,6 @@ This is very basic sample for calling from C# to Java.
 3) Make sure that build created following file
     samples\helloWorldFromCLR\bin\Debug\helloWorldFromCLR.exe
 4) Make sure that build copied following files
-    samples\helloWorldFromCLR\bin\Debug\jni4net.n-0.4.0.0.dll
-    samples\helloWorldFromCLR\bin\Debug\jni4net.j-0.4.0.0.jar
+    samples\helloWorldFromCLR\bin\Debug\jni4net.n-0.x.0.0.dll
+    samples\helloWorldFromCLR\bin\Debug\jni4net.j-0.x.0.0.jar
 4) Start and step-by-step debug Program.cs

@@ -68,6 +68,7 @@
     <Compile Include="generated\net\sf\jni4net\tested\StaticMethods.generated.cs" />
     <Compile Include="generated\tested\JInterface.cs" />
     <Compile Include="StaticMethods.cs" />
+    <Compile Include="tested\JavaInstanceFields.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\jni4net.n.w32\src\jni4net.n.w32.csproj">
@@ -82,9 +83,6 @@
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
       <Name>jni4net.n</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="tested\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
