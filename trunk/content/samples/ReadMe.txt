@@ -14,6 +14,8 @@ Samples assume that you have csc.exe and javac.exe on your PATH
 
 3) myCSharpDemoCalc - demonstrates how to wrap your own C# library easily.
 
+4) myJavaDemoCalc - demonstrates how to wrap your own Java library easily.
+
 5) fop - this is bit more complex sample of Java library used by C# program.
    Currently, there is no good xsl:fo library for .NET. 
    We demostrate how jni4net could solve such situation.

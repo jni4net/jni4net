@@ -241,7 +241,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 foreach (var classPath in config.ClassPath)
                 {
-                    setup.AddClassPath(classPath.Path);
+                    setup.AddClassPath(Path.GetFullPath(classPath.Path));
                     if (classPath.Generate)
                     {
                         generateCp.Add(classPath.Path);

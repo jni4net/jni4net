@@ -13,6 +13,6 @@ public class MyCalcUsageInJava {
         ICalc calc = new DemoCalc();
         final int result = calc.MySuperSmartFunctionIDontHaveInJava("Answer to the Ultimate Question of Life, the Universe, and Everything");
 
-        System.out.printf("Answer to the Ultimate Question is :" + result);
+        System.out.printf("Answer to the Ultimate Question is : " + result);
     }
 }
