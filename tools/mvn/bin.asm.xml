@@ -47,6 +47,14 @@
         <file>
             <source>content\ReadMe.txt</source>
         </file>
+        <file>
+            <source>content\samples\myJavaDemoCalc\work\myJavaDemoCalc.jar</source>
+            <outputDirectory>samples\myJavaDemoCalc\work</outputDirectory>
+        </file>
+        <file>
+            <source>content\samples\myCSharpDemoCalc\work\MyCSharpDemoCalc.dll</source>
+            <outputDirectory>samples\myCSharpDemoCalc\work</outputDirectory>
+        </file>
     </files>
     <fileSets>
         <fileSet>
@@ -65,6 +73,8 @@
                 <exclude>**/*.iml</exclude>
                 <exclude>**/*.ipr</exclude>
                 <exclude>**/*.jar</exclude>
+                <exclude>**/*.dll</exclude>
+                <exclude>**/*.exe</exclude>
                 <exclude>**/*.bak</exclude>
                 <exclude>**/Thumbs.db</exclude>
                 <exclude>**/~*</exclude>

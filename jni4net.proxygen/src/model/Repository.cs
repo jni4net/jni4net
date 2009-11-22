@@ -215,7 +215,7 @@ namespace net.sf.jni4net.proxygen.model
                         if (!classFile.Contains("$"))
                         {
                             string name = classFile.Substring(path.Length+1);
-                            string clazzName = name.Replace('\\', '/').Substring(0, name.Length - (".class".Length));
+                            string clazzName = name.Substring(0, name.Length - (".class".Length)).Replace('\\', '.').Replace('/', '.');
                             RegisterClass(clazzName);
                         }
                     }
