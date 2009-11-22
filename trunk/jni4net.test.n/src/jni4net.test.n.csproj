@@ -61,6 +61,7 @@
     <Compile Include="CallStaticMethodsTest.cs" />
     <Compile Include="ExceptionsTest.cs" />
     <Compile Include="CallBackTest.cs" />
+    <Compile Include="Serialization.cs" />
     <Compile Include="StaticFieldTest.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestInterfaces.cs" />

@@ -1,1 +1,1 @@
-java -cp ../../lib/jni4net.j-0.4.0.0.jar;target/classes Program
+java -cp ../../lib/jni4net.j-0.5.0.0.jar;target/classes Program

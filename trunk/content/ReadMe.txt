@@ -39,7 +39,7 @@ lib\     - contains .NET DLLs and Java .jar files of jni4net.
            The DLLs and .jar file should reside in same directory 
            (as well as rest of your .NET DLLs)
    \jni4net.n-0.x.0.0.dll      - .NET side of the bridge
-   \jni4net.j-0.4.0.0.jar      - Java side of the bridge
+   \jni4net.j-0.x.0.0.jar      - Java side of the bridge
    \jni4net.n.w32-0.x.0.0.dll  - Native helper for initial call from 32bit Java on Windows
    \jni4net.n.w64-0.x.0.0.dll  - Native helper for initial call from 64bit Java on Windows
    \jni4net-LGPL-3.0.txt       - License for redistributable files, all files in lib\ folder
