@@ -6,4 +6,4 @@ Version 0.5
 + implemented missing equals and hashcode methods
 + changed format of proxygen config to ver 0.5. References and classpath format changed.
 + created CloseableToIDisposable adapter
-+ implemented .dll and .jar exploration in proxygen
++ implemented .dll and .jar exploration in proxygen. Added samples.
