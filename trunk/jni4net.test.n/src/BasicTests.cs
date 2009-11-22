@@ -29,7 +29,9 @@ using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
 using java.nio;
+using java.util;
 using java_.lang;
+using net.sf.jni4net.adaptors;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.nio;
@@ -301,6 +303,18 @@ namespace net.sf.jni4net.test
         public void BBJdk()
         {
             BasicByte.test();            
+        }
+
+        [Test]
+        public void IEnum()
+        {
+            int cnt = 0;
+            Properties javaSystemProperties = java.lang.System.getProperties();
+            foreach (var prop in Adapt.Enumeration(javaSystemProperties.keys()))
+            {
+                cnt++;
+            }
+            Assert.AreEqual(javaSystemProperties.size(), cnt);
         }
 
         [Test]

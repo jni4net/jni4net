@@ -24,6 +24,7 @@ using java.io;
 using java.lang;
 using java.util;
 using net.sf.jni4net;
+using net.sf.jni4net.adaptors;
 
 namespace helloWorldFromCLR
 {
@@ -42,13 +43,10 @@ namespace helloWorldFromCLR
             // they are Hashtable realy
             Properties javaSystemProperties = java.lang.System.getProperties();
 
-            // let's enumerate all keys
-            Enumeration enumeration = javaSystemProperties.keys();
-            while (enumeration.hasMoreElements())
+            // let's enumerate all keys. 
+            // We use Adapt helper to convert enumeration from java o .NET
+            foreach (java.lang.String key in Adapt.Enumeration(javaSystemProperties.keys()))
             {
-                // there hash table is not generic and returns java.lang.Object
-                // but we know is should be java.lang.String, so we could cast
-                var key = (java.lang.String) enumeration.nextElement();
                 java.lang.System.@out.print(key);
 
                 // this is automatic conversion of CLR string to java.lang.String
