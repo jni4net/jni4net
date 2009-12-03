@@ -7,3 +7,5 @@ Version 0.5
 + changed format of proxygen config to ver 0.5. References and classpath format changed.
 + created CloseableToIDisposable adapter
 + implemented .dll and .jar exploration in proxygen. Added samples.
++ new http://jni4net.sourceforge.net/troubleshoot.shtml
++ this file

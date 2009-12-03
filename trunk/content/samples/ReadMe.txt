@@ -1,6 +1,6 @@
 In this directory are sample applications which should help you to learn how to 
 use jni4net. Starters should play with them in following order. Each folder 
-contains Read.Me file.
+contains ReadMe.txt file.
 
 Samples assume that you have csc.exe and javac.exe on your PATH
 
@@ -21,3 +21,6 @@ Samples assume that you have csc.exe and javac.exe on your PATH
    We demostrate how jni4net could solve such situation.
    
 6) winforms - this example shows, how Java program could create WinForms dialog.
+
+Tropublehooting here
+http://jni4net.sourceforge.net/troubleshoot.shtml
