@@ -326,6 +326,15 @@ namespace net.sf.jni4net.test
             Assert.IsFalse(npe.Equals(npe2));
         }
 
+
+        [Test]
+        public void ClassLoader()
+        {
+            ClassLoader classLoader = java.lang.ClassLoader.getSystemClassLoader();
+            ClassLoader loader = Object._class.getClassLoader();
+        }
+        
+        
         public static void Main()
         {
             //var test =  new BridgeTest();
