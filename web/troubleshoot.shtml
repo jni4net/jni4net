@@ -1,0 +1,45 @@
+<!--#include virtual="header" -->
+	
+<h2>Troubleshooting jni4net</h2>
+<p>This page will be troubleshooting knowledge-base for jni4net. Please contribute.</p>
+<br/><br/>
+
+<h2>Process core-dumped, corrupted memory or just can't start it</h2>
+Ordered by probability.
+<ul>
+	<li><b>Signature changed</b> - You forgot to regenerate and recompile both proxies after you changed method signature.</li>
+	<li><b>It never worked</b> - Did you tried to run samples on this machine ever ? Try it now, if they fail as well, it's the environment, not your code.</li>
+	<li><b>Version checks</b> - Make sure you have expected versions of JVM, CLR and OS.</li>
+	<li><b>Architecture</b> - Make sure you have same architecture for JVM and CLR. 32 or 64 bit, do not mix them.
+		<br/> This is particularly difficult on Windows 64 bit. I found 32bit java.exe of jre 1.5 in my %windows%/system32 directory. Very confusing.
+		<br/> Another problem is running unit tests from VisualStudio + Resharper4, bear in mind VS is 32bit process.
+		</li>
+	<li><b>PATH and JAVA_HOME</b> - do they contain proper thing ? Even in your unit test ? And your runtime settings ?</li>
+	<li><b>Current directory</b> - For best results put all DLLs and JARs into same directory. Make sure it's current directory of the process.</li>
+	<li><b>Proxygen and Versions</b> - example you wrapped class from JDK 1.6 and you run under JRE 1.5. Methods are missing. Applies to any library and versions including .NET libraries.</li>
+	<li><b>Bugs</b> - there may be bug in jni4net. There may be bug in JNI or in PInvoke. Please report it to us including environment details.</li>
+</ul>
+<br/><br/>
+
+<h2>Pitfalls by design</h2>
+<ul>
+	<li><b>Garbage collection</b> - If you create cycle between objects cross VMs boundaries, it will be never reclaimed by GC. That's because collectors don't know about each other.
+		There is no troubleshooter for that yet. Just be careful what you do.
+		</li>
+	<li><b>Proxy Instances</b> - same real object from home VM could have multiple proxies in the other VM. That's because every transmission creates another proxy.
+		You should not assume identity by object reference. You should use equals() method to compare objects.
+		</li>
+	<li><b>java.lang.Throwable</b> and <b>system.Exception</b> - these proxies are not inherited from system.Object or java.lang.Object proxies. So you could not put them into collection of proxies of Object easily.
+		There is IObject interface which is implemented by object as well as by exception. You could use it in collections.
+		</li>
+	<li><b>System ClassLoader</b> - Proxies of CLR objects must be loaded into system ClassLoader only. The reason is that java native method could be only implemented when class is defined in system class loader.
+		</li>
+	<li><b>Application Domains</b> and <b>JVMs</b> - If you have multiple application domains in your process, all of them will find same JNI. jni4net currently binds to default JVM in the process.
+		</li>
+	<li><b>Application Domains</b> and <b>instances</b> - You may need to share same JVM object into two different application domains.
+		You do it by sending JvmHandle to other domain and duplicating the reference in the other app-domain.
+		</li>
+</ul>
+<br/><br/>
+
+<!--#include virtual="footer" -->

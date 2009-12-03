@@ -10,12 +10,13 @@
   			<div class="suckerdiv">
 			    <ul id="jni4netNavigation">
 			      <li class="MenuLi"><a href="/index.shtml">Home</a></li>
-			      <li class="MenuLi"><a href="https://sourceforge.net/projects/jni4net/files/">Download</a></li>
+			      <li class="MenuLi"><a href="https://sourceforge.net/projects/jni4net/files/"><b>Download</b></a></li>
 			      <li class="MenuLi"><a href="http://zamboch.blogspot.com/search/label/jni4net">News</a></li>
 			      <li class="MenuLi"><a href="http://sourceforge.net/projects/jni4net/">SF hosting</a></li>
 			      <li class="MenuLi"><a href="http://code.google.com/p/jni4net/source/browse/#svn/trunk">G hosting</a></li>
 			      <li class="MenuLi"><a href="http://jni4net.googlecode.com/svn/trunk/">Sources</a></li>
 			      <li class="MenuLi"><a href="http://groups.google.com/group/jni4net?hl=en">Discussion</a></li>
+			      <li class="MenuLi"><a href="/troubleshoot.shtml">Troubleshoot</a></li>
 			      <li class="MenuLi"><a href="/links.shtml">Links</a></li>
 			    </ul>
 			</div>
