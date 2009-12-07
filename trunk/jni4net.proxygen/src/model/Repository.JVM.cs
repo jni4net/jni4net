@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
@@ -27,6 +28,7 @@ using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net.proxygen.config;
+using Object = java.lang.Object;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -210,7 +212,10 @@ namespace net.sf.jni4net.proxygen.model
             var modifiers = (ModifierFlags) field.getModifiers();
             if ((modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
             {
-                //Console.WriteLine("Skip " + type + "." + method);
+                if (config.Verbose)
+                {
+                    Console.WriteLine("Skip " + type + "." + field);
+                }
                 return;
             }
             var res = new GMethod();
@@ -239,7 +244,10 @@ namespace net.sf.jni4net.proxygen.model
             {
                 if (annotation == null)
                 {
-                    //Console.WriteLine("Skip " + type + "." + method);
+                    if (config.Verbose)
+                    {
+                        Console.WriteLine("Skip " + type + "." + method);
+                    }
                 }
                 return;
             }
