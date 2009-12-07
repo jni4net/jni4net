@@ -248,7 +248,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 if (attr == null && config.Verbose)
                 {
-                    //Console.WriteLine("Skip " + type + "." + method);
+                    Console.WriteLine("Skip " + type + "." + method);
                 }
                 return;
             }
@@ -259,7 +259,7 @@ namespace net.sf.jni4net.proxygen.model
                 {
                     if (config.Verbose)
                     {
-                        //Console.WriteLine("Skip " + type + "." + method);
+                        Console.WriteLine("Skip " + type + "." + method);
                     }
                     return;
                 }
@@ -269,6 +269,10 @@ namespace net.sf.jni4net.proxygen.model
             if (res == null || TestCLRType(method.ReturnType))
             {
                 // skip
+                if (config.Verbose)
+                {
+                    Console.WriteLine("Skip " + type + "." + method);
+                }
                 return;
             }
             if (method.IsSpecialName)
@@ -334,6 +338,10 @@ namespace net.sf.jni4net.proxygen.model
             GMethod res = RegisterCLRCall(type, method);
             if (res == null)
             {
+                if (config.Verbose)
+                {
+                    Console.WriteLine("Skip " + type + "." + method);
+                }
                 // skip
                 return;
             }
@@ -343,7 +351,10 @@ namespace net.sf.jni4net.proxygen.model
                 string sig = type.Name + res.GetJVMSignatureNoRet();
                 if (type.AllMethods.ContainsKey(sig))
                 {
-                    //Console.WriteLine("Skip " + type + "." + method);
+                    if (config.Verbose)
+                    {
+                        Console.WriteLine("Skip " + type + "." + method);
+                    }
                     return;
                 }
                 type.AllMethods.Add(sig, res);
