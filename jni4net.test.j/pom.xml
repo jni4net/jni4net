@@ -4,28 +4,28 @@
     <parent>
         <artifactId>jni4net</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>0.5.0.0</version>
+        <version>0.6.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net.test.j</artifactId>
-    <version>0.5.0.0</version>
+    <version>0.6.0.0</version>
     <name>jni4net Java test</name>
     <dependencies>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.j</artifactId>
-            <version>0.5.0.0</version>
+            <version>0.6.0.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.tested.j</artifactId>
-            <version>0.5.0.0</version>
+            <version>0.6.0.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n</artifactId>
-            <version>0.5.0.0</version>
+            <version>0.6.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>

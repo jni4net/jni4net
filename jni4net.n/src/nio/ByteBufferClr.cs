@@ -29,7 +29,7 @@ namespace net.sf.jni4net.nio
 {
     public class ByteBufferClr : java.nio.ByteBuffer, IDisposable
     {
-        private byte[] sharedBuffer;
+        private readonly byte[] sharedBuffer;
         private GCHandle pin;
 
         /// <summary>
@@ -47,6 +47,11 @@ namespace net.sf.jni4net.nio
             java.nio.ByteBuffer buffer = env.NewDirectByteBuffer(ptr, sharedBuffer.Length);
             buffer.order(ByteOrder.LITTLE_ENDIAN);
             ((IJvmProxy) this).Copy(env, buffer);
+        }
+
+        public byte[] GetSharedBuffer()
+        {
+            return sharedBuffer;
         }
 
         public void Dispose()
