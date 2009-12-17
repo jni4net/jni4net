@@ -104,6 +104,18 @@ namespace net.sf.jni4net
             IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle, record.JVMInterface);
             return (TRes) res;
         }
+
+        public static TRes CreateProxy<TRes>(IntPtr jvmHandle)
+        {
+            Type reqType = typeof(TRes);
+            if (!reqType.IsInterface && !typeof(IObject).IsAssignableFrom(reqType))
+            {
+                throw new JNIException("Can't create proxy to CLR class");
+            }
+            RegistryRecord record = Registry.GetCLRRecord(reqType);
+            IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, jvmHandle, record.JVMInterface);
+            return (TRes)res;
+        }
     }
 
 }

@@ -170,7 +170,7 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static Value ParPrimC2J(JNIEnv env, float[] value)
+        public static Value ParArrayPrimC2J(JNIEnv env, float[] value)
         {
             var res = new Value {_object = ArrayPrimC2J(env, value)};
             return res;
