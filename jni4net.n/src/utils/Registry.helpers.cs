@@ -158,6 +158,14 @@ namespace net.sf.jni4net.utils
                             }
                         }
                     }
+                    /*if (Bridge.clrLoaded)
+                    {
+                        if (!jvmProxy.getClassLoader().equals(ClassLoader.getSystemClassLoader()))
+                        {
+                            Console.Error.WriteLine("Class " + jvmProxy.toString() +
+                                                    " is not in system classloader. It may fail binding native methods.");
+                        }
+                    }*/
                 }
                 try
                 {
