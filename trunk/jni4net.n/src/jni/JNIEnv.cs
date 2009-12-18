@@ -1283,10 +1283,10 @@ namespace net.sf.jni4net.jni
             IntPtr occurred = ExceptionOccurred();
             if (IntPtr.Zero != occurred)
             {
-                if (Bridge.Setup.Verbose && Bridge.Setup.Debug)
+                /*if (Bridge.Setup.Verbose && Bridge.Setup.Debug)
                 {
                     ExceptionDescribe();
-                }
+                }*/
                 ExceptionClear();
                 return true;
             }

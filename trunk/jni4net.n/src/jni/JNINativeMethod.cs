@@ -56,7 +56,11 @@ namespace net.sf.jni4net.jni
             JNINativeMethod[] methods = registrations.ToArray();
             fixed (JNINativeMethod* m = &(methods[0]))
             {
-                env.RegisterNatives(jvmProxy, m, methods.Length);
+                JNIResult res = env.RegisterNatives(jvmProxy, m, methods.Length);
+                if (res!=JNIResult.JNI_OK)
+                {
+                    throw new JNIException("Can't bind native methods to class " + jvmProxy +" is it in system classloader ?");
+                }
             }
         }
 

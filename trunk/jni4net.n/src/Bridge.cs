@@ -35,7 +35,7 @@ namespace net.sf.jni4net
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool jvmLoaded;
-        private static bool clrLoaded;
+        internal static bool clrLoaded;
         private static BridgeSetup setup;
         private static string homeDir = Path.GetDirectoryName(typeof(Bridge).Assembly.Location);
 
