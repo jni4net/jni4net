@@ -326,17 +326,6 @@
         <root url="jar://$PROJECT_DIR$/jni4net.tested.j/pom-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: junit:junit:4.5">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
-      </SOURCES>
-    </library>
   </component>
 </project>
 
