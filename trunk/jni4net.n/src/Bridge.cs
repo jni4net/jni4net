@@ -37,7 +37,7 @@ namespace net.sf.jni4net
         private static bool jvmLoaded;
         internal static bool clrLoaded;
         private static BridgeSetup setup;
-        private static string homeDir = Path.GetDirectoryName(typeof(Bridge).Assembly.Location);
+        private static readonly string homeDir = Path.GetDirectoryName(typeof(Bridge).Assembly.Location);
 
         public static BridgeSetup Setup
         {
@@ -65,12 +65,7 @@ namespace net.sf.jni4net
                 return JNIEnv.ThreadEnv;
             }
             Bridge.setup = setup;
-            JavaVM jvm;
-            JNIEnv env;
-            JNI.CreateJavaVM(out jvm, out env, true, Bridge.setup.JVMOptions);
-            BindCore(env, Bridge.setup);
-            jvmLoaded = true;
-            return env;
+            return CreateJVM();
         }
 
         public static void CreateJVM(params string[] options)
@@ -80,23 +75,24 @@ namespace net.sf.jni4net
                 throw new JNIException("Already initilized");
             }
             setup = new BridgeSetup(options);
-            JavaVM jvm;
-            JNIEnv env;
-            JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
-            BindCore(env, Bridge.setup);
-            jvmLoaded = true;
+            CreateJVM();
         }
 
-        public static void CreateJVM(out JavaVM jvm, out JNIEnv env, params string[] options)
+        private static JNIEnv CreateJVM()
         {
-            if (jvmLoaded)
+            JavaVM jvm;
+            JNIEnv env;
+            try
             {
-                throw new JNIException("Already initilized");
+                JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
             }
-            setup = new BridgeSetup(options);
-            JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
-            BindCore(env, Bridge.setup);
+            catch(Exception ex)
+            {
+                throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)", ex);
+            }
+            BindCore(env, setup);
             jvmLoaded = true;
+            return env;
         }
 
         public static string FindJar()
@@ -131,7 +127,6 @@ namespace net.sf.jni4net
                     return dir;
                 }
             }
-            TextWriter writer = Console.Out;
             throw new JNIException("Can't find " + jar);
         }
 
@@ -177,9 +172,6 @@ namespace net.sf.jni4net
                 Console.WriteLine("loading " + assembly + " from " + assembly.Location);
             }
             knownAssemblies.Add(assembly, assembly);
-            JNIEnv env = JNIEnv.ThreadEnv;
-            //JavaProxiesMap.RegisterAssembly(env, assembly);
-            //ClrProxiesMap.RegisterAssembly(env, assembly);
             Registry.RegisterAssembly(assembly, true);
 
             if (Setup.Verbose)

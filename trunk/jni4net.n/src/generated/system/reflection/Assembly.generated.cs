@@ -44,7 +44,8 @@ namespace System.Reflection {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetCustomAttributes", "GetCustomAttributes1", "(Z)[Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetCustomAttributes", "GetCustomAttributes2", "(Lsystem/Type;Z)[Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "IsDefined", "IsDefined3", "(Lsystem/Type;Z)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData4", "(Lsystem/Object;Lsystem/ValueType;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData4", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
+                        "reamingContext;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString5", "()Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Equals", "Equals6", "(Lsystem/Object;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetHashCode", "GetHashCode7", "()I"));
@@ -157,7 +158,7 @@ namespace System.Reflection {
         }
         
         private static void GetObjectData4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
-            // (Lsystem/Object;Lsystem/ValueType;)V
+            // (Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/StreamingContext;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {

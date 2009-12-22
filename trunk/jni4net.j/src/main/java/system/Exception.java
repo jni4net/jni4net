@@ -127,7 +127,7 @@ public class Exception extends java.lang.RuntimeException implements IClrProxy, 
     public native java.lang.String ToString();
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(system.Object info, system.ValueType context);
+    public native void GetObjectData(system.runtime.serialization.SerializationInfo info, system.runtime.serialization.StreamingContext context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type GetType();

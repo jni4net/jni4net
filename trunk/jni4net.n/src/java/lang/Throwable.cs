@@ -23,17 +23,51 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.Serialization;
+using java.io;
 using net.sf.jni4net;
+using net.sf.jni4net.adaptors;
 using net.sf.jni4net.jni;
 
 namespace java.lang
 {
+    [Serializable]
     partial class Throwable : global::System.Exception, IJvmProxy
     {
         internal Class clazz;
         private JavaVM javaVM;
         internal IntPtr jvmHandle;
 
+        protected Throwable(SerializationInfo info, StreamingContext context) 
+            //: base(info, context)
+        {
+
+            //int len = info.GetInt32("lenght");
+            byte[] data = (byte[])info.GetValue("exception", typeof(byte[]));
+            using (var bai = Adapt.Disposable(new ByteArrayInputStream(data)))
+            {
+                using (var ois = Adapt.Disposable(new ObjectInputStream(bai.Real)))
+                {
+                    Object exception = ois.Real.readObject();
+                    ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, ((IJvmProxy)exception).JvmHandle, exception.getClass());
+                }
+            }
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            using (var bao = Adapt.Disposable(new ByteArrayOutputStream()))
+            {
+                using (var oos = Adapt.Disposable(new ObjectOutputStream(bao.Real)))
+                {
+                    oos.Real.writeObject(Bridge.Cast<Object>(this));
+                    byte[] data = bao.Real.toByteArray();
+                    //info.AddValue("length", data.Length);
+                    info.AddValue("exception", data);
+                }
+            }
+        }
+        
         protected internal Throwable(JNIEnv env)
         {
         }

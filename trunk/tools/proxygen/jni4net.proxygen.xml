@@ -77,6 +77,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.io.Flushable"/>
   <JavaClass TypeName="java.io.Serializable"/>
   <JavaClass TypeName="java.io.FilterOutputStream"/>
+  <JavaClass TypeName="java.io.ObjectOutputStream"/>
+  <JavaClass TypeName="java.io.ObjectInputStream"/>
+  <JavaClass TypeName="java.io.ByteArrayOutputStream"/>
+  <JavaClass TypeName="java.io.ByteArrayInputStream"/>
   <JavaClass TypeName="java.lang.Appendable"/>
   <JavaClass TypeName="java.io.File">
 	  <MethodModifier MethodName="listFiles" Signature="(Ljava/io/FileFilter;)[Ljava/io/File;" Skip="true"/>
@@ -213,6 +217,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- interfaces -->
   <ClrType TypeName="System.Runtime.Serialization.ISerializable"/>
+	  <ClrType TypeName="System.Runtime.Serialization.SerializationInfo"/>
+	  <ClrType TypeName="System.Runtime.Serialization.StreamingContext"/>
   <ClrType TypeName="System.Security.IEvidenceFactory"/>
   <ClrType TypeName="System.IComparable"/>
   <ClrType TypeName="System.IConvertible">

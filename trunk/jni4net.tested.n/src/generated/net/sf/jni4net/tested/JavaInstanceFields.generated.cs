@@ -13,25 +13,25 @@ namespace net.sf.jni4net.tested {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
-    public partial class JavaInstanceFields : global::java.lang.Object {
+    public partial class JavaInstanceFields : global::java.lang.Object, global::System.Runtime.Serialization.ISerializable {
         
         internal static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.FieldId _intField0;
+        internal static global::net.sf.jni4net.jni.FieldId _intField1;
         
-        internal static global::net.sf.jni4net.jni.FieldId _stringField1;
+        internal static global::net.sf.jni4net.jni.FieldId _stringField2;
         
-        internal static global::net.sf.jni4net.jni.FieldId _byteField2;
+        internal static global::net.sf.jni4net.jni.FieldId _byteField3;
         
-        internal static global::net.sf.jni4net.jni.FieldId _charField3;
+        internal static global::net.sf.jni4net.jni.FieldId _charField4;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor4;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctor5;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaInstanceFields() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor4, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor5, this);
         }
         
         protected JavaInstanceFields(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -48,7 +48,7 @@ namespace net.sf.jni4net.tested {
         public virtual int intField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return ((int)(@__env.GetIntField(this, global::net.sf.jni4net.tested.JavaInstanceFields._intField0)));
+                return ((int)(@__env.GetIntField(this, global::net.sf.jni4net.tested.JavaInstanceFields._intField1)));
             }
         }
         
@@ -56,7 +56,7 @@ namespace net.sf.jni4net.tested {
         public virtual global::java.lang.String stringField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.GetObjectFieldPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._stringField1));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.GetObjectFieldPtr(this, global::net.sf.jni4net.tested.JavaInstanceFields._stringField2));
             }
         }
         
@@ -64,7 +64,7 @@ namespace net.sf.jni4net.tested {
         public virtual byte byteField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return ((byte)(@__env.GetByteField(this, global::net.sf.jni4net.tested.JavaInstanceFields._byteField2)));
+                return ((byte)(@__env.GetByteField(this, global::net.sf.jni4net.tested.JavaInstanceFields._byteField3)));
             }
         }
         
@@ -72,17 +72,17 @@ namespace net.sf.jni4net.tested {
         public virtual char charField {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-                return ((char)(@__env.GetCharField(this, global::net.sf.jni4net.tested.JavaInstanceFields._charField3)));
+                return ((char)(@__env.GetCharField(this, global::net.sf.jni4net.tested.JavaInstanceFields._charField4)));
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.JavaInstanceFields.staticClass = @__class;
-            global::net.sf.jni4net.tested.JavaInstanceFields._intField0 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "intField", "I");
-            global::net.sf.jni4net.tested.JavaInstanceFields._stringField1 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "stringField", "Ljava/lang/String;");
-            global::net.sf.jni4net.tested.JavaInstanceFields._byteField2 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "byteField", "B");
-            global::net.sf.jni4net.tested.JavaInstanceFields._charField3 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "charField", "C");
-            global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor4 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaInstanceFields._intField1 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "intField", "I");
+            global::net.sf.jni4net.tested.JavaInstanceFields._stringField2 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "stringField", "Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaInstanceFields._byteField3 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "byteField", "B");
+            global::net.sf.jni4net.tested.JavaInstanceFields._charField4 = @__env.GetFieldID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "charField", "C");
+            global::net.sf.jni4net.tested.JavaInstanceFields.@__ctor5 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaInstanceFields.staticClass, "<init>", "()V");
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

@@ -37,7 +37,8 @@ namespace System.Runtime.Serialization {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Runtime.Serialization.@__ISerializable.staticClass = @__class;
-            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Lsystem/Object;Lsystem/ValueType;)V");
+            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
+                    "reamingContext;)V");
         }
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
@@ -48,12 +49,13 @@ namespace System.Runtime.Serialization {
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
             global::System.Type @__type = typeof(__ISerializable);
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData0", "(Lsystem/Object;Lsystem/ValueType;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData0", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
+                        "reamingContext;)V"));
             return methods;
         }
         
         private static void GetObjectData0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
-            // (Lsystem/Object;Lsystem/ValueType;)V
+            // (Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/StreamingContext;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {

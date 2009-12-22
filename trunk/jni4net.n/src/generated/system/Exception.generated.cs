@@ -47,7 +47,8 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getSource", "Source8", "()Ljava/lang/String;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setSource", "Source9", "(Ljava/lang/String;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString10", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData11", "(Lsystem/Object;Lsystem/ValueType;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData11", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
+                        "reamingContext;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType12", "()Lsystem/Type;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Equals", "Equals13", "(Lsystem/Object;)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetHashCode", "GetHashCode14", "()I"));
@@ -177,7 +178,7 @@ namespace System {
         }
         
         private static void GetObjectData11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr info, global::System.IntPtr context) {
-            // (Lsystem/Object;Lsystem/ValueType;)V
+            // (Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/StreamingContext;)V
             // (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {

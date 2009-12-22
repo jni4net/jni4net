@@ -36,7 +36,7 @@ public class Assembly extends system.Object implements system.security.IEvidence
     public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(system.Object info, system.ValueType context);
+    public native void GetObjectData(system.runtime.serialization.SerializationInfo info, system.runtime.serialization.StreamingContext context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String ToString();
