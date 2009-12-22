@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using java.lang;
 using java_.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
@@ -97,9 +98,10 @@ namespace net.sf.jni4net
                 throw new JNIException("Can't cast to CLR class");
             }
             RegistryRecord record = Registry.GetCLRRecord(reqType);
-            if (!record.JVMInterface.isAssignableFrom(proxy.getClass()))
+            Class clazz = proxy.getClass();
+            if (!record.JVMInterface.isAssignableFrom(clazz))
             {
-                throw new InvalidCastException("Can't cast JVM instance of " + proxy.getClass() + " to " + reqType);
+                throw new InvalidCastException("Can't cast JVM instance of " + clazz + " to " + record.JVMInterface + "\n (" + clazz.getClassLoader() + "->" + record.JVMInterface.getClassLoader() + ")");
             }
             IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle, record.JVMInterface);
             return (TRes) res;

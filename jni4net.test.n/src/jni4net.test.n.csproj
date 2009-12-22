@@ -52,6 +52,7 @@
     <Compile Include="..\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs">
       <Link>generated\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AppDomainTest.cs" />
     <Compile Include="BasicTests.cs" />
     <Compile Include="BB\Basic.cs" />
     <Compile Include="BB\BasicByte.cs" />
