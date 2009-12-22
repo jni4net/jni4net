@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.CodeDom;
 using System.Reflection;
+using System.Runtime.Serialization;
 using net.sf.jni4net.proxygen.model;
 
 namespace net.sf.jni4net.proxygen.generator
@@ -67,6 +68,25 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateConstructionHelper(tgtType);
             CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv",
                                  type == Repository.javaLangClass || type == Repository.javaLangString, false);
+
+            if (type.IsException)
+            {
+                if (type.IsRootType)
+                {
+                    return;
+                }
+
+                Utils.AddAttribute(tgtType, "System.SerializableAttribute");
+
+                var sc = new CodeConstructor();
+                sc.Attributes = MemberAttributes.Family;
+                sc.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof(SerializationInfo)), "info"));
+                sc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("info"));
+                sc.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof(StreamingContext)), "context"));
+                sc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("context"));
+                tgtType.Members.Add(sc);
+            }
+
         }
 
         private void GenerateMethodsC2J(CodeTypeDeclaration tgtType)

@@ -13,6 +13,7 @@ namespace java.nio {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
+    [global::System.SerializableAttribute()]
     public partial class ReadOnlyBufferException : global::java.lang.UnsupportedOperationException {
         
         internal static global::java.lang.Class staticClass;
@@ -28,6 +29,10 @@ namespace java.nio {
         
         protected ReadOnlyBufferException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
+        }
+        
+        protected ReadOnlyBufferException(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                base(info, context) {
         }
         
         public new static global::java.lang.Class _class {

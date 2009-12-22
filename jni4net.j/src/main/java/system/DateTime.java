@@ -176,7 +176,7 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     public native system.Object ToType(system.Type conversionType, system.IFormatProvider provider);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V")
-    public native void GetObjectData(system.Object info, system.ValueType context);
+    public native void GetObjectData(system.runtime.serialization.SerializationInfo info, system.runtime.serialization.StreamingContext context);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/DateTime;)I")
     public native int CompareTo(system.DateTime other);

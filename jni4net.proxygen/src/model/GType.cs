@@ -46,6 +46,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsArray { get; set; }
         public bool IsFinal { get; set; }
         public bool IsPrimitive { get; set; }
+        public bool IsException { get; set; }
         public bool IsCLRProxy { get; set; }
         public bool IsJVMProxy { get; set; }
         public bool IsCLRGenerate { get; set; }

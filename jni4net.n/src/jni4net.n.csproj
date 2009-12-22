@@ -223,7 +223,11 @@
     <Compile Include="adaptors\Enumerator.cs" />
     <Compile Include="Bridge.JVM.convertor.cs" />
     <Compile Include="BridgeSetup.cs" />
+    <Compile Include="generated\java\io\ByteArrayInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ByteArrayOutputStream.generated.cs" />
     <Compile Include="generated\java\io\FileInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ObjectInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ObjectOutputStream.generated.cs" />
     <Compile Include="generated\java\lang\IllegalArgumentException.generated.cs" />
     <Compile Include="generated\java\lang\IndexOutOfBoundsException.generated.cs" />
     <Compile Include="generated\java\lang\NullPointerException.generated.cs" />

@@ -13,6 +13,7 @@ namespace java.nio {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
+    [global::System.SerializableAttribute()]
     public partial class InvalidMarkException : global::java.lang.RuntimeException {
         
         internal static global::java.lang.Class staticClass;
@@ -28,6 +29,10 @@ namespace java.nio {
         
         protected InvalidMarkException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
+        }
+        
+        protected InvalidMarkException(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                base(info, context) {
         }
         
         public new static global::java.lang.Class _class {

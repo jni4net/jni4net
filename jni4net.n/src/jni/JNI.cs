@@ -76,9 +76,13 @@ namespace net.sf.jni4net.jni
                     Directory.SetCurrentDirectory(jvmDir);
                     var args = new JavaVMInitArgs();
 
-                    //just load DLL, don't worry for result
+                    //just load DLL
                     Dll.JNI_GetDefaultJavaVMInitArgs(&args);
                     init = true;
+                }
+                catch(TypeInitializationException ex)
+                {
+                    
                 }
                 finally
                 {

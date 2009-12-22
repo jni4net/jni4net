@@ -36,18 +36,18 @@ namespace net.sf.jni4net.test
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             BridgeSetup setup=new BridgeSetup (false){Verbose = true, Debug = true};
+            string prefix;
             if (Environment.CurrentDirectory.EndsWith("target"))
             {
-                setup.AddClassPath("../../jni4net.j/target/classes");
-                setup.AddClassPath("../../jni4net.tested.j/target/classes");
-                setup.AddClassPath("../../jni4net.test.j/target/test-classes");
+                prefix = "../../";
             }
             else
             {
-                setup.AddClassPath("../../../jni4net.j/target/classes");
-                setup.AddClassPath("../../../jni4net.tested.j/target/classes");
-                setup.AddClassPath("../../../jni4net.test.j/target/test-classes");
+                prefix = "../../../";
             }
+            setup.AddClassPath(prefix + "jni4net.j/target/classes");
+            setup.AddClassPath(prefix + "jni4net.tested.j/target/classes");
+            setup.AddClassPath(prefix + "jni4net.test.j/target/test-classes");
             env = Bridge.CreateJVM(setup);
             Bridge.RegisterAssembly(typeof(TestBase).Assembly);
             Bridge.RegisterAssembly(typeof(JavaInstanceFields).Assembly);

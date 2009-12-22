@@ -92,6 +92,7 @@ namespace net.sf.jni4net.proxygen.model
                 res.Registration = registration;
             }
             res.IsPrimitive = type.IsPrimitive;
+            res.IsException = typeof(Exception).IsAssignableFrom(type);
             res.CLRType = type;
             if (res.IsArray)
             {

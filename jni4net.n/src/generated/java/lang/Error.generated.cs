@@ -13,6 +13,7 @@ namespace java.lang {
     
     #region Component Designer generated code 
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
+    [global::System.SerializableAttribute()]
     public partial class Error : global::java.lang.Throwable {
         
         internal static global::java.lang.Class staticClass;
@@ -55,6 +56,10 @@ namespace java.lang {
         
         protected Error(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
+        }
+        
+        protected Error(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                base(info, context) {
         }
         
         public new static global::java.lang.Class _class {

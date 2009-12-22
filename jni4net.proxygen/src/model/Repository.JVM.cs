@@ -129,6 +129,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             res.IsJVMType = true;
             res.IsPrimitive = clazz.isPrimitive();
+            res.IsException = Throwable._class.isAssignableFrom(clazz);
             res.IsInterface = clazz.isInterface();
             res.IsCLRProxy = clrProxyClass != null && clrProxyClass.isAssignableFrom(clazz);
             if (!res.IsCLRProxy)
