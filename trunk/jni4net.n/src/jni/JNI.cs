@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using JType=java.lang.reflect.Type;
 
 namespace net.sf.jni4net.jni
@@ -43,6 +44,9 @@ namespace net.sf.jni4net.jni
             Init();
         }
 
+        [EnvironmentPermission(SecurityAction.Assert, Read = "JAVA_HOME")]
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.Execution|SecurityPermissionFlag.UnmanagedCode|SecurityPermissionFlag.SkipVerification)]
         private static void Init()
         {
             if (!init)
@@ -67,7 +71,7 @@ namespace net.sf.jni4net.jni
                 }
                 if (!Directory.Exists(jvmDir))
                 {
-                    throw new JNIException("JAVA_HOME environment jariable is not set");
+                    throw new JNIException("JAVA_HOME environment variable is not set");
                 }
 
                 string oldDirectory = Directory.GetCurrentDirectory();

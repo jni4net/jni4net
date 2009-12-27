@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Globalization;
+using System.Security;
+using System.Security.Permissions;
 using System.Threading;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.tested;
@@ -34,8 +36,8 @@ namespace net.sf.jni4net.test
         [TestFixtureSetUp]
         public virtual void Setup()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-            BridgeSetup setup=new BridgeSetup (false){Verbose = true, Debug = true};
+            var sp = new FileIOPermission(PermissionState.Unrestricted);
+            sp.Assert();
             string prefix;
             if (Environment.CurrentDirectory.EndsWith("target"))
             {
@@ -45,6 +47,9 @@ namespace net.sf.jni4net.test
             {
                 prefix = "../../../";
             }
+            sp.Deny();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            BridgeSetup setup=new BridgeSetup (false){Verbose = true, Debug = true};
             setup.AddClassPath(prefix + "jni4net.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.tested.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.test.j/target/test-classes");

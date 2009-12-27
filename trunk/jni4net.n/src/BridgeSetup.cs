@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Permissions;
 using System.Text;
 
 namespace net.sf.jni4net
@@ -60,6 +61,7 @@ namespace net.sf.jni4net
             get { return jvmCLassPath.ToArray(); }
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddBridgeClassPath()
         {
             string bridgeJar = Bridge.FindJar();
@@ -70,6 +72,7 @@ namespace net.sf.jni4net
             }
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddClassPath(string jarOrClassRoot)
         {
             jvmCLassPath.Add(jarOrClassRoot);
@@ -88,6 +91,7 @@ namespace net.sf.jni4net
             jvmOptions.Add(name+"="+value);
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddAllJarsClassPath(string directory)
         {
             foreach (string jar in Directory.GetFiles(directory, "*.jar"))
