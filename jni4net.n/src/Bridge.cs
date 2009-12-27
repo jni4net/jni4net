@@ -24,6 +24,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Security;
+using System.Security.Permissions;
 using java.lang;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
@@ -37,7 +39,15 @@ namespace net.sf.jni4net
         private static bool jvmLoaded;
         internal static bool clrLoaded;
         private static BridgeSetup setup;
-        private static readonly string homeDir = Path.GetDirectoryName(typeof(Bridge).Assembly.Location);
+        private static readonly string homeDir;
+        private static readonly string homeDll;
+
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        static Bridge()
+        {
+            homeDll = typeof(Bridge).Assembly.Location;
+            homeDir = Path.GetDirectoryName(homeDll);
+        }
 
         public static BridgeSetup Setup
         {
@@ -78,6 +88,8 @@ namespace net.sf.jni4net
             CreateJVM();
         }
 
+        [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.Execution | SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.SkipVerification)]
+        [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
         private static JNIEnv CreateJVM()
         {
             JavaVM jvm;
@@ -86,7 +98,20 @@ namespace net.sf.jni4net
             {
                 JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
             }
-            catch(Exception ex)
+
+            catch (TypeInitializationException ex)
+            {
+                if (ex.InnerException is SecurityException)
+                {
+                    throw;
+                }
+                throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)", ex);
+            }
+            catch (SecurityException)
+            {
+                throw;
+            }
+            catch (Exception ex)
             {
                 throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)", ex);
             }
@@ -95,33 +120,33 @@ namespace net.sf.jni4net
             return env;
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public static string FindJar()
         {
-            string dll = typeof(Bridge).Assembly.Location;
-            string jar = dll.Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
+            string jar = homeDll.Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
             if (File.Exists(jar))
             {
                 return jar;
             }
-            if (dll.Contains("jni4net.proxygen\\target"))
+            if (homeDll.Contains("jni4net.proxygen\\target"))
             {
-                string dir = Path.GetDirectoryName(dll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
+                string dir = Path.GetDirectoryName(homeDll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
                 if (Directory.Exists(dir))
                 {
                     return dir;
                 }
             }
-            if (dll.Contains("jni4net.n\\target"))
+            if (homeDll.Contains("jni4net.n\\target"))
             {
-                string dir = Path.GetDirectoryName(dll).Replace("jni4net.n", "jni4net.j") + "\\classes";
+                string dir = Path.GetDirectoryName(homeDll).Replace("jni4net.n", "jni4net.j") + "\\classes";
                 if (Directory.Exists(dir))
                 {
                     return dir;
                 }
             }
-            if (dll.Contains("jni4net.test.n\\target"))
+            if (homeDll.Contains("jni4net.test.n\\target"))
             {
-                string dir = Path.GetDirectoryName(dll).Replace("jni4net.test.n", "jni4net.j").Replace("jni4net.n", "jni4net.j") + "\\classes";
+                string dir = Path.GetDirectoryName(homeDll).Replace("jni4net.test.n", "jni4net.j").Replace("jni4net.n", "jni4net.j") + "\\classes";
                 if (Directory.Exists(dir))
                 {
                     return dir;
@@ -135,6 +160,7 @@ namespace net.sf.jni4net
             return typeof (Bridge).Assembly.GetName().Version.ToString();
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public static void LoadAndRegisterAssembly(string assemblyPath)
         {
             Assembly assembly;
@@ -157,6 +183,7 @@ namespace net.sf.jni4net
             RegisterAssembly(assembly);
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public static void RegisterAssembly(Assembly assembly)
         {
             if (knownAssemblies.ContainsKey(assembly))
@@ -252,7 +279,7 @@ namespace net.sf.jni4net
             }
             if (Setup.Verbose)
             {
-                Console.WriteLine("core loaded from " + typeof(Bridge).Assembly.Location);
+                Console.WriteLine("core loaded from " + homeDll);
             }
             clrLoaded = true;
         }
@@ -265,7 +292,7 @@ namespace net.sf.jni4net
             }
             if (newSetup.Verbose)
             {
-                Console.WriteLine("loading core from " + typeof(Bridge).Assembly.Location);
+                Console.WriteLine("loading core from " + homeDll);
             }
             if (newSetup.BindNative)
             {

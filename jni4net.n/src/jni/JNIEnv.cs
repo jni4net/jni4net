@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using java.lang;
 using java.lang.reflect;
 using java.nio;
@@ -34,6 +35,7 @@ using String=java.lang.String;
 
 namespace net.sf.jni4net.jni
 {
+    [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.Execution | SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.SkipVerification)]
     public unsafe partial class JNIEnv
     {
         #region JNI methods

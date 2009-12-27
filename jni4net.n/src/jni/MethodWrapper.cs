@@ -25,9 +25,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 namespace net.sf.jni4net.jni
 {
+    [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.Execution | SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.SkipVerification)]
+    [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
     internal class MethodWrapper
     {
         //just to prevent collection

@@ -221,6 +221,7 @@
     <Compile Include="adaptors\Adapt.cs" />
     <Compile Include="adaptors\Disposable.cs" />
     <Compile Include="adaptors\Enumerator.cs" />
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Bridge.JVM.convertor.cs" />
     <Compile Include="BridgeSetup.cs" />
     <Compile Include="generated\java\io\ByteArrayInputStream.generated.cs" />

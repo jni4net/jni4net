@@ -21,12 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Security.Permissions;
 using java.lang;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.utils
 {
+    [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
     public partial class Registry
     {
         public static RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
