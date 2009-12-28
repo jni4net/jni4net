@@ -58,6 +58,8 @@ namespace net.sf.jni4net.utils
         private static readonly Dictionary<Class, RegistryRecord> knownJVMProxies =
             new Dictionary<Class, RegistryRecord>();
 
+        internal static ClassLoader systemClassLoader;
+
         static Registry()
         {
             JNIEnv env = JNIEnv.ThreadEnv;
@@ -119,6 +121,9 @@ namespace net.sf.jni4net.utils
             RegisterType(typeof(__Exception), true, env);
             RegisterType(typeof(Throwable), true, env);
             RegisterType(typeof(__IJvmProxy), true, env);
+            RegisterType(typeof(ClassLoader), true, env);
+
+            systemClassLoader = ClassLoader.getSystemClassLoader();
         }
 
         public static void RegisterAssembly(Assembly assembly, bool bindJVM)
@@ -226,20 +231,16 @@ namespace net.sf.jni4net.utils
             }
             if (Bridge.Setup.BindCLRTypes || record.IsJVMClass)
             {
-                record.JVMInterface = env.FindClassNoThrow(interfaceName.Replace('.', '/'));
-                if (record.JVMInterface == null)
-                {
-                    throw new JNIException("Can't find java class for " + interfaceName);
-                }
+                record.JVMInterface = LoadClass(interfaceName, env);
             }
-            record.JVMStatic = env.FindClassNoThrow(staticName.Replace('.', '/'));
+            record.JVMStatic = LoadClass(staticName, env);
             if (record.JVMStatic == null && Bridge.Setup.BindStatic)
             {
                 throw new JNIException("Can't find java class for " + staticName);
             }
             if (proxyName != null && Bridge.Setup.BindStatic)
             {
-                record.JVMProxy = env.FindClassNoThrow(proxyName.Replace('.', '/'));
+                record.JVMProxy = LoadClass(proxyName, env);
                 record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
                 if (record.JVMConstructor == null)
                 {
@@ -248,6 +249,29 @@ namespace net.sf.jni4net.utils
                 knownJVMProxies[record.JVMProxy] = record;
                 knownJVM[record.JVMProxy] = record;
             }
+        }
+
+        private static Class LoadClass(string name, JNIEnv env)
+        {
+            Class res;
+            string rn = name.Replace('.', '/');
+            res = env.FindClassNoThrow(rn);
+            if (res == null)
+            {
+                try
+                {
+                    res = systemClassLoader.loadClass(name);
+                }
+                catch(Throwable th)
+                {
+                    throw new JNIException("Can't find java class for " + name, th);
+                }
+            }
+            if (res == null)
+            {
+                throw new JNIException("Can't find java class for " + name);
+            }
+            return res;
         }
 
         private static void RegisterClassToMap(RegistryRecord record)

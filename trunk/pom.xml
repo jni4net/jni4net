@@ -36,49 +36,49 @@
             <url>http://jni4net.googlecode.com/svn/mvnrepo</url>
         </pluginRepository>
     </pluginRepositories>
-	<licenses>
-		<license>
-			<name>LGPL v3.0</name>
-			<url></url>
-		</license>
-		<license>
-			<name>GPL v3.0</name>
-			<url></url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>LGPL v3.0</name>
+            <url></url>
+        </license>
+        <license>
+            <name>GPL v3.0</name>
+            <url></url>
+        </license>
+    </licenses>
     <distributionManagement>
         <downloadUrl>http://jni4net.googlecode.com/svn/mvnrepo</downloadUrl>
         <repository>
-			<uniqueVersion>false</uniqueVersion>
+            <uniqueVersion>false</uniqueVersion>
             <id>net.sf.jni4net-upload</id>
             <name>jni4net release repository</name>
             <url>svn:https://jni4net.googlecode.com/svn/mvnrepo</url>
         </repository>
     </distributionManagement>
     <build>
-		<extensions>
-			<extension>
-				<groupId>org.jvnet.wagon-svn</groupId>
-				<artifactId>wagon-svn</artifactId>
-				<version>1.8</version>
-			</extension>
-		</extensions>
+        <extensions>
+            <extension>
+                <groupId>org.jvnet.wagon-svn</groupId>
+                <artifactId>wagon-svn</artifactId>
+                <version>1.8</version>
+            </extension>
+        </extensions>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>2.2-beta-2</version>
                 </plugin>
-	            <plugin>
-	                <groupId>org.sonatype.nmaven.plugins</groupId>
-	                <artifactId>maven-dotnet-compiler-plugin</artifactId>
-	                <version>0.17robocode</version>
-	            </plugin>                
-				<plugin>
-					<groupId>org.sonatype.nmaven.plugins</groupId>
-					<artifactId>maven-dotnet-test-plugin</artifactId>
-	                <version>0.17robocode</version>
-				</plugin>
+                <plugin>
+                    <groupId>org.sonatype.nmaven.plugins</groupId>
+                    <artifactId>maven-dotnet-compiler-plugin</artifactId>
+                    <version>0.17robocode</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.nmaven.plugins</groupId>
+                    <artifactId>maven-dotnet-test-plugin</artifactId>
+                    <version>0.17robocode</version>
+                </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>2.2</version>
@@ -108,8 +108,8 @@
                     <version>2.4.3</version>
                 </plugin>
                 <plugin>
-	                <artifactId>maven-eclipse-plugin</artifactId>
-	                <version>2.5.1</version>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                    <version>2.5.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>

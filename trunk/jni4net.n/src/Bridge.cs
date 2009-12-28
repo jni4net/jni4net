@@ -207,6 +207,11 @@ namespace net.sf.jni4net
             }
         }
 
+        public static void SetSystemClassLoader(ClassLoader classLoader)
+        {
+            Registry.systemClassLoader = classLoader;
+        }
+
         #region Initialization
 
         internal static int initDotNetImpl(IntPtr envi, IntPtr clazz)

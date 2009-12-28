@@ -45,6 +45,7 @@ namespace net.sf.jni4net {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateJVM", "CreateJVM2", "(Lnet/sf/jni4net/BridgeSetup;)Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssembly", "LoadAndRegisterAssembly3", "(Ljava/lang/String;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly4", "(Lsystem/reflection/Assembly;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetSystemClassLoader", "SetSystemClassLoader5", "(Ljava/lang/ClassLoader;)V"));
             return methods;
         }
         
@@ -93,6 +94,15 @@ namespace net.sf.jni4net {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.Bridge.RegisterAssembly(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, assembly));
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void SetSystemClassLoader5(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr classLoader) {
+            // (Ljava/lang/ClassLoader;)V
+            // (Ljava/lang/ClassLoader;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.Bridge.SetSystemClassLoader(global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.ClassLoader>(@__env, classLoader));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         

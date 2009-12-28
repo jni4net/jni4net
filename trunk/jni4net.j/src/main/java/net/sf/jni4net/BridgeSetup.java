@@ -59,6 +59,12 @@ public class BridgeSetup extends system.Object {
     public native void setVerbose(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean getVeryVerbose();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    public native void setVeryVerbose(boolean value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean getDebug();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
@@ -69,6 +75,12 @@ public class BridgeSetup extends system.Object {
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
     public native void setBindNative(boolean value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean getBindCoreOnly();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    public native void setBindCoreOnly(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean getBindStatic();

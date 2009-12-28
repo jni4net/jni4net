@@ -2,6 +2,7 @@ Version 0.6
 -----------
 + JVM exceptions are serializable for CLR binary serialization
 + declarative security for running in partially trusted environments
++ possibility to specify alternate classloader
 
 Version 0.5
 -----------
