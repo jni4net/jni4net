@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Globalization;
-using System.Security;
 using System.Security.Permissions;
 using System.Threading;
 using net.sf.jni4net.jni;

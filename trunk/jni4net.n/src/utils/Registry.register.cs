@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using java.io;
 using java.lang;
 using net.sf.jni4net.attributes;
 using net.sf.jni4net.inj;
@@ -113,6 +114,11 @@ namespace net.sf.jni4net.utils
             Convertor.longValue = env.GetMethodID(Long.staticClass, "longValue", "()J");
             Convertor.doubleValue = env.GetMethodID(Double.staticClass, "doubleValue", "()D");
             Convertor.floatValue = env.GetMethodID(Float.staticClass, "floatValue", "()F");
+
+            RegisterType(typeof(__Bridge), true, env);
+            RegisterType(typeof(__Exception), true, env);
+            RegisterType(typeof(Throwable), true, env);
+            RegisterType(typeof(__IJvmProxy), true, env);
         }
 
         public static void RegisterAssembly(Assembly assembly, bool bindJVM)
@@ -152,8 +158,12 @@ namespace net.sf.jni4net.utils
             //knownCLR[record.CLRInterface] = record;
         }
 
-        private static void RegisterType(Type type, bool bindJVM, JNIEnv env)
+        public static void RegisterType(Type type, bool bindJVM, JNIEnv env)
         {
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("Registration : " + type.FullName);
+            }
             RegistryRecord record = null;
             RegisterWrapper(type, ref record);
             RegisterInterfaceProxy(type, ref record);

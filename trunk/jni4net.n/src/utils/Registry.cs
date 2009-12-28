@@ -68,7 +68,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        public static RegistryRecord GetCLRRecord(Type iface)
+        internal static RegistryRecord GetCLRRecord(Type iface)
         {
             lock (typeof (Registry))
             {
@@ -81,7 +81,7 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        public static RegistryRecord GetJVMRecord(Class iface)
+        internal static RegistryRecord GetJVMRecord(Class iface)
         {
             lock (typeof (Registry))
             {

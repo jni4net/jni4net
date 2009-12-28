@@ -29,25 +29,26 @@ namespace net.sf.jni4net.utils
 {
     public class RegistryRecord
     {
-        public Assembly CLRAssembly;
-        public IConstructionHelper CLRConstructor;
-        public Type CLRInterface;
-        public string CLRName;
-        public Type CLRProxy;
-        public MethodInfo CLRProxyInitMethod;
-        public Type CLRStatic;
-        public Type CLRWrapper;
-        public MethodInfo CLRWrapperInitMethod;
-        public bool IsCLRType;
-        public bool IsInterface;
-        public bool IsJVMClass;
-        public bool JVMBound;
-        public MethodId JVMConstructor;
+        public IConstructionHelper CLRConstructor { get; internal set; }
+        public Type CLRInterface { get; internal set; }
+        public string CLRName { get; internal set; }
+        public Type CLRProxy { get; internal set; }
+        public MethodInfo CLRProxyInitMethod { get; internal set; }
+        public Type CLRStatic { get; internal set; }
+        public Type CLRWrapper { get; internal set; }
+        public MethodInfo CLRWrapperInitMethod { get; internal set; }
+        public bool IsCLRType { get; internal set; }
+        public bool IsInterface { get; internal set; }
+        public bool IsJVMClass { get; internal set; }
+        public bool JVMBound { get; internal set; }
+        public MethodId JVMConstructor { get; internal set; }
 
-        public Class JVMInterface;
-        public string JVMName;
-        public Class JVMProxy;
-        public Class JVMStatic;
+        public Class JVMInterface { get; internal set; }
+        public string JVMName { get; internal set; }
+        public Class JVMProxy { get; internal set; }
+        public Class JVMStatic { get; internal set; }
+
+        public Assembly CLRAssembly { get; internal set; }
 
         public override string ToString()
         {
