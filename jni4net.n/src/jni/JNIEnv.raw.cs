@@ -122,6 +122,12 @@ namespace net.sf.jni4net.jni
 
         public IntPtr CallObjectMethodPtr(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallObjectMethodPtr : " + obj.GetType().FullName);
+            }
+#endif
             IntPtr res = callObjectMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -143,6 +149,12 @@ namespace net.sf.jni4net.jni
 
         public IntPtr CallStaticObjectMethodPtr(Class clazz, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticObjectMethodPtr : " + clazz.FullName);
+            }
+#endif
             IntPtr res = callStaticObjectMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;

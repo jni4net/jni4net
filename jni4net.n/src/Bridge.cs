@@ -251,6 +251,7 @@ namespace net.sf.jni4net
             return 0;
         }
 
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         internal static void BindCore(JNIEnv env, BridgeSetup newSetup)
         {
             if (CheckAlreadyLoaded(newSetup, env))
@@ -259,8 +260,10 @@ namespace net.sf.jni4net
             }
 
             setup = newSetup;
-
-            RegisterAssembly(typeof(Bridge).Assembly);
+            if (!setup.BindCoreOnly)
+            {
+                RegisterAssembly(typeof (Bridge).Assembly);
+            }
             __Bridge.Init(env);
 
             if (Setup.Verbose)

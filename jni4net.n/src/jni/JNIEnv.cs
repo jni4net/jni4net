@@ -215,6 +215,12 @@ namespace net.sf.jni4net.jni
         public void CallStaticVoidMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
             //TODO result could be tested in Java 1.6
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticVoidMethod : " + clazz.FullName);
+            }
+#endif
             callStaticVoidMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
         }
@@ -227,6 +233,12 @@ namespace net.sf.jni4net.jni
 
         public int CallStaticIntMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticIntMethod : " + clazz.FullName);
+            }
+#endif
             int res = callStaticIntMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -234,6 +246,12 @@ namespace net.sf.jni4net.jni
 
         public long CallStaticLongMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticLongMethod : " + clazz.FullName);
+            }
+#endif
             long res = callStaticLongMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -241,6 +259,12 @@ namespace net.sf.jni4net.jni
 
         public double CallStaticDoubleMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticDoubleMethod : " + clazz.FullName);
+            }
+#endif
             double res = callStaticDoubleMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -248,6 +272,12 @@ namespace net.sf.jni4net.jni
 
         public float CallStaticFloatMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticFloatMethod : " + clazz.FullName);
+            }
+#endif
             float res = callStaticFloatMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -255,6 +285,12 @@ namespace net.sf.jni4net.jni
 
         public short CallStaticShortMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticShortMethod : " + clazz.FullName);
+            }
+#endif
             short res = callStaticShortMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -262,6 +298,12 @@ namespace net.sf.jni4net.jni
 
         public char CallStaticCharMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticCharMethod : " + clazz.FullName);
+            }
+#endif
             var res = (char) callStaticCharMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -269,6 +311,12 @@ namespace net.sf.jni4net.jni
 
         public bool CallStaticBooleanMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticBooleanMethod : " + clazz.FullName);
+            }
+#endif
             bool res = callStaticBooleanMethod(envPtr, obj.jvmHandle, methodIdNative.native, args) != 0;
             ExceptionTest();
             return res;
@@ -276,6 +324,12 @@ namespace net.sf.jni4net.jni
 
         public byte CallStaticByteMethod(Class obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallStaticByteMethod : " + clazz.FullName);
+            }
+#endif
             byte res = callStaticByteMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -358,6 +412,12 @@ namespace net.sf.jni4net.jni
 
         public void CallVoidMethod(IJvmProxy obj, MethodId methodId, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("IJvmProxy : " + obj.GetType().FullName);
+            }
+#endif
             CallVoidMethod(obj.JvmHandle, methodId, args);
         }
 
@@ -369,6 +429,12 @@ namespace net.sf.jni4net.jni
 
         public bool CallBooleanMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallBooleanMethod : " + obj.GetType().FullName);
+            }
+#endif
             bool res = callBooleanMethod(envPtr, obj.JvmHandle, methodIdNative.native, args) != 0;
             ExceptionTest();
             return res;
@@ -383,6 +449,12 @@ namespace net.sf.jni4net.jni
 
         public int CallIntMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallIntMethod : " + obj.GetType().FullName);
+            }
+#endif
             int res = callIntMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -397,6 +469,12 @@ namespace net.sf.jni4net.jni
 
         public short CallShortMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallShortMethod : " + obj.GetType().FullName);
+            }
+#endif
             short res = callShortMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -411,6 +489,12 @@ namespace net.sf.jni4net.jni
 
         public long CallLongMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallLongMethod : " + obj.GetType().FullName);
+            }
+#endif
             long res = callLongMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -425,6 +509,12 @@ namespace net.sf.jni4net.jni
 
         public byte CallByteMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallByteMethod : " + obj.GetType().FullName);
+            }
+#endif
             byte res = callByteMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -439,6 +529,12 @@ namespace net.sf.jni4net.jni
 
         public double CallDoubleMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallDoubleMethod : " + obj.GetType().FullName);
+            }
+#endif
             double res = callDoubleMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -453,6 +549,12 @@ namespace net.sf.jni4net.jni
 
         public float CallFloatMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallFloatMethod : " + obj.GetType().FullName);
+            }
+#endif
             float res = callFloatMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
@@ -467,7 +569,13 @@ namespace net.sf.jni4net.jni
 
         public char CallCharMethod(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
-            var res = (char) callCharMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
+#if DEBUG
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("CallCharMethod : " + obj.GetType().FullName);
+            }
+#endif
+            var res = (char)callCharMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
@@ -1285,10 +1393,10 @@ namespace net.sf.jni4net.jni
             IntPtr occurred = ExceptionOccurred();
             if (IntPtr.Zero != occurred)
             {
-                /*if (Bridge.Setup.Verbose && Bridge.Setup.Debug)
+                if (Bridge.Setup.VeryVerbose)
                 {
                     ExceptionDescribe();
-                }*/
+                }
                 ExceptionClear();
                 return true;
             }

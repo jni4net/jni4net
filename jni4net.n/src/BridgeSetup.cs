@@ -16,12 +16,15 @@ namespace net.sf.jni4net
 
         public bool BindCLRTypes { get; set; }
         public bool Verbose { get; set; }
+        public bool VeryVerbose { get; set; }
         public bool Debug { get; set; }
         public bool BindNative
         {
             get { return bindNative; }
             set { bindNative = value; }
         }
+
+        public bool BindCoreOnly { get; set; }
 
         public bool BindStatic
         {
