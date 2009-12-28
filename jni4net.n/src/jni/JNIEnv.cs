@@ -244,7 +244,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public long CallStaticLongMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public long CallStaticLongMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -252,12 +252,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticLongMethod : " + clazz.FullName);
             }
 #endif
-            long res = callStaticLongMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            long res = callStaticLongMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public double CallStaticDoubleMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public double CallStaticDoubleMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -265,12 +265,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticDoubleMethod : " + clazz.FullName);
             }
 #endif
-            double res = callStaticDoubleMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            double res = callStaticDoubleMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public float CallStaticFloatMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public float CallStaticFloatMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -278,12 +278,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticFloatMethod : " + clazz.FullName);
             }
 #endif
-            float res = callStaticFloatMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            float res = callStaticFloatMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public short CallStaticShortMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public short CallStaticShortMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -291,12 +291,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticShortMethod : " + clazz.FullName);
             }
 #endif
-            short res = callStaticShortMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            short res = callStaticShortMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public char CallStaticCharMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public char CallStaticCharMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -304,12 +304,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticCharMethod : " + clazz.FullName);
             }
 #endif
-            var res = (char) callStaticCharMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            var res = (char) callStaticCharMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public bool CallStaticBooleanMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public bool CallStaticBooleanMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -317,12 +317,12 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticBooleanMethod : " + clazz.FullName);
             }
 #endif
-            bool res = callStaticBooleanMethod(envPtr, obj.jvmHandle, methodIdNative.native, args) != 0;
+            bool res = callStaticBooleanMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args) != 0;
             ExceptionTest();
             return res;
         }
 
-        public byte CallStaticByteMethod(Class obj, MethodId methodIdNative, params Value[] args)
+        public byte CallStaticByteMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -330,7 +330,7 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticByteMethod : " + clazz.FullName);
             }
 #endif
-            byte res = callStaticByteMethod(envPtr, obj.jvmHandle, methodIdNative.native, args);
+            byte res = callStaticByteMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
