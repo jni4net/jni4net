@@ -154,6 +154,9 @@ public class Bridge extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/Assembly;)V")
     public native static void RegisterAssembly(system.reflection.Assembly assembly);
     
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/ClassLoader;)V")
+    public native static void SetSystemClassLoader(java.lang.ClassLoader classLoader);
+    
     public static system.Type typeof() {
         return net.sf.jni4net.Bridge.staticType;
     }
