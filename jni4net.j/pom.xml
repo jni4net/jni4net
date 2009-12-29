@@ -21,6 +21,8 @@
     </dependencies>
 	<build>
 		<plugins>
+		<!--
+		Signing is probably not good idea, as it prevents other people from adding to java_.util package for example
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>keytool-maven-plugin</artifactId>
@@ -48,6 +50,7 @@
 					<verify>true</verify>
 				</configuration>
 			</plugin>
+			-->
 		</plugins>
 	</build>
 </project>
