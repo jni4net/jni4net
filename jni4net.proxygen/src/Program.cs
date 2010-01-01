@@ -24,6 +24,8 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Security;
+using System.Security.Permissions;
 using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
@@ -61,13 +63,18 @@ namespace net.sf.jni4net.proxygen
 
                 AppDomain currentDomain = AppDomain.CurrentDomain;
                 currentDomain.AssemblyResolve += AssemblyResolve;
-                
+
                 return Work(args);
             }
             catch (Exception ex)
             {
-                Console.WriteLine();
-                Console.Write(ex.ToString());
+                if (ex is SecurityException || ex is TypeInitializationException)
+                {
+                    Console.Error.WriteLine();
+                    Console.Error.WriteLine("Proxygen must be run as trusted assembly! (shared drive could cause the problem)");
+                }
+                Console.Error.WriteLine();
+                Console.Error.Write(ex.ToString());
                 return -1;
             }
         }
@@ -81,6 +88,10 @@ namespace net.sf.jni4net.proxygen
             return null;
         }
 
+        [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.Assertion | SecurityPermissionFlag.Execution)]
+        [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        [EnvironmentPermission(SecurityAction.Assert, Read = "JAVA_HOME")]
         private static int Work(string[] args)
         {
             ToolConfig cfg;
