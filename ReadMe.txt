@@ -8,10 +8,13 @@ make sure you have
 - .NET SDK 3.5 installed at usual places
 - Java JDK 1.5
 - JAVA_HOME set properly
+- PATH to csc.exe
+- PATH to sn.exe
+- NUnit installed at C:\Program Files\NUnit 2.4.3
 - internet access to download components from maven repository
+- make sure that you build it and run from (.NET) trusted location. Not shared drive.
 
 run tools\loadTools.cmd
-run tools\keys\genmvnkey.cmd
 run tools\keys\gennetkey.cmd
 
 In root directory run

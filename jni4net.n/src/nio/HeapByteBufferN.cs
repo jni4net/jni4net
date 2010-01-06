@@ -44,28 +44,28 @@ namespace net.sf.jni4net.nio
     /**
      * A read/write HeapByteBuffer.
      */
-    internal class HeapByteBuffer : ByteBuffer
+    internal class HeapByteBufferN : ByteBufferN
     {
-        internal HeapByteBuffer(int cap, int lim)
+        internal HeapByteBufferN(int cap, int lim)
             : base(-1, 0, lim, cap, new byte[cap], 0)
         {
         }
 
-        internal HeapByteBuffer(byte[] buf, int off, int len)
+        internal HeapByteBufferN(byte[] buf, int off, int len)
             : base(-1, off, off + len, buf.Length, buf, 0)
         {
         }
 
-        protected HeapByteBuffer(byte[] buf,
+        protected HeapByteBufferN(byte[] buf,
                                  int mark, int pos, int lim, int cap,
                                  int off)
             : base(mark, pos, lim, cap, buf, off)
         {
         }
 
-        public override ByteBuffer slice()
+        public override ByteBufferN slice()
         {
-            return new HeapByteBuffer(hb,
+            return new HeapByteBufferN(hb,
                                       -1,
                                       0,
                                       remaining(),
@@ -73,9 +73,9 @@ namespace net.sf.jni4net.nio
                                       position() + _offset);
         }
 
-        public override ByteBuffer duplicate()
+        public override ByteBufferN duplicate()
         {
-            return new HeapByteBuffer(hb,
+            return new HeapByteBufferN(hb,
                                       markValue(),
                                       position(),
                                       limit(),
@@ -83,7 +83,7 @@ namespace net.sf.jni4net.nio
                                       _offset);
         }
 
-        public override ByteBuffer asReadOnlyBuffer()
+        public override ByteBufferN asReadOnlyBuffer()
         {
             /*return new HeapByteBufferR(hb,
 				     this.markValue(),
@@ -112,7 +112,7 @@ namespace net.sf.jni4net.nio
             return hb[ix(checkIndex(i))];
         }
 
-        public override ByteBuffer get(byte[] dst, int offset, int length)
+        public override ByteBufferN get(byte[] dst, int offset, int length)
         {
             checkBounds(offset, length, dst.Length);
             if (length > remaining())
@@ -133,19 +133,19 @@ namespace net.sf.jni4net.nio
             return false;
         }
 
-        public override ByteBuffer put(byte x)
+        public override ByteBufferN put(byte x)
         {
             hb[ix(nextPutIndex())] = x;
             return this;
         }
 
-        public override ByteBuffer put(int i, byte x)
+        public override ByteBufferN put(int i, byte x)
         {
             hb[ix(checkIndex(i))] = x;
             return this;
         }
 
-        public override ByteBuffer put(byte[] src, int offset, int length)
+        public override ByteBufferN put(byte[] src, int offset, int length)
         {
             checkBounds(offset, length, src.Length);
             if (length > remaining())
@@ -155,13 +155,13 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer put(ByteBuffer src)
+        public override ByteBufferN put(ByteBufferN src)
         {
-            if (src is HeapByteBuffer)
+            if (src is HeapByteBufferN)
             {
                 if (src == this)
                     throw new IllegalArgumentException();
-                var sb = (HeapByteBuffer) src;
+                var sb = (HeapByteBufferN) src;
                 int n = sb.remaining();
                 if (n > remaining())
                     throw new BufferOverflowException();
@@ -185,7 +185,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer compact()
+        public override ByteBufferN compact()
         {
             Array.Copy(hb, ix(position()), hb, ix(0), remaining());
             position(remaining());
@@ -219,7 +219,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putChar(char x)
+        public override ByteBufferN putChar(char x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(2));
@@ -227,7 +227,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putChar(int i, char x)
+        public override ByteBufferN putChar(int i, char x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 2));
@@ -235,7 +235,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asCharBuffer()
+        public override BufferN asCharBuffer()
         {
             /*int size = this.remaining() >> 1;
 	int off = offset + position();
@@ -271,7 +271,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putShort(short x)
+        public override ByteBufferN putShort(short x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(2));
@@ -279,7 +279,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putShort(int i, short x)
+        public override ByteBufferN putShort(int i, short x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 2));
@@ -287,7 +287,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asShortBuffer()
+        public override BufferN asShortBuffer()
         {
             /*int size = this.remaining() >> 1;
 	int off = offset + position();
@@ -322,7 +322,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putInt(int x)
+        public override ByteBufferN putInt(int x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(4));
@@ -330,7 +330,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putInt(int i, int x)
+        public override ByteBufferN putInt(int i, int x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 4));
@@ -338,7 +338,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asIntBuffer()
+        public override BufferN asIntBuffer()
         {
             /*int size = this.remaining() >> 2;
 	int off = offset + position();
@@ -373,7 +373,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putLong(long x)
+        public override ByteBufferN putLong(long x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(8));
@@ -381,7 +381,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putLong(int i, long x)
+        public override ByteBufferN putLong(int i, long x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 8));
@@ -389,7 +389,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asLongBuffer()
+        public override BufferN asLongBuffer()
         {
             /*int size = this.remaining() >> 3;
 	int off = offset + position();
@@ -424,7 +424,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putFloat(float x)
+        public override ByteBufferN putFloat(float x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(4));
@@ -432,7 +432,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putFloat(int i, float x)
+        public override ByteBufferN putFloat(int i, float x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 4));
@@ -440,7 +440,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asFloatBuffer()
+        public override BufferN asFloatBuffer()
         {
             /*int size = this.remaining() >> 2;
 	int off = offset + position();
@@ -475,7 +475,7 @@ namespace net.sf.jni4net.nio
         }
 
 
-        public override ByteBuffer putDouble(double x)
+        public override ByteBufferN putDouble(double x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(nextPutIndex(8));
@@ -483,7 +483,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override ByteBuffer putDouble(int i, double x)
+        public override ByteBufferN putDouble(int i, double x)
         {
             byte[] bytes = BitConverter.GetBytes(x);
             int index = ix(checkIndex(i, 8));
@@ -491,7 +491,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        public override Buffer asDoubleBuffer()
+        public override BufferN asDoubleBuffer()
         {
             /*int size = this.remaining() >> 3;
 	int off = offset + position();

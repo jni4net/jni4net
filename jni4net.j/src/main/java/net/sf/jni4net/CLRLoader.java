@@ -60,7 +60,7 @@ class CLRLoader {
 
         java.io.File path;
 		if (file.endsWith("classes")) {
-			final String base = file.substring(0, file.length() - 7).replaceAll("jni4net.j", "jni4net.n."+getPlatform()) + "/jni4net.n";
+			final String base = file.substring(0, file.length() - 7).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform()) + "/jni4net.n";
 			path = new java.io.File(base + "."+ getPlatform()+ "-" + getVersion() + ".dll");
 			if (!path.exists()) {
 				throw new Error("Can't find " + path);

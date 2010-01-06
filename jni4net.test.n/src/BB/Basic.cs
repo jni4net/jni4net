@@ -35,8 +35,7 @@ It's derived work on top of OpenJDK
 using System;
 using java.io;
 using java.lang;
-using Buffer=net.sf.jni4net.nio.Buffer;
-using ByteBuffer=net.sf.jni4net.nio.ByteBuffer;
+using net.sf.jni4net.nio;
 using Double=java.lang.Double;
 using String=java.lang.String;
 
@@ -62,7 +61,7 @@ namespace net.sf.jni4net.test.BB
             return j + 'a' + ((j > 26) ? 128 : 0);
         }
 
-        internal static String toString(Buffer b)
+        internal static String toString(BufferN b)
         {
             return (b.GetType().Name
                     + "[pos=" + b.position()
@@ -71,7 +70,7 @@ namespace net.sf.jni4net.test.BB
                     + "]");
         }
 
-        internal static void show(int level, Buffer b)
+        internal static void show(int level, BufferN b)
         {
             for (int i = 0; i < level; i++)
                 outt.print("  ");
@@ -83,24 +82,24 @@ namespace net.sf.jni4net.test.BB
             throw new RuntimeException(s);
         }
 
-        internal static void fail(String s, Buffer b)
+        internal static void fail(String s, BufferN b)
         {
             throw new RuntimeException(s + ": " + toString(b));
         }
 
-        internal static void fail(String s, Buffer b, Buffer b2)
+        internal static void fail(String s, BufferN b, BufferN b2)
         {
             throw new RuntimeException(s + ": "
                                        + toString(b) + ", " + toString(b2));
         }
 
-        internal static void fail(Buffer b,
+        internal static void fail(BufferN b,
                                   String expected, char expectedChar,
                                   String got, char gotChar)
         {
-            if (b is ByteBuffer)
+            if (b is ByteBufferN)
             {
-                var bb = (ByteBuffer) b;
+                var bb = (ByteBufferN) b;
                 int n = Math.Min(16, bb.limit());
                 for (int i = 0; i < n; i++)
                     outt.print(" " + Integer.toHexString(bb.get(i) & 0xff));
@@ -120,26 +119,26 @@ namespace net.sf.jni4net.test.BB
                                        + got);
         }
 
-        internal static void fail(Buffer b, long expected, long got)
+        internal static void fail(BufferN b, long expected, long got)
         {
             fail(b,
                  Long.toHexString(expected), (char) expected,
                  Long.toHexString(got), (char) got);
         }
 
-        internal static void ck(Buffer b, bool cond)
+        internal static void ck(BufferN b, bool cond)
         {
             if (!cond)
                 fail("Condition failed", b);
         }
 
-        internal static void ck(Buffer b, long got, long expected)
+        internal static void ck(BufferN b, long got, long expected)
         {
             if (expected != got)
                 fail(b, expected, got);
         }
 
-        internal static void ck(Buffer b, float got, float expected)
+        internal static void ck(BufferN b, float got, float expected)
         {
             if (expected != got)
                 fail(b,
@@ -147,7 +146,7 @@ namespace net.sf.jni4net.test.BB
                      Float.toString(got), (char) got);
         }
 
-        internal static void ck(Buffer b, double got, double expected)
+        internal static void ck(BufferN b, double got, double expected)
         {
             if (expected != got)
                 fail(b,

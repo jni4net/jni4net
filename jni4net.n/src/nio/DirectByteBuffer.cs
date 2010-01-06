@@ -21,32 +21,42 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
+using java.lang;
 using java.nio;
 using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.nio
 {
-    public class ByteBufferClr : java.nio.ByteBuffer, IDisposable
+    public class DirectByteBuffer : java.nio.ByteBuffer, IDisposable
     {
         private readonly byte[] sharedBuffer;
         private GCHandle pin;
 
         /// <summary>
         /// The buffer will be pinned and shared with java
-        /// user is responsible for synchronization
+        /// user is responsible for thread synchronization.
         /// </summary>
         /// <param name="sharedBuffer"></param>
-        public ByteBufferClr(byte[] sharedBuffer)
+        public DirectByteBuffer(byte[] sharedBuffer, int position, int len)
             : base(null)
         {
             this.sharedBuffer = sharedBuffer;
             pin = GCHandle.Alloc(sharedBuffer, GCHandleType.Pinned);
             JNIEnv env = JNIEnv.ThreadEnv;
             IntPtr ptr = pin.AddrOfPinnedObject();
-            java.nio.ByteBuffer buffer = env.NewDirectByteBuffer(ptr, sharedBuffer.Length);
+            IntPtr offset = new IntPtr(ptr.ToInt64() + position);
+            //var allocHGlobal = Marshal.AllocHGlobal(len);
+            java.nio.ByteBuffer buffer = env.NewDirectByteBuffer(offset, len);
             buffer.order(ByteOrder.LITTLE_ENDIAN);
             ((IJvmProxy) this).Copy(env, buffer);
+            Console.WriteLine("DirectByteBuffer constructa");
+        }
+
+        public DirectByteBuffer(byte[] sharedBuffer)
+            : this(sharedBuffer, 0, sharedBuffer.Length)
+        {
         }
 
         public byte[] GetSharedBuffer()
@@ -56,15 +66,27 @@ namespace net.sf.jni4net.nio
 
         public void Dispose()
         {
+            /*var dbbClazz = Class.forName("java.nio.Buffer");
+            var addrField = dbbClazz.getDeclaredField("address");
+            addrField.setAccessible(true);
+            addrField.set(this, new Long(0));
+            addrField.setAccessible(false);
+            Console.WriteLine("reflection done");*/
+
+            ((IJvmProxy)this).Dispose();
             if (pin.IsAllocated)
             {
                 pin.Free();
             }
-            GC.SuppressFinalize(this);
+            Debug.WriteLine("Dispose");
+            Console.WriteLine("Dispose");
         }
 
-        ~ByteBufferClr()
+        ~DirectByteBuffer()
         {
+            Debug.WriteLine("DirectByteBuffer Finalizer");
+            Console.Out.WriteLine("DirectByteBuffer Finalizer");
+            Console.Error.WriteLine("DirectByteBuffer Finalizer");
             Dispose();
         }
     }
