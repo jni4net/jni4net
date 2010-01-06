@@ -35,9 +35,8 @@ It's derived work on top of OpenJDK
 using System;
 using java.lang;
 using java.nio;
-using Buffer = net.sf.jni4net.nio.Buffer;
+using net.sf.jni4net.nio;
 using Byte = java.lang.Byte;
-using ByteBuffer = net.sf.jni4net.nio.ByteBuffer;
 using Double = java.lang.Double;
 using Exception=System.Exception;
 
@@ -54,7 +53,7 @@ namespace net.sf.jni4net.test.BB
      */
     public class BasicByte : Basic
     {
-        private static void relGet(ByteBuffer b)
+        private static void relGet(ByteBufferN b)
         {
             int n = b.capacity();
             for (int i = 0; i < n; i++)
@@ -62,7 +61,7 @@ namespace net.sf.jni4net.test.BB
             b.rewind();
         }
 
-        private static void relGet(ByteBuffer b, int start)
+        private static void relGet(ByteBufferN b, int start)
         {
             int n = b.remaining();
             for (int i = start; i < n; i++)
@@ -70,7 +69,7 @@ namespace net.sf.jni4net.test.BB
             b.rewind();
         }
 
-        private static void absGet(ByteBuffer b)
+        private static void absGet(ByteBufferN b)
         {
             int n = b.capacity();
             for (int i = 0; i < n; i++)
@@ -78,7 +77,7 @@ namespace net.sf.jni4net.test.BB
             b.rewind();
         }
 
-        private static void bulkGet(ByteBuffer b)
+        private static void bulkGet(ByteBufferN b)
         {
             int n = b.capacity();
             var a = new byte[n + 7];
@@ -87,7 +86,7 @@ namespace net.sf.jni4net.test.BB
                 ck(b, a[i + 7], ((byte)ic(i)));
         }
 
-        private static void relPut(ByteBuffer b)
+        private static void relPut(ByteBufferN b)
         {
             int n = b.capacity();
             b.clear();
@@ -96,7 +95,7 @@ namespace net.sf.jni4net.test.BB
             b.flip();
         }
 
-        private static void absPut(ByteBuffer b)
+        private static void absPut(ByteBufferN b)
         {
             int n = b.capacity();
             b.clear();
@@ -106,7 +105,7 @@ namespace net.sf.jni4net.test.BB
             b.position(0);
         }
 
-        private static void bulkPutArray(ByteBuffer b)
+        private static void bulkPutArray(ByteBufferN b)
         {
             int n = b.capacity();
             b.clear();
@@ -117,11 +116,11 @@ namespace net.sf.jni4net.test.BB
             b.flip();
         }
 
-        private static void bulkPutBuffer(ByteBuffer b)
+        private static void bulkPutBuffer(ByteBufferN b)
         {
             int n = b.capacity();
             b.clear();
-            ByteBuffer c = ByteBuffer.allocate(n + 7);
+            ByteBufferN c = ByteBufferN.allocate(n + 7);
             c.position(7);
             for (int i = 0; i < n; i++)
                 c.put((byte)ic(i));
@@ -132,7 +131,7 @@ namespace net.sf.jni4net.test.BB
         }
 
         //6231529
-        private static void callReset(ByteBuffer b)
+        private static void callReset(ByteBufferN b)
         {
             b.position(0);
             b.mark();
@@ -142,7 +141,7 @@ namespace net.sf.jni4net.test.BB
         }
 
 
-        private static void checkSlice(ByteBuffer b, ByteBuffer slice)
+        private static void checkSlice(ByteBufferN b, ByteBufferN slice)
         {
             ck(slice, 0, slice.position());
             ck(slice, b.remaining(), slice.limit());
@@ -154,7 +153,7 @@ namespace net.sf.jni4net.test.BB
         }
 
 
-        private static void checkBytes(ByteBuffer b, byte[] bs)
+        private static void checkBytes(ByteBufferN b, byte[] bs)
         {
             int n = bs.Length;
             int p = b.position();
@@ -172,7 +171,7 @@ namespace net.sf.jni4net.test.BB
             b.position(p);
         }
 
-        private static void compact(Buffer b)
+        private static void compact(BufferN b)
         {
             /*
         try {
@@ -187,7 +186,7 @@ namespace net.sf.jni4net.test.BB
             throw new NotImplementedException();
         }
 
-        private static void checkInvalidMarkException(Buffer b)
+        private static void checkInvalidMarkException(BufferN b)
         {
             tryCatch(b, typeof(InvalidMarkException), () =>
             {
@@ -197,7 +196,7 @@ namespace net.sf.jni4net.test.BB
             });
         }
 
-        private static void testViews(int level, ByteBuffer b, bool direct)
+        private static void testViews(int level, ByteBufferN b, bool direct)
         {
             /*
             ShortBuffer sb = b.asShortBuffer();
@@ -231,7 +230,7 @@ namespace net.sf.jni4net.test.BB
             checkInvalidMarkException(db);*/
         }
 
-        private static void testHet(int level, ByteBuffer b)
+        private static void testHet(int level, ByteBufferN b)
         {
             int p = b.position();
             b.limit(b.capacity());
@@ -302,7 +301,7 @@ namespace net.sf.jni4net.test.BB
 
         private delegate void Action();
 
-        private static void tryCatch(Buffer b, Type ex, Action thunk)
+        private static void tryCatch(BufferN b, Type ex, Action thunk)
         {
             bool caught = false;
             try
@@ -326,10 +325,10 @@ namespace net.sf.jni4net.test.BB
 
         private static void tryCatch(byte[] t, Type ex, Action thunk)
         {
-            tryCatch(ByteBuffer.wrap(t), ex, thunk);
+            tryCatch(ByteBufferN.wrap(t), ex, thunk);
         }
 
-        public static void test(int level, ByteBuffer b, bool direct)
+        public static void test(int level, ByteBufferN b, bool direct)
         {
             show(level, b);
 
@@ -407,7 +406,7 @@ namespace net.sf.jni4net.test.BB
 
             // Comparison
             b.rewind();
-            ByteBuffer b2 = ByteBuffer.allocate(b.capacity());
+            ByteBufferN b2 = ByteBufferN.allocate(b.capacity());
             b2.put(b);
             b2.flip();
             b.position(2);
@@ -457,10 +456,10 @@ namespace net.sf.jni4net.test.BB
             // Slice
 
             b.position(5);
-            ByteBuffer sb = b.slice();
+            ByteBufferN sb = b.slice();
             checkSlice(b, sb);
             b.position(0);
-            ByteBuffer sb2 = sb.slice();
+            ByteBufferN sb2 = sb.slice();
             checkSlice(sb, sb2);
 
             if (!sb.equals(sb2))
@@ -505,7 +504,7 @@ namespace net.sf.jni4net.test.BB
             b.rewind();
             ByteBuffer rb = b.asReadOnlyBuffer();
             if (!b.equals(rb))
-                fail("Buffer not equal to read-only view", b, rb);
+                fail("BufferN not equal to read-only view", b, rb);
             show(level + 1, rb);
 
             tryCatch(b, typeof(ReadOnlyBufferException), () => { relPut(rb); });
@@ -563,45 +562,45 @@ namespace net.sf.jni4net.test.BB
         {
             int offset = 47;
             int length = 900;
-            ByteBuffer b = ByteBuffer.wrap(ba, offset, length);
+            ByteBufferN b = ByteBufferN.wrap(ba, offset, length);
             show(0, b);
             ck(b, b.capacity(), ba.Length);
             ck(b, b.position(), offset);
             ck(b, b.limit(), offset + length);
 
             // The offset must be non-negative and no larger than <array.length>.
-            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBuffer.wrap(ba, -1, ba.Length); });
-            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBuffer.wrap(ba, ba.Length + 1, ba.Length); });
-            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBuffer.wrap(ba, 0, -1); });
-            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBuffer.wrap(ba, 0, ba.Length + 1); });
+            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBufferN.wrap(ba, -1, ba.Length); });
+            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBufferN.wrap(ba, ba.Length + 1, ba.Length); });
+            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBufferN.wrap(ba, 0, -1); });
+            tryCatch(ba, typeof(IndexOutOfBoundsException), () => { ByteBufferN.wrap(ba, 0, ba.Length + 1); });
 
             // A NullPointerException will be thrown if the array is null.
-            tryCatch(ba, typeof(NullReferenceException), () => { ByteBuffer.wrap(null, 0, 5); });
-            tryCatch(ba, typeof(NullReferenceException), () => { ByteBuffer.wrap(null); });
+            tryCatch(ba, typeof(NullReferenceException), () => { ByteBufferN.wrap(null, 0, 5); });
+            tryCatch(ba, typeof(NullReferenceException), () => { ByteBufferN.wrap(null); });
         }
 
         private static void testAllocate()
         {
             // An IllegalArgumentException will be thrown for negative capacities.
-            tryCatch((Buffer)null, typeof(IllegalArgumentException), () => { ByteBuffer.allocate(-1); });
+            tryCatch((BufferN)null, typeof(IllegalArgumentException), () => { ByteBufferN.allocate(-1); });
 
-            tryCatch((Buffer)null, typeof(IllegalArgumentException), () => { ByteBuffer.allocateDirect(-1); });
+            tryCatch((BufferN)null, typeof(IllegalArgumentException), () => { ByteBufferN.allocateDirect(-1); });
         }
 
         public static void test()
         {
             testAllocate();
-            test(0, ByteBuffer.allocate(7 * 1024), false);
-            test(0, ByteBuffer.wrap(new byte[7 * 1024], 0, 7 * 1024), false);
+            test(0, ByteBufferN.allocate(7 * 1024), false);
+            test(0, ByteBufferN.wrap(new byte[7 * 1024], 0, 7 * 1024), false);
             test(new byte[1024]);
 
-            ByteBuffer b = ByteBuffer.allocateDirect(7 * 1024);
+            ByteBufferN b = ByteBufferN.allocateDirect(7 * 1024);
             for (b.position(0); b.position() < b.limit(); )
                 ck(b, b.get(), 0);
             test(0, b, true);
 
 
-            callReset(ByteBuffer.allocate(10));
+            callReset(ByteBufferN.allocate(10));
         }
     }
 }

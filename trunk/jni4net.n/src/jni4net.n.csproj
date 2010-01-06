@@ -258,16 +258,17 @@
     <Compile Include="jni\JNIEnv.convert.cs" />
     <Compile Include="jni\JNIEnv.raw.cs" />
     <Compile Include="Bridge.CLR.convertor.cs" />
-    <Compile Include="nio\Buffer.cs" />
-    <Compile Include="nio\ByteBuffer.cs" />
-    <Compile Include="nio\ByteBufferClr.cs" />
-    <Compile Include="nio\HeapByteBuffer.cs" />
+    <Compile Include="nio\BufferN.cs" />
+    <Compile Include="nio\ByteBufferN.cs" />
+    <Compile Include="nio\DirectByteBuffer.cs" />
+    <Compile Include="nio\HeapByteBufferN.cs" />
     <Compile Include="utils\Convertor.C2J.array.cs" />
     <Compile Include="utils\Convertor.C2J.cs" />
     <Compile Include="utils\Convertor.C2J.strong.cs" />
     <Compile Include="utils\Convertor.J2C.array.cs" />
     <Compile Include="utils\Convertor.J2C.cs" />
     <Compile Include="utils\Convertor.J2C.strong.cs" />
+    <Compile Include="utils\MutexLocker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

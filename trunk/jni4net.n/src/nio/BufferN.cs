@@ -185,7 +185,7 @@ namespace net.sf.jni4net.nio
      * @version 1.35, 06/08/11
      * @since 1.4
      */
-    public abstract class Buffer
+    public abstract class BufferN
     {
         // Invariants: mark <= position <= limit <= capacity
         private int _mark = -1;
@@ -196,7 +196,7 @@ namespace net.sf.jni4net.nio
         // Creates a new buffer with the given mark, position, limit, and capacity,
         // after checking invariants.
         //
-        protected Buffer(int mark, int pos, int lim, int cap)
+        protected BufferN(int mark, int pos, int lim, int cap)
         {
             // package-private
             if (cap < 0)
@@ -247,7 +247,7 @@ namespace net.sf.jni4net.nio
          * @throws  IllegalArgumentException
          *          If the preconditions on <tt>newPosition</tt> do not hold
          */
-        public Buffer position(int newPosition)
+        public BufferN position(int newPosition)
         {
             if ((newPosition > _limit) || (newPosition < 0))
                 throw new IllegalArgumentException();
@@ -280,7 +280,7 @@ namespace net.sf.jni4net.nio
          * @throws  IllegalArgumentException
          *          If the preconditions on <tt>newLimit</tt> do not hold
          */
-        public Buffer limit(int newLimit)
+        public BufferN limit(int newLimit)
         {
             if ((newLimit > _capacity) || (newLimit < 0))
                 throw new IllegalArgumentException();
@@ -295,7 +295,7 @@ namespace net.sf.jni4net.nio
          *
          * @return  This buffer
          */
-        public Buffer mark()
+        public BufferN mark()
         {
             _mark = _position;
             return this;
@@ -312,7 +312,7 @@ namespace net.sf.jni4net.nio
          * @throws  InvalidMarkException
          *          If the mark has not been set
          */
-        public Buffer reset()
+        public BufferN reset()
         {
             int m = _mark;
             if (m < 0)
@@ -339,7 +339,7 @@ namespace net.sf.jni4net.nio
      * @return  This buffer
      */
 
-        public Buffer clear()
+        public BufferN clear()
         {
             _position = 0;
             _limit = _capacity;
@@ -369,7 +369,7 @@ namespace net.sf.jni4net.nio
      * @return  This buffer
      */
 
-        public Buffer flip()
+        public BufferN flip()
         {
             _limit = _position;
             _position = 0;
@@ -393,7 +393,7 @@ namespace net.sf.jni4net.nio
      * @return  This buffer
      */
 
-        public Buffer rewind()
+        public BufferN rewind()
         {
             _position = 0;
             _mark = -1;

@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
@@ -135,6 +136,47 @@ namespace net.sf.jni4net.test
             Console.WriteLine(end - start);
         }
 
+        [Test]
+        [Explicit]
+        public void HeavyHandles()
+        {
+            Thread t1 = new Thread(aloc);
+            Thread t2 = new Thread(aloc);
+            Thread t3 = new Thread(aloc);
+            Thread t4 = new Thread(aloc);
+
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            t4.Start();
+
+            GC.WaitForPendingFinalizers();
+            t1.Join();
+            t2.Join();
+            t3.Join();
+            t4.Join();
+
+            GC.Collect(3, GCCollectionMode.Forced);
+            GC.Collect(0, GCCollectionMode.Forced);
+            GC.WaitForPendingFinalizers();
+        }
+
+        public void aloc()
+        {
+            String s3 = "test";
+            for (int i = 0; i < 100000; i++)
+            {
+                String copy = Bridge.CreateProxy<String>(((IJvmProxy)s3).JvmHandle);
+                if (i%1000==0)
+                {
+                    Console.WriteLine(i);
+                    Thread.Sleep(10);
+                    GC.Collect(3,GCCollectionMode.Forced);
+                }
+            }
+        }
+
+        
         [Test]
         [Explicit]
         public void HeavyCall()
@@ -266,27 +308,67 @@ namespace net.sf.jni4net.test
         [Test]
         public void BBwrap()
         {
-            byte[] myLovelyData = PrepareData();
-
-            ByteBufferClr buffer=new ByteBufferClr(myLovelyData);
-
-            Assert.AreEqual(0x00, buffer.get());
-            Assert.AreEqual(0x01, buffer.get());
-            buffer.position(0xfe);
-            Assert.AreEqual(0xfe, buffer.get());
-            Assert.AreEqual(0xff, buffer.get());
-            buffer.position(0x1CC);
-            Assert.AreEqual('Ž', buffer.getChar());
-            buffer.position(0x1aa);
-            Assert.AreEqual(0.112233d, buffer.getDouble());
+            List<Thread> threads=new List<Thread>();
+            for (int i = 0; i < 100; i++)
+            {
+                Thread t=new Thread(sss);
+                t.Start();
+                threads.Add(t);
+           }
+            foreach (var thread in threads)
+            {
+                thread.Join();
+            }
         }
 
+        private void sss()
+        {
+            int size = 13*1024*1024;
+            ByteBuffer bb = a(size);
+
+            GC.Collect(0, GCCollectionMode.Forced);
+            java.lang.System.gc();
+            GC.Collect(3, GCCollectionMode.Forced);
+            java.lang.System.gc();
+            GC.WaitForPendingFinalizers();
+            java.lang.System.gc();
+
+            bb.capacity();
+
+        }
+
+        private ByteBuffer a(int size)
+        {
+            Console.WriteLine(size);
+            var sharedBuffer = new byte[size];
+            var buffer = new DirectByteBuffer(sharedBuffer);
+            buffer.position(size - 1);
+            buffer.put(0xEE);
+            ByteBuffer byteBuffer = Bridge.Cast<ByteBuffer>(buffer);
+
+            return byteBuffer;
+        }
+
+        [Test]
+        [ExpectedException(typeof(BufferOverflowException))]
+        public void BBwrapThrow()
+        {
+            byte[] myLovelyData = PrepareData();
+
+            DirectByteBuffer buffer = new DirectByteBuffer(myLovelyData);
+
+            buffer.position(myLovelyData.Length - 1);
+            buffer.put(0xEE);
+            buffer.put(0xEE);
+        }
+
+        
         [Test]
         public void BB4net()
         {
             byte[] myLovelyData = PrepareData();
 
-            nio.ByteBuffer buffer = nio.ByteBuffer.wrap(myLovelyData);
+            nio.ByteBufferN buffer = nio.ByteBufferN.wrap(myLovelyData);
 
             Assert.AreEqual(0x00, buffer.get());
             Assert.AreEqual(0x01, buffer.get());

@@ -214,9 +214,9 @@ namespace net.sf.jni4net.nio
      * @since 1.4
      */
 
-    public abstract class ByteBuffer : Buffer //, Comparable<ByteBuffer>
+    public abstract class ByteBufferN : BufferN //, Comparable<ByteBuffer>
     {
-        // These fields are declared here rather than in Heap-X-Buffer in order to
+        // These fields are declared here rather than in Heap-X-BufferN in order to
         // reduce the number of virtual method invocations needed to access these
         // values, which is especially costly when coding small buffers.
         //
@@ -227,7 +227,7 @@ namespace net.sf.jni4net.nio
         // Creates a new buffer with the given mark, position, limit, capacity,
         // backing array, and array offset
         //
-        internal ByteBuffer(int mark, int pos, int lim, int cap, // package-private
+        internal ByteBufferN(int mark, int pos, int lim, int cap, // package-private
                             byte[] hb, int offset)
             : base(mark, pos, lim, cap)
         {
@@ -237,7 +237,7 @@ namespace net.sf.jni4net.nio
 
         // Creates a new buffer with the given mark, position, limit, and capacity
         //
-        internal ByteBuffer(int mark, int pos, int lim, int cap)
+        internal ByteBufferN(int mark, int pos, int lim, int cap)
             : this(mark, pos, lim, cap, null, 0)
         {
             // package-private
@@ -259,11 +259,11 @@ namespace net.sf.jni4net.nio
          * @throws  IllegalArgumentException
          *          If the <tt>capacity</tt> is a negative integer
          */
-        public static ByteBuffer allocateDirect(int capacity)
+        public static ByteBufferN allocateDirect(int capacity)
         {
             if (capacity < 0)
                 throw new IllegalArgumentException();
-            return new HeapByteBuffer(capacity, capacity);
+            return new HeapByteBufferN(capacity, capacity);
 
             //TODO ?
             //return new DirectByteBuffer(capacity);
@@ -286,11 +286,11 @@ namespace net.sf.jni4net.nio
          * @throws  IllegalArgumentException
          *          If the <tt>capacity</tt> is a negative integer
          */
-        public static ByteBuffer allocate(int capacity)
+        public static ByteBufferN allocate(int capacity)
         {
             if (capacity < 0)
                 throw new IllegalArgumentException();
-            return new HeapByteBuffer(capacity, capacity);
+            return new HeapByteBufferN(capacity, capacity);
         }
 
         /**
@@ -325,12 +325,12 @@ namespace net.sf.jni4net.nio
      *          parameters do not hold
      */
 
-        public static ByteBuffer wrap(byte[] array,
+        public static ByteBufferN wrap(byte[] array,
                                       int offset, int length)
         {
             try
             {
-                return new HeapByteBuffer(array, offset, length);
+                return new HeapByteBufferN(array, offset, length);
             }
             catch (IllegalArgumentException)
             {
@@ -355,7 +355,7 @@ namespace net.sf.jni4net.nio
      * @return  The new byte buffer
      */
 
-        public static ByteBuffer wrap(byte[] array)
+        public static ByteBufferN wrap(byte[] array)
         {
             return wrap(array, 0, array.Length);
         }
@@ -378,7 +378,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  The new byte buffer
      */
-        public abstract ByteBuffer slice();
+        public abstract ByteBufferN slice();
 
         /**
      * Creates a new byte buffer that shares this buffer's content.
@@ -395,7 +395,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  The new byte buffer
      */
-        public abstract ByteBuffer duplicate();
+        public abstract ByteBufferN duplicate();
 
         /**
      * Creates a new, read-only byte buffer that shares this buffer's
@@ -415,7 +415,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  The new, read-only byte buffer
      */
-        public abstract ByteBuffer asReadOnlyBuffer();
+        public abstract ByteBufferN asReadOnlyBuffer();
 
 
         // -- Singleton get/put methods --
@@ -448,7 +448,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer put(byte b);
+        public abstract ByteBufferN put(byte b);
 
         /**
      * Absolute <i>get</i> method.  Reads the byte at the given
@@ -486,7 +486,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer put(int index, byte b);
+        public abstract ByteBufferN put(int index, byte b);
 
 
         // -- Bulk get operations --
@@ -541,7 +541,7 @@ namespace net.sf.jni4net.nio
      *          parameters do not hold
      */
 
-        public virtual ByteBuffer get(byte[] dst, int offset, int length)
+        public virtual ByteBufferN get(byte[] dst, int offset, int length)
         {
             checkBounds(offset, length, dst.Length);
             if (length > remaining())
@@ -569,7 +569,7 @@ namespace net.sf.jni4net.nio
      *          remaining in this buffer
      */
 
-        public ByteBuffer get(byte[] dst)
+        public ByteBufferN get(byte[] dst)
         {
             return get(dst, 0, dst.Length);
         }
@@ -619,7 +619,7 @@ namespace net.sf.jni4net.nio
      *          If this buffer is read-only
      */
 
-        public virtual ByteBuffer put(ByteBuffer src)
+        public virtual ByteBufferN put(ByteBufferN src)
         {
             if (src == this)
                 throw new IllegalArgumentException();
@@ -682,7 +682,7 @@ namespace net.sf.jni4net.nio
      *          If this buffer is read-only
      */
 
-        public virtual ByteBuffer put(byte[] src, int offset, int length)
+        public virtual ByteBufferN put(byte[] src, int offset, int length)
         {
             checkBounds(offset, length, src.Length);
             if (length > remaining())
@@ -713,7 +713,7 @@ namespace net.sf.jni4net.nio
      *          If this buffer is read-only
      */
 
-        public ByteBuffer put(byte[] src)
+        public ByteBufferN put(byte[] src)
         {
             return put(src, 0, src.Length);
         }
@@ -838,7 +838,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer compact();
+        public abstract ByteBufferN compact();
 
         /**
      * Tells whether or not this byte buffer is direct. </p>
@@ -920,9 +920,9 @@ namespace net.sf.jni4net.nio
 
         public bool equals(object ob)
         {
-            if (!(ob is ByteBuffer))
+            if (!(ob is ByteBufferN))
                 return false;
-            var that = (ByteBuffer) ob;
+            var that = (ByteBufferN) ob;
             if (remaining() != that.remaining())
                 return false;
             int p = position();
@@ -953,7 +953,7 @@ namespace net.sf.jni4net.nio
      *		is less than, equal to, or greater than the given buffer
      */
 
-        public int compareTo(ByteBuffer that)
+        public int compareTo(ByteBufferN that)
         {
             int n = position() + Math.Min(remaining(), that.remaining());
             for (int i = position(), j = that.position(); i < n; i++, j++)
@@ -1013,7 +1013,7 @@ namespace net.sf.jni4net.nio
      * @return  This buffer
      */
 
-        public ByteBuffer order(ByteOrder bo)
+        public ByteBufferN order(ByteOrder bo)
         {
             bigEndian = (bo == ByteOrder.BIG_ENDIAN);
             nativeByteOrder =
@@ -1021,7 +1021,7 @@ namespace net.sf.jni4net.nio
             return this;
         }
 
-        // Unchecked accessors, for use by ByteBufferAs-X-Buffer classes
+        // Unchecked accessors, for use by ByteBufferAs-X-BufferN classes
         //
         internal abstract byte _get(int i); // package-private
         internal abstract void _put(int i, byte b); // package-private
@@ -1062,7 +1062,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putChar(char value);
+        public abstract ByteBufferN putChar(char value);
 
         /**
      * Absolute <i>get</i> method for reading a char value.
@@ -1105,7 +1105,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putChar(int index, char value);
+        public abstract ByteBufferN putChar(int index, char value);
 
         /**
      * Creates a view of this byte buffer as a char buffer.
@@ -1123,7 +1123,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new char buffer
      */
-        public abstract Buffer asCharBuffer();
+        public abstract BufferN asCharBuffer();
 
 
         /**
@@ -1161,7 +1161,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putShort(short value);
+        public abstract ByteBufferN putShort(short value);
 
         /**
      * Absolute <i>get</i> method for reading a short value.
@@ -1204,7 +1204,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putShort(int index, short value);
+        public abstract ByteBufferN putShort(int index, short value);
 
         /**
      * Creates a view of this byte buffer as a short buffer.
@@ -1222,7 +1222,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new short buffer
      */
-        public abstract Buffer asShortBuffer();
+        public abstract BufferN asShortBuffer();
 
 
         /**
@@ -1260,7 +1260,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putInt(int value);
+        public abstract ByteBufferN putInt(int value);
 
         /**
      * Absolute <i>get</i> method for reading an int value.
@@ -1303,7 +1303,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putInt(int index, int value);
+        public abstract ByteBufferN putInt(int index, int value);
 
         /**
      * Creates a view of this byte buffer as an int buffer.
@@ -1321,7 +1321,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new int buffer
      */
-        public abstract Buffer asIntBuffer();
+        public abstract BufferN asIntBuffer();
 
 
         /**
@@ -1359,7 +1359,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putLong(long value);
+        public abstract ByteBufferN putLong(long value);
 
         /**
      * Absolute <i>get</i> method for reading a long value.
@@ -1402,7 +1402,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putLong(int index, long value);
+        public abstract ByteBufferN putLong(int index, long value);
 
         /**
      * Creates a view of this byte buffer as a long buffer.
@@ -1420,7 +1420,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new long buffer
      */
-        public abstract Buffer asLongBuffer();
+        public abstract BufferN asLongBuffer();
 
 
         /**
@@ -1458,7 +1458,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putFloat(float value);
+        public abstract ByteBufferN putFloat(float value);
 
         /**
      * Absolute <i>get</i> method for reading a float value.
@@ -1501,7 +1501,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putFloat(int index, float value);
+        public abstract ByteBufferN putFloat(int index, float value);
 
         /**
      * Creates a view of this byte buffer as a float buffer.
@@ -1519,7 +1519,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new float buffer
      */
-        public abstract Buffer asFloatBuffer();
+        public abstract BufferN asFloatBuffer();
 
 
         /**
@@ -1557,7 +1557,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putDouble(double value);
+        public abstract ByteBufferN putDouble(double value);
 
         /**
      * Absolute <i>get</i> method for reading a double value.
@@ -1600,7 +1600,7 @@ namespace net.sf.jni4net.nio
      * @throws  ReadOnlyBufferException
      *          If this buffer is read-only
      */
-        public abstract ByteBuffer putDouble(int index, double value);
+        public abstract ByteBufferN putDouble(int index, double value);
 
         /**
      * Creates a view of this byte buffer as a double buffer.
@@ -1618,7 +1618,7 @@ namespace net.sf.jni4net.nio
      *
      * @return  A new double buffer
      */
-        public abstract Buffer asDoubleBuffer();
+        public abstract BufferN asDoubleBuffer();
     }
 }
 // ReSharper restore InconsistentNaming
