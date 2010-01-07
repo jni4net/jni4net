@@ -415,8 +415,44 @@ namespace net.sf.jni4net.test
             ClassLoader classLoader = java.lang.ClassLoader.getSystemClassLoader();
             ClassLoader loader = Object._class.getClassLoader();
         }
-        
-        
+
+        [Test]
+        [Explicit("this looses objes/type information on random jvm object for jdk 1.5 on x64")]
+        public void JvmCrash()
+        {
+            String o = new String();
+            IntPtr handle = ((IJvmProxy)o).JvmHandle;
+            for (int i = 0; i < 100; i++)
+            {
+                crash(i, handle);
+            }
+        }
+
+        public static void crash(int i, IntPtr handle)
+        {
+            Console.WriteLine("a" + i);
+            var sharedBuffer = new byte[10 * 1024 * 100];
+
+            Console.WriteLine("b");
+            DirectByteBuffer execJavaBuffer = new DirectByteBuffer(sharedBuffer);
+
+            Console.WriteLine("c");
+            try
+            {
+                String duplicate = Bridge.CreateProxy<String>(handle);
+                string s = duplicate.toString();
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                throw;
+            }
+
+            Console.WriteLine("d");
+            GC.Collect(3, GCCollectionMode.Forced);
+            GC.WaitForPendingFinalizers();
+        }
+
         public static void Main()
         {
             //var test =  new BridgeTest();
