@@ -51,7 +51,6 @@ namespace net.sf.jni4net.nio
             java.nio.ByteBuffer buffer = env.NewDirectByteBuffer(offset, len);
             buffer.order(ByteOrder.LITTLE_ENDIAN);
             ((IJvmProxy) this).Copy(env, buffer);
-            Console.WriteLine("DirectByteBuffer constructa");
         }
 
         public DirectByteBuffer(byte[] sharedBuffer)
@@ -78,15 +77,10 @@ namespace net.sf.jni4net.nio
             {
                 pin.Free();
             }
-            Debug.WriteLine("Dispose");
-            Console.WriteLine("Dispose");
         }
 
         ~DirectByteBuffer()
         {
-            Debug.WriteLine("DirectByteBuffer Finalizer");
-            Console.Out.WriteLine("DirectByteBuffer Finalizer");
-            Console.Error.WriteLine("DirectByteBuffer Finalizer");
             Dispose();
         }
     }

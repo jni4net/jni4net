@@ -115,7 +115,13 @@ namespace net.sf.jni4net
                 throw new JNIException("Can't create proxy to CLR class");
             }
             RegistryRecord record = Registry.GetCLRRecord(reqType);
-            IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, jvmHandle, record.JVMInterface);
+            JNIEnv env = JNIEnv.ThreadEnv;
+            Class clazz = env.GetObjectClass(jvmHandle);
+            if (!record.JVMInterface.isAssignableFrom(clazz))
+            {
+                throw new InvalidCastException("Can't cast JVM instance of " + clazz + " to " + record.JVMInterface + "\n (" + clazz.getClassLoader() + "->" + record.JVMInterface.getClassLoader() + ")");
+            }
+            IJvmProxy res = record.CopyCLRProxy(env, jvmHandle, record.JVMInterface);
             return (TRes)res;
         }
     }
