@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using java.lang;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.nio;
 using net.sf.jni4net.tested;
 using NUnit.Framework;
 using Exception = java.lang.Exception;
@@ -74,7 +75,13 @@ namespace net.sf.jni4net.test
             Assert.AreEqual(3, res);
         }
 
-        
+        [Test]
+        public void CallBackStatic()
+        {
+            int res = JavaCallBack.callBackStatic(1,3);
+            Assert.AreEqual(4, res);
+        }
+
         [Test]
         [Explicit]
         public void HeavyCallMeFromJava()
