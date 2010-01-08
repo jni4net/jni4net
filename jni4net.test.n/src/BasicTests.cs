@@ -417,7 +417,7 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        //[Explicit("this looses objes/type information on random jvm object for jdk 1.5 on x64")]
+        [Explicit("this looses objes/type information on random jvm object for jdk 1.5 on x64")]
         public void JvmCrash()
         {
             String o = new String();

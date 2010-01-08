@@ -13,7 +13,6 @@ package net.sf.jni4net.nio;
 public class DirectBufferCleaner extends system.Object implements system.IDisposable, Runnable {
     
     public void run() {
-        System.out.println("DirectBufferCleaner");
         if (net.sf.jni4net.Bridge.isRegistered()) {
             try {
                 Dispose();
