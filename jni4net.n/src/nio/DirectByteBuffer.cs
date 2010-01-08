@@ -30,25 +30,33 @@ namespace net.sf.jni4net.nio
             cleaner = new DirectBufferCleaner(sharedBuffer);
             JNIEnv env = JNIEnv.ThreadEnv;
             long offset = cleaner.Address.ToInt64() + position;
-            ByteBuffer buffer;
-            try
+            ByteBuffer buffer=null;
+            if (Bridge.Setup.BindNative)
             {
-                // sun JVM specific
-                Class dbClazz = env.FindClass("java/nio/DirectByteBuffer");
-                MethodId ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
-                buffer = (ByteBuffer) env.NewObject(dbClazz, ctor,
-                                                               new Value {_int = len},
-                                                               new Value {_long = offset},
-                                                               new Value {_object = Bridge.WrapCLR(cleaner).jvmHandle});
+                try
+                {
+                    // sun JVM specific
+                    Class dbClazz = env.FindClass("java/nio/DirectByteBuffer");
+                    MethodId ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+                    buffer = (ByteBuffer) env.NewObject(dbClazz, ctor,
+                                                        new Value {_int = len},
+                                                        new Value {_long = offset},
+                                                        new Value {_object = Bridge.WrapCLR(cleaner).jvmHandle});
 
+                }
+                catch (Exception)
+                {
+                    buffer = null;
+                }
             }
-            catch(Exception)
+            if (buffer == null)
             {
+                // the buffer could disapear when collected by CLR gc
                 buffer = env.NewDirectByteBuffer(new IntPtr(cleaner.Address.ToInt64() + position), len);
             }
 
             buffer.order(ByteOrder.LITTLE_ENDIAN);
-            ((IJvmProxy) this).Copy(env, buffer);
+            ((IJvmProxy)this).Copy(env, buffer);
         }
 
         /// <summary>
