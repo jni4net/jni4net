@@ -293,7 +293,22 @@ namespace net.sf.jni4net
             {
                 Console.WriteLine("core loaded from " + homeDll);
             }
+
+            AppDomain.CurrentDomain.DomainUnload += CurrentDomain_DomainUnload;
+
             clrLoaded = true;
+        }
+
+        static void CurrentDomain_DomainUnload(object sender, EventArgs e)
+        {
+            if (Setup.BindNative)
+            {
+                JNIEnv env = JNIEnv.ThreadEnv;
+                Registry.UnregisterNative();
+                IntPtr br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
+                IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
+                env.SetStaticBooleanField(br, ir, false);
+            }
         }
 
         private static bool CheckAlreadyLoaded(BridgeSetup newSetup, JNIEnv env)

@@ -208,6 +208,13 @@ namespace net.sf.jni4net.jni
             return natives;
         }
 
+        public JNIResult UnregisterNatives(Class clazz)
+        {
+            JNIResult natives = unregisterNatives.Invoke(envPtr, clazz.jvmHandle);
+            ExceptionTest();
+            return natives;
+        }
+
         #endregion
 
         #region call static

@@ -1,74 +1,60 @@
-﻿#region Copyright (C) 2009 by Pavel Savara
+﻿#region Copyright (c) 2001, 2010 Mathew A. Nelson and Robocode contributors
 
-/*
-This file is part of jni4net library - bridge between Java and .NET
-http://jni4net.sourceforge.net/
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as 
-published by the Free Software Foundation, either version 3 
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2001, 2008 Mathew A. Nelson and Robocode contributors
+// All rights reserved. This program and the accompanying materials
+// are made available under the terms of the Common Public License v1.0
+// which accompanies this distribution, and is available at
+// http://robocode.sourceforge.net/license/cpl-v10.html
 
 #endregion
 
 using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 using java.lang;
-using java.lang.reflect;
 using java.nio;
 using net.sf.jni4net.jni;
+using Exception = java.lang.Exception;
 
 namespace net.sf.jni4net.nio
 {
-    public class DirectByteBuffer : java.nio.ByteBuffer, IDisposable
+    public class DirectByteBuffer : ByteBuffer
     {
-        /*private static Field addrField;
-        private static Field capField;
-        static void Init()
-        {
-            if (addrField == null)
-            {
-                Class dbbClazz = Class.forName("java.nio.Buffer");
-                addrField = dbbClazz.getDeclaredField("address");
-                capField = dbbClazz.getDeclaredField("capacity");
-                addrField.setAccessible(true);
-                capField.setAccessible(true);
-            }
-        }*/
-
-        private readonly byte[] sharedBuffer;
-        private GCHandle pin;
+        private DirectBufferCleaner cleaner;
 
         /// <summary>
-        /// The buffer will be pinned and shared with java
-        /// user is responsible for thread synchronization.
+        ///   The buffer will be pinned and shared with java
+        ///   user is responsible for thread synchronization.
         /// </summary>
-        /// <param name="sharedBuffer"></param>
         public DirectByteBuffer(byte[] sharedBuffer, int position, int len)
             : base(null)
         {
-            //Init();
-            this.sharedBuffer = sharedBuffer;
-            pin = GCHandle.Alloc(sharedBuffer, GCHandleType.Pinned);
+            cleaner = new DirectBufferCleaner(sharedBuffer);
             JNIEnv env = JNIEnv.ThreadEnv;
-            IntPtr ptr = pin.AddrOfPinnedObject();
-            IntPtr offset = new IntPtr(ptr.ToInt64() + position);
-            //var allocHGlobal = Marshal.AllocHGlobal(len);
-            java.nio.ByteBuffer buffer = env.NewDirectByteBuffer(offset, len);
+            long offset = cleaner.Address.ToInt64() + position;
+            ByteBuffer buffer;
+            try
+            {
+                // sun JVM specific
+                Class dbClazz = env.FindClass("java/nio/DirectByteBuffer");
+                MethodId ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+                buffer = (ByteBuffer) env.NewObject(dbClazz, ctor,
+                                                               new Value {_int = len},
+                                                               new Value {_long = offset},
+                                                               new Value {_object = Bridge.WrapCLR(cleaner).jvmHandle});
+
+            }
+            catch(Exception)
+            {
+                buffer = env.NewDirectByteBuffer(new IntPtr(cleaner.Address.ToInt64() + position), len);
+            }
+
             buffer.order(ByteOrder.LITTLE_ENDIAN);
             ((IJvmProxy) this).Copy(env, buffer);
         }
 
+        /// <summary>
+        ///   The buffer will be pinned and shared with java
+        ///   user is responsible for thread synchronization.
+        /// </summary>
         public DirectByteBuffer(byte[] sharedBuffer)
             : this(sharedBuffer, 0, sharedBuffer.Length)
         {
@@ -76,25 +62,7 @@ namespace net.sf.jni4net.nio
 
         public byte[] GetSharedBuffer()
         {
-            return sharedBuffer;
-        }
-
-        public void Dispose()
-        {
-            // addrField.set(this, new Long(0));
-            // capField.set(this, new Integer(0));
-            // Console.WriteLine("reflection done");
-
-            ((IJvmProxy)this).Dispose();
-            if (pin.IsAllocated)
-            {
-                pin.Free();
-            }
-        }
-
-        ~DirectByteBuffer()
-        {
-            Dispose();
+            return cleaner.sharedBuffer;
         }
     }
 }
