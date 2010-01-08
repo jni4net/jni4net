@@ -244,6 +244,7 @@
     <Compile Include="generated\net\sf\jni4net\jni\ICJvmProxy.generated.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="generated\net\sf\jni4net\nio\DirectBufferCleaner.generated.cs" />
     <Compile Include="generated\system\Environment.generated.cs" />
     <Compile Include="generated\system\io\TextReader.generated.cs" />
     <Compile Include="generated\system\io\TextWriter.generated.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="Bridge.CLR.convertor.cs" />
     <Compile Include="nio\BufferN.cs" />
     <Compile Include="nio\ByteBufferN.cs" />
+    <Compile Include="nio\DirectBufferCleaner.cs" />
     <Compile Include="nio\DirectByteBuffer.cs" />
     <Compile Include="nio\HeapByteBufferN.cs" />
     <Compile Include="utils\Convertor.C2J.array.cs" />

@@ -4,6 +4,9 @@ Version 0.6
 + declarative security for running in partially trusted environments
 + possibility to specify alternate classloader
 + switched off signed .jar, because it prevents other people generating (unsigned) proxies into same packages. For example java.util_
++ native methods unregistration when appdomain unloads
++ upgrade to IDEA 9.0
++ sun specific DirectBufferCleaner, which holds the reference to pinned buffer
 
 Version 0.5
 -----------

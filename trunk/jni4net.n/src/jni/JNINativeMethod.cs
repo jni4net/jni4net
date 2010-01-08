@@ -64,6 +64,15 @@ namespace net.sf.jni4net.jni
             }
         }
 
+        public static unsafe void Unregister(Class jvmProxy, JNIEnv env)
+        {
+            JNIResult res = env.UnregisterNatives(jvmProxy);
+            if (res != JNIResult.JNI_OK)
+            {
+                throw new JNIException("Can't unbind native methods to class " + jvmProxy);
+            }
+        }
+
         public IntPtr name; //char* 
         public IntPtr signature; //char* 
         public IntPtr fnPtr; //void* 

@@ -143,6 +143,7 @@ namespace net.sf.jni4net.jni
         private Delegates.PopLocalFrame popLocalFrame;
         private Delegates.PushLocalFrame pushLocalFrame;
         private Delegates.RegisterNatives registerNatives;
+        private Delegates.UnregisterNatives unregisterNatives;
         private Delegates.ReleaseBooleanArrayElements releaseBooleanArrayElements;
         private Delegates.ReleaseByteArrayElements releaseByteArrayElements;
         private Delegates.ReleaseCharArrayElements releaseCharArrayElements;
@@ -268,6 +269,7 @@ namespace net.sf.jni4net.jni
             MethodWrapper.GetDelegateForFunctionPointer(functions.PopLocalFrame, ref popLocalFrame);
             MethodWrapper.GetDelegateForFunctionPointer(functions.PushLocalFrame, ref pushLocalFrame);
             MethodWrapper.GetDelegateForFunctionPointer(functions.RegisterNatives, ref registerNatives);
+            MethodWrapper.GetDelegateForFunctionPointer(functions.UnregisterNatives, ref unregisterNatives);
             MethodWrapper.GetDelegateForFunctionPointer(functions.ReleaseStringChars, ref releaseStringChars);
             MethodWrapper.GetDelegateForFunctionPointer(functions.ToReflectedField, ref toReflectedField);
             MethodWrapper.GetDelegateForFunctionPointer(functions.ToReflectedMethod, ref toReflectedMethod);

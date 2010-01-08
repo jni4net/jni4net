@@ -274,7 +274,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	  <MethodModifier MethodName="FindJar" Signature="()LSystem/String;" Skip="true"/>
 	  <MethodModifier MethodName="GetVersion" Signature="()LSystem/String;" Skip="true"/>
   </ClrType>
+  
   <!-- 
+  <ClrType TypeName="net.sf.jni4net.nio.DirectBufferCleaner"/>
   <ClrType TypeName="net.sf.jni4net.jni.IJvmProxy" MergeJavaSource="true">
     <IgnoreInterface TypeName="java_.lang.IObject"/>
   </ClrType>

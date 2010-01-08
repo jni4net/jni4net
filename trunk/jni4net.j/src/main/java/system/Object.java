@@ -56,10 +56,14 @@ public class Object implements IClrProxy, system.IObject {
 	protected void finalize() throws Throwable {
 		try {
 			if (clrHandle != 0) {
-				net.sf.jni4net.Bridge.DisposeClrHandle(clrHandle);
+                if (net.sf.jni4net.Bridge.isRegistered()){
+				    net.sf.jni4net.Bridge.DisposeClrHandle(clrHandle);
+                }
 				clrHandle = 0;
 			}
-		} finally {
+		}catch (Throwable ignore){
+        }
+        finally {
 			super.finalize();
 		}
 	}

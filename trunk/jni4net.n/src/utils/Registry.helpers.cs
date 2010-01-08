@@ -33,6 +33,8 @@ namespace net.sf.jni4net.utils
 {
     partial class Registry
     {
+        private static readonly Dictionary<Class, List<JNINativeMethod>> nativeMethods = new Dictionary<Class, List<JNINativeMethod>>();
+
         private static ClrWrapperAttribute GetClrWrapperAttribute(Type type)
         {
             object[] objects = type.GetCustomAttributes(typeof (ClrWrapperAttribute), false);
@@ -170,10 +172,30 @@ namespace net.sf.jni4net.utils
                 try
                 {
                     JNINativeMethod.Register(registrations, jvmProxy, env);
+                    if (!nativeMethods.ContainsKey(jvmProxy))
+                    {
+                        nativeMethods.Add(jvmProxy, registrations);
+                    }
                 }
                 catch (Exception ex)
                 {
                     throw new JNIException("Failed binding native methods for " + jvmInterface, ex);
+                }
+            }
+        }
+
+        static internal void UnregisterNative()
+        {
+            JNIEnv env = JNIEnv.ThreadEnv;
+            foreach (var proxy in nativeMethods)
+            {
+                try
+                {
+                    JNINativeMethod.Unregister(proxy.Key, env);
+                }
+                catch (Exception ex)
+                {
+                    throw new JNIException("Failed unbinding native methods for " + proxy.Key, ex);
                 }
             }
         }

@@ -931,6 +931,13 @@ namespace net.sf.jni4net.jni
 
             #endregion
 
+            #region Nested type: UnregisterNatives
+
+            [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            internal delegate JNIResult UnregisterNatives(IntPtr thiz, IntPtr clazz);
+
+            #endregion
+
             #region Nested type: ReleaseBooleanArrayElements
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
