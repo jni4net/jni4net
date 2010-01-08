@@ -264,6 +264,10 @@ namespace net.sf.jni4net
                 return;
             }
 
+            if (newSetup.Verbose)
+            {
+                Console.WriteLine("loading core from " + homeDll);
+            }
             setup = newSetup;
             if (!setup.BindCoreOnly)
             {
@@ -297,10 +301,6 @@ namespace net.sf.jni4net
             if (clrLoaded)
             {
                 return true;
-            }
-            if (newSetup.Verbose)
-            {
-                Console.WriteLine("loading core from " + homeDll);
             }
             if (newSetup.BindNative)
             {

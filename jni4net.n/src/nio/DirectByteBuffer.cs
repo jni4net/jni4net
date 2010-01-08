@@ -24,6 +24,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using java.lang;
+using java.lang.reflect;
 using java.nio;
 using net.sf.jni4net.jni;
 
@@ -31,6 +32,20 @@ namespace net.sf.jni4net.nio
 {
     public class DirectByteBuffer : java.nio.ByteBuffer, IDisposable
     {
+        /*private static Field addrField;
+        private static Field capField;
+        static void Init()
+        {
+            if (addrField == null)
+            {
+                Class dbbClazz = Class.forName("java.nio.Buffer");
+                addrField = dbbClazz.getDeclaredField("address");
+                capField = dbbClazz.getDeclaredField("capacity");
+                addrField.setAccessible(true);
+                capField.setAccessible(true);
+            }
+        }*/
+
         private readonly byte[] sharedBuffer;
         private GCHandle pin;
 
@@ -42,6 +57,7 @@ namespace net.sf.jni4net.nio
         public DirectByteBuffer(byte[] sharedBuffer, int position, int len)
             : base(null)
         {
+            //Init();
             this.sharedBuffer = sharedBuffer;
             pin = GCHandle.Alloc(sharedBuffer, GCHandleType.Pinned);
             JNIEnv env = JNIEnv.ThreadEnv;
@@ -65,12 +81,9 @@ namespace net.sf.jni4net.nio
 
         public void Dispose()
         {
-            /*var dbbClazz = Class.forName("java.nio.Buffer");
-            var addrField = dbbClazz.getDeclaredField("address");
-            addrField.setAccessible(true);
-            addrField.set(this, new Long(0));
-            addrField.setAccessible(false);
-            Console.WriteLine("reflection done");*/
+            // addrField.set(this, new Long(0));
+            // capField.set(this, new Integer(0));
+            // Console.WriteLine("reflection done");
 
             ((IJvmProxy)this).Dispose();
             if (pin.IsAllocated)
