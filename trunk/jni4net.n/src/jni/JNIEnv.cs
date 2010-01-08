@@ -1188,6 +1188,9 @@ namespace net.sf.jni4net.jni
 
         public ByteBuffer NewDirectByteBuffer(IntPtr address, long capacity)
         {
+            //Class dbClazz = FindClass("java/nio/DirectByteBuffer");
+            //MethodId ctor = GetMethodID(dbClazz, "<init>","(JI)V");
+            //return (ByteBuffer)NewObject(dbClazz, ctor, new Value() { _long = address.ToInt64() }, new Value(){_int = (int)capacity});
             IntPtr res = newDirectByteBuffer.Invoke(envPtr, address, capacity);
             ExceptionTest();
             return Convertor.StrongJ2Cp<ByteBuffer>(this, res);
@@ -1237,6 +1240,17 @@ namespace net.sf.jni4net.jni
                 throw new ArgumentNullException("lobj");
             }
             IntPtr res = newGlobalRef(envPtr, lobj);
+            //optimized away ExceptionTest();
+            return res;
+        }
+
+        internal IntPtr NewLocalRef(IntPtr lobj)
+        {
+            if (lobj == IntPtr.Zero)
+            {
+                throw new ArgumentNullException("lobj");
+            }
+            IntPtr res = newLocalRef(envPtr, lobj);
             //optimized away ExceptionTest();
             return res;
         }
