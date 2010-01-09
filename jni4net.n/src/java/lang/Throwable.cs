@@ -50,8 +50,7 @@ namespace java.lang
                 using (var ois = Adapt.Disposable(new ObjectInputStream(bai.Real)))
                 {
                     Object exception = ois.Real.readObject();
-                    ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, ((IJvmProxy)exception).JvmHandle, exception.getClass());
-                    ((IJvmProxy)exception).HoldThisHandle();
+                    ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, exception);
                 }
             }
         }
