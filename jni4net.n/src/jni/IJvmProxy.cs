@@ -30,6 +30,14 @@ namespace net.sf.jni4net.jni
     {
         Class GetClass();
 
+        /// <summary>
+        /// Warning: if you take this handle and you don't use/hold the proxy any further.
+        /// For example this is last operation on the object, you have just on stack.
+        /// It could happen that GC will cleanup the proxy (call dispose and delete JVM reference)
+        /// before you copy this handle into new globalRef. 
+        /// For now use HoldThisHandle() on original proxy till you have your copy.
+        /// TODO: better design ?
+        /// </summary>
         IntPtr JvmHandle { get; set; }
 
         void Init(JNIEnv env, IntPtr obj, Class clazz);
@@ -39,5 +47,11 @@ namespace net.sf.jni4net.jni
         void Copy(JNIEnv env, IJvmProxy src);
 
         void Dispose();
+
+        /// <summary>
+        /// empty operation
+        /// trick to retain JVM handle till this point, protect from gc
+        /// </summary>
+        void HoldThisHandle();
     }
 }

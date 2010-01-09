@@ -13,6 +13,7 @@ using java.lang;
 using java.nio;
 using net.sf.jni4net.jni;
 using Exception = java.lang.Exception;
+using Object = java.lang.Object;
 
 namespace net.sf.jni4net.nio
 {
@@ -38,11 +39,12 @@ namespace net.sf.jni4net.nio
                     // sun JVM specific
                     Class dbClazz = env.FindClass("java/nio/DirectByteBuffer");
                     MethodId ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+                    Object wrap = Bridge.WrapCLR(cleaner);
                     buffer = (ByteBuffer) env.NewObject(dbClazz, ctor,
                                                         new Value {_int = len},
                                                         new Value {_long = offset},
-                                                        new Value {_object = Bridge.WrapCLR(cleaner).jvmHandle});
-
+                                                        new Value {_object = wrap.jvmHandle});
+                    ((IJvmProxy)wrap).HoldThisHandle();
                 }
                 catch (Exception)
                 {

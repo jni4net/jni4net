@@ -68,7 +68,6 @@ namespace net.sf.jni4net.test
                 Console.WriteLine("AAA");
                 AppDomain domain = AppDomain.CreateDomain("ddd", securityInfo, domainSetup, permissionSet, trustAssemblies);
                 Console.WriteLine("bbb");
-                Thread.Sleep(100);
                 Console.WriteLine("ccc");
                 domain.DoCallBack(testBB);
                 Console.WriteLine("ddd");
@@ -139,7 +138,6 @@ namespace net.sf.jni4net.test
                     l.Add((java.lang.String) "ssss" + i);
                 }
                 l = null;
-                Thread.Sleep(10);
             }
         }
 

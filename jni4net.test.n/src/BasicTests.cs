@@ -169,11 +169,11 @@ namespace net.sf.jni4net.test
                 String copy = Bridge.CreateProxy<String>(((IJvmProxy)s3).JvmHandle);
                 if (i%1000==0)
                 {
-                    Console.WriteLine(i);
-                    Thread.Sleep(10);
+                    //Console.WriteLine(i);
                     GC.Collect(3,GCCollectionMode.Forced);
                 }
             }
+            ((IJvmProxy)s3).HoldThisHandle();
         }
 
         
@@ -325,21 +325,11 @@ namespace net.sf.jni4net.test
         {
             int size = 13*1024*1024;
             ByteBuffer bb = a(size);
-
-            GC.Collect(0, GCCollectionMode.Forced);
-            java.lang.System.gc();
-            GC.Collect(3, GCCollectionMode.Forced);
-            java.lang.System.gc();
-            GC.WaitForPendingFinalizers();
-            java.lang.System.gc();
-
             bb.capacity();
-
         }
 
         private ByteBuffer a(int size)
         {
-            Console.WriteLine(size);
             var sharedBuffer = new byte[size];
             var buffer = new DirectByteBuffer(sharedBuffer);
             buffer.position(size - 1);
@@ -417,8 +407,7 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        [Explicit("this looses objes/type information on random jvm object for jdk 1.5 on x64")]
-        public void JvmCrash()
+        public void WasJvmCrash()
         {
             String o = new String();
             IntPtr handle = ((IJvmProxy)o).JvmHandle;
@@ -426,6 +415,8 @@ namespace net.sf.jni4net.test
             {
                 crash(i, handle);
             }
+            // this solved the problem
+            ((IJvmProxy)o).HoldThisHandle();
         }
 
         public static void crash(int i, IntPtr handle)

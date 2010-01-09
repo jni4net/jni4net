@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using net.sf.jni4net.jni;
 
 namespace java.lang
@@ -87,6 +88,12 @@ namespace java.lang
                 jvmHandle = IntPtr.Zero;
             }
             GC.SuppressFinalize(this);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        void IJvmProxy.HoldThisHandle()
+        {
+            //empty operation
         }
 
         #endregion

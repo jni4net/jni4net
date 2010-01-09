@@ -94,6 +94,7 @@ namespace net.sf.jni4net.test
             Object val = Bridge.WrapCLR(cwc);
             RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, ((IClrProxy)val).JvmHandle, val.getClass());
             Assert.IsNotNull(record);
+            ((IJvmProxy)val).HoldThisHandle();
         }
 
         
