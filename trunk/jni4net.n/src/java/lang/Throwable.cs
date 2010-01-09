@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using java.io;
 using net.sf.jni4net;
@@ -50,6 +51,7 @@ namespace java.lang
                 {
                     Object exception = ois.Real.readObject();
                     ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, ((IJvmProxy)exception).JvmHandle, exception.getClass());
+                    ((IJvmProxy)exception).HoldThisHandle();
                 }
             }
         }
@@ -172,6 +174,12 @@ namespace java.lang
                 jvmHandle = IntPtr.Zero;
             }
             GC.SuppressFinalize(this);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        void IJvmProxy.HoldThisHandle()
+        {
+            //empty operation
         }
 
         #endregion
