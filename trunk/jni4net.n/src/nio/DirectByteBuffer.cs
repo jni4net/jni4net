@@ -19,6 +19,28 @@ namespace net.sf.jni4net.nio
 {
     public class DirectByteBuffer : ByteBuffer
     {
+        private static Class dbClazz;
+        private static MethodId ctor;
+        private static bool initDone;
+        private static void Init()
+        {
+            if (initDone)
+            {
+                return;
+            }
+            try
+            {
+                initDone = true;
+                // sun JVM specific
+                JNIEnv env = JNIEnv.ThreadEnv;
+                dbClazz = env.FindClass("java/nio/DirectByteBuffer");
+                ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         private DirectBufferCleaner cleaner;
 
         /// <summary>
@@ -28,31 +50,24 @@ namespace net.sf.jni4net.nio
         public DirectByteBuffer(byte[] sharedBuffer, int position, int len)
             : base(null)
         {
+            Init();
             cleaner = new DirectBufferCleaner(sharedBuffer);
             JNIEnv env = JNIEnv.ThreadEnv;
             long offset = cleaner.Address.ToInt64() + position;
-            ByteBuffer buffer=null;
-            if (Bridge.Setup.BindNative)
+            ByteBuffer buffer;
+            if (Bridge.Setup.BindNative && ctor!=null)
             {
-                try
-                {
-                    // sun JVM specific
-                    Class dbClazz = env.FindClass("java/nio/DirectByteBuffer");
-                    MethodId ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
-                    Object wrap = Bridge.WrapCLR(cleaner);
-                    buffer = (ByteBuffer) env.NewObject(dbClazz, ctor,
-                                                        new Value {_int = len},
-                                                        new Value {_long = offset},
-                                                        new Value {_object = wrap.jvmHandle});
-                    ((IJvmProxy)wrap).HoldThisHandle();
-                }
-                catch (Exception)
-                {
-                    buffer = null;
-                }
+                // sun JVM specific
+                Object wrap = Bridge.WrapCLR(cleaner);
+                buffer = (ByteBuffer)env.NewObject(dbClazz, ctor,
+                                                    new Value { _int = len },
+                                                    new Value { _long = offset },
+                                                    new Value { _object = wrap.jvmHandle });
+                ((IJvmProxy)wrap).HoldThisHandle();
             }
-            if (buffer == null)
+            else
             {
+                // TODO ?
                 // the buffer could disapear when collected by CLR gc
                 buffer = env.NewDirectByteBuffer(new IntPtr(cleaner.Address.ToInt64() + position), len);
             }
