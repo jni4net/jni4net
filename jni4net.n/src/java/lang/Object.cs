@@ -24,14 +24,13 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace java.lang
 {
     public partial class Object : IJvmProxy
     {
-        internal Class clazz;
-        private JavaVM javaVM;
-        internal IntPtr jvmHandle;
+        internal JniGlobalHandle jvmHandle;
 
         protected internal Object(JNIEnv env)
         {
@@ -39,85 +38,31 @@ namespace java.lang
 
         protected JNIEnv Env
         {
-            get { return JNIEnv.GetEnvForVm(javaVM); }
+            get { return JNIEnv.GetEnvForVm(jvmHandle.javaVM); }
         }
 
         #region Reference handling
 
         #region IJvmProxy Members
 
-        IntPtr IJvmProxy.JvmHandle
+        JniGlobalHandle IJvmProxy.JvmHandle
         {
             get { return jvmHandle; }
-            set { jvmHandle = value; }
         }
 
-        void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
+        void IJvmProxy.Init(JNIEnv env, JniLocalHandle obj)
         {
-            clazz = clazs;
             jvmHandle = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
-            javaVM = env.GetJavaVM();
         }
 
-        void IJvmProxy.Copy(JNIEnv env, IntPtr obj, Class clazs)
+        void IJvmProxy.Copy(JNIEnv env, JniGlobalHandle obj)
         {
-            clazz = clazs;
-            jvmHandle = env.NewGlobalRef(obj);
-            javaVM = env.GetJavaVM();
+            jvmHandle = obj;
         }
 
-        void IJvmProxy.Copy(JNIEnv env, IJvmProxy src)
-        {
-            var srco = ((Object)src);
-            jvmHandle = env.NewGlobalRef(srco.jvmHandle);
-            clazz = srco.clazz;
-            javaVM = srco.javaVM;
-        }
-
-        void IJvmProxy.Dispose()
-        {
-            if (jvmHandle != IntPtr.Zero)
-            {
-                JNIEnv env = JNIEnv.GetEnvNoThrow(javaVM);
-                // we don't crash if JVM is gone already
-                if (env != null)
-                {
-                    env.DeleteGlobalRef(this);
-                }
-                jvmHandle = IntPtr.Zero;
-            }
-            GC.SuppressFinalize(this);
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        void IJvmProxy.HoldThisHandle()
-        {
-            //empty operation
-        }
 
         #endregion
-
-        ~Object()
-        {
-            ((IJvmProxy)this).Dispose();
-        }
-
-        #endregion
-
-        #region IJvmProxy Members
-
-        Class IJvmProxy.GetClass()
-        {
-            //TODO synchronize
-            if (clazz == null)
-            {
-                //TODO optimize ?
-                FieldInfo field = GetType().GetField("staticClass", BindingFlags.Static | BindingFlags.NonPublic);
-                return (Class) field.GetValue(null);
-            }
-            return clazz;
-        }
 
         #endregion
 

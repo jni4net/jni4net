@@ -38,6 +38,7 @@ using net.sf.jni4net.jni;
 using net.sf.jni4net.nio;
 using net.sf.jni4net.test.BB;
 using net.sf.jni4net.tested;
+using net.sf.jni4net.utils;
 using NUnit.Framework;
 using Byte=java.lang.Byte;
 using ByteBuffer=java.nio.ByteBuffer;
@@ -109,13 +110,6 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
-        public void Dispose()
-        {
-            String s1 = env.NewString("test");
-            ((IJvmProxy)s1).Dispose();
-        }
-
-        [Test]
         [Explicit]
         public void HeavyAlloc()
         {
@@ -127,10 +121,6 @@ namespace net.sf.jni4net.test
                 list.Add(s3);
             }
 
-            foreach (String s in list)
-            {
-                ((IJvmProxy)s).Dispose();
-            }
             DateTime end = DateTime.Now;
 
             Console.WriteLine(end - start);
@@ -173,7 +163,7 @@ namespace net.sf.jni4net.test
                     GC.Collect(3,GCCollectionMode.Forced);
                 }
             }
-            ((IJvmProxy)s3).HoldThisHandle();
+            //((IJvmProxy)s3).HoldThisHandle();
         }
 
         
@@ -410,16 +400,16 @@ namespace net.sf.jni4net.test
         public void WasJvmCrash()
         {
             String o = new String();
-            IntPtr handle = ((IJvmProxy)o).JvmHandle;
+            JniGlobalHandle handle = ((IJvmProxy)o).JvmHandle;
             for (int i = 0; i < 100; i++)
             {
                 crash(i, handle);
             }
             // this solved the problem
-            ((IJvmProxy)o).HoldThisHandle();
+            //((IJvmProxy)o).HoldThisHandle();
         }
 
-        public static void crash(int i, IntPtr handle)
+        public static void crash(int i, JniGlobalHandle handle)
         {
             Console.WriteLine("a" + i);
             var sharedBuffer = new byte[10 * 1024 * 100];

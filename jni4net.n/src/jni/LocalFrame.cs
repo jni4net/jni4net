@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.jni
 {
@@ -43,7 +44,7 @@ namespace net.sf.jni4net.jni
 
         public void Dispose()
         {
-            env.PopLocalFrame(IntPtr.Zero);
+            env.PopLocalFrame(JniLocalHandle.Zero);
         }
 
         #endregion

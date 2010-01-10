@@ -31,9 +31,9 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static TRes StrongJp2C<TRes>(JNIEnv env, IntPtr obj)
+        public static TRes StrongJp2C<TRes>(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return default(TRes);
             }
@@ -42,23 +42,23 @@ namespace net.sf.jni4net.utils
         }
 
 
-        public static TRes StrongJ2Cp<TRes>(JNIEnv env, IntPtr obj)
+        public static TRes StrongJ2Cp<TRes>(JNIEnv env, JniLocalHandle obj)
             where TRes : IJvmProxy
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return default(TRes);
             }
             Class clazz = env.GetObjectClass(obj);
             RegistryRecord record = Registry.GetJVMRecord(clazz);
-            return (TRes) record.CreateCLRProxy(env, obj, clazz);
+            return (TRes) record.CreateCLRProxy(env, obj);
         }
 
         #region Well known
 
-        public static string StrongJ2CString(JNIEnv env, IntPtr obj)
+        public static string StrongJ2CString(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return null;
             }
@@ -66,9 +66,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static string StrongJp2CString(JNIEnv env, IntPtr obj)
+        public static string StrongJp2CString(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return null;
             }
@@ -76,28 +76,28 @@ namespace net.sf.jni4net.utils
             return (string) res;
         }
 
-        public static String StrongJ2CpString(JNIEnv env, IntPtr obj)
+        public static String StrongJ2CpString(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return null;
             }
             return String.CreateProxy(env, obj);
         }
 
-        public static Class StrongJ2CpClass(JNIEnv env, IntPtr obj)
+        public static Class StrongJ2CpClass(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return null;
             }
             return Class.CreateProxy(env, obj);
         }
 
-        public static Object StrongJ2CpObject(JNIEnv env, IntPtr obj)
+        public static Object StrongJ2CpObject(JNIEnv env, JniLocalHandle obj)
         {
             var res = new Object(env);
-            ((IJvmProxy) res).Init(env, obj, Object._class);
+            ((IJvmProxy) res).Init(env, obj);
             return res;
         }
 

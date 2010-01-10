@@ -23,35 +23,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using java.lang;
 using java_.lang;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.jni
 {
     public interface IJvmProxy : IObject
     {
-        Class GetClass();
+        JniGlobalHandle JvmHandle { get; }
 
-        /// <summary>
-        /// Warning: if you take this handle and you don't use/hold the proxy any further.
-        /// For example this is last operation on the object, you have just on stack.
-        /// It could happen that GC will cleanup the proxy (call dispose and delete JVM reference)
-        /// before you copy this handle into new globalRef. 
-        /// For now use HoldThisHandle() on original proxy till you have your copy.
-        /// TODO: better design ?
-        /// </summary>
-        IntPtr JvmHandle { get; set; }
+        void Init(JNIEnv env, JniLocalHandle obj);
 
-        void Init(JNIEnv env, IntPtr obj, Class clazz);
-
-        void Copy(JNIEnv env, IntPtr obj, Class clazz);
-
-        void Copy(JNIEnv env, IJvmProxy src);
-
-        void Dispose();
-
-        /// <summary>
-        /// empty operation
-        /// trick to retain JVM handle till this point, protect from gc
-        /// </summary>
-        void HoldThisHandle();
+        void Copy(JNIEnv env, JniGlobalHandle obj);
     }
 }

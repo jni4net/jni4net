@@ -27,32 +27,32 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static IntPtr StrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
+        public static JniLocalHandle StrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
         {
             // ReSharper disable CompareNonConstrainedGenericWithNull
             if (obj == null)
             {
-                return IntPtr.Zero;
+                return JniLocalHandle.Zero;
             }
             // ReSharper restore CompareNonConstrainedGenericWithNull
             RegistryRecord record = Registry.GetCLRRecord(obj.GetType());
             return record.CreateJVMProxy(env, obj);
         }
 
-        public static IntPtr StrongCp2J(IJvmProxy obj)
+        public static JniGlobalHandle StrongCp2J(IJvmProxy obj)
         {
             if (obj == null)
             {
-                return IntPtr.Zero;
+                return JniGlobalHandle.Zero;
             }
             return obj.JvmHandle;
         }
 
-        public static IntPtr StrongC2JString(JNIEnv env, string obj)
+        public static JniLocalHandle StrongC2JString(JNIEnv env, string obj)
         {
             if (obj == null)
             {
-                return IntPtr.Zero;
+                return JniLocalHandle.Zero;
             }
             return env.NewStringPtr(obj);
         }

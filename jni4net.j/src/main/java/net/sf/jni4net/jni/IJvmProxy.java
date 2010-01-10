@@ -26,9 +26,5 @@ public interface IJvmProxy extends IClrProxy {
 
 	long getJvmHandle();
 
-	void setJvmHandle(long value);
-
-	void Init(system.Object env, long obj, java.lang.Class clazz);
-
-	java.lang.Class GetClass();
+	void Init(system.Object env, long obj);
 }

@@ -22,7 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Diagnostics;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Security.Permissions;
 using java.lang;
 using java.lang.reflect;
@@ -51,10 +53,14 @@ namespace net.sf.jni4net.jni
         {
             if (javaVM == null)
             {
-                IntPtr jvm;
-                getJavaVM.Invoke(envPtr, out jvm);
-                ExceptionTest();
-                javaVM = new JavaVM(jvm);
+                // no need to lock, it will be always on current thread
+                //lock (this)
+                {
+                    IntPtr jvm;
+                    getJavaVM.Invoke(envPtr, out jvm);
+                    ExceptionTest();
+                    javaVM = new JavaVM(jvm);
+                }
             }
             return javaVM;
         }
@@ -63,33 +69,33 @@ namespace net.sf.jni4net.jni
 
         #region reflection
 
-        public IntPtr FindClassPtr(string name)
+        public JniLocalHandle FindClassPtr(string name)
         {
-            IntPtr clazz = findClass.Invoke(envPtr, name);
+            JniLocalHandle clazz = findClass.Invoke(envPtr, name);
             ExceptionTest();
             return clazz;
         }
 
         public Class FindClass(string name)
         {
-            IntPtr clazz = findClass.Invoke(envPtr, name);
+            JniLocalHandle clazz = findClass.Invoke(envPtr, name);
             ExceptionTest();
             return Convertor.StrongJ2CpClass(this, clazz);
         }
 
-        public IntPtr FindClassPtrNoThrow(string name)
+        public JniLocalHandle FindClassPtrNoThrow(string name)
         {
-            IntPtr clazz = findClass.Invoke(envPtr, name);
+            JniLocalHandle clazz = findClass.Invoke(envPtr, name);
             if (ExceptionRead())
             {
-                return IntPtr.Zero;
+                return JniLocalHandle.Zero;
             }
             return clazz;
         }
 
         public Class FindClassNoThrow(string name)
         {
-            IntPtr clazz = findClass.Invoke(envPtr, name);
+            JniLocalHandle clazz = findClass.Invoke(envPtr, name);
             if (ExceptionRead())
             {
                 return null;
@@ -102,13 +108,13 @@ namespace net.sf.jni4net.jni
             return GetObjectClass(obj.JvmHandle);
         }
 
-        internal Class GetObjectClass(IntPtr obj)
+        internal Class GetObjectClass(JniHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniHandle.IsNull(obj))
             {
                 return null;
             }
-            IntPtr res = getObjectClass.Invoke(envPtr, obj);
+            JniLocalHandle res = getObjectClass.Invoke(envPtr, obj);
             ExceptionTest();
             return Convertor.StrongJ2CpClass(this, res);
         }
@@ -158,7 +164,7 @@ namespace net.sf.jni4net.jni
 
         public Field ToReflectedField(Class cls, FieldId fieldID, bool isStatic)
         {
-            IntPtr res = toReflectedField.Invoke(envPtr, cls.jvmHandle, fieldID.native,
+            JniLocalHandle res = toReflectedField.Invoke(envPtr, cls.jvmHandle, fieldID.native,
                                                  isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
             return Convertor.StrongJ2Cp<Field>(this, res);
@@ -166,7 +172,7 @@ namespace net.sf.jni4net.jni
 
         public Method ToReflectedMethod(Class cls, MethodId methodId, bool isStatic)
         {
-            IntPtr res = toReflectedMethod.Invoke(envPtr, cls.jvmHandle, methodId.native,
+            JniLocalHandle res = toReflectedMethod.Invoke(envPtr, cls.jvmHandle, methodId.native,
                                                   isStatic ? (byte) 1 : (byte) 0);
             ExceptionTest();
             return Convertor.StrongJ2Cp<Method>(this, res);
@@ -188,7 +194,7 @@ namespace net.sf.jni4net.jni
 
 #endif
 
-        public IntPtr GetStaticFieldIDPtr(IntPtr clazz, string name, string sig)
+        public IntPtr GetStaticFieldIDPtr(JniHandle clazz, string name, string sig)
         {
             IntPtr res = getStaticFieldID.Invoke(envPtr, clazz, name, sig);
             ExceptionTest();
@@ -221,7 +227,6 @@ namespace net.sf.jni4net.jni
 
         public void CallStaticVoidMethod(Class clazz, MethodId methodIdNative, params Value[] args)
         {
-            //TODO result could be tested in Java 1.6
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
             {
@@ -229,12 +234,13 @@ namespace net.sf.jni4net.jni
             }
 #endif
             callStaticVoidMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
+            //TODO result could be tested in Java 1.6
             ExceptionTest();
         }
 
         public TRes CallStaticObjectMethod<TRes>(Class clazz, MethodId methodIdNative, params Value[] args)
         {
-            IntPtr res = CallStaticObjectMethodPtr(clazz, methodIdNative, args);
+            JniLocalHandle res = CallStaticObjectMethodPtr(clazz, methodIdNative, args);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
@@ -410,7 +416,7 @@ namespace net.sf.jni4net.jni
 
         #region call instance
 
-        public void CallVoidMethod(IntPtr obj, MethodId methodId, params Value[] args)
+        public void CallVoidMethod(JniHandle obj, MethodId methodId, params Value[] args)
         {
             callVoidMethod(envPtr, obj, methodId.native, args);
             //TODO result could be tested in Java 1.6
@@ -430,7 +436,7 @@ namespace net.sf.jni4net.jni
 
         public TRes CallObjectMethod<TRes>(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
-            IntPtr res = CallObjectMethodPtr(obj, methodIdNative, args);
+            JniLocalHandle res = CallObjectMethodPtr(obj, methodIdNative, args);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
@@ -447,7 +453,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public bool CallBooleanMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public bool CallBooleanMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             bool res = callBooleanMethod(envPtr, obj, methodIdNative.native, args) != 0;
             ExceptionTest();
@@ -467,7 +473,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public int CallIntMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public int CallIntMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             int res = callIntMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -487,7 +493,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public short CallShortMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public short CallShortMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             short res = callShortMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -507,7 +513,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public long CallLongMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public long CallLongMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             long res = callLongMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -527,7 +533,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public byte CallByteMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public byte CallByteMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             byte res = callByteMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -547,7 +553,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public double CallDoubleMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public double CallDoubleMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             double res = callDoubleMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -567,7 +573,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public float CallFloatMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public float CallFloatMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             float res = callFloatMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -587,7 +593,7 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        public char CallCharMethod(IntPtr obj, MethodId methodIdNative, params Value[] args)
+        public char CallCharMethod(JniHandle obj, MethodId methodIdNative, params Value[] args)
         {
             var res = (char) callCharMethod(envPtr, obj, methodIdNative.native, args);
             ExceptionTest();
@@ -696,7 +702,7 @@ namespace net.sf.jni4net.jni
 
         public TRes GetObjectField<TRes>(IJvmProxy obj, FieldId fieldID)
         {
-            IntPtr res = GetObjectFieldPtr(obj, fieldID);
+            JniLocalHandle res = GetObjectFieldPtr(obj, fieldID);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
@@ -733,7 +739,7 @@ namespace net.sf.jni4net.jni
             return GetIntField(obj.JvmHandle, fieldID);
         }
 
-        public int GetIntField(IntPtr obj, FieldId fieldID)
+        public int GetIntField(JniHandle obj, FieldId fieldID)
         {
             int res = getIntField(envPtr, obj, fieldID.native);
             ExceptionTest();
@@ -763,7 +769,7 @@ namespace net.sf.jni4net.jni
 
         public TRes GetField<TRes>(IJvmProxy obj, string fieldName, string sig)
         {
-            FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
+            FieldId id = GetFieldID(obj.getClass(), fieldName, sig);
             if (id != null)
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
@@ -875,7 +881,7 @@ namespace net.sf.jni4net.jni
 
         public void SetField<T>(IJvmProxy obj, string fieldName, string sig, T value)
         {
-            FieldId id = GetFieldID(obj.GetClass(), fieldName, sig);
+            FieldId id = GetFieldID(obj.getClass(), fieldName, sig);
             if (id != null)
             {
                 if (typeof (IObject).IsAssignableFrom(typeof (T)))
@@ -947,7 +953,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetStaticBooleanField(IntPtr clazz, IntPtr fieldID, bool value)
+        internal void SetStaticBooleanField(JniHandle clazz, IntPtr fieldID, bool value)
         {
             setStaticBooleanField(envPtr, clazz, fieldID, value ? (byte)1 : (byte)0);
             ExceptionTest();
@@ -1058,12 +1064,12 @@ namespace net.sf.jni4net.jni
 
         public TRes GetStaticObjectField<TRes>(Class clazz, FieldId fieldID)
         {
-            IntPtr res = GetStaticObjectFieldPtr(clazz, fieldID);
+            JniLocalHandle res = GetStaticObjectFieldPtr(clazz, fieldID);
             return Convertor.FullJ2C<TRes>(this, res);
         }
 
 
-        public bool GetStaticBooleanField(IntPtr clazz, IntPtr fieldID)
+        public bool GetStaticBooleanField(JniHandle clazz, IntPtr fieldID)
         {
             bool res = getStaticBooleanField(envPtr, clazz, fieldID) != 0;
             ExceptionTest();
@@ -1198,14 +1204,14 @@ namespace net.sf.jni4net.jni
             //Class dbClazz = FindClass("java/nio/DirectByteBuffer");
             //MethodId ctor = GetMethodID(dbClazz, "<init>","(JI)V");
             //return (ByteBuffer)NewObject(dbClazz, ctor, new Value() { _long = address.ToInt64() }, new Value(){_int = (int)capacity});
-            IntPtr res = newDirectByteBuffer.Invoke(envPtr, address, capacity);
+            JniLocalHandle res = newDirectByteBuffer.Invoke(envPtr, address, capacity);
             ExceptionTest();
             return Convertor.StrongJ2Cp<ByteBuffer>(this, res);
         }
 
-        public void* GetDirectBufferAddress(Object buf)
+        public IntPtr GetDirectBufferAddress(Object buf)
         {
-            void* res = getDirectBufferAddress.Invoke(envPtr, buf.jvmHandle);
+            IntPtr res = getDirectBufferAddress.Invoke(envPtr, buf.jvmHandle);
             ExceptionTest();
             return res;
         }
@@ -1223,11 +1229,11 @@ namespace net.sf.jni4net.jni
 
         public String NewString(string unicode)
         {
-            IntPtr res = NewStringPtr(unicode);
+            JniLocalHandle res = NewStringPtr(unicode);
             return Convertor.StrongJ2CpString(this, res);
         }
 
-        internal string ConvertToString(IntPtr javaString)
+        internal string ConvertToString(JniHandle javaString)
         {
             byte b = 0;
             IntPtr chars = GetStringChars(javaString, &b);
@@ -1240,31 +1246,30 @@ namespace net.sf.jni4net.jni
 
         #region references
 
-        internal IntPtr NewGlobalRef(IntPtr lobj)
+        public JniGlobalHandle NewGlobalRef(JniHandle lobj)
         {
-            if (lobj == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(lobj))
             {
                 throw new ArgumentNullException("lobj");
             }
-            IntPtr res = newGlobalRef(envPtr, lobj);
+            JniGlobalHandleNs res = newGlobalRef(envPtr, lobj);
+            return new JniGlobalHandle(res.handle, GetJavaVM());
+        }
+
+        internal JniLocalHandle NewLocalRef(JniHandle lobj)
+        {
+            if (JniHandle.IsNull(lobj))
+            {
+                throw new ArgumentNullException("lobj");
+            }
+            JniLocalHandle res = newLocalRef(envPtr, lobj);
             //optimized away ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewLocalRef(IntPtr lobj)
+        internal JniLocalHandle PopLocalFrame(JniHandle result)
         {
-            if (lobj == IntPtr.Zero)
-            {
-                throw new ArgumentNullException("lobj");
-            }
-            IntPtr res = newLocalRef(envPtr, lobj);
-            //optimized away ExceptionTest();
-            return res;
-        }
-
-        internal IntPtr PopLocalFrame(IntPtr result)
-        {
-            IntPtr res = popLocalFrame(envPtr, result);
+            JniLocalHandle res = popLocalFrame(envPtr, result);
             ExceptionTest();
             return res;
         }
@@ -1289,20 +1294,23 @@ namespace net.sf.jni4net.jni
             }
         }
 
-        internal void DeleteGlobalRef(IJvmProxy gref)
+        [SuppressUnmanagedCodeSecurity]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+        internal void DeleteGlobalRef(JniGlobalHandle gref)
         {
-            if (gref == null || gref.JvmHandle == IntPtr.Zero)
+            if (JniGlobalHandle.IsNull(gref))
             {
                 throw new ArgumentNullException("gref");
             }
-            deleteGlobalRef(envPtr, gref.JvmHandle);
+            deleteGlobalRef(envPtr, gref);
             //optimized away ExceptionTest();
-            gref.JvmHandle = IntPtr.Zero;
         }
 
-        internal void DeleteLocalRef(IntPtr lref)
+        [SuppressUnmanagedCodeSecurity]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+        internal void DeleteLocalRef(JniLocalHandle lref)
         {
-            if (lref == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(lref))
             {
                 throw new ArgumentNullException("lref");
             }
@@ -1323,28 +1331,28 @@ namespace net.sf.jni4net.jni
 
         internal IObject AllocObject(Class clazz)
         {
-            IntPtr res = allocObject(envPtr, clazz.jvmHandle);
+            JniLocalHandle res = allocObject(envPtr, clazz.jvmHandle);
             ExceptionTest();
             return Convertor.FullJ2C<IJvmProxy>(this, res);
         }
 
         public void NewObject(Class clazz, MethodId methodID, IJvmProxy obj, params Value[] args)
         {
-            IntPtr res = newObject(envPtr, clazz.jvmHandle, methodID.native, args);
+            JniLocalHandle res = newObject(envPtr, clazz.jvmHandle, methodID.native, args);
             ExceptionTest();
-            obj.Init(this, res, clazz);
+            obj.Init(this, res);
         }
 
-        public IntPtr NewObjectPtr(IntPtr clazz, MethodId methodID, params Value[] args)
+        public JniLocalHandle NewObjectPtr(JniHandle clazz, MethodId methodID, params Value[] args)
         {
-            IntPtr res = newObject(envPtr, clazz, methodID.native, args);
+            JniLocalHandle res = newObject(envPtr, clazz, methodID.native, args);
             ExceptionTest();
             return res;
         }
 
         public IObject NewObject(Class clazz, MethodId methodID, params Value[] args)
         {
-            IntPtr res = newObject(envPtr, clazz.jvmHandle, methodID.native, args);
+            JniLocalHandle res = newObject(envPtr, clazz.jvmHandle, methodID.native, args);
             ExceptionTest();
             return Convertor.FullJ2C<IJvmProxy>(this, res);
         }
@@ -1355,11 +1363,11 @@ namespace net.sf.jni4net.jni
 
         public void Throw(Throwable ex)
         {
-            IntPtr ptr = ex.jvmHandle;
+            JniHandle ptr = ex.jvmHandle;
             Throw(ptr);
         }
 
-        internal void Throw(IntPtr ptr)
+        internal void Throw(JniHandle ptr)
         {
             if (@throw(envPtr, ptr) != JNIResult.JNI_OK)
             {
@@ -1377,7 +1385,7 @@ namespace net.sf.jni4net.jni
             Marshal.FreeHGlobal(uni);
         }
 
-        public IntPtr ExceptionOccurred()
+        public JniLocalHandle ExceptionOccurred()
         {
             return exceptionOccurred(envPtr);
         }
@@ -1399,8 +1407,8 @@ namespace net.sf.jni4net.jni
 
         public void ExceptionTest()
         {
-            IntPtr occurred = ExceptionOccurred();
-            if (IntPtr.Zero != occurred)
+            JniLocalHandle occurred = ExceptionOccurred();
+            if (!JniLocalHandle.IsNull(occurred))
             {
                 //ExceptionDescribe();
                 ExceptionClear();
@@ -1411,8 +1419,8 @@ namespace net.sf.jni4net.jni
 
         public bool ExceptionRead()
         {
-            IntPtr occurred = ExceptionOccurred();
-            if (IntPtr.Zero != occurred)
+            JniLocalHandle occurred = ExceptionOccurred();
+            if (!JniLocalHandle.IsNull(occurred))
             {
                 if (Bridge.Setup.VeryVerbose)
                 {

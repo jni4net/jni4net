@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace java.lang
 {
@@ -117,10 +118,10 @@ namespace java.lang
             return !x.Equals(y);
         }
 
-        internal static String CreateProxy(JNIEnv env, IntPtr obj)
+        internal static String CreateProxy(JNIEnv env, JniLocalHandle obj)
         {
             var proxy = new String(env);
-            ((IJvmProxy) proxy).Init(env, obj, staticClass);
+            ((IJvmProxy) proxy).Init(env, obj);
             return proxy;
         }
     }

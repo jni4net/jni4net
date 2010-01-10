@@ -85,7 +85,7 @@ namespace java.lang.reflect {
             return methods;
         }
         
-        private static global::System.IntPtr getName0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle getName0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -93,10 +93,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getName());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr getBounds1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle getBounds1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/reflect/Type;
             // ()[Ljava/lang/reflect/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -104,10 +104,10 @@ namespace java.lang.reflect {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__real.getBounds());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr getGenericDeclaration2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle getGenericDeclaration2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/reflect/GenericDeclaration;
             // ()Ljava/lang/reflect/GenericDeclaration;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -115,7 +115,7 @@ namespace java.lang.reflect {
             global::java.lang.reflect.TypeVariable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.TypeVariable>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.reflect.GenericDeclaration>(@__env, @__real.getGenericDeclaration());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

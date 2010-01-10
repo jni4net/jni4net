@@ -226,8 +226,8 @@ namespace net.sf.jni4net
                 Console.Error.WriteLine("Can't bind env");
                 return -1;
             }
-            IntPtr br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
-            if (br==IntPtr.Zero)
+            JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
+            if (JniLocalHandle.IsNull(br))
             {
                 return -2;
             }
@@ -281,7 +281,7 @@ namespace net.sf.jni4net
             }
             if (Setup.BindNative)
             {
-                IntPtr br = env.FindClassPtr("net/sf/jni4net/Bridge");
+                JniLocalHandle br = env.FindClassPtr("net/sf/jni4net/Bridge");
                 IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
                 env.SetStaticBooleanField(br, ir, true);
                 if (!env.GetStaticBooleanField(br, ir))
@@ -305,7 +305,7 @@ namespace net.sf.jni4net
             {
                 JNIEnv env = JNIEnv.ThreadEnv;
                 Registry.UnregisterNative();
-                IntPtr br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
+                JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
                 IntPtr ir = env.GetStaticFieldIDPtr(br, "isRegistered", "Z");
                 env.SetStaticBooleanField(br, ir, false);
             }
@@ -319,8 +319,8 @@ namespace net.sf.jni4net
             }
             if (newSetup.BindNative)
             {
-                IntPtr br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
-                if (br==IntPtr.Zero)
+                JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
+                if (JniLocalHandle.IsNull(br))
                 {
                     throw new JNIException("Can't find class net.sf.jni4net.Bridge on classpath");
                 }

@@ -46,7 +46,7 @@ namespace net.sf.jni4net.utils
         internal static MethodId shortObject;
         internal static MethodId shortValue;
 
-        public static void InitProxy(JNIEnv env, IntPtr obj, object real)
+        public static void InitProxy(JNIEnv env, JniLocalHandle obj, object real)
         {
             long handle = IntHandle.Alloc(real);
             env.CallVoidMethod(obj, __IClrProxy._initProxy1, new Value {_long = handle});

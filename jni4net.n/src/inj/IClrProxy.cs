@@ -36,22 +36,22 @@ namespace net.sf.jni4net.inj
 
     internal partial class __IClrProxy
     {
-        private static long getClrHandle(JNIEnv env, IntPtr obj)
+        private static long getClrHandle(JNIEnv env, JniHandle obj)
         {
             return env.CallIntMethod(obj, _getClrHandle0);
         }
 
-        internal static object GetObject(JNIEnv env, IntPtr obj)
+        internal static object GetObject(JNIEnv env, JniHandle obj)
         {
             long handle = getClrHandle(env, obj);
             object real = IntHandle.ToObject(handle);
             return real;
         }
 
-        internal static IClrProxy CreateProxy(JNIEnv env, IntPtr obj, Class clazz)
+        internal static IClrProxy CreateProxy(JNIEnv env, JniLocalHandle obj)
         {
             IClrProxy proxy = new __IClrProxy(env);
-            proxy.Init(env, obj, clazz);
+            proxy.Init(env, obj);
             return proxy;
         }
     }

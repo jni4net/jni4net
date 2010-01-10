@@ -241,9 +241,7 @@
     <Compile Include="generated\java\util\zip\ZipEntry.generated.cs" />
     <Compile Include="generated\java\util\zip\ZipInputStream.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\BridgeSetup.generated.cs" />
-    <Compile Include="generated\net\sf\jni4net\jni\ICJvmProxy.generated.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="generated\net\sf\jni4net\jni\IJvmProxy.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\nio\DirectBufferCleaner.generated.cs" />
     <Compile Include="generated\system\Environment.generated.cs" />
     <Compile Include="generated\system\io\TextReader.generated.cs" />
@@ -272,6 +270,9 @@
     <Compile Include="utils\Convertor.J2C.array.cs" />
     <Compile Include="utils\Convertor.J2C.cs" />
     <Compile Include="utils\Convertor.J2C.strong.cs" />
+    <Compile Include="utils\JniGlobalHandle.cs" />
+    <Compile Include="utils\JniHandle.cs" />
+    <Compile Include="utils\JniLocalHandle.cs" />
     <Compile Include="utils\MutexLocker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

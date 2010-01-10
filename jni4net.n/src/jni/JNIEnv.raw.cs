@@ -23,104 +23,105 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Runtime.InteropServices;
 using java.lang;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net.jni
 {
     unsafe partial class JNIEnv
     {
-        internal IntPtr NewIntArrayPtr(int len)
+        internal JniLocalHandle NewIntArrayPtr(int len)
         {
-            IntPtr res = newIntArray(envPtr, len);
+            JniLocalHandle res = newIntArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr GetObjectArrayElementPtr(IntPtr array, int index)
+        internal JniLocalHandle GetObjectArrayElementPtr(JniHandle array, int index)
         {
-            IntPtr res = getObjectArrayElement(envPtr, array, index);
+            JniLocalHandle res = getObjectArrayElement(envPtr, array, index);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewStringPtr(string unicode)
+        internal JniLocalHandle NewStringPtr(string unicode)
         {
             IntPtr uni = Marshal.StringToHGlobalUni(unicode);
-            IntPtr res = newString(envPtr, uni, unicode.Length);
+            JniLocalHandle res = newString(envPtr, uni, unicode.Length);
             ExceptionTest();
             Marshal.FreeHGlobal(uni);
             return res;
         }
 
-        internal IntPtr GetStringChars(IntPtr str, byte* isCopy)
+        internal IntPtr GetStringChars(JniHandle str, byte* isCopy)
         {
             IntPtr res = getStringChars(envPtr, str, isCopy);
             ExceptionTest();
             return res;
         }
 
-        internal void ReleaseStringChars(IntPtr str, IntPtr chars)
+        internal void ReleaseStringChars(JniHandle str, IntPtr chars)
         {
             releaseStringChars(envPtr, str, chars);
             ExceptionTest();
         }
 
-        internal IntPtr NewObjectArrayPtr(int len, IntPtr clazz, IJvmProxy init)
+        internal JniLocalHandle NewObjectArrayPtr(int len, JniGlobalHandle clazz, IJvmProxy init)
         {
-            IntPtr res = newObjectArray(envPtr, len, clazz, init == null ? IntPtr.Zero : init.JvmHandle);
+            JniLocalHandle res = newObjectArray(envPtr, len, clazz, init == null ? JniGlobalHandle.Zero : init.JvmHandle);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewCharArrayPtr(int len)
+        internal JniLocalHandle NewCharArrayPtr(int len)
         {
-            IntPtr res = newCharArray(envPtr, len);
+            JniLocalHandle res = newCharArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewShortArrayPtr(int len)
+        internal JniLocalHandle NewShortArrayPtr(int len)
         {
-            IntPtr res = newShortArray(envPtr, len);
+            JniLocalHandle res = newShortArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewByteArrayPtr(int len)
+        internal JniLocalHandle NewByteArrayPtr(int len)
         {
-            IntPtr res = newByteArray(envPtr, len);
+            JniLocalHandle res = newByteArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewBooleanArrayPtr(int len)
+        internal JniLocalHandle NewBooleanArrayPtr(int len)
         {
-            IntPtr res = newBooleanArray(envPtr, len);
+            JniLocalHandle res = newBooleanArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewLongArrayPtr(int len)
+        internal JniLocalHandle NewLongArrayPtr(int len)
         {
-            IntPtr res = newLongArray(envPtr, len);
+            JniLocalHandle res = newLongArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewFloatArrayPtr(int len)
+        internal JniLocalHandle NewFloatArrayPtr(int len)
         {
-            IntPtr res = newFloatArray(envPtr, len);
+            JniLocalHandle res = newFloatArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        internal IntPtr NewDoubleArrayPtr(int len)
+        internal JniLocalHandle NewDoubleArrayPtr(int len)
         {
-            IntPtr res = newDoubleArray(envPtr, len);
+            JniLocalHandle res = newDoubleArray(envPtr, len);
             ExceptionTest();
             return res;
         }
 
-        public IntPtr CallObjectMethodPtr(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
+        public JniLocalHandle CallObjectMethodPtr(IJvmProxy obj, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -128,26 +129,26 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallObjectMethodPtr : " + obj.GetType().FullName);
             }
 #endif
-            IntPtr res = callObjectMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
+            JniLocalHandle res = callObjectMethod(envPtr, obj.JvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }
 
-        public IntPtr GetObjectFieldPtr(IJvmProxy obj, FieldId fieldID)
+        public JniLocalHandle GetObjectFieldPtr(IJvmProxy obj, FieldId fieldID)
         {
-            IntPtr res = getObjectField(envPtr, obj.JvmHandle, fieldID.native);
+            JniLocalHandle res = getObjectField(envPtr, obj.JvmHandle, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public IntPtr GetStaticObjectFieldPtr(Class clazz, FieldId fieldID)
+        public JniLocalHandle GetStaticObjectFieldPtr(Class clazz, FieldId fieldID)
         {
-            IntPtr res = getStaticObjectField(envPtr, clazz.jvmHandle, fieldID.native);
+            JniLocalHandle res = getStaticObjectField(envPtr, clazz.jvmHandle, fieldID.native);
             ExceptionTest();
             return res;
         }
 
-        public IntPtr CallStaticObjectMethodPtr(Class clazz, MethodId methodIdNative, params Value[] args)
+        public JniLocalHandle CallStaticObjectMethodPtr(Class clazz, MethodId methodIdNative, params Value[] args)
         {
 #if DEBUG
             if (Bridge.Setup.VeryVerbose)
@@ -155,7 +156,7 @@ namespace net.sf.jni4net.jni
                 Console.WriteLine("CallStaticObjectMethodPtr : " + clazz.FullName);
             }
 #endif
-            IntPtr res = callStaticObjectMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
+            JniLocalHandle res = callStaticObjectMethod(envPtr, clazz.jvmHandle, methodIdNative.native, args);
             ExceptionTest();
             return res;
         }

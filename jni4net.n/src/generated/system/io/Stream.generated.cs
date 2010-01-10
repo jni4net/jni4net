@@ -66,7 +66,7 @@ namespace System.IO {
             return methods;
         }
         
-        private static void Dispose0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void Dispose0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -76,7 +76,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool CanRead1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool CanRead1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -87,7 +87,7 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static bool CanSeek2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool CanSeek2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -98,7 +98,7 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static bool CanTimeout3(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool CanTimeout3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -109,7 +109,7 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static bool CanWrite4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool CanWrite4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -120,7 +120,7 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static long Length5(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static long Length5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -131,7 +131,7 @@ namespace System.IO {
             return default(long);
         }
         
-        private static long Position6(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static long Position6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -142,7 +142,7 @@ namespace System.IO {
             return default(long);
         }
         
-        private static void Position7(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long value) {
+        private static void Position7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -152,7 +152,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int ReadTimeout8(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static int ReadTimeout8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -163,7 +163,7 @@ namespace System.IO {
             return default(int);
         }
         
-        private static void ReadTimeout9(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int value) {
+        private static void ReadTimeout9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -173,7 +173,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int WriteTimeout10(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static int WriteTimeout10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -184,7 +184,7 @@ namespace System.IO {
             return default(int);
         }
         
-        private static void WriteTimeout11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, int value) {
+        private static void WriteTimeout11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -194,7 +194,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Close12(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void Close12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -204,7 +204,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Flush13(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void Flush13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -214,7 +214,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int EndRead14(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr asyncResult) {
+        private static int EndRead14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle asyncResult) {
             // (Lsystem/Object;)I
             // (LSystem/IAsyncResult;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -225,7 +225,7 @@ namespace System.IO {
             return default(int);
         }
         
-        private static void EndWrite15(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr asyncResult) {
+        private static void EndWrite15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle asyncResult) {
             // (Lsystem/Object;)V
             // (LSystem/IAsyncResult;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -235,7 +235,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static long Seek16(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long offset, global::System.IntPtr origin) {
+        private static long Seek16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long offset, global::net.sf.jni4net.utils.JniLocalHandle origin) {
             // (JLsystem/Enum;)J
             // (JLSystem/IO/SeekOrigin;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -246,7 +246,7 @@ namespace System.IO {
             return default(long);
         }
         
-        private static void SetLength17(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long value) {
+        private static void SetLength17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -256,7 +256,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int Read18(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer, int offset, int count) {
+        private static int Read18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle buffer, int offset, int count) {
             // ([BII)I
             // ([BII)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -267,7 +267,7 @@ namespace System.IO {
             return default(int);
         }
         
-        private static int ReadByte19(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static int ReadByte19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -278,7 +278,7 @@ namespace System.IO {
             return default(int);
         }
         
-        private static void Write20(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr buffer, int offset, int count) {
+        private static void Write20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle buffer, int offset, int count) {
             // ([BII)V
             // ([BII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -288,7 +288,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteByte21(global::System.IntPtr @__envp, global::System.IntPtr @__obj, byte value) {
+        private static void WriteByte21(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, byte value) {
             // (B)V
             // (B)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -298,14 +298,14 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::System.IntPtr Synchronized22(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr stream) {
+        private static global::net.sf.jni4net.utils.JniHandle Synchronized22(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle stream) {
             // (Lsystem/io/Stream;)Lsystem/io/Stream;
             // (LSystem/IO/Stream;)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.IO.Stream.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.Stream>(@__env, stream)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

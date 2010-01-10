@@ -33,14 +33,14 @@ namespace net.sf.jni4net
 {
     internal partial class __Bridge
     {
-        private static long WrapJVM(IntPtr __envp, IntPtr __class, IntPtr obj)
+        private static long WrapJVM(IntPtr __envp, JniLocalHandle __class, JniLocalHandle obj)
         {
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
             {
                 Class clazz = env.GetObjectClass(obj);
                 RegistryRecord record = Registry.GetJVMRecord(clazz);
-                IJvmProxy clrProxy = record.CreateCLRProxy(env, obj, clazz);
+                IJvmProxy clrProxy = record.CreateCLRProxy(env, obj);
                 return IntHandle.Alloc(clrProxy);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace net.sf.jni4net
             return 0;
         }
 
-        private static IntPtr UnwrapJVM(IntPtr __envp, IntPtr __class, long clrHandle)
+        private static JniHandle UnwrapJVM(IntPtr __envp, IntPtr __class, long clrHandle)
         {
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
@@ -62,10 +62,10 @@ namespace net.sf.jni4net
             {
                 env.ThrowExisting(ex);
             }
-            return default(IntPtr);
+            return JniGlobalHandle.Zero;
         }
 
-        private static long Convert(IntPtr __envp, IntPtr __class, IntPtr str)
+        private static long Convert(IntPtr __envp, JniLocalHandle __class, JniLocalHandle str)
         {
             JNIEnv env = JNIEnv.Wrap(__envp);
             try
@@ -93,7 +93,7 @@ namespace net.sf.jni4net
             }
         }
 
-        private static IntPtr Cast(IntPtr @__envp, IntPtr @__class, IntPtr obj, IntPtr expectedInterface)
+        private static JniLocalHandle Cast(IntPtr @__envp, JniLocalHandle @__class, JniLocalHandle obj, JniLocalHandle expectedInterface)
         {
             JNIEnv env = JNIEnv.Wrap(@__envp);
             try
@@ -114,7 +114,7 @@ namespace net.sf.jni4net
             {
                 env.ThrowExisting(ex);
             }
-            return default(IntPtr);
+            return JniLocalHandle.Zero;
         }
 
         private static List<JNINativeMethod> __Init2(JNIEnv @__env, Class @__class)

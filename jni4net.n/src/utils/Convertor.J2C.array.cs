@@ -29,10 +29,10 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static TRes ArrayFullJ2C<TRes, TElem>(JNIEnv env, IntPtr array)
+        public static TRes ArrayFullJ2C<TRes, TElem>(JNIEnv env, JniLocalHandle array)
             where TRes : class //should be TRes : Array
         {
-            if (array == IntPtr.Zero)
+            if (JniHandle.IsNull(array))
             {
                 return default(TRes);
             }
@@ -40,17 +40,17 @@ namespace net.sf.jni4net.utils
             var res = new TElem[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 var element = FullJ2C<TElem>(env, elementPtr);
                 res.SetValue(element, i);
             }
             return (TRes) (object) res;
         }
 
-        public static TRes ArrayStrongJp2C<TRes, TElem>(JNIEnv env, IntPtr array)
+        public static TRes ArrayStrongJp2C<TRes, TElem>(JNIEnv env, JniLocalHandle array)
             where TRes : class //should be TRes : Array
         {
-            if (array == IntPtr.Zero)
+            if (JniHandle.IsNull(array))
             {
                 return default(TRes);
             }
@@ -58,18 +58,18 @@ namespace net.sf.jni4net.utils
             var res = new TElem[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 var element = StrongJp2C<TElem>(env, elementPtr);
                 res.SetValue(element, i);
             }
             return (TRes) (object) res;
         }
 
-        public static TRes ArrayStrongJ2Cp<TRes, TElem>(JNIEnv env, IntPtr array)
+        public static TRes ArrayStrongJ2Cp<TRes, TElem>(JNIEnv env, JniLocalHandle array)
             where TElem : IJvmProxy
             where TRes : class //should be TRes : Array
         {
-            if (array == IntPtr.Zero)
+            if (JniHandle.IsNull(array))
             {
                 return default(TRes);
             }
@@ -77,7 +77,7 @@ namespace net.sf.jni4net.utils
             var res = new TElem[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 var element = StrongJ2Cp<TElem>(env, elementPtr);
                 res.SetValue(element, i);
             }
@@ -86,9 +86,9 @@ namespace net.sf.jni4net.utils
 
         #region Well known
 
-        public static String[] ArrayStrongJ2CpString(JNIEnv env, IntPtr array)
+        public static String[] ArrayStrongJ2CpString(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -96,16 +96,16 @@ namespace net.sf.jni4net.utils
             var res = new String[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 String element = StrongJ2CpString(env, elementPtr);
                 res.SetValue(element, i);
             }
             return res;
         }
 
-        public static string[] ArrayStrongJp2CString(JNIEnv env, IntPtr array)
+        public static string[] ArrayStrongJp2CString(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -113,16 +113,16 @@ namespace net.sf.jni4net.utils
             var res = new string[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 String element = StrongJp2CString(env, elementPtr);
                 res.SetValue(element, i);
             }
             return res;
         }
 
-        public static string[] ArrayStrongJ2CString(JNIEnv env, IntPtr array)
+        public static string[] ArrayStrongJ2CString(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -130,16 +130,16 @@ namespace net.sf.jni4net.utils
             var res = new string[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 string element = StrongJ2CString(env, elementPtr);
                 res.SetValue(element, i);
             }
             return res;
         }
 
-        public static Class[] ArrayStrongJ2CpClass(JNIEnv env, IntPtr array)
+        public static Class[] ArrayStrongJ2CpClass(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -147,7 +147,7 @@ namespace net.sf.jni4net.utils
             var res = new Class[length];
             for (int i = 0; i < length; i++)
             {
-                IntPtr elementPtr = env.GetObjectArrayElementPtr(array, i);
+                JniLocalHandle elementPtr = env.GetObjectArrayElementPtr(array, i);
                 Class element = StrongJ2CpClass(env, elementPtr);
                 res.SetValue(element, i);
             }
@@ -158,9 +158,9 @@ namespace net.sf.jni4net.utils
 
         #region Primitive
 
-        public static byte[] ArrayPrimJ2Cbyte(JNIEnv env, IntPtr array)
+        public static byte[] ArrayPrimJ2Cbyte(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -170,9 +170,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static bool[] ArrayPrimJ2Cboolean(JNIEnv env, IntPtr array)
+        public static bool[] ArrayPrimJ2Cboolean(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -182,9 +182,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static char[] ArrayPrimJ2Cchar(JNIEnv env, IntPtr array)
+        public static char[] ArrayPrimJ2Cchar(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -194,9 +194,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static short[] ArrayPrimJ2Cshort(JNIEnv env, IntPtr array)
+        public static short[] ArrayPrimJ2Cshort(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -206,9 +206,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static int[] ArrayPrimJ2Cint(JNIEnv env, IntPtr array)
+        public static int[] ArrayPrimJ2Cint(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -218,9 +218,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static long[] ArrayPrimJ2Clong(JNIEnv env, IntPtr array)
+        public static long[] ArrayPrimJ2Clong(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -230,9 +230,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static double[] ArrayPrimJ2Cdouble(JNIEnv env, IntPtr array)
+        public static double[] ArrayPrimJ2Cdouble(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }
@@ -242,9 +242,9 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
-        public static float[] ArrayPrimJ2Cfloat(JNIEnv env, IntPtr array)
+        public static float[] ArrayPrimJ2Cfloat(JNIEnv env, JniLocalHandle array)
         {
-            if (array == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(array))
             {
                 return null;
             }

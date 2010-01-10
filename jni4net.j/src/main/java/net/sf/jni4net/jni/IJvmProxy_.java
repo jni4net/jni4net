@@ -41,13 +41,7 @@ class __IJvmProxy extends system.Object implements IJvmProxy {
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IntPtr;")
     public native long getJvmHandle();
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/IntPtr;)V")
-    public native void setJvmHandle(long value);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/JNIEnv;LSystem/IntPtr;Ljava/lang/Class;)V")
-    public native void Init(system.Object env, long obj, java.lang.Class clazz);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/Class;")
-    public native java.lang.Class GetClass();
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/jni/JNIEnv;LSystem/IntPtr;)V")
+    public native void Init(system.Object env, long obj);
 }
 //</generated-proxy>

@@ -79,7 +79,7 @@ namespace System.Runtime.Serialization {
             return methods;
         }
         
-        private static global::System.IntPtr FullTypeName0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle FullTypeName0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -87,10 +87,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.FullTypeName);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void FullTypeName1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
+        private static void FullTypeName1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -100,7 +100,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::System.IntPtr AssemblyName2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle AssemblyName2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -108,10 +108,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.AssemblyName);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void AssemblyName3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr value) {
+        private static void AssemblyName3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -121,7 +121,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void SetType4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr type) {
+        private static void SetType4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle type) {
             // (Lsystem/Type;)V
             // (LSystem/Type;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -131,7 +131,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int MemberCount5(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static int MemberCount5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -142,7 +142,7 @@ namespace System.Runtime.Serialization {
             return default(int);
         }
         
-        private static global::System.IntPtr GetEnumerator6(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetEnumerator6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Runtime/Serialization/SerializationInfoEnumerator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -150,10 +150,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Runtime.Serialization.SerializationInfoEnumerator>(@__env, @__real.GetEnumerator());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void AddValue7(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr value, global::System.IntPtr type) {
+        private static void AddValue7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle value, global::net.sf.jni4net.utils.JniLocalHandle type) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Type;)V
             // (LSystem/String;LSystem/Object;LSystem/Type;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -163,7 +163,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue8(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr value) {
+        private static void AddValue8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -173,7 +173,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue9(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, bool value) {
+        private static void AddValue9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, bool value) {
             // (Ljava/lang/String;Z)V
             // (LSystem/String;Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -183,7 +183,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue10(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, char value) {
+        private static void AddValue10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, char value) {
             // (Ljava/lang/String;C)V
             // (LSystem/String;C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -193,7 +193,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, sbyte value) {
+        private static void AddValue11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, sbyte value) {
             // (Ljava/lang/String;B)V
             // (LSystem/String;LSystem/SByte;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -203,7 +203,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue12(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, short value) {
+        private static void AddValue12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, short value) {
             // (Ljava/lang/String;S)V
             // (LSystem/String;S)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -213,7 +213,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue13(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, int value) {
+        private static void AddValue13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, int value) {
             // (Ljava/lang/String;I)V
             // (LSystem/String;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -223,7 +223,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue14(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, long value) {
+        private static void AddValue14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, long value) {
             // (Ljava/lang/String;J)V
             // (LSystem/String;J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -233,7 +233,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue15(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, float value) {
+        private static void AddValue15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, float value) {
             // (Ljava/lang/String;F)V
             // (LSystem/String;F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -243,7 +243,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue16(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, double value) {
+        private static void AddValue16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, double value) {
             // (Ljava/lang/String;D)V
             // (LSystem/String;D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -253,7 +253,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue17(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr value) {
+        private static void AddValue17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;Lsystem/Decimal;)V
             // (LSystem/String;LSystem/Decimal;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -263,7 +263,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddValue18(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr value) {
+        private static void AddValue18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;Lsystem/DateTime;)V
             // (LSystem/String;LSystem/DateTime;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -273,7 +273,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::System.IntPtr GetValue19(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr type) {
+        private static global::net.sf.jni4net.utils.JniHandle GetValue19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle type) {
             // (Ljava/lang/String;Lsystem/Type;)Lsystem/Object;
             // (LSystem/String;LSystem/Type;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -281,10 +281,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.GetValue(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, name), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, type)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool GetBoolean20(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static bool GetBoolean20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Z
             // (LSystem/String;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -295,7 +295,7 @@ namespace System.Runtime.Serialization {
             return default(bool);
         }
         
-        private static char GetChar21(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static char GetChar21(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)C
             // (LSystem/String;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -306,7 +306,7 @@ namespace System.Runtime.Serialization {
             return default(char);
         }
         
-        private static sbyte GetSByte22(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static sbyte GetSByte22(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)B
             // (LSystem/String;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -317,7 +317,7 @@ namespace System.Runtime.Serialization {
             return default(sbyte);
         }
         
-        private static byte GetByte23(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static byte GetByte23(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)B
             // (LSystem/String;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -328,7 +328,7 @@ namespace System.Runtime.Serialization {
             return default(byte);
         }
         
-        private static short GetInt1624(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static short GetInt1624(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)S
             // (LSystem/String;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -339,7 +339,7 @@ namespace System.Runtime.Serialization {
             return default(short);
         }
         
-        private static ushort GetUInt1625(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static ushort GetUInt1625(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)S
             // (LSystem/String;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -350,7 +350,7 @@ namespace System.Runtime.Serialization {
             return default(ushort);
         }
         
-        private static uint GetUInt3226(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static uint GetUInt3226(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)I
             // (LSystem/String;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -361,7 +361,7 @@ namespace System.Runtime.Serialization {
             return default(uint);
         }
         
-        private static long GetInt6427(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static long GetInt6427(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)J
             // (LSystem/String;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -372,7 +372,7 @@ namespace System.Runtime.Serialization {
             return default(long);
         }
         
-        private static ulong GetUInt6428(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static ulong GetUInt6428(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)J
             // (LSystem/String;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -383,7 +383,7 @@ namespace System.Runtime.Serialization {
             return default(ulong);
         }
         
-        private static float GetSingle29(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static float GetSingle29(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)F
             // (LSystem/String;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -394,7 +394,7 @@ namespace System.Runtime.Serialization {
             return default(float);
         }
         
-        private static double GetDouble30(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static double GetDouble30(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)D
             // (LSystem/String;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -405,7 +405,7 @@ namespace System.Runtime.Serialization {
             return default(double);
         }
         
-        private static global::System.IntPtr GetDecimal31(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetDecimal31(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/Decimal;
             // (LSystem/String;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -413,10 +413,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, @__real.GetDecimal(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, name)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr GetDateTime32(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetDateTime32(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/DateTime;
             // (LSystem/String;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -424,10 +424,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.DateTime>(@__env, @__real.GetDateTime(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, name)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static int GetInt3233(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static int GetInt3233(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)I
             // (LSystem/String;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -438,7 +438,7 @@ namespace System.Runtime.Serialization {
             return default(int);
         }
         
-        private static global::System.IntPtr GetString34(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetString34(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -446,10 +446,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.SerializationInfo @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.SerializationInfo>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.GetString(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, name)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void @__ctorSerializationInfo0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr type, global::System.IntPtr converter) {
+        private static void @__ctorSerializationInfo0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle type, global::net.sf.jni4net.utils.JniLocalHandle converter) {
             // (Lsystem/Type;Lsystem/Object;)V
             // (LSystem/Type;LSystem/Runtime/Serialization/IFormatterConverter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
