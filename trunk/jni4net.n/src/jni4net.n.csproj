@@ -255,6 +255,7 @@
     <Compile Include="java\lang\Float.cs" />
     <Compile Include="java\lang\Long.cs" />
     <Compile Include="java\lang\Short.cs" />
+    <Compile Include="java\nio\Buffer.cs" />
     <Compile Include="jni\JNIEnv.array.cs" />
     <Compile Include="jni\JNIEnv.convert.cs" />
     <Compile Include="jni\JNIEnv.raw.cs" />

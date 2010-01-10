@@ -36,6 +36,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: AttachCurrentThread
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            [SuppressUnmanagedCodeSecurity]
             internal delegate JNIResult AttachCurrentThread(
                 IntPtr thiz, out IntPtr penv, JavaVMInitArgs* args);
 
@@ -53,6 +54,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: DestroyJavaVM
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            [SuppressUnmanagedCodeSecurity]
             internal delegate JNIResult DestroyJavaVM(IntPtr thiz);
 
             #endregion
@@ -60,6 +62,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: DetachCurrentThread
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            [SuppressUnmanagedCodeSecurity]
             internal delegate JNIResult DetachCurrentThread(IntPtr thiz);
 
             #endregion
@@ -67,6 +70,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: GetEnv
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            [SuppressUnmanagedCodeSecurity]
             internal delegate JNIResult GetEnv(IntPtr thiz, out IntPtr penv, int version);
 
             #endregion

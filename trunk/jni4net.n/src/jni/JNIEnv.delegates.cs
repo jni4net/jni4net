@@ -845,6 +845,7 @@ namespace net.sf.jni4net.jni
             #region Nested type: NewGlobalRef
 
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            [SuppressUnmanagedCodeSecurity]
             internal delegate JniGlobalHandleNs NewGlobalRef(IntPtr thiz, JniHandle lobj);
 
             #endregion
