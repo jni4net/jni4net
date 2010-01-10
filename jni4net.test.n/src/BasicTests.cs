@@ -411,13 +411,13 @@ namespace net.sf.jni4net.test
 
         public static void crash(int i, JniGlobalHandle handle)
         {
-            Console.WriteLine("a" + i);
+            //Console.WriteLine("a" + i);
             var sharedBuffer = new byte[10 * 1024 * 100];
 
-            Console.WriteLine("b");
+            //Console.WriteLine("b");
             DirectByteBuffer execJavaBuffer = new DirectByteBuffer(sharedBuffer);
 
-            Console.WriteLine("c");
+            //Console.WriteLine("c");
             try
             {
                 String duplicate = Bridge.CreateProxy<String>(handle);
@@ -429,7 +429,7 @@ namespace net.sf.jni4net.test
                 throw;
             }
 
-            Console.WriteLine("d");
+            //Console.WriteLine("d");
             GC.Collect(3, GCCollectionMode.Forced);
             GC.WaitForPendingFinalizers();
         }

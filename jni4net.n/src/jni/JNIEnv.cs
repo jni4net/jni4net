@@ -1246,6 +1246,7 @@ namespace net.sf.jni4net.jni
 
         #region references
 
+        [SuppressUnmanagedCodeSecurity]
         public JniGlobalHandle NewGlobalRef(JniHandle lobj)
         {
             if (JniLocalHandle.IsNull(lobj))
@@ -1256,6 +1257,7 @@ namespace net.sf.jni4net.jni
             return new JniGlobalHandle(res.handle, GetJavaVM());
         }
 
+        [SuppressUnmanagedCodeSecurity]
         internal JniLocalHandle NewLocalRef(JniHandle lobj)
         {
             if (JniHandle.IsNull(lobj))
@@ -1318,6 +1320,7 @@ namespace net.sf.jni4net.jni
             //optimized away ExceptionTest();
         }
 
+        [SuppressUnmanagedCodeSecurity]
         public bool IsSameObject(IJvmProxy o1, IJvmProxy o2)
         {
             bool res = isSameObject(envPtr, o1.JvmHandle, o2.JvmHandle) != 0;
