@@ -174,7 +174,7 @@ namespace net.sf.jni4net.proxygen.generator
                         CodeMethodInvokeExpression conversionExpression =
                             CreateConversionExpressionC2J(method.ReturnType, call);
                         callst = new CodeMethodReturnStatement(conversionExpression);
-                        tgtMethod.ReturnType = TypeReference(typeof (IntPtr));
+                        tgtMethod.ReturnType = TypeReference(typeof(JniHandle));
                     }
                 }
                 tgtMethod.Statements.Add(callst);
@@ -260,13 +260,13 @@ namespace net.sf.jni4net.proxygen.generator
             if (method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (IntPtr)), classVariableName);
+                    TypeReference(typeof (JniLocalHandle)), classVariableName);
                 tgtMethod.Parameters.Add(classParam);
             }
             if (!method.IsStatic || method.IsConstructor)
             {
                 var classParam = new CodeParameterDeclarationExpression(
-                    TypeReference(typeof (IntPtr)), objVariableName);
+                    TypeReference(typeof(JniLocalHandle)), objVariableName);
                 tgtMethod.Parameters.Add(classParam);
             }
 
@@ -276,7 +276,7 @@ namespace net.sf.jni4net.proxygen.generator
                 GType paramType = method.Parameters[p];
                 CodeTypeReference parameter = paramType.IsPrimitive
                                                   ? paramType.CLRReference
-                                                  : TypeReference(typeof (IntPtr));
+                                                  : TypeReference(typeof(JniLocalHandle));
 
                 string name = method.ParameterNames[p];
                 tgtMethod.Parameters.Add(new CodeParameterDeclarationExpression(parameter, name));

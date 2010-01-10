@@ -55,7 +55,7 @@ namespace net.sf.jni4net.utils
             return JVMName;
         }
 
-        internal IntPtr CreateJVMProxy(JNIEnv env, object obj)
+        internal JniLocalHandle CreateJVMProxy(JNIEnv env, object obj)
         {
             if (!Bridge.Setup.BindNative)
             {
@@ -65,17 +65,17 @@ namespace net.sf.jni4net.utils
             return env.NewObjectPtr(JVMProxy.jvmHandle, JVMConstructor, new Value(), new Value {_long = handle});
         }
 
-        internal IJvmProxy CreateCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
+        internal IJvmProxy CreateCLRProxy(JNIEnv env, JniLocalHandle obj)
         {
             IJvmProxy proxy = CLRConstructor.CreateProxy(env);
-            proxy.Init(env, obj, clazz);
+            proxy.Init(env, obj);
             return proxy;
         }
 
-        internal IJvmProxy CopyCLRProxy(JNIEnv env, IntPtr obj, Class clazz)
+        internal IJvmProxy CopyCLRProxy(JNIEnv env, JniGlobalHandle obj)
         {
             IJvmProxy proxy = CLRConstructor.CreateProxy(env);
-            proxy.Copy(env, obj, clazz);
+            proxy.Copy(env, obj);
             return proxy;
         }
     }

@@ -52,7 +52,7 @@ namespace System {
             return methods;
         }
         
-        private static global::System.IntPtr GetFormat0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr formatType) {
+        private static global::net.sf.jni4net.utils.JniHandle GetFormat0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle formatType) {
             // (Lsystem/Type;)Lsystem/Object;
             // (LSystem/Type;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -60,7 +60,7 @@ namespace System {
             global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, formatType)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
         internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

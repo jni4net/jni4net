@@ -92,9 +92,10 @@ namespace net.sf.jni4net.test
             JInterfacesHelper h = new JInterfacesHelper();
             CWithJavaInterface cwc = h.getCWithJavaInterfaceC(new CWithJavaInterface(0));
             Object val = Bridge.WrapCLR(cwc);
-            RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, ((IClrProxy)val).JvmHandle, val.getClass());
+            JniGlobalHandle jniGlobalHandle = ((IClrProxy)val).JvmHandle;
+            RegistryRecord record = Registry.GetRecord(JNIEnv.ThreadEnv, jniGlobalHandle, val.getClass());
             Assert.IsNotNull(record);
-            ((IJvmProxy)val).HoldThisHandle();
+            jniGlobalHandle.HoldThisHandle();
         }
 
         

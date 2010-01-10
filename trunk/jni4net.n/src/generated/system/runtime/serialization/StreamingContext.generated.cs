@@ -47,7 +47,7 @@ namespace System.Runtime.Serialization {
             return methods;
         }
         
-        private static global::System.IntPtr Context0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle Context0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -55,10 +55,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.StreamingContext @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.StreamingContext>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Context);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr State1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle State1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/Runtime/Serialization/StreamingContextStates;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -66,10 +66,10 @@ namespace System.Runtime.Serialization {
             global::System.Runtime.Serialization.StreamingContext @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Runtime.Serialization.StreamingContext>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Runtime.Serialization.StreamingContextStates>(@__env, @__real.State);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void @__ctorStreamingContext0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr state) {
+        private static void @__ctorStreamingContext0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle state) {
             // (Lsystem/Enum;)V
             // (LSystem/Runtime/Serialization/StreamingContextStates;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -79,7 +79,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorStreamingContext1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr state, global::System.IntPtr additional) {
+        private static void @__ctorStreamingContext1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle state, global::net.sf.jni4net.utils.JniLocalHandle additional) {
             // (Lsystem/Enum;Lsystem/Object;)V
             // (LSystem/Runtime/Serialization/StreamingContextStates;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

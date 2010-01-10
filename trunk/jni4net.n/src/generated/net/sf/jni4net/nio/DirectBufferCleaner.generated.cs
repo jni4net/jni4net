@@ -46,7 +46,7 @@ namespace net.sf.jni4net.nio {
             return methods;
         }
         
-        private static void Dispose0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void Dispose0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -55,8 +55,9 @@ namespace net.sf.jni4net.nio {
             ((global::System.IDisposable)(@__real)).Dispose();
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
-        
-        private static global::System.IntPtr Address1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+
+        private static global::System.IntPtr Address1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj)
+        {
             // ()J
             // ()LSystem/IntPtr;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -67,7 +68,7 @@ namespace net.sf.jni4net.nio {
             return default(global::System.IntPtr);
         }
         
-        private static void @__ctorDirectBufferCleaner0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr sharedBuffer) {
+        private static void @__ctorDirectBufferCleaner0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle sharedBuffer) {
             // ([B)V
             // ([B)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

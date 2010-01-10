@@ -94,7 +94,7 @@ namespace System.Collections {
             return methods;
         }
         
-        private static global::System.IntPtr GetEnumerator0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetEnumerator0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/collections/IEnumerator;
             // ()LSystem/Collections/IEnumerator;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -102,10 +102,10 @@ namespace System.Collections {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.ICollection>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.IEnumerator>(@__env, ((global::System.Collections.IEnumerable)(@__real)).GetEnumerator());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void CopyTo1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr array, int index) {
+        private static void CopyTo1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle array, int index) {
             // (Lsystem/Array;I)V
             // (LSystem/Array;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -115,7 +115,7 @@ namespace System.Collections {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int Count2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static int Count2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -126,7 +126,7 @@ namespace System.Collections {
             return default(int);
         }
         
-        private static global::System.IntPtr SyncRoot3(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle SyncRoot3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -134,10 +134,10 @@ namespace System.Collections {
             global::System.Collections.ICollection @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.ICollection>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.SyncRoot);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool IsSynchronized4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool IsSynchronized4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

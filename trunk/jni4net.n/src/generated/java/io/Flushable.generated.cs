@@ -61,7 +61,7 @@ namespace java.io {
             return methods;
         }
         
-        private static void flush0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void flush0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

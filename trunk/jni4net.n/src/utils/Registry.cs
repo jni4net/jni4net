@@ -31,7 +31,7 @@ namespace net.sf.jni4net.utils
     [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
     public partial class Registry
     {
-        public static RegistryRecord GetRecord(JNIEnv env, IntPtr obj, Class iface)
+        public static RegistryRecord GetRecord(JNIEnv env, JniHandle obj, Class iface)
         {
             lock (typeof (Registry))
             {
@@ -59,10 +59,10 @@ namespace net.sf.jni4net.utils
                 {
                     return res;
                 }
-                Class jvm = IsJVM(obj);
-                if (jvm != null)
+                var proxy = obj as IJvmProxy;
+                if (proxy != null)
                 {
-                    return ResolveNew(jvm);
+                    return ResolveNew(proxy.getClass());
                 }
                 return ResolveNew(iface);
             }
@@ -94,22 +94,12 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private static Type IsCLR(Class iface, IntPtr obj, JNIEnv env)
+        private static Type IsCLR(Class iface, JniHandle obj, JNIEnv env)
         {
             if (IClrProxy_._class.isAssignableFrom(iface))
             {
                 object real = __IClrProxy.GetObject(env, obj);
                 return real.GetType();
-            }
-            return null;
-        }
-
-        private static Class IsJVM(object obj)
-        {
-            var proxy = obj as IJvmProxy;
-            if (proxy != null)
-            {
-                return proxy.GetClass();
             }
             return null;
         }

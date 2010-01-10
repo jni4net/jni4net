@@ -33,55 +33,55 @@ namespace net.sf.jni4net.jni
 
         public Object NewObjectArray(int len, Class clazz, IJvmProxy init)
         {
-            IntPtr res = NewObjectArrayPtr(len, clazz.jvmHandle, init);
+            JniLocalHandle res = NewObjectArrayPtr(len, clazz.jvmHandle, init);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewBooleanArray(int len)
         {
-            IntPtr res = NewBooleanArrayPtr(len);
+            JniLocalHandle res = NewBooleanArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewByteArray(int len)
         {
-            IntPtr res = NewByteArrayPtr(len);
+            JniLocalHandle res = NewByteArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewShortArray(int len)
         {
-            IntPtr res = NewShortArrayPtr(len);
+            JniLocalHandle res = NewShortArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewCharArray(int len)
         {
-            IntPtr res = NewCharArrayPtr(len);
+            JniLocalHandle res = NewCharArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewIntArray(int len)
         {
-            IntPtr res = NewIntArrayPtr(len);
+            JniLocalHandle res = NewIntArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewLongArray(int len)
         {
-            IntPtr res = NewLongArrayPtr(len);
+            JniLocalHandle res = NewLongArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewFloatArray(int len)
         {
-            IntPtr res = NewFloatArrayPtr(len);
+            JniLocalHandle res = NewFloatArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
         internal Object NewDoubleArray(int len)
         {
-            IntPtr res = NewDoubleArrayPtr(len);
+            JniLocalHandle res = NewDoubleArrayPtr(len);
             return Convertor.StrongJ2CpObject(this, res);
         }
 
@@ -89,7 +89,7 @@ namespace net.sf.jni4net.jni
 
         #region SetRegion
 
-        internal void SetIntArrayRegion(IntPtr array, int start, int len, int[] buf)
+        internal void SetIntArrayRegion(JniHandle array, int start, int len, int[] buf)
         {
             fixed (int* ptr = &buf[0])
             {
@@ -98,7 +98,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetBooleanArrayRegion(IntPtr array, int start, int len, bool[] buf)
+        internal void SetBooleanArrayRegion(JniHandle array, int start, int len, bool[] buf)
         {
             fixed (bool* ptr = &buf[0])
             {
@@ -107,7 +107,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetByteArrayRegion(IntPtr array, int start, int len, byte[] buf)
+        internal void SetByteArrayRegion(JniHandle array, int start, int len, byte[] buf)
         {
             fixed (byte* ptr = &buf[0])
             {
@@ -116,7 +116,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetCharArrayRegion(IntPtr array, int start, int len, char[] buf)
+        internal void SetCharArrayRegion(JniHandle array, int start, int len, char[] buf)
         {
             fixed (char* ptr = &buf[0])
             {
@@ -125,7 +125,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetShortArrayRegion(IntPtr array, int start, int len, short[] buf)
+        internal void SetShortArrayRegion(JniHandle array, int start, int len, short[] buf)
         {
             fixed (short* ptr = &buf[0])
             {
@@ -134,7 +134,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetLongArrayRegion(IntPtr array, int start, int len, long[] buf)
+        internal void SetLongArrayRegion(JniHandle array, int start, int len, long[] buf)
         {
             fixed (long* ptr = &buf[0])
             {
@@ -143,7 +143,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetFloatArrayRegion(IntPtr array, int start, int len, float[] buf)
+        internal void SetFloatArrayRegion(JniHandle array, int start, int len, float[] buf)
         {
             fixed (float* ptr = &buf[0])
             {
@@ -152,7 +152,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void SetDoubleArrayRegion(IntPtr array, int start, int len, double[] buf)
+        internal void SetDoubleArrayRegion(JniHandle array, int start, int len, double[] buf)
         {
             fixed (double* ptr = &buf[0])
             {
@@ -165,7 +165,7 @@ namespace net.sf.jni4net.jni
 
         #region GetRegion
 
-        internal void GetIntArrayRegion(IntPtr array, int start, int len, int[] buf)
+        internal void GetIntArrayRegion(JniHandle array, int start, int len, int[] buf)
         {
             fixed (int* ptr = &buf[0])
             {
@@ -174,7 +174,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetCharArrayRegion(IntPtr array, int start, int len, char[] buf)
+        internal void GetCharArrayRegion(JniHandle array, int start, int len, char[] buf)
         {
             fixed (char* ptr = &buf[0])
             {
@@ -183,7 +183,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetByteArrayRegion(IntPtr array, int start, int len, byte[] buf)
+        internal void GetByteArrayRegion(JniHandle array, int start, int len, byte[] buf)
         {
             fixed (byte* ptr = &buf[0])
             {
@@ -192,7 +192,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetShortArrayRegion(IntPtr array, int start, int len, short[] buf)
+        internal void GetShortArrayRegion(JniHandle array, int start, int len, short[] buf)
         {
             fixed (short* ptr = &buf[0])
             {
@@ -201,7 +201,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetLongArrayRegion(IntPtr array, int start, int len, long[] buf)
+        internal void GetLongArrayRegion(JniHandle array, int start, int len, long[] buf)
         {
             fixed (long* ptr = &buf[0])
             {
@@ -210,7 +210,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetFloatArrayRegion(IntPtr array, int start, int len, float[] buf)
+        internal void GetFloatArrayRegion(JniHandle array, int start, int len, float[] buf)
         {
             fixed (float* ptr = &buf[0])
             {
@@ -219,7 +219,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetDoubleArrayRegion(IntPtr array, int start, int len, double[] buf)
+        internal void GetDoubleArrayRegion(JniHandle array, int start, int len, double[] buf)
         {
             fixed (double* ptr = &buf[0])
             {
@@ -228,7 +228,7 @@ namespace net.sf.jni4net.jni
             ExceptionTest();
         }
 
-        internal void GetBooleanArrayRegion(IntPtr array, int start, int len, bool[] buf)
+        internal void GetBooleanArrayRegion(JniHandle array, int start, int len, bool[] buf)
         {
             fixed (bool* ptr = &buf[0])
             {
@@ -244,7 +244,7 @@ namespace net.sf.jni4net.jni
             return GetArrayLength(array.jvmHandle);
         }
 
-        internal int GetArrayLength(IntPtr array)
+        internal int GetArrayLength(JniHandle array)
         {
             int res = getArrayLength(envPtr, array);
             ExceptionTest();
@@ -253,15 +253,15 @@ namespace net.sf.jni4net.jni
 
         public void SetObjectArrayElement(Object array, int index, IJvmProxy val)
         {
-            SetObjectArrayElement(array, index, val == null ? IntPtr.Zero : val.JvmHandle);
+            SetObjectArrayElement(array, index, val == null ? JniGlobalHandle.Zero : val.JvmHandle);
         }
 
-        public void SetObjectArrayElement(Object array, int index, IntPtr val)
+        public void SetObjectArrayElement(Object array, int index, JniHandle val)
         {
             SetObjectArrayElement(array.jvmHandle, index, val);
         }
 
-        public void SetObjectArrayElement(IntPtr array, int index, IntPtr val)
+        public void SetObjectArrayElement(JniHandle array, int index, JniHandle val)
         {
             setObjectArrayElement(envPtr, array, index, val);
             ExceptionTest();

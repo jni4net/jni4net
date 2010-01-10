@@ -70,7 +70,7 @@ namespace System.IO {
             return methods;
         }
         
-        private static bool IsAsync0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool IsAsync0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -81,7 +81,7 @@ namespace System.IO {
             return default(bool);
         }
         
-        private static global::System.IntPtr Name1(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle Name1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -89,10 +89,10 @@ namespace System.IO {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.Name);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr GetAccessControl2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetAccessControl2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Security/AccessControl/FileSecurity;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -100,10 +100,10 @@ namespace System.IO {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Security.AccessControl.FileSecurity>(@__env, @__real.GetAccessControl());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void SetAccessControl3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr fileSecurity) {
+        private static void SetAccessControl3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle fileSecurity) {
             // (Lsystem/Object;)V
             // (LSystem/Security/AccessControl/FileSecurity;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -113,7 +113,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::System.IntPtr Handle4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::System.IntPtr Handle4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()J
             // ()LSystem/IntPtr;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -124,7 +124,7 @@ namespace System.IO {
             return default(global::System.IntPtr);
         }
         
-        private static global::System.IntPtr SafeFileHandle5(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle SafeFileHandle5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LMicrosoft/Win32/SafeHandles/SafeFileHandle;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -132,10 +132,10 @@ namespace System.IO {
             global::System.IO.FileStream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.FileStream>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::Microsoft.Win32.SafeHandles.SafeFileHandle>(@__env, @__real.SafeFileHandle);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void Lock6(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long position, long length) {
+        private static void Lock6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long position, long length) {
             // (JJ)V
             // (JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -145,7 +145,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Unlock7(global::System.IntPtr @__envp, global::System.IntPtr @__obj, long position, long length) {
+        private static void Unlock7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long position, long length) {
             // (JJ)V
             // (JJ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -155,7 +155,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode) {
+        private static void @__ctorFileStream0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode) {
             // (Ljava/lang/String;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -165,7 +165,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access) {
+        private static void @__ctorFileStream1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle access) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -175,7 +175,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share) {
+        private static void @__ctorFileStream2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle access, global::net.sf.jni4net.utils.JniLocalHandle share) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -185,7 +185,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream3(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize) {
+        private static void @__ctorFileStream3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle access, global::net.sf.jni4net.utils.JniLocalHandle share, int bufferSize) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;I)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -195,7 +195,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream4(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize, global::System.IntPtr options) {
+        private static void @__ctorFileStream4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle access, global::net.sf.jni4net.utils.JniLocalHandle share, int bufferSize, global::net.sf.jni4net.utils.JniLocalHandle options) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;ILSystem/IO/FileOptions;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -205,7 +205,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream5(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr access, global::System.IntPtr share, int bufferSize, bool useAsync) {
+        private static void @__ctorFileStream5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle access, global::net.sf.jni4net.utils.JniLocalHandle share, int bufferSize, bool useAsync) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;IZ)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/IO/FileAccess;LSystem/IO/FileShare;IZ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -215,7 +215,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream6(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr path, global::System.IntPtr mode, global::System.IntPtr rights, global::System.IntPtr share, int bufferSize, global::System.IntPtr options, global::System.IntPtr fileSecurity) {
+        private static void @__ctorFileStream6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle mode, global::net.sf.jni4net.utils.JniLocalHandle rights, global::net.sf.jni4net.utils.JniLocalHandle share, int bufferSize, global::net.sf.jni4net.utils.JniLocalHandle options, global::net.sf.jni4net.utils.JniLocalHandle fileSecurity) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/Enum;Lsystem/Enum;ILsystem/Enum;Lsystem/Object;)V
             // (LSystem/String;LSystem/IO/FileMode;LSystem/Security/AccessControl/FileSystemRights;LSystem/IO/FileShare;ILSystem/IO/FileOptions;LSystem/Security/AccessControl/FileSecurity;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -225,7 +225,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream7(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
+        private static void @__ctorFileStream7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::System.IntPtr handle, global::net.sf.jni4net.utils.JniLocalHandle access) {
             // (JLsystem/Enum;)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -235,7 +235,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream8(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle) {
+        private static void @__ctorFileStream8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::System.IntPtr handle, global::net.sf.jni4net.utils.JniLocalHandle access, bool ownsHandle) {
             // (JLsystem/Enum;Z)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -245,7 +245,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream9(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize) {
+        private static void @__ctorFileStream9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::System.IntPtr handle, global::net.sf.jni4net.utils.JniLocalHandle access, bool ownsHandle, int bufferSize) {
             // (JLsystem/Enum;ZI)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZI)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -255,7 +255,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream10(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, bool ownsHandle, int bufferSize, bool isAsync) {
+        private static void @__ctorFileStream10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::System.IntPtr handle, global::net.sf.jni4net.utils.JniLocalHandle access, bool ownsHandle, int bufferSize, bool isAsync) {
             // (JLsystem/Enum;ZIZ)V
             // (LSystem/IntPtr;LSystem/IO/FileAccess;ZIZ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -265,7 +265,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream11(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access) {
+        private static void @__ctorFileStream11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle handle, global::net.sf.jni4net.utils.JniLocalHandle access) {
             // (Lsystem/Object;Lsystem/Enum;)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -275,7 +275,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream12(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize) {
+        private static void @__ctorFileStream12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle handle, global::net.sf.jni4net.utils.JniLocalHandle access, int bufferSize) {
             // (Lsystem/Object;Lsystem/Enum;I)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -285,7 +285,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorFileStream13(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr handle, global::System.IntPtr access, int bufferSize, bool isAsync) {
+        private static void @__ctorFileStream13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle handle, global::net.sf.jni4net.utils.JniLocalHandle access, int bufferSize, bool isAsync) {
             // (Lsystem/Object;Lsystem/Enum;IZ)V
             // (LMicrosoft/Win32/SafeHandles/SafeFileHandle;LSystem/IO/FileAccess;IZ)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

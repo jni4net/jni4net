@@ -103,7 +103,7 @@ namespace System {
             return methods;
         }
         
-        private static global::System.IntPtr ToString0(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format, global::System.IntPtr formatProvider) {
+        private static global::net.sf.jni4net.utils.JniHandle ToString0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle formatProvider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -111,10 +111,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, ((global::System.IFormattable)(@__real)).ToString(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, formatProvider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static int CompareTo1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr obj) {
+        private static int CompareTo1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle obj) {
             // (Lsystem/Object;)I
             // (LSystem/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -125,7 +125,7 @@ namespace System {
             return default(int);
         }
         
-        private static global::System.IntPtr GetTypeCode2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetTypeCode2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Enum;
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -133,10 +133,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.TypeCode>(@__env, ((global::System.IConvertible)(@__real)).GetTypeCode());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool ToBoolean3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static bool ToBoolean3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Z
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -147,7 +147,7 @@ namespace System {
             return default(bool);
         }
         
-        private static char ToChar4(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static char ToChar4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)C
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -158,7 +158,7 @@ namespace System {
             return default(char);
         }
         
-        private static sbyte ToSByte5(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static sbyte ToSByte5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -169,7 +169,7 @@ namespace System {
             return default(sbyte);
         }
         
-        private static byte ToByte6(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static byte ToByte6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -180,7 +180,7 @@ namespace System {
             return default(byte);
         }
         
-        private static short ToInt167(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static short ToInt167(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -191,7 +191,7 @@ namespace System {
             return default(short);
         }
         
-        private static ushort ToUInt168(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static ushort ToUInt168(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -202,7 +202,7 @@ namespace System {
             return default(ushort);
         }
         
-        private static int ToInt329(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static int ToInt329(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -213,7 +213,7 @@ namespace System {
             return default(int);
         }
         
-        private static uint ToUInt3210(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static uint ToUInt3210(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -224,7 +224,7 @@ namespace System {
             return default(uint);
         }
         
-        private static long ToInt6411(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static long ToInt6411(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -235,7 +235,7 @@ namespace System {
             return default(long);
         }
         
-        private static ulong ToUInt6412(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static ulong ToUInt6412(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -246,7 +246,7 @@ namespace System {
             return default(ulong);
         }
         
-        private static float ToSingle13(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static float ToSingle13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)F
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -257,7 +257,7 @@ namespace System {
             return default(float);
         }
         
-        private static double ToDouble14(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static double ToDouble14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)D
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -268,7 +268,7 @@ namespace System {
             return default(double);
         }
         
-        private static global::System.IntPtr ToDecimal15(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle ToDecimal15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -276,10 +276,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, ((global::System.IConvertible)(@__real)).ToDecimal(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr ToDateTime16(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle ToDateTime16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -287,10 +287,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.DateTime>(@__env, ((global::System.IConvertible)(@__real)).ToDateTime(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr ToString17(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle ToString17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -298,10 +298,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, ((global::System.IConvertible)(@__real)).ToString(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr ToType18(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr conversionType, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle ToType18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle conversionType, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -309,10 +309,10 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, ((global::System.IConvertible)(@__real)).ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static int CompareTo19(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr other) {
+        private static int CompareTo19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle other) {
             // (Lsystem/Decimal;)I
             // (LSystem/Decimal;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -323,7 +323,7 @@ namespace System {
             return default(int);
         }
         
-        private static bool Equals20(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr other) {
+        private static bool Equals20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle other) {
             // (Lsystem/Decimal;)Z
             // (LSystem/Decimal;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -334,7 +334,7 @@ namespace System {
             return default(bool);
         }
         
-        private static long ToOACurrency21(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr value) {
+        private static long ToOACurrency21(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)J
             // (LSystem/Decimal;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -344,37 +344,37 @@ namespace System {
             return default(long);
         }
         
-        private static global::System.IntPtr FromOACurrency22(global::System.IntPtr @__envp, global::System.IntPtr @__class, long cy) {
+        private static global::net.sf.jni4net.utils.JniHandle FromOACurrency22(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, long cy) {
             // (J)Lsystem/Decimal;
             // (J)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.FromOACurrency(cy));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Add23(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static global::net.sf.jni4net.utils.JniHandle Add23(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Add(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d1), global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d2)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Ceiling24(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle Ceiling24(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Ceiling(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static int Compare25(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static int Compare25(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)I
             // (LSystem/Decimal;LSystem/Decimal;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -384,17 +384,17 @@ namespace System {
             return default(int);
         }
         
-        private static global::System.IntPtr Divide26(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static global::net.sf.jni4net.utils.JniHandle Divide26(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Divide(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d1), global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d2)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool Equals27(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static bool Equals27(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Z
             // (LSystem/Decimal;LSystem/Decimal;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -404,17 +404,17 @@ namespace System {
             return default(bool);
         }
         
-        private static global::System.IntPtr Floor28(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle Floor28(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Floor(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr ToString29(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr format) {
+        private static global::net.sf.jni4net.utils.JniHandle ToString29(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle format) {
             // (Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -422,140 +422,140 @@ namespace System {
             decimal @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, format)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Parse30(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr s) {
+        private static global::net.sf.jni4net.utils.JniHandle Parse30(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle s) {
             // (Ljava/lang/String;)Lsystem/Decimal;
             // (LSystem/String;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Parse(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Parse31(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr s, global::System.IntPtr style) {
+        private static global::net.sf.jni4net.utils.JniHandle Parse31(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle s, global::net.sf.jni4net.utils.JniLocalHandle style) {
             // (Ljava/lang/String;Lsystem/Enum;)Lsystem/Decimal;
             // (LSystem/String;LSystem/Globalization/NumberStyles;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Parse(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Globalization.NumberStyles>(@__env, style)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Parse32(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr s, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle Parse32(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle s, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Ljava/lang/String;Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/String;LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Parse(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Parse33(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr s, global::System.IntPtr style, global::System.IntPtr provider) {
+        private static global::net.sf.jni4net.utils.JniHandle Parse33(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle s, global::net.sf.jni4net.utils.JniLocalHandle style, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Ljava/lang/String;Lsystem/Enum;Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/String;LSystem/Globalization/NumberStyles;LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Parse(global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Globalization.NumberStyles>(@__env, style), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr GetBits34(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle GetBits34(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)[I
             // (LSystem/Decimal;)[I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.ArrayPrimC2J(@__env, decimal.GetBits(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Remainder35(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static global::net.sf.jni4net.utils.JniHandle Remainder35(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Remainder(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d1), global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d2)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Multiply36(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static global::net.sf.jni4net.utils.JniHandle Multiply36(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Multiply(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d1), global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d2)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Negate37(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle Negate37(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Negate(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Round38(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle Round38(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Round(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Round39(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d, int decimals) {
+        private static global::net.sf.jni4net.utils.JniHandle Round39(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d, int decimals) {
             // (Lsystem/Decimal;I)Lsystem/Decimal;
             // (LSystem/Decimal;I)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Round(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d), decimals));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Round40(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d, global::System.IntPtr mode) {
+        private static global::net.sf.jni4net.utils.JniHandle Round40(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d, global::net.sf.jni4net.utils.JniLocalHandle mode) {
             // (Lsystem/Decimal;Lsystem/Enum;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/MidpointRounding;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Round(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.MidpointRounding>(@__env, mode)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Round41(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d, int decimals, global::System.IntPtr mode) {
+        private static global::net.sf.jni4net.utils.JniHandle Round41(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d, int decimals, global::net.sf.jni4net.utils.JniLocalHandle mode) {
             // (Lsystem/Decimal;ILsystem/Enum;)Lsystem/Decimal;
             // (LSystem/Decimal;ILSystem/MidpointRounding;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Round(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d), decimals, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.MidpointRounding>(@__env, mode)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr Subtract42(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d1, global::System.IntPtr d2) {
+        private static global::net.sf.jni4net.utils.JniHandle Subtract42(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d1, global::net.sf.jni4net.utils.JniLocalHandle d2) {
             // (Lsystem/Decimal;Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Subtract(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d1), global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d2)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static byte ToByte43(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr value) {
+        private static byte ToByte43(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)B
             // (LSystem/Decimal;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -565,7 +565,7 @@ namespace System {
             return default(byte);
         }
         
-        private static sbyte ToSByte44(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr value) {
+        private static sbyte ToSByte44(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)B
             // (LSystem/Decimal;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -575,7 +575,7 @@ namespace System {
             return default(sbyte);
         }
         
-        private static short ToInt1645(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr value) {
+        private static short ToInt1645(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)S
             // (LSystem/Decimal;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -585,7 +585,7 @@ namespace System {
             return default(short);
         }
         
-        private static double ToDouble46(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static double ToDouble46(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)D
             // (LSystem/Decimal;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -595,7 +595,7 @@ namespace System {
             return default(double);
         }
         
-        private static int ToInt3247(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static int ToInt3247(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)I
             // (LSystem/Decimal;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -605,7 +605,7 @@ namespace System {
             return default(int);
         }
         
-        private static long ToInt6448(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static long ToInt6448(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)J
             // (LSystem/Decimal;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -615,7 +615,7 @@ namespace System {
             return default(long);
         }
         
-        private static ushort ToUInt1649(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr value) {
+        private static ushort ToUInt1649(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)S
             // (LSystem/Decimal;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -625,7 +625,7 @@ namespace System {
             return default(ushort);
         }
         
-        private static uint ToUInt3250(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static uint ToUInt3250(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)I
             // (LSystem/Decimal;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -635,7 +635,7 @@ namespace System {
             return default(uint);
         }
         
-        private static ulong ToUInt6451(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static ulong ToUInt6451(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)J
             // (LSystem/Decimal;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -645,7 +645,7 @@ namespace System {
             return default(ulong);
         }
         
-        private static float ToSingle52(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static float ToSingle52(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)F
             // (LSystem/Decimal;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -655,17 +655,17 @@ namespace System {
             return default(float);
         }
         
-        private static global::System.IntPtr Truncate53(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr d) {
+        private static global::net.sf.jni4net.utils.JniHandle Truncate53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle d) {
             // (Lsystem/Decimal;)Lsystem/Decimal;
             // (LSystem/Decimal;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, decimal.Truncate(global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, d)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void @__ctorDecimal0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, int value) {
+        private static void @__ctorDecimal0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -675,7 +675,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorDecimal1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, long value) {
+        private static void @__ctorDecimal1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -685,7 +685,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorDecimal2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, float value) {
+        private static void @__ctorDecimal2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, float value) {
             // (F)V
             // (F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -695,7 +695,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorDecimal3(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, double value) {
+        private static void @__ctorDecimal3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, double value) {
             // (D)V
             // (D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -705,7 +705,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorDecimal4(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr bits) {
+        private static void @__ctorDecimal4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle bits) {
             // ([I)V
             // ([I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -715,7 +715,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorDecimal5(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, int lo, int mid, int hi, bool isNegative, byte scale) {
+        private static void @__ctorDecimal5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int lo, int mid, int hi, bool isNegative, byte scale) {
             // (IIIZB)V
             // (IIIZB)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

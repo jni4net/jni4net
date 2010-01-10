@@ -66,7 +66,7 @@ namespace net.sf.jni4net {
             return methods;
         }
         
-        private static bool BindCLRTypes0(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool BindCLRTypes0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -77,7 +77,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void BindCLRTypes1(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void BindCLRTypes1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -87,7 +87,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool Verbose2(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool Verbose2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -98,7 +98,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void Verbose3(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void Verbose3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -108,7 +108,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool VeryVerbose4(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool VeryVerbose4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -119,7 +119,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void VeryVerbose5(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void VeryVerbose5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -129,7 +129,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool Debug6(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool Debug6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -140,7 +140,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void Debug7(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void Debug7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -150,7 +150,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool BindNative8(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool BindNative8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -161,7 +161,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void BindNative9(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void BindNative9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -171,7 +171,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool BindCoreOnly10(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool BindCoreOnly10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -182,7 +182,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void BindCoreOnly11(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void BindCoreOnly11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -192,7 +192,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static bool BindStatic12(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static bool BindStatic12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -203,7 +203,7 @@ namespace net.sf.jni4net {
             return default(bool);
         }
         
-        private static void BindStatic13(global::System.IntPtr @__envp, global::System.IntPtr @__obj, bool value) {
+        private static void BindStatic13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -213,7 +213,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::System.IntPtr JVMOptions14(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle JVMOptions14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -221,10 +221,10 @@ namespace net.sf.jni4net {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMOptions);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::System.IntPtr JVMCLassPath15(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle JVMCLassPath15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -232,10 +232,10 @@ namespace net.sf.jni4net {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
             return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMCLassPath);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::System.IntPtr);
+            return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static void AddBridgeClassPath16(global::System.IntPtr @__envp, global::System.IntPtr @__obj) {
+        private static void AddBridgeClassPath16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -245,7 +245,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddClassPath17(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr jarOrClassRoot) {
+        private static void AddClassPath17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle jarOrClassRoot) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -255,7 +255,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddJVMOption18(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr name, global::System.IntPtr value) {
+        private static void AddJVMOption18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;Ljava/lang/String;)V
             // (LSystem/String;LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -265,7 +265,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void AddAllJarsClassPath19(global::System.IntPtr @__envp, global::System.IntPtr @__obj, global::System.IntPtr directory) {
+        private static void AddAllJarsClassPath19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle directory) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -275,7 +275,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorBridgeSetup0(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj) {
+        private static void @__ctorBridgeSetup0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -285,7 +285,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorBridgeSetup1(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, bool autoAddBridgeClassPath) {
+        private static void @__ctorBridgeSetup1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool autoAddBridgeClassPath) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -295,7 +295,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void @__ctorBridgeSetup2(global::System.IntPtr @__envp, global::System.IntPtr @__class, global::System.IntPtr @__obj, global::System.IntPtr jvmOptions) {
+        private static void @__ctorBridgeSetup2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle jvmOptions) {
             // ([Ljava/lang/String;)V
             // ([LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

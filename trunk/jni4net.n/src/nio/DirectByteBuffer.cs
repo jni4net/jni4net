@@ -63,7 +63,7 @@ namespace net.sf.jni4net.nio
                                                     new Value { _int = len },
                                                     new Value { _long = offset },
                                                     new Value { _object = wrap.jvmHandle });
-                ((IJvmProxy)wrap).HoldThisHandle();
+                ((IJvmProxy)wrap).JvmHandle.HoldThisHandle();
             }
             else
             {
@@ -73,7 +73,7 @@ namespace net.sf.jni4net.nio
             }
 
             buffer.order(ByteOrder.LITTLE_ENDIAN);
-            ((IJvmProxy)this).Copy(env, buffer);
+            ((IJvmProxy)this).Copy(env, buffer.jvmHandle);
         }
 
         /// <summary>

@@ -22,35 +22,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Diagnostics;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using java.io;
 using net.sf.jni4net;
 using net.sf.jni4net.adaptors;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace java.lang
 {
     [Serializable]
     partial class Throwable : global::System.Exception, IJvmProxy
     {
-        internal Class clazz;
-        private JavaVM javaVM;
-        internal IntPtr jvmHandle;
+        internal JniGlobalHandle jvmHandle;
 
         protected Throwable(SerializationInfo info, StreamingContext context) 
-            //: base(info, context)
         {
-
-            //int len = info.GetInt32("lenght");
             byte[] data = (byte[])info.GetValue("exception", typeof(byte[]));
             using (var bai = Adapt.Disposable(new ByteArrayInputStream(data)))
             {
                 using (var ois = Adapt.Disposable(new ObjectInputStream(bai.Real)))
                 {
                     Object exception = ois.Real.readObject();
-                    ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, exception);
+                    ((IJvmProxy)this).Copy(JNIEnv.ThreadEnv, exception.jvmHandle);
                 }
             }
         }
@@ -63,7 +58,6 @@ namespace java.lang
                 {
                     oos.Real.writeObject(Bridge.Cast<Object>(this));
                     byte[] data = bao.Real.toByteArray();
-                    //info.AddValue("length", data.Length);
                     info.AddValue("exception", data);
                 }
             }
@@ -75,7 +69,7 @@ namespace java.lang
 
         protected JNIEnv Env
         {
-            get { return JNIEnv.GetEnvForVm(javaVM); }
+            get { return JNIEnv.GetEnvForVm(jvmHandle.javaVM); }
         }
 
         internal string NetStackTrace
@@ -120,65 +114,20 @@ namespace java.lang
 
         #region IJvmProxy Members
 
-        IntPtr IJvmProxy.JvmHandle
+        JniGlobalHandle IJvmProxy.JvmHandle
         {
             get { return jvmHandle; }
-            set { jvmHandle = value; }
         }
 
-        void IJvmProxy.Init(JNIEnv env, IntPtr obj, Class clazs)
+        void IJvmProxy.Init(JNIEnv env, JniLocalHandle obj)
         {
-            clazz = clazs;
             jvmHandle = env.NewGlobalRef(obj);
             env.DeleteLocalRef(obj);
-            javaVM = env.GetJavaVM();
         }
 
-        void IJvmProxy.Copy(JNIEnv env, IntPtr obj, Class clazs)
+        void IJvmProxy.Copy(JNIEnv env, JniGlobalHandle obj)
         {
-            clazz = clazs;
-            jvmHandle = env.NewGlobalRef(obj);
-            javaVM = env.GetJavaVM();
-        }
-
-        void IJvmProxy.Copy(JNIEnv env, IJvmProxy src)
-        {
-            var srco = ((Throwable)src);
-            jvmHandle = env.NewGlobalRef(srco.jvmHandle);
-            clazz = srco.clazz;
-            javaVM = srco.javaVM;
-        }
-
-        Class IJvmProxy.GetClass()
-        {
-            if (clazz == null)
-            {
-                FieldInfo field = GetType().GetField("staticClass", BindingFlags.Static | BindingFlags.NonPublic);
-                return (Class) field.GetValue(null);
-            }
-            return clazz;
-        }
-
-        void IJvmProxy.Dispose()
-        {
-            if (jvmHandle != IntPtr.Zero)
-            {
-                JNIEnv env;
-                JNIResult result = javaVM.AttachCurrentThreadAsDaemon(out env, null);
-                if (result == JNIResult.JNI_OK)
-                {
-                    env.DeleteGlobalRef(this);
-                }
-                // we don't crash if JVM is gone already
-                jvmHandle = IntPtr.Zero;
-            }
-            GC.SuppressFinalize(this);
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        void IJvmProxy.HoldThisHandle()
-        {
-            //empty operation
+            jvmHandle = obj;
         }
 
         #endregion
@@ -205,8 +154,8 @@ namespace java.lang
             {
                 return false;
             }
-            var value = new Value {_object = ((IJvmProxy) other).JvmHandle};
-            //TODO optimizie
+            var value = new Value { _object = ((IJvmProxy)other).JvmHandle.DangerousGetHandle() };
+            //TODO optimize
             return Env.CallBooleanMethod(this, "equals", "(Ljava/lang/Object;)Z", value);
         }
 
@@ -214,11 +163,6 @@ namespace java.lang
         {
             //TODO optimizie
             return Env.CallIntMethod(this, "hashCode", "()I");
-        }
-
-        ~Throwable()
-        {
-            ((IJvmProxy)this).Dispose();
         }
 
         public static bool operator ==(Throwable a, IJvmProxy b)
@@ -246,7 +190,7 @@ namespace java.lang
             JNIEnv env = Env;
             if ((_toString4 == null))
             {
-                _toString4 = env.GetMethodID(((IJvmProxy)this).GetClass(), "toString", "()Ljava/lang/String;");
+                _toString4 = env.GetMethodID(((IJvmProxy)this).getClass(), "toString", "()Ljava/lang/String;");
             }
             return toString();
         }

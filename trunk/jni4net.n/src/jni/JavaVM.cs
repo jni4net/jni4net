@@ -22,7 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Security.Permissions;
 
 namespace net.sf.jni4net.jni
@@ -61,6 +63,8 @@ namespace net.sf.jni4net.jni
             return result;
         }
 
+        [SuppressUnmanagedCodeSecurity]
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
         public JNIResult AttachCurrentThreadAsDaemon(out JNIEnv penv, JavaVMInitArgs? args)
         {
             if (attachCurrentThreadAsDaemon == null)

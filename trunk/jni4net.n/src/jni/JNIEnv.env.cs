@@ -80,6 +80,8 @@ namespace net.sf.jni4net.jni
             return threadJNIEnv;
         }
 
+        [global::System.Security.SuppressUnmanagedCodeSecurity]
+        [global::System.Runtime.ConstrainedExecution.ReliabilityContract(global::System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, global::System.Runtime.ConstrainedExecution.Cer.Success)]
         public static JNIEnv GetEnvNoThrow(JavaVM vm)
         {
             if (threadJNIEnv == null)

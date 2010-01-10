@@ -30,9 +30,9 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static TRes FullJ2C<TRes>(JNIEnv env, IntPtr obj)
+        public static TRes FullJ2C<TRes>(JNIEnv env, JniLocalHandle obj)
         {
-            if (obj == IntPtr.Zero)
+            if (JniLocalHandle.IsNull(obj))
             {
                 return default(TRes);
             }
@@ -58,7 +58,7 @@ namespace net.sf.jni4net.utils
                 if (!reqType.IsInterface && typeof(IJvmProxy).IsAssignableFrom(reqType))
                 {
                     //now we double wrap
-                    return (TRes)__IClrProxy.CreateProxy(env, obj, IClrProxy_._class);
+                    return (TRes)__IClrProxy.CreateProxy(env, obj);
                 }
                 object res = __IClrProxy.GetObject(env, obj);
                 if (Bridge.Setup.Debug)
@@ -76,7 +76,7 @@ namespace net.sf.jni4net.utils
             RegistryRecord record = Registry.GetJVMRecord(clazz);
             if (reqType.IsAssignableFrom(record.CLRInterface))
             {
-                return (TRes) record.CreateCLRProxy(env, obj, clazz);
+                return (TRes) record.CreateCLRProxy(env, obj);
             }
             record = Registry.GetCLRRecord(reqType);
             if (Bridge.Setup.Debug)
@@ -86,10 +86,10 @@ namespace net.sf.jni4net.utils
                     throw new InvalidCastException("Can't cast JVM instance" + clazz + " to " + reqType);
                 }
             }
-            return (TRes) record.CreateCLRProxy(env, obj, clazz);
+            return (TRes) record.CreateCLRProxy(env, obj);
         }
 
-        private static object PrimJ2C(IntPtr obj, JNIEnv env, Type type)
+        private static object PrimJ2C(JniLocalHandle obj, JNIEnv env, Type type)
         {
             if (type == typeof (bool))
             {

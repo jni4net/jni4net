@@ -63,8 +63,8 @@ namespace net.sf.jni4net
             JNIEnv env = JNIEnv.ThreadEnv;
 
             RegistryRecord record = Registry.GetCLRRecord(type);
-            IntPtr jvmProxy = record.CreateJVMProxy(env, obj);
-            return (Object)__IClrProxy.CreateProxy(env, jvmProxy, record.JVMProxy);
+            JniLocalHandle jvmProxy = record.CreateJVMProxy(env, obj);
+            return (Object)__IClrProxy.CreateProxy(env, jvmProxy);
         }
 
         public static TRes UnwrapCLR<TRes>(Object obj)
@@ -103,11 +103,11 @@ namespace net.sf.jni4net
             {
                 throw new InvalidCastException("Can't cast JVM instance of " + clazz + " to " + record.JVMInterface + "\n (" + clazz.getClassLoader() + "->" + record.JVMInterface.getClassLoader() + ")");
             }
-            IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle, record.JVMInterface);
+            IJvmProxy res = record.CopyCLRProxy(JNIEnv.ThreadEnv, proxy.JvmHandle);
             return (TRes) res;
         }
 
-        public static TRes CreateProxy<TRes>(IntPtr jvmHandle)
+        public static TRes CreateProxy<TRes>(JniGlobalHandle jvmHandle)
         {
             Type reqType = typeof(TRes);
             if (!reqType.IsInterface && !typeof(IObject).IsAssignableFrom(reqType))
@@ -121,7 +121,7 @@ namespace net.sf.jni4net
             {
                 throw new InvalidCastException("Can't cast JVM instance of " + clazz + " to " + record.JVMInterface + "\n (" + clazz.getClassLoader() + "->" + record.JVMInterface.getClassLoader() + ")");
             }
-            IJvmProxy res = record.CopyCLRProxy(env, jvmHandle, record.JVMInterface);
+            IJvmProxy res = record.CopyCLRProxy(env, jvmHandle);
             return (TRes)res;
         }
     }

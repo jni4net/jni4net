@@ -7,6 +7,7 @@ Version 0.6
 + native methods unregistration when appdomain unloads
 + upgrade to IDEA 9.0
 + sun specific DirectBufferCleaner, which holds the reference to pinned buffer
++ strongly typed JNI references (this is breaking change)
 
 Version 0.5
 -----------

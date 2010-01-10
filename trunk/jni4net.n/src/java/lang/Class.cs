@@ -172,10 +172,10 @@ namespace java.lang
             return !x.equals(y);
         }
 
-        internal static Class CreateProxy(JNIEnv env, IntPtr obj)
+        internal static Class CreateProxy(JNIEnv env, JniLocalHandle obj)
         {
             var proxy = new Class(env);
-            ((IJvmProxy) proxy).Init(env, obj, staticClass);
+            ((IJvmProxy) proxy).Init(env, obj);
             return proxy;
         }
     }

@@ -32,12 +32,12 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static IntPtr FullC2J<TBoth>(JNIEnv env, TBoth obj)
+        public static JniHandle FullC2J<TBoth>(JNIEnv env, TBoth obj)
         {
             // ReSharper disable CompareNonConstrainedGenericWithNull
             if (obj == null)
             {
-                return IntPtr.Zero;
+                return JniLocalHandle.Zero;
             }
             // ReSharper restore CompareNonConstrainedGenericWithNull
             Type reqType = typeof (TBoth);
@@ -97,7 +97,7 @@ namespace net.sf.jni4net.utils
             return record.CreateJVMProxy(env, obj);
         }
 
-        private static IntPtr PrimC2J(JNIEnv env, object obj, Type type)
+        private static JniLocalHandle PrimC2J(JNIEnv env, object obj, Type type)
         {
             if (type == typeof (int) || type == typeof (uint))
             {
@@ -155,11 +155,11 @@ namespace net.sf.jni4net.utils
                 var sarg = args[i] as string;
                 if (sarg != null)
                 {
-                    jargs[i] = new Value {_object = env.NewStringPtr(sarg)};
+                    jargs[i] = new Value { _object = env.NewStringPtr(sarg).DangerousGetHandle() };
                 }
                 else
                 {
-                    jargs[i] = new Value {_object = FullC2J(env, args[i])};
+                    jargs[i] = new Value { _object = FullC2J(env, args[i]) };
                 }
             }
             return jargs;

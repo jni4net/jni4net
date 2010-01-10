@@ -216,8 +216,8 @@ namespace net.sf.jni4net.utils
         {
             MethodId constructor = knownCLR[typeof (Type)].JVMConstructor;
             var h = new Value {_long = IntHandle.Alloc(record.CLRInterface)};
-            IntPtr clazz = Type_._class.jvmHandle;
-            var typeInfo = new Value {_object = env.NewObjectPtr(clazz, constructor, Value.Null, h)};
+            var clazz = Type_._class.jvmHandle;
+            var typeInfo = new Value { _object = env.NewObjectPtr(clazz, constructor, Value.Null, h).DangerousGetHandle() };
             env.CallStaticVoidMethod(record.JVMStatic, "InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V",
                                      new[] {Value.Null, typeInfo});
             //record.JVMStatic.Invoke("InitJNI", "(Lnet/sf/jni4net/inj/INJEnv;Lsystem/Type;)V", null, record.CLRInterface);
