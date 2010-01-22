@@ -22,5 +22,7 @@ Samples assume that you have csc.exe and javac.exe on your PATH
    
 6) winforms - this example shows, how Java program could create WinForms dialog.
 
+7) interfaceFromCLR - shows how to implement Java interface in CLR and pass it to JVM
+
 Tropublehooting here
 http://jni4net.sourceforge.net/troubleshoot.shtml
