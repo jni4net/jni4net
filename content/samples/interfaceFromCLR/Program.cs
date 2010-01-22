@@ -48,7 +48,7 @@ namespace interfaceFromCLR
             CLRRunnable clrRunnable = new CLRRunnable {Message = "I'm callback"};
 
             // we generated CLR proxy for java.lang.Thread as part of this demo, because it could accept Runnable
-            // generated proxy for your own class/method which could accept Runnable interface
+            // generate proxy for your own class/method which could accept Runnable interface
             Thread javaThread = new Thread(clrRunnable);
             javaThread.start();
             javaThread.join();
