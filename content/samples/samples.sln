@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms", "winforms\winfor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helloWorldFromCLR", "helloWorldFromCLR\helloWorldFromCLR.csproj", "{61CFE915-76E8-4CD8-B7B9-033C7B6C424D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceFromCLR", "InterfaceFromCLR\InterfaceFromCLR.csproj", "{61CFE915-76E8-4CD8-B7B9-043C7B6C424D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{61CFE915-76E8-4CD8-B7B9-033C7B6C424D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61CFE915-76E8-4CD8-B7B9-033C7B6C424D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61CFE915-76E8-4CD8-B7B9-033C7B6C424D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CFE915-76E8-4CD8-B7B9-043C7B6C424D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CFE915-76E8-4CD8-B7B9-043C7B6C424D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CFE915-76E8-4CD8-B7B9-043C7B6C424D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CFE915-76E8-4CD8-B7B9-043C7B6C424D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
