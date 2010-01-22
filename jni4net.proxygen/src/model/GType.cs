@@ -275,7 +275,15 @@ namespace net.sf.jni4net.proxygen.model
                 if (!IsCLRType)
                 {
                     CLRNamespace = JVMNamespace;
-                    CLRFullName = JVMType.FullName;
+
+                    if (IsArray)
+                    {
+                        CLRFullName = JVMType.getComponentType().getName() + "[]";
+                    }
+                    else
+                    {
+                        CLRFullName = JVMType.FullName;
+                    }
                 }
             }
             JVMNamespaceExt = JVMNamespace;
