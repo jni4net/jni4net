@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package net.sf.jni4net.test;
 
 import net.sf.jni4net.Bridge;
+import net.sf.jni4net.Out;
 import net.sf.jni4net.inj.INJException;
 import net.sf.jni4net.tested.*;
 import org.junit.BeforeClass;
@@ -160,5 +161,14 @@ public class TestClr {
 		type=null;
 		assembly=null;
 	}
+
+    @Test()
+    public void outParam() {
+        Out<DateTime> dt=new Out<DateTime>();
+        DateTime.TryParse("2009-08-28",dt);
+        Assert.assertThat(dt.getValue().getYear(), is(2009));
+        System.out.println(dt);
+    }
+
 
 }

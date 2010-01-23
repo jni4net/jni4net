@@ -288,6 +288,8 @@ namespace net.sf.jni4net
                 {
                     Console.Error.WriteLine("Can't mark bridge");
                 }
+                Ref.Init();
+                Out.Init();
             }
             if (Setup.Verbose)
             {

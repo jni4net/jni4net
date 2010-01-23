@@ -825,6 +825,12 @@ namespace net.sf.jni4net.jni
 
         #region setters instance
 
+        internal void SetObjectFieldPtr(JniLocalHandle obj, FieldId fieldID, JniHandle value)
+        {
+            setObjectField(envPtr, obj, fieldID.native, value);
+            ExceptionTest();
+        }
+
         internal void SetObjectField(IJvmProxy obj, FieldId fieldID, IJvmProxy value)
         {
             setObjectField(envPtr, obj.JvmHandle, fieldID.native, value.JvmHandle);

@@ -32,8 +32,17 @@ public class MemberInfo extends system.Object implements system.reflection.ICust
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
     public native boolean IsDefined(system.Type attributeType, boolean inherit);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;)V")
+    public native void GetTypeInfoCount(net.sf.jni4net.Out<java.lang.Integer> pcTInfo);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
     public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Guid;LSystem/IntPtr;LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
+    public native void GetIDsOfNames(net.sf.jni4net.Ref<system.Guid> riid, long rgszNames, int cNames, int lcid, long rgDispId);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/Guid;LSystem/UInt32;SLSystem/IntPtr;LSystem/IntPtr;LSystem/IntPtr;LSystem/IntPtr;)V")
+    public native void Invoke(int dispIdMember, net.sf.jni4net.Ref<system.Guid> riid, int lcid, short wFlags, long pDispParams, long pVarResult, long pExcepInfo, long puArgErr);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
     public native system.Enum getMemberType();

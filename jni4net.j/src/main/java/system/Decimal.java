@@ -175,6 +175,12 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Globalization/NumberStyles;LSystem/IFormatProvider;)LSystem/Decimal;")
     public native static system.Decimal Parse(java.lang.String s, system.Enum style, system.IFormatProvider provider);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Decimal;)Z")
+    public native static boolean TryParse(java.lang.String s, net.sf.jni4net.Out<system.Decimal> result);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Globalization/NumberStyles;LSystem/IFormatProvider;LSystem/Decimal;)Z")
+    public native static boolean TryParse(java.lang.String s, system.Enum style, system.IFormatProvider provider, net.sf.jni4net.Out<system.Decimal> result);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Decimal;)[I")
     public native static int[] GetBits(system.Decimal d);
     

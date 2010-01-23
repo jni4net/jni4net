@@ -66,7 +66,6 @@ namespace net.sf.jni4net.proxygen.model
             get { return _Parameters; }
         }
 
-
         public string GetSignatureLowerNoRet()
         {
             var sb = new StringBuilder();
@@ -97,7 +96,18 @@ namespace net.sf.jni4net.proxygen.model
                 sb.Append('(');
                 for (int i = 0; i < _Parameters.Count; i++)
                 {
-                    sb.Append(Registry.GetSignature(_Parameters[i].JVMResolved));
+                    if (_Parameters[i].IsOut)
+                    {
+                        sb.Append("Lnet/sf/jni4net/Out;");
+                    }
+                    else if (_Parameters[i].IsRef)
+                    {
+                        sb.Append("Lnet/sf/jni4net/Ref;");
+                    }
+                    else
+                    {
+                        sb.Append(Registry.GetSignature(_Parameters[i].JVMResolved));
+                    }
                 }
                 sb.Append(')');
             }

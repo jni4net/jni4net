@@ -89,33 +89,36 @@ namespace java.lang {
             // (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
             // (Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0), par1, par2));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0), par1, par2));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle append1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, char par0) {
             // (C)Ljava/lang/Appendable;
             // (C)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(par0));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(par0));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle append2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle par0) {
             // (Ljava/lang/CharSequence;)Ljava/lang/Appendable;
             // (Ljava/lang/CharSequence;)Ljava/lang/Appendable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.Appendable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.Appendable>(@__env, @__real.append(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, par0)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

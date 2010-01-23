@@ -76,76 +76,83 @@ namespace System.IO {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return ((int)(@__real.Peek()));
+            @__return = ((int)(@__real.Peek()));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static int Read3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return ((int)(@__real.Read()));
+            @__return = ((int)(@__real.Read()));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static int Read4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
             // ([CII)I
             // ([CII)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return ((int)(@__real.Read(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
+            @__return = ((int)(@__real.Read(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ReadToEnd5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadToEnd());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadToEnd());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static int ReadBlock6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
             // ([CII)I
             // ([CII)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return ((int)(@__real.ReadBlock(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
+            @__return = ((int)(@__real.ReadBlock(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cchar(@__env, buffer), index, count)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ReadLine7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.TextReader @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadLine());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ReadLine());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle Synchronized8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle reader) {
             // (Lsystem/io/TextReader;)Lsystem/io/TextReader;
             // (LSystem/IO/TextReader;)LSystem/IO/TextReader;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextReader>(@__env, global::System.IO.TextReader.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, reader)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextReader>(@__env, global::System.IO.TextReader.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextReader>(@__env, reader)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

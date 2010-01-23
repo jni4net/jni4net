@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package net.sf.jni4net.tested;
 
+import net.sf.jni4net.Out;
+import net.sf.jni4net.Ref;
 import net.sf.jni4net.inj.INJException;
 import net.sf.jni4net.Bridge;
 import system.*;
@@ -44,7 +46,25 @@ public class JavaCallBack {
 	}
 
 	public static int callBackStatic(int a, int b) {
-		return StaticMethods.add(a,b);
+        Out<Integer> cont0=new Out<Integer>();
+        StaticMethods.TestOutParam(cont0);
+
+        Ref<Integer> cont1=new Ref<Integer>(a+cont0.getValue());
+        final int i = StaticMethods.TestRefParam(cont1);
+        if (i!=-1){
+            throw new Error("but "+i);
+        }
+
+        Out<java.lang.String> cont2=new Out<java.lang.String>();
+        StaticMethods.TestOutParamS(cont2);
+
+        Ref<java.lang.String> cont3=new Ref<java.lang.String>("Cosi"+cont2.getValue());
+        StaticMethods.TestRefParamS(cont3);
+        if (!cont3.getValue().equals("CosiAhojAhoj")){
+            throw new Error(cont3.getValue());
+        }
+
+		return StaticMethods.add(cont1.getValue(),b);
 	}
 
 	public static int callBackComparison() {

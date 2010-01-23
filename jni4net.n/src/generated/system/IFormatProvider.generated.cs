@@ -56,11 +56,12 @@ namespace System {
             // (Lsystem/Type;)Lsystem/Object;
             // (LSystem/Type;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IFormatProvider @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, formatType)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.GetFormat(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, formatType)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

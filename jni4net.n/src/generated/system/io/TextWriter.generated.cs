@@ -96,11 +96,12 @@ namespace System.IO {
             // ()Lsystem/IFormatProvider;
             // ()LSystem/IFormatProvider;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IFormatProvider>(@__env, @__real.FormatProvider);
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IFormatProvider>(@__env, @__real.FormatProvider);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void Close2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
@@ -127,22 +128,24 @@ namespace System.IO {
             // ()Lsystem/Object;
             // ()LSystem/Text/Encoding;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, @__real.Encoding);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, @__real.Encoding);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle NewLine5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.TextWriter @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.NewLine);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.NewLine);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void NewLine6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -159,10 +162,11 @@ namespace System.IO {
             // (Lsystem/io/TextWriter;)Lsystem/io/TextWriter;
             // (LSystem/IO/TextWriter;)LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.IO.TextWriter.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, writer)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.IO.TextWriter.Synchronized(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.TextWriter>(@__env, writer)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void Write8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, char value) {

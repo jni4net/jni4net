@@ -31,6 +31,27 @@ public class StaticMethods extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(II)I")
     public native static int add(int a, int b);
     
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
+    public native static void TestOutParamS(net.sf.jni4net.Out<java.lang.String> text);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/lang/String;)V")
+    public native static void TestRefParamS(net.sf.jni4net.Ref<java.lang.String> text);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([Ljava/lang/String;)V")
+    public native static void TestRefParamSa(net.sf.jni4net.Ref<system.Object> text);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([C)V")
+    public native static void TestRefParamPa(net.sf.jni4net.Ref<system.Object> text);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([BIC)V")
+    public native static void TestRefParamBa(net.sf.jni4net.Out<system.Object> text, int a, char f);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)V")
+    public native static void TestOutParam(net.sf.jni4net.Out<java.lang.Integer> num);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(I)I")
+    public native static int TestRefParam(net.sf.jni4net.Ref<java.lang.Integer> num);
+    
     public static system.Type typeof() {
         return net.sf.jni4net.tested.StaticMethods.staticType;
     }

@@ -26,6 +26,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using net.sf.jni4net.proxygen.config;
+using String = java.lang.String;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -57,6 +58,7 @@ namespace net.sf.jni4net.proxygen.model
 
         internal static GType RegisterType(Type type, TypeRegistration registration)
         {
+            Type original = type;
             if (knownTypes.ContainsKey(type))
             {
                 GType known = knownTypes[type];
@@ -67,6 +69,18 @@ namespace net.sf.jni4net.proxygen.model
                 return known;
             }
             var res = new GType();
+            if (type.IsPointer)
+            {
+                //it's out really
+                res.IsOut = true;
+                type = type.GetElementType();
+            }
+            if (type.IsByRef)
+            {
+                //it's ref really
+                res.IsRef = true;
+                type = type.GetElementType();
+            }
             if (type.IsArray)
             {
                 res.ArrayElement = RegisterType(type.GetElementType());
@@ -82,7 +96,11 @@ namespace net.sf.jni4net.proxygen.model
                 res.IsFinal = true;
             }
 
-            res.LowerName = type.FullName.ToLowerInvariant();
+            res.LowerName = original.FullName.ToLowerInvariant();
+            if (res.IsOut)
+            {
+                res.LowerName += "!";
+            }
             if (knownNames.ContainsKey(res.LowerName))
             {
                 res = knownNames[res.LowerName];
@@ -93,7 +111,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             res.IsPrimitive = type.IsPrimitive;
             res.IsException = typeof(Exception).IsAssignableFrom(type);
-            res.CLRType = type;
+            res.CLRType = original;
             if (res.IsArray)
             {
                 res.CLRFullName = type.GetElementType().FullName + "[]";
@@ -195,6 +213,34 @@ namespace net.sf.jni4net.proxygen.model
                     }
                 }
                 res.JVMSubst = RegisterType(sub);
+            }
+            if (res.IsOut)
+            {
+                Type sub;
+                if (type.IsArray)
+                {
+                    sub = typeof(Out<>).MakeGenericType(typeof(object));
+                }
+                else
+                {
+                    sub = typeof(Out<>).MakeGenericType(type);
+                }
+                res.JVMSubst = RegisterType(sub);
+                res.CLRSubst = res;
+            }
+            if (res.IsRef)
+            {
+                Type sub;
+                if (type.IsArray)
+                {
+                    sub = typeof(Ref<>).MakeGenericType(typeof(object));
+                }
+                else
+                {
+                    sub = typeof(Ref<>).MakeGenericType(type);
+                }
+                res.JVMSubst = RegisterType(sub);
+                res.CLRSubst = res;
             }
 
             return res;
@@ -377,12 +423,20 @@ namespace net.sf.jni4net.proxygen.model
             res.IsCLRMethod = true;
             foreach (ParameterInfo info in method.GetParameters())
             {
-                if (TestCLRType(info.ParameterType))
+                Type parameterType = info.ParameterType;
+                if (TestCLRType(parameterType))
                 {
                     return null;
                 }
+                // we ignore IsOut when IsIn is set as well, because they are probably just attributes
+                // see System.IO.TextReader.Read([In, Out] char[] buffer, int index, int count)
+                if (info.IsOut && !info.IsIn)
+                {
+                    //this is trick how to store out as type
+                    parameterType = parameterType.GetElementType().MakePointerType();
+                }
                 res.ParameterNames.Add(info.Name);
-                res.Parameters.Add(RegisterType(info.ParameterType));
+                res.Parameters.Add(RegisterType(parameterType));
             }
             res.ReturnType = RegisterType(typeof (void));
 
