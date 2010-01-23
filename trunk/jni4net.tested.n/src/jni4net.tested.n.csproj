@@ -67,6 +67,7 @@
     <Compile Include="ClrException.cs" />
     <Compile Include="CWithJavaInterface.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\StaticMethods.generated.cs" />
+    <Compile Include="generated\system\io\TextReader.generated.cs" />
     <Compile Include="generated\tested\JInterface.cs" />
     <Compile Include="StaticMethods.cs" />
     <Compile Include="tested\JavaInstanceFields.cs" />

@@ -10,6 +10,7 @@ Version 0.6
 + strongly typed JNI references (this is breaking change)
 + improved proxygen to not generate virtual method overrides
 + eliminated lot of warnings in generated code
++ implemented out and ref parameter from C#
 
 Version 0.5
 -----------

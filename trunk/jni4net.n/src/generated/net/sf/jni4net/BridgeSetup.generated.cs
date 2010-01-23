@@ -70,11 +70,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.BindCLRTypes));
+            @__return = ((bool)(@__real.BindCLRTypes));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void BindCLRTypes1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -91,11 +92,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.Verbose));
+            @__return = ((bool)(@__real.Verbose));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void Verbose3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -112,11 +114,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.VeryVerbose));
+            @__return = ((bool)(@__real.VeryVerbose));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void VeryVerbose5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -133,11 +136,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.Debug));
+            @__return = ((bool)(@__real.Debug));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void Debug7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -154,11 +158,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.BindNative));
+            @__return = ((bool)(@__real.BindNative));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void BindNative9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -175,11 +180,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.BindCoreOnly));
+            @__return = ((bool)(@__real.BindCoreOnly));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void BindCoreOnly11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -196,11 +202,12 @@ namespace net.sf.jni4net {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return ((bool)(@__real.BindStatic));
+            @__return = ((bool)(@__real.BindStatic));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void BindStatic13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool value) {
@@ -217,22 +224,24 @@ namespace net.sf.jni4net {
             // ()[Ljava/lang/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMOptions);
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMOptions);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle JVMCLassPath15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::net.sf.jni4net.BridgeSetup @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMCLassPath);
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2JString(@__env, @__real.JVMCLassPath);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void AddBridgeClassPath16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {

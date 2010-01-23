@@ -150,6 +150,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.lang.reflect.GenericDeclaration"/>
   <JavaClass TypeName="java.lang.reflect.AnnotatedElement"/>
   
+  <JavaClass TypeName="net.sf.jni4net.Ref"/>
+  <JavaClass TypeName="net.sf.jni4net.Out"/>
+
+
   <!-- basics -->
   <ClrType TypeName="System.Object" MergeJavaSource="true">
     <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>

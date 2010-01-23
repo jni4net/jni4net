@@ -145,40 +145,44 @@ namespace System {
             // ()Lsystem/io/TextWriter;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.Console.Error);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.Console.Error);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle In1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/TextReader;
             // ()LSystem/IO/TextReader;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextReader>(@__env, global::System.Console.In);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextReader>(@__env, global::System.Console.In);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle Out2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/TextWriter;
             // ()LSystem/IO/TextWriter;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.Console.Out);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.TextWriter>(@__env, global::System.Console.Out);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle InputEncoding3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/Object;
             // ()LSystem/Text/Encoding;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, global::System.Console.InputEncoding);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, global::System.Console.InputEncoding);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void InputEncoding4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -194,10 +198,11 @@ namespace System {
             // ()Lsystem/Object;
             // ()LSystem/Text/Encoding;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, global::System.Console.OutputEncoding);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Text.Encoding>(@__env, global::System.Console.OutputEncoding);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void OutputEncoding6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -240,10 +245,11 @@ namespace System {
             // ()Lsystem/Enum;
             // ()LSystem/ConsoleColor;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleColor>(@__env, global::System.Console.BackgroundColor);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleColor>(@__env, global::System.Console.BackgroundColor);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void BackgroundColor11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -259,10 +265,11 @@ namespace System {
             // ()Lsystem/Enum;
             // ()LSystem/ConsoleColor;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleColor>(@__env, global::System.Console.ForegroundColor);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleColor>(@__env, global::System.Console.ForegroundColor);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void ForegroundColor13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -305,10 +312,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.BufferHeight));
+            @__return = ((int)(global::System.Console.BufferHeight));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void BufferHeight18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -324,10 +332,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.BufferWidth));
+            @__return = ((int)(global::System.Console.BufferWidth));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void BufferWidth20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -352,10 +361,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.WindowHeight));
+            @__return = ((int)(global::System.Console.WindowHeight));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void WindowHeight23(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -371,10 +381,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.WindowWidth));
+            @__return = ((int)(global::System.Console.WindowWidth));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void WindowWidth25(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -399,30 +410,33 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.LargestWindowWidth));
+            @__return = ((int)(global::System.Console.LargestWindowWidth));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static int LargestWindowHeight28(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.LargestWindowHeight));
+            @__return = ((int)(global::System.Console.LargestWindowHeight));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static int WindowLeft29(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.WindowLeft));
+            @__return = ((int)(global::System.Console.WindowLeft));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void WindowLeft30(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -438,10 +452,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.WindowTop));
+            @__return = ((int)(global::System.Console.WindowTop));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void WindowTop32(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -466,10 +481,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.CursorLeft));
+            @__return = ((int)(global::System.Console.CursorLeft));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void CursorLeft35(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -485,10 +501,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.CursorTop));
+            @__return = ((int)(global::System.Console.CursorTop));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void CursorTop37(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -513,10 +530,11 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.CursorSize));
+            @__return = ((int)(global::System.Console.CursorSize));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static void CursorSize40(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
@@ -532,10 +550,11 @@ namespace System {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
-            return ((bool)(global::System.Console.CursorVisible));
+            @__return = ((bool)(global::System.Console.CursorVisible));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void CursorVisible42(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
@@ -551,10 +570,11 @@ namespace System {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.Title);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.Title);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void Title44(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
@@ -570,60 +590,66 @@ namespace System {
             // ()Lsystem/ValueType;
             // ()LSystem/ConsoleKeyInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleKeyInfo>(@__env, global::System.Console.ReadKey());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleKeyInfo>(@__env, global::System.Console.ReadKey());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ReadKey46(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool intercept) {
             // (Z)Lsystem/ValueType;
             // (Z)LSystem/ConsoleKeyInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleKeyInfo>(@__env, global::System.Console.ReadKey(intercept));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.ConsoleKeyInfo>(@__env, global::System.Console.ReadKey(intercept));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static bool KeyAvailable47(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
-            return ((bool)(global::System.Console.KeyAvailable));
+            @__return = ((bool)(global::System.Console.KeyAvailable));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static bool NumberLock48(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
-            return ((bool)(global::System.Console.NumberLock));
+            @__return = ((bool)(global::System.Console.NumberLock));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static bool CapsLock49(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
-            return ((bool)(global::System.Console.CapsLock));
+            @__return = ((bool)(global::System.Console.CapsLock));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static bool TreatControlCAsInput50(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
-            return ((bool)(global::System.Console.TreatControlCAsInput));
+            @__return = ((bool)(global::System.Console.TreatControlCAsInput));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static void TreatControlCAsInput51(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
@@ -639,60 +665,66 @@ namespace System {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardError());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardError());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle OpenStandardError53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardError(bufferSize));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardError(bufferSize));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput54(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardInput());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardInput());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput55(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardInput(bufferSize));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardInput(bufferSize));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput56(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardOutput());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardOutput());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput57(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardOutput(bufferSize));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.IO.Stream>(@__env, global::System.Console.OpenStandardOutput(bufferSize));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void SetIn58(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newIn) {
@@ -726,20 +758,22 @@ namespace System {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
-            return ((int)(global::System.Console.Read()));
+            @__return = ((int)(global::System.Console.Read()));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ReadLine62(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.ReadLine());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, global::System.Console.ReadLine());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void WriteLine63(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {

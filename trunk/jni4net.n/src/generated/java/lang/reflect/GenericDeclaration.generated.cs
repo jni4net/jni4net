@@ -65,11 +65,12 @@ namespace java.lang.reflect {
             // ()[Ljava/lang/reflect/TypeVariable;
             // ()[Ljava/lang/reflect/TypeVariable;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.GenericDeclaration @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.GenericDeclaration>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.TypeVariable[], global::java.lang.reflect.TypeVariable>(@__env, @__real.getTypeParameters());
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.reflect.TypeVariable[], global::java.lang.reflect.TypeVariable>(@__env, @__real.getTypeParameters());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

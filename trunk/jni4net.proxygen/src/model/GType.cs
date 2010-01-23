@@ -45,6 +45,8 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsAbstract { get; set; }
         public bool IsArray { get; set; }
         public bool IsFinal { get; set; }
+        public bool IsOut { get; set; }
+        public bool IsRef { get; set; }
         public bool IsPrimitive { get; set; }
         public bool IsException { get; set; }
         public bool IsCLRProxy { get; set; }
@@ -262,10 +264,45 @@ namespace net.sf.jni4net.proxygen.model
             {
                 CLRNamespace = CLRType.Namespace;
                 Name = CLRType.Name;
-                if (!IsJVMType)
+                if (!IsJVMType && JVMFullName==null)
                 {
                     JVMNamespace = CLRNamespace.ToLowerInvariant();
-                    JVMFullName = JVMNamespace + "." + CLRType.Name;
+
+                    if (CLRType.IsGenericType)
+                    {
+                        bool rref = typeof(Ref<>).IsAssignableFrom(CLRType.GetGenericTypeDefinition());
+                        bool oout = typeof(Out<>).IsAssignableFrom(CLRType.GetGenericTypeDefinition());
+                        if (rref || oout)
+                        {
+                            JVMFullName = JVMNamespace + (rref ? ".Ref<" : ".Out<");
+                            Type[] genericArguments = CLRType.GetGenericArguments();
+                            for (int i = 0; i < genericArguments.Length; i++)
+                            {
+                                Type argument = genericArguments[i];
+
+                                if (argument.IsPrimitive)
+                                {
+                                    String objName = Repository.jvmPrimitives[argument].getName();
+                                    JVMFullName += objName;
+                                }
+                                else
+                                {
+                                    GType real = Repository.RegisterType(argument);
+                                    real.UpdateNames();
+                                    JVMFullName += real.JVMResolved;
+                                }
+                                if (i + 1 < genericArguments.Length)
+                                {
+                                    JVMFullName += ",";
+                                }
+                            }
+                            JVMFullName += ">";
+                        }
+                    }
+                    else
+                    {
+                        JVMFullName = JVMNamespace + "." + CLRType.Name;
+                    }
                 }
             }
             if (IsJVMType)

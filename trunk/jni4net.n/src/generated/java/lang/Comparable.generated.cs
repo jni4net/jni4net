@@ -65,11 +65,12 @@ namespace java.lang {
             // (Ljava/lang/Object;)I
             // (Ljava/lang/Object;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::java.lang.Comparable @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Comparable>(@__env, @__obj);
-            return ((int)(@__real.compareTo(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
+            @__return = ((int)(@__real.compareTo(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, par0))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

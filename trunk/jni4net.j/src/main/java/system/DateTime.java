@@ -346,6 +346,18 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/DateTime;")
     public native system.DateTime ToUniversalTime();
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/DateTime;)Z")
+    public native static boolean TryParse(java.lang.String s, net.sf.jni4net.Out<system.DateTime> result);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;LSystem/DateTime;)Z")
+    public native static boolean TryParse(java.lang.String s, system.IFormatProvider provider, system.Enum styles, net.sf.jni4net.Out<system.DateTime> result);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;LSystem/DateTime;)Z")
+    public native static boolean TryParseExact(java.lang.String s, java.lang.String format, system.IFormatProvider provider, system.Enum style, net.sf.jni4net.Out<system.DateTime> result);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;[LSystem/String;LSystem/IFormatProvider;LSystem/Globalization/DateTimeStyles;LSystem/DateTime;)Z")
+    public native static boolean TryParseExact(java.lang.String s, java.lang.String[] formats, system.IFormatProvider provider, system.Enum style, net.sf.jni4net.Out<system.DateTime> result);
+    
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/String;")
     public native java.lang.String[] GetDateTimeFormats();
     

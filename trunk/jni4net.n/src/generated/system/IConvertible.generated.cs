@@ -200,187 +200,204 @@ namespace System {
             // ()Lsystem/Enum;
             // ()LSystem/TypeCode;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.TypeCode>(@__env, @__real.GetTypeCode());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.TypeCode>(@__env, @__real.GetTypeCode());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static bool ToBoolean1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Z
             // (LSystem/IFormatProvider;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((bool)(@__real.ToBoolean(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((bool)(@__real.ToBoolean(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         private static char ToChar2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)C
             // (LSystem/IFormatProvider;)C
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            char @__return = default(char);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((char)(@__real.ToChar(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((char)(@__real.ToChar(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(char);
+            return @__return;
         }
         
         private static sbyte ToSByte3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)LSystem/SByte;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            sbyte @__return = default(sbyte);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((sbyte)(@__real.ToSByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((sbyte)(@__real.ToSByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(sbyte);
+            return @__return;
         }
         
         private static byte ToByte4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)B
             // (LSystem/IFormatProvider;)B
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            byte @__return = default(byte);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((byte)(@__real.ToByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((byte)(@__real.ToByte(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(byte);
+            return @__return;
         }
         
         private static short ToInt165(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)S
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            short @__return = default(short);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((short)(@__real.ToInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((short)(@__real.ToInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(short);
+            return @__return;
         }
         
         private static ushort ToUInt166(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)S
             // (LSystem/IFormatProvider;)LSystem/UInt16;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            ushort @__return = default(ushort);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((ushort)(@__real.ToUInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((ushort)(@__real.ToUInt16(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(ushort);
+            return @__return;
         }
         
         private static int ToInt327(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((int)(@__real.ToInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((int)(@__real.ToInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static uint ToUInt328(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)I
             // (LSystem/IFormatProvider;)LSystem/UInt32;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            uint @__return = default(uint);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((uint)(@__real.ToUInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((uint)(@__real.ToUInt32(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(uint);
+            return @__return;
         }
         
         private static long ToInt649(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            long @__return = default(long);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((long)(@__real.ToInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((long)(@__real.ToInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(long);
+            return @__return;
         }
         
         private static ulong ToUInt6410(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)J
             // (LSystem/IFormatProvider;)LSystem/UInt64;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            ulong @__return = default(ulong);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((ulong)(@__real.ToUInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((ulong)(@__real.ToUInt64(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(ulong);
+            return @__return;
         }
         
         private static float ToSingle11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)F
             // (LSystem/IFormatProvider;)F
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            float @__return = default(float);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((float)(@__real.ToSingle(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((float)(@__real.ToSingle(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(float);
+            return @__return;
         }
         
         private static double ToDouble12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)D
             // (LSystem/IFormatProvider;)D
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            double @__return = default(double);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return ((double)(@__real.ToDouble(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
+            @__return = ((double)(@__real.ToDouble(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(double);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ToDecimal13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Lsystem/Decimal;
             // (LSystem/IFormatProvider;)LSystem/Decimal;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, @__real.ToDecimal(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<decimal>(@__env, @__real.ToDecimal(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ToDateTime14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Lsystem/DateTime;
             // (LSystem/IFormatProvider;)LSystem/DateTime;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.DateTime>(@__env, @__real.ToDateTime(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.DateTime>(@__env, @__real.ToDateTime(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ToString15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/IFormatProvider;)Ljava/lang/String;
             // (LSystem/IFormatProvider;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real.ToString(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle ToType16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle conversionType, global::net.sf.jni4net.utils.JniLocalHandle provider) {
             // (Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;
             // (LSystem/Type;LSystem/IFormatProvider;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IConvertible @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IConvertible>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.ToType(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IFormatProvider>(@__env, provider)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

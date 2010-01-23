@@ -155,8 +155,8 @@ namespace net.sf.jni4net.utils
                         {
                             if (env.GetStaticMethodIDNoThrow(jvmInterface, n, s) == null)
                             {
-                                throw new JNIException("Can't find native method" + registration.name + "()" +
-                                                       registration.signature + " in class " + jvmInterface);
+                                throw new JNIException("Can't find native method" + n + "()" +
+                                                       s + " in class " + jvmInterface);
                             }
                         }
                     }

@@ -75,7 +75,7 @@ namespace net.sf.jni4net.proxygen.generator
 
             GenerateMethodParamsJ2C(tgtMethod, method);
             GenerateGetEnvJ2C(tgtMethod);
-            GenerateMethodCallPrologJ2C(tgtMethod);
+            GenerateMethodCallPrologJ2C(tgtMethod, method);
 
             GenerateCallJ2C(tgtMethod, method);
 
@@ -166,14 +166,14 @@ namespace net.sf.jni4net.proxygen.generator
                         {
                             call = new CodeCastExpression(method.ReturnType.CLRReference, call);
                         }
-                        callst = new CodeMethodReturnStatement(call);
+                        callst = new CodeAssignStatement(new CodeVariableReferenceExpression("__return"),call);
                         tgtMethod.ReturnType = method.ReturnType.CLRReference;
                     }
                     else
                     {
                         CodeMethodInvokeExpression conversionExpression =
                             CreateConversionExpressionC2J(method.ReturnType, call);
-                        callst = new CodeMethodReturnStatement(conversionExpression);
+                        callst = new CodeAssignStatement(new CodeVariableReferenceExpression("__return"), conversionExpression);
                         tgtMethod.ReturnType = TypeReference(typeof(JniHandle));
                     }
                 }
@@ -199,16 +199,74 @@ namespace net.sf.jni4net.proxygen.generator
             initMethod.Statements.Add(registation);
         }
 
-        private void GenerateMethodCallPrologJ2C(CodeMemberMethod tgtMethod)
+        private void GenerateMethodCallPrologJ2C(CodeMemberMethod tgtMethod, GMethod method)
         {
+            if (!method.IsConstructor && !method.IsVoid)
+            {
+                if (method.ReturnType.IsPrimitive)
+                {
+                    tgtMethod.Statements.Add(new CodeVariableDeclarationStatement(method.ReturnType.CLRReference, "__return", new CodeDefaultValueExpression(method.ReturnType.CLRReference)));
+                }
+                else
+                {
+                    CodeTypeReference jnihandle = TypeReference(typeof(JniHandle));
+                    tgtMethod.Statements.Add(new CodeVariableDeclarationStatement(jnihandle, "__return", new CodeDefaultValueExpression(jnihandle)));
+                }
+            }
             tgtMethod.Statements.Add(
                 new CodeSnippetStatement(
                     //using (new global::net.sf.jni4net.jni.LocalFrame(env)) { 
                     "            try {"));
+            for (int p = 0; p < method.Parameters.Count; p++)
+            {
+                GType parameter = method.Parameters[p];
+                string name = method.ParameterNames[p];
+                if (parameter.IsOut)
+                {
+                    tgtMethod.Statements.Add(new CodeVariableDeclarationStatement(parameter.CLRReference, "__out_" + name));
+                }
+                if (parameter.IsRef)
+                {
+                    var parExpression = new CodeVariableReferenceExpression(name);
+                    CodeMethodInvokeExpression conversionExpression = new CodeMethodInvokeExpression(
+                        new CodeMethodReferenceExpression(
+                            new CodeTypeReferenceExpression(typeof(Ref)), "GetValue", 
+                            new[] { parameter.CLRReference }), envVariable, parExpression);
+                    CodeVariableDeclarationStatement varExpression = new CodeVariableDeclarationStatement(parameter.CLRReference, "__ref_" + name, conversionExpression);
+                    tgtMethod.Statements.Add(varExpression);
+                }
+            }
         }
 
         private void GenerateMethodCallEpilogJ2C(CodeMemberMethod tgtMethod, GMethod method)
         {
+            for (int p = 0; p < method.Parameters.Count; p++)
+            {
+                GType parameter = method.Parameters[p];
+                string name = method.ParameterNames[p];
+                if (parameter.IsOut)
+                {
+                    var parExpression = new CodeVariableReferenceExpression(name);
+                    var outExpression = new CodeVariableReferenceExpression("__out_" + name);
+                    CodeMethodInvokeExpression invokeExpression = new CodeMethodInvokeExpression(
+                        new CodeMethodReferenceExpression(
+                        new CodeTypeReferenceExpression(typeof(Out)), "SetValue",
+                        new[] { parameter.CLRReference }),
+                        envVariable, parExpression, outExpression);
+                    tgtMethod.Statements.Add(invokeExpression);
+                }
+                else if (parameter.IsRef)
+                {
+                    var parExpression = new CodeVariableReferenceExpression(name);
+                    var outExpression = new CodeVariableReferenceExpression("__ref_" + name);
+                    CodeMethodInvokeExpression invokeExpression = new CodeMethodInvokeExpression(
+                        new CodeMethodReferenceExpression(
+                        new CodeTypeReferenceExpression(typeof(Ref)), "SetValue",
+                        new[] { parameter.CLRReference }),
+                        envVariable, parExpression, outExpression);
+                    tgtMethod.Statements.Add(invokeExpression);
+                }
+            }
             tgtMethod.Statements.Add(
                 new CodeSnippetStatement(
                     "            }catch (global::System.Exception __ex){@" + envVariableName + ".ThrowExisting(__ex);}"
@@ -217,8 +275,7 @@ namespace net.sf.jni4net.proxygen.generator
 
             if (!method.IsConstructor && !method.IsVoid)
             {
-                tgtMethod.Statements.Add(
-                    new CodeMethodReturnStatement(new CodeDefaultValueExpression(tgtMethod.ReturnType)));
+                tgtMethod.Statements.Add(new CodeMethodReturnStatement(new CodeVariableReferenceExpression("__return")));
             }
         }
 
@@ -237,7 +294,17 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 GType paramType = method.Parameters[p];
                 var invokeExpression = new CodeVariableReferenceExpression(method.ParameterNames[p]);
-                if (paramType.IsPrimitive)
+                if (paramType.IsOut)
+                {
+                    var outExpression = new CodeSnippetExpression("out __out_" + method.ParameterNames[p]);
+                    callParams.Add(outExpression);
+                }
+                else if (paramType.IsRef)
+                {
+                    var outExpression = new CodeSnippetExpression("ref __ref_" + method.ParameterNames[p]);
+                    callParams.Add(outExpression);
+                }
+                else if (paramType.IsPrimitive)
                 {
                     callParams.Add(invokeExpression);
                 }
@@ -274,9 +341,15 @@ namespace net.sf.jni4net.proxygen.generator
             for (int p = 0; p < method.Parameters.Count; p++)
             {
                 GType paramType = method.Parameters[p];
-                CodeTypeReference parameter = paramType.IsPrimitive
-                                                  ? paramType.CLRReference
-                                                  : TypeReference(typeof(JniLocalHandle));
+                CodeTypeReference parameter;
+                if (!paramType.IsPrimitive || paramType.IsOut || paramType.IsRef)
+                {
+                    parameter = TypeReference(typeof(JniLocalHandle));
+                }
+                else
+                {
+                    parameter = paramType.CLRReference;
+                }
 
                 string name = method.ParameterNames[p];
                 tgtMethod.Parameters.Add(new CodeParameterDeclarationExpression(parameter, name));

@@ -123,44 +123,48 @@ namespace java.lang.reflect {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            int @__return = default(int);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return ((int)(@__real.getModifiers()));
+            @__return = ((int)(@__real.getModifiers()));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle getName1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()Ljava/lang/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getName());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getName());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle getDeclaringClass2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/Class;
             // ()Ljava/lang/Class;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getDeclaringClass());
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongCp2J(@__real.getDeclaringClass());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static bool isSynthetic3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::java.lang.reflect.Member @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Member>(@__env, @__obj);
-            return ((bool)(@__real.isSynthetic()));
+            @__return = ((bool)(@__real.isSynthetic()));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

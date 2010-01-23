@@ -18,6 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #endregion
 
+using System.Reflection;
+using java.lang;
+
 namespace net.sf.jni4net.tested
 {
     public class StaticMethods
@@ -25,6 +28,40 @@ namespace net.sf.jni4net.tested
         public static int add(int a, int b)
         {
             return a + b;
+        }
+
+        public static void TestOutParamS(out String text)
+        {
+            text = "Ahoj";
+        }
+
+        public static void TestRefParamS(ref String text)
+        {
+            text = text + "Ahoj";
+        }
+
+        public static void TestRefParamSa(ref String[] text)
+        {
+        }
+
+        public static void TestRefParamPa(ref char[] text)
+        {
+        }
+
+        public static void TestRefParamBa(out byte[] text, int a, char f)
+        {
+            text = null;
+        }
+
+        public static void TestOutParam(out int num)
+        {
+            num = 1;
+        }
+
+        public static int TestRefParam(ref int num)
+        {
+            num = num - 1;
+            return -1;
         }
     }
 }

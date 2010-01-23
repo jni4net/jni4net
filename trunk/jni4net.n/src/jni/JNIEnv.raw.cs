@@ -141,6 +141,13 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
+        internal JniLocalHandle GetObjectFieldPtr(JniHandle obj, FieldId fieldID)
+        {
+            JniLocalHandle res = getObjectField(envPtr, obj, fieldID.native);
+            ExceptionTest();
+            return res;
+        }
+
         public JniLocalHandle GetStaticObjectFieldPtr(Class clazz, FieldId fieldID)
         {
             JniLocalHandle res = getStaticObjectField(envPtr, clazz.jvmHandle, fieldID.native);

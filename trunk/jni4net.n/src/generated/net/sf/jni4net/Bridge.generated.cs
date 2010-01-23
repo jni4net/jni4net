@@ -53,30 +53,33 @@ namespace net.sf.jni4net {
             // ()Lnet/sf/jni4net/BridgeSetup;
             // ()Lnet/sf/jni4net/BridgeSetup;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.BridgeSetup>(@__env, global::net.sf.jni4net.Bridge.Setup);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.BridgeSetup>(@__env, global::net.sf.jni4net.Bridge.Setup);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle KnownAssemblies1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/collections/IList;
             // ()[[LSystem/Collections/Generic/IList`1;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.Generic.IList<System.Reflection.Assembly>>(@__env, global::net.sf.jni4net.Bridge.KnownAssemblies);
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.Collections.Generic.IList<System.Reflection.Assembly>>(@__env, global::net.sf.jni4net.Bridge.KnownAssemblies);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle CreateJVM2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle setup) {
             // (Lnet/sf/jni4net/BridgeSetup;)Lsystem/Object;
             // (Lnet/sf/jni4net/BridgeSetup;)Lnet/sf/jni4net/jni/JNIEnv;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.jni.JNIEnv>(@__env, global::net.sf.jni4net.Bridge.CreateJVM(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, setup)));
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.jni.JNIEnv>(@__env, global::net.sf.jni4net.Bridge.CreateJVM(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.BridgeSetup>(@__env, setup)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static void LoadAndRegisterAssembly3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyPath) {

@@ -60,6 +60,8 @@ namespace net.sf.jni4net.proxygen.model
         internal static GType systemType;
         internal static GType voidType;
 
+        internal static Dictionary<Type, Class> jvmPrimitives = new Dictionary<Type, Class>();
+
         private static void BindKnownTypesPre()
         {
             foreach (Assembly assembly in knownAssemblies)
@@ -114,19 +116,31 @@ namespace net.sf.jni4net.proxygen.model
             GType gdouble = RegisterClass(Class.getPrimitiveClass("double"));
             GType gfloat = RegisterClass(Class.getPrimitiveClass("float"));
             GType gbool = RegisterClass(Class.getPrimitiveClass("boolean"));
-            RegisterType(typeof (ulong)).JVMSubst = glong;
-            RegisterType(typeof (uint)).JVMSubst = gint;
-            RegisterType(typeof (ushort)).JVMSubst = gshort;
-            RegisterType(typeof (sbyte)).JVMSubst = gbyte;
-            RegisterType(typeof (long)).JVMSubst = glong;
-            RegisterType(typeof (int)).JVMSubst = gint;
-            RegisterType(typeof (short)).JVMSubst = gshort;
-            RegisterType(typeof (byte)).JVMSubst = gbyte;
-            RegisterType(typeof (char)).JVMSubst = gchar;
-            RegisterType(typeof (double)).JVMSubst = gdouble;
-            RegisterType(typeof (float)).JVMSubst = gfloat;
-            RegisterType(typeof (bool)).JVMSubst = gbool;
+            RegisterType(typeof(ulong)).JVMSubst = glong;
+            RegisterType(typeof(uint)).JVMSubst = gint;
+            RegisterType(typeof(ushort)).JVMSubst = gshort;
+            RegisterType(typeof(sbyte)).JVMSubst = gbyte;
+            RegisterType(typeof(long)).JVMSubst = glong;
+            RegisterType(typeof(int)).JVMSubst = gint;
+            RegisterType(typeof(short)).JVMSubst = gshort;
+            RegisterType(typeof(byte)).JVMSubst = gbyte;
+            RegisterType(typeof(char)).JVMSubst = gchar;
+            RegisterType(typeof(double)).JVMSubst = gdouble;
+            RegisterType(typeof(float)).JVMSubst = gfloat;
+            RegisterType(typeof(bool)).JVMSubst = gbool;
             RegisterType(typeof(IntPtr)).JVMSubst = glong;
+            jvmPrimitives.Add(typeof(long), Class.forName("java.lang.Long"));
+            jvmPrimitives.Add(typeof(int), Class.forName("java.lang.Integer"));
+            jvmPrimitives.Add(typeof(short), Class.forName("java.lang.Short"));
+            jvmPrimitives.Add(typeof(byte), Class.forName("java.lang.Byte"));
+            jvmPrimitives.Add(typeof(char), Class.forName("java.lang.Character"));
+            jvmPrimitives.Add(typeof(double), Class.forName("java.lang.Double"));
+            jvmPrimitives.Add(typeof(float), Class.forName("java.lang.Float"));
+            jvmPrimitives.Add(typeof(bool), Class.forName("java.lang.Boolean"));
+            jvmPrimitives.Add(typeof(ulong), Class.forName("java.lang.Long"));
+            jvmPrimitives.Add(typeof(uint), Class.forName("java.lang.Integer"));
+            jvmPrimitives.Add(typeof(ushort), Class.forName("java.lang.Short"));
+            jvmPrimitives.Add(typeof(sbyte), Class.forName("java.lang.Byte"));
         }
 
         private static void BindKnownTypesPost()
@@ -400,8 +414,8 @@ namespace net.sf.jni4net.proxygen.model
 
         private static bool TestCLRType(Type type)
         {
-            return type.IsByRef 
-                || type.IsPointer
+            return type.IsPointer
+                //|| type.IsByRef 
                 || typeof (Delegate).IsAssignableFrom(type);
         }
 

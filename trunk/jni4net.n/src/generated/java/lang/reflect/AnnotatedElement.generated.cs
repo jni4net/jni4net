@@ -101,44 +101,48 @@ namespace java.lang.reflect {
             // (Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
             // (Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.annotation.Annotation>(@__env, @__real.getAnnotation(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::java.lang.annotation.Annotation>(@__env, @__real.getAnnotation(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle getAnnotations1(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/annotation/Annotation;
             // ()[Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__real.getAnnotations());
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__real.getAnnotations());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static global::net.sf.jni4net.utils.JniHandle getDeclaredAnnotations2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/annotation/Annotation;
             // ()[Ljava/lang/annotation/Annotation;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__real.getDeclaredAnnotations());
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayFullC2J<java.lang.annotation.Annotation[], global::java.lang.annotation.Annotation>(@__env, @__real.getDeclaredAnnotations());
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
+            return @__return;
         }
         
         private static bool isAnnotationPresent3(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle par0) {
             // (Ljava/lang/Class;)Z
             // (Ljava/lang/Class;)Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            bool @__return = default(bool);
             try {
             global::java.lang.reflect.AnnotatedElement @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.AnnotatedElement>(@__env, @__obj);
-            return ((bool)(@__real.isAnnotationPresent(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0))));
+            @__return = ((bool)(@__real.isAnnotationPresent(global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, par0))));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
