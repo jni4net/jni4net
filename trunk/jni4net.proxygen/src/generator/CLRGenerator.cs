@@ -103,6 +103,11 @@ namespace net.sf.jni4net.proxygen.generator
             //sb.Replace("public partial class", "public unsafe partial class");
             //sb.Replace("internal sealed partial class @__", "internal sealed unsafe partial class @__");
 
+            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject)
+            {
+                sb.Replace("internal sealed class ContructionHelper", "new internal sealed class ContructionHelper");
+            }
+
             return sb.ToString();
         }
 
@@ -160,7 +165,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
             tgtType.IsPartial = true;
 
-            GenerateTypeOfInit(tgtType);
+            GenerateTypeOfInit(tgtType, true);
             GenerateWrapperInitJ2C();
             if (type.Registration == null || !type.Registration.NoMethods)
             {
@@ -171,7 +176,7 @@ namespace net.sf.jni4net.proxygen.generator
                 GenerateWrapperMethodsJ2C(tgtType);
             }
             GenerateConstructionHelper(tgtType);
-            CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv", false, false);
+            CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv", false, false, true);
 
             tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, cdc));
             tgtType.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, cdc));
@@ -324,13 +329,21 @@ namespace net.sf.jni4net.proxygen.generator
             claprop.GetStatements.Add(
                 new CodeMethodReturnStatement(new CodeFieldReferenceExpression(ProxyTypeEx, "staticClass")));
             tgtType.Members.Add(claprop);
-            claprop.Attributes = MemberAttributes.Static | MemberAttributes.Public | MemberAttributes.New;
+            claprop.Attributes = MemberAttributes.Static | MemberAttributes.Public;
+            if (type.IsJVMProxy && type!=Repository.javaLangObject && type!=Repository.javaLangThrowable)
+            {
+                claprop.Attributes |= MemberAttributes.New;
+            }
         }
 
-        protected void GenerateTypeOfInit(CodeTypeDeclaration tgtType)
+        protected void GenerateTypeOfInit(CodeTypeDeclaration tgtType, bool proxy)
         {
             var staticfield = new CodeMemberField(Repository.javaLangClass.CLRReference, "staticClass");
             staticfield.Attributes = MemberAttributes.Static | MemberAttributes.FamilyAndAssembly;
+            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject)
+            {
+                staticfield.Attributes |= MemberAttributes.New;
+            }
             tgtType.Members.Add(staticfield);
 
             var init = new CodeMemberMethod();

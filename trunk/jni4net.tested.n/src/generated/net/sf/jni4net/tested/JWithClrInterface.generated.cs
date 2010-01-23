@@ -15,7 +15,7 @@ namespace net.sf.jni4net.tested {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class JWithClrInterface : global::java.lang.Object, global::System.IComparable, global::java.lang.Runnable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _run1;
         
@@ -23,13 +23,13 @@ namespace net.sf.jni4net.tested {
         
         internal static global::net.sf.jni4net.jni.MethodId _CompareTo3;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor4;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorJWithClrInterface4;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public JWithClrInterface(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctor4, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, global::net.sf.jni4net.tested.JWithClrInterface.@__ctorJWithClrInterface4, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         protected JWithClrInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -47,7 +47,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.JWithClrInterface._run1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "run", "()V");
             global::net.sf.jni4net.tested.JWithClrInterface._getValue2 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "getValue", "()I");
             global::net.sf.jni4net.tested.JWithClrInterface._CompareTo3 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "CompareTo", "(Lsystem/Object;)I");
-            global::net.sf.jni4net.tested.JWithClrInterface.@__ctor4 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "<init>", "(I)V");
+            global::net.sf.jni4net.tested.JWithClrInterface.@__ctorJWithClrInterface4 = @__env.GetMethodID(global::net.sf.jni4net.tested.JWithClrInterface.staticClass, "<init>", "(I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -68,7 +68,7 @@ namespace net.sf.jni4net.tested {
             return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.JWithClrInterface._CompareTo3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, par0))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.tested.JWithClrInterface(@__env);

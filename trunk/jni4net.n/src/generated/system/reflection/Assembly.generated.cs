@@ -14,7 +14,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     public partial class Assembly_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.Reflection.@__Assembly.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System.Reflection {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.Assembly))]
     internal sealed partial class @__Assembly : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__Assembly(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Assembly(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -46,70 +46,66 @@ namespace System.Reflection {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "IsDefined", "IsDefined3", "(Lsystem/Type;Z)Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetObjectData", "GetObjectData4", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
                         "reamingContext;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ToString", "ToString5", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Equals", "Equals6", "(Lsystem/Object;)Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetHashCode", "GetHashCode7", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType8", "()Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getCodeBase", "CodeBase9", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEscapedCodeBase", "EscapedCodeBase10", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetName", "GetName11", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetName", "GetName12", "(Z)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getFullName", "FullName13", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEntryPoint", "EntryPoint14", "()Lsystem/reflection/MethodInfo;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType15", "(Ljava/lang/String;)Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType16", "(Ljava/lang/String;Z)Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetExportedTypes", "GetExportedTypes17", "()[Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetTypes", "GetTypes18", "()[Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceStream", "GetManifestResourceStream19", "(Lsystem/Type;Ljava/lang/String;)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceStream", "GetManifestResourceStream20", "(Ljava/lang/String;)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFile", "GetFile21", "(Ljava/lang/String;)Lsystem/io/FileStream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFiles", "GetFiles22", "()[Lsystem/io/FileStream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFiles", "GetFiles23", "(Z)[Lsystem/io/FileStream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceNames", "GetManifestResourceNames24", "()[Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceInfo", "GetManifestResourceInfo25", "(Ljava/lang/String;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getLocation", "Location26", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType27", "(Ljava/lang/String;ZZ)Lsystem/Type;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSatelliteAssembly", "GetSatelliteAssembly28", "(Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSatelliteAssembly", "GetSatelliteAssembly29", "(Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadModule", "LoadModule30", "(Ljava/lang/String;[B)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadModule", "LoadModule31", "(Ljava/lang/String;[B[B)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance32", "(Ljava/lang/String;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance33", "(Ljava/lang/String;Z)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance34", "(Ljava/lang/String;ZLsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Objec" +
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getCodeBase", "CodeBase5", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEscapedCodeBase", "EscapedCodeBase6", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetName", "GetName7", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetName", "GetName8", "(Z)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getFullName", "FullName9", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getEntryPoint", "EntryPoint10", "()Lsystem/reflection/MethodInfo;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType11", "(Ljava/lang/String;)Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType12", "(Ljava/lang/String;Z)Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetExportedTypes", "GetExportedTypes13", "()[Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetTypes", "GetTypes14", "()[Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceStream", "GetManifestResourceStream15", "(Lsystem/Type;Ljava/lang/String;)Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceStream", "GetManifestResourceStream16", "(Ljava/lang/String;)Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFile", "GetFile17", "(Ljava/lang/String;)Lsystem/io/FileStream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFiles", "GetFiles18", "()[Lsystem/io/FileStream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetFiles", "GetFiles19", "(Z)[Lsystem/io/FileStream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceNames", "GetManifestResourceNames20", "()[Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetManifestResourceInfo", "GetManifestResourceInfo21", "(Ljava/lang/String;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getLocation", "Location22", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetType", "GetType23", "(Ljava/lang/String;ZZ)Lsystem/Type;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSatelliteAssembly", "GetSatelliteAssembly24", "(Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetSatelliteAssembly", "GetSatelliteAssembly25", "(Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadModule", "LoadModule26", "(Ljava/lang/String;[B)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadModule", "LoadModule27", "(Ljava/lang/String;[B[B)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance28", "(Ljava/lang/String;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance29", "(Ljava/lang/String;Z)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateInstance", "CreateInstance30", "(Ljava/lang/String;ZLsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Objec" +
                         "t;Lsystem/Object;[Lsystem/Object;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetLoadedModules", "GetLoadedModules35", "()[Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetLoadedModules", "GetLoadedModules36", "(Z)[Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModules", "GetModules37", "()[Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModules", "GetModules38", "(Z)[Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModule", "GetModule39", "(Ljava/lang/String;)Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetReferencedAssemblies", "GetReferencedAssemblies40", "()[Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getGlobalAssemblyCache", "GlobalAssemblyCache41", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateQualifiedName", "CreateQualifiedName42", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAssembly", "GetAssembly43", "(Lsystem/Type;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getManifestModule", "ManifestModule44", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom45", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoadFrom", "ReflectionOnlyLoadFrom46", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom47", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom48", "(Ljava/lang/String;Lsystem/Object;[BLsystem/Enum;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load49", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoad", "ReflectionOnlyLoad50", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load51", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load52", "(Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load53", "(Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadWithPartialName", "LoadWithPartialName54", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadWithPartialName", "LoadWithPartialName55", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getReflectionOnly", "ReflectionOnly56", "()Z"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load57", "([B)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoad", "ReflectionOnlyLoad58", "([B)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load59", "([B[B)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load60", "([B[BLsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFile", "LoadFile61", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFile", "LoadFile62", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetExecutingAssembly", "GetExecutingAssembly63", "()Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetCallingAssembly", "GetCallingAssembly64", "()Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetEntryAssembly", "GetEntryAssembly65", "()Lsystem/reflection/Assembly;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getImageRuntimeVersion", "ImageRuntimeVersion66", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getHostContext", "HostContext67", "()J"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetLoadedModules", "GetLoadedModules31", "()[Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetLoadedModules", "GetLoadedModules32", "(Z)[Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModules", "GetModules33", "()[Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModules", "GetModules34", "(Z)[Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetModule", "GetModule35", "(Ljava/lang/String;)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetReferencedAssemblies", "GetReferencedAssemblies36", "()[Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getGlobalAssemblyCache", "GlobalAssemblyCache37", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateQualifiedName", "CreateQualifiedName38", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetAssembly", "GetAssembly39", "(Lsystem/Type;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getManifestModule", "ManifestModule40", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom41", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoadFrom", "ReflectionOnlyLoadFrom42", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom43", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFrom", "LoadFrom44", "(Ljava/lang/String;Lsystem/Object;[BLsystem/Enum;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load45", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoad", "ReflectionOnlyLoad46", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load47", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load48", "(Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load49", "(Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadWithPartialName", "LoadWithPartialName50", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadWithPartialName", "LoadWithPartialName51", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getReflectionOnly", "ReflectionOnly52", "()Z"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load53", "([B)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReflectionOnlyLoad", "ReflectionOnlyLoad54", "([B)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load55", "([B[B)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Load", "Load56", "([B[BLsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFile", "LoadFile57", "(Ljava/lang/String;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadFile", "LoadFile58", "(Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetExecutingAssembly", "GetExecutingAssembly59", "()Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetCallingAssembly", "GetCallingAssembly60", "()Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "GetEntryAssembly", "GetEntryAssembly61", "()Lsystem/reflection/Assembly;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getImageRuntimeVersion", "ImageRuntimeVersion62", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getHostContext", "HostContext63", "()J"));
             return methods;
         }
         
@@ -167,51 +163,7 @@ namespace System.Reflection {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ToString5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
-            // ()Ljava/lang/String;
-            // ()LSystem/String;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, ((global::System.Runtime.InteropServices._Assembly)(@__real)).ToString());
-            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
-        }
-        
-        private static bool Equals6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle other) {
-            // (Lsystem/Object;)Z
-            // (LSystem/Object;)Z
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            return ((bool)(((global::System.Runtime.InteropServices._Assembly)(@__real)).Equals(global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, other))));
-            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(bool);
-        }
-        
-        private static int GetHashCode7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
-            // ()I
-            // ()I
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            return ((int)(((global::System.Runtime.InteropServices._Assembly)(@__real)).GetHashCode()));
-            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(int);
-        }
-        
-        private static global::net.sf.jni4net.utils.JniHandle GetType8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
-            // ()Lsystem/Type;
-            // ()LSystem/Type;
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
-            try {
-            global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            return global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::System.Type>(@__env, ((global::System.Runtime.InteropServices._Assembly)(@__real)).GetType());
-            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
-            return default(global::net.sf.jni4net.utils.JniHandle);
-        }
-        
-        private static global::net.sf.jni4net.utils.JniHandle CodeBase9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle CodeBase5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -222,7 +174,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle EscapedCodeBase10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle EscapedCodeBase6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -233,7 +185,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetName11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetName7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Reflection/AssemblyName;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -244,7 +196,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetName12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool copiedName) {
+        private static global::net.sf.jni4net.utils.JniHandle GetName8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool copiedName) {
             // (Z)Lsystem/Object;
             // (Z)LSystem/Reflection/AssemblyName;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -255,7 +207,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle FullName13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle FullName9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -266,7 +218,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle EntryPoint14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle EntryPoint10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/reflection/MethodInfo;
             // ()LSystem/Reflection/MethodInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -277,7 +229,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetType15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetType11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/Type;
             // (LSystem/String;)LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -288,7 +240,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetType16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, bool throwOnError) {
+        private static global::net.sf.jni4net.utils.JniHandle GetType12(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, bool throwOnError) {
             // (Ljava/lang/String;Z)Lsystem/Type;
             // (LSystem/String;Z)LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -299,7 +251,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetExportedTypes17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetExportedTypes13(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -310,7 +262,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetTypes18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetTypes14(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/Type;
             // ()[LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -321,7 +273,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceStream19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle type, global::net.sf.jni4net.utils.JniLocalHandle name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceStream15(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle type, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Lsystem/Type;Ljava/lang/String;)Lsystem/io/Stream;
             // (LSystem/Type;LSystem/String;)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -332,7 +284,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceStream20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceStream16(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/io/Stream;
             // (LSystem/String;)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -343,7 +295,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetFile21(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetFile17(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/io/FileStream;
             // (LSystem/String;)LSystem/IO/FileStream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -354,7 +306,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetFiles22(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetFiles18(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/io/FileStream;
             // ()[LSystem/IO/FileStream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -365,7 +317,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetFiles23(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
+        private static global::net.sf.jni4net.utils.JniHandle GetFiles19(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
             // (Z)[Lsystem/io/FileStream;
             // (Z)[LSystem/IO/FileStream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -376,7 +328,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceNames24(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceNames20(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Ljava/lang/String;
             // ()[LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -387,7 +339,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceInfo25(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle resourceName) {
+        private static global::net.sf.jni4net.utils.JniHandle GetManifestResourceInfo21(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle resourceName) {
             // (Ljava/lang/String;)Lsystem/Object;
             // (LSystem/String;)LSystem/Reflection/ManifestResourceInfo;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -398,7 +350,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Location26(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle Location22(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -409,7 +361,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetType27(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, bool throwOnError, bool ignoreCase) {
+        private static global::net.sf.jni4net.utils.JniHandle GetType23(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name, bool throwOnError, bool ignoreCase) {
             // (Ljava/lang/String;ZZ)Lsystem/Type;
             // (LSystem/String;ZZ)LSystem/Type;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -420,7 +372,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetSatelliteAssembly28(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle culture) {
+        private static global::net.sf.jni4net.utils.JniHandle GetSatelliteAssembly24(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle culture) {
             // (Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/Globalization/CultureInfo;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -431,7 +383,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetSatelliteAssembly29(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle culture, global::net.sf.jni4net.utils.JniLocalHandle version) {
+        private static global::net.sf.jni4net.utils.JniHandle GetSatelliteAssembly25(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle culture, global::net.sf.jni4net.utils.JniLocalHandle version) {
             // (Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/Globalization/CultureInfo;LSystem/Version;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -442,7 +394,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadModule30(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle moduleName, global::net.sf.jni4net.utils.JniLocalHandle rawModule) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadModule26(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle moduleName, global::net.sf.jni4net.utils.JniLocalHandle rawModule) {
             // (Ljava/lang/String;[B)Lsystem/Object;
             // (LSystem/String;[B)LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -453,7 +405,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadModule31(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle moduleName, global::net.sf.jni4net.utils.JniLocalHandle rawModule, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadModule27(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle moduleName, global::net.sf.jni4net.utils.JniLocalHandle rawModule, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore) {
             // (Ljava/lang/String;[B[B)Lsystem/Object;
             // (LSystem/String;[B[B)LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -464,7 +416,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle CreateInstance32(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName) {
+        private static global::net.sf.jni4net.utils.JniHandle CreateInstance28(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName) {
             // (Ljava/lang/String;)Lsystem/Object;
             // (LSystem/String;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -475,7 +427,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle CreateInstance33(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName, bool ignoreCase) {
+        private static global::net.sf.jni4net.utils.JniHandle CreateInstance29(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName, bool ignoreCase) {
             // (Ljava/lang/String;Z)Lsystem/Object;
             // (LSystem/String;Z)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -486,7 +438,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle CreateInstance34(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName, bool ignoreCase, global::net.sf.jni4net.utils.JniLocalHandle bindingAttr, global::net.sf.jni4net.utils.JniLocalHandle binder, global::net.sf.jni4net.utils.JniLocalHandle args, global::net.sf.jni4net.utils.JniLocalHandle culture, global::net.sf.jni4net.utils.JniLocalHandle activationAttributes) {
+        private static global::net.sf.jni4net.utils.JniHandle CreateInstance30(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle typeName, bool ignoreCase, global::net.sf.jni4net.utils.JniLocalHandle bindingAttr, global::net.sf.jni4net.utils.JniLocalHandle binder, global::net.sf.jni4net.utils.JniLocalHandle args, global::net.sf.jni4net.utils.JniLocalHandle culture, global::net.sf.jni4net.utils.JniLocalHandle activationAttributes) {
             // (Ljava/lang/String;ZLsystem/reflection/BindingFlags;Lsystem/Object;[Lsystem/Object;Lsystem/Object;[Lsystem/Object;)Lsystem/Object;
             // (LSystem/String;ZLSystem/Reflection/BindingFlags;LSystem/Reflection/Binder;[LSystem/Object;LSystem/Globalization/CultureInfo;[LSystem/Object;)LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -497,7 +449,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetLoadedModules35(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetLoadedModules31(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/Object;
             // ()[LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -508,7 +460,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetLoadedModules36(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
+        private static global::net.sf.jni4net.utils.JniHandle GetLoadedModules32(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
             // (Z)[Lsystem/Object;
             // (Z)[LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -519,7 +471,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetModules37(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetModules33(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/Object;
             // ()[LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -530,7 +482,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetModules38(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
+        private static global::net.sf.jni4net.utils.JniHandle GetModules34(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, bool getResourceModules) {
             // (Z)[Lsystem/Object;
             // (Z)[LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -541,7 +493,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetModule39(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
+        private static global::net.sf.jni4net.utils.JniHandle GetModule35(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle name) {
             // (Ljava/lang/String;)Lsystem/Object;
             // (LSystem/String;)LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -552,7 +504,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetReferencedAssemblies40(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle GetReferencedAssemblies36(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()[Lsystem/Object;
             // ()[LSystem/Reflection/AssemblyName;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -563,7 +515,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool GlobalAssemblyCache41(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static bool GlobalAssemblyCache37(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -574,7 +526,7 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle CreateQualifiedName42(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyName, global::net.sf.jni4net.utils.JniLocalHandle typeName) {
+        private static global::net.sf.jni4net.utils.JniHandle CreateQualifiedName38(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyName, global::net.sf.jni4net.utils.JniLocalHandle typeName) {
             // (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
             // (LSystem/String;LSystem/String;)LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -584,7 +536,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetAssembly43(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle type) {
+        private static global::net.sf.jni4net.utils.JniHandle GetAssembly39(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle type) {
             // (Lsystem/Type;)Lsystem/reflection/Assembly;
             // (LSystem/Type;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -594,7 +546,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ManifestModule44(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle ManifestModule40(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Reflection/Module;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -605,7 +557,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadFrom45(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadFrom41(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -615,7 +567,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoadFrom46(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile) {
+        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoadFrom42(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -625,7 +577,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadFrom47(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadFrom43(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
             // (Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/String;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -635,7 +587,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadFrom48(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence, global::net.sf.jni4net.utils.JniLocalHandle hashValue, global::net.sf.jni4net.utils.JniLocalHandle hashAlgorithm) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadFrom44(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence, global::net.sf.jni4net.utils.JniLocalHandle hashValue, global::net.sf.jni4net.utils.JniLocalHandle hashAlgorithm) {
             // (Ljava/lang/String;Lsystem/Object;[BLsystem/Enum;)Lsystem/reflection/Assembly;
             // (LSystem/String;LSystem/Security/Policy/Evidence;[BLSystem/Configuration/Assemblies/AssemblyHashAlgorithm;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -645,7 +597,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load49(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString) {
+        private static global::net.sf.jni4net.utils.JniHandle Load45(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -655,7 +607,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoad50(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString) {
+        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoad46(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -665,7 +617,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load51(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString, global::net.sf.jni4net.utils.JniLocalHandle assemblySecurity) {
+        private static global::net.sf.jni4net.utils.JniHandle Load47(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyString, global::net.sf.jni4net.utils.JniLocalHandle assemblySecurity) {
             // (Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/String;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -675,7 +627,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load52(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyRef) {
+        private static global::net.sf.jni4net.utils.JniHandle Load48(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyRef) {
             // (Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/Reflection/AssemblyName;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -685,7 +637,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyRef, global::net.sf.jni4net.utils.JniLocalHandle assemblySecurity) {
+        private static global::net.sf.jni4net.utils.JniHandle Load49(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyRef, global::net.sf.jni4net.utils.JniLocalHandle assemblySecurity) {
             // (Lsystem/Object;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/Reflection/AssemblyName;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -695,7 +647,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadWithPartialName54(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle partialName) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadWithPartialName50(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle partialName) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -705,7 +657,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadWithPartialName55(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle partialName, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadWithPartialName51(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle partialName, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
             // (Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/String;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -715,7 +667,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static bool ReflectionOnly56(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static bool ReflectionOnly52(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Z
             // ()Z
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -726,7 +678,7 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load57(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly) {
+        private static global::net.sf.jni4net.utils.JniHandle Load53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly) {
             // ([B)Lsystem/reflection/Assembly;
             // ([B)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -736,7 +688,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoad58(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly) {
+        private static global::net.sf.jni4net.utils.JniHandle ReflectionOnlyLoad54(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly) {
             // ([B)Lsystem/reflection/Assembly;
             // ([B)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -746,7 +698,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load59(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore) {
+        private static global::net.sf.jni4net.utils.JniHandle Load55(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore) {
             // ([B[B)Lsystem/reflection/Assembly;
             // ([B[B)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -756,7 +708,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle Load60(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
+        private static global::net.sf.jni4net.utils.JniHandle Load56(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle rawAssembly, global::net.sf.jni4net.utils.JniLocalHandle rawSymbolStore, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
             // ([B[BLsystem/Object;)Lsystem/reflection/Assembly;
             // ([B[BLSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -766,7 +718,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadFile61(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle path) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadFile57(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle path) {
             // (Ljava/lang/String;)Lsystem/reflection/Assembly;
             // (LSystem/String;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -776,7 +728,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle LoadFile62(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
+        private static global::net.sf.jni4net.utils.JniHandle LoadFile58(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle path, global::net.sf.jni4net.utils.JniLocalHandle securityEvidence) {
             // (Ljava/lang/String;Lsystem/Object;)Lsystem/reflection/Assembly;
             // (LSystem/String;LSystem/Security/Policy/Evidence;)LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -786,7 +738,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetExecutingAssembly63(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle GetExecutingAssembly59(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/reflection/Assembly;
             // ()LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -796,7 +748,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetCallingAssembly64(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle GetCallingAssembly60(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/reflection/Assembly;
             // ()LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -806,7 +758,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle GetEntryAssembly65(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle GetEntryAssembly61(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/reflection/Assembly;
             // ()LSystem/Reflection/Assembly;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -816,7 +768,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ImageRuntimeVersion66(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle ImageRuntimeVersion62(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -827,7 +779,7 @@ namespace System.Reflection {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        private static long HostContext67(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static long HostContext63(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()J
             // ()J
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -838,7 +790,7 @@ namespace System.Reflection {
             return default(long);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.Reflection.@__Assembly(@__env);

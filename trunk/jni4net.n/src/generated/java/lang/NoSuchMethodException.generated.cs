@@ -16,24 +16,24 @@ namespace java.lang {
     [global::System.SerializableAttribute()]
     public partial class NoSuchMethodException : global::java.lang.Exception {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNoSuchMethodException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor1;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNoSuchMethodException1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public NoSuchMethodException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctorNoSuchMethodException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public NoSuchMethodException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctor1, this);
+            @__env.NewObject(global::java.lang.NoSuchMethodException.staticClass, global::java.lang.NoSuchMethodException.@__ctorNoSuchMethodException1, this);
         }
         
         protected NoSuchMethodException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -52,11 +52,11 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.NoSuchMethodException.staticClass = @__class;
-            global::java.lang.NoSuchMethodException.@__ctor0 = @__env.GetMethodID(global::java.lang.NoSuchMethodException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.NoSuchMethodException.@__ctor1 = @__env.GetMethodID(global::java.lang.NoSuchMethodException.staticClass, "<init>", "()V");
+            global::java.lang.NoSuchMethodException.@__ctorNoSuchMethodException0 = @__env.GetMethodID(global::java.lang.NoSuchMethodException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.NoSuchMethodException.@__ctorNoSuchMethodException1 = @__env.GetMethodID(global::java.lang.NoSuchMethodException.staticClass, "<init>", "()V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.NoSuchMethodException(@__env);

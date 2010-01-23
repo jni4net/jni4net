@@ -14,7 +14,7 @@ namespace net.sf.jni4net {
     #region Component Designer generated code 
     public partial class BridgeSetup_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::net.sf.jni4net.@__BridgeSetup.staticClass;
             }
@@ -27,9 +27,9 @@ namespace net.sf.jni4net {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.BridgeSetup))]
     internal sealed partial class @__BridgeSetup : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__BridgeSetup(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__BridgeSetup(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -305,7 +305,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.@__BridgeSetup(@__env);

@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.CodeDom;
+using System.Reflection;
 
 namespace net.sf.jni4net.proxygen.generator
 {
@@ -70,14 +71,21 @@ namespace net.sf.jni4net.proxygen.generator
             return new CodeTypeReferenceExpression(new CodeTypeReference(src, CodeTypeReferenceOptions.GlobalReference));
         }
 
-        protected void CreateEnvConstructor(CodeTypeDeclaration tgtType, string envType, bool pub, bool handle)
+        protected void CreateEnvConstructor(CodeTypeDeclaration tgtType, string envType, bool pub, bool handle, bool proxy)
         {
             if (type.IsRootType)
             {
                 return;
             }
             var cc = new CodeConstructor();
-            cc.Attributes = pub ? MemberAttributes.FamilyOrAssembly : MemberAttributes.Family;
+            if (proxy)
+            {
+                cc.Attributes = MemberAttributes.Private;
+            }
+            else
+            {
+                cc.Attributes = pub ? MemberAttributes.FamilyOrAssembly : MemberAttributes.Family;
+            }
             cc.Parameters.Add(
                 new CodeParameterDeclarationExpression(TypeReference(envType), envVariableName));
             if (handle)

@@ -14,7 +14,7 @@ namespace net.sf.jni4net.nio {
     #region Component Designer generated code 
     public partial class DirectBufferCleaner_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::net.sf.jni4net.nio.@__DirectBufferCleaner.staticClass;
             }
@@ -27,9 +27,9 @@ namespace net.sf.jni4net.nio {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.nio.DirectBufferCleaner))]
     internal sealed partial class @__DirectBufferCleaner : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        new internal static global::java.lang.Class staticClass;
         
-        protected @__DirectBufferCleaner(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__DirectBufferCleaner(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         

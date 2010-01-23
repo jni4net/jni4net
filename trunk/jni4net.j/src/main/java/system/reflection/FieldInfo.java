@@ -23,42 +23,6 @@ public class FieldInfo extends system.reflection.MemberInfo {
             super(((net.sf.jni4net.inj.INJEnv)(null)), 0);
     }
     
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/UInt32;LSystem/UInt32;LSystem/IntPtr;)V")
-    public native void GetTypeInfo(int iTInfo, int lcid, long ppTInfo);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native java.lang.String ToString();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native boolean Equals(system.Object other);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int GetHashCode();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type GetType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Reflection/MemberTypes;")
-    public native system.Enum getMemberType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native java.lang.String getName();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type getDeclaringType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type getReflectedType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)[LSystem/Object;")
-    public native system.Object[] GetCustomAttributes(system.Type attributeType, boolean inherit);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(Z)[LSystem/Object;")
-    public native system.Object[] GetCustomAttributes(boolean inherit);
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Type;Z)Z")
-    public native boolean IsDefined(system.Type attributeType, boolean inherit);
-    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type getFieldType();
     

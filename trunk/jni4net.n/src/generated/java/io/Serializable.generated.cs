@@ -20,7 +20,7 @@ namespace java.io {
     #region Component Designer generated code 
     public partial class Serializable_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.io.@__Serializable.staticClass;
             }
@@ -33,9 +33,9 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Serializable))]
     internal sealed partial class @__Serializable : global::java.lang.Object, global::java.io.Serializable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__Serializable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Serializable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -49,7 +49,7 @@ namespace java.io {
             return methods;
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.@__Serializable(@__env);

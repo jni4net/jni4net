@@ -23,7 +23,7 @@ namespace java.lang.reflect {
     #region Component Designer generated code 
     public partial class GenericArrayType_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.lang.reflect.@__GenericArrayType.staticClass;
             }
@@ -36,11 +36,11 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericArrayType))]
     internal sealed partial class @__GenericArrayType : global::java.lang.Object, global::java.lang.reflect.GenericArrayType {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _getGenericComponentType0;
         
-        protected @__GenericArrayType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__GenericArrayType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -72,7 +72,7 @@ namespace java.lang.reflect {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.reflect.@__GenericArrayType(@__env);

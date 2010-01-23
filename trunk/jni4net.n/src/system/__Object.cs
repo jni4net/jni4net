@@ -26,7 +26,7 @@ namespace System
 {
     internal partial class __Object
     {
-        protected internal __Object(JNIEnv env)
+        private __Object(JNIEnv env)
             : base(env)
         {
         }

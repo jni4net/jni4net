@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Integer : global::java.lang.Number, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -77,22 +77,22 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _SIZE29;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor30;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorInteger30;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor31;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorInteger31;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Integer(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor30, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctorInteger30, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public Integer(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctor31, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Integer.staticClass, global::java.lang.Integer.@__ctorInteger31, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         protected Integer(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -169,8 +169,8 @@ namespace java.lang {
             global::java.lang.Integer._MAX_VALUE27 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "MAX_VALUE", "I");
             global::java.lang.Integer._TYPE28 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "TYPE", "Ljava/lang/Class;");
             global::java.lang.Integer._SIZE29 = @__env.GetStaticFieldID(global::java.lang.Integer.staticClass, "SIZE", "I");
-            global::java.lang.Integer.@__ctor30 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Integer.@__ctor31 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(I)V");
+            global::java.lang.Integer.@__ctorInteger30 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Integer.@__ctorInteger31 = @__env.GetMethodID(global::java.lang.Integer.staticClass, "<init>", "(I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -329,7 +329,7 @@ namespace java.lang {
             return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Integer.staticClass, global::java.lang.Integer._toOctalString25, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Integer(@__env);

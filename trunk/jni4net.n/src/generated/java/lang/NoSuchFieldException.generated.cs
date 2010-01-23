@@ -16,24 +16,24 @@ namespace java.lang {
     [global::System.SerializableAttribute()]
     public partial class NoSuchFieldException : global::java.lang.Exception {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNoSuchFieldException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor1;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNoSuchFieldException1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public NoSuchFieldException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NoSuchFieldException.staticClass, global::java.lang.NoSuchFieldException.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.NoSuchFieldException.staticClass, global::java.lang.NoSuchFieldException.@__ctorNoSuchFieldException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public NoSuchFieldException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NoSuchFieldException.staticClass, global::java.lang.NoSuchFieldException.@__ctor1, this);
+            @__env.NewObject(global::java.lang.NoSuchFieldException.staticClass, global::java.lang.NoSuchFieldException.@__ctorNoSuchFieldException1, this);
         }
         
         protected NoSuchFieldException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -52,11 +52,11 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.NoSuchFieldException.staticClass = @__class;
-            global::java.lang.NoSuchFieldException.@__ctor0 = @__env.GetMethodID(global::java.lang.NoSuchFieldException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.NoSuchFieldException.@__ctor1 = @__env.GetMethodID(global::java.lang.NoSuchFieldException.staticClass, "<init>", "()V");
+            global::java.lang.NoSuchFieldException.@__ctorNoSuchFieldException0 = @__env.GetMethodID(global::java.lang.NoSuchFieldException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.NoSuchFieldException.@__ctorNoSuchFieldException1 = @__env.GetMethodID(global::java.lang.NoSuchFieldException.staticClass, "<init>", "()V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.NoSuchFieldException(@__env);

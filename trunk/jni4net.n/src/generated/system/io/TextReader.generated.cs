@@ -14,7 +14,7 @@ namespace System.IO {
     #region Component Designer generated code 
     public partial class TextReader_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.IO.@__TextReader.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System.IO {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.TextReader))]
     internal sealed partial class @__TextReader : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__TextReader(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__TextReader(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -148,7 +148,7 @@ namespace System.IO {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.IO.@__TextReader(@__env);

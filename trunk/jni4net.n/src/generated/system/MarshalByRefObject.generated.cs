@@ -14,7 +14,7 @@ namespace System {
     #region Component Designer generated code 
     public partial class MarshalByRefObject_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.@__MarshalByRefObject.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.MarshalByRefObject))]
     internal sealed partial class @__MarshalByRefObject : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__MarshalByRefObject(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__MarshalByRefObject(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -79,7 +79,7 @@ namespace System {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__MarshalByRefObject(@__env);

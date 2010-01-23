@@ -15,7 +15,7 @@ namespace java.util.zip {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class ZipInputStream : global::java.io.InputStream {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _getNextEntry0;
         
@@ -101,13 +101,13 @@ namespace java.util.zip {
         
         internal static global::net.sf.jni4net.jni.FieldId _ENDCOM41;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor42;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorZipInputStream42;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/InputStream;)V")]
         public ZipInputStream(global::java.io.InputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.@__ctor42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.@__ctorZipInputStream42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected ZipInputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -484,7 +484,7 @@ namespace java.util.zip {
             global::java.util.zip.ZipInputStream._ENDSIZ39 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSIZ", "I");
             global::java.util.zip.ZipInputStream._ENDOFF40 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDOFF", "I");
             global::java.util.zip.ZipInputStream._ENDCOM41 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDCOM", "I");
-            global::java.util.zip.ZipInputStream.@__ctor42 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "<init>", "(Ljava/io/InputStream;)V");
+            global::java.util.zip.ZipInputStream.@__ctorZipInputStream42 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "<init>", "(Ljava/io/InputStream;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/zip/ZipEntry;")]
@@ -499,7 +499,7 @@ namespace java.util.zip {
             @__env.CallVoidMethod(this, global::java.util.zip.ZipInputStream._closeEntry1);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.zip.ZipInputStream(@__env);

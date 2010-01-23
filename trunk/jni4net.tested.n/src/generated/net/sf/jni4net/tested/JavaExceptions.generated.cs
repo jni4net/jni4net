@@ -15,17 +15,17 @@ namespace net.sf.jni4net.tested {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class JavaExceptions : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _throwBack0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor1;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorJavaExceptions1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaExceptions() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JavaExceptions.staticClass, global::net.sf.jni4net.tested.JavaExceptions.@__ctor1, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JavaExceptions.staticClass, global::net.sf.jni4net.tested.JavaExceptions.@__ctorJavaExceptions1, this);
         }
         
         protected JavaExceptions(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -41,7 +41,7 @@ namespace net.sf.jni4net.tested {
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.JavaExceptions.staticClass = @__class;
             global::net.sf.jni4net.tested.JavaExceptions._throwBack0 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "throwBack", "()V");
-            global::net.sf.jni4net.tested.JavaExceptions.@__ctor1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaExceptions.@__ctorJavaExceptions1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
@@ -50,7 +50,7 @@ namespace net.sf.jni4net.tested {
             @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaExceptions._throwBack0);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.tested.JavaExceptions(@__env);

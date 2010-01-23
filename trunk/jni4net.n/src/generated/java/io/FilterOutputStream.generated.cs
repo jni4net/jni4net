@@ -15,15 +15,15 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class FilterOutputStream : global::java.io.OutputStream {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFilterOutputStream0;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
         public FilterOutputStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.@__ctorFilterOutputStream0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected FilterOutputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -38,10 +38,10 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.FilterOutputStream.staticClass = @__class;
-            global::java.io.FilterOutputStream.@__ctor0 = @__env.GetMethodID(global::java.io.FilterOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
+            global::java.io.FilterOutputStream.@__ctorFilterOutputStream0 = @__env.GetMethodID(global::java.io.FilterOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.FilterOutputStream(@__env);

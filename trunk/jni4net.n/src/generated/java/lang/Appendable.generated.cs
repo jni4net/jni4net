@@ -29,7 +29,7 @@ namespace java.lang {
     #region Component Designer generated code 
     public partial class Appendable_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.lang.@__Appendable.staticClass;
             }
@@ -42,7 +42,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable))]
     internal sealed partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _append0;
         
@@ -50,7 +50,7 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _append2;
         
-        protected @__Appendable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Appendable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -118,7 +118,7 @@ namespace java.lang {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.@__Appendable(@__env);

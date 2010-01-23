@@ -15,50 +15,42 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class StringBuilder : global::java.lang.AbstractStringBuilder, global::java.io.Serializable, global::java.lang.CharSequence {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorStringBuilder0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _charAt1;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorStringBuilder1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _length2;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorStringBuilder2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _subSequence3;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor4;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor5;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor6;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor7;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorStringBuilder3;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public StringBuilder(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor4, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctorStringBuilder0, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public StringBuilder(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctorStringBuilder1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/CharSequence;)V")]
         public StringBuilder(global::java.lang.CharSequence par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor6, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0));
+            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctorStringBuilder2, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public StringBuilder() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctor7, this);
+            @__env.NewObject(global::java.lang.StringBuilder.staticClass, global::java.lang.StringBuilder.@__ctorStringBuilder3, this);
         }
         
         protected StringBuilder(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -73,41 +65,13 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.StringBuilder.staticClass = @__class;
-            global::java.lang.StringBuilder._toString0 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.StringBuilder._charAt1 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "charAt", "(I)C");
-            global::java.lang.StringBuilder._length2 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "length", "()I");
-            global::java.lang.StringBuilder._subSequence3 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "subSequence", "(II)Ljava/lang/CharSequence;");
-            global::java.lang.StringBuilder.@__ctor4 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(I)V");
-            global::java.lang.StringBuilder.@__ctor5 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.StringBuilder.@__ctor6 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/CharSequence;)V");
-            global::java.lang.StringBuilder.@__ctor7 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "()V");
+            global::java.lang.StringBuilder.@__ctorStringBuilder0 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(I)V");
+            global::java.lang.StringBuilder.@__ctorStringBuilder1 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.StringBuilder.@__ctorStringBuilder2 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "(Ljava/lang/CharSequence;)V");
+            global::java.lang.StringBuilder.@__ctorStringBuilder3 = @__env.GetMethodID(global::java.lang.StringBuilder.staticClass, "<init>", "()V");
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
-        public virtual global::java.lang.String toString() {
-            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StringBuilder._toString0));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)C")]
-        public virtual char charAt(int par0) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((char)(@__env.CallCharMethod(this, global::java.lang.StringBuilder._charAt1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
-        public virtual int length() {
-            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.StringBuilder._length2)));
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(II)Ljava/lang/CharSequence;")]
-        public virtual global::java.lang.CharSequence subSequence(int par0, int par1) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StringBuilder._subSequence3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
-        }
-        
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.StringBuilder(@__env);

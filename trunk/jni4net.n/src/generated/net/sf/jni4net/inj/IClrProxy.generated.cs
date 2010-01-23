@@ -20,7 +20,7 @@ namespace net.sf.jni4net.inj {
     #region Component Designer generated code 
     public unsafe partial class IClrProxy_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::net.sf.jni4net.inj.__IClrProxy.staticClass;
             }
@@ -33,7 +33,7 @@ namespace net.sf.jni4net.inj {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.inj.IClrProxy))]
     internal unsafe partial class __IClrProxy : global::java.lang.Object, global::net.sf.jni4net.inj.IClrProxy {
         
-        internal static global::java.lang.Class staticClass;
+        new internal static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _getClrHandle0;
         
@@ -91,7 +91,7 @@ namespace net.sf.jni4net.inj {
             }catch (global::System.Exception ex){__env.ThrowExisting(ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
                 return new global::net.sf.jni4net.inj.__IClrProxy(env);

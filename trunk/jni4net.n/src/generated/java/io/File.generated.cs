@@ -15,7 +15,7 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class File : global::java.lang.Object, global::java.io.Serializable, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -97,40 +97,40 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.FieldId _pathSeparator39;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor40;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFile40;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor41;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFile41;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor42;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFile42;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor43;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFile43;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;Ljava/lang/String;)V")]
         public File(global::java.io.File par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor40, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctorFile40, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/net/URI;)V")]
         public File(global::java.lang.Object par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor41, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctorFile41, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)V")]
         public File(global::java.lang.String par0, global::java.lang.String par1) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctorFile42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public File(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctor43, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.File.staticClass, global::java.io.File.@__ctorFile43, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected File(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -217,10 +217,10 @@ namespace java.io {
             global::java.io.File._separator37 = @__env.GetStaticFieldID(global::java.io.File.staticClass, "separator", "Ljava/lang/String;");
             global::java.io.File._pathSeparatorChar38 = @__env.GetStaticFieldID(global::java.io.File.staticClass, "pathSeparatorChar", "C");
             global::java.io.File._pathSeparator39 = @__env.GetStaticFieldID(global::java.io.File.staticClass, "pathSeparator", "Ljava/lang/String;");
-            global::java.io.File.@__ctor40 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/io/File;Ljava/lang/String;)V");
-            global::java.io.File.@__ctor41 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/net/URI;)V");
-            global::java.io.File.@__ctor42 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;)V");
-            global::java.io.File.@__ctor43 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.io.File.@__ctorFile40 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/io/File;Ljava/lang/String;)V");
+            global::java.io.File.@__ctorFile41 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/net/URI;)V");
+            global::java.io.File.@__ctorFile42 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;)V");
+            global::java.io.File.@__ctorFile43 = @__env.GetMethodID(global::java.io.File.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -439,7 +439,7 @@ namespace java.io {
             return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.net.URL>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.File._toURL35));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.File(@__env);

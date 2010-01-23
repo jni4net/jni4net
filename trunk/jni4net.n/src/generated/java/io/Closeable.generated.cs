@@ -23,7 +23,7 @@ namespace java.io {
     #region Component Designer generated code 
     public partial class Closeable_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.io.@__Closeable.staticClass;
             }
@@ -36,11 +36,11 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable))]
     internal sealed partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _close0;
         
-        protected @__Closeable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Closeable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -71,7 +71,7 @@ namespace java.io {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.@__Closeable(@__env);

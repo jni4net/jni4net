@@ -16,15 +16,15 @@ namespace java.nio {
     [global::System.SerializableAttribute()]
     public partial class ReadOnlyBufferException : global::java.lang.UnsupportedOperationException {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorReadOnlyBufferException0;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public ReadOnlyBufferException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.nio.ReadOnlyBufferException.staticClass, global::java.nio.ReadOnlyBufferException.@__ctor0, this);
+            @__env.NewObject(global::java.nio.ReadOnlyBufferException.staticClass, global::java.nio.ReadOnlyBufferException.@__ctorReadOnlyBufferException0, this);
         }
         
         protected ReadOnlyBufferException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -43,10 +43,10 @@ namespace java.nio {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.nio.ReadOnlyBufferException.staticClass = @__class;
-            global::java.nio.ReadOnlyBufferException.@__ctor0 = @__env.GetMethodID(global::java.nio.ReadOnlyBufferException.staticClass, "<init>", "()V");
+            global::java.nio.ReadOnlyBufferException.@__ctorReadOnlyBufferException0 = @__env.GetMethodID(global::java.nio.ReadOnlyBufferException.staticClass, "<init>", "()V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.nio.ReadOnlyBufferException(@__env);

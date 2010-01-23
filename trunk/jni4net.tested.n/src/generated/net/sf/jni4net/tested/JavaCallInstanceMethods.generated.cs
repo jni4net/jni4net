@@ -15,7 +15,7 @@ namespace net.sf.jni4net.tested {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class JavaCallInstanceMethods : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _objectMethod0;
         
@@ -49,13 +49,13 @@ namespace net.sf.jni4net.tested {
         
         internal static global::net.sf.jni4net.jni.MethodId _stringList15;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor16;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorJavaCallInstanceMethods16;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaCallInstanceMethods() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, global::net.sf.jni4net.tested.JavaCallInstanceMethods.@__ctor16, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, global::net.sf.jni4net.tested.JavaCallInstanceMethods.@__ctorJavaCallInstanceMethods16, this);
         }
         
         protected JavaCallInstanceMethods(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -86,7 +86,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.JavaCallInstanceMethods._booleanArray13 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, "booleanArray", "([Z)[Z");
             global::net.sf.jni4net.tested.JavaCallInstanceMethods._buffer14 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, "buffer", "(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;");
             global::net.sf.jni4net.tested.JavaCallInstanceMethods._stringList15 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, "stringList", "()Ljava/util/List;");
-            global::net.sf.jni4net.tested.JavaCallInstanceMethods.@__ctor16 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaCallInstanceMethods.@__ctorJavaCallInstanceMethods16 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallInstanceMethods.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
@@ -185,7 +185,7 @@ namespace net.sf.jni4net.tested {
             return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.List>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.JavaCallInstanceMethods._stringList15));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.tested.JavaCallInstanceMethods(@__env);

@@ -15,7 +15,7 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Properties : global::java.util.Hashtable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _setProperty0;
         
@@ -41,24 +41,22 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _storeToXML11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _clone12;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorProperties12;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor13;
-        
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor14;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorProperties13;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/util/Properties;)V")]
         public Properties(global::java.util.Properties par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor13, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctorProperties12, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Properties() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctor14, this);
+            @__env.NewObject(global::java.util.Properties.staticClass, global::java.util.Properties.@__ctorProperties13, this);
         }
         
         protected Properties(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -85,9 +83,8 @@ namespace java.util {
             global::java.util.Properties._store9 = @__env.GetMethodID(global::java.util.Properties.staticClass, "store", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
             global::java.util.Properties._storeToXML10 = @__env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V");
             global::java.util.Properties._storeToXML11 = @__env.GetMethodID(global::java.util.Properties.staticClass, "storeToXML", "(Ljava/io/OutputStream;Ljava/lang/String;)V");
-            global::java.util.Properties._clone12 = @__env.GetMethodID(global::java.util.Properties.staticClass, "clone", "()Ljava/lang/Object;");
-            global::java.util.Properties.@__ctor13 = @__env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "(Ljava/util/Properties;)V");
-            global::java.util.Properties.@__ctor14 = @__env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "()V");
+            global::java.util.Properties.@__ctorProperties12 = @__env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "(Ljava/util/Properties;)V");
+            global::java.util.Properties.@__ctorProperties13 = @__env.GetMethodID(global::java.util.Properties.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;")]
@@ -162,13 +159,7 @@ namespace java.util {
             @__env.CallVoidMethod(this, global::java.util.Properties._storeToXML11, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
         }
         
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
-        public virtual global::java.lang.Object clone() {
-            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Properties._clone12));
-        }
-        
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.Properties(@__env);

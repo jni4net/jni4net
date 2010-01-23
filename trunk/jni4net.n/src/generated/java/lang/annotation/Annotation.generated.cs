@@ -32,7 +32,7 @@ namespace java.lang.annotation {
     #region Component Designer generated code 
     public partial class Annotation_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.lang.annotation.@__Annotation.staticClass;
             }
@@ -45,7 +45,7 @@ namespace java.lang.annotation {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.annotation.Annotation))]
     internal sealed partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _hashCode0;
         
@@ -55,7 +55,7 @@ namespace java.lang.annotation {
         
         internal static global::net.sf.jni4net.jni.MethodId _annotationType3;
         
-        protected @__Annotation(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Annotation(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -141,7 +141,7 @@ namespace java.lang.annotation {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.annotation.@__Annotation(@__env);

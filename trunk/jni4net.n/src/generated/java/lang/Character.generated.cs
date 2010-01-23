@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Character : global::java.lang.Object, global::java.io.Serializable, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -297,13 +297,13 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _SIZE139;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor140;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorCharacter140;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(C)V")]
         public Character(char par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Character.staticClass, global::java.lang.Character.@__ctor140, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Character.staticClass, global::java.lang.Character.@__ctorCharacter140, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         protected Character(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -978,7 +978,7 @@ namespace java.lang {
             global::java.lang.Character._MIN_CODE_POINT137 = @__env.GetStaticFieldID(global::java.lang.Character.staticClass, "MIN_CODE_POINT", "I");
             global::java.lang.Character._MAX_CODE_POINT138 = @__env.GetStaticFieldID(global::java.lang.Character.staticClass, "MAX_CODE_POINT", "I");
             global::java.lang.Character._SIZE139 = @__env.GetStaticFieldID(global::java.lang.Character.staticClass, "SIZE", "I");
-            global::java.lang.Character.@__ctor140 = @__env.GetMethodID(global::java.lang.Character.staticClass, "<init>", "(C)V");
+            global::java.lang.Character.@__ctorCharacter140 = @__env.GetMethodID(global::java.lang.Character.staticClass, "<init>", "(C)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -1431,7 +1431,7 @@ namespace java.lang {
             return ((int)(@__env.CallStaticIntMethod(global::java.lang.Character.staticClass, global::java.lang.Character._toTitleCase74, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Character(@__env);

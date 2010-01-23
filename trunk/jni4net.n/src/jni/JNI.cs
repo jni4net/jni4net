@@ -84,9 +84,8 @@ namespace net.sf.jni4net.jni
                     Dll.JNI_GetDefaultJavaVMInitArgs(&args);
                     init = true;
                 }
-                catch(TypeInitializationException ex)
+                catch(TypeInitializationException)
                 {
-                    
                 }
                 finally
                 {

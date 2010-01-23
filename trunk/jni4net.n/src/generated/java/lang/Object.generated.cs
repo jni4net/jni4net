@@ -35,15 +35,15 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _toString8;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor9;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorObject9;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Object() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Object.staticClass, global::java.lang.Object.@__ctor9, this);
+            @__env.NewObject(global::java.lang.Object.staticClass, global::java.lang.Object.@__ctorObject9, this);
         }
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.lang.Object.staticClass;
             }
@@ -60,7 +60,7 @@ namespace java.lang {
             global::java.lang.Object._notify6 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notify", "()V");
             global::java.lang.Object._notifyAll7 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notifyAll", "()V");
             global::java.lang.Object._toString8 = @__env.GetMethodID(global::java.lang.Object.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.Object.@__ctor9 = @__env.GetMethodID(global::java.lang.Object.staticClass, "<init>", "()V");
+            global::java.lang.Object.@__ctorObject9 = @__env.GetMethodID(global::java.lang.Object.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]

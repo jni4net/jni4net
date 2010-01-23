@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class StackTraceElement : global::java.lang.Object, global::java.io.Serializable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _getClassName0;
         
@@ -27,13 +27,13 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _isNativeMethod4;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor5;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorStackTraceElement5;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V")]
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctor5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
+            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctorStackTraceElement5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
         }
         
         protected StackTraceElement(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -53,7 +53,7 @@ namespace java.lang {
             global::java.lang.StackTraceElement._getLineNumber2 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getLineNumber", "()I");
             global::java.lang.StackTraceElement._getMethodName3 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getMethodName", "()Ljava/lang/String;");
             global::java.lang.StackTraceElement._isNativeMethod4 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "isNativeMethod", "()Z");
-            global::java.lang.StackTraceElement.@__ctor5 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V");
+            global::java.lang.StackTraceElement.@__ctorStackTraceElement5 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
@@ -86,7 +86,7 @@ namespace java.lang {
             return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.StackTraceElement._isNativeMethod4)));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.StackTraceElement(@__env);

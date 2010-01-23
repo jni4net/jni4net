@@ -8,6 +8,8 @@ Version 0.6
 + upgrade to IDEA 9.0
 + sun specific DirectBufferCleaner, which holds the reference to pinned buffer
 + strongly typed JNI references (this is breaking change)
++ improved proxygen to not generate virtual method overrides
++ eliminated lot of warnings in generated code
 
 Version 0.5
 -----------

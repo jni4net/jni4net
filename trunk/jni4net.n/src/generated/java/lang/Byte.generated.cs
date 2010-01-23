@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Byte : global::java.lang.Number, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -43,22 +43,22 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _SIZE12;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor13;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorByte13;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor14;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorByte14;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(B)V")]
         public Byte(byte par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctor13, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctorByte13, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Byte(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctor14, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctorByte14, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Byte(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -118,8 +118,8 @@ namespace java.lang {
             global::java.lang.Byte._MAX_VALUE10 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "MAX_VALUE", "B");
             global::java.lang.Byte._TYPE11 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "TYPE", "Ljava/lang/Class;");
             global::java.lang.Byte._SIZE12 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "SIZE", "I");
-            global::java.lang.Byte.@__ctor13 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(B)V");
-            global::java.lang.Byte.@__ctor14 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Byte.@__ctorByte13 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(B)V");
+            global::java.lang.Byte.@__ctorByte14 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -176,7 +176,7 @@ namespace java.lang {
             return ((byte)(@__env.CallStaticByteMethod(global::java.lang.Byte.staticClass, global::java.lang.Byte._parseByte8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Byte(@__env);

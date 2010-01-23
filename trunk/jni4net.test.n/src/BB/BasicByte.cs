@@ -157,7 +157,6 @@ namespace net.sf.jni4net.test.BB
         {
             int n = bs.Length;
             int p = b.position();
-            byte v;
             if (b.order() == ByteOrder.BIG_ENDIAN)
             {
                 for (int i = 0; i < n; i++)

@@ -15,7 +15,7 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class InputStream : global::java.lang.Object, global::java.io.Closeable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _close0;
         
@@ -112,7 +112,7 @@ namespace java.io {
             return ((bool)(@__env.CallBooleanMethod(this, global::java.io.InputStream._markSupported8)));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.InputStream(@__env);

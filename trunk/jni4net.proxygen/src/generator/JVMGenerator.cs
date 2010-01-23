@@ -282,7 +282,7 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.BaseTypes.Add(Repository.systemObject.JVMReference);
             tgtType.BaseTypes.Add(type.JVMReference);
 
-            CreateEnvConstructor(tgtType, "net.sf.jni4net.inj.INJEnv", false, true);
+            CreateEnvConstructor(tgtType, "net.sf.jni4net.inj.INJEnv", false, true, false);
 
             if (type.Registration == null || !type.Registration.NoMethods)
             {

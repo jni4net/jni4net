@@ -14,7 +14,7 @@ namespace java_.lang {
     #region Component Designer generated code 
     public unsafe partial class IObject_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java_.lang.@__IObject.staticClass;
             }
@@ -27,7 +27,7 @@ namespace java_.lang {
     internal unsafe partial class @__IObject : global::java.lang.Object, global::java_.lang.IObject
     {
         
-        internal static global::java.lang.Class staticClass;
+        new internal static global::java.lang.Class staticClass;
         
         protected @__IObject(global::net.sf.jni4net.jni.JNIEnv env) : 
                 base(env) {
@@ -37,7 +37,7 @@ namespace java_.lang {
             global::java_.lang.@__IObject.staticClass = staticClass;
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv env) {
                 return new global::java_.lang.@__IObject(env);
