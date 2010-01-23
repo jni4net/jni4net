@@ -28,6 +28,7 @@ using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net.proxygen.config;
+using Exception = System.Exception;
 using Object = java.lang.Object;
 
 namespace net.sf.jni4net.proxygen.model
@@ -181,7 +182,15 @@ namespace net.sf.jni4net.proxygen.model
             Class clazz = type.JVMType;
             foreach (Method method in clazz.getMethods())
             {
-                RegisterJVMMethod(type, method, register);
+                bool create = testVirtual(type, clazz, method, method.getDeclaringClass() == clazz);
+                if (create || type == javaLangThrowable)
+                {
+                    RegisterJVMMethod(type, method, register);
+                }
+                else if (config.Verbose)
+                {
+                    Console.WriteLine("Skip " + type + "." + method);
+                }
             }
             foreach (GType ifc in type.Interfaces)
             {
@@ -189,13 +198,33 @@ namespace net.sf.jni4net.proxygen.model
                 {
                     foreach (Method method in ifc.JVMType.getMethods())
                     {
-                        RegisterJVMMethod(type, method, register);
+                        bool create = testVirtual(type, clazz, method, true);
+                        if (create)
+                        {
+                            RegisterJVMMethod(type, method, register);
+                        }
                     }
-                    /*if (ifc.getName() != "system.IObject")
-                    {
-                    }*/
                 }
             }
+        }
+
+        private static bool testVirtual(GType type, Class clazz, Method method, bool create)
+        {
+            var modifiers = (ModifierFlags) method.getModifiers();
+            bool isStatic = (modifiers & ModifierFlags.Static) != ModifierFlags.None;
+            bool isVirtual = (modifiers & ModifierFlags.Final) == ModifierFlags.None;
+            if (!clazz.isInterface())
+            {
+                if (create && !isStatic && isVirtual && !type.IsRootType)
+                {
+                    Method smethod = clazz.getSuperclass().GetMethodNoThrow(method.getName(), method.GetSignature(), false);
+                    if (smethod != null)
+                    {
+                        create = false;
+                    }
+                }
+            }
+            return create;
         }
 
         private static void RegisterJVMFields(GType type, bool register)
@@ -238,7 +267,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterJVMMethod(GType type, Method method, bool register)
         {
-            var modifiers = (ModifierFlags) method.getModifiers();
+            var modifiers = (ModifierFlags)method.getModifiers();
             Annotation annotation = HasAnnotation(method, "net.sf.jni4net.attributes.ClrMethod");
             if (annotation != null ||
                 (modifiers & (ModifierFlags.Private | ModifierFlags.Synthetic)) != ModifierFlags.None)
@@ -274,6 +303,10 @@ namespace net.sf.jni4net.proxygen.model
                 bool force = false;
                 if (UseMethodModifier(type, res, res.Name, res.GetJVMSignature(), ref force))
                 {
+                    if (config.Verbose)
+                    {
+                        Console.WriteLine("Skip " + type + "." + method);
+                    }
                     return;
                 }
 
@@ -298,7 +331,7 @@ namespace net.sf.jni4net.proxygen.model
             res.Type = type;
             res.Name = "<init>";
             res.JVMName = res.Name;
-            res.CLRName = "_ctor";
+            res.CLRName = "_ctor" + type.JVMType.getSimpleName();
             res.ReturnType = voidType;
             res.IsJVMMethod = true;
             res.IsConstructor = true;

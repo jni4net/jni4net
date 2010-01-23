@@ -423,7 +423,7 @@ namespace net.sf.jni4net.test
                 String duplicate = Bridge.CreateProxy<String>(handle);
                 string s = duplicate.toString();
             }
-            catch (System.Exception ex)
+            catch (System.Exception)
             {
                 Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                 throw;

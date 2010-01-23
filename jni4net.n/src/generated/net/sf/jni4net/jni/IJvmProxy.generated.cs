@@ -14,7 +14,7 @@ namespace net.sf.jni4net.jni {
     #region Component Designer generated code 
     public partial class IJvmProxy_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::net.sf.jni4net.jni.__IJvmProxy.staticClass;
             }
@@ -27,17 +27,13 @@ namespace net.sf.jni4net.jni {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.jni.IJvmProxy))]
     internal sealed partial class __IJvmProxy : global::java.lang.Object, global::net.sf.jni4net.jni.IJvmProxy {
         
-        internal static global::java.lang.Class staticClass;
+        new internal static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _JvmHandle0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _JvmHandle1;
-        
         internal static global::net.sf.jni4net.jni.MethodId _Init2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetClass3;
-        
-        protected __IJvmProxy(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private __IJvmProxy(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
 
@@ -98,7 +94,7 @@ namespace net.sf.jni4net.jni {
             catch (global::System.Exception ex) { @__env.ThrowExisting(ex); }
         }
         
-            internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+            new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::net.sf.jni4net.jni.__IJvmProxy(@__env);

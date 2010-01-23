@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Double : global::java.lang.Number, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -61,22 +61,22 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _TYPE21;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor22;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorDouble22;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor23;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorDouble23;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
         public Double(double par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor22, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctorDouble22, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Double(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Double.staticClass, global::java.lang.Double.@__ctorDouble23, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Double(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -169,8 +169,8 @@ namespace java.lang {
             global::java.lang.Double._MIN_VALUE19 = @__env.GetStaticFieldID(global::java.lang.Double.staticClass, "MIN_VALUE", "D");
             global::java.lang.Double._SIZE20 = @__env.GetStaticFieldID(global::java.lang.Double.staticClass, "SIZE", "I");
             global::java.lang.Double._TYPE21 = @__env.GetStaticFieldID(global::java.lang.Double.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Double.@__ctor22 = @__env.GetMethodID(global::java.lang.Double.staticClass, "<init>", "(D)V");
-            global::java.lang.Double.@__ctor23 = @__env.GetMethodID(global::java.lang.Double.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Double.@__ctorDouble22 = @__env.GetMethodID(global::java.lang.Double.staticClass, "<init>", "(D)V");
+            global::java.lang.Double.@__ctorDouble23 = @__env.GetMethodID(global::java.lang.Double.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -263,7 +263,7 @@ namespace java.lang {
             return ((double)(@__env.CallStaticDoubleMethod(global::java.lang.Double.staticClass, global::java.lang.Double._parseDouble14, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Double(@__env);

@@ -26,7 +26,7 @@ namespace System
 {
     internal partial class __Exception
     {
-        protected internal __Exception(JNIEnv env)
+        private __Exception(JNIEnv env)
             : base(env)
         {
         }

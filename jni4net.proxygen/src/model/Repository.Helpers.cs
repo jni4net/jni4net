@@ -59,7 +59,6 @@ namespace net.sf.jni4net.proxygen.model
         internal static GType systemString;
         internal static GType systemType;
         internal static GType voidType;
-        internal static GType throwable;
 
         private static void BindKnownTypesPre()
         {
@@ -346,23 +345,10 @@ namespace net.sf.jni4net.proxygen.model
                 return;
             }
             type.IsMethodsLoaded = true;
-            foreach (GType ifc in type.Interfaces)
-            {
-                LoadMethods(ifc);
-                foreach (var pair in ifc.AllMethods)
-                {
-                    if (!type.AllMethods.ContainsKey(pair.Key))
-                    {
-                        type.AllMethods.Add(pair.Key, pair.Value);
-                        type.MethodsWithInterfaces.Add(pair.Value);
-                    }
-                }
-            }
-
             if (type.Base != null)
             {
                 LoadMethods(type.Base);
-                if (!type.IsRootType)
+                if (!type.IsRootType && !type.IsInterface)
                 {
                     foreach (var pair in type.Base.AllMethods)
                     {
@@ -370,6 +356,19 @@ namespace net.sf.jni4net.proxygen.model
                         {
                             type.AllMethods.Add(pair.Key, pair.Value);
                         }
+                    }
+                }
+            }
+
+            foreach (GType ifc in type.Interfaces)
+            {
+                LoadMethods(ifc);
+                foreach (var pair in ifc.AllMethods)
+                {
+                    if (!type.AllMethods.ContainsKey(pair.Key) || pair.Value.UseExplicitInterface || type.AllMethods[pair.Key].UseExplicitInterface)
+                    {
+                        type.AllMethods.Add(pair.Key, pair.Value);
+                        type.MethodsWithInterfaces.Add(pair.Value);
                     }
                 }
             }
@@ -446,7 +445,7 @@ namespace net.sf.jni4net.proxygen.model
             return fskip;
         }
 
-        private static void FinishRegistration(string method, GType type, GMethod res, bool force, string sig, RegSkip x)
+        private static void FinishRegistration(string method, GType type, GMethod res, bool force, string sig, RegSkip skipSignatureBuilder)
         {
             if (!res.UseExplicitInterface && !force)
             {
@@ -471,8 +470,8 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 foreach (GMethod skip in type.SkippedMethods)
                 {
-                    string s = x(skip);
-                    if (s == sig)
+                    string skipSig = skipSignatureBuilder(skip);
+                    if (skipSig == sig)
                     {
                         type.Methods.Add(skip);
                         type.MethodsWithInterfaces.Add(skip);

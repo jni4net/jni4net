@@ -14,7 +14,7 @@ namespace System.Collections {
     #region Component Designer generated code 
     public partial class IList_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.Collections.@__IList.staticClass;
             }
@@ -27,7 +27,7 @@ namespace System.Collections {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IList))]
     internal sealed partial class @__IList : global::java.lang.Object, global::System.Collections.IList {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _GetEnumerator0;
         
@@ -61,7 +61,7 @@ namespace System.Collections {
         
         internal static global::net.sf.jni4net.jni.MethodId _RemoveAt15;
         
-        protected @__IList(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__IList(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -368,7 +368,7 @@ namespace System.Collections {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.Collections.@__IList(@__env);

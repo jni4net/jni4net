@@ -15,7 +15,7 @@ namespace java.io {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class ByteArrayOutputStream : global::java.io.OutputStream {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _toString0;
         
@@ -29,22 +29,22 @@ namespace java.io {
         
         internal static global::net.sf.jni4net.jni.MethodId _writeTo5;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor6;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayOutputStream6;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor7;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayOutputStream7;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public ByteArrayOutputStream(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctor6, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream6, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public ByteArrayOutputStream() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctor7, this);
+            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream7, this);
         }
         
         protected ByteArrayOutputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -65,8 +65,8 @@ namespace java.io {
             global::java.io.ByteArrayOutputStream._reset3 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "reset", "()V");
             global::java.io.ByteArrayOutputStream._toByteArray4 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toByteArray", "()[B");
             global::java.io.ByteArrayOutputStream._writeTo5 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "writeTo", "(Ljava/io/OutputStream;)V");
-            global::java.io.ByteArrayOutputStream.@__ctor6 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "(I)V");
-            global::java.io.ByteArrayOutputStream.@__ctor7 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "()V");
+            global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream6 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "(I)V");
+            global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream7 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
@@ -105,7 +105,7 @@ namespace java.io {
             @__env.CallVoidMethod(this, global::java.io.ByteArrayOutputStream._writeTo5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.io.ByteArrayOutputStream(@__env);

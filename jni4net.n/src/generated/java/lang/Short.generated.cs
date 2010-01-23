@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Short : global::java.lang.Number, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -45,22 +45,22 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _SIZE13;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor14;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorShort14;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor15;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorShort15;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(S)V")]
         public Short(short par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor14, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctorShort14, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Short(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctor15, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Short.staticClass, global::java.lang.Short.@__ctorShort15, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Short(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -121,8 +121,8 @@ namespace java.lang {
             global::java.lang.Short._MAX_VALUE11 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "MAX_VALUE", "S");
             global::java.lang.Short._TYPE12 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "TYPE", "Ljava/lang/Class;");
             global::java.lang.Short._SIZE13 = @__env.GetStaticFieldID(global::java.lang.Short.staticClass, "SIZE", "I");
-            global::java.lang.Short.@__ctor14 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(S)V");
-            global::java.lang.Short.@__ctor15 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Short.@__ctorShort14 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(S)V");
+            global::java.lang.Short.@__ctorShort15 = @__env.GetMethodID(global::java.lang.Short.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -185,7 +185,7 @@ namespace java.lang {
             return ((short)(@__env.CallStaticShortMethod(global::java.lang.Short.staticClass, global::java.lang.Short._parseShort9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Short(@__env);

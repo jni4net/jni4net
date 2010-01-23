@@ -26,7 +26,7 @@ namespace java.util {
     #region Component Designer generated code 
     public partial class Enumeration_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.util.@__Enumeration.staticClass;
             }
@@ -39,13 +39,13 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Enumeration))]
     internal sealed partial class @__Enumeration : global::java.lang.Object, global::java.util.Enumeration {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _hasMoreElements0;
         
         internal static global::net.sf.jni4net.jni.MethodId _nextElement1;
         
-        protected @__Enumeration(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Enumeration(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -95,7 +95,7 @@ namespace java.util {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.@__Enumeration(@__env);

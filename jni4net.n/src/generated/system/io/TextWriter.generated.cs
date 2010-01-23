@@ -14,7 +14,7 @@ namespace System.IO {
     #region Component Designer generated code 
     public partial class TextWriter_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.IO.@__TextWriter.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System.IO {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.TextWriter))]
     internal sealed partial class @__TextWriter : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__TextWriter(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__TextWriter(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -475,7 +475,7 @@ namespace System.IO {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.IO.@__TextWriter(@__env);

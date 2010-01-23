@@ -15,7 +15,7 @@ namespace java.lang {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Float : global::java.lang.Number, global::java.lang.Comparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
         
@@ -61,31 +61,31 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.FieldId _TYPE21;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor22;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFloat22;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor23;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFloat23;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor24;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorFloat24;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(F)V")]
         public Float(float par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor22, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctorFloat22, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(D)V")]
         public Float(double par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor23, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctorFloat23, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Float(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctor24, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Float.staticClass, global::java.lang.Float.@__ctorFloat24, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         protected Float(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -178,9 +178,9 @@ namespace java.lang {
             global::java.lang.Float._MIN_VALUE19 = @__env.GetStaticFieldID(global::java.lang.Float.staticClass, "MIN_VALUE", "F");
             global::java.lang.Float._SIZE20 = @__env.GetStaticFieldID(global::java.lang.Float.staticClass, "SIZE", "I");
             global::java.lang.Float._TYPE21 = @__env.GetStaticFieldID(global::java.lang.Float.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Float.@__ctor22 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(F)V");
-            global::java.lang.Float.@__ctor23 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(D)V");
-            global::java.lang.Float.@__ctor24 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Float.@__ctorFloat22 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(F)V");
+            global::java.lang.Float.@__ctorFloat23 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(D)V");
+            global::java.lang.Float.@__ctorFloat24 = @__env.GetMethodID(global::java.lang.Float.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
@@ -273,7 +273,7 @@ namespace java.lang {
             return ((float)(@__env.CallStaticFloatMethod(global::java.lang.Float.staticClass, global::java.lang.Float._parseFloat14, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.Float(@__env);

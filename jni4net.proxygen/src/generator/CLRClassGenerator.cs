@@ -63,11 +63,11 @@ namespace net.sf.jni4net.proxygen.generator
 
             // fields with type information
             GenerateStaticFields(tgtType);
-            GenerateTypeOfInit(tgtType);
+            GenerateTypeOfInit(tgtType, false);
             GenerateMethodsC2J(tgtType);
             GenerateConstructionHelper(tgtType);
             CreateEnvConstructor(tgtType, "net.sf.jni4net.jni.JNIEnv",
-                                 type == Repository.javaLangClass || type == Repository.javaLangString, false);
+                                 type == Repository.javaLangClass || type == Repository.javaLangString, false, false);
 
             if (type.IsException)
             {

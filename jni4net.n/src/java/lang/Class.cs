@@ -97,6 +97,16 @@ namespace java.lang
             }
             return Env.ToReflectedMethod(this, methodId, isStatic);
         }
+
+        public Method GetMethodNoThrow(string name, string signature, bool isStatic)
+        {
+            MethodId methodId = Env.GetMethodIDNoThrow(this, name, signature);
+            if (methodId == null)
+            {
+                return null;
+            }
+            return Env.ToReflectedMethod(this, methodId, isStatic);
+        }
 #endif
 
         public new void Invoke(string method, string signature, params object[] args)

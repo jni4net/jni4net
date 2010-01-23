@@ -39,18 +39,6 @@ public class Assembly extends system.Object implements system.security.IEvidence
     public native void GetObjectData(system.runtime.serialization.SerializationInfo info, system.runtime.serialization.StreamingContext context);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
-    public native java.lang.String ToString();
-    
-    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Object;)Z")
-    public native boolean Equals(system.Object other);
-    
-    @net.sf.jni4net.attributes.ClrMethod("()I")
-    public native int GetHashCode();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
-    public native system.Type GetType();
-    
-    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getCodeBase();
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")

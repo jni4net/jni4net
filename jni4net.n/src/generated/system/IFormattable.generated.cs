@@ -14,7 +14,7 @@ namespace System {
     #region Component Designer generated code 
     public partial class IFormattable_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.@__IFormattable.staticClass;
             }
@@ -27,11 +27,11 @@ namespace System {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IFormattable))]
     internal sealed partial class @__IFormattable : global::java.lang.Object, global::System.IFormattable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _ToString0;
         
-        protected @__IFormattable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__IFormattable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -63,7 +63,7 @@ namespace System {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__IFormattable(@__env);

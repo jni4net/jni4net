@@ -58,7 +58,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
 
             // fields with type information
-            CreateEnvConstructor(tgtType, "net.sf.jni4net.inj.INJEnv", false, true);
+            CreateEnvConstructor(tgtType, "net.sf.jni4net.inj.INJEnv", false, true, false);
             GenerateConstructors(tgtType);
             GenerateMethods(tgtType);
             GenerateTypeOfInit(tgtType);

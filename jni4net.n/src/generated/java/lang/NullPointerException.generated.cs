@@ -16,24 +16,24 @@ namespace java.lang {
     [global::System.SerializableAttribute()]
     public partial class NullPointerException : global::java.lang.RuntimeException {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNullPointerException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor1;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorNullPointerException1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public NullPointerException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NullPointerException.staticClass, global::java.lang.NullPointerException.@__ctor0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.NullPointerException.staticClass, global::java.lang.NullPointerException.@__ctorNullPointerException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public NullPointerException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.NullPointerException.staticClass, global::java.lang.NullPointerException.@__ctor1, this);
+            @__env.NewObject(global::java.lang.NullPointerException.staticClass, global::java.lang.NullPointerException.@__ctorNullPointerException1, this);
         }
         
         protected NullPointerException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -52,11 +52,11 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.NullPointerException.staticClass = @__class;
-            global::java.lang.NullPointerException.@__ctor0 = @__env.GetMethodID(global::java.lang.NullPointerException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.NullPointerException.@__ctor1 = @__env.GetMethodID(global::java.lang.NullPointerException.staticClass, "<init>", "()V");
+            global::java.lang.NullPointerException.@__ctorNullPointerException0 = @__env.GetMethodID(global::java.lang.NullPointerException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.NullPointerException.@__ctorNullPointerException1 = @__env.GetMethodID(global::java.lang.NullPointerException.staticClass, "<init>", "()V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.NullPointerException(@__env);

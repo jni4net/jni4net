@@ -55,39 +55,39 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId _notifyAll18;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor19;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorThrowable19;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor20;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorThrowable20;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor21;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorThrowable21;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor22;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorThrowable22;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public Throwable(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor19, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctorThrowable19, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/Throwable;)V")]
         public Throwable(global::java.lang.String par0, global::java.lang.Throwable par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor20, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctorThrowable20, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Throwable;)V")]
         public Throwable(global::java.lang.Throwable par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor21, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctorThrowable21, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Throwable() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctor22, this);
+            @__env.NewObject(global::java.lang.Throwable.staticClass, global::java.lang.Throwable.@__ctorThrowable22, this);
         }
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.lang.Throwable.staticClass;
             }
@@ -114,10 +114,10 @@ namespace java.lang {
             global::java.lang.Throwable._equals16 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "equals", "(Ljava/lang/Object;)Z");
             global::java.lang.Throwable._notify17 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "notify", "()V");
             global::java.lang.Throwable._notifyAll18 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "notifyAll", "()V");
-            global::java.lang.Throwable.@__ctor19 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.Throwable.@__ctor20 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
-            global::java.lang.Throwable.@__ctor21 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
-            global::java.lang.Throwable.@__ctor22 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "()V");
+            global::java.lang.Throwable.@__ctorThrowable19 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Throwable.@__ctorThrowable20 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
+            global::java.lang.Throwable.@__ctorThrowable21 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.Throwable.@__ctorThrowable22 = @__env.GetMethodID(global::java.lang.Throwable.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/PrintWriter;)V")]

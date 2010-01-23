@@ -14,7 +14,7 @@ namespace System {
     #region Component Designer generated code 
     public partial class ValueType_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.@__ValueType.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.ValueType))]
     internal sealed partial class @__ValueType : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__ValueType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__ValueType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -43,7 +43,7 @@ namespace System {
             return methods;
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__ValueType(@__env);

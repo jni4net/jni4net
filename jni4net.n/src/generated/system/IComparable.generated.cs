@@ -14,7 +14,7 @@ namespace System {
     #region Component Designer generated code 
     public partial class IComparable_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.@__IComparable.staticClass;
             }
@@ -27,11 +27,11 @@ namespace System {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IComparable))]
     internal sealed partial class @__IComparable : global::java.lang.Object, global::System.IComparable {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _CompareTo0;
         
-        protected @__IComparable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__IComparable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -63,7 +63,7 @@ namespace System {
             return default(int);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.@__IComparable(@__env);

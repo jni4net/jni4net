@@ -15,7 +15,7 @@ namespace java.lang.reflect {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Method : global::java.lang.reflect.AccessibleObject, global::java.lang.reflect.GenericDeclaration, global::java.lang.reflect.Member {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _getTypeParameters0;
         
@@ -206,7 +206,7 @@ namespace java.lang.reflect {
             return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.Method._isVarArgs16)));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.lang.reflect.Method(@__env);

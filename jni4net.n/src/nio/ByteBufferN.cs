@@ -222,7 +222,7 @@ namespace net.sf.jni4net.nio
         //
         internal byte[] hb; // Non-null only for heap buffers
         internal int _offset;
-        internal bool _isReadOnly; // Valid only for heap buffers
+        const bool _isReadOnly = false;
 
         // Creates a new buffer with the given mark, position, limit, capacity,
         // backing array, and array offset
@@ -932,8 +932,6 @@ namespace net.sf.jni4net.nio
                 byte v2 = that.get(j);
                 if (v1 != v2)
                 {
-                    if ((v1 != v1) && (v2 != v2)) // For float and double
-                        continue;
                     return false;
                 }
             }
@@ -961,8 +959,6 @@ namespace net.sf.jni4net.nio
                 byte v1 = get(i);
                 byte v2 = that.get(j);
                 if (v1 == v2)
-                    continue;
-                if ((v1 != v1) && (v2 != v2)) // For float and double
                     continue;
                 if (v1 < v2)
                     return -1;

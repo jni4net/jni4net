@@ -16,15 +16,15 @@ namespace java.nio {
     [global::System.SerializableAttribute()]
     public partial class BufferOverflowException : global::java.lang.RuntimeException {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctor0;
+        internal static global::net.sf.jni4net.jni.MethodId @__ctorBufferOverflowException0;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public BufferOverflowException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            @__env.NewObject(global::java.nio.BufferOverflowException.staticClass, global::java.nio.BufferOverflowException.@__ctor0, this);
+            @__env.NewObject(global::java.nio.BufferOverflowException.staticClass, global::java.nio.BufferOverflowException.@__ctorBufferOverflowException0, this);
         }
         
         protected BufferOverflowException(global::net.sf.jni4net.jni.JNIEnv @__env) : 
@@ -43,10 +43,10 @@ namespace java.nio {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.nio.BufferOverflowException.staticClass = @__class;
-            global::java.nio.BufferOverflowException.@__ctor0 = @__env.GetMethodID(global::java.nio.BufferOverflowException.staticClass, "<init>", "()V");
+            global::java.nio.BufferOverflowException.@__ctorBufferOverflowException0 = @__env.GetMethodID(global::java.nio.BufferOverflowException.staticClass, "<init>", "()V");
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.nio.BufferOverflowException(@__env);

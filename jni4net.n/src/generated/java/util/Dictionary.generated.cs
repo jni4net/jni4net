@@ -15,7 +15,7 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.JavaClassAttribute()]
     public partial class Dictionary : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _put0;
         
@@ -94,7 +94,7 @@ namespace java.util {
             return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Dictionary._isEmpty6)));
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.Dictionary(@__env);

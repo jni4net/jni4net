@@ -323,6 +323,10 @@ namespace net.sf.jni4net.proxygen.model
                 bool force = false;
                 if (UseMethodModifier(type, res, res.Name, res.GetCLRSignature(), ref force))
                 {
+                    if (config.Verbose)
+                    {
+                        Console.WriteLine("Skip " + type + "." + method);
+                    }
                     return;
                 }
                 FinishRegistration(method.Name, type, res, force, res.Name + res.GetJVMSignatureNoRet(), skipJVM);

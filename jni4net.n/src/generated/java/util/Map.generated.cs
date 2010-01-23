@@ -62,7 +62,7 @@ namespace java.util {
     #region Component Designer generated code 
     public partial class Map_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::java.util.@__Map.staticClass;
             }
@@ -75,7 +75,7 @@ namespace java.util {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Map))]
     internal sealed partial class @__Map : global::java.lang.Object, global::java.util.Map {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _hashCode0;
         
@@ -105,7 +105,7 @@ namespace java.util {
         
         internal static global::net.sf.jni4net.jni.MethodId _keySet13;
         
-        protected @__Map(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__Map(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -369,7 +369,7 @@ namespace java.util {
             return default(global::net.sf.jni4net.utils.JniHandle);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::java.util.@__Map(@__env);

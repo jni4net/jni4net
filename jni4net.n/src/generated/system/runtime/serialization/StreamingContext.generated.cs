@@ -14,7 +14,7 @@ namespace System.Runtime.Serialization {
     #region Component Designer generated code 
     public partial class StreamingContext_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.Runtime.Serialization.@__StreamingContext.staticClass;
             }
@@ -27,9 +27,9 @@ namespace System.Runtime.Serialization {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.StreamingContext))]
     internal sealed partial class @__StreamingContext : global::java.lang.Object {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
-        protected @__StreamingContext(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__StreamingContext(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -89,7 +89,7 @@ namespace System.Runtime.Serialization {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.Runtime.Serialization.@__StreamingContext(@__env);

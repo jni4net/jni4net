@@ -14,7 +14,7 @@ namespace System.Reflection {
     #region Component Designer generated code 
     public partial class ICustomAttributeProvider_ {
         
-        public new static global::java.lang.Class _class {
+        public static global::java.lang.Class _class {
             get {
                 return global::System.Reflection.@__ICustomAttributeProvider.staticClass;
             }
@@ -27,7 +27,7 @@ namespace System.Reflection {
     [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ICustomAttributeProvider))]
     internal sealed partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
         
-        internal static global::java.lang.Class staticClass;
+        internal new static global::java.lang.Class staticClass;
         
         internal static global::net.sf.jni4net.jni.MethodId _GetCustomAttributes0;
         
@@ -35,7 +35,7 @@ namespace System.Reflection {
         
         internal static global::net.sf.jni4net.jni.MethodId _IsDefined2;
         
-        protected @__ICustomAttributeProvider(global::net.sf.jni4net.jni.JNIEnv @__env) : 
+        private @__ICustomAttributeProvider(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
         
@@ -103,7 +103,7 @@ namespace System.Reflection {
             return default(bool);
         }
         
-        internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
+        new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {
             
             public global::net.sf.jni4net.jni.IJvmProxy CreateProxy(global::net.sf.jni4net.jni.JNIEnv @__env) {
                 return new global::System.Reflection.@__ICustomAttributeProvider(@__env);
