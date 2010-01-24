@@ -66,6 +66,13 @@ public class CompilerMojo
      */
     private File keyfile;
 
+	/**
+	 * More compiler options
+	 *
+	 * @parameter expression = "${aditionalOptions}"
+	 */
+	private String aditionalOptions;
+
     /**
      * Specifies a strong name key container.
      *
@@ -142,6 +149,10 @@ public class CompilerMojo
         {
             keyInfo.setKeyFileUri( keyfile.toURI() );
         }
+
+		if (aditionalOptions!=null){
+			compilerConfig.setAditionalCompilerOptions(aditionalOptions);
+		}
 
         keyInfo.setKeyContainerName( keycontainer );
         compilerConfig.setKeyInfo( keyInfo );

@@ -16,10 +16,7 @@
 package org.sonatype.nmaven.extensions.compiler;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import org.apache.maven.artifact.Artifact;
 import org.sonatype.nmaven.ArtifactScope;
@@ -74,7 +71,11 @@ public final class CSharpClassCompiler
         commands.add( "/out:" + compiledArtifact.getAbsolutePath() );
         commands.add( "/target:" + targetArtifactType );
         commands.add( "/recurse:" + sourceDirectory + File.separator + "**" );
-        if ( modules != null && !modules.isEmpty() )
+		final String ad = config.getAditionalCompilerOptions();
+		if (ad != null) {
+			commands.addAll(Arrays.asList(ad.split(" ")));
+		}
+		if ( modules != null && !modules.isEmpty() )
         {
             StringBuffer sb = new StringBuffer();
             for ( Iterator<Artifact> i = modules.iterator(); i.hasNext(); )

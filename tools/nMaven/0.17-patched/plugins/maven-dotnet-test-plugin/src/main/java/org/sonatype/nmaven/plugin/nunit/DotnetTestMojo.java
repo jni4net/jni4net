@@ -67,6 +67,13 @@ public class DotnetTestMojo
      */
     private String vendorName;
 
+    /**
+     * The Vendor.
+     *
+     * @parameter expression="${nunitHome}"
+     */
+    private String nunitHome;
+
     public void execute()
         throws MojoExecutionException, MojoFailureException
     {
@@ -101,11 +108,12 @@ public class DotnetTestMojo
         Commandline commandline = new Commandline();
 
         getLog().debug( "NMaven-test: workingDirectory(" + testAssemblies.getAbsolutePath() + ")" );
+        getLog().debug( "NMaven-test: nunitHome(" + nunitHome + ")" );
 
         commandline.setWorkingDirectory( testAssemblies.getAbsolutePath() );
         if ( vendor.equals( Vendor.MICROSOFT ) )
         {
-            commandline.setExecutable( "nunit-console" );
+            commandline.setExecutable( nunitHome + "/bin/nunit-console" );
         }
         else if ( vendor.equals( Vendor.NOVELL ) )
         {
@@ -127,7 +135,7 @@ public class DotnetTestMojo
             // Execute the commandline
             commandLineResult = CommandLineUtils.executeCommandLine( commandline, systemOut, systemErr );
 
-            getLog().debug( "Executed command: " + commandline + ", Result = " + commandLineResult );
+            getLog().info( "Executed command: " + commandline + ", Result = " + commandLineResult );
 
             // Check if nunit-console is not in the path
             if ( systemErr.isCommandNotFound() )

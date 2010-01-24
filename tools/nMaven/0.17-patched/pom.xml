@@ -25,7 +25,7 @@
   <groupId>org.sonatype.nmaven</groupId>
   <artifactId>sonatype-nmaven-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.17</version>
+  <version>0.17robocode</version>
   <name>Sonatype NMaven</name>
   <url>http://codeplex.com/nmaven</url>
   <inceptionYear>2006</inceptionYear>
@@ -40,6 +40,20 @@
     <developerConnection>scm:svn:https://nmaven.svn.codeplex.com/svn/tags/sonatype-nmaven-0.17</developerConnection>
     <url>scm:svn:https://nmaven.svn.codeplex.com/svn/tags/sonatype-nmaven-0.17</url>
   </scm>
+    <distributionManagement>
+        <downloadUrl>http://jni4net.sourceforge.net/maven2</downloadUrl>
+        <repository>
+            <id>net.sf.jni4net</id>
+            <name>jni4net release repository</name>
+            <url>scp://web.sourceforge.net:22/home/groups/j/jn/jni4net/htdocs/maven2</url>
+        </repository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>net-sf-jni4net</id>
+            <url>http://jni4net.sourceforge.net/maven2</url>
+        </repository>
+    </repositories>
   <modules>
     <module>archetypes</module>
     <module>components</module>

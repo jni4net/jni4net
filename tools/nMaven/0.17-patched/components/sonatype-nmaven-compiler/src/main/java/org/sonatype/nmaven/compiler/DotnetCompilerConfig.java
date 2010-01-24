@@ -43,6 +43,11 @@ public interface DotnetCompilerConfig
 
     void setCompilerPlatformVersion( DotnetCompilerPlatformVersion compilerPlatformVersion );
 
+
+	String getAditionalCompilerOptions();
+
+	void setAditionalCompilerOptions(String options);
+
     public static class Factory
     {
         /**
@@ -80,6 +85,8 @@ public interface DotnetCompilerConfig
                 private Vendor vendor;
 
                 private String artifactFileName;
+				
+				private String aditionalCompilerOptions;
 
                 public String getArtifactFileName()
                 {
@@ -111,7 +118,15 @@ public interface DotnetCompilerConfig
                     this.compilerPlatformVersion = compilerPlatformVersion;
                 }
 
-                public ArtifactType getArtifactType()
+				public String getAditionalCompilerOptions() {
+					return aditionalCompilerOptions;  //TODO ZAMO
+				}
+
+				public void setAditionalCompilerOptions(String options) {
+					aditionalCompilerOptions=options;
+				}
+
+				public ArtifactType getArtifactType()
                 {
                     return artifactType;
                 }
