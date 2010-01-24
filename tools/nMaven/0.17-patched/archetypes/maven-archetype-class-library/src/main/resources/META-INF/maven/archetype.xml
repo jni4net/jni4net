@@ -1,0 +1,6 @@
+<archetype>
+  <id>maven-archetype-class-library</id>
+  <resources>
+    <resource>Class1.cs</resource> 
+  </resources>
+</archetype>

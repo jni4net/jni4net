@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+  <name>Windows Control</name>
+  <packaging>dotnet:library</packaging>
+  <build>
+    <sourceDirectory>.</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.nmaven.plugins</groupId>
+        <artifactId>sonatype-nmaven-compiler-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

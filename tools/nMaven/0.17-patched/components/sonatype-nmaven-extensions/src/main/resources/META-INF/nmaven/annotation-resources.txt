@@ -1,0 +1,4 @@
+org.sonatype.nmaven.extensions.assembler.DefaultAssemblyInfoMarshaller
+org.sonatype.nmaven.extensions.assembler.JavaAssemblyInfoMarshaller
+org.sonatype.nmaven.extensions.assembler.VBAssemblyInfoMarshaller
+org.sonatype.nmaven.extensions.compiler.CSharpClassCompiler

@@ -1,0 +1,8 @@
+<archetype>
+  <id>maven-archetype-windows-application</id>
+  <resources>
+    <resource>Form1.cs</resource>
+    <resource>Form1.Designer.cs</resource>
+    <resource>Program.cs</resource>
+  </resources>
+</archetype>

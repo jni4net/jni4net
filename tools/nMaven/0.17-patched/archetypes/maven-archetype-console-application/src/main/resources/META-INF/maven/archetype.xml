@@ -1,0 +1,6 @@
+<archetype>
+  <id>maven-archetype-console-application</id>
+  <resources>
+    <resource>Program.cs</resource>
+  </resources>
+</archetype>

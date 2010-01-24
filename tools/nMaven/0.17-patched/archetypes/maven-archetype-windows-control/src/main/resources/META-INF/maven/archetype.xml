@@ -1,0 +1,7 @@
+<archetype>
+  <id>maven-archetype-windows-control</id>
+  <resources>
+    <resource>UserControl1.cs</resource>
+    <resource>UserControl1.Designer.cs</resource>
+  </resources>
+</archetype>
