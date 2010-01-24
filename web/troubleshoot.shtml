@@ -2,7 +2,7 @@
 	
 <h2>Troubleshooting jni4net</h2>
 <p>This page will be troubleshooting knowledge-base for jni4net. Please contribute.</p>
-<br/><br/>
+<br/>
 
 <h2>Process core-dumped, corrupted memory or just can't start it</h2>
 Ordered by probability.
@@ -14,12 +14,15 @@ Ordered by probability.
 		<br/> This is particularly difficult on Windows 64 bit. I found 32bit java.exe of jre 1.5 in my %windows%/system32 directory. Very confusing.
 		<br/> Another problem is running unit tests from VisualStudio + Resharper4, bear in mind VS is 32bit process.
 		</li>
-	<li><b>PATH and JAVA_HOME</b> - do they contain proper thing ? Even in your unit test ? And your runtime settings ?</li>
+	<li><b>PATH and JAVA_HOME</b> - Do they contain proper thing ? Even in your unit test ? And your runtime settings ?</li>
 	<li><b>Current directory</b> - For best results put all DLLs and JARs into same directory. Make sure it's current directory of the process.</li>
-	<li><b>Proxygen and Versions</b> - example you wrapped class from JDK 1.6 and you run under JRE 1.5. Methods are missing. Applies to any library and versions including .NET libraries.</li>
-	<li><b>Bugs</b> - there may be bug in jni4net. There may be bug in JNI or in PInvoke. Please report it to us including environment details.</li>
+	<li><b>Proxygen and Versions</b> - Example: you wrapped class from JDK 1.6 and you run under JRE 1.5. Methods are missing. Applies to any library and versions including .NET libraries.</li>
+	<li><b>Security</b> - jni4net runtime as well requires run as trusted code. If you run it in sandboxed appdomain or from internet security zone, you need to make the jni4net.n assembly trusted.
+		<br/> As well proxygen (as it uses jni4net runtime) needs to run as trusted code. If you run it from shared drive make sure you <a href="http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519">change</a> your policy.
+		</li>
+	<li><b>Bugs</b> - There may be bug in jni4net. There may be bug in JNI or in PInvoke. Please report it to us including environment details.</li>
 </ul>
-<br/><br/>
+<br/>
 
 <h2>Pitfalls by design</h2>
 <ul>
@@ -40,6 +43,9 @@ Ordered by probability.
 		You do it by sending JvmHandle to other domain and duplicating the reference in the other app-domain.
 		</li>
 </ul>
-<br/><br/>
+<br/>
+
+<h2>Still no luck ?</h2>
+&nbsp;&nbsp;&nbsp; Ask <a href="http://groups.google.com/group/jni4net?hl=en">people in mail group</a> :-)
 
 <!--#include virtual="footer" -->

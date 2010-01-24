@@ -8,8 +8,10 @@
 	<li><a href="http://j-integra.intrinsyc.com/">JIntegra</a> - Commercial, DCOM and .NET Remoting for Java</li>
 	<li><a href="http://www.javain.com/javain/oojni.jsp">OOJNI</a> - Commercial, C++ JNI code generator</li>
 	<li><a href="http://dev.mainsoft.com/">Grasshopper</a> - Commercial, .NET to Java recompiler</li>
-	<li><a href="http://www.ezjcom.com/dotnet.html">Grasshopper</a> - Commercial, COM/ActiveX</li>
+	<li><a href="http://jsegue.sourceforge.net/">jSegue - COM</a></li>
+	<li><a href="http://www.ezjcom.com/dotnet.html">EZ JCom</a> - Commercial, COM/ActiveX</li>
 	<li><a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/jniTOC.html">JNI Specification</a></li>
+	<li><a href="https://jna.dev.java.net/">JNA - Dynamically to native libraries from Java</a></li>
 </ul>
 <br/><br/>
 <!--#include virtual="footer" -->
