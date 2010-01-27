@@ -165,9 +165,10 @@ public class TestClr {
     @Test()
     public void outParam() {
         Out<DateTime> dt=new Out<DateTime>();
-        DateTime.TryParse("2009-08-28",dt);
+        if (DateTime.TryParse("2009-08-28",dt)){
+            System.out.println(dt);
+        }
         Assert.assertThat(dt.getValue().getYear(), is(2009));
-        System.out.println(dt);
     }
 
 
