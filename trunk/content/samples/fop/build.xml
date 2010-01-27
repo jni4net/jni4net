@@ -11,7 +11,7 @@
     <property name="source" value="1.5"/>
     <path id="fop.classpath">
         <pathelement location="target/classes"/>
-        <pathelement location="../../lib/jni4net.j-0.6.0.0.jar"/>
+        <pathelement location="../../lib/jni4net.j-0.7.0.0.jar"/>
         <pathelement location="lib/fop.jar"/>
     </path>
     <target name="init">
