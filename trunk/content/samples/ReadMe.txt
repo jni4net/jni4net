@@ -24,5 +24,7 @@ Samples assume that you have csc.exe and javac.exe on your PATH
 
 7) interfaceFromCLR - shows how to implement Java interface in CLR and pass it to JVM
 
+8) circular - shows how to incrementaly build classes which use each other
+
 Tropublehooting here
 http://jni4net.sourceforge.net/troubleshoot.shtml
