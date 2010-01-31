@@ -52,6 +52,18 @@ public class StaticMethods extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(I)I")
     public native static int TestRefParam(net.sf.jni4net.Ref<java.lang.Integer> num);
     
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
+    public native void addEnvDispatcher(net.sf.jni4net.tested.TestDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
+    public native void removeEnvDispatcher(net.sf.jni4net.tested.TestDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
+    public native void addEnvDispatcherProp(net.sf.jni4net.tested.TestDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
+    public native void removeEnvDispatcherProp(net.sf.jni4net.tested.TestDelegate value);
+    
     public static system.Type typeof() {
         return net.sf.jni4net.tested.StaticMethods.staticType;
     }

@@ -171,5 +171,13 @@ public class TestClr {
         Assert.assertThat(dt.getValue().getYear(), is(2009));
     }
 
+    @Test()
+    public void testDelegate(ICInterface ici) {
+        ici.addEnvDispatcher(new TestDelegate() {
+            public system.Object Invoke(int i, java.lang.String s) {
+                return null;
+            }
+        });
+    }
 
 }

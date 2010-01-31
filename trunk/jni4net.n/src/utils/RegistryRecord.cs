@@ -39,6 +39,8 @@ namespace net.sf.jni4net.utils
         public MethodInfo CLRWrapperInitMethod { get; internal set; }
         public bool IsCLRType { get; internal set; }
         public bool IsInterface { get; internal set; }
+        public bool IsDelegate { get; internal set; }
+        public MethodInfo JVMDelegateInvoke { get; internal set; }
         public bool IsJVMClass { get; internal set; }
         public bool JVMBound { get; internal set; }
         public MethodId JVMConstructor { get; internal set; }

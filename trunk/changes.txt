@@ -1,3 +1,7 @@
+Version 0.7
+-----------
++ added support for delegates and events
+
 Version 0.6
 -----------
 + JVM exceptions are serializable for CLR binary serialization

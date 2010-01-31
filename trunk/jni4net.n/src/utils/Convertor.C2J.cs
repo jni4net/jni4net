@@ -142,6 +142,43 @@ namespace net.sf.jni4net.utils
             throw new InvalidOperationException("Unknown simple type" + type);
         }
 
+        private static Value PrimC2JValue(object obj, Type type)
+        {
+            if (type == typeof(int) || type == typeof(uint))
+            {
+                return ParPrimC2J((int)obj);
+            }
+            if (type == typeof(long) || type == typeof(ulong))
+            {
+                return  ParPrimC2J((long)obj);
+            }
+            if (type == typeof(bool))
+            {
+                return  ParPrimC2J((bool)obj);
+            }
+            if (type == typeof(double))
+            {
+                return  ParPrimC2J((double)obj);
+            }
+            if (type == typeof(byte) || type == typeof(sbyte))
+            {
+                return  ParPrimC2J((byte)obj);
+            }
+            if (type == typeof(char))
+            {
+                return  ParPrimC2J((char)obj);
+            }
+            if (type == typeof(short) || type == typeof(ushort))
+            {
+                return  ParPrimC2J((short)obj);
+            }
+            if (type == typeof(float))
+            {
+                return  ParPrimC2J((float)obj);
+            }
+            throw new InvalidOperationException("Unknown simple type" + type);
+        }
+
         //TODO, too bad. Conversion doesn''t work, because args are CLR object
         internal static Value[] ConverArgs(JNIEnv env, object[] args)
         {
@@ -153,9 +190,14 @@ namespace net.sf.jni4net.utils
             for (int i = 0; i < args.Length; i++)
             {
                 var sarg = args[i] as string;
+                Type type = args[i].GetType();
                 if (sarg != null)
                 {
                     jargs[i] = new Value { _object = env.NewStringPtr(sarg).DangerousGetHandle() };
+                }
+                else if (type.IsPrimitive)
+                {
+                    jargs[i] = PrimC2JValue(args[i], type);
                 }
                 else
                 {

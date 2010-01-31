@@ -18,8 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #endregion
 
+using System;
 using System.Reflection;
-using java.lang;
+using String = java.lang.String;
 
 namespace net.sf.jni4net.tested
 {
@@ -29,6 +30,8 @@ namespace net.sf.jni4net.tested
         {
             return a + b;
         }
+
+        #region REF+OUT
 
         public static void TestOutParamS(out String text)
         {
@@ -63,5 +66,85 @@ namespace net.sf.jni4net.tested
             num = num - 1;
             return -1;
         }
+
+        #endregion
+
+        #region delegate + event
+
+        //implementation
+        object TestDelegateImpl(int i, String s)
+        {
+            return s + i;
+        }
+
+        public TestDelegate fcePtr;
+
+        TestDelegate fcePtrProp { get; set; }
+
+        public event TestDelegate EnvDispatcher;
+
+        public event TestDelegate EnvDispatcherProp
+        {
+            add { EnvDispatcher += value; }
+            remove { EnvDispatcher -= value; }
+        }
+
+        //type
+        private interface JDdd
+        {
+            object Ddd(int i, string s);
+        }
+
+        private class CWrapper
+        {
+            public CWrapper(JDdd jproxy)
+            {
+                this.jproxy = jproxy;
+            }
+
+            private JDdd jproxy;
+
+            public object DddFwd(int i, string s)
+            {
+                return jproxy.Ddd(i, s);
+            }
+        }
+
+        private class JWrapper : JDdd
+        {
+            public JWrapper(TestDelegate del)
+            {
+                this.del = del;
+            }
+
+            private TestDelegate del;
+
+            public object Ddd(int i, string s)
+            {
+                return del.Invoke(i, s);
+            }
+
+            public static implicit operator JWrapper(TestDelegate str)
+            {
+                return new JWrapper(str);
+            }
+        }
+
+        TestDelegate J2C(JDdd i)
+        {
+            CWrapper w=new CWrapper(i);
+            return w.DddFwd;
+        }
+
+        JDdd C2J(TestDelegate d)
+        {
+            JWrapper jWrapper=d;
+            return jWrapper;
+        }
+
+
+        #endregion
     }
+
+
 }

@@ -103,6 +103,14 @@ namespace net.sf.jni4net.proxygen.generator
             //sb.Replace("public partial class", "public unsafe partial class");
             //sb.Replace("internal sealed partial class @__", "internal sealed unsafe partial class @__");
 
+
+            sb.Replace("// __event__\r\n        public global::", "public event global::");
+            sb.Replace("get {\r\n                // __add__", "add {");
+            sb.Replace("set {\r\n                // __remove__", "remove {");
+            sb.Replace("__event_add__ = global", " += global");
+            sb.Replace("__event_remove__ = global", " -= global");
+
+
             if (type != Repository.javaLangThrowable && type != Repository.javaLangObject)
             {
                 sb.Replace("internal sealed class ContructionHelper", "new internal sealed class ContructionHelper");
@@ -169,7 +177,7 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateWrapperInitJ2C();
             if (type.Registration == null || !type.Registration.NoMethods)
             {
-                if (type.IsInterface)
+                if (type.IsInterface || type.IsDelegate)
                 {
                     GenerateProxyMethodsC2J(tgtType);
                 }
@@ -207,7 +215,8 @@ namespace net.sf.jni4net.proxygen.generator
             CodeStatementCollection tgtStatements;
             CodeTypeMember tgtMember;
             CodeMemberMethod tgtMethod = null;
-            CodeMemberPropertyEx tgtProperty = null;
+            CodeMemberPropertyEx tgtProperty;
+            CodeMemberPropertyEx tgtEvent;
             if (method.IsConstructor)
             {
                 var tgtConstructor = new CodeConstructor();
@@ -228,6 +237,54 @@ namespace net.sf.jni4net.proxygen.generator
                 tgtStatements = p.GetStatements;
                 p.Name = method.CLRName;
                 p.Type = method.ReturnType.CLRReference;
+            }
+            else if (method.IsEvent)
+            {
+                tgtEvent = new CodeMemberPropertyEx();
+                tgtEvent.Getter = method.CLRPropertyAdd;
+                tgtEvent.Setter = method.CLRPropertyRemove;
+                tgtEvent.Name = method.CLRName;
+                if (method.UseExplicitInterface)
+                {
+                    tgtEvent.PrivateImplementationType = method.DeclaringType.CLRReference;
+                }
+
+                foreach (CodeTypeMember m in tgtType.Members)
+                {
+                    var member = m as CodeMemberPropertyEx;
+                    if (member != null)
+                        if (member.Getter == method || member.Setter == method)
+                        {
+                            tgtEvent = member;
+                            add = false;
+                            break;
+                        }
+                }
+                int count = method.Parameters.Count-1;
+                tgtEvent.Type = method.Parameters[count].CLRReference;
+                if (add)
+                {
+                    for (int i = 0; i < count; i++)
+                    {
+                        var tgtParameter = new CodeParameterDeclarationExpression();
+                        tgtParameter.Name = method.ParameterNames[i];
+                        tgtParameter.Type = method.Parameters[i].CLRReference;
+                        tgtEvent.Parameters.Add(tgtParameter);
+                    }
+                    tgtEvent.Comments.Add(new CodeCommentStatement("__event__"));
+                }
+
+                tgtMember = tgtEvent;
+                if (method.IsCLRPropertyAdd)
+                {
+                    tgtEvent.GetStatements.Add(new CodeCommentStatement("__add__"));
+                    tgtStatements = tgtEvent.GetStatements;
+                }
+                else
+                {
+                    tgtEvent.SetStatements.Add(new CodeCommentStatement("__remove__"));
+                    tgtStatements = tgtEvent.SetStatements;
+                }
             }
             else if (method.IsProperty)
             {
@@ -251,13 +308,13 @@ namespace net.sf.jni4net.proxygen.generator
                             break;
                         }
                 }
+                int count = method.Parameters.Count;
+                if (!method.IsCLRPropertyGetter)
+                {
+                    count--;
+                }
                 if (add)
                 {
-                    int count = method.Parameters.Count;
-                    if (method.IsCLRPropertySetter)
-                    {
-                        count--;
-                    }
                     for (int i = 0; i < count; i++)
                     {
                         var tgtParameter = new CodeParameterDeclarationExpression();
@@ -267,16 +324,17 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                 }
 
-                tgtMember = tgtProperty;
-                if (method.IsCLRPropertySetter)
-                {
-                    tgtStatements = tgtProperty.SetStatements;
-                }
-                else
+                if (method.IsCLRPropertyGetter)
                 {
                     tgtProperty.Type = method.ReturnType.CLRReference;
                     tgtStatements = tgtProperty.GetStatements;
                 }
+                else
+                {
+                    tgtProperty.Type = method.Parameters[count].CLRReference;
+                    tgtStatements = tgtProperty.SetStatements;
+                }
+                tgtMember = tgtProperty;
             }
             else
             {
@@ -562,6 +620,26 @@ namespace net.sf.jni4net.proxygen.generator
             public GMethod Getter;
             public GMethod Setter;
         }
+
+        /*private class CodeMemberEventEx : CodeSnippetTypeMember
+        {
+            public CodeMemberEventEx()
+            {
+                Render();
+            }
+
+            public CodeParameterDeclarationExpressionCollection Parameters = new CodeParameterDeclarationExpressionCollection();
+            public CodeStatementCollection AddStatements=new CodeStatementCollection();
+            public CodeStatementCollection RemoveStatements = new CodeStatementCollection();
+            public CodeTypeReference PrivateImplementationType;
+            public GMethod Add;
+            public GMethod Remove;
+
+            public void Render()
+            {
+                this.Text = "// TODO event";
+            }
+        }*/
 
         #endregion
     }

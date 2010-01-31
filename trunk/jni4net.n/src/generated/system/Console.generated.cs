@@ -92,52 +92,54 @@ namespace System {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getCapsLock", "CapsLock49", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getTreatControlCAsInput", "TreatControlCAsInput50", "()Z"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setTreatControlCAsInput", "TreatControlCAsInput51", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardError", "OpenStandardError52", "()Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardError", "OpenStandardError53", "(I)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardInput", "OpenStandardInput54", "()Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardInput", "OpenStandardInput55", "(I)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput56", "()Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput57", "(I)Lsystem/io/Stream;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetIn", "SetIn58", "(Lsystem/io/TextReader;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetOut", "SetOut59", "(Lsystem/io/TextWriter;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetError", "SetError60", "(Lsystem/io/TextWriter;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Read", "Read61", "()I"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReadLine", "ReadLine62", "()Ljava/lang/String;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine63", "()V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine64", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine65", "(C)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine66", "([C)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine67", "([CII)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine68", "(Lsystem/Decimal;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine69", "(D)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine70", "(F)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine71", "(I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine72", "(J)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine73", "(Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine74", "(Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine75", "(Ljava/lang/String;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine76", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine77", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine78", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V" +
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addCancelKeyPress", "CancelKeyPress52", "(Lsystem/MulticastDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeCancelKeyPress", "CancelKeyPress53", "(Lsystem/MulticastDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardError", "OpenStandardError54", "()Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardError", "OpenStandardError55", "(I)Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardInput", "OpenStandardInput56", "()Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardInput", "OpenStandardInput57", "(I)Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput58", "()Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "OpenStandardOutput", "OpenStandardOutput59", "(I)Lsystem/io/Stream;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetIn", "SetIn60", "(Lsystem/io/TextReader;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetOut", "SetOut61", "(Lsystem/io/TextWriter;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetError", "SetError62", "(Lsystem/io/TextWriter;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Read", "Read63", "()I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "ReadLine", "ReadLine64", "()Ljava/lang/String;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine65", "()V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine66", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine67", "(C)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine68", "([C)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine69", "([CII)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine70", "(Lsystem/Decimal;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine71", "(D)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine72", "(F)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine73", "(I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine74", "(J)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine75", "(Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine76", "(Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine77", "(Ljava/lang/String;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine78", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine79", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine80", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V" +
                         ""));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine79", "(Ljava/lang/String;[Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write80", "(Ljava/lang/String;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write81", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write82", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write83", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V" +
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "WriteLine", "WriteLine81", "(Ljava/lang/String;[Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write82", "(Ljava/lang/String;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write83", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write84", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write85", "(Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V" +
                         ""));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write84", "(Ljava/lang/String;[Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write85", "(Z)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write86", "(C)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write87", "([C)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write88", "([CII)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write89", "(D)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write90", "(Lsystem/Decimal;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write91", "(F)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write92", "(I)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write93", "(J)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write94", "(Lsystem/Object;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write95", "(Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write86", "(Ljava/lang/String;[Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write87", "(Z)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write88", "(C)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write89", "([C)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write90", "([CII)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write91", "(D)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write92", "(Lsystem/Decimal;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write93", "(F)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write94", "(I)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write95", "(J)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write96", "(Lsystem/Object;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "Write", "Write97", "(Ljava/lang/String;)V"));
             return methods;
         }
         
@@ -661,7 +663,25 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardError52(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static void CancelKeyPress52(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lsystem/MulticastDelegate;)V
+            // (LSystem/ConsoleCancelEventHandler;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::System.Console.CancelKeyPress += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.ConsoleCancelEventHandler>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void CancelKeyPress53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lsystem/MulticastDelegate;)V
+            // (LSystem/ConsoleCancelEventHandler;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::System.Console.CancelKeyPress -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.ConsoleCancelEventHandler>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardError54(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -672,7 +692,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardError53(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardError55(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -683,7 +703,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput54(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput56(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -694,7 +714,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput55(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardInput57(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -705,7 +725,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput56(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput58(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Lsystem/io/Stream;
             // ()LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -716,7 +736,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput57(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
+        private static global::net.sf.jni4net.utils.JniHandle OpenStandardOutput59(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int bufferSize) {
             // (I)Lsystem/io/Stream;
             // (I)LSystem/IO/Stream;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -727,7 +747,7 @@ namespace System {
             return @__return;
         }
         
-        private static void SetIn58(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newIn) {
+        private static void SetIn60(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newIn) {
             // (Lsystem/io/TextReader;)V
             // (LSystem/IO/TextReader;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -736,7 +756,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void SetOut59(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newOut) {
+        private static void SetOut61(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newOut) {
             // (Lsystem/io/TextWriter;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -745,7 +765,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void SetError60(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newError) {
+        private static void SetError62(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle newError) {
             // (Lsystem/io/TextWriter;)V
             // (LSystem/IO/TextWriter;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -754,7 +774,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static int Read61(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static int Read63(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()I
             // ()I
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -765,7 +785,7 @@ namespace System {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle ReadLine62(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static global::net.sf.jni4net.utils.JniHandle ReadLine64(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()Ljava/lang/String;
             // ()LSystem/String;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -776,7 +796,7 @@ namespace System {
             return @__return;
         }
         
-        private static void WriteLine63(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
+        private static void WriteLine65(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class) {
             // ()V
             // ()V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -785,7 +805,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine64(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
+        private static void WriteLine66(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -794,7 +814,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine65(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, char value) {
+        private static void WriteLine67(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, char value) {
             // (C)V
             // (C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -803,7 +823,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine66(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer) {
+        private static void WriteLine68(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer) {
             // ([C)V
             // ([C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -812,7 +832,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine67(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
+        private static void WriteLine69(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
             // ([CII)V
             // ([CII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -821,7 +841,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine68(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void WriteLine70(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)V
             // (LSystem/Decimal;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -830,7 +850,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine69(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, double value) {
+        private static void WriteLine71(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, double value) {
             // (D)V
             // (D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -839,7 +859,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine70(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, float value) {
+        private static void WriteLine72(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, float value) {
             // (F)V
             // (F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -848,7 +868,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine71(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
+        private static void WriteLine73(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -857,7 +877,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine72(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, long value) {
+        private static void WriteLine74(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -866,7 +886,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine73(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void WriteLine75(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -875,7 +895,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine74(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void WriteLine76(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -884,7 +904,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine75(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0) {
+        private static void WriteLine77(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0) {
             // (Ljava/lang/String;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -893,7 +913,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine76(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1) {
+        private static void WriteLine78(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -902,7 +922,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine77(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2) {
+        private static void WriteLine79(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -911,7 +931,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine78(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2, global::net.sf.jni4net.utils.JniLocalHandle arg3) {
+        private static void WriteLine80(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2, global::net.sf.jni4net.utils.JniLocalHandle arg3) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -920,7 +940,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void WriteLine79(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg) {
+        private static void WriteLine81(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg) {
             // (Ljava/lang/String;[Lsystem/Object;)V
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -929,7 +949,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write80(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0) {
+        private static void Write82(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0) {
             // (Ljava/lang/String;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -938,7 +958,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write81(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1) {
+        private static void Write83(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -947,7 +967,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write82(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2) {
+        private static void Write84(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -956,7 +976,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write83(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2, global::net.sf.jni4net.utils.JniLocalHandle arg3) {
+        private static void Write85(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg0, global::net.sf.jni4net.utils.JniLocalHandle arg1, global::net.sf.jni4net.utils.JniLocalHandle arg2, global::net.sf.jni4net.utils.JniLocalHandle arg3) {
             // (Ljava/lang/String;Lsystem/Object;Lsystem/Object;Lsystem/Object;Lsystem/Object;)V
             // (LSystem/String;LSystem/Object;LSystem/Object;LSystem/Object;LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -965,7 +985,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write84(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg) {
+        private static void Write86(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle format, global::net.sf.jni4net.utils.JniLocalHandle arg) {
             // (Ljava/lang/String;[Lsystem/Object;)V
             // (LSystem/String;[LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -974,7 +994,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write85(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
+        private static void Write87(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, bool value) {
             // (Z)V
             // (Z)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -983,7 +1003,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write86(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, char value) {
+        private static void Write88(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, char value) {
             // (C)V
             // (C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -992,7 +1012,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write87(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer) {
+        private static void Write89(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer) {
             // ([C)V
             // ([C)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1001,7 +1021,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write88(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
+        private static void Write90(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle buffer, int index, int count) {
             // ([CII)V
             // ([CII)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1010,7 +1030,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write89(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, double value) {
+        private static void Write91(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, double value) {
             // (D)V
             // (D)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1019,7 +1039,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write90(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void Write92(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Decimal;)V
             // (LSystem/Decimal;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1028,7 +1048,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write91(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, float value) {
+        private static void Write93(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, float value) {
             // (F)V
             // (F)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1037,7 +1057,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write92(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
+        private static void Write94(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, int value) {
             // (I)V
             // (I)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1046,7 +1066,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write93(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, long value) {
+        private static void Write95(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, long value) {
             // (J)V
             // (J)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1055,7 +1075,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write94(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void Write96(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Lsystem/Object;)V
             // (LSystem/Object;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -1064,7 +1084,7 @@ namespace System {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void Write95(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
+        private static void Write97(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle value) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

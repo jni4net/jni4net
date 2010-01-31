@@ -48,6 +48,10 @@ namespace net.sf.jni4net.tested {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "TestRefParamBa", "TestRefParamBa5", "(Lnet/sf/jni4net/Out;IC)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "TestOutParam", "TestOutParam6", "(Lnet/sf/jni4net/Out;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "TestRefParam", "TestRefParam7", "(Lnet/sf/jni4net/Ref;)I"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addEnvDispatcher", "EnvDispatcher8", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeEnvDispatcher", "EnvDispatcher9", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addEnvDispatcherProp", "EnvDispatcherProp10", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeEnvDispatcherProp", "EnvDispatcherProp11", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorStaticMethods0", "__ctorStaticMethods0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
             return methods;
         }
@@ -140,6 +144,46 @@ namespace net.sf.jni4net.tested {
             net.sf.jni4net.Ref.SetValue<int>(@__env, num, @__ref_num);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
+        }
+        
+        private static void EnvDispatcher8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.StaticMethods @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.StaticMethods>(@__env, @__obj);
+            @__real.EnvDispatcher += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void EnvDispatcher9(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.StaticMethods @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.StaticMethods>(@__env, @__obj);
+            @__real.EnvDispatcher -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void EnvDispatcherProp10(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.StaticMethods @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.StaticMethods>(@__env, @__obj);
+            @__real.EnvDispatcherProp += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void EnvDispatcherProp11(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle value) {
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            // (Lnet/sf/jni4net/tested/TestDelegate;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.StaticMethods @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.StaticMethods>(@__env, @__obj);
+            @__real.EnvDispatcherProp -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
         private static void @__ctorStaticMethods0(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {

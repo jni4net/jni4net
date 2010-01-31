@@ -249,9 +249,13 @@
     <Compile Include="generated\net\sf\jni4net\Ref.generated.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="generated\system\AsyncCallback.generated.cs" />
+    <Compile Include="generated\system\Delegate.generated.cs" />
     <Compile Include="generated\system\Environment.generated.cs" />
+    <Compile Include="generated\system\IAsyncResult.generated.cs" />
     <Compile Include="generated\system\io\TextReader.generated.cs" />
     <Compile Include="generated\system\io\TextWriter.generated.cs" />
+    <Compile Include="generated\system\MulticastDelegate.generated.cs" />
     <Compile Include="generated\system\runtime\serialization\SerializationInfo.generated.cs" />
     <Compile Include="generated\system\runtime\serialization\StreamingContext.generated.cs" />
     <Compile Include="java\lang\Boolean.cs" />

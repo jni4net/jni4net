@@ -65,11 +65,17 @@ public class Stream extends system.MarshalByRefObject implements system.IDisposa
     @net.sf.jni4net.attributes.ClrMethod("()V")
     public native void Flush();
     
+    @net.sf.jni4net.attributes.ClrMethod("([BIILSystem/AsyncCallback;LSystem/Object;)LSystem/IAsyncResult;")
+    public native system.IAsyncResult BeginRead(byte[] buffer, int offset, int count, system.AsyncCallback callback, system.Object state);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IAsyncResult;)I")
-    public native int EndRead(system.Object asyncResult);
+    public native int EndRead(system.IAsyncResult asyncResult);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([BIILSystem/AsyncCallback;LSystem/Object;)LSystem/IAsyncResult;")
+    public native system.IAsyncResult BeginWrite(byte[] buffer, int offset, int count, system.AsyncCallback callback, system.Object state);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/IAsyncResult;)V")
-    public native void EndWrite(system.Object asyncResult);
+    public native void EndWrite(system.IAsyncResult asyncResult);
     
     @net.sf.jni4net.attributes.ClrMethod("(JLSystem/IO/SeekOrigin;)J")
     public native long Seek(long offset, system.Enum origin);

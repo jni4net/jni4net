@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using System.CodeDom;
 using System.Reflection;
 using net.sf.jni4net.inj;
@@ -64,6 +65,13 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateTypeOfInit(tgtType);
 
             WrapMethodsMagic(tgtType, sMagicProxy, eMagicProxy);
+
+            if (type.IsDelegate)
+            {
+                tgtType.TypeAttributes |= TypeAttributes.Abstract;
+                GenerateProxy(nameSpace);
+            }
+
         }
 
         private void GenerateMethods(CodeTypeDeclaration tgtType)
@@ -72,8 +80,23 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 CodeMemberMethod tgtMethod = CreateMethodSignature(method, false);
                 tgtType.Members.Add(tgtMethod);
-
-                ChangeNativeAttributes(tgtMethod);
+                if (!type.IsDelegate)
+                {
+                    ChangeNativeAttributes(tgtMethod);
+                }
+                else
+                {
+                    if (method.Name=="Invoke")
+                    {
+                        tgtMethod.Attributes |= MemberAttributes.Abstract;
+                    }
+                    else
+                    {
+                        tgtMethod.Statements.Add(
+                            new CodeThrowExceptionStatement(
+                                new CodeObjectCreateExpression(TypeReference("system.NotImplementedException"))));
+                    }
+                }
             }
         }
 

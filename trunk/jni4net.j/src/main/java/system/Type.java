@@ -56,6 +56,9 @@ public class Type extends system.reflection.MemberInfo {
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Type;")
     public native system.Type[] GetInterfaces();
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/TypeFilter;LSystem/Object;)[LSystem/Type;")
+    public native system.Type[] FindInterfaces(system.MulticastDelegate filter, system.Object filterCriteria);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;LSystem/Reflection/BindingFlags;)LSystem/Reflection/EventInfo;")
     public native system.reflection.MemberInfo GetEvent(java.lang.String name, system.reflection.BindingFlags bindingAttr);
     
@@ -76,6 +79,9 @@ public class Type extends system.reflection.MemberInfo {
     
     @net.sf.jni4net.attributes.ClrMethod("()[LSystem/Reflection/MemberInfo;")
     public native system.reflection.MemberInfo[] GetDefaultMembers();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/MemberTypes;LSystem/Reflection/BindingFlags;LSystem/Reflection/MemberFilter;LSystem/Object;)[LSystem/Reflection/MemberInfo;")
+    public native system.reflection.MemberInfo[] FindMembers(system.Enum memberType, system.reflection.BindingFlags bindingAttr, system.MulticastDelegate filter, system.Object filterCriteria);
     
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Type;")
     public native system.Type GetElementType();
