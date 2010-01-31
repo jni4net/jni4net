@@ -6,7 +6,9 @@ Shows how to incrementaly build classes which use each other
 4) when you reach circular7/build7.cmd look into circular7/target
    there will be final products: circular.dll, circular.jar
 
-Whole sample flat looks like this.
+Whole sample flat looks like this. A uses B, B uses A.
+When we start A.main() we will get "m1 called" twice. 
+Once from instance passed to C# and second from instance creadted in C#.
 
 --- Java ---
 
@@ -36,11 +38,13 @@ public class A implements IA {
 
 --- C# ---
 
-public class B : IB
+public class B: IB
 {
   public void m2(IA a)
   {
      a.m1();
-  }
-}	
 
+     A a2=new A();
+     a2.m1();
+  }
+}
