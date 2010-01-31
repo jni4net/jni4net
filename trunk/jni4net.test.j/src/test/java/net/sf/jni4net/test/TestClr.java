@@ -172,12 +172,42 @@ public class TestClr {
     }
 
     @Test()
-    public void testDelegate(ICInterface ici) {
-        ici.addEnvDispatcher(new TestDelegate() {
-            public system.Object Invoke(int i, java.lang.String s) {
-                return null;
+    public void testDelegatePtr() {
+        final CIfcImpl ici=new CIfcImpl();
+        final TestDelegate impl = new TestDelegate() {
+            public int j;
+            public String toString(){
+                return ""+j;
             }
-        });
+            public Object Invoke(int i, String s) {
+                ici.setintProp(ici.getintProp()+1);
+                j++;
+                return Bridge.convert(s + i);
+            }
+        };
+        ici.setfcePtr(impl);
+        Assert.assertThat(ici.RunPtr(), is((Object)Bridge.convert("ahoj1")));
+
+        final TestDelegate testDelegate = ici.getfcePtr();
+
+        final system.Object object = ici.getfcePtr().Invoke(6, "nazdar");
+        Assert.assertThat(object.ToString(), equalTo ("nazdar6"));
+
+        Assert.assertThat(ici.getintProp(), is (2));
+        Assert.assertThat(impl.toString(), is ("2"));
+
+
+
     }
 
+    @Test()
+    public void testDelegateEvent() {
+        CIfcImpl ici=new CIfcImpl();
+        ici.addEnvDispatcher(new TestDelegate() {
+            public system.Object Invoke(int i, java.lang.String s) {
+                return Bridge.convert(s+i);
+            }
+        });
+        Assert.assertThat(ici.RunEvnt(), is((Object)Bridge.convert("ahoj2")));
+    }
 }

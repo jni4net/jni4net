@@ -27,7 +27,7 @@ namespace net.sf.jni4net.utils
 {
     partial class Convertor
     {
-        public static JniLocalHandle StrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
+        public static JniHandle StrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
         {
             // ReSharper disable CompareNonConstrainedGenericWithNull
             if (obj == null)
@@ -35,6 +35,15 @@ namespace net.sf.jni4net.utils
                 return JniLocalHandle.Zero;
             }
             // ReSharper restore CompareNonConstrainedGenericWithNull
+            Delegate del = obj as Delegate;
+            if (del!=null)
+            {
+                IJvmProxy proxy = del.Target as IJvmProxy;
+                if (proxy!=null)
+                {
+                    return proxy.JvmHandle;
+                }
+            }
             RegistryRecord record = Registry.GetCLRRecord(obj.GetType());
             return record.CreateJVMProxy(env, obj);
         }

@@ -32,5 +32,13 @@ namespace net.sf.jni4net.test
             var res = del.Invoke(1, "ahoj");
             Assert.AreEqual("ahoj1", res);
         }
+
+        [Test]
+        public void DelegateJP()
+        {
+            JavaCallStaticMethods.testDelegatePtr();
+            JavaCallStaticMethods.testDelegateEvent();
+        }
+    
     }
 }

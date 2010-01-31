@@ -86,7 +86,7 @@ namespace net.sf.jni4net.utils
             JniLocalHandle res = env.NewObjectArrayPtr(length, elemClazz.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
-                JniLocalHandle item = StrongC2Jp(env, (TElem)array.GetValue(i));
+                JniHandle item = StrongC2Jp(env, (TElem)array.GetValue(i));
                 env.SetObjectArrayElement(res, i, item);
             }
             return res;

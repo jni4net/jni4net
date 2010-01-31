@@ -35,7 +35,7 @@ namespace net.sf.jni4net.utils
 
         public static Value ParStrongC2Jp<TBoth>(JNIEnv env, TBoth obj)
         {
-            var res = new Value { _object = StrongC2Jp(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = StrongC2Jp(env, obj) };
             return res;
         }
 

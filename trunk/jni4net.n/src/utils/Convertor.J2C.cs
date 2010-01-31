@@ -61,12 +61,13 @@ namespace net.sf.jni4net.utils
                     return (TRes)__IClrProxy.CreateProxy(env, obj);
                 }
                 object res = __IClrProxy.GetObject(env, obj);
-                if (res==null && typeof(Delegate).IsAssignableFrom(reqType))
+                if (res==null && Delegate_._class.isAssignableFrom(clazz))
                 {
                     //that's delegate implemented in Java
                     RegistryRecord delRecord = Registry.GetJVMRecord(clazz);
                     IJvmProxy jvmProxy = delRecord.CreateCLRProxy(env, obj);
-                    return (TRes)(object)Delegate.CreateDelegate(reqType, jvmProxy, delRecord.JVMDelegateInvoke);
+                    Delegate del = Delegate.CreateDelegate(delRecord.CLRInterface, jvmProxy, delRecord.JVMDelegateInvoke);
+                    return (TRes)(object)del;
                 }
                 if (Bridge.Setup.Debug)
                 {
