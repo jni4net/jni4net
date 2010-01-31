@@ -35,6 +35,11 @@ public class TestForm extends Form {
 		this.button1.setSize(new system.drawing.Size(75, 23));
 		this.button1.setTabIndex(0);
 		this.button1.setText("Huray");
+		this.button1.addClick(new system.EventHandler(){
+				public void Invoke(system.Object sender, system.EventArgs e){
+					button1.setText("Clicked");
+				}
+			});
 		//
 		// TestForm
 		//

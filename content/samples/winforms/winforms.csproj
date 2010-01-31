@@ -48,6 +48,8 @@
     <Compile Include="csharp\system\drawing\Point.generated.cs" />
     <Compile Include="csharp\system\drawing\Size.generated.cs" />
     <Compile Include="csharp\system\drawing\SizeF.generated.cs" />
+    <Compile Include="csharp\system\EventArgs.generated.cs" />
+    <Compile Include="csharp\system\EventHandler.generated.cs" />
     <Compile Include="csharp\system\windows\forms\Application.generated.cs" />
     <Compile Include="csharp\system\windows\forms\AutoScaleMode.generated.cs" />
     <Compile Include="csharp\system\windows\forms\Button.generated.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="csharp\system\windows\forms\Control.generated.cs" />
     <Compile Include="csharp\system\windows\forms\Form.generated.cs" />
     <Compile Include="csharp\system\windows\forms\layout\ArrangedElementCollection.generated.cs" />
+    <Compile Include="csharp\system\windows\forms\Message.generated.cs" />
     <Compile Include="csharp\system\windows\forms\ScrollableControl.generated.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
