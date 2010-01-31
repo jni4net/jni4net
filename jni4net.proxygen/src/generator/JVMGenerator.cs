@@ -279,7 +279,10 @@ namespace net.sf.jni4net.proxygen.generator
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;
             Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrProxy");
-            tgtType.BaseTypes.Add(Repository.systemObject.JVMReference);
+            if (!type.IsDelegate)
+            {
+                tgtType.BaseTypes.Add(Repository.systemObject.JVMReference);
+            }
             tgtType.BaseTypes.Add(type.JVMReference);
 
             CreateEnvConstructor(tgtType, "net.sf.jni4net.inj.INJEnv", false, true, false);

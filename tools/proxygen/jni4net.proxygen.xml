@@ -239,6 +239,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <ClrType TypeName="System.IFormatProvider"/>
   <ClrType TypeName="System.ICloneable"/>
 
+  <ClrType TypeName="System.Delegate"/>
+  <ClrType TypeName="System.MulticastDelegate"/>
+  <ClrType TypeName="System.AsyncCallback"/>
+  <ClrType TypeName="System.IAsyncResult"/>
+
   <!-- reflection -->
   <ClrType TypeName="System.Reflection.MemberInfo"/>
   <ClrType TypeName="System.Reflection.Assembly"/>

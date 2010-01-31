@@ -66,6 +66,7 @@
     <Compile Include="Serialization.cs" />
     <Compile Include="StaticFieldTest.cs" />
     <Compile Include="TestBase.cs" />
+    <Compile Include="TestDeleagtes.cs" />
     <Compile Include="TestInterfaces.cs" />
   </ItemGroup>
   <ItemGroup>

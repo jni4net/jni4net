@@ -416,7 +416,8 @@ namespace net.sf.jni4net.proxygen.model
         {
             return type.IsPointer
                 //|| type.IsByRef 
-                || typeof (Delegate).IsAssignableFrom(type);
+                //|| typeof (Delegate).IsAssignableFrom(type)
+                ;
         }
 
         private static bool UseMethodModifier(GType type, GMethod res, string name, string signature, ref bool force)

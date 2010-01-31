@@ -142,6 +142,19 @@ namespace net.sf.jni4net.proxygen.generator
                         call = new CodePropertyReferenceExpression(targetObject, method.CLRProperty.Name);
                     }
                 }
+                else if (method.IsEvent)
+                {
+                    int last = callParams.Count - 1;
+                    value = callParams[last];
+                    if (method.IsCLRPropertyAdd)
+                    {
+                        call = new CodeEventReferenceExpression(targetObject, method.CLREvent.Name + "__event_add__");
+                    }
+                    else
+                    {
+                        call = new CodeEventReferenceExpression(targetObject, method.CLREvent.Name + "__event_remove__");
+                    }
+                }
                 else
                 {
                     call = new CodeMethodInvokeExpression(targetObject, method.CLRName, callParams.ToArray());
@@ -149,7 +162,7 @@ namespace net.sf.jni4net.proxygen.generator
                 CodeStatement callst;
                 if (method.IsVoid)
                 {
-                    if (method.IsProperty)
+                    if (method.IsProperty || method.IsEvent)
                     {
                         callst = new CodeAssignStatement(call, value);
                     }

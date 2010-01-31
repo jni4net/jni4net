@@ -44,6 +44,10 @@ namespace net.sf.jni4net.inj
         internal static object GetObject(JNIEnv env, JniHandle obj)
         {
             long handle = getClrHandle(env, obj);
+            if (handle==0)
+            {
+                return null;
+            }
             object real = IntHandle.ToObject(handle);
             return real;
         }

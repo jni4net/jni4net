@@ -69,6 +69,10 @@ namespace net.sf.jni4net.proxygen.model
                 return known;
             }
             var res = new GType();
+            if(typeof(Delegate).IsAssignableFrom(type))
+            {
+                int i = 0;
+            }
             if (type.IsPointer)
             {
                 //it's out really
@@ -87,15 +91,6 @@ namespace net.sf.jni4net.proxygen.model
                 res.IsArray = true;
             }
 
-            if (type.IsAbstract)
-            {
-                res.IsAbstract = true;
-            }
-            if (type.IsSealed)
-            {
-                res.IsFinal = true;
-            }
-
             res.LowerName = original.FullName.ToLowerInvariant();
             if (res.IsOut)
             {
@@ -105,6 +100,20 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res = knownNames[res.LowerName];
             }
+            
+            if (type.IsAbstract)
+            {
+                res.IsAbstract = true;
+            }
+            if (type.IsSealed)
+            {
+                res.IsFinal = true;
+            }
+            if (typeof(Delegate).IsAssignableFrom(type) && typeof(Delegate) != type && typeof(MulticastDelegate) != type)
+            {
+                res.IsDelegate = true;
+            }
+
             if (res.Registration == null && registration != null)
             {
                 res.Registration = registration;
@@ -253,6 +262,14 @@ namespace net.sf.jni4net.proxygen.model
                 return;
             }
             Type clrType = type.CLRType;
+            if (typeof(Delegate).IsAssignableFrom(clrType))
+            {
+                if (config.Verbose)
+                {
+                    Console.WriteLine("Skip " + type + " constructors");
+                }
+                return;                
+            }
             foreach (ConstructorInfo constructor in clrType.GetConstructors())
             {
                 MethodAttributes modifiers = constructor.Attributes;
@@ -302,7 +319,7 @@ namespace net.sf.jni4net.proxygen.model
             if (method.IsSpecialName)
             {
                 string name = method.Name;
-                if (name.StartsWith("op_") || name.StartsWith("add_") || name.StartsWith("remove_"))
+                if (name.StartsWith("op_"))
                 {
                     if (config.Verbose)
                     {
@@ -325,38 +342,72 @@ namespace net.sf.jni4net.proxygen.model
             if (method.IsSpecialName)
             {
                 res.CLRProperty = GetProperty(type, method);
-                res.IsProperty = true;
-                if (res.CLRProperty.CanRead && method.Name.StartsWith("get_"))
+                if (res.CLRProperty == null)
                 {
-                    res.IsCLRPropertyGetter = true;
-                    res.CLRPropertyGetter = res;
-                    foreach (GMethod m in type.Methods)
+                    res.CLREvent = GetEvent(type, method);
+                    res.IsEvent = true;
+                    if (method.Name.StartsWith("add_"))
                     {
-                        if (m.CLRProperty == res.CLRProperty)
+                        res.IsCLRPropertyAdd = true;
+                        res.CLRPropertyAdd = res;
+                        foreach (GMethod m in type.Methods)
                         {
-                            m.CLRPropertyGetter = res;
+                            if (m.CLRProperty == res.CLRProperty)
+                            {
+                                m.CLRPropertyAdd = res;
+                            }
                         }
                     }
-                }
-                if (res.CLRProperty.CanWrite && method.Name.StartsWith("set_"))
-                {
-                    res.IsCLRPropertySetter = true;
-                    res.CLRPropertySetter = res;
-                    foreach (GMethod m in type.Methods)
+                    if (method.Name.StartsWith("remove_"))
                     {
-                        if (m.CLRProperty == res.CLRProperty)
+                        res.IsCLRPropertyRemove = true;
+                        res.CLRPropertyRemove = res;
+                        foreach (GMethod m in type.Methods)
                         {
-                            m.CLRPropertySetter = res;
+                            if (m.CLRProperty == res.CLRProperty)
+                            {
+                                m.CLRPropertyRemove = res;
+                            }
                         }
+                    }
+                    res.CLRName = res.CLREvent.Name;
+                    res.JVMName = method.Name.Replace("_", "");
+                }
+                else
+                {
+                    res.IsProperty = true;
+                    if (res.CLRProperty.CanRead && method.Name.StartsWith("get_"))
+                    {
+                        res.IsCLRPropertyGetter = true;
+                        res.CLRPropertyGetter = res;
+                        foreach (GMethod m in type.Methods)
+                        {
+                            if (m.CLRProperty == res.CLRProperty)
+                            {
+                                m.CLRPropertyGetter = res;
+                            }
+                        }
+                    }
+                    if (res.CLRProperty.CanWrite && method.Name.StartsWith("set_"))
+                    {
+                        res.IsCLRPropertySetter = true;
+                        res.CLRPropertySetter = res;
+                        foreach (GMethod m in type.Methods)
+                        {
+                            if (m.CLRProperty == res.CLRProperty)
+                            {
+                                m.CLRPropertySetter = res;
+                            }
+                        }
+                    }
+                    res.CLRName = res.CLRProperty.Name;
+                    res.JVMName = method.Name.Replace("_", "");
+                    if (res.CLRProperty.PropertyType == typeof(bool) && res.JVMName.StartsWith("getIs"))
+                    {
+                        res.JVMName = "is" + res.JVMName.Substring(5);
                     }
                 }
                 res.Name = method.Name;
-                res.JVMName = method.Name.Replace("_", "");
-                res.CLRName = res.CLRProperty.Name;
-                if (res.CLRProperty.PropertyType == typeof (bool) && res.JVMName.StartsWith("getIs"))
-                {
-                    res.JVMName = "is" + res.JVMName.Substring(5);
-                }
             }
 
             if (method.DeclaringType != type.CLRType)
@@ -509,6 +560,20 @@ namespace net.sf.jni4net.proxygen.model
 
         private static PropertyInfo GetProperty(GType type, MethodInfo method)
         {
+            BindingFlags f = GetPropFlags(method);
+            string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
+            return FindProperty(f, type.CLRType, pname);
+        }
+
+        private static EventInfo GetEvent(GType type, MethodInfo method)
+        {
+            BindingFlags f = GetPropFlags(method);
+            string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
+            return FindEvent(f, type.CLRType, pname);
+        }
+
+        private static BindingFlags GetPropFlags(MethodInfo method)
+        {
             BindingFlags f = 0;
             if (method.IsStatic)
             {
@@ -530,8 +595,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 f |= BindingFlags.DeclaredOnly;
             }
-            string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
-            return FindProperty(f, type.CLRType, pname);
+            return f;
         }
 
         private static PropertyInfo FindProperty(BindingFlags f, Type clazz, string pname)
@@ -560,5 +624,33 @@ namespace net.sf.jni4net.proxygen.model
 
             return null;
         }
+
+        private static EventInfo FindEvent(BindingFlags f, Type clazz, string pname)
+        {
+            EventInfo property = clazz.GetEvent(pname, f);
+            if (property != null)
+            {
+                return property;
+            }
+            foreach (Type ifc in clazz.GetInterfaces())
+            {
+                property = FindEvent(f, ifc, pname);
+                if (property != null)
+                {
+                    return property;
+                }
+            }
+            if (!clazz.IsInterface && clazz.BaseType == typeof(object))
+            {
+                property = FindEvent(f, clazz.BaseType, pname);
+                if (property != null)
+                {
+                    return property;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

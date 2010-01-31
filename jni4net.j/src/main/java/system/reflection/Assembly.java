@@ -92,6 +92,12 @@ public class Assembly extends system.Object implements system.security.IEvidence
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
     public native java.lang.String getLocation();
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/ModuleResolveEventHandler;)V")
+    public native void addModuleResolve(system.MulticastDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/ModuleResolveEventHandler;)V")
+    public native void removeModuleResolve(system.MulticastDelegate value);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;ZZ)LSystem/Type;")
     public native system.Type GetType(java.lang.String name, boolean throwOnError, boolean ignoreCase);
     

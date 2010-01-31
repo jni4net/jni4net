@@ -32,7 +32,7 @@ namespace net.sf.jni4net.proxygen.generator
     {
         protected void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool isProxy)
         {
-            if (method.IsCLRMethod && !type.IsInterface)
+            if (method.IsCLRMethod && !type.IsInterface && !type.IsDelegate)
             {
                 return;
             }

@@ -364,11 +364,14 @@ namespace net.sf.jni4net.jni
             MethodId idNative = GetStaticMethodID(clazz, method, sig);
             if (idNative != null)
             {
-                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes))
+                    ||(typeof(object)==(typeof(TRes)) 
+                    || typeof(Delegate).IsAssignableFrom(typeof(TRes)))
+                    )
                 {
                     return CallStaticObjectMethod<TRes>(clazz, idNative, args);
                 }
-                if (typeof (string).IsAssignableFrom(typeof (TRes)))
+                if (typeof(string).IsAssignableFrom(typeof(TRes)))
                 {
                     return CallStaticObjectMethod<TRes>(clazz, idNative, args);
                 }
@@ -648,11 +651,13 @@ namespace net.sf.jni4net.jni
             MethodId idNative = GetMethodID(GetObjectClass(obj), method, sig);
             if (idNative != null)
             {
-                if (typeof (IObject).IsAssignableFrom(typeof (TRes)))
+                if (typeof (IObject).IsAssignableFrom(typeof (TRes))
+                    || typeof(object)==(typeof(TRes))
+                    || typeof(Delegate).IsAssignableFrom(typeof(TRes)))
                 {
                     return CallObjectMethod<TRes>(obj, idNative, args);
                 }
-                if (typeof (string).IsAssignableFrom(typeof (TRes)))
+                if (typeof(string).IsAssignableFrom(typeof(TRes)))
                 {
                     return CallObjectMethod<TRes>(obj, idNative, args);
                 }

@@ -35,6 +35,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsConstructor { get; set; }
         public bool IsField { get; set; }
         public bool IsProperty { get; set; }
+        public bool IsEvent { get; set; }
         public bool IsStatic { get; set; }
         public bool IsVoid { get; set; }
         public bool IsJVMMethod { get; set; }
@@ -46,9 +47,14 @@ namespace net.sf.jni4net.proxygen.model
         public string CLRName { get; set; }
         public bool IsCLRPropertyGetter { get; set; }
         public bool IsCLRPropertySetter { get; set; }
+        public bool IsCLRPropertyAdd { get; set; }
+        public bool IsCLRPropertyRemove { get; set; }
         public PropertyInfo CLRProperty { get; set; }
+        public EventInfo CLREvent { get; set; }
         public GMethod CLRPropertyGetter { get; set; }
         public GMethod CLRPropertySetter { get; set; }
+        public GMethod CLRPropertyAdd { get; set; }
+        public GMethod CLRPropertyRemove { get; set; }
         public string JVMSignature { get; set; }
         public string CLRSignature { get; set; }
         public string Name { get; set; }

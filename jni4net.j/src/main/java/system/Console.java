@@ -179,6 +179,12 @@ public class Console extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
     public native static void setTreatControlCAsInput(boolean value);
     
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/ConsoleCancelEventHandler;)V")
+    public native static void addCancelKeyPress(system.MulticastDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/ConsoleCancelEventHandler;)V")
+    public native static void removeCancelKeyPress(system.MulticastDelegate value);
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/IO/Stream;")
     public native static system.io.Stream OpenStandardError();
     

@@ -169,6 +169,10 @@ namespace net.sf.jni4net.utils
             {
                 Console.WriteLine("Registration : " + type.FullName);
             }
+            if (type.Name.EndsWith("__TestDelegate"))
+            {
+                int i=0;
+            }
             RegistryRecord record = null;
             RegisterWrapper(type, ref record);
             RegisterInterfaceProxy(type, ref record);
@@ -190,6 +194,17 @@ namespace net.sf.jni4net.utils
                 if (record.IsJVMClass || Bridge.Setup.BindCLRTypes)
                 {
                     RegisterStaticAndMethods(record, env);
+                    if (record.IsDelegate)
+                    {
+                        MethodInfo methodInfo = record.CLRInterface.GetMethod("Invoke");
+                        ParameterInfo[] parameterInfo = methodInfo.GetParameters();
+                        Type[] param=new Type[parameterInfo.Length];
+                        for (int i = 0; i < param.Length; i++)
+                        {
+                            param[i] = parameterInfo[i].ParameterType;
+                        }
+                        record.JVMDelegateInvoke = record.CLRProxy.GetMethod("Invoke", param);
+                    }
                 }
                 if (initialized && Bridge.Setup.BindStatic)
                 {
@@ -223,6 +238,11 @@ namespace net.sf.jni4net.utils
             {
                 proxyName = GetProxyName(package, className, true);
                 staticName = GetStaticName(package, className, true);
+            }
+            else if (record.IsDelegate)
+            {
+                proxyName = GetProxyName(package, className, true);
+                staticName = interfaceName;
             }
             else
             {
@@ -369,7 +389,11 @@ namespace net.sf.jni4net.utils
                                      {
                                          CLRAssembly = wrapperType.Assembly,
                                          IsInterface = interfaceType.IsInterface,
-                                         IsCLRType = !interfaceType.IsInterface
+                                         IsCLRType = !interfaceType.IsInterface,
+                                         IsDelegate =
+                                             typeof (Delegate).IsAssignableFrom(interfaceType) &&
+                                             typeof (Delegate) != interfaceType &&
+                                             typeof (MulticastDelegate) != interfaceType,
                                      };
                     }
                 }

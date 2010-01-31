@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package net.sf.jni4net.tested;
 
+import net.sf.jni4net.Bridge;
+
 /**
  * @author Pavel Savara (original)
  */
@@ -29,5 +31,14 @@ public class JavaCallStaticMethods {
 	public static void voidMethod(Object data) {
 		System.out.println(data);
 	}
+
+    public static TestDelegate testDelegate(){
+        return new TestDelegate(){
+            public system.Object Invoke(int i, java.lang.String s){
+                final system.String string = Bridge.convert(s + i);
+                return string;
+            }
+        };
+    }
 
 }
