@@ -38,7 +38,14 @@ namespace net.sf.jni4net.utils
                 return default(TRes);
             }
             object res = __IClrProxy.GetObject(env, obj);
-            return (TRes) res;
+            if (res == null && typeof(Delegate).IsAssignableFrom(typeof(TRes)))
+            {
+                //that's delegate implemented in Java
+                RegistryRecord delRecord = Registry.GetCLRRecord(typeof(TRes));
+                IJvmProxy jvmProxy = delRecord.CreateCLRProxy(env, obj);
+                return (TRes)(object)Delegate.CreateDelegate(typeof(TRes), jvmProxy, delRecord.JVMDelegateInvoke);
+            }
+            return (TRes)res;
         }
 
 

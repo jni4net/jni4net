@@ -34,6 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <ClrType TypeName="net.sf.jni4net.tested.CInterfacesHelper"/>
   <ClrType TypeName="net.sf.jni4net.tested.StaticMethods"/>
   <ClrType TypeName="net.sf.jni4net.tested.ICInterface"/>
+  <ClrType TypeName="net.sf.jni4net.tested.CIfcImpl"/>
   <ClrType TypeName="net.sf.jni4net.tested.TestDelegate"/>
 
   <JavaClass TypeName="net.sf.jni4net.tested.JavaCallInstanceMethods"/>

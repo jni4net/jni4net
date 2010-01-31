@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="CInterfacesHelper.cs" />
     <Compile Include="CWithJavaInterfaceUnreg.cs" />
+    <Compile Include="generated\net\sf\jni4net\tested\CIfcImpl.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\CInterfacesHelper.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\ClrException.generated.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\CWithJavaInterface.generated.cs" />
