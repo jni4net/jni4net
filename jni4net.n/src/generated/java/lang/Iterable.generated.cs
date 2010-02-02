@@ -32,8 +32,8 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Iterable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Iterable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Iterable), typeof(global::java.lang.Iterable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Iterable), typeof(global::java.lang.Iterable_))]
     internal sealed partial class @__Iterable : global::java.lang.Object, global::java.lang.Iterable {
         
         internal new static global::java.lang.Class staticClass;

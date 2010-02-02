@@ -23,8 +23,8 @@ namespace System.Runtime.Serialization {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Runtime.Serialization.StreamingContext))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.StreamingContext))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Runtime.Serialization.StreamingContext), typeof(global::System.Runtime.Serialization.StreamingContext_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Runtime.Serialization.StreamingContext), typeof(global::System.Runtime.Serialization.StreamingContext_))]
     internal sealed partial class @__StreamingContext : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

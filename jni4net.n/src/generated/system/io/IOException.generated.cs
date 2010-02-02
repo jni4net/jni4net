@@ -23,8 +23,8 @@ namespace System.IO {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.IOException))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.IOException))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.IOException), typeof(global::System.IO.IOException_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.IOException), typeof(global::System.IO.IOException_))]
     internal sealed partial class @__IOException : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

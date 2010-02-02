@@ -38,10 +38,17 @@ namespace net.sf.jni4net.proxygen.generator
             declaration.Arguments.Add(new CodeAttributeArgument(new CodePrimitiveExpression(value)));
         }
 
-        public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer)
+        /*public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer)
         {
             CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
             declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer)));
+        }*/
+
+        public static void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer, CodeTypeReference refer2)
+        {
+            CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
+            declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer)));
+            declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer2)));
         }
 
         public static CodeAttributeDeclaration AddAttribute(CodeTypeMember tgtMethodCLR, string attr)

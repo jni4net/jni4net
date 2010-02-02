@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.MulticastDelegate))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.MulticastDelegate))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.MulticastDelegate), typeof(global::System.MulticastDelegate_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.MulticastDelegate), typeof(global::System.MulticastDelegate_))]
     internal sealed partial class @__MulticastDelegate : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

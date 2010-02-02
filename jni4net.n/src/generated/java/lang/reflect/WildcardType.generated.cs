@@ -35,8 +35,8 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.WildcardType))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.WildcardType))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.WildcardType), typeof(global::java.lang.reflect.WildcardType_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.WildcardType), typeof(global::java.lang.reflect.WildcardType_))]
     internal sealed partial class @__WildcardType : global::java.lang.Object, global::java.lang.reflect.WildcardType {
         
         internal new static global::java.lang.Class staticClass;

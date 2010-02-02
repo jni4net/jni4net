@@ -23,7 +23,7 @@ namespace java_.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java_.lang.IObject))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java_.lang.IObject), typeof(global::java_.lang.IObject_))]
     internal unsafe partial class @__IObject : global::java.lang.Object, global::java_.lang.IObject
     {
         

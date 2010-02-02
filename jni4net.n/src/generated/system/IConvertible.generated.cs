@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IConvertible))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IConvertible))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IConvertible), typeof(global::System.IConvertible_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IConvertible), typeof(global::System.IConvertible_))]
     internal sealed partial class @__IConvertible : global::java.lang.Object, global::System.IConvertible {
         
         internal new static global::java.lang.Class staticClass;

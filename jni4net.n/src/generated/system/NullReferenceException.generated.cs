@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.NullReferenceException))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.NullReferenceException))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.NullReferenceException), typeof(global::System.NullReferenceException_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.NullReferenceException), typeof(global::System.NullReferenceException_))]
     internal sealed partial class @__NullReferenceException : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

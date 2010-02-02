@@ -71,8 +71,8 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Map))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Map))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Map), typeof(global::java.util.Map_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Map), typeof(global::java.util.Map_))]
     internal sealed partial class @__Map : global::java.lang.Object, global::java.util.Map {
         
         internal new static global::java.lang.Class staticClass;

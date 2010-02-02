@@ -23,8 +23,8 @@ namespace net.sf.jni4net.jni {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.jni.IJvmProxy))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.jni.IJvmProxy))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.jni.IJvmProxy), typeof(global::net.sf.jni4net.jni.IJvmProxy_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.jni.IJvmProxy), typeof(global::net.sf.jni4net.jni.IJvmProxy_))]
     internal sealed partial class __IJvmProxy : global::java.lang.Object, global::net.sf.jni4net.jni.IJvmProxy {
         
         new internal static global::java.lang.Class staticClass;

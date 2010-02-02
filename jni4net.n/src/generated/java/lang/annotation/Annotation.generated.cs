@@ -41,8 +41,8 @@ namespace java.lang.annotation {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.annotation.Annotation))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.annotation.Annotation))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.annotation.Annotation), typeof(global::java.lang.annotation.Annotation_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.annotation.Annotation), typeof(global::java.lang.annotation.Annotation_))]
     internal sealed partial class @__Annotation : global::java.lang.Object, global::java.lang.annotation.Annotation {
         
         internal new static global::java.lang.Class staticClass;

@@ -23,8 +23,8 @@ namespace net.sf.jni4net {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.BridgeSetup))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.BridgeSetup))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.BridgeSetup), typeof(global::net.sf.jni4net.BridgeSetup_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.BridgeSetup), typeof(global::net.sf.jni4net.BridgeSetup_))]
     internal sealed partial class @__BridgeSetup : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

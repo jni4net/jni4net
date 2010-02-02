@@ -31,11 +31,13 @@ namespace net.sf.jni4net.attributes
         {
         }
 
-        public ClrWrapperAttribute(Type interfaceType)
+        public ClrWrapperAttribute(Type interfaceType, Type staticType)
         {
             InterfaceType = interfaceType;
+            StaticType = staticType;
         }
 
         public Type InterfaceType { get; private set; }
+        public Type StaticType { get; private set; }
     }
 }

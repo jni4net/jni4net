@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IDisposable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IDisposable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IDisposable), typeof(global::System.IDisposable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IDisposable), typeof(global::System.IDisposable_))]
     internal sealed partial class @__IDisposable : global::java.lang.Object, global::System.IDisposable {
         
         internal new static global::java.lang.Class staticClass;

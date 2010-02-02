@@ -23,8 +23,8 @@ namespace net.sf.jni4net.tested {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.tested.TestDelegate))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.TestDelegate))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.tested.TestDelegate), typeof(global::net.sf.jni4net.tested.TestDelegate_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.TestDelegate), typeof(global::net.sf.jni4net.tested.TestDelegate_))]
     internal sealed partial class @__TestDelegate : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

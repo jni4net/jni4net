@@ -41,8 +41,8 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.CharSequence))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.CharSequence))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.CharSequence), typeof(global::java.lang.CharSequence_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.CharSequence), typeof(global::java.lang.CharSequence_))]
     internal sealed partial class @__CharSequence : global::java.lang.Object, global::java.lang.CharSequence {
         
         internal new static global::java.lang.Class staticClass;

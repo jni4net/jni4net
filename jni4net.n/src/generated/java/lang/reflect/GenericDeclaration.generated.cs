@@ -32,8 +32,8 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.GenericDeclaration))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericDeclaration))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.GenericDeclaration), typeof(global::java.lang.reflect.GenericDeclaration_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericDeclaration), typeof(global::java.lang.reflect.GenericDeclaration_))]
     internal sealed partial class @__GenericDeclaration : global::java.lang.Object, global::java.lang.reflect.GenericDeclaration {
         
         internal new static global::java.lang.Class staticClass;

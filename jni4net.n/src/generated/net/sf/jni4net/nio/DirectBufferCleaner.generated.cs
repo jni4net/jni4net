@@ -23,8 +23,8 @@ namespace net.sf.jni4net.nio {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.nio.DirectBufferCleaner))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.nio.DirectBufferCleaner))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.nio.DirectBufferCleaner), typeof(global::net.sf.jni4net.nio.DirectBufferCleaner_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.nio.DirectBufferCleaner), typeof(global::net.sf.jni4net.nio.DirectBufferCleaner_))]
     internal sealed partial class @__DirectBufferCleaner : global::java.lang.Object {
         
         new internal static global::java.lang.Class staticClass;

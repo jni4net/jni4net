@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Enum))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Enum))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Enum), typeof(global::System.Enum_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Enum), typeof(global::System.Enum_))]
     internal sealed partial class @__Enum : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

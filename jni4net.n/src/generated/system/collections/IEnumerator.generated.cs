@@ -23,8 +23,8 @@ namespace System.Collections {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Collections.IEnumerator))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IEnumerator))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Collections.IEnumerator), typeof(global::System.Collections.IEnumerator_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Collections.IEnumerator), typeof(global::System.Collections.IEnumerator_))]
     internal sealed partial class @__IEnumerator : global::java.lang.Object, global::System.Collections.IEnumerator {
         
         internal new static global::java.lang.Class staticClass;

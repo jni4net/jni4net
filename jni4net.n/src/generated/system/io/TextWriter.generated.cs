@@ -23,8 +23,8 @@ namespace System.IO {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.TextWriter))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.TextWriter))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.TextWriter), typeof(global::System.IO.TextWriter_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.TextWriter), typeof(global::System.IO.TextWriter_))]
     internal sealed partial class @__TextWriter : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;
