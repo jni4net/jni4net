@@ -35,8 +35,8 @@ namespace net.sf.jni4net.tested {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.tested.JInterface))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.JInterface))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::net.sf.jni4net.tested.JInterface), typeof(global::net.sf.jni4net.tested.JInterface_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::net.sf.jni4net.tested.JInterface), typeof(global::net.sf.jni4net.tested.JInterface_))]
     internal sealed partial class @__JInterface : global::java.lang.Object, global::net.sf.jni4net.tested.JInterface {
         
         internal new static global::java.lang.Class staticClass;

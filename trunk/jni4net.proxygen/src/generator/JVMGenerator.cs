@@ -274,7 +274,7 @@ namespace net.sf.jni4net.proxygen.generator
         {
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
             SetCurrentType(type.JVMNamespaceExt + ".__" + type.Name, type.JVMNamespace + "." + type.Name,
-                           type.JVMNamespaceExt + ".__" + type.Name);
+                           type.JVMNamespaceExt + ".__" + type.Name, type.CLRNamespaceExt + "." + type.Name + "_");
             AddTypeJVM(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic;

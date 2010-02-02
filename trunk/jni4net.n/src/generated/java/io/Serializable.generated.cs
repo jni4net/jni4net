@@ -29,8 +29,8 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Serializable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Serializable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Serializable), typeof(global::java.io.Serializable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Serializable), typeof(global::java.io.Serializable_))]
     internal sealed partial class @__Serializable : global::java.lang.Object, global::java.io.Serializable {
         
         internal new static global::java.lang.Class staticClass;

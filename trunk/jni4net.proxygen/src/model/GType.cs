@@ -66,7 +66,10 @@ namespace net.sf.jni4net.proxygen.model
         public string CLRFullName { get; set; }
         public string JVMFullName { get; set; }
         public string CLRNamespace { get; set; }
+        // for locked packages & nested types
+        public string CLRNamespaceExt { get; set; }
         public string JVMNamespace { get; set; }
+        // for locked packages & nested types
         public string JVMNamespaceExt { get; set; }
         public Type CLRType { get; set; }
         public Class JVMType { get; set; }
@@ -325,6 +328,7 @@ namespace net.sf.jni4net.proxygen.model
                 }
             }
             JVMNamespaceExt = JVMNamespace;
+            CLRNamespaceExt = CLRNamespace;
             if (JVMNamespace.StartsWith("java."))
             {
                 JVMNamespaceExt = "java_." + JVMNamespace.Substring(5);

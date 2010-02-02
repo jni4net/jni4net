@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IAsyncResult))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IAsyncResult))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IAsyncResult), typeof(global::System.IAsyncResult_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IAsyncResult), typeof(global::System.IAsyncResult_))]
     internal sealed partial class @__IAsyncResult : global::java.lang.Object, global::System.IAsyncResult {
         
         internal new static global::java.lang.Class staticClass;

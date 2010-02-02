@@ -23,8 +23,8 @@ namespace System.Reflection {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Reflection.ICustomAttributeProvider))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ICustomAttributeProvider))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Reflection.ICustomAttributeProvider), typeof(global::System.Reflection.ICustomAttributeProvider_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Reflection.ICustomAttributeProvider), typeof(global::System.Reflection.ICustomAttributeProvider_))]
     internal sealed partial class @__ICustomAttributeProvider : global::java.lang.Object, global::System.Reflection.ICustomAttributeProvider {
         
         internal new static global::java.lang.Class staticClass;

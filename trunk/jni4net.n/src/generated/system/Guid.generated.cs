@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Guid))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Guid))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.Guid), typeof(global::System.Guid_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.Guid), typeof(global::System.Guid_))]
     internal sealed partial class @__Guid : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

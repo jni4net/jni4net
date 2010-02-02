@@ -23,8 +23,8 @@ namespace System.IO {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.FileStream))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.FileStream))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.IO.FileStream), typeof(global::System.IO.FileStream_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.IO.FileStream), typeof(global::System.IO.FileStream_))]
     internal sealed partial class @__FileStream : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

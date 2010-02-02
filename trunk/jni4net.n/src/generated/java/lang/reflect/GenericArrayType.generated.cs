@@ -32,8 +32,8 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.GenericArrayType))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericArrayType))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.GenericArrayType), typeof(global::java.lang.reflect.GenericArrayType_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.GenericArrayType), typeof(global::java.lang.reflect.GenericArrayType_))]
     internal sealed partial class @__GenericArrayType : global::java.lang.Object, global::java.lang.reflect.GenericArrayType {
         
         internal new static global::java.lang.Class staticClass;

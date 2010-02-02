@@ -38,8 +38,8 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Iterator))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Iterator))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Iterator), typeof(global::java.util.Iterator_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Iterator), typeof(global::java.util.Iterator_))]
     internal sealed partial class @__Iterator : global::java.lang.Object, global::java.util.Iterator {
         
         internal new static global::java.lang.Class staticClass;

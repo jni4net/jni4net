@@ -29,8 +29,8 @@ namespace java.util {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Set))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Set))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.util.Set), typeof(global::java.util.Set_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.util.Set), typeof(global::java.util.Set_))]
     internal sealed partial class @__Set : global::java.lang.Object, global::java.util.Set {
         
         internal new static global::java.lang.Class staticClass;

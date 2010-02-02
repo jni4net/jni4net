@@ -322,9 +322,7 @@ namespace net.sf.jni4net.utils
             }
 
             RegisterProxy(proxyType, interfaceType, ref record);
-            record.CLRStatic =
-                record.CLRAssembly.GetType(
-                    GetStaticName(record.CLRInterface.Namespace, record.CLRInterface.Name, false), false);
+            record.CLRStatic = javaProxyAttribute.StaticType;
             knownCLR[record.CLRStatic] = record;
         }
 
@@ -403,6 +401,7 @@ namespace net.sf.jni4net.utils
             record.CLRWrapperInitMethod = GetWrapperInitializer(wrapperType, "__Init");
             record.CLRName = interfaceType.FullName;
             record.JVMName = interfaceType.Namespace.ToLowerInvariant() + "." + interfaceType.Name;
+            record.CLRStatic = wrapperAttribute.StaticType;
 
             knownCLRWrappers[wrapperType] = record;
             knownCLRInterfaces[interfaceType] = record;

@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(decimal))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(decimal))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(decimal), typeof(global::System.Decimal_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(decimal), typeof(global::System.Decimal_))]
     internal sealed partial class @__Decimal : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

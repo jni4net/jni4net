@@ -38,8 +38,8 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Appendable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Appendable), typeof(global::java.lang.Appendable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Appendable), typeof(global::java.lang.Appendable_))]
     internal sealed partial class @__Appendable : global::java.lang.Object, global::java.lang.Appendable {
         
         internal new static global::java.lang.Class staticClass;

@@ -45,7 +45,7 @@ namespace net.sf.jni4net.proxygen.generator
 
         protected void SetCurrentType(string current)
         {
-            SetCurrentType(current, current, current);
+            SetCurrentType(current, current, current, current);
         }
 
         protected void AddTypeCLR(string type)
@@ -64,7 +64,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
         }
 
-        protected void SetCurrentType(string current, string real, string proxy)
+        protected void SetCurrentType(string current, string real, string proxy, string statc)
         {
             
             CurrentType = new CodeTypeReference(current, CodeTypeReferenceOptions.GlobalReference);
@@ -75,8 +75,10 @@ namespace net.sf.jni4net.proxygen.generator
                 new CodeTypeReferenceExpression(new CodeTypeReference(real, CodeTypeReferenceOptions.GlobalReference));
 
             ProxyType = new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference);
-            ProxyTypeEx =
-                new CodeTypeReferenceExpression(new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference));
+            ProxyTypeEx = new CodeTypeReferenceExpression(new CodeTypeReference(proxy, CodeTypeReferenceOptions.GlobalReference));
+
+            StaticType = new CodeTypeReference(statc, CodeTypeReferenceOptions.GlobalReference);
+            StaticTypeEx = new CodeTypeReferenceExpression(new CodeTypeReference(statc, CodeTypeReferenceOptions.GlobalReference));
         }
 
 

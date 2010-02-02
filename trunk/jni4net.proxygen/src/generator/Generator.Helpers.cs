@@ -43,6 +43,10 @@ namespace net.sf.jni4net.proxygen.generator
 
         protected CodeTypeReference CurrentType { get; set; }
 
+        protected CodeTypeReferenceExpression StaticTypeEx { get; set; }
+
+        protected CodeTypeReference StaticType { get; set; }
+
         protected CodeTypeReferenceExpression RealTypeEx { get; set; }
 
         protected CodeTypeReference RealType { get; set; }

@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.DateTime))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.DateTime))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.DateTime), typeof(global::System.DateTime_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.DateTime), typeof(global::System.DateTime_))]
     internal sealed partial class @__DateTime : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

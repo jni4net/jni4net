@@ -1,6 +1,7 @@
 Version 0.7
 -----------
 + added support for delegates and events
++ static class is no longer found by name, attribute parameter added (this is breaking change)
 
 Version 0.6
 -----------

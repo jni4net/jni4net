@@ -29,8 +29,8 @@ namespace java.lang.reflect {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.Type))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.Type))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.reflect.Type), typeof(global::java.lang.reflect.Type_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.reflect.Type), typeof(global::java.lang.reflect.Type_))]
     internal sealed partial class @__Type : global::java.lang.Object, global::java.lang.reflect.Type {
         
         internal new static global::java.lang.Class staticClass;

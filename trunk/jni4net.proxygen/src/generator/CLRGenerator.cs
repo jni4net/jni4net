@@ -130,8 +130,8 @@ namespace net.sf.jni4net.proxygen.generator
         protected void GenerateStatic(CodeNamespace nameSpace)
         {
             var tgtType = new CodeTypeDeclaration(type.Name + "_");
-            SetCurrentType(type.CLRNamespace + "." + type.Name + "_", type.CLRNamespace + "." + type.Name,
-                           type.CLRNamespace + ".__" + type.Name);
+            SetCurrentType(type.CLRNamespaceExt + "." + type.Name + "_", type.CLRNamespace + "." + type.Name,
+                           type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespaceExt + "." + type.Name + "_");
             AddTypeCLR(CurrentType.BaseType);
             tgtType.IsPartial = true;
             nameSpace.Types.Add(tgtType);
@@ -160,12 +160,12 @@ namespace net.sf.jni4net.proxygen.generator
         protected void GenerateProxy(CodeNamespace nameSpace)
         {
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
-            SetCurrentType(type.CLRNamespace + ".__" + type.Name
-                           , type.CLRNamespace + "." + type.Name, type.CLRNamespace + ".__" + type.Name);
+            SetCurrentType(type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespace + "." + type.Name,
+                           type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespaceExt + "." + type.Name + "_");
             AddTypeCLR(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.NotPublic | TypeAttributes.Sealed;
-            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaProxyAttribute", type.CLRReference);
+            Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaProxyAttribute", RealType, StaticType);
             tgtType.BaseTypes.Add(Repository.javaLangObject.CLRReference);
             if (type.IsInterface)
             {

@@ -32,8 +32,8 @@ namespace java.io {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Closeable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.io.Closeable), typeof(global::java.io.Closeable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.io.Closeable), typeof(global::java.io.Closeable_))]
     internal sealed partial class @__Closeable : global::java.lang.Object, global::java.io.Closeable {
         
         internal new static global::java.lang.Class staticClass;

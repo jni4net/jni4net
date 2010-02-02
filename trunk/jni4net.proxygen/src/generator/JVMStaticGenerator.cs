@@ -51,7 +51,7 @@ namespace net.sf.jni4net.proxygen.generator
             // static helper type
             var tgtType = new CodeTypeDeclaration(type.Name + "_");
             SetCurrentType(type.JVMNamespaceExt + "." + type.Name + "_", type.JVMNamespace + "." + type.Name,
-                           type.JVMNamespaceExt + ".__" + type.Name);
+                           type.JVMNamespaceExt + ".__" + type.Name, type.JVMNamespaceExt + "." + type.Name + "_");
             AddTypeJVM(CurrentType.BaseType);
             nameSpace.Types.Add(tgtType);
             tgtType.TypeAttributes = TypeAttributes.Public | TypeAttributes.Sealed;

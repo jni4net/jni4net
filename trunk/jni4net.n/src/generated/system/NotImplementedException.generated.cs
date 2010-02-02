@@ -23,8 +23,8 @@ namespace System {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.NotImplementedException))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.NotImplementedException))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::System.NotImplementedException), typeof(global::System.NotImplementedException_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::System.NotImplementedException), typeof(global::System.NotImplementedException_))]
     internal sealed partial class @__NotImplementedException : global::java.lang.Object {
         
         internal new static global::java.lang.Class staticClass;

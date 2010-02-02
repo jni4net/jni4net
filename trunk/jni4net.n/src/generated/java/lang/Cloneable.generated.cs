@@ -29,8 +29,8 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Cloneable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Cloneable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Cloneable), typeof(global::java.lang.Cloneable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Cloneable), typeof(global::java.lang.Cloneable_))]
     internal sealed partial class @__Cloneable : global::java.lang.Object, global::java.lang.Cloneable {
         
         internal new static global::java.lang.Class staticClass;

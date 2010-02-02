@@ -32,8 +32,8 @@ namespace java.lang {
     #endregion
     
     #region Component Designer generated code 
-    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Runnable))]
-    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Runnable))]
+    [global::net.sf.jni4net.attributes.JavaProxyAttribute(typeof(global::java.lang.Runnable), typeof(global::java.lang.Runnable_))]
+    [global::net.sf.jni4net.attributes.ClrWrapperAttribute(typeof(global::java.lang.Runnable), typeof(global::java.lang.Runnable_))]
     internal sealed partial class @__Runnable : global::java.lang.Object, global::java.lang.Runnable {
         
         internal new static global::java.lang.Class staticClass;
