@@ -668,7 +668,7 @@ namespace System {
             // (LSystem/ConsoleCancelEventHandler;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Console.CancelKeyPress += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.ConsoleCancelEventHandler>(@__env, value);
+            global::System.Console.CancelKeyPress += global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.ConsoleCancelEventHandler>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
@@ -677,7 +677,7 @@ namespace System {
             // (LSystem/ConsoleCancelEventHandler;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.Console.CancelKeyPress -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.ConsoleCancelEventHandler>(@__env, value);
+            global::System.Console.CancelKeyPress -= global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.ConsoleCancelEventHandler>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         

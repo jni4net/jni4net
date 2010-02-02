@@ -81,7 +81,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::net.sf.jni4net.tested.CIfcImpl @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CIfcImpl>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.tested.TestDelegate>(@__env, ((global::net.sf.jni4net.tested.ICInterface)(@__real)).fcePtr);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JDelegate(@__env, ((global::net.sf.jni4net.tested.ICInterface)(@__real)).fcePtr);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
@@ -92,7 +92,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.tested.CIfcImpl @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CIfcImpl>(@__env, @__obj);
-            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).fcePtr = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).fcePtr = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
@@ -102,7 +102,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.tested.CIfcImpl @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CIfcImpl>(@__env, @__obj);
-            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).EnvDispatcher += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).EnvDispatcher += global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
@@ -112,7 +112,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::net.sf.jni4net.tested.CIfcImpl @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CIfcImpl>(@__env, @__obj);
-            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).EnvDispatcher -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).EnvDispatcher -= global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         

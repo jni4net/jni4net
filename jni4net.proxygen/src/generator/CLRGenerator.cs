@@ -509,6 +509,11 @@ namespace net.sf.jni4net.proxygen.generator
                 par = new CodeTypeReference[] {};
                 return CCE("StrongJ2CpClass", par, invokeExpression, true);
             }
+            if(paramType.IsDelegate)
+            {
+                par = new [] { paramType.CLRReference };
+                return CCE("StrongJ2CpDelegate", par, invokeExpression, true);
+            }
             if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
             {
                 par = new[] {paramType.CLRReference};
@@ -579,6 +584,11 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 par = new CodeTypeReference[] {};
                 return CCE(prefix + "StrongC2JString", par, invokeExpression, true);
+            }
+            if (paramType.IsDelegate)
+            {
+                par = new CodeTypeReference[] { };
+                return CCE(prefix + "StrongC2JDelegate", par, invokeExpression, true);
             }
             if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
             {

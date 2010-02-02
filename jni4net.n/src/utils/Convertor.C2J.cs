@@ -52,8 +52,17 @@ namespace net.sf.jni4net.utils
                 throw new InvalidOperationException("Call ArrayFullJ2C<TRes, TElem> instead");
             }
 #endif
+            IJvmProxy proxy;
+            Delegate del = obj as Delegate;
+            if (del!=null)
+            {
+                proxy = del.Target as IJvmProxy;
+            }
+            else
+            {
+                proxy = obj as IJvmProxy;
+            }
 
-            var proxy = obj as IJvmProxy;
             if (proxy != null)
             {
                 if (!reqType.IsInterface && !typeof(IJvmProxy).IsAssignableFrom(reqType))
@@ -193,7 +202,7 @@ namespace net.sf.jni4net.utils
                 Type type = args[i].GetType();
                 if (sarg != null)
                 {
-                    jargs[i] = new Value { _object = env.NewStringPtr(sarg).DangerousGetHandle() };
+                    jargs[i] = new Value { _object = env.NewStringPtr(sarg) };
                 }
                 else if (type.IsPrimitive)
                 {

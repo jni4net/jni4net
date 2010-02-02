@@ -231,7 +231,7 @@ namespace System.IO {
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.Stream>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginRead(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, buffer), offset, count, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, state)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginRead(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, buffer), offset, count, global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, state)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
@@ -255,7 +255,7 @@ namespace System.IO {
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.IO.Stream @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.IO.Stream>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginWrite(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, buffer), offset, count, global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, state)));
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginWrite(global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, buffer), offset, count, global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, state)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }

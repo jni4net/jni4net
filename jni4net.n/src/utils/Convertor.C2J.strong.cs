@@ -35,15 +35,6 @@ namespace net.sf.jni4net.utils
                 return JniLocalHandle.Zero;
             }
             // ReSharper restore CompareNonConstrainedGenericWithNull
-            Delegate del = obj as Delegate;
-            if (del!=null)
-            {
-                IJvmProxy proxy = del.Target as IJvmProxy;
-                if (proxy!=null)
-                {
-                    return proxy.JvmHandle;
-                }
-            }
             RegistryRecord record = Registry.GetCLRRecord(obj.GetType());
             return record.CreateJVMProxy(env, obj);
         }
@@ -55,6 +46,21 @@ namespace net.sf.jni4net.utils
                 return JniGlobalHandle.Zero;
             }
             return obj.JvmHandle;
+        }
+
+        public static JniHandle StrongC2JDelegate(JNIEnv env, Delegate obj)
+        {
+            if (obj == null)
+            {
+                return JniLocalHandle.Zero;
+            }
+            IJvmProxy proxy = obj.Target as IJvmProxy;
+            if (proxy != null)
+            {
+                return proxy.JvmHandle;
+            }
+            RegistryRecord record = Registry.GetCLRRecord(obj.GetType());
+            return record.CreateJVMProxy(env, obj);
         }
 
         public static JniLocalHandle StrongC2JString(JNIEnv env, string obj)

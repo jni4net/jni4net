@@ -53,7 +53,7 @@ namespace net.sf.jni4net.tested {
         
         public global::System.IAsyncResult BeginInvoke(int i, string s, global::System.AsyncCallback callback, object @object) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__TestDelegate._BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(i), global::net.sf.jni4net.utils.Convertor.ParStrongC2JString(@__env, s), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__TestDelegate._BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(i), global::net.sf.jni4net.utils.Convertor.ParStrongC2JString(@__env, s), global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
         }
         
         public object EndInvoke(global::System.IAsyncResult result) {
@@ -76,7 +76,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
+            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
             @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.Invoke(i, global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
@@ -88,8 +88,8 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginInvoke(i, global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @object)));
+            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginInvoke(i, global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, s), global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @object)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
@@ -100,7 +100,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
+            global::net.sf.jni4net.tested.TestDelegate @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__obj);
             @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<object>(@__env, @__real.EndInvoke(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, result)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;

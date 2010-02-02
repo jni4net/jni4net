@@ -38,16 +38,33 @@ namespace net.sf.jni4net.utils
                 return default(TRes);
             }
             object res = __IClrProxy.GetObject(env, obj);
-            if (res == null && typeof(Delegate).IsAssignableFrom(typeof(TRes)))
+            return (TRes)res;
+        }
+
+
+        public static TRes StrongJ2CpDelegate<TRes>(JNIEnv env, JniLocalHandle obj)
+            where TRes : class //Delegate
+        {
+#if DEBUG
+            if (!typeof(Delegate).IsAssignableFrom(typeof(TRes)))
+            {
+                throw new ArgumentException("expected delegate");
+            }
+#endif
+            if (JniHandle.IsNull(obj))
+            {
+                return default(TRes);
+            }
+            object res = __IClrProxy.GetObject(env, obj);
+            if (res == null)
             {
                 //that's delegate implemented in Java
                 RegistryRecord delRecord = Registry.GetCLRRecord(typeof(TRes));
                 IJvmProxy jvmProxy = delRecord.CreateCLRProxy(env, obj);
                 return (TRes)(object)Delegate.CreateDelegate(typeof(TRes), jvmProxy, delRecord.JVMDelegateInvoke);
             }
-            return (TRes)res;
+            return (TRes) res;
         }
-
 
         public static TRes StrongJ2Cp<TRes>(JNIEnv env, JniLocalHandle obj)
             where TRes : IJvmProxy

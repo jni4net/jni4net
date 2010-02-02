@@ -391,7 +391,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            ((global::System.Runtime.InteropServices._Assembly)(@__real)).ModuleResolve += global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.ModuleResolveEventHandler>(@__env, value);
+            ((global::System.Runtime.InteropServices._Assembly)(@__real)).ModuleResolve += global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.Reflection.ModuleResolveEventHandler>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
@@ -401,7 +401,7 @@ namespace System.Reflection {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
             global::System.Reflection.Assembly @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.Assembly>(@__env, @__obj);
-            ((global::System.Runtime.InteropServices._Assembly)(@__real)).ModuleResolve -= global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.ModuleResolveEventHandler>(@__env, value);
+            ((global::System.Runtime.InteropServices._Assembly)(@__real)).ModuleResolve -= global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.Reflection.ModuleResolveEventHandler>(@__env, value);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         

@@ -331,7 +331,7 @@ namespace System {
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.Type @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<System.Type[], global::System.Type>(@__env, ((global::System.Runtime.InteropServices._Type)(@__real)).FindInterfaces(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.TypeFilter>(@__env, filter), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, filterCriteria)));
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<System.Type[], global::System.Type>(@__env, ((global::System.Runtime.InteropServices._Type)(@__real)).FindInterfaces(global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.Reflection.TypeFilter>(@__env, filter), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, filterCriteria)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
@@ -427,7 +427,7 @@ namespace System {
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
             global::System.Type @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Type>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<System.Reflection.MemberInfo[], global::System.Reflection.MemberInfo>(@__env, ((global::System.Runtime.InteropServices._Type)(@__real)).FindMembers(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.MemberTypes>(@__env, memberType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.BindingFlags>(@__env, bindingAttr), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.MemberFilter>(@__env, filter), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, filterCriteria)));
+            @__return = global::net.sf.jni4net.utils.Convertor.ArrayStrongC2Jp<System.Reflection.MemberInfo[], global::System.Reflection.MemberInfo>(@__env, ((global::System.Runtime.InteropServices._Type)(@__real)).FindMembers(global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.MemberTypes>(@__env, memberType), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Reflection.BindingFlags>(@__env, bindingAttr), global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.Reflection.MemberFilter>(@__env, filter), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, filterCriteria)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
