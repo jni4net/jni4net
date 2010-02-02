@@ -29,7 +29,7 @@ namespace net.sf.jni4net.utils
     {
         public static Value ParStrongCp2J(IJvmProxy obj)
         {
-            var res = new Value {_object = StrongCp2J(obj).DangerousGetHandle()};
+            var res = new Value {_object = StrongCp2J(obj)};
             return res;
         }
 
@@ -42,21 +42,21 @@ namespace net.sf.jni4net.utils
         public static Value ParArrayFullC2J<TBoth, TElem>(JNIEnv env, TBoth obj)
             where TBoth : class
         {
-            var res = new Value { _object = ArrayFullC2J<TBoth, TElem>(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = ArrayFullC2J<TBoth, TElem>(env, obj) };
             return res;
         }
 
         public static Value ParArrayStrongC2Jp<TBoth, TElem>(JNIEnv env, TBoth obj)
             where TBoth : class
         {
-            var res = new Value { _object = ArrayStrongC2Jp<TBoth, TElem>(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = ArrayStrongC2Jp<TBoth, TElem>(env, obj) };
             return res;
         }
 
         public static Value ParArrayStrongCp2J<TBoth>(JNIEnv env, TBoth obj)
             where TBoth : class
         {
-            var res = new Value { _object = ArrayStrongCp2J(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = ArrayStrongCp2J(env, obj) };
             return res;
         }
 
@@ -70,7 +70,13 @@ namespace net.sf.jni4net.utils
 
         public static Value ParStrongC2JString(JNIEnv env, string obj)
         {
-            var res = new Value { _object = StrongC2JString(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = StrongC2JString(env, obj) };
+            return res;
+        }
+
+        public static Value ParStrongC2JDelegate(JNIEnv env, Delegate obj)
+        {
+            var res = new Value { _object = StrongC2JDelegate(env, obj) };
             return res;
         }
 
@@ -130,55 +136,55 @@ namespace net.sf.jni4net.utils
 
         public static Value ParArrayStrongC2JString(JNIEnv env, string[] obj)
         {
-            var res = new Value { _object = ArrayStrongC2JString(env, obj).DangerousGetHandle() };
+            var res = new Value { _object = ArrayStrongC2JString(env, obj) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, int[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, bool[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, byte[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, char[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, short[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, long[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, float[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 
         public static Value ParArrayPrimC2J(JNIEnv env, double[] value)
         {
-            var res = new Value { _object = ArrayPrimC2J(env, value).DangerousGetHandle() };
+            var res = new Value { _object = ArrayPrimC2J(env, value) };
             return res;
         }
 

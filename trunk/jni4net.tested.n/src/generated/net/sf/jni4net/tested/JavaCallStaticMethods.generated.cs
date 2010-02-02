@@ -71,7 +71,7 @@ namespace net.sf.jni4net.tested {
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Lnet/sf/jni4net/tested/TestDelegate;")]
         public static global::net.sf.jni4net.tested.TestDelegate testDelegate() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegate2));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegate2));
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]

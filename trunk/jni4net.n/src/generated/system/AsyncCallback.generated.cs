@@ -54,7 +54,7 @@ namespace System {
         
         public global::System.IAsyncResult BeginInvoke(global::System.IAsyncResult ar, global::System.AsyncCallback callback, object @object) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__AsyncCallback._BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__AsyncCallback._BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
         }
         
         public void EndInvoke(global::System.IAsyncResult result) {
@@ -77,7 +77,7 @@ namespace System {
             // (LSystem/IAsyncResult;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, @__obj);
+            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, @__obj);
             @__real.Invoke(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, ar));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
@@ -88,8 +88,8 @@ namespace System {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
             try {
-            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, @__obj);
-            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginInvoke(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @object)));
+            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, @__obj);
+            @__return = global::net.sf.jni4net.utils.Convertor.FullC2J<global::System.IAsyncResult>(@__env, @__real.BeginInvoke(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, callback), global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @object)));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
@@ -99,7 +99,7 @@ namespace System {
             // (LSystem/IAsyncResult;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
             try {
-            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.AsyncCallback>(@__env, @__obj);
+            global::System.AsyncCallback @__real = global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::System.AsyncCallback>(@__env, @__obj);
             @__real.EndInvoke(global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, result));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }

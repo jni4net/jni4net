@@ -44,6 +44,8 @@ public class JavaCallStaticMethods {
     public static void testDelegatePtr() {
 
         final CIfcImpl ici=new CIfcImpl();
+        system.Object res= ici.getfcePtr().Invoke(6,"test");
+
         ici.setfcePtr(new TestDelegate() {
             public system.Object Invoke(int i, java.lang.String s) {
                 return Bridge.convert(s+i);
