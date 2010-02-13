@@ -1,4 +1,6 @@
-﻿namespace net.sf.jni4net.tested
+﻿using System;
+
+namespace net.sf.jni4net.tested
 {
     public interface ICInterface
     {
@@ -7,6 +9,10 @@
         TestDelegate fcePtr { get; set;}
 
         event TestDelegate EnvDispatcher;
+
+        //BUG #2 void Refparam(ref string text);
+
+        //BUG #2 void Outparam(out string text);
     }
 
     public class CIfcImpl :  ICInterface
