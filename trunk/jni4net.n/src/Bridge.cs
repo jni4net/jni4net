@@ -161,8 +161,10 @@ namespace net.sf.jni4net
         }
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        public static void LoadAndRegisterAssembly(string assemblyPath)
+        public static void LoadAndRegisterAssemblyFrom(java.io.File assemblyFile)
         {
+            string assemblyPath = new Uri(assemblyFile.getCanonicalFile().toURI().toString()).LocalPath;
+
             Assembly assembly;
             if (File.Exists(assemblyPath))
             {
@@ -177,9 +179,16 @@ namespace net.sf.jni4net
                 }
                 else
                 {
-                    assembly = Assembly.Load(assemblyPath);
+                    throw new FileNotFoundException(assemblyPath);
                 }
             }
+            RegisterAssembly(assembly);
+        }
+
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        public static void LoadAndRegisterAssemblyByName(string strongName)
+        {
+            Assembly assembly = Assembly.Load(strongName);
             RegisterAssembly(assembly);
         }
 

@@ -169,10 +169,6 @@ namespace net.sf.jni4net.utils
             {
                 Console.WriteLine("Registration : " + type.FullName);
             }
-            if (type.Name.EndsWith("__TestDelegate"))
-            {
-                int i=0;
-            }
             RegistryRecord record = null;
             RegisterWrapper(type, ref record);
             RegisterInterfaceProxy(type, ref record);
@@ -251,32 +247,35 @@ namespace net.sf.jni4net.utils
             }
             if (Bridge.Setup.BindCLRTypes || record.IsJVMClass)
             {
-                record.JVMInterface = LoadClass(interfaceName, env);
+                record.JVMInterface = LoadClass(interfaceName, env, false);
             }
-            record.JVMStatic = LoadClass(staticName, env);
-            if (record.JVMStatic == null && Bridge.Setup.BindStatic)
+            if (Bridge.Setup.BindStatic)
             {
-                throw new JNIException("Can't find java class for " + staticName);
-            }
-            if (proxyName != null && Bridge.Setup.BindStatic)
-            {
-                record.JVMProxy = LoadClass(proxyName, env);
-                record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
-                if (record.JVMConstructor == null)
+                record.JVMStatic = LoadClass(staticName, env, false);
+                if (record.JVMStatic == null)
                 {
-                    throw new JNIException("Can't find java constructor for " + record.JVMProxy);
+                    throw new JNIException("Can't find java class for " + staticName);
                 }
-                knownJVMProxies[record.JVMProxy] = record;
-                knownJVM[record.JVMProxy] = record;
+                if (proxyName != null)
+                {
+                    record.JVMProxy = LoadClass(proxyName, env, false);
+                    record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
+                    if (record.JVMConstructor == null)
+                    {
+                        throw new JNIException("Can't find java constructor for " + record.JVMProxy);
+                    }
+                    knownJVMProxies[record.JVMProxy] = record;
+                    knownJVM[record.JVMProxy] = record;
+                }
             }
         }
 
-        private static Class LoadClass(string name, JNIEnv env)
+        private static Class LoadClass(string name, JNIEnv env, bool throwNoFound)
         {
             Class res;
             string rn = name.Replace('.', '/');
             res = env.FindClassNoThrow(rn);
-            if (res == null)
+            if (res == null && systemClassLoader != null)
             {
                 try
                 {
@@ -284,10 +283,9 @@ namespace net.sf.jni4net.utils
                 }
                 catch(Throwable th)
                 {
-                    throw new JNIException("Can't find java class for " + name, th);
                 }
             }
-            if (res == null)
+            if (res == null && throwNoFound)
             {
                 throw new JNIException("Can't find java class for " + name);
             }

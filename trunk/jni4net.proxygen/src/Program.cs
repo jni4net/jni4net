@@ -198,7 +198,9 @@ namespace net.sf.jni4net.proxygen
                 jw.Write("javac -nowarn -d target\\classes -sourcepath jvm -cp ");
                 foreach (string cp in Bridge.Setup.JVMCLassPath)
                 {
+                    jw.Write('"');
                     jw.Write(cp);
+                    jw.Write('"');
                     jw.Write(";");
                 }
                 jw.Write(" ");
@@ -206,7 +208,9 @@ namespace net.sf.jni4net.proxygen
                 {
                     int i = file.IndexOf("\\jvm\\");
                     string output = file.Substring(i+1);
+                    jw.Write('"');
                     jw.Write(output);
+                    jw.Write('"');
                     jw.Write(" ");
                 }
                 jw.WriteLine();
@@ -221,7 +225,9 @@ namespace net.sf.jni4net.proxygen
                 {
                     jw.Write(" -C target\\classes ");
                     string output = file.Replace(".", "\\") + ".class";
+                    jw.Write('"');
                     jw.Write(output);
+                    jw.Write('"');
                     jw.Write(" ");
                 }
                 jw.Write(" > nul ");
@@ -241,7 +247,9 @@ namespace net.sf.jni4net.proxygen
                     if (typeof(Program).Assembly != assembly)
                     {
                         jw.Write(" /reference:");
+                        jw.Write('"');
                         jw.Write(assembly.Location);
+                        jw.Write('"');
                     }
                 }
                 jw.WriteLine();
