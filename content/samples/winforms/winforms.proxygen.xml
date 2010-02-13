@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <jni4net-proxygen xmlns="http://jni4net.sf.net/0.7.0.0/toolConfig.xsd">
   <!-- Location where .java files will be generated into. It's relative or absolute path. -->
-  <TargetDirJvm>java/src</TargetDirJvm>
+  <TargetDirJvm>java</TargetDirJvm>
 
   <!-- Location where .cs files will be generated into. It's relative or absolute path. -->
   <TargetDirClr>csharp</TargetDirClr>
