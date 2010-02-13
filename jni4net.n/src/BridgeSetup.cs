@@ -68,11 +68,7 @@ namespace net.sf.jni4net
         public void AddBridgeClassPath()
         {
             string bridgeJar = Bridge.FindJar();
-            jvmCLassPath.Add(bridgeJar);
-            if (Verbose)
-            {
-                Console.WriteLine("Adding " + Path.GetFullPath(bridgeJar));
-            }
+            AddClassPath(bridgeJar);
         }
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
@@ -99,11 +95,7 @@ namespace net.sf.jni4net
         {
             foreach (string jar in Directory.GetFiles(directory, "*.jar"))
             {
-                jvmCLassPath.Add(jar);
-                if (Verbose)
-                {
-                    Console.WriteLine("Adding " + Path.GetFullPath(jar));
-                }
+                AddClassPath(jar);
             }
         }
 

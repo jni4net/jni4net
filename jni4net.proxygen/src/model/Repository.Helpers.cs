@@ -263,6 +263,7 @@ namespace net.sf.jni4net.proxygen.model
             }
             setup.AddBridgeClassPath();
             Bridge.CreateJVM(setup);
+            systemClassLoader = ClassLoader.getSystemClassLoader();
         }
 
         /// <summary>
@@ -514,7 +515,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterClass(string clazzName)
         {
-            Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
+            Class clazz = loadClass(clazzName);
             if (clazz != null && ((ModifierFlags)clazz.getModifiers() & ModifierFlags.Public) != 0)
             {
                 TypeRegistration registration = new TypeRegistration();

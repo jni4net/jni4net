@@ -42,7 +42,7 @@
                 <extensions>true</extensions>
                 <version>0.17robocode</version>
                 <configuration>
-                    <aditionalOptions>/unsafe /warn:0 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
+                    <aditionalOptions>/unsafe /warn:0 /keyfile:"${basedir}/../tools/keys/jni4net.snk"</aditionalOptions>
                 </configuration>
             </plugin>
             <plugin>
@@ -63,7 +63,7 @@
                                 <copy file="${exportdll}" todir="target/tool"/>
                                 <copy file="${exportdllattribute}" todir="target/tool"/>
                                 <exec executable="cmd.exe" failonerror="true" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-0.2.5.0.exe jni4net.n.w64-${jni4net.version}.dll . . ${basedir}/../tools/keys/jni4net.snk /Release /x64"/>
+                                    <arg value="/c tool\selvin.exportdll-0.2.5.0.exe jni4net.n.w64-${jni4net.version}.dll . . &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x64"/>
                                 </exec>
                             </tasks>
                         </configuration>

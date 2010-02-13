@@ -101,7 +101,7 @@ namespace net.sf.jni4net.test
                 setup.BindNative = false;
                 setup.BindStatic = false;
                 Bridge.CreateJVM(setup);
-                Bridge.LoadAndRegisterAssembly(typeof(AppDomainTest).Assembly.Location);
+                Bridge.RegisterAssembly(typeof(AppDomainTest).Assembly);
 
                 testBB();
             }

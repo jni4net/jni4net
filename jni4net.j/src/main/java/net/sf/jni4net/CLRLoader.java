@@ -23,6 +23,7 @@ import system.NotSupportedException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.File;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Properties;
 
@@ -33,17 +34,19 @@ class CLRLoader {
 	private static String version;
     private static String platform;
 
-    public static void 	init(String fileOrDirectory) throws IOException {
+    public static void 	init(File fileOrDirectory) throws IOException {
 		if (!Bridge.isRegistered) {
-			if (new java.io.File(fileOrDirectory).isDirectory()) {
-				init(new File(fileOrDirectory + "/jni4net.n."+getPlatform()+"-" + getVersion() + ".dll").getAbsoluteFile().getCanonicalPath());
+			if (fileOrDirectory.isDirectory()) {
+                final String myDllName = "jni4net.n." + getPlatform() + "-" + getVersion() + ".dll";
+                init(new File(fileOrDirectory , myDllName).getAbsoluteFile());
 				return;
 			}
 			try {
-				System.load(fileOrDirectory);
+                final String file = fileOrDirectory.getPath();
+                System.load(file);
 				final int res = Bridge.initDotNet();
 				if (res != 0) {
-					System.err.println("Can't initialize jni4net Bridge");
+					System.err.println("Can't initialize jni4net Bridge from " + file);
 					throw new net.sf.jni4net.inj.INJException("Can't initialize jni4net Bridge");
 				}
 				Bridge.isRegistered = true;
@@ -54,9 +57,14 @@ class CLRLoader {
 		}
 	}
 
-	static String findDefaultDll() throws java.io.IOException {
+	static File findDefaultDll() throws java.io.IOException {
 		final java.security.CodeSource source = Bridge.class.getProtectionDomain().getCodeSource();
-		final String file = new File(source.getLocation().getFile()).getAbsoluteFile().getCanonicalPath();
+        final String file;
+        try {
+            file = new File(source.getLocation().toURI()).getAbsolutePath();
+        } catch (URISyntaxException e) {
+            throw new IOException(e.getMessage());
+        }
 
         java.io.File path;
 		if (file.endsWith("classes")) {
@@ -71,7 +79,7 @@ class CLRLoader {
 		} else {
 			throw new Error("Can't find " + file);
 		}
-		return path.getCanonicalPath();
+		return path;
 	}
 
 	public static String getProperty(String property) {

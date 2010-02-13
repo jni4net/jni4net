@@ -23,6 +23,7 @@ import net.sf.jni4net.inj.IClrProxy;
 import net.sf.jni4net.jni.IJvmProxy;
 import net.sf.jni4net.jni.IJvmProxy_;
 
+import java.io.File;
 import java.lang.String;
 import java.io.IOException;
 
@@ -40,7 +41,7 @@ public class Bridge extends system.Object {
 		init(CLRLoader.findDefaultDll());
 	}
 
-	public static void init(String fileOrDirectory) throws IOException {
+	public static void init(File fileOrDirectory) throws IOException {
 		CLRLoader.init(fileOrDirectory);
 	}
 
@@ -148,8 +149,11 @@ public class Bridge extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/BridgeSetup;)Lnet/sf/jni4net/jni/JNIEnv;")
     public native static system.Object CreateJVM(net.sf.jni4net.BridgeSetup setup);
     
+    @net.sf.jni4net.attributes.ClrMethod("(Ljava/io/File;)V")
+    public native static void LoadAndRegisterAssemblyFrom(java.io.File assemblyFile);
+    
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
-    public native static void LoadAndRegisterAssembly(java.lang.String assemblyPath);
+    public native static void LoadAndRegisterAssemblyByName(java.lang.String strongName);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/Reflection/Assembly;)V")
     public native static void RegisterAssembly(system.reflection.Assembly assembly);

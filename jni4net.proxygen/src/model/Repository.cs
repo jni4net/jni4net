@@ -31,6 +31,7 @@ using java.util.zip;
 using net.sf.jni4net.adaptors;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.config;
+using Exception = java.lang.Exception;
 using File=System.IO.File;
 using String=java.lang.String;
 
@@ -257,7 +258,7 @@ namespace net.sf.jni4net.proxygen.model
                         (type.IsInterface && javaInterfaceA != null))
                     {
                         string clazzName = GetInterfaceName(type);
-                        Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
+                        Class clazz = loadClass(clazzName);
                         if (clazz != null)
                         {
                             RegisterClass(clazz);
@@ -271,7 +272,7 @@ namespace net.sf.jni4net.proxygen.model
                         if (realType != null)
                         {
                             string clazzName = GetInterfaceName(type);
-                            Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
+                            Class clazz = loadClass(clazzName);
                             if (clazz != null)
                             {
                                 RegisterClass(clazz);
@@ -284,13 +285,31 @@ namespace net.sf.jni4net.proxygen.model
             BindKnownTypesPost();
         }
 
+        static ClassLoader systemClassLoader;
+        private static Class loadClass(string clazzName)
+        {
+            Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
+            if (clazz == null && systemClassLoader!=null)
+            {
+                try
+                {
+                    string replace = clazzName.Replace('/','.');
+                    clazz = systemClassLoader.loadClass(replace);
+                }
+                catch(Exception)
+                {
+                    clazz = null;
+                }
+            }
+            return clazz;
+        }
+
         private static void RegisterClasses()
         {
-            JNIEnv env = JNIEnv.ThreadEnv;
             foreach (TypeRegistration registration in config.JavaClass)
             {
                 string name = registration.TypeName.Replace(".", "/");
-                Class clazz = env.FindClassNoThrow(name);
+                Class clazz = loadClass(name);
                 if (clazz != null)
                 {
                     GType reg = RegisterClass(clazz, registration);

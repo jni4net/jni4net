@@ -30,8 +30,8 @@ import java.io.IOException;
  */
 public class Program {
 	public static void main(String[] args) throws IOException {
-		Bridge.init("target");
-		Bridge.LoadAndRegisterAssembly(new File("target/winforms.dll").getCanonicalPath());
+		Bridge.init();
+		Bridge.LoadAndRegisterAssemblyFrom(new File("target/winforms.dll"));
 
 		TestForm test=new TestForm();
 		test.init();

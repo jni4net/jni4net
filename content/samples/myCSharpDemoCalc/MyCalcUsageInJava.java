@@ -8,7 +8,7 @@ import mycsharpdemocalc.ICalc;
 public class MyCalcUsageInJava {
     public static void main(String arsg[]) throws IOException {
         Bridge.init();
-        Bridge.LoadAndRegisterAssembly("MyCSharpDemoCalc.j4n.dll");
+        Bridge.LoadAndRegisterAssemblyFrom(new java.io.File("MyCSharpDemoCalc.j4n.dll"));
 
         ICalc calc = new DemoCalc();
         final int result = calc.MySuperSmartFunctionIDontHaveInJava("Answer to the Ultimate Question of Life, the Universe, and Everything");
