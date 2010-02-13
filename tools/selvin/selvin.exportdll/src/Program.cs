@@ -361,15 +361,15 @@ namespace selvin.exportdll
         {
             string res = noExtension + ".res";
             if (File.Exists(noExtension + ".res"))
-                res = " /resource=" + res;
+                res = " /resource=\"" + res + "\"";
             else
                 res = "";
             Process proc = new Process();
-            string arguments = string.Format("/nologo /quiet /out:{0}.dll {0}.il /DLL{1} {2}", noExtension, res,
+            string arguments = string.Format("/nologo /quiet /out:\"{0}.dll\" \"{0}.il\" /DLL{1} {2}", noExtension, res,
                                              debug ? "/debug" : "/optimize");
             if (keypath != null)
             {
-                arguments += " /KEY=" + keypath;
+                arguments += " /KEY=\"" + keypath + "\"";
             }
             if (x64)
             {
@@ -390,7 +390,7 @@ namespace selvin.exportdll
         private static int DumpIL(string noExtension, bool debug, string ildasmpath)
         {
             var proc = new Process();
-            string arguments = string.Format("/nobar{1}/out:{0}.il {0}.dll", noExtension,
+            string arguments = string.Format("/nobar{1}/out:\"{0}.il\" \"{0}.dll\"", noExtension,
                                              debug ? " /linenum " : " ");
             Console.WriteLine("Deassembly file with arguments '{0}'", arguments);
             var info = new ProcessStartInfo(ildasmpath, arguments);
