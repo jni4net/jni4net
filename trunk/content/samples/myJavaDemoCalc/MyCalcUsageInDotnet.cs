@@ -9,7 +9,7 @@ public class MyCalcUsageInDotnet
         var bridgeSetup = new BridgeSetup();
         bridgeSetup.AddAllJarsClassPath(".");
         Bridge.CreateJVM(bridgeSetup);
-        Bridge.LoadAndRegisterAssembly("MyJavaDemoCalc.j4n.dll");
+        Bridge.RegisterAssembly(typeof(DemoCalc).Assembly);
 
         ICalc calc = new DemoCalc();
         int result = calc.MySuperSmartFunctionIDontHaveInJava("Answer to the Ultimate Question of Life, the Universe, and Everything");

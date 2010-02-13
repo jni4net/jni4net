@@ -23,6 +23,8 @@ import system.windows.forms.Form;
  */
 public class TestForm extends Form {
 	private system.windows.forms.Button button1;
+	
+	int i=0;
 
 	public void init(){
 		this.button1 = new system.windows.forms.Button();
@@ -32,12 +34,14 @@ public class TestForm extends Form {
 		//
 		this.button1.setLocation(new system.drawing.Point(12, 12));
 		this.button1.setName("button1");
-		this.button1.setSize(new system.drawing.Size(75, 23));
+		this.button1.setSize(new system.drawing.Size(130, 23));
 		this.button1.setTabIndex(0);
 		this.button1.setText("Huray");
 		this.button1.addClick(new system.EventHandler(){
+			  // this is implementation of .NET delegate by Java anonymous class
 				public void Invoke(system.Object sender, system.EventArgs e){
-					button1.setText("Clicked");
+					i++;
+					button1.setText("Clicked " + i + "x times");
 				}
 			});
 		//
@@ -47,7 +51,7 @@ public class TestForm extends Form {
 		this.setClientSize(new system.drawing.Size(292, 269));
 		this.getControls().Add(this.button1);
 		this.setName("TestForm");
-		this.setText("TestForm");
+		this.setText("This is Winforms Form");
 		this.ResumeLayout(false);
 		
 	}

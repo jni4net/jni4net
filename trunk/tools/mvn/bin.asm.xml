@@ -96,6 +96,7 @@
                 <exclude>interfaceFromCLR/work/**</exclude>
                 <exclude>helloWorldFromCLR/work/**</exclude>
                 <exclude>winforms/csharp/**</exclude>
+                <exclude>winforms/java/system/**</exclude>
                 <exclude>fop/csharp/java/**</exclude>
                 <exclude>fop/csharp/javax/**</exclude>
                 <exclude>fop/csharp/org/**</exclude>
