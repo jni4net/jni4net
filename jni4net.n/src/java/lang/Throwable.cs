@@ -154,7 +154,7 @@ namespace java.lang
             {
                 return false;
             }
-            var value = new Value { _object = ((IJvmProxy)other).JvmHandle.DangerousGetHandle() };
+            var value = new Value { _object = ((IJvmProxy)other).JvmHandle };
             //TODO optimize
             return Env.CallBooleanMethod(this, "equals", "(Ljava/lang/Object;)Z", value);
         }
