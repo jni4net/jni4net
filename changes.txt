@@ -1,3 +1,6 @@
+Version 0.8
+-----------
+
 Version 0.7
 -----------
 + added support for delegates and events
