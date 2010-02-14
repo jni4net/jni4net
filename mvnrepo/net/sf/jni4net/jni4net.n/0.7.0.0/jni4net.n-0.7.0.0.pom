@@ -29,6 +29,12 @@
                     <aditionalOptions>/unsafe /warn:0 /keyfile:"${basedir}/../tools/keys/jni4net.snk"</aditionalOptions>
                 </configuration>
             </plugin>
+            <plugin>
+               <artifactId>maven-deploy-plugin</artifactId>
+               <configuration>
+                 <skip>true</skip>
+              </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
