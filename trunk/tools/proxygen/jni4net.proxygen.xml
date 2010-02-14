@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright (C) 2009 by Pavel Savara
 This file is part of jni4net library - bridge between Java and .NET
 http://jni4net.sourceforge.net/
@@ -17,7 +17,7 @@ You should have received a copy of the GNU Lesser General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<jni4net-proxygen xmlns="http://jni4net.sf.net/0.7.0.0/toolConfig.xsd">
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.0.0/toolConfig.xsd">
   <TargetDirJvm>jni4net.j/src/main/java</TargetDirJvm>
   <TargetDirClr>jni4net.n/src/generated</TargetDirClr>
   <ClassPath Path="jni4net.j/target/classes"/>

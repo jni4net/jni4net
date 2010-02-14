@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <ProjectGuid>{774AED55-B9EC-457D-8EEB-1B2481C578B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>net.sf.jni4net</RootNamespace>
-    <AssemblyName>jni4net.n.w32-0.7.0.0</AssemblyName>
+    <AssemblyName>jni4net.n.w32-0.8.0.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
@@ -70,7 +70,7 @@
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.5.0.exe" "$(TargetPath)" . . "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
-echo [assembly: System.Reflection.AssemblyVersion("0.7.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+echo [assembly: System.Reflection.AssemblyVersion("0.8.0.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>
   </PropertyGroup>
 </Project>
