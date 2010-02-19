@@ -25,6 +25,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using JType=java.lang.reflect.Type;
+using Microsoft.Win32;
 
 namespace net.sf.jni4net.jni
 {
@@ -35,9 +36,9 @@ namespace net.sf.jni4net.jni
         public const int JNI_VERSION_1_4 = 0x00010004;
         public const int JNI_VERSION_1_6 = 0x00010006;
 
+        private const string JAVA_REGISTRY_KEY = @"HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment";
+
         private static bool init;
-        private static string javaHome;
-        private static string jvmDir;
 
         static JNI()
         {
@@ -45,33 +46,49 @@ namespace net.sf.jni4net.jni
         }
 
         [EnvironmentPermission(SecurityAction.Assert, Read = "JAVA_HOME")]
+        [RegistryPermission(SecurityAction.Assert, Read = JAVA_REGISTRY_KEY)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.Execution|SecurityPermissionFlag.UnmanagedCode|SecurityPermissionFlag.SkipVerification)]
         private static void Init()
         {
             if (!init)
             {
-                javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+                string javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+                string jvmDir = null;
+
                 if (javaHome == null)
                 {
-                    javaHome = @"c:\Program Files\Java\jre1.6.0_07";
+                    string jdkVersion = (string)Registry.GetValue(JAVA_REGISTRY_KEY, "CurrentVersion", null);
+                    if (jdkVersion != null)
+                    {
+                        jvmDir = (string)Registry.GetValue(Path.Combine(JAVA_REGISTRY_KEY, jdkVersion), "RuntimeLib", null);
+                        javaHome = (string)Registry.GetValue(Path.Combine(JAVA_REGISTRY_KEY, jdkVersion), "JavaHome", null);
+                    }
                 }
-                jvmDir = Path.Combine(javaHome, @"bin\client\");
-                if (!Directory.Exists(jvmDir))
+
+                if ((jvmDir == null) || !Directory.Exists(jvmDir))
                 {
-                    jvmDir = Path.Combine(javaHome, @"bin\server\");
-                }
-                if (!Directory.Exists(jvmDir))
-                {
-                    jvmDir = Path.Combine(javaHome, @"jre\bin\client\");
-                }
-                if (!Directory.Exists(jvmDir))
-                {
-                    jvmDir = Path.Combine(javaHome, @"jre\bin\server\");
-                }
-                if (!Directory.Exists(jvmDir))
-                {
-                    throw new JNIException("JAVA_HOME environment variable is not set");
+                    if (javaHome == null)
+                    {
+                        throw new JNIException("JAVA_HOME environment variable is not set");
+                    }
+                    jvmDir = Path.Combine(javaHome, @"bin\client\");
+                    if (!Directory.Exists(jvmDir))
+                    {
+                        jvmDir = Path.Combine(javaHome, @"bin\server\");
+                        if (!Directory.Exists(jvmDir))
+                        {
+                            jvmDir = Path.Combine(javaHome, @"jre\bin\client\");
+                            if (!Directory.Exists(jvmDir))
+                            {
+                                jvmDir = Path.Combine(javaHome, @"jre\bin\server\");
+                                if (!Directory.Exists(jvmDir))
+                                {
+                                    throw new JNIException("JAVA_HOME environment variable points to an invalid location: " + javaHome);
+                                }
+                            }
+                        }
+                    }
                 }
 
                 string oldDirectory = Directory.GetCurrentDirectory();

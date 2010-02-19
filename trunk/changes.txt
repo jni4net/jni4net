@@ -1,5 +1,6 @@
 Version 0.8
 -----------
++ [#5] - Reading Java home location from the Windows registry (Contributed by Martin Matula)
 
 Version 0.7
 -----------
