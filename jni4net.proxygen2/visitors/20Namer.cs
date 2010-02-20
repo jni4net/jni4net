@@ -7,11 +7,6 @@ namespace net.sf.jni4net.proxygen.visitors
     {
         public override void VisitType(MType type, Repository repository)
         {
-            if (!type.IsKnown)
-            {
-                return;
-            }
-
             if (type.Clr!=null)
             {
                 string enclosing = Reflection.GetEnclosing(type.Clr.FullName, '+');
@@ -32,6 +27,11 @@ namespace net.sf.jni4net.proxygen.visitors
                 {
                     type.GFaceClr = new CGType(type, namespce, enclosing, simpleName, type.Enclosing == null ? null : type.Enclosing.GFaceClr);
                 }
+            }
+
+            if (!type.IsKnown)
+            {
+                return;
             }
 
             if (type.IsGenJvm)

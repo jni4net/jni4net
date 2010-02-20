@@ -32,8 +32,6 @@ namespace net.sf.jni4net.proxygen.visitors
                 return;
             }
             Type clrType = type.Clr;
-
-            //info
             type.IsInterface = clrType.IsInterface;
             type.IsAbstract = clrType.IsAbstract;
             type.IsFinal = clrType.IsSealed;
@@ -58,6 +56,12 @@ namespace net.sf.jni4net.proxygen.visitors
                 type.IsArray = true;
                 type.Element = repository.AddOrResolve(clrType.GetElementType());
             }
+
+            if (type.IsLoaded)
+            {
+                return;
+            }
+            type.IsLoaded = true;
 
             //interfaces
             foreach (Type ifcClr in clrType.GetInterfaces())
@@ -143,6 +147,7 @@ namespace net.sf.jni4net.proxygen.visitors
                 if (addInfo != null && addInfo.IsPublic)
                 {
                     add = new MMember(type, addInfo);
+                    add.IsEvent = true;
                     add.Clr.EventInfo = eventInfo;
                     type.Methods.Add(add);
                     repository.AddOrResolve(add);
@@ -152,6 +157,7 @@ namespace net.sf.jni4net.proxygen.visitors
                 if (remInfo != null && remInfo.IsPublic)
                 {
                     rem = new MMember(type, remInfo);
+                    rem.IsEvent = true;
                     rem.Clr.EventInfo = eventInfo;
                     type.Methods.Add(rem);
                     repository.AddOrResolve(rem);
@@ -181,6 +187,7 @@ namespace net.sf.jni4net.proxygen.visitors
                 if (getInfo != null && getInfo.IsPublic)
                 {
                     get = new MMember(type, getInfo);
+                    get.IsProperty = true;
                     get.Clr.PropertyInfo = propertyInfo;
                     type.Methods.Add(get);
                     repository.AddOrResolve(get);
@@ -190,6 +197,7 @@ namespace net.sf.jni4net.proxygen.visitors
                 if (setInfo != null && setInfo.IsPublic)
                 {
                     set = new MMember(type, setInfo);
+                    set.IsProperty = true;
                     set.Clr.PropertyInfo = propertyInfo;
                     type.Methods.Add(set);
                     repository.AddOrResolve(set);
@@ -219,10 +227,11 @@ namespace net.sf.jni4net.proxygen.visitors
 
         public override void VisitMember(MMember member, Repository repository)
         {
-            if (member.Clr==null)
+            if (member.Clr == null || member.IsLoaded)
             {
                 return;
             }
+            member.IsLoaded = true;
             if (member.Clr.MethodInfo != null)
             {
                 VisitMethodInfo(member, repository);
@@ -247,7 +256,7 @@ namespace net.sf.jni4net.proxygen.visitors
         private static void VisitMethodInfo(MMember member, Repository repository)
         {
             MethodInfo methodInfo = member.Clr.MethodInfo;
-            if (methodInfo.ReturnType != null)
+            if (methodInfo.ReturnType != null && methodInfo.ReturnType!=typeof(void))
             {
                 if (!methodInfo.ReturnType.IsOKType())
                 {
@@ -256,8 +265,8 @@ namespace net.sf.jni4net.proxygen.visitors
                     return;
                 }
                 MType rType = repository.AddOrResolve(methodInfo.ReturnType);
-                MParameter rpar = new MParameter(rType, "--return--");
-                member.ReturnParameter = rpar;
+                MParameter rpar = new MParameter(rType, "--return--", true);
+                member.Return = rpar;
                 repository.AddOrResolve(rpar);
             }
             else
@@ -271,12 +280,7 @@ namespace net.sf.jni4net.proxygen.visitors
             {
                 ParameterInfo parameterInfo = pars[i];
                 Type parameterType = parameterInfo.ParameterType;
-                if (!parameterType.IsOKType())
-                {
-                    member.Parent.Methods.Remove(member);
-                    member.Parent.SkippedMethods.Add(member);
-                    return;
-                }
+
                 bool isOut = false;
                 bool isRef = false;
                 // we ignore IsOut when IsIn is set as well, because they are probably just attributes
@@ -292,13 +296,20 @@ namespace net.sf.jni4net.proxygen.visitors
                     isRef = true;
                 }
 
+                if (!parameterType.IsOKType())
+                {
+                    member.Parent.Methods.Remove(member);
+                    member.Parent.SkippedMethods.Add(member);
+                    return;
+                }
+
                 MType pType = repository.AddOrResolve(parameterType);
                 string name = parameterInfo.Name;
                 if (name == null)
                 {
                     name = pType.Name.ToLower() +"_"+ i;
                 }
-                MParameter par = new MParameter(pType, name);
+                MParameter par = new MParameter(pType, name, false);
                 par.IsOut = isOut;
                 par.IsRef = isRef;
                 member.Parameters.Add(par);

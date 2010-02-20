@@ -10,16 +10,22 @@ namespace net.sf.jni4net.proxygen.generators
     {
         protected int m;
         protected CodeTypeDeclaration tgtType;
+        protected CodeMemberMethod tgtMember;
         protected GFile file;
         protected GType type;
         protected GMember member;
         protected Context context;
         protected Repository repository;
 
-        public abstract void GenerateType();
-        public abstract void GenerateMember();
+        public virtual void GenerateType()
+        {
+        }
 
-        public virtual void GenerateType(GFile file, GType type, Context context, Repository repository)
+        public virtual void GenerateMember()
+        {
+        }
+
+        public void GenerateType(GFile file, GType type, Context context, Repository repository)
         {
             this.file = file;
             this.type = type;
@@ -49,8 +55,9 @@ namespace net.sf.jni4net.proxygen.generators
             GenerateType();
         }
 
-        public virtual void GenerateMember(GMember member)
+        public void GenerateMember(GMember member)
         {
+            this.member = member;
             GenerateMember();
         }
 

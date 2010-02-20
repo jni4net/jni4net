@@ -10,10 +10,7 @@ namespace net.sf.jni4net.proxygen.generators
         public override void GenerateType()
         {
             AddStaticProperty();
-        }
-
-        public override void GenerateMember()
-        {
+            base.GenerateType();
         }
 
         private void AddStaticProperty()

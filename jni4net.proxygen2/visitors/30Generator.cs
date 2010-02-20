@@ -8,9 +8,9 @@ namespace net.sf.jni4net.proxygen.visitors
     {
         IGenerator currentGenerator;
 
-        public override void VisitGType(GFile file, GType type, Context context, Repository repository)
+        public override void VisitGType(GType type, Context context, Repository repository)
         {
-            if (file is CGFile)
+            if (type.File is CGFile)
             {
                 switch (context.Core())
                 {
@@ -51,12 +51,13 @@ namespace net.sf.jni4net.proxygen.visitors
                         throw new InvalidOperationException();
                 }
             }
-            currentGenerator.GenerateType(file, type, context, repository);
+            currentGenerator.GenerateType(type.File, type, context, repository);
         }
 
-        public override void VisitGMember(GMember member)
+        public override void VisitGMember(GMember member, Context context, Repository repository)
         {
             currentGenerator.GenerateMember(member);
         }
+
     }
 }

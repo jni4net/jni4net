@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using net.sf.jni4net.proxygen.visitors;
 
 namespace net.sf.jni4net.proxygen.model
@@ -70,6 +71,15 @@ namespace net.sf.jni4net.proxygen.model
         public string Namespace { get; set; }
         public string EnclosingNames { get; set; }
         public GFile File { get; set; }
+        public bool IsGen
+        {
+            get
+            {
+                return File != null;
+            }
+        }
+
+        public List<GMember> Methods = new List<GMember>();
 
         public CodeTypeDeclaration DType { get; set; }
 
@@ -86,6 +96,22 @@ namespace net.sf.jni4net.proxygen.model
             get
             {
                 return new CodeTypeReferenceExpression(new CodeTypeReference(FullName, CodeTypeReferenceOptions.GlobalReference));
+            }
+        }
+
+        public CodeTypeReference DTypeReferenceOut
+        {
+            get
+            {
+                return new CodeTypeReference("net.sf.jni4net.Out<" + FullName + ">", CodeTypeReferenceOptions.GlobalReference);
+            }
+        }
+
+        public CodeTypeReference DTypeReferenceRef
+        {
+            get
+            {
+                return new CodeTypeReference("net.sf.jni4net.Ref<" + FullName + ">", CodeTypeReferenceOptions.GlobalReference);
             }
         }
 
@@ -106,7 +132,18 @@ namespace net.sf.jni4net.proxygen.model
 
         public void Accept(IModelVisitor visitor, Repository repository)
         {
+            Accept(visitor, Context.None, repository);
         }
+
+        public void Accept(IModelVisitor visitor, Context context, Repository repository)
+        {
+            visitor.VisitGType(this, context, repository);
+            foreach (GMember method in Methods)
+            {
+                visitor.VisitGMember(method, context, repository);
+            }
+        }
+    
     }
 
     public class JGType : GType
