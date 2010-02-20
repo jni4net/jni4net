@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 
 namespace net.sf.jni4net.proxygen.generators
 {
@@ -11,7 +12,8 @@ namespace net.sf.jni4net.proxygen.generators
 
         public override void GenerateMember()
         {
-            throw new NotImplementedException();
+            base.GenerateMember();
         }
+
     }
 }

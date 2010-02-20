@@ -7,12 +7,12 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public abstract class CLRBaseGenerator : BaseGenerator
     {
-        public override void GenerateType(GFile file, GType type, Context context, Repository repository)
+        public override void GenerateType()
         {
-            base.GenerateType(file, type, context, repository);
+            base.GenerateType();
             tgtType.IsPartial = true;
-            tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, Known.cdcComment + type.Name));
-            tgtType.StartDirectives.Add(new CodeRegionDirective(CodeRegionMode.Start, Known.cdc));
+            tgtType.StartDirectives.Insert(0, new CodeRegionDirective(CodeRegionMode.Start, Known.cdcComment + type.Name));
+            tgtType.StartDirectives.Insert(0, new CodeRegionDirective(CodeRegionMode.Start, Known.cdc));
             tgtType.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, Known.cdc));
         }
 

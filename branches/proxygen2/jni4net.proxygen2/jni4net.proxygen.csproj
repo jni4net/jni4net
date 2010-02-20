@@ -66,6 +66,7 @@
     <Compile Include="model\GType.cs" />
     <Compile Include="model\MAssembly.cs" />
     <Compile Include="model\MMember.cs" />
+    <Compile Include="visitors\25MethodProcessor.cs" />
     <Compile Include="visitors\ModelVisitor.cs" />
     <Compile Include="model\MParameter.cs" />
     <Compile Include="model\MType.cs" />

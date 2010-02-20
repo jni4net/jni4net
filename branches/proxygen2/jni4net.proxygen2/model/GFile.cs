@@ -60,7 +60,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 GType type = GTypes[i];
                 Context context = GContexts[i];
-                visitor.VisitGType(this, type, context, repository);
+                type.Accept(visitor, context, repository);
             }
         }
 

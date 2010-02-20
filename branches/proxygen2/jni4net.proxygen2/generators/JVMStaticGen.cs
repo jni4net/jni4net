@@ -10,10 +10,6 @@ namespace net.sf.jni4net.proxygen.generators
             GenerateTypeOfInit();
         }
 
-        public override void GenerateMember()
-        {
-        }
-
         private void GenerateTypeOfInit()
         {
             //field
@@ -44,6 +40,11 @@ namespace net.sf.jni4net.proxygen.generators
                     new CodeVariableReferenceExpression("staticType")));
 
             tgtType.Members.Add(init);
+        }
+
+        public override void GenerateMember()
+        {
+            //don't generate for static
         }
 
     }

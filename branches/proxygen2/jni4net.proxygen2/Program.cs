@@ -22,10 +22,12 @@ namespace net.sf.jni4net.proxygen
             repository.AddOrResolve(new MType(typeof(IComparable)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Environment)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Environment.SpecialFolder)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(DateTime)) { IsGenJvm = true });
 
             repository.Tour(new CLRLoader());
             repository.Tour(new Resolver());
             repository.Tour(new Namer());
+            repository.Tour(new MethodProcessor());
             repository.Tour(new Generator());
             repository.Tour(new Writer());
             repository.Tour(new Finisher());

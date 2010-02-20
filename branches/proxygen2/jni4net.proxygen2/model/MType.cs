@@ -34,6 +34,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsKnown { get; set; }
         public bool IsGenClr { get; set; }
         public bool IsGenJvm { get; set; }
+        public bool IsLoaded { get; set; }
         public MType Subst { get; set; }
 
         public MType Enclosing { get; set; }

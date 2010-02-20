@@ -8,12 +8,5 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public class CLRImplementationGen : CLRBaseGenerator
     {
-        public override void GenerateType()
-        {
-        }
-
-        public override void GenerateMember()
-        {
-        }
     }
 }

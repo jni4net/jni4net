@@ -18,14 +18,18 @@ namespace net.sf.jni4net.proxygen.model
         public MMethodClr Clr { get; set; }
         public MMethodJvm Jvm { get; set; }
 
+        public bool IsLoaded { get; set; }
+
         public bool IsStatic { get; set; }
         public bool IsVoid { get; set; }
+        public bool IsProperty { get; set; }
+        public bool IsEvent { get; set; }
 
         public bool IsConstructor { get; set; }
         public bool IsField { get; set; }
 
         public List<MParameter> Parameters=new List<MParameter>();
-        public MParameter ReturnParameter;
+        public MParameter Return;
 
         public MMember Pair { get; set; }
 
@@ -90,9 +94,9 @@ namespace net.sf.jni4net.proxygen.model
             {
                 parameter.Accept(visitor, repository);
             }
-            if (ReturnParameter!=null)
+            if (Return!=null)
             {
-                ReturnParameter.Accept(visitor, repository);
+                Return.Accept(visitor, repository);
             }
         }
 

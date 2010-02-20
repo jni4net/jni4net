@@ -12,6 +12,7 @@ namespace net.sf.jni4net.proxygen.generators
     {
         public override void GenerateType()
         {
+            base.GenerateType();
             /*if (type.Model.IsInterface || context.IsProxySide())
             {
                 GenerateConstructionHelper();
@@ -23,10 +24,6 @@ namespace net.sf.jni4net.proxygen.generators
             {
                 tgtType.TypeAttributes |= TypeAttributes.Abstract | TypeAttributes.Sealed;
             }*/
-        }
-
-        public override void GenerateMember()
-        {
         }
     }
 }

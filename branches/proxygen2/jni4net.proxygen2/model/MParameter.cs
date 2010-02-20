@@ -15,11 +15,13 @@ namespace net.sf.jni4net.proxygen.model
 
         public bool IsOut { get; set; }
         public bool IsRef { get; set; }
+        public bool IsReturn { get; set; }
 
-        public MParameter(MType type, string name)
+        public MParameter(MType type, string name, bool isReturn)
         {
             Type = type;
             Name = name;
+            IsReturn = isReturn;
         }
 
         public void Accept(IModelVisitor visitor, Repository repository)
