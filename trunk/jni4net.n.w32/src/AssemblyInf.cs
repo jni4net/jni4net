@@ -2,8 +2,6 @@
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-[assembly: AssemblyTitle("jni4net")]
-[assembly: AssemblyCompany("jni4net.sf.net")]
 [assembly: ComVisible(false)]
 
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, Flags = SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.Assertion | SecurityPermissionFlag.Execution)]
