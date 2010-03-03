@@ -24,6 +24,8 @@ namespace net.sf.jni4net
             set { bindNative = value; }
         }
 
+        public string JavaHome { get; set; }
+
         public bool BindCoreOnly { get; set; }
 
         public bool BindStatic
