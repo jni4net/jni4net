@@ -1,0 +1,1 @@
+java -cp target/jni4net.j-0.7.1.0.jar;target/classes Program

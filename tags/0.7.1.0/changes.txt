@@ -1,0 +1,39 @@
+Version 0.7.1
+-----------
++ [#7] - added ParPrimC2J(IntPtr)
++ [#5] - Reading Java home location from the Windows registry (Contributed by Martin Matula)
++      - BridgeSetup extended with JavaHome, and improved JavaHome auto detection
++ fixed missing assembly version for jni4net.n.*.dll 
+
+Version 0.7
+-----------
++ added support for delegates and events
++ static class is no longer found by name, attribute parameter added (this is breaking change)
++ assembly loading now uses java.io.File (breaking change)
++ solved problem with spaces in path
+
+Version 0.6
+-----------
++ JVM exceptions are serializable for CLR binary serialization
++ declarative security for running in partially trusted environments
++ possibility to specify alternate classloader
++ switched off signed .jar, because it prevents other people generating (unsigned) proxies into same packages. For example java.util_
++ native methods unregistration when appdomain unloads
++ upgrade to IDEA 9.0
++ sun specific DirectBufferCleaner, which holds the reference to pinned buffer
++ strongly typed JNI references (this is breaking change)
++ improved proxygen to not generate virtual method overrides
++ eliminated lot of warnings in generated code
++ implemented out and ref parameter from C#
+
+Version 0.5
+-----------
+
++ java.lang.Object proxy is no more IDisposable. There is rather IJvmProxy.Dispose()
++ implemented java.nio.ByteBuffer as direct buffer on CLR byte[], as well as net.sf.jni4net.nio.HeapByteBuffer for fast CLR local access
++ implemented missing equals and hashcode methods
++ changed format of proxygen config to ver 0.5. References and classpath format changed.
++ created CloseableToIDisposable adapter
++ implemented .dll and .jar exploration in proxygen. Added samples.
++ new http://jni4net.sourceforge.net/troubleshoot.shtml
++ this file
