@@ -253,6 +253,10 @@ namespace net.sf.jni4net
             try
             {
                 BindCore(env,newSetup);
+                if (Setup.JavaHome == null)
+                {
+                    Setup.JavaHome = java.lang.System.getProperty("java.home");
+                }
             }
             catch (Exception ex)
             {

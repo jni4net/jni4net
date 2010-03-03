@@ -76,6 +76,12 @@ public class BridgeSetup extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
     public native void setBindNative(boolean value);
     
+    @net.sf.jni4net.attributes.ClrMethod("()LSystem/String;")
+    public native java.lang.String getJavaHome();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
+    public native void setJavaHome(java.lang.String value);
+    
     @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean getBindCoreOnly();
     

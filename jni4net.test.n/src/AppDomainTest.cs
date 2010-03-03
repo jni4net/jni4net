@@ -14,6 +14,7 @@ using NUnit.Framework;
 namespace net.sf.jni4net.test
 {
     [TestFixture]
+    [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
     public class AppDomainTest : TestBase
     {
         [TestFixtureSetUp]
@@ -46,11 +47,14 @@ namespace net.sf.jni4net.test
         {
             try
             {
-                var trustAssemblies = new[] {Reflection.GetStrongName(typeof (Bridge).Assembly)};
+                var trustAssemblies = new[] { Reflection.GetStrongName(typeof(Bridge).Assembly)
+                    //, Reflection.GetStrongName(typeof(AppDomainTest).Assembly) 
+                };
                 var domainSetup = new AppDomainSetup();
                 var securityInfo = AppDomain.CurrentDomain.Evidence;
                 //PermissionSet permissionSet = new PermissionSet(PermissionState.None);
                 //permissionSet.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));
+                //permissionSet.AddPermission(new ReflectionPermission(ReflectionPermissionFlag.MemberAccess));
                 PermissionSet permissionSet = new PermissionSet(PermissionState.Unrestricted);
 
                 domainSetup.ApplicationBase = Environment.CurrentDirectory;
@@ -64,6 +68,7 @@ namespace net.sf.jni4net.test
                 //domainSetup.PrivateBinPath = tempDir;
 
                 domainSetup.AppDomainInitializer = Load;
+                domainSetup.AppDomainInitializerArguments =new []{Bridge.Setup.JavaHome};
 
                 Console.WriteLine("AAA");
                 AppDomain domain = AppDomain.CreateDomain("ddd", securityInfo, domainSetup, permissionSet, trustAssemblies);
@@ -100,6 +105,7 @@ namespace net.sf.jni4net.test
                 setup.Debug = true;
                 setup.BindNative = false;
                 setup.BindStatic = false;
+                setup.JavaHome = args[0];
                 Bridge.CreateJVM(setup);
                 Bridge.RegisterAssembly(typeof(AppDomainTest).Assembly);
 
