@@ -122,6 +122,12 @@ namespace net.sf.jni4net.utils
             return res;
         }
 
+        public static Value ParPrimC2J(IntPtr value)
+        {
+            var res = new Value { _long = value.ToInt64() };
+            return res;
+        }
+
         public static Value ParPrimC2J(float value)
         {
             var res = new Value {_float = value};

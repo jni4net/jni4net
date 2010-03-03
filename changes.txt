@@ -1,5 +1,6 @@
 Version 0.7.1
 -----------
++ [#7] - added ParPrimC2J(IntPtr)
 + [#5] - Reading Java home location from the Windows registry (Contributed by Martin Matula)
 +      - BridgeSetup extended with JavaHome, and improved JavaHome auto detection
 + fixed missing assembly version for jni4net.n.*.dll 
