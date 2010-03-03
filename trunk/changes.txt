@@ -1,4 +1,4 @@
-Version 0.8
+Version 0.7.1
 -----------
 + [#5] - Reading Java home location from the Windows registry (Contributed by Martin Matula)
 + fixed missing assembly version for jni4net.n.*.dll 
