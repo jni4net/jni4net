@@ -91,6 +91,17 @@ namespace net.sf.jni4net.jni
             {
                 if (Bridge.Setup.JavaHome == null)
                 {
+                    string jreVersion = (string)Registry.GetValue(JRE_REGISTRY_KEY, "CurrentVersion", null);
+                    if (jreVersion != null)
+                    {
+                        string keyName = Path.Combine(JRE_REGISTRY_KEY, jreVersion);
+                        jvmDir = (string)Registry.GetValue(keyName, "RuntimeLib", null);
+                        Bridge.Setup.JavaHome = (string)Registry.GetValue(keyName, "JavaHome", null);
+                    }
+                }
+
+                if (Bridge.Setup.JavaHome == null)
+                {
                     string jdkVersion = (string)Registry.GetValue(JDK_REGISTRY_KEY, "CurrentVersion", null);
                     if (jdkVersion != null)
                     {
@@ -100,24 +111,13 @@ namespace net.sf.jni4net.jni
                     }
                 }
 
-                if (Bridge.Setup.JavaHome == null)
-                {
-                    string jreVersion = (string) Registry.GetValue(JRE_REGISTRY_KEY, "CurrentVersion", null);
-                    if (jreVersion != null)
-                    {
-                        string keyName = Path.Combine(JRE_REGISTRY_KEY, jreVersion);
-                        jvmDir = (string) Registry.GetValue(keyName, "RuntimeLib", null);
-                        Bridge.Setup.JavaHome = (string) Registry.GetValue(keyName, "JavaHome", null);
-                    }
-                }
-
                 string prfi = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
                 if (Bridge.Setup.JavaHome == null && Directory.Exists(prfi))
                 {
                     string prfijava = Path.Combine(prfi, "Java");
                     if (Directory.Exists(prfijava))
                     {
-                        string[] directories = Directory.GetDirectories(prfijava,"jdk*");
+                        string[] directories = Directory.GetDirectories(prfijava,"jre*");
                         if (directories.Length>0)
                         {
                             Array.Sort(directories);
@@ -129,7 +129,7 @@ namespace net.sf.jni4net.jni
                         }
                         else
                         {
-                            directories = Directory.GetDirectories(prfijava, "jre*");
+                            directories = Directory.GetDirectories(prfijava, "jdk*");
                             if (directories.Length > 0)
                             {
                                 Array.Sort(directories);
