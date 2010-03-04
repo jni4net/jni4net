@@ -86,5 +86,33 @@ namespace net.sf.jni4net.proxygen.generators
             tgtType.Members.Add(cc);
         }
 
+        protected void AddAttribute(CodeTypeDeclaration declaration, string attr)
+        {
+            declaration.CustomAttributes.Add(
+                new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference)));
+        }
+
+        protected void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, object value)
+        {
+            CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
+            declaration.Arguments.Add(new CodeAttributeArgument(new CodePrimitiveExpression(value)));
+        }
+
+        protected void AddAttribute(CodeTypeMember tgtMethodCLR, string attr, CodeTypeReference refer, CodeTypeReference refer2)
+        {
+            CodeAttributeDeclaration declaration = AddAttribute(tgtMethodCLR, attr);
+            declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer)));
+            declaration.Arguments.Add(new CodeAttributeArgument(new CodeTypeOfExpression(refer2)));
+        }
+
+        protected CodeAttributeDeclaration AddAttribute(CodeTypeMember tgtMethodCLR, string attr)
+        {
+            var declaration =
+                new CodeAttributeDeclaration(new CodeTypeReference(attr, CodeTypeReferenceOptions.GlobalReference));
+            tgtMethodCLR.CustomAttributes.Add(declaration);
+            return declaration;
+        }
+
+
     }
 }

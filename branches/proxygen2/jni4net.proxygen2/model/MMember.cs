@@ -12,8 +12,11 @@ namespace net.sf.jni4net.proxygen.model
 
         public string Name { get; set; }
 
-        //original, with return type, lower case, dots
+        //original, with return type, dots
         public string Signature { get; set; }
+
+        public string SignatureJvm { get; set; }
+        public string SignatureClr { get; set; }
 
         public MMethodClr Clr { get; set; }
         public MMethodJvm Jvm { get; set; }

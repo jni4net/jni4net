@@ -46,7 +46,7 @@ namespace net.sf.jni4net.proxygen.model
         public List<MType> Interfaces = new List<MType>();
 
         // just immediate methods, not inherited from base
-        public List<MMember> Methods=new List<MMember>();
+        public List<MMember> Methods = new List<MMember>();
         public List<MMember> SkippedMethods = new List<MMember>();
         public List<MMember> Constructors = new List<MMember>();
 
@@ -65,11 +65,11 @@ namespace net.sf.jni4net.proxygen.model
         // both implemented on CLR side
         public CGType GImplementation { get; set; }
 
-        public List<GFile> GFiles =new List<GFile>();
+        public List<GFile> GFiles = new List<GFile>();
 
         public MType(Type type)
         {
-            Config=new CType();
+            Config = new CType();
             Clr = type;
             Name = type.Name;
 
@@ -84,7 +84,7 @@ namespace net.sf.jni4net.proxygen.model
         {
             Jvm = clazz;
             Name = clazz.getSimpleName();
-            string fullName = ((string)clazz.getName()).Replace('$','.');
+            string fullName = ((string)clazz.getName()).Replace('$', '.');
             int ld = fullName.LastIndexOf('.');
             NameSpace = ld == -1
                             ? ""
@@ -108,7 +108,7 @@ namespace net.sf.jni4net.proxygen.model
 
         public string Key
         {
-            get { return (NameSpace + "." + Name).ToLowerInvariant();}
+            get { return (NameSpace + "." + Name).ToLowerInvariant(); }
         }
 
         public override string ToString()
@@ -124,10 +124,119 @@ namespace net.sf.jni4net.proxygen.model
         public override bool Equals(object obj)
         {
             MType o = obj as MType;
-            if (o==null)
+            if (o == null)
                 return false;
             return NameSpace.Equals(o.NameSpace)
                 && Name.Equals(o.Name);
         }
+
+        public string SignatureClr
+        {
+            get
+            {
+                string fullName = NameSpace + "." + Name;
+                string low = fullName.ToLowerInvariant();
+                int arr = low.LastIndexOf("[");
+                string array = "";
+                while (arr != -1)
+                {
+                    array += "[";
+                    low = low.Substring(0, arr);
+                    arr = low.LastIndexOf("[");
+                }
+                switch (low)
+                {
+                    case "bool":
+                    case "boolean":
+                    case "system.boolean":
+                        return array + "Z";
+                    case "int":
+                    case "int32":
+                    case "system.int32":
+                        return array + "I";
+                    case "double":
+                    case "system.double":
+                        return array + "D";
+                    case "float":
+                    case "single":
+                    case "system.single":
+                        return array + "F";
+                    case "short":
+                    case "int16":
+                    case "system.int16":
+                        return array + "S";
+                    case "long":
+                    case "int64":
+                    case "system.int64":
+                        return array + "J";
+                    case "char":
+                    case "system.char":
+                        return array + "C";
+                    case "byte":
+                    case "system.byte":
+                        return array + "B";
+                    case "void":
+                    case "system.void":
+                        return array + "V";
+                    default:
+                        return array + "L" + fullName.Substring(0, low.Length).Replace('.', '/') + ";";
+                }
+            }
+        }
+
+        public string SignatureJvm
+        {
+            get
+            {
+                string fullName = NameSpace.ToLowerInvariant() + "." + Name;
+                string low = fullName.ToLowerInvariant();
+                int arr = low.LastIndexOf("[");
+                string array = "";
+                while (arr != -1)
+                {
+                    array += "[";
+                    low = low.Substring(0, arr);
+                    arr = low.LastIndexOf("[");
+                }
+                switch (low)
+                {
+                    case "bool":
+                    case "boolean":
+                    case "system.boolean":
+                        return array + "Z";
+                    case "int":
+                    case "int32":
+                    case "system.int32":
+                        return array + "I";
+                    case "double":
+                    case "system.double":
+                        return array + "D";
+                    case "float":
+                    case "single":
+                    case "system.single":
+                        return array + "F";
+                    case "short":
+                    case "int16":
+                    case "system.int16":
+                        return array + "S";
+                    case "long":
+                    case "int64":
+                    case "system.int64":
+                        return array + "J";
+                    case "char":
+                    case "system.char":
+                        return array + "C";
+                    case "byte":
+                    case "system.byte":
+                        return array + "B";
+                    case "void":
+                    case "system.void":
+                        return array + "V";
+                    default:
+                        return array + "L" + fullName.Substring(0, low.Length).Replace('.', '/') + ";";
+                }
+            }
+        }
+
     }
 }
