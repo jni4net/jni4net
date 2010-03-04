@@ -17,6 +17,10 @@ namespace net.sf.jni4net.proxygen.model
         public List<CodeParameterDeclarationExpression> Parameters=new List<CodeParameterDeclarationExpression>();
         public CodeTypeReference ReturnType { get; set; }
 
+        public bool IsVoid { get; set; }
+        public bool IsConstructor { get; set; }
+        public string Signature { get; set; }
+
         public MemberAttributes Attributes { get; set; }
 
         public string Name { get; set; }

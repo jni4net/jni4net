@@ -53,6 +53,23 @@ namespace net.sf.jni4net.proxygen.model
                              : ")" + methodInfo.ReturnType;
         }
 
+        public MMember(MType parent, ConstructorInfo constructorInfo)
+        {
+            Parent = parent;
+            Clr = new MMethodClr();
+            Clr.ConstructorInfo = constructorInfo;
+            Clr.MemberInfo = constructorInfo;
+            Name = parent.Name;
+            IsVoid = true;
+            IsConstructor = true;
+            Signature = "(";
+            foreach (ParameterInfo parameterInfo in constructorInfo.GetParameters())
+            {
+                Signature += parameterInfo.ParameterType + ";";
+            }
+            Signature += ")";
+        }
+
         public MMember(MType parent, EventInfo eventInfo)
         {
             Parent = parent;

@@ -1,4 +1,5 @@
 ﻿using System.CodeDom;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.proxygen.model;
 
 namespace net.sf.jni4net.proxygen.visitors
@@ -7,6 +8,7 @@ namespace net.sf.jni4net.proxygen.visitors
     {
         private MMember currentMember;
         private GMember gMember;
+        private GMember gcMember;
         public override void VisitMember(MMember member, Repository repository)
         {
             currentMember = member;
@@ -29,6 +31,20 @@ namespace net.sf.jni4net.proxygen.visitors
                 if (member.IsStatic)
                 {
                     gMember.Attributes |= MemberAttributes.Static;
+                }
+                gMember.IsVoid = member.IsVoid;
+                gMember.IsConstructor = member.IsConstructor;
+                gMember.Signature = member.SignatureClr;
+                if (member.IsConstructor)
+                {
+                    gcMember = new GMember(currentMember);
+                    gFaceJvm.Methods.Add(gcMember);
+                    gcMember.Attributes = MemberAttributes.Static | MemberAttributes.Private;
+                    gcMember.Name = "__ctor" + member.Name;
+                    gcMember.Signature = "(Lnet/sf/jni4net/inj/IClrProxy;" + member.SignatureClr.Substring(1);
+                    gMember.IsVoid = true;
+                    MType iclrProxy = repository.AddOrResolve(typeof(IClrProxy));
+                    gcMember.Parameters.Add(new CodeParameterDeclarationExpression(iclrProxy.GFaceJvm.DTypeReference, "thiz"));
                 }
             }
         }
@@ -61,6 +77,10 @@ namespace net.sf.jni4net.proxygen.visitors
                                                                    mParameter.Name);
                     }
                     gMember.Parameters.Add(p);
+                    if (currentMember.IsConstructor)
+                    {
+                        gcMember.Parameters.Add(p);
+                    }
                 }
             }
         }

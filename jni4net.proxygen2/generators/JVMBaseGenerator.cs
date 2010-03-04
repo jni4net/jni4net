@@ -9,21 +9,21 @@ namespace net.sf.jni4net.proxygen.generators
         {
             base.GenerateMember();
 
-            if (member.Model.IsConstructor)
+            if (member.IsConstructor)
             {
                 tgtMember = new CodeConstructor();
-                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrConstructor", member.Model.SignatureClr);
+                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrConstructor", member.Signature);
             }
             else
             {
                 tgtMember = new CodeMemberMethod();
                 tgtMember.Name = member.Name;
-                if (!member.Model.IsVoid)
+                if (!member.IsVoid)
                 {
                     tgtMember.ReturnType = member.ReturnType;
                 }
 
-                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrMethod", member.Model.SignatureClr);
+                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrMethod", member.Signature);
             }
             foreach (var parameter in member.Parameters)
             {

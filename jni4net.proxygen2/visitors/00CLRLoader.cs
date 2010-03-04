@@ -219,6 +219,16 @@ namespace net.sf.jni4net.proxygen.visitors
                 {
                     continue;
                 }
+                MMember member = new MMember(type, constructorInfo);
+                if (constructorInfo.IsGenericMethod)
+                {
+                    type.SkippedMethods.Add(member);
+                }
+                else
+                {
+                    type.Methods.Add(member);
+                    repository.AddOrResolve(member);
+                }
                 
             }
 
@@ -235,6 +245,10 @@ namespace net.sf.jni4net.proxygen.visitors
             if (member.Clr.MethodInfo != null)
             {
                 VisitMethodInfo(member, repository);
+            }
+            if (member.Clr.ConstructorInfo != null)
+            {
+                VisitConstructorInfo(member, repository);
             }
             if (member.Clr.EventInfo != null)
             {
@@ -256,7 +270,8 @@ namespace net.sf.jni4net.proxygen.visitors
         private static void VisitMethodInfo(MMember member, Repository repository)
         {
             MethodInfo methodInfo = member.Clr.MethodInfo;
-            if (methodInfo.ReturnType != null && methodInfo.ReturnType!=typeof(void))
+            member.IsStatic = methodInfo.IsStatic;
+            if (methodInfo.ReturnType != null && methodInfo.ReturnType != typeof(void))
             {
                 if (!methodInfo.ReturnType.IsOKType())
                 {
@@ -273,9 +288,19 @@ namespace net.sf.jni4net.proxygen.visitors
             {
                 member.IsVoid = true;
             }
-            member.IsStatic = methodInfo.IsStatic;
+            VisitParameters(member, repository, methodInfo.GetParameters());
+        }
 
-            ParameterInfo[] pars = methodInfo.GetParameters();
+        private static void VisitConstructorInfo(MMember member, Repository repository)
+        {
+            ConstructorInfo constructorInfo = member.Clr.ConstructorInfo;
+            member.IsStatic = true;
+            member.IsVoid = true;
+            VisitParameters(member, repository, constructorInfo.GetParameters());
+        }
+
+        private static void VisitParameters(MMember member, Repository repository, ParameterInfo[] pars)
+        {
             for (int i = 0; i < pars.Length; i++)
             {
                 ParameterInfo parameterInfo = pars[i];
