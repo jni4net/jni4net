@@ -1,4 +1,5 @@
 using System;
+using net.sf.jni4net.inj;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.model;
 using net.sf.jni4net.proxygen.visitors;
@@ -15,6 +16,7 @@ namespace net.sf.jni4net.proxygen
             Repository repository = new Repository(config);
             MAssembly assembly = new MAssembly(typeof(object).Assembly);
             //repository.AddOrResolve(assembly);
+            repository.AddOrResolve(typeof (IClrProxy));
             repository.AddOrResolve(new MType(typeof(object)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Exception)) { IsGenJvm = true });
