@@ -151,11 +151,54 @@ namespace net.sf.jni4net.proxygen.model
         public JGType(MType parent, string namespce, string enclosing, string clazz, JGType enclosingType)
             : base(parent, namespce, enclosing, clazz, enclosingType)
         {
-            ReflectionName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") + (enclosing == null ? "" : enclosing.Replace('.', '$') + "$") + clazz;
-            FullName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") + (enclosing == null ? "" : enclosing + ".") + clazz;
-            if (EnclosingNames == null && enclosingType != null)
+            ReflectionName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") +
+                             (enclosing == null ? "" : enclosing.Replace('.', '$') + "$") + clazz;
+            if (parent.IsPrimitive)
             {
-                EnclosingNames = Reflection.GetEnclosing(enclosingType.ReflectionName + "$" + Name, '$');
+                switch (clazz)
+                {
+                    case "Byte":
+                    case "SByte":
+                        FullName = "byte";
+                        break;
+                    case "Int16":
+                    case "UInt16":
+                        FullName = "short";
+                        break;
+                    case "Char":
+                        FullName = "char";
+                        break;
+                    case "Boolean":
+                        FullName = "boolean";
+                        break;
+                    case "Int32":
+                    case "UInt32":
+                        FullName = "int";
+                        break;
+                    case "Int64":
+                    case "UInt64":
+                    case "IntPtr":
+                    case "UIntPtr":
+                        FullName = "long";
+                        break;
+                    case "Double":
+                        FullName = "double";
+                        break;
+                    case "Single":
+                        FullName = "float";
+                        break;
+                    default:
+                        throw new NotImplementedException(clazz);
+                }
+            }
+            else
+            {
+                FullName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") +
+                           (enclosing == null ? "" : enclosing + ".") + clazz;
+                if (EnclosingNames == null && enclosingType != null)
+                {
+                    EnclosingNames = Reflection.GetEnclosing(enclosingType.ReflectionName + "$" + Name, '$');
+                }
             }
             //Console.WriteLine(this);
         }
