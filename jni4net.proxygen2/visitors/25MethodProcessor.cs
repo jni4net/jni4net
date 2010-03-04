@@ -25,6 +25,11 @@ namespace net.sf.jni4net.proxygen.visitors
                     gMember.Name = gMember.Name.Replace("add_", "add");
                     gMember.Name = gMember.Name.Replace("remove_", "remove");
                 }
+                gMember.Attributes = MemberAttributes.Public;
+                if (member.IsStatic)
+                {
+                    gMember.Attributes |= MemberAttributes.Static;
+                }
             }
         }
 

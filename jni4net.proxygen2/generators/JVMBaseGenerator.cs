@@ -12,6 +12,7 @@ namespace net.sf.jni4net.proxygen.generators
             if (member.Model.IsConstructor)
             {
                 tgtMember = new CodeConstructor();
+                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrConstructor", member.Model.SignatureClr);
             }
             else
             {
@@ -21,6 +22,8 @@ namespace net.sf.jni4net.proxygen.generators
                 {
                     tgtMember.ReturnType = member.ReturnType;
                 }
+
+                AddAttribute(tgtMember, "net.sf.jni4net.attributes.ClrMethod", member.Model.SignatureClr);
             }
             foreach (var parameter in member.Parameters)
             {

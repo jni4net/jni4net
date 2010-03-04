@@ -1,4 +1,5 @@
-﻿using net.sf.jni4net.proxygen.model;
+﻿using System.Text;
+using net.sf.jni4net.proxygen.model;
 using String = java.lang.String;
 
 namespace net.sf.jni4net.proxygen.visitors
@@ -150,6 +151,49 @@ namespace net.sf.jni4net.proxygen.visitors
                     }
                 }
             }
+        }
+
+        public override void VisitMember(MMember member, Repository repository)
+        {
+            if (!member.Parent.IsGenClr && !member.Parent.IsGenJvm)
+            {
+                return;
+            }
+
+            StringBuilder sbc=new StringBuilder();
+            sbc.Append("(");
+            foreach (MParameter parameter in member.Parameters)
+            {
+                sbc.Append(parameter.Type.SignatureClr);
+            }
+            sbc.Append(")");
+            if (member.IsVoid)
+            {
+                sbc.Append("V");
+            }
+            else
+            {
+                sbc.Append(member.Return.Type.SignatureClr);
+            }
+            member.SignatureClr = sbc.ToString();
+
+            StringBuilder sbj = new StringBuilder();
+            sbj.Append("(");
+            foreach (MParameter parameter in member.Parameters)
+            {
+                sbj.Append(parameter.Type.SignatureJvm);
+            }
+            sbj.Append(")");
+            if (member.IsVoid)
+            {
+                sbj.Append("V");
+            }
+            else
+            {
+                sbj.Append(member.Return.Type.SignatureJvm);
+            }
+            member.SignatureJvm = sbj.ToString();           
+        
         }
     }
 }
