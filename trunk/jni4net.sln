@@ -9,9 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.tested.n", "jni4net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.proxygen", "jni4net.proxygen\src\jni4net.proxygen.csproj", "{C2DA57E7-0E1C-4103-9775-2962CAD63C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w64", "jni4net.n.w64\src\jni4net.n.w64.csproj", "{774AED55-B9EC-447D-8EEB-1B2481C578B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w32.v20", "jni4net.n.w32.v20\src\jni4net.n.w32.v20.csproj", "{774AED55-B9EC-457D-8EEB-1B2481C578B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w32", "jni4net.n.w32\src\jni4net.n.w32.csproj", "{774AED55-B9EC-457D-8EEB-1B2481C578B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w32.v40", "jni4net.n.w32.v40\src\jni4net.n.w32.v40.csproj", "{774AED55-E9EC-457D-8EEB-1B2481C578B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w64.v20", "jni4net.n.w64.v20\src\jni4net.n.w64.v20.csproj", "{774AED55-B9EC-447D-8EEB-1B2481C578B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net.n.w64.v40", "jni4net.n.w64.v40\src\jni4net.n.w64.v40.csproj", "{774AED55-E9EC-447D-8EEB-1B2481C578B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +39,22 @@ Global
 		{C2DA57E7-0E1C-4103-9775-2962CAD63C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2DA57E7-0E1C-4103-9775-2962CAD63C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2DA57E7-0E1C-4103-9775-2962CAD63C49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{774AED55-B9EC-457D-8EEB-1B2481C578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{774AED55-B9EC-457D-8EEB-1B2481C578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{774AED55-B9EC-457D-8EEB-1B2481C578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{774AED55-B9EC-457D-8EEB-1B2481C578B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774AED55-E9EC-457D-8EEB-1B2481C578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774AED55-E9EC-457D-8EEB-1B2481C578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774AED55-E9EC-457D-8EEB-1B2481C578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774AED55-E9EC-457D-8EEB-1B2481C578B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774AED55-B9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774AED55-E9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774AED55-E9EC-447D-8EEB-1B2481C578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774AED55-E9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774AED55-E9EC-447D-8EEB-1B2481C578B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
