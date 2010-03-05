@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -75,13 +75,21 @@
     <Compile Include="TestInterfaces.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\jni4net.n.w32\src\jni4net.n.w32.csproj">
+    <ProjectReference Include="..\..\jni4net.n.w32.v20\src\jni4net.n.w32.v20.10.csproj">
       <Project>{774AED55-B9EC-457D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w32</Name>
+      <Name>jni4net.n.w32.v20.10</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\jni4net.n.w64\src\jni4net.n.w64.csproj">
+    <ProjectReference Include="..\..\jni4net.n.w32.v40\src\jni4net.n.w32.v40.10.csproj">
+      <Project>{774AED55-E9EC-457D-8EEB-1B2481C578B2}</Project>
+      <Name>jni4net.n.w32.v40.10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jni4net.n.w64.v20\src\jni4net.n.w64.v20.10.csproj">
       <Project>{774AED55-B9EC-447D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w64</Name>
+      <Name>jni4net.n.w64.v20.10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\jni4net.n.w64.v40\src\jni4net.n.w64.v40.10.csproj">
+      <Project>{774AED55-E9EC-447D-8EEB-1B2481C578B2}</Project>
+      <Name>jni4net.n.w64.v40.10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n\src\jni4net.n.csproj">
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
