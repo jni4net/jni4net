@@ -11,16 +11,17 @@ namespace net.sf.jni4net.proxygen.model
         None = 0,
 
         Interface = 1,
-        Static =2,
-        Proxy=4,
-        Implementation=8,
-        CoreMask = 15,
+        Class = 2,
+        Static = 4,
+        Proxy=8,
+        Implementation=16,
+        CoreMask = 31,
 
 
-        HomeSide=16,
-        ProxySide=32,
-        JvmSide = 64,
-        ClrSide = 128,
+        HomeSide=32,
+        ProxySide=64,
+        JvmSide = 128,
+        ClrSide = 256,
     }
 
     public static class ContextRock

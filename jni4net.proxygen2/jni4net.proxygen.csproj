@@ -58,6 +58,7 @@
     <Compile Include="generators\CLRStaticGen.cs" />
     <Compile Include="generators\IGenerator.cs" />
     <Compile Include="generators\JVMBaseGenerator.cs" />
+    <Compile Include="generators\JVMClassGen.cs" />
     <Compile Include="generators\JVMInterfaceGen.cs" />
     <Compile Include="generators\JVMProxyGen.cs" />
     <Compile Include="generators\JVMStaticGen.cs" />

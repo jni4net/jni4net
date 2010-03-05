@@ -7,13 +7,9 @@ namespace net.sf.jni4net.proxygen.generators
     {
         public override void GenerateType()
         {
+            base.GenerateType();
             tgtType.IsInterface = true;
+            AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrInterface");
         }
-
-        public override void GenerateMember()
-        {
-            base.GenerateMember();
-        }
-
     }
 }

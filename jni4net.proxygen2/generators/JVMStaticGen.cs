@@ -7,7 +7,9 @@ namespace net.sf.jni4net.proxygen.generators
     {
         public override void GenerateType()
         {
+            base.GenerateType();
             GenerateTypeOfInit();
+            AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrTypeInfo");
         }
 
         private void GenerateTypeOfInit()

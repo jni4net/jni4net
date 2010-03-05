@@ -76,12 +76,16 @@ namespace net.sf.jni4net.proxygen.generators
             {
                 cc.Attributes = MemberAttributes.Family;
             }
-            cc.Parameters.Add(new CodeParameterDeclarationExpression(Known.JNIEnv, Known.envVariableName));
             cc.BaseConstructorArgs.Add(Known.envVariable);
             if (context.IsJvmSide())
             {
+                cc.Parameters.Add(new CodeParameterDeclarationExpression(Known.INJEnv, Known.envVariableName));
                 cc.Parameters.Add(new CodeParameterDeclarationExpression(Known.Long, Known.handleVariableName));
                 cc.BaseConstructorArgs.Add(new CodeVariableReferenceExpression(Known.handleVariableName));
+            }
+            else
+            {
+                cc.Parameters.Add(new CodeParameterDeclarationExpression(Known.JNIEnv, Known.envVariableName));
             }
             tgtType.Members.Add(cc);
         }

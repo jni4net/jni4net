@@ -72,7 +72,7 @@ namespace net.sf.jni4net.proxygen.visitors
 
                         // jvm face is new, proxy is the face
                         GFile gJVM = type.Enclosing.GFaceJvm.File;
-                        gJVM.Add(type.GFaceJvm, Context.None);
+                        gJVM.Add(type.GFaceJvm, Context.Class | Context.ProxySide | Context.JvmSide);
 
                         // clr static
                         GFile gCLR = type.Enclosing.GFaceClr.File;//face name is fine
@@ -131,7 +131,7 @@ namespace net.sf.jni4net.proxygen.visitors
 
                         // jvm face is new, proxy is the face
                         GFile gJVM = new JGFile(type.GFaceJvm);
-                        gJVM.Add(type.GFaceJvm, Context.None);
+                        gJVM.Add(type.GFaceJvm, Context.Class | Context.ProxySide | Context.JvmSide);
 
                         // clr static
                         type.GStaticClr = new CGType(type, type.GFaceClr.Namespace, null, type.GFaceClr.Name + "_", null);

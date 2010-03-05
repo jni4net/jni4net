@@ -11,75 +11,91 @@ namespace net.sf.jni4net.proxygen.visitors
         private GMember gcMember;
         public override void VisitMember(MMember member, Repository repository)
         {
+            if (!member.Parent.IsGenJvm)
+            {
+                currentMember = null;
+                return;
+            }
             currentMember = member;
+            gMember = new GMember(currentMember);
+            if (member.IsProperty)
+            {
+                gMember.Name = gMember.Name.Replace("get_", "get");
+                gMember.Name = gMember.Name.Replace("set_", "set");
+            }
+            if (member.IsEvent)
+            {
+                gMember.Name = gMember.Name.Replace("add_", "add");
+                gMember.Name = gMember.Name.Replace("remove_", "remove");
+            }
+            gMember.Attributes = MemberAttributes.Public;
+            if (member.IsStatic)
+            {
+                gMember.Attributes |= MemberAttributes.Static;
+            }
+            gMember.IsVoid = member.IsVoid;
+            gMember.IsConstructor = member.IsConstructor;
+            gMember.Signature = member.SignatureClr;
+
+            if (member.IsConstructor)
+            {
+                gcMember = new GMember(currentMember);
+                gcMember.Attributes = MemberAttributes.Static | MemberAttributes.Private;
+                gcMember.Name = "__ctor" + member.Name;
+                gcMember.Signature = "(Lnet/sf/jni4net/inj/IClrProxy;" + member.SignatureClr.Substring(1);
+                gMember.IsVoid = true;
+                MType iclrProxy = repository.AddOrResolve(typeof(IClrProxy));
+                gcMember.Parameters.Add(new CodeParameterDeclarationExpression(iclrProxy.GFaceJvm.DTypeReference, "thiz"));
+            }
+
             JGType gFaceJvm = currentMember.Parent.GFaceJvm;
+            JGType gProxyJvm = currentMember.Parent.GProxyJvm;
             if (gFaceJvm.IsGen)
             {
-                gMember = new GMember(currentMember);
                 gFaceJvm.Methods.Add(gMember);
-                if (member.IsProperty)
-                {
-                    gMember.Name = gMember.Name.Replace("get_", "get");
-                    gMember.Name = gMember.Name.Replace("set_", "set");
-                }
-                if (member.IsEvent)
-                {
-                    gMember.Name = gMember.Name.Replace("add_", "add");
-                    gMember.Name = gMember.Name.Replace("remove_", "remove");
-                }
-                gMember.Attributes = MemberAttributes.Public;
-                if (member.IsStatic)
-                {
-                    gMember.Attributes |= MemberAttributes.Static;
-                }
-                gMember.IsVoid = member.IsVoid;
-                gMember.IsConstructor = member.IsConstructor;
-                gMember.Signature = member.SignatureClr;
+            }
+            if (gProxyJvm.IsGen)
+            {
+                gProxyJvm.Methods.Add(gMember);
                 if (member.IsConstructor)
                 {
-                    gcMember = new GMember(currentMember);
-                    gFaceJvm.Methods.Add(gcMember);
-                    gcMember.Attributes = MemberAttributes.Static | MemberAttributes.Private;
-                    gcMember.Name = "__ctor" + member.Name;
-                    gcMember.Signature = "(Lnet/sf/jni4net/inj/IClrProxy;" + member.SignatureClr.Substring(1);
-                    gMember.IsVoid = true;
-                    MType iclrProxy = repository.AddOrResolve(typeof(IClrProxy));
-                    gcMember.Parameters.Add(new CodeParameterDeclarationExpression(iclrProxy.GFaceJvm.DTypeReference, "thiz"));
+                    gProxyJvm.Methods.Add(gcMember);
                 }
             }
         }
 
         public override void VisitParameter(MParameter mParameter, Repository repository)
         {
-            JGType gFaceJvm = currentMember.Parent.GFaceJvm;
-            if (gFaceJvm.IsGen)
+            if (currentMember ==null || !currentMember.Parent.IsGenJvm)
             {
-                CodeParameterDeclarationExpression p;
-                if (mParameter.IsReturn)
+                return;
+            }
+
+            CodeParameterDeclarationExpression p;
+            if (mParameter.IsReturn)
+            {
+                gMember.ReturnType = mParameter.Type.GFaceJvm.DTypeReference;
+            }
+            else
+            {
+                CodeTypeReference refer;
+                if (mParameter.IsOut)
                 {
-                    gMember.ReturnType = mParameter.Type.GFaceJvm.DTypeReference;
+                    refer = mParameter.Type.GFaceJvm.DTypeReferenceOut;
+                }
+                else if (mParameter.IsRef)
+                {
+                    refer = mParameter.Type.GFaceJvm.DTypeReferenceRef;
                 }
                 else
                 {
-                    CodeTypeReference refer;
-                    if (mParameter.IsOut)
-                    {
-                        refer = mParameter.Type.GFaceJvm.DTypeReferenceOut;
-                    }
-                    else if (mParameter.IsRef)
-                    {
-                        refer = mParameter.Type.GFaceJvm.DTypeReferenceRef;
-                    }
-                    else
-                    {
-                        refer = mParameter.Type.GFaceJvm.DTypeReference;
-                    }
-                    p = new CodeParameterDeclarationExpression(refer, mParameter.Name);
-                    gMember.Parameters.Add(p);
-                    if (currentMember.IsConstructor)
-                    {
-                        gcMember.Parameters.Add(p);
-                    }
+                    refer = mParameter.Type.GFaceJvm.DTypeReference;
+                }
+                p = new CodeParameterDeclarationExpression(refer, mParameter.Name);
+                gMember.Parameters.Add(p);
+                if (currentMember.IsConstructor)
+                {
+                    gcMember.Parameters.Add(p);
                 }
             }
         }

@@ -47,6 +47,9 @@ namespace net.sf.jni4net.proxygen.visitors
                     case Context.Interface:
                         currentGenerator = new JVMInterfaceGen();
                         break;
+                    case Context.Class:
+                        currentGenerator = new JVMClassGen();
+                        break;
                     default:
                         throw new InvalidOperationException();
                 }
