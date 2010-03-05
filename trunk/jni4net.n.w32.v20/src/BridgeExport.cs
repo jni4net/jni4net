@@ -39,7 +39,7 @@ namespace net.sf.jni4net
         {
             try
             {
-                string jni4net = typeof(BridgeExport).Assembly.Location.Replace(".w32", "");
+                string jni4net = typeof(BridgeExport).Assembly.Location.Replace(".w32.v20", "");
                 string oldDir = Environment.CurrentDirectory;
                 Environment.CurrentDirectory = Path.GetDirectoryName(jni4net);
                 Assembly assembly = Assembly.LoadFile(jni4net);

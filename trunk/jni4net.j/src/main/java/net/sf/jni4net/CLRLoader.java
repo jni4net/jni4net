@@ -33,7 +33,6 @@ import java.util.Properties;
 class CLRLoader {
 	private static String version;
     private static String platform;
-    private static String clr;
 
     public static void 	init(File fileOrDirectory) throws IOException {
 		if (!Bridge.isRegistered) {
@@ -100,13 +99,13 @@ class CLRLoader {
 	}
 
     public static synchronized String getClr() {
-        if (clr==null){
-            clr = "v20";
-            if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()){
-                clr = "v40";
+        if (Bridge.clrVersion == null) {
+            Bridge.clrVersion = "v20";
+            if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()) {
+                Bridge.clrVersion = "v40";
             }
         }
-        return clr;
+        return Bridge.clrVersion;
     }
 
     public static synchronized String getPlatform() {
