@@ -36,6 +36,7 @@ public class Bridge extends system.Object {
 
 	static boolean verbose;
 	static boolean debug;
+    static String clrVersion;
 
 	public static void init() throws java.io.IOException {
 		init(CLRLoader.findDefaultDll());
@@ -58,6 +59,13 @@ public class Bridge extends system.Object {
 			getSetup().setVerbose(value);
 		}
 	}
+
+    /**
+     * @param value "v20" or "v40"
+     */
+    public void setClrVersion(String value){
+        clrVersion=value;
+    }
 
 	public static synchronized String getVersion() {
 		return CLRLoader.getVersion();
