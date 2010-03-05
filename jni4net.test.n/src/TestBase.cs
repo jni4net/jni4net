@@ -49,6 +49,7 @@ namespace net.sf.jni4net.test
             sp.Deny();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             BridgeSetup setup=new BridgeSetup (false){Verbose = true, Debug = true};
+            setup.AddJVMOption("-Xmx512m");
             setup.AddClassPath(prefix + "jni4net.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.tested.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.test.j/target/test-classes");

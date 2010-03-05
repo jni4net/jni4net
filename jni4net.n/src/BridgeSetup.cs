@@ -92,6 +92,11 @@ namespace net.sf.jni4net
             jvmOptions.Add(name+"="+value);
         }
 
+        public void AddJVMOption(string setting)
+        {
+            jvmOptions.Add(setting);
+        }
+
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddAllJarsClassPath(string directory)
         {
