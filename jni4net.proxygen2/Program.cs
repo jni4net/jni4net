@@ -19,6 +19,7 @@ namespace net.sf.jni4net.proxygen
             repository.AddOrResolve(typeof (IClrProxy));
             repository.AddOrResolve(new MType(typeof(object)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Boolean)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Exception)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Type)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(IComparable)) { IsGenJvm = true });

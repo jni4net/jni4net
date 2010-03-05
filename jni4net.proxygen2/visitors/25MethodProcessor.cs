@@ -61,21 +61,20 @@ namespace net.sf.jni4net.proxygen.visitors
                 }
                 else
                 {
+                    CodeTypeReference refer;
                     if (mParameter.IsOut)
                     {
-                        p = new CodeParameterDeclarationExpression(mParameter.Type.GFaceJvm.DTypeReferenceOut,
-                                                                   "__out_" + mParameter.Name);
+                        refer = mParameter.Type.GFaceJvm.DTypeReferenceOut;
                     }
                     else if (mParameter.IsRef)
                     {
-                        p = new CodeParameterDeclarationExpression(mParameter.Type.GFaceJvm.DTypeReferenceRef,
-                                                                   "__ref_" + mParameter.Name);
+                        refer = mParameter.Type.GFaceJvm.DTypeReferenceRef;
                     }
                     else
                     {
-                        p = new CodeParameterDeclarationExpression(mParameter.Type.GFaceJvm.DTypeReference,
-                                                                   mParameter.Name);
+                        refer = mParameter.Type.GFaceJvm.DTypeReference;
                     }
+                    p = new CodeParameterDeclarationExpression(refer, mParameter.Name);
                     gMember.Parameters.Add(p);
                     if (currentMember.IsConstructor)
                     {

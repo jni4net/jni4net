@@ -87,7 +87,7 @@ namespace net.sf.jni4net.proxygen.model
         {
             get
             {
-                return new CodeTypeReference(FullName, CodeTypeReferenceOptions.GlobalReference);
+                return new CodeTypeReference(Primitive, CodeTypeReferenceOptions.GlobalReference);
             }
         }
 
@@ -95,7 +95,7 @@ namespace net.sf.jni4net.proxygen.model
         {
             get
             {
-                return new CodeTypeReferenceExpression(new CodeTypeReference(FullName, CodeTypeReferenceOptions.GlobalReference));
+                return new CodeTypeReferenceExpression(new CodeTypeReference(Primitive, CodeTypeReferenceOptions.GlobalReference));
             }
         }
 
@@ -143,7 +143,8 @@ namespace net.sf.jni4net.proxygen.model
                 visitor.VisitGMember(method, context, repository);
             }
         }
-    
+
+        public abstract string Primitive { get; }
     }
 
     public class JGType : GType
@@ -153,54 +154,51 @@ namespace net.sf.jni4net.proxygen.model
         {
             ReflectionName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") +
                              (enclosing == null ? "" : enclosing.Replace('.', '$') + "$") + clazz;
-            if (parent.IsPrimitive)
+            FullName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") +
+                       (enclosing == null ? "" : enclosing + ".") + clazz;
+            if (EnclosingNames == null && enclosingType != null)
             {
-                switch (clazz)
-                {
-                    case "Byte":
-                    case "SByte":
-                        FullName = "byte";
-                        break;
-                    case "Int16":
-                    case "UInt16":
-                        FullName = "short";
-                        break;
-                    case "Char":
-                        FullName = "char";
-                        break;
-                    case "Boolean":
-                        FullName = "boolean";
-                        break;
-                    case "Int32":
-                    case "UInt32":
-                        FullName = "int";
-                        break;
-                    case "Int64":
-                    case "UInt64":
-                    case "IntPtr":
-                    case "UIntPtr":
-                        FullName = "long";
-                        break;
-                    case "Double":
-                        FullName = "double";
-                        break;
-                    case "Single":
-                        FullName = "float";
-                        break;
-                    default:
-                        throw new NotImplementedException(clazz);
-                }
-            }
-            else
-            {
-                FullName = (namespce == null ? "" : namespce.ToLowerInvariant() + ".") +
-                           (enclosing == null ? "" : enclosing + ".") + clazz;
-                if (EnclosingNames == null && enclosingType != null)
-                {
-                    EnclosingNames = Reflection.GetEnclosing(enclosingType.ReflectionName + "$" + Name, '$');
-                }
+                EnclosingNames = Reflection.GetEnclosing(enclosingType.ReflectionName + "$" + Name, '$');
             }
             //Console.WriteLine(this);
+        }
+
+        public override string Primitive
+        {
+            get
+            {
+                if (Model.IsPrimitive)
+                {
+                    switch (Model.Name)
+                    {
+                        case "Byte":
+                        case "SByte":
+                            return "byte";
+                        case "Int16":
+                        case "UInt16":
+                            return "short";
+                        case "Char":
+                            return "char";
+                        case "Boolean":
+                            return "boolean";
+                        case "Int32":
+                        case "UInt32":
+                            return "int";
+                        case "Int64":
+                        case "UInt64":
+                        case "IntPtr":
+                        case "UIntPtr":
+                            return "long";
+                        case "Double":
+                            return "double";
+                        case "Single":
+                            return "float";
+                        default:
+                            throw new NotImplementedException(Model.Name);
+                    }
+                }
+                return FullName;
+            }
         }
 
         public override string ToString()
@@ -223,6 +221,50 @@ namespace net.sf.jni4net.proxygen.model
             //Console.WriteLine(this);
         }
 
+        public override string Primitive
+        {
+            get
+            {
+                if (Model.IsPrimitive)
+                {
+                    switch (Model.Name)
+                    {
+                        case "Byte":
+                            return "byte";
+                        case "SByte":
+                            return "sbyte";
+                        case "Int16":
+                            return "short";
+                        case "UInt16":
+                            return "ushort";
+                        case "Char":
+                            return "char";
+                        case "Boolean":
+                            return "bool";
+                        case "Int32":
+                            return "int";
+                        case "UInt32":
+                            return "uint";
+                        case "UIntPtr":
+                            return "System.UIntPtr";
+                        case "IntPtr":
+                            return "System.IntPtr";
+                        case "Int64":
+                            return "long";
+                        case "UInt64":
+                            return "ulong";
+                        case "Double":
+                            return "double";
+                        case "Single":
+                            return "float";
+                        default:
+                            throw new NotImplementedException(Model.Name);
+                    }
+                }
+                return FullName;
+            }
+        }
+        
         public override string ToString()
         {
             return "C:" + Model.Key + "->" + FullName;
