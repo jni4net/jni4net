@@ -207,7 +207,11 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.j/jni4net.j.iml" filepath="$PROJECT_DIR$/jni4net.j/jni4net.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n/jni4net.n.iml" filepath="$PROJECT_DIR$/jni4net.n/jni4net.n.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" filepath="$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32.v20/jni4net.n.w32.v20.iml" filepath="$PROJECT_DIR$/jni4net.n.w32.v20/jni4net.n.w32.v20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32.v40/jni4net.n.w32.v40.iml" filepath="$PROJECT_DIR$/jni4net.n.w32.v40/jni4net.n.w32.v40.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" filepath="$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64.v20/jni4net.n.w64.v20.iml" filepath="$PROJECT_DIR$/jni4net.n.w64.v20/jni4net.n.w64.v20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64.v40/jni4net.n.w64.v40.iml" filepath="$PROJECT_DIR$/jni4net.n.w64.v40/jni4net.n.w64.v40.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" filepath="$PROJECT_DIR$/jni4net.test.j/jni4net.test.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" filepath="$PROJECT_DIR$/jni4net.test.n/jni4net.test.n.iml" />

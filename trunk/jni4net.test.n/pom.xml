@@ -31,13 +31,25 @@
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
-            <artifactId>jni4net.n.w64</artifactId>
+            <artifactId>jni4net.n.w64.v20</artifactId>
             <version>0.7.1.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
-            <artifactId>jni4net.n.w32</artifactId>
+            <artifactId>jni4net.n.w64.v40</artifactId>
+            <version>0.7.1.0</version>
+            <type>dotnet:library</type>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n.w32.v40</artifactId>
+            <version>0.7.1.0</version>
+            <type>dotnet:library</type>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n.w32.v20</artifactId>
             <version>0.7.1.0</version>
             <type>dotnet:library</type>
         </dependency>

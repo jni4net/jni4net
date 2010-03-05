@@ -33,11 +33,12 @@ import java.util.Properties;
 class CLRLoader {
 	private static String version;
     private static String platform;
+    private static String clr;
 
     public static void 	init(File fileOrDirectory) throws IOException {
 		if (!Bridge.isRegistered) {
 			if (fileOrDirectory.isDirectory()) {
-                final String myDllName = "jni4net.n." + getPlatform() + "-" + getVersion() + ".dll";
+                final String myDllName = "jni4net.n." + getPlatform() +"." + getClr()+ "-" + getVersion() + ".dll";
                 init(new File(fileOrDirectory , myDllName).getAbsoluteFile());
 				return;
 			}
@@ -68,13 +69,13 @@ class CLRLoader {
 
         java.io.File path;
 		if (file.endsWith("classes")) {
-			final String base = file.substring(0, file.length() - 7).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform()) + "/jni4net.n";
-			path = new java.io.File(base + "."+ getPlatform()+ "-" + getVersion() + ".dll");
+			final String base = file.substring(0, file.length() - 7).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform()+"."+getClr()) + "/jni4net.n";
+			path = new java.io.File(base + "."+ getPlatform()+"." + getClr()+ "-" + getVersion() + ".dll");
 			if (!path.exists()) {
 				throw new Error("Can't find " + path);
 			}
 		} else if (file.endsWith(".jar")) {
-			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform());
+			final String base = file.substring(0, file.length() - 4).replaceAll("jni4net\\.j", "jni4net.n."+getPlatform()+"."+getClr());
 			path = new java.io.File(base + ".dll");
 		} else {
 			throw new Error("Can't find " + file);
@@ -97,6 +98,16 @@ class CLRLoader {
 		}
 		return null;
 	}
+
+    public static synchronized String getClr() {
+        if (clr==null){
+            clr = "v20";
+            if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()){
+                clr = "v40";
+            }
+        }
+        return clr;
+    }
 
     public static synchronized String getPlatform() {
         if (platform == null) {
