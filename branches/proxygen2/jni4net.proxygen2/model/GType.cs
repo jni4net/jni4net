@@ -138,11 +138,12 @@ namespace net.sf.jni4net.proxygen.model
 
         public void Accept(IModelVisitor visitor, Context context, Repository repository)
         {
-            visitor.VisitGType(this, context, repository);
+            visitor.VisitGType1Pass(this, context, repository);
             foreach (GMember method in Methods)
             {
                 visitor.VisitGMember(method, context, repository);
             }
+            visitor.VisitGType2Pass(this, context, repository);
         }
 
         public abstract string Primitive { get; }

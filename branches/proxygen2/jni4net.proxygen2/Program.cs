@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using net.sf.jni4net.inj;
 using net.sf.jni4net.proxygen.config;
 using net.sf.jni4net.proxygen.model;
@@ -17,15 +18,16 @@ namespace net.sf.jni4net.proxygen
             MAssembly assembly = new MAssembly(typeof(object).Assembly);
             //repository.AddOrResolve(assembly);
             repository.AddOrResolve(typeof (IClrProxy));
-            repository.AddOrResolve(new MType(typeof(object)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(Boolean)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(Exception)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(Type)) { IsGenJvm = false });
+            repository.AddOrResolve(new MType(typeof(object)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Boolean)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Exception)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Type)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(IComparable)) { IsGenJvm = true });
-            repository.AddOrResolve(new MType(typeof(Environment)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(Environment.SpecialFolder)) { IsGenJvm = false });
-            repository.AddOrResolve(new MType(typeof(DateTime)) { IsGenJvm = false });
+            repository.AddOrResolve(new MType(typeof(Environment)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Process)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Environment.SpecialFolder)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(DateTime)) { IsGenJvm = true });
 
             repository.Tour(new CLRLoader());
             repository.Tour(new Resolver());

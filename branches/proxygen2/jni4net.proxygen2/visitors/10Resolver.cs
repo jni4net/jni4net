@@ -22,14 +22,16 @@ namespace net.sf.jni4net.proxygen.visitors
                 type.IsKnown = true;
                 return;
             }
-            if (type.Jvm != null && type.Clr != null)
+            if (type.Jvm != null && type.IsGenClr)
             {
                 type.IsKnown = true;
-                return;
             }
-            if (type.IsGenClr || type.IsGenJvm || type.IsKnown)
+            if (type.Clr != null && type.IsGenJvm)
             {
                 type.IsKnown = true;
+            }
+            if (type.IsKnown)
+            {
                 return;
             }
             if (type.IsInterface)

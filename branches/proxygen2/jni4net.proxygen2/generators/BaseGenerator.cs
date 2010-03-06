@@ -17,7 +17,11 @@ namespace net.sf.jni4net.proxygen.generators
         protected Context context;
         protected Repository repository;
 
-        public virtual void GenerateType()
+        public virtual void GenerateType1Pass()
+        {
+        }
+
+        public virtual void GenerateType2Pass()
         {
         }
 
@@ -25,7 +29,7 @@ namespace net.sf.jni4net.proxygen.generators
         {
         }
 
-        public void GenerateType(GFile file, GType type, Context context, Repository repository)
+        public void GenerateType1Pass(GFile file, GType type, Context context, Repository repository)
         {
             this.file = file;
             this.type = type;
@@ -38,7 +42,14 @@ namespace net.sf.jni4net.proxygen.generators
                 type.DType = tgtType;
                 if (type.Enclosing == null)
                 {
-                    tgtType.TypeAttributes = TypeAttributes.Public;
+                    if (context.Has(Context.Proxy) || type.Model.IsInterface)
+                    {
+                        tgtType.TypeAttributes = TypeAttributes.NotPublic;
+                    }
+                    else
+                    {
+                        tgtType.TypeAttributes = TypeAttributes.Public;
+                    }
                     type.File.DNamespace.Types.Add(tgtType);
                 }
                 else
@@ -52,13 +63,22 @@ namespace net.sf.jni4net.proxygen.generators
                 tgtType = type.DType;
             }
 
-            GenerateType();
+            GenerateType1Pass();
         }
 
         public void GenerateMember(GMember member)
         {
             this.member = member;
             GenerateMember();
+        }
+
+        public void GenerateType2Pass(GFile file, GType type, Context context, Repository repository)
+        {
+            this.file = file;
+            this.type = type;
+            this.context = context;
+            this.repository = repository;
+            GenerateType2Pass();
         }
 
         protected void CreateEnvConstructor(CodeTypeDeclaration tgtType, CodeTypeReference envType)

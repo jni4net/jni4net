@@ -4,7 +4,8 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public interface IGenerator
     {
-        void GenerateType(GFile file, GType type, Context context, Repository repository);
+        void GenerateType1Pass(GFile file, GType type, Context context, Repository repository);
         void GenerateMember(GMember member);
+        void GenerateType2Pass(GFile file, GType type, Context context, Repository repository);
     }
 }
