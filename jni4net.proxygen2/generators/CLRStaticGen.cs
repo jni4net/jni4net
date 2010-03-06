@@ -7,10 +7,10 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public class CLRStaticGen : CLRBaseGenerator
     {
-        public override void GenerateType()
+        public override void GenerateType1Pass()
         {
             AddStaticProperty();
-            base.GenerateType();
+            base.GenerateType1Pass();
         }
 
         private void AddStaticProperty()

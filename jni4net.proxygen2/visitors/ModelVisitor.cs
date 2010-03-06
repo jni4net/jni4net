@@ -17,8 +17,9 @@ namespace net.sf.jni4net.proxygen.visitors
         void VisitMember(MMember member, Repository repository);
         void VisitParameter(MParameter mParameter, Repository repository);
         void VisitFile(GFile file, Repository repository);
-        void VisitGType(GType type, Context context, Repository repository);
+        void VisitGType1Pass(GType type, Context context, Repository repository);
         void VisitGMember(GMember member, Context context, Repository repository);
+        void VisitGType2Pass(GType type, Context context, Repository repository);
     }
 
     public class BaseModelVisitor : IModelVisitor
@@ -39,11 +40,15 @@ namespace net.sf.jni4net.proxygen.visitors
         {
         }
 
-        public virtual void VisitGType(GType type, Context context, Repository repository)
+        public virtual void VisitGType1Pass(GType type, Context context, Repository repository)
         {
         }
 
         public virtual void VisitGMember(GMember member, Context context, Repository repository)
+        {
+        }
+
+        public virtual void VisitGType2Pass(GType type, Context context, Repository repository)
         {
         }
 

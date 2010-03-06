@@ -62,6 +62,10 @@ namespace net.sf.jni4net.proxygen.model
             {
                 EnQBase(known, toAdd.Enclosing);
             }
+            if (toAdd.Subst != null)
+            {
+                EnQBase(known, toAdd.Subst);
+            }
             work.Enqueue(toAdd);
             known.Add(toAdd.Key, toAdd);
         }

@@ -8,8 +8,34 @@ namespace net.sf.jni4net.proxygen.visitors
     {
         IGenerator currentGenerator;
 
-        public override void VisitGType(GType type, Context context, Repository repository)
+        public override void VisitGType1Pass(GType type, Context context, Repository repository)
         {
+            CreateGenerator(type, context);
+            if (currentGenerator != null)
+            {
+                currentGenerator.GenerateType1Pass(type.File, type, context, repository);
+            }
+        }
+
+        public override void VisitGMember(GMember member, Context context, Repository repository)
+        {
+            if (currentGenerator != null)
+            {
+                currentGenerator.GenerateMember(member);
+            }
+        }
+
+        public override void VisitGType2Pass(GType type, Context context, Repository repository)
+        {
+            if (currentGenerator != null)
+            {
+                currentGenerator.GenerateType2Pass(type.File, type, context, repository);
+            }
+        }
+
+        private void CreateGenerator(GType type, Context context)
+        {
+            currentGenerator = null;
             if (type.File is CGFile)
             {
                 switch (context.Core())
@@ -54,13 +80,6 @@ namespace net.sf.jni4net.proxygen.visitors
                         throw new InvalidOperationException();
                 }
             }
-            currentGenerator.GenerateType(type.File, type, context, repository);
         }
-
-        public override void VisitGMember(GMember member, Context context, Repository repository)
-        {
-            currentGenerator.GenerateMember(member);
-        }
-
     }
 }

@@ -8,7 +8,14 @@ namespace net.sf.jni4net.proxygen.visitors
     {
         public override void VisitType(MType type, Repository repository)
         {
-            if (type.Clr!=null)
+            if (!type.IsKnown)
+            {
+                type.GFaceClr = type.Subst.GFaceClr;
+                type.GFaceJvm = type.Subst.GFaceJvm;
+                return;
+            }
+
+            if (type.Clr != null)
             {
                 string enclosing = Reflection.GetEnclosing(type.Clr.FullName, '+');
                 type.GFaceClr = new CGType(type, type.Clr.Namespace, enclosing, type.Name, type.Enclosing == null ? null : type.Enclosing.GFaceClr);
@@ -17,6 +24,7 @@ namespace net.sf.jni4net.proxygen.visitors
                     type.GFaceJvm = new JGType(type, type.Clr.Namespace.ToLowerInvariant(), enclosing, type.Name, type.Enclosing == null ? null : type.Enclosing.GFaceJvm);
                 }
             }
+
             if (type.Jvm!=null)
             {
                 string reflectionName = type.Jvm.getName();
@@ -28,11 +36,6 @@ namespace net.sf.jni4net.proxygen.visitors
                 {
                     type.GFaceClr = new CGType(type, namespce, enclosing, simpleName, type.Enclosing == null ? null : type.Enclosing.GFaceClr);
                 }
-            }
-
-            if (!type.IsKnown)
-            {
-                return;
             }
 
             if (type.IsGenJvm)

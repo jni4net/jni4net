@@ -37,8 +37,10 @@ namespace net.sf.jni4net.proxygen.utils
         public static readonly CodeTypeReference JNIEnv = new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference);
         public static readonly CodeTypeReference INJEnv = new CodeTypeReference("net.sf.jni4net.inj.INJEnv", CodeTypeReferenceOptions.GlobalReference);
         public static readonly CodeTypeReference Long = new CodeTypeReference("long", CodeTypeReferenceOptions.GlobalReference);
-        public static readonly CodeTypeReference systemtTypeJ = new CodeTypeReference("systemt.Type", CodeTypeReferenceOptions.GlobalReference);
+        public static readonly CodeTypeReference systemtTypeJ = new CodeTypeReference("system.Type", CodeTypeReferenceOptions.GlobalReference);
         public static readonly CodeTypeReference systemtTypeC = new CodeTypeReference(typeof(Type), CodeTypeReferenceOptions.GlobalReference);
+        public static readonly CodeTypeReference systemtObjectC = new CodeTypeReference(typeof(object), CodeTypeReferenceOptions.GlobalReference);
+        public static readonly CodeTypeReference systemtObjectJ = new CodeTypeReference("system.Object", CodeTypeReferenceOptions.GlobalReference);
         
         
     }

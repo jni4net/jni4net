@@ -1,4 +1,4 @@
-﻿using System.CodeDom;
+using System.CodeDom;
 using System.Reflection;
 using net.sf.jni4net.proxygen.model;
 using net.sf.jni4net.proxygen.utils;
@@ -7,9 +7,9 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public abstract class CLRBaseGenerator : BaseGenerator
     {
-        public override void GenerateType()
+        public override void GenerateType1Pass()
         {
-            base.GenerateType();
+            base.GenerateType1Pass();
             tgtType.IsPartial = true;
             tgtType.StartDirectives.Insert(0, new CodeRegionDirective(CodeRegionMode.Start, Known.cdcComment + type.Name));
             tgtType.StartDirectives.Insert(0, new CodeRegionDirective(CodeRegionMode.Start, Known.cdc));

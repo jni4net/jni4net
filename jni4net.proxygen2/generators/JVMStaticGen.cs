@@ -5,9 +5,9 @@ namespace net.sf.jni4net.proxygen.generators
 {
     public class JVMStaticGen : JVMBaseGenerator
     {
-        public override void GenerateType()
+        public override void GenerateType1Pass()
         {
-            base.GenerateType();
+            base.GenerateType1Pass();
             GenerateTypeOfInit();
             AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrTypeInfo");
         }
@@ -42,6 +42,15 @@ namespace net.sf.jni4net.proxygen.generators
                     new CodeVariableReferenceExpression("staticType")));
 
             tgtType.Members.Add(init);
+        }
+
+        public override void GenerateType2Pass()
+        {
+            base.GenerateType2Pass();
+            if (type.Model.IsInterface)
+            {
+                WrapMethodsMagic(tgtType, Known.sMagicStatic, Known.eMagicStatic);
+            }
         }
 
         public override void GenerateMember()
