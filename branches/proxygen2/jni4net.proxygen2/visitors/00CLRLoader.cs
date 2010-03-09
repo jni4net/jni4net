@@ -254,23 +254,65 @@ namespace net.sf.jni4net.proxygen.visitors
             {
                 VisitEventInfo(member, repository);
             }
+            if (member.Clr.PropertyInfo != null)
+            {
+                VisitPropertyInfo(member, repository);
+            }
+            if (member.Clr.FieldInfo != null)
+            {
+                VisitFieldInfo(member, repository);
+            }
         }
 
         private static void VisitEventInfo(MMember member, Repository repository)
         {
             EventInfo eventInfo = member.Clr.EventInfo;
+            MethodInfo methodInfo = eventInfo.GetAddMethod() ?? eventInfo.GetRemoveMethod() ?? eventInfo.GetRaiseMethod();
+            member.IsStatic = methodInfo.IsStatic;
+            member.IsFinal = !methodInfo.IsVirtual || methodInfo.IsFinal || member.Parent.IsFinal;
             if (!eventInfo.EventHandlerType.IsOKType())
             {
                 member.Parent.Methods.Remove(member);
                 member.Parent.SkippedMethods.Add(member);
                 return;
             }
+            //TODO
+        }
+
+        private static void VisitPropertyInfo(MMember member, Repository repository)
+        {
+            PropertyInfo propertyInfo = member.Clr.PropertyInfo;
+            MethodInfo methodInfo = propertyInfo.GetGetMethod() ?? propertyInfo.GetSetMethod();
+            member.IsStatic = methodInfo.IsStatic;
+            member.IsFinal = !methodInfo.IsVirtual || methodInfo.IsFinal || member.Parent.IsFinal;
+            if (!propertyInfo.PropertyType.IsOKType())
+            {
+                member.Parent.Methods.Remove(member);
+                member.Parent.SkippedMethods.Add(member);
+                return;
+            }
+            //TODO
+        }
+
+        private static void VisitFieldInfo(MMember member, Repository repository)
+        {
+            FieldInfo fieldInfo = member.Clr.FieldInfo;
+            member.IsStatic = fieldInfo.IsStatic;
+            member.IsFinal = true;
+            if (!fieldInfo.FieldType.IsOKType())
+            {
+                member.Parent.Methods.Remove(member);
+                member.Parent.SkippedMethods.Add(member);
+                return;
+            }
+            //TODO
         }
 
         private static void VisitMethodInfo(MMember member, Repository repository)
         {
             MethodInfo methodInfo = member.Clr.MethodInfo;
             member.IsStatic = methodInfo.IsStatic;
+            member.IsFinal = !methodInfo.IsVirtual || methodInfo.IsFinal || member.Parent.IsFinal;
             if (methodInfo.ReturnType != null && methodInfo.ReturnType != typeof(void))
             {
                 if (!methodInfo.ReturnType.IsOKType())
@@ -296,6 +338,7 @@ namespace net.sf.jni4net.proxygen.visitors
             ConstructorInfo constructorInfo = member.Clr.ConstructorInfo;
             member.IsStatic = true;
             member.IsVoid = true;
+            member.IsFinal = true;
             VisitParameters(member, repository, constructorInfo.GetParameters());
         }
 

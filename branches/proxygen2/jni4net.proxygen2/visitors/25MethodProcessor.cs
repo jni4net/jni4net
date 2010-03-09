@@ -33,6 +33,10 @@ namespace net.sf.jni4net.proxygen.visitors
             {
                 gMember.Attributes |= MemberAttributes.Static;
             }
+            if (member.IsFinal || member.Parent.IsFinal)
+            {
+                gMember.Attributes |= MemberAttributes.Final;
+            }
             gMember.IsVoid = member.IsVoid;
             gMember.IsConstructor = member.IsConstructor;
             gMember.Signature = member.SignatureClr;
@@ -50,10 +54,6 @@ namespace net.sf.jni4net.proxygen.visitors
 
             JGType gFaceJvm = currentMember.Parent.GFaceJvm;
             JGType gProxyJvm = currentMember.Parent.GProxyJvm;
-            if (gFaceJvm.IsGen)
-            {
-                gFaceJvm.Methods.Add(gMember);
-            }
             if (gProxyJvm.IsGen)
             {
                 gProxyJvm.Methods.Add(gMember);
@@ -61,6 +61,10 @@ namespace net.sf.jni4net.proxygen.visitors
                 {
                     gProxyJvm.Methods.Add(gcMember);
                 }
+            }
+            if (gFaceJvm.IsGen && gFaceJvm != gProxyJvm)
+            {
+                gFaceJvm.Methods.Add(gMember);
             }
         }
 

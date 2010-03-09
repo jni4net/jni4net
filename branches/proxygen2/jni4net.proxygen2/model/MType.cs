@@ -47,8 +47,10 @@ namespace net.sf.jni4net.proxygen.model
 
         // just immediate methods, not inherited from base
         public List<MMember> Methods = new List<MMember>();
-        public List<MMember> SkippedMethods = new List<MMember>();
         public List<MMember> Constructors = new List<MMember>();
+
+        public List<MMember> SkippedMethods = new List<MMember>();
+        public Dictionary<string, MMember> Signatures=new Dictionary<string, MMember>();
 
         // static information
         public CGType GStaticClr { get; set; }
