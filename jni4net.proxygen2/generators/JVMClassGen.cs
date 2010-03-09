@@ -11,5 +11,11 @@ namespace net.sf.jni4net.proxygen.generators
             base.GenerateType1Pass();
             AddAttribute(tgtType, "net.sf.jni4net.attributes.ClrType");
         }
+
+        public override void GenerateMember()
+        {
+            //no methods
+        }
+
     }
 }

@@ -62,7 +62,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 EnQBase(known, toAdd.Enclosing);
             }
-            if (toAdd.Subst != null)
+            if (toAdd.Subst != null && toAdd.Subst != toAdd)
             {
                 EnQBase(known, toAdd.Subst);
             }

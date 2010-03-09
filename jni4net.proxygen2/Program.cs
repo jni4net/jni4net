@@ -19,19 +19,24 @@ namespace net.sf.jni4net.proxygen
             //repository.AddOrResolve(assembly);
             repository.AddOrResolve(typeof (IClrProxy));
             repository.AddOrResolve(new MType(typeof(object)) { IsGenJvm = true });
-            repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(ValueType)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Boolean)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(Int32)) { IsGenJvm = true });
+            repository.AddOrResolve(new MType(typeof(IComparable)) { IsGenJvm = true });
+            /*
+            repository.AddOrResolve(new MType(typeof(string)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Exception)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Type)) { IsGenJvm = true });
-            repository.AddOrResolve(new MType(typeof(IComparable)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Environment)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Process)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(Environment.SpecialFolder)) { IsGenJvm = true });
             repository.AddOrResolve(new MType(typeof(DateTime)) { IsGenJvm = true });
+             */
 
             repository.Tour(new CLRLoader());
             repository.Tour(new Resolver());
             repository.Tour(new Namer());
+            repository.Tour(new MethodSkipper());
             repository.Tour(new MethodProcessor());
             repository.Tour(new Generator());
             repository.Tour(new Writer());

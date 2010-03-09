@@ -42,13 +42,17 @@ namespace net.sf.jni4net.proxygen.generators
                 type.DType = tgtType;
                 if (type.Enclosing == null)
                 {
-                    if (context.Has(Context.Proxy) || type.Model.IsInterface)
+                    if (context.Has(Context.Proxy) && type.Model.IsInterface)
                     {
                         tgtType.TypeAttributes = TypeAttributes.NotPublic;
                     }
                     else
                     {
                         tgtType.TypeAttributes = TypeAttributes.Public;
+                    }
+                    if (context.Has(Context.Static) && type.Model.IsInterface)
+                    {
+                        tgtType.TypeAttributes |= TypeAttributes.Sealed;
                     }
                     type.File.DNamespace.Types.Add(tgtType);
                 }

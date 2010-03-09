@@ -17,6 +17,8 @@ namespace net.sf.jni4net.proxygen.model
 
         public string SignatureJvm { get; set; }
         public string SignatureClr { get; set; }
+        public string SignatureJvmNoRet { get; set; }
+        public string SignatureClrNoRet { get; set; }
 
         public MMethodClr Clr { get; set; }
         public MMethodJvm Jvm { get; set; }
@@ -30,6 +32,7 @@ namespace net.sf.jni4net.proxygen.model
 
         public bool IsConstructor { get; set; }
         public bool IsField { get; set; }
+        public bool IsFinal { get; set; }
 
         public List<MParameter> Parameters=new List<MParameter>();
         public MParameter Return;

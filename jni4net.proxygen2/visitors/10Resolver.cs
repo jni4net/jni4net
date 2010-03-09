@@ -1,4 +1,3 @@
-using System;
 using java.lang;
 using net.sf.jni4net.proxygen.model;
 using Exception = System.Exception;
@@ -14,12 +13,14 @@ namespace net.sf.jni4net.proxygen.visitors
             {
                 type.IsRootType = true;
                 type.IsKnown = true;
+                type.Subst = type;
                 return;
             }
             if (type.Jvm != null && (type.Jvm == Object._class || type.Jvm == Throwable._class))
             {
                 type.IsRootType = true;
                 type.IsKnown = true;
+                type.Subst = type;
                 return;
             }
             if (type.Jvm != null && type.IsGenClr)
@@ -32,6 +33,7 @@ namespace net.sf.jni4net.proxygen.visitors
             }
             if (type.IsKnown)
             {
+                type.Subst = type;
                 return;
             }
             if (type.IsInterface)
@@ -62,7 +64,7 @@ namespace net.sf.jni4net.proxygen.visitors
             }
         }
 
-        private bool SubstInterface(MType type, MType sType)
+        private static bool SubstInterface(MType type, MType sType)
         {
             foreach (MType ifc in sType.Interfaces)
             {

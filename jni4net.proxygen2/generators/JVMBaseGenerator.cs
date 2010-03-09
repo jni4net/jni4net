@@ -31,6 +31,11 @@ namespace net.sf.jni4net.proxygen.generators
             }
 
             tgtMember.Attributes = member.Attributes;
+
+            //TODO debug
+            tgtMember.Comments.Add(new CodeCommentStatement(GetType().Name + ": " + context));
+            //TODO end
+
             tgtType.Members.Add(tgtMember);
         }
 
