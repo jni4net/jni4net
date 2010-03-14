@@ -1,8 +1,9 @@
 #include "jni4net.h"
+#include <stdio.h>
 #include <mono/jit/jit.h>
 #include <mono/metadata/object.h>
 
-int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jobject thiz)
+int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jclass clazz)
 {
 	const char* file="/home/rupert/jni4net/trunk/jni4net.tested.n/target/jni4net.n-0.8.0.0.dll";
 	MonoDomain *domain;
@@ -10,6 +11,8 @@ int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jobject thiz)
 	domain = mono_jit_init (file);
 	if (!domain)
 		return 1;
+
+  mono_thread_attach(domain);
 
 	MonoAssembly *assembly;
 	assembly = mono_domain_assembly_open (domain, file);
@@ -33,15 +36,9 @@ int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jobject thiz)
 		
   MonoObject* res;//int
 	gpointer args [2];
-	//args [0] = &env;
-	//args [1] = &thiz;
-
-	MonoIntPtr e;
-	MonoIntPtr t;
-	e.m_value = env;
-	t.m_value = thiz;
-	args [0] = &e;
-	args [1] = &t;
+	//printf("native env %d", env);
+	args [0] = &env;
+	args [1] = &clazz;
   res = mono_runtime_invoke (method, NULL, args, NULL);
 
 	return *(int*)mono_object_unbox (res);
