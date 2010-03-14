@@ -5,6 +5,10 @@
 
 int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jclass clazz)
 {
+	JavaVM jvm;
+	(*env)->GetJavaVM(&jvm);
+
+
 	const char* file="/home/rupert/jni4net/trunk/jni4net.tested.n/target/jni4net.n-0.8.0.0.dll";
 	MonoDomain *domain;
 
@@ -33,10 +37,9 @@ int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jclass clazz)
 	method = mono_class_get_method_from_name_flags (klass, "initDotNetImpl", 2, 32+8);
 	if (!method)
 		return 5;
-		
+	
   MonoObject* res;//int
 	gpointer args [2];
-	//printf("native env %d", env);
 	args [0] = &env;
 	args [1] = &clazz;
   res = mono_runtime_invoke (method, NULL, args, NULL);
