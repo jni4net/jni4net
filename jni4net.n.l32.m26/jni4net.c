@@ -33,8 +33,15 @@ int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jobject thiz)
 		
   MonoObject* res;//int
 	gpointer args [2];
-	args [0] = &env;
-	args [1] = &thiz;
+	//args [0] = &env;
+	//args [1] = &thiz;
+
+	MonoIntPtr e;
+	MonoIntPtr t;
+	e.m_value = env;
+	t.m_value = thiz;
+	args [0] = &e;
+	args [1] = &t;
   res = mono_runtime_invoke (method, NULL, args, NULL);
 
 	return *(int*)mono_object_unbox (res);
