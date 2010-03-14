@@ -7,7 +7,7 @@ extern "C" {
 #endif
 
 JNIEXPORT int JNICALL Java_net_sf_jni4net_Bridge_initDotNet
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
