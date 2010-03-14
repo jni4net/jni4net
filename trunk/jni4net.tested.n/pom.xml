@@ -4,12 +4,12 @@
     <parent>
         <artifactId>jni4net</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>0.7.1.0</version>
+        <version>0.8.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net.tested.n</artifactId>
-    <version>0.7.1.0</version>
+    <version>0.8.0.0</version>
     <packaging>dotnet:library</packaging>
     <name>jni4net .NET tested</name>
     <description>jni4net .NET tested</description>
@@ -21,42 +21,42 @@
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.j</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n.w64.v20</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n.w32.v20</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n.w64.v40</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.n.w32.v40</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
             <type>dotnet:library</type>
         </dependency>
         <dependency>
             <groupId>net.sf.jni4net</groupId>
             <artifactId>jni4net.tested.j</artifactId>
-            <version>0.7.1.0</version>
+            <version>0.8.0.0</version>
         </dependency>
 	</dependencies>
     <build>

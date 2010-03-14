@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.7.1.0, Version=0.7.1.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=x86">
+    <Reference Include="jni4net.n-0.8.0.0, Version=0.8.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\jni4net.n-0.7.1.0.dll</HintPath>
+      <HintPath>..\..\lib\jni4net.n-0.8.0.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -43,8 +43,8 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\lib\jni4net.j-0.7.1.0.jar">
-      <Link>jni4net.j-0.7.1.0.jar</Link>
+    <Content Include="..\..\lib\jni4net.j-0.8.0.0.jar">
+      <Link>jni4net.j-0.8.0.0.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
