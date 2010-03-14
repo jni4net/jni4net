@@ -41,13 +41,19 @@ namespace net.sf.jni4net
             {
                 string jni4net = typeof(BridgeExport).Assembly.Location.Replace(".w32.v20", "");
                 string oldDir = Environment.CurrentDirectory;
-                Environment.CurrentDirectory = Path.GetDirectoryName(jni4net);
-                Assembly assembly = Assembly.LoadFile(jni4net);
-                Type type = assembly.GetType("net.sf.jni4net.Bridge");
-                MethodInfo method = type.GetMethod("initDotNetImpl", BindingFlags.NonPublic | BindingFlags.Static);
-                object res = method.Invoke(null, new object[] { envi, clazz });
-                Environment.CurrentDirectory = oldDir;
-                return (int)res;
+                try
+                {
+                    Environment.CurrentDirectory = Path.GetDirectoryName(jni4net);
+                    Assembly assembly = Assembly.LoadFile(jni4net);
+                    Type type = assembly.GetType("net.sf.jni4net.Bridge");
+                    MethodInfo method = type.GetMethod("initDotNetImpl", BindingFlags.NonPublic | BindingFlags.Static);
+                    object res = method.Invoke(null, new object[] { envi, clazz });
+                    return (int)res;
+                }
+                finally
+                {
+                    Environment.CurrentDirectory = oldDir;
+                }
             }
             catch (Exception)
             {
