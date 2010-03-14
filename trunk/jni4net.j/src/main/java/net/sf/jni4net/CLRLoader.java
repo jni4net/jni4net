@@ -101,9 +101,14 @@ class CLRLoader {
     public static synchronized String getClr() {
         if (Bridge.clrVersion == null) {
             Bridge.clrVersion = "v20";
-            if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()) {
-                Bridge.clrVersion = "v40";
+	    if (getPlatform().startsWith("w")){
+                if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()) {
+                    Bridge.clrVersion = "v40";
+		}
             }
+	    if (getPlatform().startsWith("l")){
+                Bridge.clrVersion = "m26";
+	    }
         }
         return Bridge.clrVersion;
     }
@@ -114,8 +119,11 @@ class CLRLoader {
             String os = System.getProperty("os.name").toLowerCase();
             if (os.startsWith("windows")) {
                 platform = "w";
+            } else if (os.equals("linux")){
+		platform = "l";
             } else {
-                throw new NotSupportedException("Platform not supported " + os);
+System.out.println(os);
+                throw new UnsupportedOperationException("Platform not supported " + os);
             }
             platform += model;
         }
