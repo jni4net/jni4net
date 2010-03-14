@@ -47,7 +47,7 @@ class CLRLoader {
 				final int res = Bridge.initDotNet();
 				if (res != 0) {
 					System.err.println("Can't initialize jni4net Bridge from " + file);
-					throw new net.sf.jni4net.inj.INJException("Can't initialize jni4net Bridge");
+					throw new net.sf.jni4net.inj.INJException("Can't initialize jni4net Bridge. Code:"+res);
 				}
 				Bridge.isRegistered = true;
 			} catch (Throwable th) {
