@@ -5,18 +5,12 @@
 
 int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jclass clazz)
 {
-	JavaVM jvm;
-	(*env)->GetJavaVM(&jvm);
-
-
 	const char* file="/home/rupert/jni4net/trunk/jni4net.tested.n/target/jni4net.n-0.8.0.0.dll";
 	MonoDomain *domain;
 
 	domain = mono_jit_init (file);
 	if (!domain)
 		return 1;
-
-  mono_thread_attach(domain);
 
 	MonoAssembly *assembly;
 	assembly = mono_domain_assembly_open (domain, file);
@@ -38,11 +32,11 @@ int Java_net_sf_jni4net_Bridge_initDotNet(JNIEnv *env, jclass clazz)
 	if (!method)
 		return 5;
 	
-  MonoObject* res;//int
+	MonoObject* res;//int
 	gpointer args [2];
 	args [0] = &env;
 	args [1] = &clazz;
-  res = mono_runtime_invoke (method, NULL, args, NULL);
+	res = mono_runtime_invoke (method, NULL, args, NULL);
 
 	return *(int*)mono_object_unbox (res);
 }
