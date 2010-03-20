@@ -230,9 +230,9 @@ namespace net.sf.jni4net
             {
                 env = JNIEnv.Wrap(envi);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.Error.WriteLine("Can't bind env");
+                Console.Error.WriteLine("Can't bind env:\n"+ex);
                 return -1;
             }
             JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
