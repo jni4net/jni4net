@@ -1,0 +1,7 @@
+rm -rf target
+mkdir target
+gcc -Wall dummy.c -fPIC -o target/dummy.so -lstdc++ -lm -shared -m32
+file target/dummy.so
+nm target/dummy.so
+gmcs /target:exe Program.cs /out:target/ReturnIntPtrStruct.exe
+

@@ -1,0 +1,3 @@
+cd target
+mono ReturnIntPtrStruct.exe
+cd ..
