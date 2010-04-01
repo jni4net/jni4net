@@ -18,7 +18,7 @@ Ordered by probability.
 		</li>
 	<li><b>Current directory</b> - For best results put all DLLs and JARs into same directory. Make sure it's current directory of the process.</li>
 	<li><b>Proxygen and Versions</b> - Example: you wrapped class from JDK 1.6 and you run under JRE 1.5. Methods are missing. Applies to any library and versions including .NET libraries.</li>
-	<li><b>Security</b> - jni4net runtime as well requires run as trusted code. If you run it in sandboxed appdomain or from internet security zone, you need to make the jni4net.n assembly trusted.
+	<li><b>Security</b> - jni4net runtime requires to run as trusted code. If you run it in sandboxed appdomain or from internet security zone, you need to make the jni4net.n assembly trusted.
 		<br/> As well proxygen (as it uses jni4net runtime) needs to run as trusted code. If you run it from shared drive make sure you <a href="http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519">change</a> your policy.
 		</li>
 	<li><b>Features</b> - There is lot missing features jni4net. Please <a href="http://code.google.com/p/jni4net/issues/list">report it</a> and contribute solution or prototype if you can. I'm busy man and do this just as a hobby.</li>
@@ -49,6 +49,17 @@ Ordered by probability.
 <br/>
 
 <h2>Still no luck ?</h2>
-&nbsp;&nbsp;&nbsp; Ask <a href="http://groups.google.com/group/jni4net?hl=en">people in mail group</a> :-)
+<table border=0 style="background-color: #fff; padding: 5px;" cellspacing=0>
+  <form action="http://groups.google.com/group/jni4net/boxsubscribe">
+  <input type=hidden name="hl" value="en">
+  <tr><td style="padding-left: 5px;">
+  &nbsp;&nbsp;&nbsp; Ask <a href="http://groups.google.com/group/jni4net?hl=en">people in mail group</a>, join 
+  <input type=text name=email value="your@email"/>
+  <input type=submit name="sub" value="here"/>
+  </td></tr>
+</form>
+</table>
+
+
 
 <!--#include virtual="footer" -->
