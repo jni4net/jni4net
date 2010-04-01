@@ -7,19 +7,21 @@
 <h2>Process core-dumped, corrupted memory or just can't start it</h2>
 Ordered by probability.
 <ul>
+	<li><b>Bad choice</b> - jni4net is maybe not 100% fit for your problem. Look at <a href="links.shtml">links</a> page for alternatives. If you need to use some Java library from .NET, maybe <a href="http://www.ikvm.net/">IKVM</a> will make your life easier. jni4net is very useful if you need real JVM and real CLR. I don't know about any FOSS CLR/C# for JVM.</li>
 	<li><b>Signature changed</b> - You forgot to regenerate and recompile both proxies after you changed method signature.</li>
 	<li><b>It never worked</b> - Did you tried to run samples on this machine ever ? Try it now, if they fail as well, it's the environment, not your code.</li>
 	<li><b>Version checks</b> - Make sure you have expected versions of JVM, CLR and OS.</li>
-	<li><b>Architecture</b> - Make sure you have same architecture for JVM and CLR. 32 or 64 bit, do not mix them.
-		<br/> This is particularly difficult on Windows 64 bit. I found 32bit java.exe of jre 1.5 in my %windows%/system32 directory. Very confusing.
-		<br/> Another problem is running unit tests from VisualStudio + Resharper4, bear in mind VS is 32bit process.
-		</li>
 	<li><b>PATH and JAVA_HOME</b> - Do they contain proper thing ? Even in your unit test ? And your runtime settings ?</li>
+	<li><b>Architecture</b> - Make sure you have same architecture for JVM and CLR. 32 or 64 bit, do not mix them.
+		<br/> This is particularly difficult on Windows 64-bit. I found 32-bit java.exe of jre 1.5 in my %windows%/system32 directory. Very confusing.
+		<br/> Another problem is running unit tests from VisualStudio + Resharper4, bear in mind VS is 32-bit process.
+		</li>
 	<li><b>Current directory</b> - For best results put all DLLs and JARs into same directory. Make sure it's current directory of the process.</li>
 	<li><b>Proxygen and Versions</b> - Example: you wrapped class from JDK 1.6 and you run under JRE 1.5. Methods are missing. Applies to any library and versions including .NET libraries.</li>
 	<li><b>Security</b> - jni4net runtime as well requires run as trusted code. If you run it in sandboxed appdomain or from internet security zone, you need to make the jni4net.n assembly trusted.
 		<br/> As well proxygen (as it uses jni4net runtime) needs to run as trusted code. If you run it from shared drive make sure you <a href="http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519">change</a> your policy.
 		</li>
+	<li><b>Features</b> - There is lot missing features jni4net. Please <a href="http://code.google.com/p/jni4net/issues/list">report it</a> and contribute solution or prototype if you can. I'm busy man and do this just as a hobby.</li>
 	<li><b>Bugs</b> - There may be bug in jni4net. There may be bug in JNI or in PInvoke. Please report it to us including environment details.</li>
 </ul>
 <br/>
@@ -42,6 +44,7 @@ Ordered by probability.
 	<li><b>Application Domains</b> and <b>instances</b> - You may need to share same JVM object into two different application domains.
 		You do it by sending JvmHandle to other domain and duplicating the reference in the other app-domain.
 		</li>
+	<li><b>Address Space</b> - If your address space in 32-bit process is already crowded, it may be a problem to fit another VM in there. Example of such application is Excel with lot of plugins installed.</li>
 </ul>
 <br/>
 

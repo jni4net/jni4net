@@ -2,16 +2,16 @@
 	
 <h2>Link to related technologies</h2>
 <ul>
-	<li><a href="http://www.ikvm.net/">IKVM</a> - Virtual machine + Recompiler</li>
+	<li><a href="http://www.ikvm.net/">IKVM</a> - Java Virtual Machine + Recompiler</li>
 	<li><a href="http://caffeine.berlios.de/site/">Caffeine</a> - Project very similar to jni4net, no longer actively developed.</li>
 	<li><a href="http://mayaf.org/janett/">Janett</a> - Java to C# code translator</li>
 	<li><a href="http://j-integra.intrinsyc.com/">JIntegra</a> - Commercial, DCOM and .NET Remoting for Java</li>
 	<li><a href="http://www.javain.com/javain/oojni.jsp">OOJNI</a> - Commercial, C++ JNI code generator</li>
 	<li><a href="http://dev.mainsoft.com/">Grasshopper</a> - Commercial, .NET to Java recompiler</li>
-	<li><a href="http://jsegue.sourceforge.net/">jSegue - COM</a></li>
+	<li><a href="http://jsegue.sourceforge.net/">jSegue</a> - COM</li>
 	<li><a href="http://www.ezjcom.com/dotnet.html">EZ JCom</a> - Commercial, COM/ActiveX</li>
-	<li><a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/jniTOC.html">JNI Specification</a></li>
-	<li><a href="https://jna.dev.java.net/">JNA - Dynamically to native libraries from Java</a></li>
+	<li><a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/jniTOC.html">JNI</a> - Specification</li>
+	<li><a href="https://jna.dev.java.net/">JNA</a> - Dynamically to native libraries from Java</li>
 </ul>
 <br/><br/>
 <!--#include virtual="footer" -->
