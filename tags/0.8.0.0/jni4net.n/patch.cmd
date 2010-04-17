@@ -1,0 +1,1 @@
+..\tools\exportdll\selvin.exportdll.exe target\jni4net.n.dll C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\ildasm.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe /Debug
