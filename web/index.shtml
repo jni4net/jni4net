@@ -2,7 +2,7 @@
 <h2>How it works</h2>
 <img src="pics/jni4net-overview.png" alt="jni4net overview"/>
 <div>Using reflection we grab public method signatures for core classes of .NET and Java and generated proxy classes for the other side.<br/>
-     We have .NET/managed implementation of <a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/jniTOC.html">JNI</a>. <br/>
+     We have .NET version of <a href="http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/jniTOC.html">JNI</a> API. <br/>
      We use JNI to forward the call from <b>.NET proxies</b> to methods on real Java objects. <a href="http://zamboch.blogspot.com/2009/10/how-calling-from-net-to-java-works.html">(explanation)</a><br/>
      We use JNI to register .NET implementation of native methods of <b>Java proxies</b> to forward call to methods on real .NET objects. <a href="http://zamboch.blogspot.com/2009/11/how-calling-from-java-to-net-works-in.html">(explanation)</a><br/>
      </div>
@@ -13,12 +13,12 @@
       <li><b>Interprocess</b> - it means that both VMs are in same process. Any call uses same thread and same stack for both environments. It's relatively fast.</li>
       <li><b>Proxies</b> - we use proxies which look like and behave like the real/original object. Marshaled by reference except for primitive types and arrays.</li>
       <li><b>Garbage collected</b> - if you don't create cycle between VMs heaps, the proxies and instances are collected and released properly.</li>
-      <li><b>Proxygen</b> - tool to wrap your own library. Works with reflection, so you need just .jar or .dll, and proxygen config file. You could wrap any CLR or JVM class.</li>
+      <li><b>Proxygen</b> - tool to wrap your own library. Works with reflection, so you need just .jar or .dll, and proxygen config file. You could wrap most CLR or JVM classes.</li>
       <li><b>Core</b> - core classes of JDK and .NET framework are already included in jni4net. Using that for reflection and invocation across the boundary is possible.</li>
       <li><b>Samples</b> - are included with the binaries. See ReadMe.txt in directories</li>
       <li><b>Troubleshooting</b> - use <a href="/troubleshoot.shtml">knowledge base</a> or <a href="http://groups.google.com/group/jni4net?hl=en&amp;pli=1">ask people</a></li>
-      <li><b>Platforms</b> - at the moment only Windows 32 and 64 bits. CLR 2.0, JRE 1.5 and above.</li>
-      <li><b>License</b> - opensource, GLP and LGPL</li>
+      <li><b>Platforms</b> - at the moment only Windows 32 and 64 bits. CLR 2.0 and CLR 4.0. JRE 1.5 and above.</li>
+      <li><b>License</b> - opensource, GLP tools and LGPL runtime</li>
       <li><b>Status</b> - currently Alpha quality. Lot of work ahead, <a href="http://docs.google.com/View?id=dfkkjd4x_14hpxjqfd9">lot of ideas</a>, lot of missing features, looking forward to community feedback.</li>
       <li><b>Contact</b> - use <a href="http://groups.google.com/group/jni4net?hl=en&amp;pli=1">mailing group</a> or talk to <a href="mailto:pavel.savara@gmail.com">pavel.savara@gmail.com</a></li>
     </ul>
