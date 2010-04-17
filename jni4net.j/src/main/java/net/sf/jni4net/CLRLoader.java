@@ -20,6 +20,7 @@ package net.sf.jni4net;
 
 import system.NotSupportedException;
 
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.File;
@@ -101,14 +102,20 @@ class CLRLoader {
     public static synchronized String getClr() {
         if (Bridge.clrVersion == null) {
             Bridge.clrVersion = "v20";
-	    if (getPlatform().startsWith("w")){
-                if (new File("c:/Windows/Microsoft.NET/Framework/v4.0.30128").exists()) {
+            if (getPlatform().startsWith("w")) {
+                File d=new File("c:/Windows/Microsoft.NET/Framework/");
+                final String[] vers = d.list(new FilenameFilter() {
+                    public boolean accept(File dir, String name) {
+                        return name.startsWith("v4.0.");
+                    }
+                });
+                if (vers.length>0) {
                     Bridge.clrVersion = "v40";
-		}
+                }
             }
-	    if (getPlatform().startsWith("l")){
+            if (getPlatform().startsWith("l")) {
                 Bridge.clrVersion = "m26";
-	    }
+            }
         }
         return Bridge.clrVersion;
     }

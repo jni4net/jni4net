@@ -1,4 +1,4 @@
-Version 0.7.2
+Version 0.8
 -----------
 + added support for CLR v 4.0. v40 is now default if it could be found
 + [#8] - added BridgeSetup.AddJVMOption(string)
