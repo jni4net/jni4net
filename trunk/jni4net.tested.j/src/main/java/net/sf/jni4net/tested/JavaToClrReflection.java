@@ -48,5 +48,11 @@ public class JavaToClrReflection {
 				system.Console.WriteLine(text);
 			}
 		}
-	}
+
+        Type retype = Type.GetType("System.Runtime.InteropServices.RuntimeEnvironment");
+        MethodInfo methodInfo = retype.GetMethod("GetSystemVersion");
+        Object invoke = methodInfo.Invoke(null, null);
+        System.out.println("CLR Version " + invoke.toString());
+
+    }
 }
