@@ -4,12 +4,12 @@
     <parent>
         <artifactId>jni4net</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>0.8.0.0</version>
+        <version>0.8.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>jni4net.n.w32.v20</artifactId>
-    <version>0.8.0.0</version>
+    <version>0.8.1.0</version>
     <packaging>dotnet:library</packaging>
     <name>jni4net bootstrap Win32 for CLR 2.0</name>
     <description>jni4net .NET</description>
