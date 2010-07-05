@@ -103,17 +103,21 @@ class CLRLoader {
         if (Bridge.clrVersion == null) {
             Bridge.clrVersion = "v20";
             if (getPlatform().startsWith("w")) {
-                File d=new File("c:/Windows/Microsoft.NET/Framework/");
+                String sysRoot = System.getenv("SystemRoot");
+                if (sysRoot == null || sysRoot.equals("")) {
+                    sysRoot = "c:/Windows";
+                }
+                File d = new File(sysRoot, "Microsoft.NET/Framework/");
                 final String[] vers = d.list(new FilenameFilter() {
                     public boolean accept(File dir, String name) {
                         return name.startsWith("v4.0.");
                     }
                 });
-                if (vers.length>0) {
+                if (vers != null && vers.length > 0) {
                     Bridge.clrVersion = "v40";
                 }
             }
-            if (getPlatform().startsWith("l")) {
+            else if (getPlatform().startsWith("l")) {
                 Bridge.clrVersion = "m26";
             }
         }
