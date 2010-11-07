@@ -51,6 +51,7 @@ namespace net.sf.jni4net.proxygen.generator
             CodeStatement call = GenerateCallStatementC2J(method, invokeExpression);
 
             tgtStatements.Add(call);
+            GenerateEndFrameC2J(tgtStatements);
         }
 
         private void GenerateMethodIdFieldC2J(GMethod method, CodeTypeDeclaration tgtType, string uName)
@@ -202,6 +203,13 @@ namespace net.sf.jni4net.proxygen.generator
                                  (), "Env"));
                 tgtStatements.Add(statement);
             }
+            int framesize = (10+method.Parameters.Count*2);
+            tgtStatements.Add(new CodeSnippetStatement("            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, "+framesize+")){"));
+        }
+
+        private void GenerateEndFrameC2J(CodeStatementCollection tgtStatements)
+        {
+            tgtStatements.Add(new CodeSnippetStatement("            }"));
         }
     }
 }

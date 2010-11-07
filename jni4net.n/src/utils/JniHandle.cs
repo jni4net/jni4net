@@ -57,5 +57,7 @@ namespace net.sf.jni4net.utils
         {
             return safe.DangerousGetHandle();
         }
+
+        public static JniHandle Zero;
     }
 }

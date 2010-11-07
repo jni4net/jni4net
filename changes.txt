@@ -1,6 +1,7 @@
 Version 0.8.1
 -----------
 + patch for CLR detection from Leonid Bogdanov
++ [#17] - Fixed Memory leak of CLR instances wrapped to JVM, while calling from CLR
 
 Version 0.8
 -----------
