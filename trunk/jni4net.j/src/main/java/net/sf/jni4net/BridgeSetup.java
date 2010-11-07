@@ -110,6 +110,9 @@ public class BridgeSetup extends system.Object {
     public native void AddJVMOption(java.lang.String name, java.lang.String value);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
+    public native void AddJVMOption(java.lang.String setting);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
     public native void AddAllJarsClassPath(java.lang.String directory);
     
     public static system.Type typeof() {

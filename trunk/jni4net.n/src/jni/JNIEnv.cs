@@ -1280,14 +1280,14 @@ namespace net.sf.jni4net.jni
             return res;
         }
 
-        internal JniLocalHandle PopLocalFrame(JniHandle result)
+        public JniLocalHandle PopLocalFrame(JniHandle result)
         {
             JniLocalHandle res = popLocalFrame(envPtr, result);
             ExceptionTest();
             return res;
         }
 
-        internal void PushLocalFrame(int capacity)
+        public void PushLocalFrame(int capacity)
         {
             int res = pushLocalFrame(envPtr, capacity);
             ExceptionTest();
@@ -1309,7 +1309,7 @@ namespace net.sf.jni4net.jni
 
         [SuppressUnmanagedCodeSecurity]
         [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-        internal void DeleteGlobalRef(JniGlobalHandle gref)
+        public void DeleteGlobalRef(JniGlobalHandle gref)
         {
             if (JniGlobalHandle.IsNull(gref))
             {
@@ -1321,7 +1321,7 @@ namespace net.sf.jni4net.jni
 
         [SuppressUnmanagedCodeSecurity]
         [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-        internal void DeleteLocalRef(JniLocalHandle lref)
+        public void DeleteLocalRef(JniLocalHandle lref)
         {
             if (JniLocalHandle.IsNull(lref))
             {
