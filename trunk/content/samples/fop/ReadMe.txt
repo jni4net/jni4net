@@ -2,7 +2,7 @@
 
 2) You need to download Apache FOP and copy files below to lib directory
 For example this
-http://public.picvi.com/apache/xmlgraphics/fop/binaries/fop-0.95-bin.zip
+http://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-0.95-bin.zip
 
 3) Extract zip file and copy jar files from fop-0.95\build\ and fop-0.95\lib\ into samples\fop\lib\ directory
 avalon-framework-4.2.0.jar
