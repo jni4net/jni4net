@@ -26,6 +26,14 @@ Ordered by probability.
 </ul>
 <br/>
 
+<h2>Missing features and known bugs</h2>
+<ul>
+	<li><b>Known issues</b> - There is list of <a href="http://code.google.com/p/jni4net/issues/list">known issues</a>, please have look first. As well, please report your problems.</li>
+	<li><b>Package names</b> - All package names of Java classes must have lower-case names as is usual in Java. Capital leters in package names are not supported by jni4net yet.</li>
+</ul>
+<br/>
+
+
 <h2>Pitfalls by design</h2>
 <ul>
 	<li><b>Garbage collection</b> - If you create cycle between objects cross VMs boundaries, it will be never reclaimed by GC. That's because collectors don't know about each other.
@@ -53,9 +61,10 @@ Ordered by probability.
   <form action="http://groups.google.com/group/jni4net/boxsubscribe">
   <input type=hidden name="hl" value="en">
   <tr><td style="padding-left: 5px;">
-  &nbsp;&nbsp;&nbsp; Ask <a href="http://groups.google.com/group/jni4net?hl=en">people in mail group</a>, join 
+  &nbsp;&nbsp;&nbsp; Ask<sup>†</sup> <a href="http://groups.google.com/group/jni4net?hl=en">people in mail group</a>, join 
   <input type=text name=email value="your@email"/>
   <input type=submit name="sub" value="here"/>
+  <div>&nbsp;&nbsp;&nbsp; † - <small><small>Please report your issues including full description of installed CLR & JVM versions, jni4net version you use, exception stack trace, code to reproduce the issue and list of things you already tried to help yourself. Thanks!</small></small></div>
   </td></tr>
 </form>
 </table>
