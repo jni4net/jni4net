@@ -96,7 +96,10 @@ namespace net.sf.jni4net.utils
             Type cnt = proxy.GetNestedType("ContructionHelper", BindingFlags.NonPublic | BindingFlags.Public);
             if (cnt == null)
             {
-                Console.WriteLine("Can't find .NET ContructioHelper: " + proxy);
+                if (Bridge.Setup.Verbose)
+                {
+                    Console.WriteLine("Can't find .NET ContructioHelper: " + proxy);
+                }
                 throw new JNIException("Can't find .NET ContructioHelper: " + proxy);
             }
 
@@ -105,7 +108,10 @@ namespace net.sf.jni4net.utils
                                    new Type[] {}, null);
             if (constructor == null)
             {
-                Console.WriteLine("Can't find .NET ContructioHelper constructor: " + proxy);
+                if (Bridge.Setup.Verbose)
+                {
+                    Console.WriteLine("Can't find .NET ContructioHelper constructor: " + proxy);
+                }
                 throw new JNIException("Can't find .NET ContructioHelper constructor: " + proxy);
             }
             return (IConstructionHelper) constructor.Invoke(null);
@@ -114,7 +120,16 @@ namespace net.sf.jni4net.utils
 
         private static MethodId GetJVMConstructor(JNIEnv env, Class proxy)
         {
-            return env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;J)V");
+            MethodId jvmConstructor = env.GetMethodIDNoThrow(proxy, "<init>", "(Lnet/sf/jni4net/inj/INJEnv;J)V");
+            if (jvmConstructor == null)
+            {
+                if (Bridge.Setup.Verbose)
+                {
+                    Console.WriteLine("Can't find java constructor for " + proxy);
+                }
+                throw new JNIException("Can't find java constructor for " + proxy);
+            }
+            return jvmConstructor;
         }
 
         internal static MethodInfo GetWrapperInitializer(Type wrapperType, string name)
@@ -123,6 +138,10 @@ namespace net.sf.jni4net.utils
                                                            new[] {typeof (JNIEnv), typeof (Class)}, null);
             if (initializer == null)
             {
+                if (Bridge.Setup.Verbose)
+                {
+                    Console.WriteLine("Can't find CLR type init method for " + wrapperType);
+                }
                 throw new JNIException("Can't find CLR type init method for " + wrapperType);
             }
             return initializer;
@@ -134,7 +153,10 @@ namespace net.sf.jni4net.utils
                                                         new[] {typeof (JNIEnv), typeof (Class)}, null);
             if (initMethod == null)
             {
-                Console.WriteLine("Can't find .NET InitJNI: method" + proxyType);
+                if (Bridge.Setup.Verbose)
+                {
+                    Console.WriteLine("Can't find .NET InitJNI: method" + proxyType);
+                }
                 throw new JNIException("Can't find .NET InitJNI method: " + proxyType);
             }
             return initMethod;
