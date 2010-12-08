@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.nunit</groupId>
             <artifactId>nunit.framework</artifactId>
-            <version>2.4.3.0</version>
+            <version>2.5.8.10295</version>
             <type>dotnet:library</type>
         </dependency>
 	</dependencies>
@@ -79,17 +79,18 @@
                 <groupId>org.sonatype.nmaven.plugins</groupId>
                 <artifactId>maven-dotnet-compiler-plugin</artifactId>
                 <extensions>true</extensions>
-                <version>0.17robocode</version>
+                <version>0.17.jni4net.0</version>
                 <configuration>
+                    <frameworkVersion>3.5</frameworkVersion>
                     <aditionalOptions>/unsafe /warn:0 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
             </plugin>
 			<plugin>
 				<groupId>org.sonatype.nmaven.plugins</groupId>
 				<artifactId>maven-dotnet-test-plugin</artifactId>
-                <version>0.17robocode</version>
+                <version>0.17.jni4net.0</version>
 				<configuration>
-					<nunitHome>C:\Progra~1\NUnit2.4.3</nunitHome>
+					<nunitHome>C:\Progra~1\NUnit-2.5.8.10295</nunitHome>
 				</configuration>
 			</plugin>
             <plugin>
@@ -107,7 +108,7 @@
                                 <artifactItem>
                                     <groupId>org.nunit</groupId>
                                     <artifactId>nunit.framework</artifactId>
-                                    <version>2.4.3.0</version>
+                                    <version>2.5.8.10295</version>
                                     <type>dotnet:library</type>
                                     <outputDirectory>target/test-assemblies</outputDirectory>
                                     <destFileName>nunit.framework.dll</destFileName>

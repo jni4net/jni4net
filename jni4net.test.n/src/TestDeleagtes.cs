@@ -10,7 +10,7 @@ namespace net.sf.jni4net.test
         [Test]
         public void DelegateCallback()
         {
-            TestDelegate td = TestDelegateImpl;
+            tested.TestDelegate td = TestDelegateImpl;
             Object del = Bridge.WrapCLR(td);
             Assert.IsNotNull(del);
 
@@ -27,7 +27,7 @@ namespace net.sf.jni4net.test
         [Test]
         public void DelegateConvert()
         {
-            TestDelegate del = JavaCallStaticMethods._class.Invoke<TestDelegate>("testDelegate", "()Lnet/sf/jni4net/tested/TestDelegate;");
+            tested.TestDelegate del = JavaCallStaticMethods._class.Invoke<tested.TestDelegate>("testDelegate", "()Lnet/sf/jni4net/tested/TestDelegate;");
             Assert.IsNotNull(del);
             var res = del.Invoke(1, "ahoj");
             Assert.AreEqual("ahoj1", res);
