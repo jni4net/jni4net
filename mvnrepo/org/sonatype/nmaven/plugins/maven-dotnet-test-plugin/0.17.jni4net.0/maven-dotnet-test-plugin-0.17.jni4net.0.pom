@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.sonatype.nmaven.plugins</groupId>
+    <version>0.17.jni4net.0</version>
+    <artifactId>sonatype-nmaven-plugins</artifactId>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sonatype.nmaven.plugins</groupId>
+  <artifactId>maven-dotnet-test-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <name>sonatype-nmaven-test-plugin</name>
+  <description>Maven Plugin for .NET: Handles nunit test execution and reporting</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.sonatype.nmaven</groupId>
+      <artifactId>sonatype-nmaven-core</artifactId>
+      <version>0.17.jni4net.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <site>
+      <id>nmaven-apache-site</id>
+      <name>NMaven Site</name>
+      <url>file://${basedir}/../../../www/plugins/sonatype-nmaven-test-plugin</url>
+    </site>
+  </distributionManagement>
+</project>
