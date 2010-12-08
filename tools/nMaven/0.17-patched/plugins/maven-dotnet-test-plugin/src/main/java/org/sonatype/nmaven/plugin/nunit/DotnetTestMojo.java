@@ -113,7 +113,7 @@ public class DotnetTestMojo
         commandline.setWorkingDirectory( testAssemblies.getAbsolutePath() );
         if ( vendor.equals( Vendor.MICROSOFT ) )
         {
-            commandline.setExecutable( nunitHome + "/bin/nunit-console" );
+            commandline.setExecutable( nunitHome + "/bin/net-2.0/nunit-console" );
         }
         else if ( vendor.equals( Vendor.NOVELL ) )
         {

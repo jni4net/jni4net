@@ -2,14 +2,14 @@
   <parent>
     <artifactId>sonatype-nmaven-plugins</artifactId>
     <groupId>org.sonatype.nmaven.plugins</groupId>
-    <version>0.17robocode</version>
+    <version>0.17.jni4net.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.nmaven.plugins</groupId>
   <artifactId>maven-ikvmc-plugin</artifactId>
   <packaging>maven-plugin</packaging>
   <name>maven-ikvmc-plugin Maven Mojo</name>
-  <version>0.17robocode</version>
+  <version>0.17.jni4net.0</version>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -26,7 +26,7 @@
     <dependency>
     	<groupId>org.sonatype.nmaven</groupId>
     	<artifactId>sonatype-nmaven-compiler</artifactId>
-    	<version>0.17robocode</version>
+    	<version>0.17.jni4net.0</version>
     </dependency>
   </dependencies>
 </project>

@@ -33,7 +33,7 @@ import org.sonatype.nmaven.compiler.InvalidArtifactException;
 
 @CompilerAnnotation(programmingLanguaqe = ProgrammingLanguage.C_SHARP,
                     vendors = {Vendor.MICROSOFT, Vendor.NOVELL, Vendor.ANY},
-                    dotnetCompilerPlatformVersions = {DotnetCompilerPlatformVersion.VERSION_2_0_50727, DotnetCompilerPlatformVersion.VERSION_3_0})
+                    dotnetCompilerPlatformVersions = {DotnetCompilerPlatformVersion.VERSION_2_0_50727, DotnetCompilerPlatformVersion.VERSION_3_0, DotnetCompilerPlatformVersion.VERSION_3_5, DotnetCompilerPlatformVersion.VERSION_4_0_30319})
 public final class CSharpClassCompiler
     implements org.sonatype.nmaven.compiler.ClassCompiler
 {
@@ -192,11 +192,12 @@ public final class CSharpClassCompiler
 
     public String getCompilerFileName()
     {
-        if ( compilerContext.getCompilerConfig().getVendor().equals( Vendor.MICROSOFT ) )
+        DotnetCompilerConfig config = (DotnetCompilerConfig) compilerContext.getCompilerConfig();
+        if ( config.getVendor().equals( Vendor.MICROSOFT ) )
         {
-            return "csc";
+            return "%SystemRoot%/Microsoft.NET/Framework/v"+config.getCompilerPlatformVersion().getVersionAsString()+"/csc.exe";
         }
-        else if ( compilerContext.getCompilerConfig().getVendor().equals( Vendor.NOVELL ) )
+        else if ( config.getVendor().equals( Vendor.NOVELL ) )
         {
             return "gmcs";
         }

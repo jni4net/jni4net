@@ -20,12 +20,12 @@ under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <groupId>org.sonatype.nmaven</groupId>
-    <version>0.17robocode</version>
+    <version>0.17.jni4net.0</version>
     <artifactId>sonatype-dotnet-archetypes</artifactId>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.sonatype.nmaven.csharp</groupId>
   <artifactId>maven-archetype-windows-application</artifactId>
-  <version>0.17robocode</version>
+  <version>0.17.jni4net.0</version>
   <name>maven-archetype-dotnet-windows-application</name>
 </project>

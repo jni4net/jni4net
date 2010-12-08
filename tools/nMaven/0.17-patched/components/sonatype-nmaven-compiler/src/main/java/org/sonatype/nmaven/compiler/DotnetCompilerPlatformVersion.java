@@ -23,7 +23,8 @@ public enum DotnetCompilerPlatformVersion
     VERSION_1_1_4322("1.1.4322"),
     VERSION_2_0_50727("2.0.50727"),
     VERSION_3_0("3.0"),
-    VERSION_3_5("3.5");
+    VERSION_3_5("3.5"),
+    VERSION_4_0_30319("4.0.30319");
 
     private String version;
 

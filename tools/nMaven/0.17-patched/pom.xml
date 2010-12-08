@@ -25,7 +25,7 @@
   <groupId>org.sonatype.nmaven</groupId>
   <artifactId>sonatype-nmaven-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.17robocode</version>
+  <version>0.17.jni4net.0</version>
   <name>Sonatype NMaven</name>
   <url>http://codeplex.com/nmaven</url>
   <inceptionYear>2006</inceptionYear>
@@ -35,17 +35,13 @@
       <url>LICENSE.txt</url>
     </license>
   </licenses>
-  <scm>
-    <connection>scm:svn:http://nmaven.svn.codeplex.com/svn/tags/sonatype-nmaven-0.17</connection>
-    <developerConnection>scm:svn:https://nmaven.svn.codeplex.com/svn/tags/sonatype-nmaven-0.17</developerConnection>
-    <url>scm:svn:https://nmaven.svn.codeplex.com/svn/tags/sonatype-nmaven-0.17</url>
-  </scm>
     <distributionManagement>
-        <downloadUrl>http://jni4net.sourceforge.net/maven2</downloadUrl>
+        <downloadUrl>http://jni4net.googlecode.com/svn/mvnrepo</downloadUrl>
         <repository>
-            <id>net.sf.jni4net</id>
+            <uniqueVersion>false</uniqueVersion>
+            <id>net.sf.jni4net-upload</id>
             <name>jni4net release repository</name>
-            <url>scp://web.sourceforge.net:22/home/groups/j/jn/jni4net/htdocs/maven2</url>
+            <url>svn:https://jni4net.googlecode.com/svn/mvnrepo</url>
         </repository>
     </distributionManagement>
     <repositories>

@@ -55,18 +55,25 @@ namespace bumpVersion
 
         private static void FileReplace(string file, Replace action)
         {
-            using(FileStream fs=new FileStream(file, FileMode.Open, FileAccess.ReadWrite))
+            try
             {
-                using(var sr = new StreamReader(fs))
+                using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.ReadWrite))
                 {
-                    var sb = new StringBuilder(sr.ReadToEnd());
-                    action(sb);
-                    fs.SetLength(0);
-                    using (var sw = new StreamWriter(fs))
+                    using (var sr = new StreamReader(fs))
                     {
-                        sw.Write(sb.ToString());
+                        var sb = new StringBuilder(sr.ReadToEnd());
+                        action(sb);
+                        fs.SetLength(0);
+                        using (var sw = new StreamWriter(fs))
+                        {
+                            sw.Write(sb.ToString());
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }
