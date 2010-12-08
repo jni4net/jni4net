@@ -1,3 +1,8 @@
+Version 0.8.2
+-----------
++ upgraded nMaven, NUnit, made build 32bit only
++ fixed throwing exceptions for missing proxy classes
+
 Version 0.8.1
 -----------
 + patch for CLR detection from Leonid Bogdanov

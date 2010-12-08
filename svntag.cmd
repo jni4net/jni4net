@@ -1,1 +1,1 @@
-svn copy https://jni4net.googlecode.com/svn/trunk https://jni4net.googlecode.com/svn/tags/0.8.1.0 -m "tagged version 0.8.1.0"
+svn copy https://jni4net.googlecode.com/svn/trunk https://jni4net.googlecode.com/svn/tags/0.8.2.0 -m "tagged version 0.8.2.0"
