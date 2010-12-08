@@ -14,10 +14,10 @@
     <modules>
         <module>jni4net.j</module>
         <module>jni4net.n</module>
-        <module>jni4net.n.w64.v20</module>
         <module>jni4net.n.w32.v20</module>
-        <module>jni4net.n.w64.v40</module>
+        <module>jni4net.n.w64.v20</module>
         <module>jni4net.n.w32.v40</module>
+        <module>jni4net.n.w64.v40</module>
         <module>jni4net.proxygen</module>
         <module>jni4net.tested.j</module>
         <module>jni4net.tested.n</module>
@@ -74,12 +74,12 @@
                 <plugin>
                     <groupId>org.sonatype.nmaven.plugins</groupId>
                     <artifactId>maven-dotnet-compiler-plugin</artifactId>
-                    <version>0.17robocode</version>
+                    <version>0.17.jni4net.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.nmaven.plugins</groupId>
                     <artifactId>maven-dotnet-test-plugin</artifactId>
-                    <version>0.17robocode</version>
+                    <version>0.17.jni4net.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>

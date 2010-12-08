@@ -9,9 +9,9 @@ make sure you have
 - .NET SDK 4.0 installed at usual places
 - Java JDK 1.5
 - JAVA_HOME set properly
-- PATH to csc.exe
+- PATH to csc.exe in c:\Windows\Microsoft.NET\Framework\v3.5\
 - PATH to sn.exe
-- NUnit installed at C:\Program Files\NUnit2.4.3
+- NUnit installed at C:\Program Files\NUnit-2.5.8.10295
 - internet access to download components from maven repository
 - make sure that you build it and run from (.NET) trusted location. Not shared drive.
 

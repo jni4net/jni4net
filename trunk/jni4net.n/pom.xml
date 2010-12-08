@@ -24,8 +24,9 @@
                 <groupId>org.sonatype.nmaven.plugins</groupId>
                 <artifactId>maven-dotnet-compiler-plugin</artifactId>
                 <extensions>true</extensions>
-                <version>0.17robocode</version>
+                <version>0.17.jni4net.0</version>
                 <configuration>
+                    <frameworkVersion>3.5</frameworkVersion>
                     <aditionalOptions>/unsafe /warn:0 /keyfile:${basedir}/../tools/keys/jni4net.snk</aditionalOptions>
                 </configuration>
             </plugin>
