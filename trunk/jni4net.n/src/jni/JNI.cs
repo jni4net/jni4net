@@ -39,7 +39,7 @@ namespace net.sf.jni4net.jni
         private const string JRE_REGISTRY_KEY = @"HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment";
         private const string JDK_REGISTRY_KEY = @"HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit";
         private const string JAVA_HOME_ENV = "JAVA_HOME";
-        
+        private const string ARCH_ENV = "PROCESSOR_ARCHITECTURE";
 
         private static bool init;
 
@@ -49,6 +49,7 @@ namespace net.sf.jni4net.jni
         }
 
         [EnvironmentPermission(SecurityAction.Assert, Read = JAVA_HOME_ENV)]
+        [EnvironmentPermission(SecurityAction.Assert, Read = ARCH_ENV)]
         [RegistryPermission(SecurityAction.Assert, Read = JRE_REGISTRY_KEY)]
         [RegistryPermission(SecurityAction.Assert, Read = JDK_REGISTRY_KEY)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
@@ -69,9 +70,6 @@ namespace net.sf.jni4net.jni
                     Dll.JNI_GetDefaultJavaVMInitArgs(&args);
                     init = true;
                 }
-                catch(TypeInitializationException)
-                {
-                }
                 finally
                 {
                     Directory.SetCurrentDirectory(oldDirectory);
@@ -89,6 +87,10 @@ namespace net.sf.jni4net.jni
 
             if (!IsRunningOnUnix())
             {
+                string arch = Environment.GetEnvironmentVariable(ARCH_ENV);
+                var is64Arch = (arch != null && arch.Contains("64"));
+                var is64Process = (IntPtr.Size == 8);
+
                 if (Bridge.Setup.JavaHome == null)
                 {
                     string jreVersion = (string)Registry.GetValue(JRE_REGISTRY_KEY, "CurrentVersion", null);
@@ -111,25 +113,19 @@ namespace net.sf.jni4net.jni
                     }
                 }
 
-                string prfi = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-                if (Bridge.Setup.JavaHome == null && Directory.Exists(prfi))
+                if (Bridge.Setup.JavaHome == null || Bridge.Setup.IgnoreJavaHome)
                 {
-                    string prfijava = Path.Combine(prfi, "Java");
-                    if (Directory.Exists(prfijava))
+                    string prfi = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+                    if (is64Arch && !is64Process)
                     {
-                        string[] directories = Directory.GetDirectories(prfijava,"jre*");
-                        if (directories.Length>0)
+                        prfi = prfi + " (x86)";
+                    }
+                    if (Directory.Exists(prfi))
+                    {
+                        string prfijava = Path.Combine(prfi, "Java");
+                        if (Directory.Exists(prfijava))
                         {
-                            Array.Sort(directories);
-                            Bridge.Setup.JavaHome = directories[directories.Length - 1];
-                            if (Bridge.Setup.Verbose)
-                            {
-                                Console.WriteLine("Guessed JAVA_HOME to " + Bridge.Setup.JavaHome);
-                            }
-                        }
-                        else
-                        {
-                            directories = Directory.GetDirectories(prfijava, "jdk*");
+                            string[] directories = Directory.GetDirectories(prfijava, "jre*");
                             if (directories.Length > 0)
                             {
                                 Array.Sort(directories);
@@ -137,6 +133,19 @@ namespace net.sf.jni4net.jni
                                 if (Bridge.Setup.Verbose)
                                 {
                                     Console.WriteLine("Guessed JAVA_HOME to " + Bridge.Setup.JavaHome);
+                                }
+                            }
+                            else
+                            {
+                                directories = Directory.GetDirectories(prfijava, "jdk*");
+                                if (directories.Length > 0)
+                                {
+                                    Array.Sort(directories);
+                                    Bridge.Setup.JavaHome = directories[directories.Length - 1];
+                                    if (Bridge.Setup.Verbose)
+                                    {
+                                        Console.WriteLine("Guessed JAVA_HOME to " + Bridge.Setup.JavaHome);
+                                    }
                                 }
                             }
                         }
