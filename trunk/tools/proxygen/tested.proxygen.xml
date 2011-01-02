@@ -46,7 +46,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="net.sf.jni4net.tested.JWithClrInterface"/>
   <JavaClass TypeName="net.sf.jni4net.tested.JInterfacesHelper"/>
   <JavaClass TypeName="net.sf.jni4net.tested.JInterface"/>
-
+  <!-- 
+  <JavaClass TypeName="net.sf.jni4net.tested.CInterfaceImpl"/>
+  -->
 
 
 </jni4net-proxygen>

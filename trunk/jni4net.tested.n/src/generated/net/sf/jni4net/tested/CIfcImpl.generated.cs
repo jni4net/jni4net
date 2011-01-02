@@ -46,8 +46,9 @@ namespace net.sf.jni4net.tested {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setfcePtr", "fcePtr3", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addEnvDispatcher", "EnvDispatcher4", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeEnvDispatcher", "EnvDispatcher5", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RunPtr", "RunPtr6", "()Lsystem/Object;"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RunEvnt", "RunEvnt7", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "xx", "xx6", "([Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RunPtr", "RunPtr7", "()Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RunEvnt", "RunEvnt8", "()Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorCIfcImpl0", "__ctorCIfcImpl0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
             return methods;
         }
@@ -116,7 +117,17 @@ namespace net.sf.jni4net.tested {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle RunPtr6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static void xx6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle strs) {
+            // ([Ljava/lang/String;)V
+            // ([LSystem/String;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.CIfcImpl @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CIfcImpl>(@__env, @__obj);
+            ((global::net.sf.jni4net.tested.ICInterface)(@__real)).xx(global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2CString(@__env, strs));
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static global::net.sf.jni4net.utils.JniHandle RunPtr7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -128,7 +139,7 @@ namespace net.sf.jni4net.tested {
             return @__return;
         }
         
-        private static global::net.sf.jni4net.utils.JniHandle RunEvnt7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
+        private static global::net.sf.jni4net.utils.JniHandle RunEvnt8(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj) {
             // ()Lsystem/Object;
             // ()LSystem/Object;
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

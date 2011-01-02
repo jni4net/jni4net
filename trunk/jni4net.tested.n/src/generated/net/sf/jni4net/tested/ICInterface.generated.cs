@@ -41,6 +41,8 @@ namespace net.sf.jni4net.tested {
         
         internal static global::net.sf.jni4net.jni.MethodId _EnvDispatcher5;
         
+        internal static global::net.sf.jni4net.jni.MethodId _xx6;
+        
         private @__ICInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -98,6 +100,14 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.@__ICInterface._fcePtr3 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "setfcePtr", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
             global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher4 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "addEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
             global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher5 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "removeEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
+            global::net.sf.jni4net.tested.@__ICInterface._xx6 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "xx", "([Ljava/lang/String;)V");
+        }
+        
+        public void xx(string[] strs) {
+            global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._xx6, global::net.sf.jni4net.utils.Convertor.ParArrayStrongC2JString(@__env, strs));
+            }
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {
@@ -109,6 +119,7 @@ namespace net.sf.jni4net.tested {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "setfcePtr", "fcePtr3", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addEnvDispatcher", "EnvDispatcher4", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeEnvDispatcher", "EnvDispatcher5", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "xx", "xx6", "([Ljava/lang/String;)V"));
             return methods;
         }
         
@@ -173,6 +184,16 @@ namespace net.sf.jni4net.tested {
             try {
             global::net.sf.jni4net.tested.ICInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.ICInterface>(@__env, @__obj);
             @__real.EnvDispatcher -= global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, value);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void xx6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, global::net.sf.jni4net.utils.JniLocalHandle strs) {
+            // ([Ljava/lang/String;)V
+            // ([LSystem/String;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.tested.ICInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.ICInterface>(@__env, @__obj);
+            @__real.xx(global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2CString(@__env, strs));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         

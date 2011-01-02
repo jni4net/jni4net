@@ -30,5 +30,8 @@ public interface ICInterface {
     
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
     void removeEnvDispatcher(net.sf.jni4net.tested.TestDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)V")
+    void xx(java.lang.String[] strs);
     //</generated-interface>
 }

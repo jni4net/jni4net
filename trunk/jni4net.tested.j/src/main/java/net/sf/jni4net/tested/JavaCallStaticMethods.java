@@ -28,6 +28,10 @@ public class JavaCallStaticMethods {
 		return "stringMethod" + data;
 	}
 
+	public static String stringArrayMethod(String[] data) {
+		return "stringArrayMethod-" + data.length;
+	}
+
 	public static void voidMethod(Object data) {
 		System.out.println(data);
 	}

@@ -10,6 +10,8 @@ namespace net.sf.jni4net.tested
 
         event TestDelegate EnvDispatcher;
 
+        void xx(string[] strs);
+
         //BUG #2 void Refparam(ref string text);
 
         //BUG #2 void Outparam(out string text);
@@ -39,6 +41,10 @@ namespace net.sf.jni4net.tested
 
         }
         public event TestDelegate EnvDispatcher;
+
+        public void xx(string[] strs)
+        {
+        }
 
         public object RunPtr()
         {
