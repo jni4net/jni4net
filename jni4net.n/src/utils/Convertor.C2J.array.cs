@@ -131,8 +131,12 @@ namespace net.sf.jni4net.utils
             JniLocalHandle res = env.NewObjectArrayPtr(length, String._class.jvmHandle, null);
             for (int i = 0; i < length; i++)
             {
-                JniLocalHandle item = env.NewStringPtr(array[i]);
-                env.SetObjectArrayElement(res, i, item);
+                string s = array[i];
+                if (s != null)
+                {
+                    JniLocalHandle item = env.NewStringPtr(s);
+                    env.SetObjectArrayElement(res, i, item);
+                }
             }
             return res;
         }

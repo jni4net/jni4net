@@ -46,6 +46,9 @@ public class CIfcImpl extends system.Object implements net.sf.jni4net.tested.ICI
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
     public native void removeEnvDispatcher(net.sf.jni4net.tested.TestDelegate value);
     
+    @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)V")
+    public native void xx(java.lang.String[] strs);
+    
     @net.sf.jni4net.attributes.ClrMethod("()LSystem/Object;")
     public native system.Object RunPtr();
     

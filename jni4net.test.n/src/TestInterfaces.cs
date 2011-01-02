@@ -156,6 +156,14 @@ namespace net.sf.jni4net.test
             Assert.AreEqual(6, tt.Value);
         }
 
+        [Test]
+        public void InterfacesstringArray()
+        {
+            Class loadClass = ICInterface_._class.getClassLoader().loadClass("net.sf.jni4net.tested.CInterfaceImpl");
+            ICInterface impl = Bridge.Cast<ICInterface>(loadClass.newInstance());
+            impl.xx(new []{"a",null,"b"});
+            ;
+        }
         
     }
 }

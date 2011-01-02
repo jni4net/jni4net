@@ -50,5 +50,8 @@ class __ICInterface extends system.Object implements net.sf.jni4net.tested.ICInt
     
     @net.sf.jni4net.attributes.ClrMethod("(Lnet/sf/jni4net/tested/TestDelegate;)V")
     public native void removeEnvDispatcher(net.sf.jni4net.tested.TestDelegate value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)V")
+    public native void xx(java.lang.String[] strs);
 }
 //</generated-proxy>

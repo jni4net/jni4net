@@ -35,6 +35,13 @@ namespace net.sf.jni4net.test
         }
 
         [Test]
+        public void stringArray()
+        {
+            String res = JavaCallStaticMethods.stringArrayMethod(new String[]{"tteeesssttt",null,"asderf"});
+            Assert.IsTrue("stringArrayMethod-3".Equals(res));
+        }
+
+        [Test]
         public void voidMethod()
         {
             JavaCallStaticMethods.voidMethod((String)"tteeesssttt");
