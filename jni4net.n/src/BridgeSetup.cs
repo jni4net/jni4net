@@ -18,6 +18,7 @@ namespace net.sf.jni4net
         public bool Verbose { get; set; }
         public bool VeryVerbose { get; set; }
         public bool Debug { get; set; }
+        public bool IgnoreJavaHome { get; set; }
         public bool BindNative
         {
             get { return bindNative; }

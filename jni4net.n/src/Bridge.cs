@@ -98,22 +98,17 @@ namespace net.sf.jni4net
             {
                 JNI.CreateJavaVM(out jvm, out env, true, setup.JVMOptions);
             }
-
             catch (TypeInitializationException ex)
             {
-                if (ex.InnerException is SecurityException)
+                if (ex.InnerException is BadImageFormatException)
                 {
-                    throw;
+                    // it didn't help, throw original exception
+                    throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
+                        + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
+                        + "\nJAVA_HOME: " + Setup.JavaHome
+                        , ex);
                 }
-                throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)", ex);
-            }
-            catch (SecurityException)
-            {
                 throw;
-            }
-            catch (Exception ex)
-            {
-                throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)", ex);
             }
             BindCore(env, setup);
             jvmLoaded = true;
