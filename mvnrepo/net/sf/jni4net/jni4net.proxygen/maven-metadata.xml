@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metadata>
+<?xml version="1.0" encoding="UTF-8"?><metadata>
   <groupId>net.sf.jni4net</groupId>
   <artifactId>jni4net.proxygen</artifactId>
   <version>0.2.0.0</version>
@@ -14,7 +13,8 @@
       <version>0.7.1.0</version>
       <version>0.8.0.0</version>
       <version>0.8.1.0</version>
+      <version>0.8.2.0</version>
     </versions>
-    <lastUpdated>20101109235234</lastUpdated>
+    <lastUpdated>20110102132342</lastUpdated>
   </versioning>
 </metadata>
