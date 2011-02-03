@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drools-api", "api\clr\drool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "examples", "examples\examples.csproj", "{F3786FE3-09B3-4B64-9049-20373217B122}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain.j4n", "domain.j4n\domain.j4n.csproj", "{0345D128-3D41-4CA3-916D-8FBB08F75480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{F3786FE3-09B3-4B64-9049-20373217B122}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F3786FE3-09B3-4B64-9049-20373217B122}.Release|x86.ActiveCfg = Release|x86
 		{F3786FE3-09B3-4B64-9049-20373217B122}.Release|x86.Build.0 = Release|x86
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0345D128-3D41-4CA3-916D-8FBB08F75480}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

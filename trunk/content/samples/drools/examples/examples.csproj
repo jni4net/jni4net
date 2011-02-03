@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.8.2.0">
-      <HintPath>..\lib\jni4net.n-0.8.2.0.dll</HintPath>
+    <Reference Include="jni4net.n-0.8.3.0">
+      <HintPath>..\..\..\lib\jni4net.n-0.8.3.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +54,10 @@
       <Project>{24E0C64C-BC2A-4A99-9521-465E58E481A7}</Project>
       <Name>drools-api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\domain.j4n\domain.j4n.csproj">
+      <Project>{0345D128-3D41-4CA3-916D-8FBB08F75480}</Project>
+      <Name>domain.j4n</Name>
+    </ProjectReference>
     <ProjectReference Include="..\jre\csharp\jre.csproj">
       <Project>{0345D128-3D41-4CA3-916D-8FBB08F71565}</Project>
       <Name>jre</Name>
@@ -64,8 +68,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\lib\jni4net.j-0.8.3.0.jar">
+      <Link>jni4net.j-0.8.3.0.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\api\drools-api-5.1.1.j4n.jar">
       <Link>drools-api-5.1.1.j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\domain.j4n\domain.j4n.jar">
+      <Link>domain.j4n.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\jre\jre.j4n.jar">
@@ -102,10 +114,6 @@
     </Content>
     <Content Include="..\lib\jaxb-xjc-2.2.1.1.jar">
       <Link>jaxb-xjc-2.2.1.1.jar</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\lib\jni4net.j-0.8.2.0.jar">
-      <Link>jni4net.j-0.8.2.0.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\lib\mvel2-2.0.16.jar">

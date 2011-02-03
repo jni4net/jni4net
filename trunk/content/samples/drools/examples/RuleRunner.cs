@@ -46,9 +46,11 @@ namespace org.drools.tutorials.banking
             for (int i = 0; i < facts.Length; i++)
             {
                 java.lang.Object fact = facts[i];
-                Console.WriteLine("Inserting fact: " + fact);
+                //Console.WriteLine("Inserting fact: " + fact);
                 ksession.insert(fact);
             }
+
+            
 
             ksession.fireAllRules();
         }

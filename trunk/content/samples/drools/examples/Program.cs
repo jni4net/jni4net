@@ -22,6 +22,7 @@ namespace examples
                 Bridge.CreateJVM(bridgeSetup);
                 Bridge.RegisterAssembly(typeof(Date).Assembly);
                 Bridge.RegisterAssembly(typeof(KnowledgeBaseFactory).Assembly);
+                Bridge.RegisterAssembly(typeof(TypedCashflow_).Assembly);
 
                 Example1();
                 Example2();
