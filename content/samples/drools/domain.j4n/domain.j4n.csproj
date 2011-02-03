@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0345D128-3D41-4CA3-916D-8FBB08F71540}</ProjectGuid>
+    <ProjectGuid>{0345D128-3D41-4CA3-916D-8FBB08F75480}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>domain</RootNamespace>
-    <AssemblyName>domain</AssemblyName>
+    <RootNamespace>domain.j4n</RootNamespace>
+    <AssemblyName>domain.j4n</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,13 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Compile Include="clr\org\drools\tutorials\banking\Account.generated.cs" />
+    <Compile Include="clr\org\drools\tutorials\banking\AllocatedCashflow.generated.cs" />
+    <Compile Include="clr\org\drools\tutorials\banking\Cashflow.generated.cs" />
+    <Compile Include="clr\org\drools\tutorials\banking\TypedCashflow.generated.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="AllocatedCashflow.cs" />
-    <Compile Include="Cashflow.cs" />
-    <Compile Include="TypedCashflow.cs" />
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Project>{0345D128-3D41-4CA3-916D-8FBB08F71540}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="jni4net.n-0.8.3.0">
+      <HintPath>..\..\..\lib\jni4net.n-0.8.3.0.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

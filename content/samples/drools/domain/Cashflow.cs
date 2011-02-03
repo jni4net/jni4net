@@ -36,9 +36,27 @@ namespace org.drools.tutorials.banking
             Amount = amount;
         }
 
-        public DateTime Date { get; set; }
+        private DateTime date;
+        public DateTime Date
+        {
+            get
+            {
+                // Console.WriteLine("getDate");
+                return date;
+            }
+            set { date = value; }
+        }
 
-        public double Amount { get; set; }
+        private double amount;
+        public double Amount
+        {
+            get
+            {
+                //Console.WriteLine("getAmount");
+                return amount;
+            }
+            set { amount = value; }
+        }
 
         public override String ToString()
         {
