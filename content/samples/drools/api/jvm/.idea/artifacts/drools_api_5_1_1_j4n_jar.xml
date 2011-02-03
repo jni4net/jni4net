@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="drools-api-5.1.1.j4n:jar">
+    <output-path>$PROJECT_DIR$/..</output-path>
+    <root id="root">
+      <element id="archive" name="drools-api-5.1.1.j4n.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/../META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="drools-api" />
+      </element>
+    </root>
+  </artifact>
+</component>
