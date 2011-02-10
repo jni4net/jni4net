@@ -10,7 +10,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public class DateTime extends system.ValueType implements system.IComparable, system.IFormattable, system.IConvertible, system.runtime.serialization.ISerializable {
+public class DateTime extends system.ValueType implements system.IComparable, system.IFormattable, system.IConvertible, system.runtime.serialization.ISerializable, Comparable<DateTime> {
     
     //<generated-proxy>
     private static system.Type staticType;
@@ -378,4 +378,8 @@ public class DateTime extends system.ValueType implements system.IComparable, sy
         system.DateTime.staticType = staticType;
     }
     //</generated-proxy>
+
+    public int compareTo(DateTime o) {
+        return CompareTo(o);
+    }
 }

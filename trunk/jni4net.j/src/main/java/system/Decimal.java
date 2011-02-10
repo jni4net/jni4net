@@ -10,7 +10,7 @@
 package system;
 
 @net.sf.jni4net.attributes.ClrType
-public class Decimal extends system.ValueType implements system.IFormattable, system.IComparable, system.IConvertible {
+public class Decimal extends system.ValueType implements system.IFormattable, system.IComparable, system.IConvertible , Comparable<Decimal>{
     
     //<generated-proxy>
     private static system.Type staticType;
@@ -249,4 +249,12 @@ public class Decimal extends system.ValueType implements system.IFormattable, sy
         system.Decimal.staticType = staticType;
     }
     //</generated-proxy>
+
+    public int compareTo(DateTime o) {
+        return CompareTo(o);
+    }
+
+    public int compareTo(Decimal o) {
+        return CompareTo(o);
+    }
 }

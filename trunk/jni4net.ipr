@@ -37,6 +37,9 @@
     <option name="DEPRECATION" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="IdProvider" IDEtalkID="69BD5FE46F66F5C3DF51583334A30F2A" />
   <component name="InspectionProjectProfileManager">
     <list size="5">
@@ -206,10 +209,8 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.iml" filepath="$PROJECT_DIR$/jni4net.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.j/jni4net.j.iml" filepath="$PROJECT_DIR$/jni4net.j/jni4net.j.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n/jni4net.n.iml" filepath="$PROJECT_DIR$/jni4net.n/jni4net.n.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" filepath="$PROJECT_DIR$/jni4net.n.w32/jni4net.n.w32.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32.v20/jni4net.n.w32.v20.iml" filepath="$PROJECT_DIR$/jni4net.n.w32.v20/jni4net.n.w32.v20.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w32.v40/jni4net.n.w32.v40.iml" filepath="$PROJECT_DIR$/jni4net.n.w32.v40/jni4net.n.w32.v40.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" filepath="$PROJECT_DIR$/jni4net.n.w64/jni4net.n.w64.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64.v20/jni4net.n.w64.v20.iml" filepath="$PROJECT_DIR$/jni4net.n.w64.v20/jni4net.n.w64.v20.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.n.w64.v40/jni4net.n.w64.v40.iml" filepath="$PROJECT_DIR$/jni4net.n.w64.v40/jni4net.n.w64.v40.iml" />
       <module fileurl="file://$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" filepath="$PROJECT_DIR$/jni4net.proxygen/jni4net.proxygen.iml" />
@@ -219,7 +220,10 @@
       <module fileurl="file://$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" filepath="$PROJECT_DIR$/jni4net.tested.n/jni4net.tested.n.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="IBM JDK 1.6 x86" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ResourceManagerContainer">
@@ -230,6 +234,61 @@
     </option>
   </component>
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jni4net.googlecode.com/svn/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jni4net.googlecode.com/svn/mvnrepo">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jni4net.googlecode.com/svn/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jni4net.googlecode.com/svn/tools">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jni4net.googlecode.com/svn/web">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jni4net.googlecode.com/svn/wiki">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jni4net.googlecode.com/svn/branches" />
+                  <option value="https://jni4net.googlecode.com/svn/mvnrepo" />
+                  <option value="https://jni4net.googlecode.com/svn/tags" />
+                  <option value="https://jni4net.googlecode.com/svn/tools" />
+                  <option value="https://jni4net.googlecode.com/svn/web" />
+                  <option value="https://jni4net.googlecode.com/svn/wiki" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jni4net.googlecode.com/svn/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>

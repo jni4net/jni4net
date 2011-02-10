@@ -54,6 +54,7 @@ namespace net.sf.jni4net.test
             setup.AddClassPath(prefix + "jni4net.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.tested.j/target/classes");
             setup.AddClassPath(prefix + "jni4net.test.j/target/test-classes");
+            //setup.JavaHome = @"c:\Program Files (x86)\Java\ibm_sdk60";
             env = Bridge.CreateJVM(setup);
             Bridge.RegisterAssembly(typeof(TestBase).Assembly);
             Bridge.RegisterAssembly(typeof(JavaInstanceFields).Assembly);

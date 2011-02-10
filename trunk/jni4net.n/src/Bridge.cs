@@ -105,7 +105,7 @@ namespace net.sf.jni4net
                     // it didn't help, throw original exception
                     throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
                         + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
-                        + "\nJAVA_HOME: " + Setup.JavaHome
+                        + "\nJAVA_HOME: " + Path.GetFullPath(Setup.JavaHome)
                         , ex);
                 }
                 throw;

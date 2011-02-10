@@ -158,6 +158,8 @@ namespace net.sf.jni4net.proxygen
                 }
             }
 
+            cfg.Verbose = true;
+
             Generator.config = cfg;
             Repository.config = cfg;
             Repository.Register();
@@ -244,7 +246,8 @@ namespace net.sf.jni4net.proxygen
 
                 foreach (Assembly assembly in Repository.KnownAssemblies)
                 {
-                    if (typeof(Program).Assembly != assembly)
+                    if (typeof(Program).Assembly != assembly
+                        && typeof(int).Assembly != assembly)
                     {
                         jw.Write(" /reference:");
                         jw.Write('"');

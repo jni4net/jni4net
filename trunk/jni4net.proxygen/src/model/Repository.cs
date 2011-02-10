@@ -296,8 +296,9 @@ namespace net.sf.jni4net.proxygen.model
                     string replace = clazzName.Replace('/','.');
                     clazz = systemClassLoader.loadClass(replace);
                 }
-                catch(Exception)
+                catch(Throwable ex)
                 {
+
                     clazz = null;
                 }
             }
