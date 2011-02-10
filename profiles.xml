@@ -9,7 +9,7 @@
 		            <activeByDefault>true</activeByDefault>
 		        </activation>
 		        <properties>
-		            <jni4net.version>0.8.2.0</jni4net.version>
+		            <jni4net.version>0.8.3.0</jni4net.version>
 		        </properties>
 		    </profile>
     </profiles>

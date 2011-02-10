@@ -8,14 +8,22 @@
     <fileSets>
         <fileSet>
             <excludes>
-                <exclude>_ReSharper*/**</exclude>
+                <exclude>**/_ReSharper*/**</exclude>
+                <exclude>**/_ReSharper.*/**</exclude>
+                <exclude>**/.idea/**</exclude>
+                <exclude>**/bin/**</exclude>
+                <exclude>**/out/**</exclude>
+                <exclude>**/obj/**</exclude>
                 <exclude>**/Debug/**</exclude>
                 <exclude>**/Release/**</exclude>
-                <exclude>**/obj/**</exclude>
+                <exclude>**/_svn/**</exclude>
+                <exclude>**/.svn/**</exclude>
+                <exclude>**/.metadata/**</exclude>
+                <exclude>**/target/**</exclude>
+
                 <exclude>**/*.suo</exclude>
                 <exclude>**/*.user</exclude>
                 <exclude>**/*.log</exclude>
-                <exclude>plugins/**</exclude>
                 <exclude>**/*.iws</exclude>
                 <exclude>**/*.iml</exclude>
                 <exclude>**/*.ipr</exclude>
@@ -25,10 +33,6 @@
                 <exclude>**/~*</exclude>
                 <exclude>**/.*</exclude>
                 <exclude>**/.*</exclude>
-                <exclude>**/_svn/**</exclude>
-                <exclude>**/.svn/**</exclude>
-                <exclude>**/.metadata/**</exclude>
-                <exclude>**/target/**</exclude>
                 <exclude>tools/lib/**</exclude>
                 <exclude>**/*.jkey</exclude>
                 <exclude>**/*.snk</exclude>

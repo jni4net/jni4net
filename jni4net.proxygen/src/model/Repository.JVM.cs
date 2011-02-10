@@ -180,12 +180,37 @@ namespace net.sf.jni4net.proxygen.model
         private static void RegisterJVMMethods(GType type, bool register)
         {
             Class clazz = type.JVMType;
-            foreach (Method method in clazz.getMethods())
+            Method[] methods;
+            try
+            {
+                methods = clazz.getMethods();
+            }
+            catch(Throwable th)
+            {
+                if (config.Verbose)
+                {
+                    Console.WriteLine("Skip methods" + type + " error: " + th.Message);
+                }
+                type.IsCLRGenerate = false;
+                type.IsJVMGenerate = false;
+                return;
+            }
+            foreach (Method method in methods)
             {
                 bool create = testVirtual(type, clazz, method, method.getDeclaringClass() == clazz);
                 if (create || type == javaLangThrowable)
                 {
-                    RegisterJVMMethod(type, method, register);
+                    try
+                    {
+                        RegisterJVMMethod(type, method, register);
+                    }
+                    catch(Throwable th)
+                    {
+                        if (config.Verbose)
+                        {
+                            Console.WriteLine("Skip " + type + "." + method + " error: " + th.Message);
+                        }
+                    }
                 }
                 else if (config.Verbose)
                 {
@@ -201,7 +226,17 @@ namespace net.sf.jni4net.proxygen.model
                         bool create = testVirtual(type, clazz, method, true);
                         if (create)
                         {
-                            RegisterJVMMethod(type, method, register);
+                            try
+                            {
+                                RegisterJVMMethod(type, method, register);
+                            }
+                            catch (Throwable th)
+                            {
+                                if (config.Verbose)
+                                {
+                                    Console.WriteLine("Skip " + type + "." + method + " error: " + th.Message);
+                                }
+                            }
                         }
                     }
                 }

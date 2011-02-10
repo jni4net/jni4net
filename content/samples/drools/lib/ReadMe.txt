@@ -1,6 +1,3 @@
-http://docs.redhat.com/docs/en-US/JBoss_Enterprise_BRMS_Platform/5/html/JBoss_Rules_5_Reference_Guide/chap-examples.html#id3830093
-
-Copy following files to lib folder
 antlr-runtime-3.1.3.jar
 drools-api-5.1.1.jar
 drools-compiler-5.1.1.jar

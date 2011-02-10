@@ -9,15 +9,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="jni4net.j" exported="" />
-    <orderEntry type="module" module-name="jni4net.n" exported="" />
-    <orderEntry type="module" module-name="jni4net.n.w64.v20" exported="" />
-    <orderEntry type="module" module-name="jni4net.n.w64.v40" exported="" />
-    <orderEntry type="module" module-name="jni4net.n.w32.v40" exported="" />
-    <orderEntry type="module" module-name="jni4net.n.w32.v20" exported="" />
-    <orderEntry type="module" module-name="jni4net.tested.n" exported="" />
-    <orderEntry type="module" module-name="jni4net.tested.j" exported="" />
-    <orderEntry type="module" module-name="jni4net.test.j" exported="" />
+    <orderEntry type="module" module-name="jni4net.j" />
+    <orderEntry type="module" module-name="jni4net.tested.j" />
+    <orderEntry type="module" module-name="jni4net.test.j" />
   </component>
 </module>
 
