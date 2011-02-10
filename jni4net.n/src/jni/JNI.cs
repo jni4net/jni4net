@@ -172,7 +172,11 @@ namespace net.sf.jni4net.jni
                             jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\server\");
                             if (!Directory.Exists(jvmDir))
                             {
-                                throw new JNIException("JAVA_HOME environment variable points to an invalid location: " + Bridge.Setup.JavaHome);
+                                jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\classic\");
+                                if (!Directory.Exists(jvmDir))
+                                {
+                                    throw new JNIException("JAVA_HOME environment variable points to an invalid location: " + Bridge.Setup.JavaHome);
+                                }
                             }
                         }
                     }
