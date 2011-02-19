@@ -220,34 +220,40 @@ namespace net.sf.jni4net
 
         internal static int initDotNetImpl(IntPtr envi, IntPtr clazz)
         {
-            JNIEnv env;
+            JNIEnv env=null;
             try
             {
-                env = JNIEnv.Wrap(envi);
-            }
-            catch (Exception ex)
-            {
-                Console.Error.WriteLine("Can't bind env:\n"+ex);
-                return -1;
-            }
-            JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
-            if (JniLocalHandle.IsNull(br))
-            {
-                return -2;
-            }
-            IntPtr vb = env.GetStaticFieldIDPtr(br, "verbose", "Z");
-            IntPtr db = env.GetStaticFieldIDPtr(br, "debug", "Z");
-            BridgeSetup newSetup=new BridgeSetup(false)
-                                     {
-                                         Verbose = env.GetStaticBooleanField(br, vb),
-                                         Debug = env.GetStaticBooleanField(br, db),
-                                         BindStatic = true,
-                                         BindNative = true
-                                     };
-
-            try
-            {
-                BindCore(env,newSetup);
+                try
+                {
+                    env = JNIEnv.Wrap(envi);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine("Can't bind env:\n" + ex.Message);
+                    Console.Error.WriteLine("Can't bind env:\n" + ex);
+                    return -3;
+                }
+                JniLocalHandle br = env.FindClassPtrNoThrow("net/sf/jni4net/Bridge");
+                if (JniLocalHandle.IsNull(br))
+                {
+                    Console.Error.WriteLine("Can't find net/sf/jni4net/Bridge class");
+                    return -2;
+                }
+                var vb = env.GetStaticFieldIDPtr(br, "verbose", "Z");
+                var db = env.GetStaticFieldIDPtr(br, "debug", "Z");
+                if (IntPtr.Zero == vb || IntPtr.Zero == db)
+                {
+                    Console.Error.WriteLine("Can't find verbose or debug fields");
+                    return -6;
+                }
+                var newSetup = new BridgeSetup(false)
+                {
+                    Verbose = env.GetStaticBooleanField(br, vb),
+                    Debug = env.GetStaticBooleanField(br, db),
+                    BindStatic = true,
+                    BindNative = true
+                };
+                BindCore(env, newSetup);
                 if (Setup.JavaHome == null)
                 {
                     Setup.JavaHome = java.lang.System.getProperty("java.home");
@@ -255,11 +261,18 @@ namespace net.sf.jni4net
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine("Can't init bridge:" + ex.Message);
-                Console.Error.WriteLine("Can't init bridge:" + ex);
-                Class exClazz = env.FindClass("net/sf/jni4net/inj/INJException");
-                env.ThrowNew(exClazz, ex.Message);
-                return -1;
+                try
+                {
+                    Console.Error.WriteLine("Can't bind bridge:" + ex.Message);
+                    Console.Error.WriteLine("Can't bind bridge:" + ex);
+                    Class exClazz = env.FindClass("net/sf/jni4net/inj/INJException");
+                    env.ThrowNew(exClazz, ex.Message);
+                    return -4;
+                }
+                catch(Exception)
+                {
+                    return -5;
+                }
             }
             return 0;
         }
