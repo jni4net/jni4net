@@ -55,8 +55,10 @@ namespace net.sf.jni4net
                     Environment.CurrentDirectory = oldDir;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.Error.WriteLine("Can't init BridgeExport:" + ex.Message);
+                Console.Error.WriteLine("Can't init BridgeExport:" + ex);
                 return -1;
             }
         }
