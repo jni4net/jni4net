@@ -55,11 +55,21 @@ namespace net.sf.jni4net
                     Environment.CurrentDirectory = oldDir;
                 }
             }
+            catch (NotSupportedException ex)
+            {
+                if (ex.Message.Contains("loadFromRemoteSources"))
+                {
+                    Console.Error.WriteLine("Can't init BridgeExport: DLLs are marked as unsafe. Open file properties in windows explorer and click unblock.");
+                }
+                Console.Error.WriteLine("Can't init BridgeExport:" + ex.Message);
+                Console.Error.WriteLine("Can't init BridgeExport:" + ex);
+                return -101;
+            }
             catch (Exception ex)
             {
                 Console.Error.WriteLine("Can't init BridgeExport:" + ex.Message);
                 Console.Error.WriteLine("Can't init BridgeExport:" + ex);
-                return -1;
+                return -100;
             }
         }
     }
