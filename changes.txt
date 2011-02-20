@@ -1,3 +1,11 @@
+Version 0.8.3
+-----------
++ improved error logging during init from Java
++ added support for IBM JRE
++ added BridgeSetup.IgnoreJavaHome which will try detect/find proper JAVA_HOME based on the platform
++ added drools sample
++ added java.util.Date
+
 Version 0.8.2
 -----------
 + upgraded nMaven, NUnit, made build 32bit only
