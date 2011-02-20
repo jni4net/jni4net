@@ -35,11 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.lang.String"/>
   <JavaClass TypeName="java.lang.StringBuffer"/>
   <JavaClass TypeName="java.lang.StringBuilder"/>
-  <JavaClass TypeName="java.lang.AbstractStringBuilder">
-	  <MethodModifier MethodName="append" Signature="(C)Ljava/lang/AbstractStringBuilder;" Return="java.lang.Appendable"/>
-	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;II)Ljava/lang/AbstractStringBuilder;" Return="java.lang.Appendable"/>
-	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;)Ljava/lang/AbstractStringBuilder;" Return="java.lang.Appendable"/>
-  </JavaClass>
   <JavaClass TypeName="java.lang.Runnable"/>
 
   <!-- collections -->
@@ -91,6 +86,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <JavaClass TypeName="java.nio.ByteOrder"/>
   <JavaClass TypeName="java.lang.System"/>
   <JavaClass TypeName="java.lang.CharSequence"/>
+  <JavaClass TypeName="java.util.Date"/>
 
   <!-- primitive types -->
   <JavaClass TypeName="java.lang.Number"/>

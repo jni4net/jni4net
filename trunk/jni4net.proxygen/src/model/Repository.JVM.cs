@@ -138,16 +138,23 @@ namespace net.sf.jni4net.proxygen.model
                 res.IsJVMRealType = true;
             }
             Class superclass = clazz.getSuperclass();
+            var isBaseClassPublic = superclass == null || ((ModifierFlags)superclass.getModifiers() & ModifierFlags.Public) != 0;
             if (superclass != null && res.Base == null
                 && clazz != Object._class
                 && clazz != Throwable._class
                 && res.JVMFullName != "system.Object"
                 && res.JVMFullName != "system.Exception"
-                )
+                && isBaseClassPublic)
             {
                 res.Base = RegisterClass(superclass);
             }
-            foreach (Class ifc in clazz.getInterfaces())
+            List<Class> interfaces = new List<Class>(clazz.getInterfaces());
+            if (!isBaseClassPublic)
+            {
+                interfaces.AddRange(superclass.getInterfaces());
+                res.Base = RegisterClass(superclass.getSuperclass());
+            }
+            foreach (Class ifc in interfaces)
             {
                 GType gifc = RegisterClass(ifc);
                 if (!res.Interfaces.Contains(gifc))
@@ -195,9 +202,13 @@ namespace net.sf.jni4net.proxygen.model
                 type.IsJVMGenerate = false;
                 return;
             }
+            var superclass = clazz.getSuperclass();
+            var isBaseClassPublic = superclass==null || ((ModifierFlags)superclass.getModifiers() & ModifierFlags.Public) != 0;
             foreach (Method method in methods)
             {
-                bool create = testVirtual(type, clazz, method, method.getDeclaringClass() == clazz);
+                var declaringClass = method.getDeclaringClass();
+                bool create = declaringClass == clazz;
+                create = testVirtual(type, clazz, method, create, isBaseClassPublic);
                 if (create || type == javaLangThrowable)
                 {
                     try
@@ -223,7 +234,7 @@ namespace net.sf.jni4net.proxygen.model
                 {
                     foreach (Method method in ifc.JVMType.getMethods())
                     {
-                        bool create = testVirtual(type, clazz, method, true);
+                        bool create = testVirtual(type, clazz, method, true, isBaseClassPublic);
                         if (create)
                         {
                             try
@@ -243,7 +254,7 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private static bool testVirtual(GType type, Class clazz, Method method, bool create)
+        private static bool testVirtual(GType type, Class clazz, Method method, bool create, bool isBaseClassPublic)
         {
             var modifiers = (ModifierFlags) method.getModifiers();
             bool isStatic = (modifiers & ModifierFlags.Static) != ModifierFlags.None;
@@ -253,7 +264,7 @@ namespace net.sf.jni4net.proxygen.model
                 if (create && !isStatic && isVirtual && !type.IsRootType)
                 {
                     Method smethod = clazz.getSuperclass().GetMethodNoThrow(method.getName(), method.GetSignature(), false);
-                    if (smethod != null)
+                    if (smethod != null && isBaseClassPublic)
                     {
                         create = false;
                     }
