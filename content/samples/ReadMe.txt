@@ -26,5 +26,7 @@ Samples assume that you have csc.exe and javac.exe on your PATH
 
 8) circular - shows how to incrementaly build classes which use each other
 
+9) drools - quite complex samle showing integration of C# program with drools business rule engine in Java
+
 Tropublehooting here
 http://jni4net.sourceforge.net/troubleshoot.shtml
