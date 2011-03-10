@@ -63,7 +63,7 @@ public class Bridge extends system.Object {
     /**
      * @param value "v20" or "v40"
      */
-    public void setClrVersion(String value){
+    public static void setClrVersion(String value){
         clrVersion=value;
     }
 

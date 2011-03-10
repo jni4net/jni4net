@@ -69,6 +69,19 @@ namespace net.sf.jni4net.jni
             }
         }
 
+        public static void DetachCurrentThread()
+        {
+            if (threadJNIEnv != null)
+            {
+                JNIResult result = defaultVM.DetachCurrentThread();
+                if (result != JNIResult.JNI_OK)
+                {
+                    throw new JNIException("DetachCurrentThread failed: " + result);
+                }
+                threadJNIEnv = null;
+            }
+        }
+
         [SuppressUnmanagedCodeSecurity]
         public static JNIEnv GetEnvForVm(JavaVM vm)
         {
