@@ -1,3 +1,8 @@
+Version 0.8.4
+-----------
++ added JNIEnv.DetachCurrentThread() [by Renier B.]
++ fixed Bridge.setClrVersion() to static [by Leonid Bogdanov]
+
 Version 0.8.3
 -----------
 + improved error logging during init from Java
