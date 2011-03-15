@@ -53,7 +53,10 @@ namespace net.sf.jni4net.jni {
         
         public void Init(global::net.sf.jni4net.jni.JNIEnv env, global::net.sf.jni4net.utils.JniLocalHandle obj) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._Init2, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::net.sf.jni4net.jni.JNIEnv>(@__env, env), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(obj));
+            using (new global::net.sf.jni4net.jni.LocalFrame(@__env, 10))
+            {
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.jni.__IJvmProxy._Init2, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::net.sf.jni4net.jni.JNIEnv>(@__env, env), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(obj));
+            }
         }
 
         public void Copy(global::net.sf.jni4net.jni.JNIEnv env, global::net.sf.jni4net.utils.JniGlobalHandle obj)

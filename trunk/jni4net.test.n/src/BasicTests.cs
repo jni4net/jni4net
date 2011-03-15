@@ -313,9 +313,10 @@ namespace net.sf.jni4net.test
 
         private void sss()
         {
-            int size = 13*1024*1024;
+            int size = 13 * 1024;//*1024
             ByteBuffer bb = a(size);
             bb.capacity();
+            JNIEnv.DetachCurrentThread();
         }
 
         private ByteBuffer a(int size)
