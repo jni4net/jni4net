@@ -131,9 +131,27 @@ namespace net.sf.jni4net.utils
             lock (typeof (Registry))
             {
                 JNIEnv env = JNIEnv.ThreadEnv;
-                foreach (Type type in assembly.GetTypes())
+                try
                 {
-                    RegisterType(type, bindJVM, env);
+                    var types = assembly.GetTypes();
+                    foreach (Type type in types)
+                    {
+                        RegisterType(type, bindJVM, env);
+                    }
+                }
+                catch(ReflectionTypeLoadException ex)
+                {
+                    if (Bridge.Setup.Debug)
+                    {
+                        Console.WriteLine(ex);
+                        Console.WriteLine();
+                        foreach (var exception in ex.LoaderExceptions)
+                        {
+                            Console.WriteLine(exception);
+                            Console.WriteLine();
+                        }
+                    }
+                    throw;
                 }
             }
         }

@@ -42,7 +42,7 @@ namespace net.sf.jni4net.utils
         public static long Alloc(object real)
         {
             GCHandle handle = GCHandle.Alloc(real);
-            return GCHandle.ToIntPtr(handle).ToInt32();
+            return GCHandle.ToIntPtr(handle).ToInt64();
         }
     }
 }
