@@ -43,10 +43,10 @@ namespace net.sf.jni4net.jni
 
         private static bool init;
 
-        static JNI()
+        /*static JNI()
         {
             Init();
-        }
+        }*/
 
         [EnvironmentPermission(SecurityAction.Assert, Read = JAVA_HOME_ENV)]
         [EnvironmentPermission(SecurityAction.Assert, Read = ARCH_ENV)]
@@ -83,6 +83,21 @@ namespace net.sf.jni4net.jni
             if (Bridge.Setup.JavaHome == null)
             {
                 Bridge.Setup.JavaHome = Environment.GetEnvironmentVariable(JAVA_HOME_ENV);
+                if (string.IsNullOrEmpty(Bridge.Setup.JavaHome))
+                {
+                    Bridge.Setup.JavaHome = null;
+                }
+                else
+                {
+                    try
+                    {
+                        Bridge.Setup.JavaHome = Path.GetFullPath(Bridge.Setup.JavaHome.Replace("\"", ""));
+                    }
+                    catch(Exception ex)
+                    {
+                        throw new JNIException("JAVA_HOME environment variable is incorrect: " + Bridge.Setup.JavaHome, ex);
+                    }
+                }
             }
 
             if (!IsRunningOnUnix())
