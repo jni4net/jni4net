@@ -101,9 +101,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.5.0.exe" "$(TargetPath)" "c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\ildasm.exe" "c:\Windows\Microsoft.NET\Framework64\v4.0.30319\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.5.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.8.3.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+if not exist $(SolutionDir)\tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\tools\keys\jni4net.snk
 </PreBuildEvent>
   </PropertyGroup>
 </Project>
