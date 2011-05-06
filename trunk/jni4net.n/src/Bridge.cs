@@ -69,9 +69,12 @@ namespace net.sf.jni4net
 
         public static JNIEnv CreateJVM(BridgeSetup setup)
         {
-            if (jvmLoaded && setup.Verbose)
+            if (jvmLoaded)
             {
-                Console.Error.WriteLine("Already initilized");
+                if (setup.Verbose)
+                {
+                    Console.Error.WriteLine("Already initilized");
+                }
                 return JNIEnv.ThreadEnv;
             }
             Bridge.setup = setup;
