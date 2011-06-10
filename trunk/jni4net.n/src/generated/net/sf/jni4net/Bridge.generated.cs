@@ -44,9 +44,10 @@ namespace net.sf.jni4net {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getKnownAssemblies", "KnownAssemblies1", "()Lsystem/collections/IList;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CreateJVM", "CreateJVM2", "(Lnet/sf/jni4net/BridgeSetup;)Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssemblyFrom", "LoadAndRegisterAssemblyFrom3", "(Ljava/io/File;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssemblyByName", "LoadAndRegisterAssemblyByName4", "(Ljava/lang/String;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly5", "(Lsystem/reflection/Assembly;)V"));
-            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetSystemClassLoader", "SetSystemClassLoader6", "(Ljava/lang/ClassLoader;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssemblyFromClassLoader", "LoadAndRegisterAssemblyFromClassLoader4", "(Ljava/io/File;Ljava/lang/ClassLoader;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "LoadAndRegisterAssemblyByName", "LoadAndRegisterAssemblyByName5", "(Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "RegisterAssembly", "RegisterAssembly6", "(Lsystem/reflection/Assembly;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "SetSystemClassLoader", "SetSystemClassLoader7", "(Ljava/lang/ClassLoader;)V"));
             return methods;
         }
         
@@ -92,7 +93,16 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void LoadAndRegisterAssemblyByName4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle strongName) {
+        private static void LoadAndRegisterAssemblyFromClassLoader4(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assemblyFile, global::net.sf.jni4net.utils.JniLocalHandle classLoader) {
+            // (Ljava/io/File;Ljava/lang/ClassLoader;)V
+            // (Ljava/io/File;Ljava/lang/ClassLoader;)V
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            try {
+            global::net.sf.jni4net.Bridge.LoadAndRegisterAssemblyFromClassLoader(global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.File>(@__env, assemblyFile), global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.ClassLoader>(@__env, classLoader));
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static void LoadAndRegisterAssemblyByName5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle strongName) {
             // (Ljava/lang/String;)V
             // (LSystem/String;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -101,7 +111,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void RegisterAssembly5(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assembly) {
+        private static void RegisterAssembly6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle assembly) {
             // (Lsystem/reflection/Assembly;)V
             // (LSystem/Reflection/Assembly;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
@@ -110,7 +120,7 @@ namespace net.sf.jni4net {
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
         }
         
-        private static void SetSystemClassLoader6(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle classLoader) {
+        private static void SetSystemClassLoader7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__class, global::net.sf.jni4net.utils.JniLocalHandle classLoader) {
             // (Ljava/lang/ClassLoader;)V
             // (Ljava/lang/ClassLoader;)V
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);

@@ -2,6 +2,7 @@ Version 0.8.4
 -----------
 + added JNIEnv.DetachCurrentThread() [by Renier B.]
 + fixed Bridge.setClrVersion() to static [by Leonid Bogdanov]
++ added ability to load proxies into specified classLoader [by Jose Chillan]
 
 Version 0.8.3
 -----------
