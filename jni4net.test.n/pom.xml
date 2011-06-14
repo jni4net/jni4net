@@ -90,7 +90,7 @@
 				<artifactId>maven-dotnet-test-plugin</artifactId>
                 <version>0.17.jni4net.0</version>
 				<configuration>
-					<nunitHome>${env.PROGRAMFILES}\NUnit-2.5.8.10295</nunitHome>
+					<nunitHome>${env.ProgramFiles}\NUnit-2.5.8.10295</nunitHome>
 				</configuration>
 			</plugin>
             <plugin>
