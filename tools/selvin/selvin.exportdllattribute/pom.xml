@@ -4,12 +4,12 @@
     <parent>
         <artifactId>selvin</artifactId>
         <groupId>net.sf.jni4net</groupId>
-        <version>0.2.5.0</version>
+        <version>0.2.6.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>selvin.exportdllattribute</artifactId>
-    <version>0.2.5.0</version>
+    <version>0.2.6.0</version>
     <packaging>dotnet:library</packaging>
     <name>Dll Export helper tool - build time</name>
     <build>
@@ -19,8 +19,9 @@
                 <groupId>org.sonatype.nmaven.plugins</groupId>
                 <artifactId>maven-dotnet-compiler-plugin</artifactId>
                 <extensions>true</extensions>
-                <version>0.17robocode</version>
+                <version>0.17.jni4net.0</version>
                 <configuration>
+                    <frameworkVersion>3.5</frameworkVersion>
                     <aditionalOptions>/nowarn:1591 /keyfile:${basedir}/../tools/keys/exportdll.snk</aditionalOptions>
                 </configuration>
             </plugin>

@@ -375,7 +375,9 @@ namespace selvin.exportdll
             {
                 arguments = "/X64 " + arguments;
             }
-            Console.WriteLine("Compiling file with arguments '{0}'", arguments);
+            Console.WriteLine();
+            Console.WriteLine("{0} {1}", ilasmpath, arguments);
+            Console.WriteLine();
             ProcessStartInfo info = new ProcessStartInfo(ilasmpath, arguments);
             info.UseShellExecute = false;
             info.CreateNoWindow = false;
@@ -392,7 +394,9 @@ namespace selvin.exportdll
             var proc = new Process();
             string arguments = string.Format("/nobar{1}/out:\"{0}.il\" \"{0}.dll\"", noExtension,
                                              debug ? " /linenum " : " ");
-            Console.WriteLine("Deassembly file with arguments '{0}'", arguments);
+            Console.WriteLine();
+            Console.WriteLine("{0} {1}", ildasmpath, arguments);
+            Console.WriteLine();
             var info = new ProcessStartInfo(ildasmpath, arguments);
             info.UseShellExecute = false;
             info.CreateNoWindow = false;

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sf.jni4net</groupId>
     <artifactId>selvin</artifactId>
-    <version>0.2.5.0</version>
+    <version>0.2.6.0</version>
     <packaging>pom</packaging>
     <name>JNI 4 .NET</name>
     <organization>
@@ -55,12 +55,12 @@
 	            <plugin>
 	                <groupId>org.sonatype.nmaven.plugins</groupId>
 	                <artifactId>maven-dotnet-compiler-plugin</artifactId>
-	                <version>0.17robocode</version>
+	                <version>0.17.jni4net.0</version>
 	            </plugin>                
 				<plugin>
 					<groupId>org.sonatype.nmaven.plugins</groupId>
 					<artifactId>maven-dotnet-test-plugin</artifactId>
-	                <version>0.17robocode</version>
+	                <version>0.17.jni4net.0</version>
 				</plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
