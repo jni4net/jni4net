@@ -4,17 +4,17 @@ if not exist target\classes mkdir target\classes
 
 
 echo compile classes
-javac -nowarn -d target\classes -sourcepath jvm -cp "c:\Data\Sf\jni4net\trunk\content\lib\jni4net.j-0.8.4.0.jar"; "jvm\org/drools/tutorials/banking\Cashflow.java" "jvm\org/drools/tutorials/banking\TypedCashflow.java" "jvm\org/drools/tutorials/banking\Account.java" "jvm\org/drools/tutorials/banking\AllocatedCashflow.java" 
+javac -nowarn -d target\classes -sourcepath jvm -cp "..\..\..\lib\jni4net.j-0.8.4.0.jar"; "jvm\org/drools/tutorials/banking\*.java"
 IF %ERRORLEVEL% NEQ 0 goto end
 
 
 echo domain.j4n.jar 
-jar cvf domain.j4n.jar  -C target\classes "org\drools\tutorials\banking\Cashflow.class"  -C target\classes "org\drools\tutorials\banking\TypedCashflow.class"  -C target\classes "org\drools\tutorials\banking\Account.class"  -C target\classes "org\drools\tutorials\banking\AllocatedCashflow.class"  > nul 
+jar cvf domain.j4n.jar  -C target\classes .  > nul 
 IF %ERRORLEVEL% NEQ 0 goto end
 
 
 echo domain.j4n.dll 
-csc /nologo /warn:0 /t:library /out:domain.j4n.dll /recurse:clr\*.cs  /reference:"c:\Data\Sf\jni4net\trunk\content\samples\drools\domain.j4n\domain.dll" /reference:"c:\Data\Sf\jni4net\trunk\content\lib\jni4net.n-0.8.4.0.dll"
+csc /nologo /warn:0 /t:library /out:domain.j4n.dll /recurse:clr\*.cs  /reference:"c:\Data\Sf\jni4net\trunk\content\samples\drools\domain\domain.dll" /reference:"c:\Data\Sf\jni4net\trunk\content\lib\jni4net.n-0.8.4.0.dll"
 IF %ERRORLEVEL% NEQ 0 goto end
 
 
