@@ -131,7 +131,7 @@ namespace net.sf.jni4net.utils
           RegisterAssembly(assembly, bindJVM, null);
         }
  
-        private static void RegisterAssembly(Assembly assembly, bool bindJVM, java.lang.ClassLoader classLoader)
+        public static void RegisterAssembly(Assembly assembly, bool bindJVM, java.lang.ClassLoader classLoader)
         {
             lock (typeof (Registry))
             {
@@ -141,7 +141,7 @@ namespace net.sf.jni4net.utils
                     var types = assembly.GetTypes();
                     foreach (Type type in types)
                     {
-                        RegisterType(type, bindJVM, env);
+                        RegisterType(type, bindJVM, env, classLoader);
                     }
                 }
                 catch(ReflectionTypeLoadException ex)
