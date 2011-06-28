@@ -22,6 +22,8 @@ Ordered by probability.
 		<br/> Proxygen (as it uses jni4net runtime) needs to run as trusted code. If you run it from shared drive make sure you <a href="http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519">change</a> your policy.
 		<br/> Another problem may be that you downloaded the distribution zip file and unpacked it via Windows Explorer. The explorer is unfortunatelly smart enough to mark the files unsecure, as they were downloaded from internet. You could select all DLL files and right click properties. Then click unblock button to fix the problem. <a href="http://zamboch.blogspot.com/2011/02/jni4net-083-bugfix-release.html">See here</a>
 		</li>
+	<li><b>ClassLoader</b> - Proxies of CLR objects are by default loaded into system ClassLoader. You could use Bridge.LoadAndRegisterAssemblyFromClassLoader(File, ClassLoader) from Java side and load related j4n.jar into the classLoader of choice.
+		</li>
 </ul>
 <br/>
 
@@ -45,8 +47,6 @@ Ordered by probability.
 		</li>
 	<li><b>java.lang.Throwable</b> and <b>system.Exception</b> - these proxies are not inherited from system.Object or java.lang.Object proxies. So you could not put them into collection of proxies of Object easily.
 		There is IObject interface which is implemented by object as well as by exception. You could use it in collections.
-		</li>
-	<li><b>System ClassLoader</b> - Proxies of CLR objects must be loaded into system ClassLoader only. The reason is that java native method could be only implemented when class is defined in system class loader.
 		</li>
 	<li><b>Application Domains</b> and <b>JVMs</b> - If you have multiple application domains in your process, all of them will find same JNI. jni4net currently binds to default JVM in the process.
 		</li>
