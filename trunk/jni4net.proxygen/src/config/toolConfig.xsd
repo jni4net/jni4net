@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="toolConfig"
-    targetNamespace="http://jni4net.sf.net/0.8.4.0/toolConfig.xsd"
+    targetNamespace="http://jni4net.sf.net/0.8.5.0/toolConfig.xsd"
     elementFormDefault="qualified"
-    xmlns="http://jni4net.sf.net/0.8.4.0/toolConfig.xsd"
-    xmlns:jni4net="http://jni4net.sf.net/0.8.4.0/toolConfig.xsd"
+    xmlns="http://jni4net.sf.net/0.8.5.0/toolConfig.xsd"
+    xmlns:jni4net="http://jni4net.sf.net/0.8.5.0/toolConfig.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
 

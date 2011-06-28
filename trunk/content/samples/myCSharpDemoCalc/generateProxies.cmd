@@ -6,4 +6,4 @@ call build.cmd
 cd ..
 
 echo compiling usage
-javac -d work\ -cp work\jni4net.j-0.8.4.0.jar;work\MyCSharpDemoCalc.j4n.jar MyCalcUsageInJava.java
+javac -d work\ -cp work\jni4net.j-0.8.5.0.jar;work\MyCSharpDemoCalc.j4n.jar MyCalcUsageInJava.java
