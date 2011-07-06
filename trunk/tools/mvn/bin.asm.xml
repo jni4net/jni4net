@@ -43,6 +43,10 @@
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
+            <source>c:\Data\Sf\jni4net\trunk\jni4net.proxygen\src\proxygen.exe.config</source>
+            <outputDirectory>bin</outputDirectory>
+        </file>
+        <file>
             <source>license\jni4net-LGPL-3.0.txt</source>
             <outputDirectory>lib</outputDirectory>
         </file>

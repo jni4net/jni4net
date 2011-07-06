@@ -34,7 +34,7 @@ namespace helloWorldFromCLR
         {
             // create bridge, with default setup
             // it will lookup jni4net.j.jar next to jni4net.n.dll
-            Bridge.CreateJVM(new BridgeSetup());
+            Bridge.CreateJVM(new BridgeSetup(){Verbose=true});
 
             // here you go!
             java.lang.System.@out.println("Hello Java world!");
