@@ -34,6 +34,8 @@ public class Program {
 	public static void main(String[] args) throws IOException {
 		// create bridge, with default setup
 		// it will lookup jni4net.n.dll next to jni4net.j.jar 
+		Bridge.setVerbose(true);
+		
 		Bridge.init();
 
 		// here you go!

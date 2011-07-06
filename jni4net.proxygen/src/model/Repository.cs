@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using java.io;
 using java.lang;
 using java.util.zip;
@@ -177,6 +178,16 @@ namespace net.sf.jni4net.proxygen.model
 
         public static void Register()
         {
+            if (config.Verbose)
+            {
+                Console.WriteLine("clr.version         :" + RuntimeEnvironment.GetSystemVersion());
+                Console.WriteLine("clr.arch            :" + ((IntPtr.Size == 8) ? "64bit" : "32bit"));
+                Console.WriteLine("java.home           :" + Bridge.Setup.JavaHome);
+                Console.WriteLine("java.version        :" + java.lang.System.getProperty("java.version"));
+                Console.WriteLine("sun.arch.data.model :" + java.lang.System.getProperty("sun.arch.data.model"));
+                Console.WriteLine("");
+            }
+
             LoadAssemblies();
             LoadClasspath();
             RegisterAssemblies();
