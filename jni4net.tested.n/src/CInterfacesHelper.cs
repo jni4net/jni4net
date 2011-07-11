@@ -31,5 +31,13 @@ namespace net.sf.jni4net.tested
         {
             return new CWithJavaInterfaceUnreg(i);
         }
+
+        public CWithJavaInterfaceUnreg this[int i]
+        {
+            get
+            {
+                return new CWithJavaInterfaceUnreg(i);
+            }
+        }
     }
 }

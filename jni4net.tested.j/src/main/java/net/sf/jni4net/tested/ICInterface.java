@@ -33,5 +33,8 @@ public interface ICInterface {
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)V")
     void xx(java.lang.String[] strs);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(II)LSystem/String;")
+    java.lang.String getItem(int i, int j);
     //</generated-interface>
 }

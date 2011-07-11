@@ -43,6 +43,8 @@ namespace net.sf.jni4net.tested {
         
         internal static global::net.sf.jni4net.jni.MethodId _xx6;
         
+        internal static global::net.sf.jni4net.jni.MethodId _Item7;
+        
         private @__ICInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
         }
@@ -92,6 +94,15 @@ namespace net.sf.jni4net.tested {
             }
         }
         
+        public string this[int i, int j] {
+            get {
+                global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
+            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__ICInterface._Item7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(i), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(j)));
+            }
+            }
+        }
+        
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.@__ICInterface.staticClass = @__class;
             global::net.sf.jni4net.tested.@__ICInterface._intProp0 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getintProp", "()I");
@@ -101,6 +112,7 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher4 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "addEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
             global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher5 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "removeEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
             global::net.sf.jni4net.tested.@__ICInterface._xx6 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "xx", "([Ljava/lang/String;)V");
+            global::net.sf.jni4net.tested.@__ICInterface._Item7 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getItem", "(II)Ljava/lang/String;");
         }
         
         public void xx(string[] strs) {
@@ -120,6 +132,7 @@ namespace net.sf.jni4net.tested {
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "addEnvDispatcher", "EnvDispatcher4", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "removeEnvDispatcher", "EnvDispatcher5", "(Lnet/sf/jni4net/tested/TestDelegate;)V"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "xx", "xx6", "([Ljava/lang/String;)V"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getItem", "Item7", "(II)Ljava/lang/String;"));
             return methods;
         }
         
@@ -195,6 +208,18 @@ namespace net.sf.jni4net.tested {
             global::net.sf.jni4net.tested.ICInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.ICInterface>(@__env, @__obj);
             @__real.xx(global::net.sf.jni4net.utils.Convertor.ArrayStrongJ2CString(@__env, strs));
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+        }
+        
+        private static global::net.sf.jni4net.utils.JniHandle Item7(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int i, int j) {
+            // (II)Ljava/lang/String;
+            // (II)LSystem/String;
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
+            try {
+            global::net.sf.jni4net.tested.ICInterface @__real = global::net.sf.jni4net.utils.Convertor.FullJ2C<global::net.sf.jni4net.tested.ICInterface>(@__env, @__obj);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2JString(@__env, @__real[i, j]);
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+            return @__return;
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

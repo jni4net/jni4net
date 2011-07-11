@@ -1,5 +1,6 @@
 Version 0.8.5
 -----------
++ [#9] - fixed - support for indexer properties [by Johannes Rudolph]
 
 Version 0.8.4
 -----------

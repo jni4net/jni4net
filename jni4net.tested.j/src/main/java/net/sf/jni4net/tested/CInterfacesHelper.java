@@ -34,6 +34,9 @@ public class CInterfacesHelper extends system.Object {
     @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
     public native system.Object CWithJavaInterfaceUnreg(int i);
     
+    @net.sf.jni4net.attributes.ClrMethod("(I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;")
+    public native system.Object getItem(int i);
+    
     public static system.Type typeof() {
         return net.sf.jni4net.tested.CInterfacesHelper.staticType;
     }

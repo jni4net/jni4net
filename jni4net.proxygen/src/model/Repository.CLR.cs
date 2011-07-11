@@ -558,12 +558,24 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private static PropertyInfo GetProperty(GType type, MethodInfo method)
-        {
-            BindingFlags f = GetPropFlags(method);
-            string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
-            return FindProperty(f, type.CLRType, pname);
-        }
+		private static PropertyInfo GetProperty( GType type, MethodInfo method )
+		{
+			BindingFlags f = GetPropFlags( method );
+			string pname = method.Name.Substring( method.Name.IndexOf( '_' ) + 1 );
+
+			bool isIndexerProperty = method.IsSpecialName && pname == "Item";
+			if (isIndexerProperty)
+			{
+                List<Type> pts=new List<Type>();
+                foreach (var parameter in method.GetParameters())
+			    {
+                    pts.Add(parameter.ParameterType);
+			    }
+                return FindIndexerProperty(f, type.CLRType, method.ReturnType, pts.ToArray());
+            }
+
+			return FindProperty( f, type.CLRType, pname );
+		}
 
         private static EventInfo GetEvent(GType type, MethodInfo method)
         {
@@ -621,9 +633,35 @@ namespace net.sf.jni4net.proxygen.model
                     return property;
                 }
             }
-
             return null;
         }
+
+		private static PropertyInfo FindIndexerProperty( BindingFlags f, Type clazz, Type returnType, Type[] parameterTypes )
+		{
+            PropertyInfo property = clazz.GetProperty("Item", f, Type.DefaultBinder, returnType, parameterTypes, default(ParameterModifier[]));
+			if (property != null)
+			{
+				return property;
+			}
+			foreach (Type ifc in clazz.GetInterfaces())
+			{
+				property = FindIndexerProperty( f, ifc, returnType, parameterTypes );
+				if (property != null)
+				{
+					return property;
+				}
+			}
+			if (!clazz.IsInterface && clazz.BaseType == typeof( object ))
+			{
+				property = FindIndexerProperty( f, clazz.BaseType, returnType, parameterTypes );
+				if (property != null)
+				{
+					return property;
+				}
+			}
+
+			return null;
+		}
 
         private static EventInfo FindEvent(BindingFlags f, Type clazz, string pname)
         {
