@@ -53,5 +53,8 @@ class __ICInterface extends system.Object implements net.sf.jni4net.tested.ICInt
     
     @net.sf.jni4net.attributes.ClrMethod("([LSystem/String;)V")
     public native void xx(java.lang.String[] strs);
+    
+    @net.sf.jni4net.attributes.ClrMethod("(II)LSystem/String;")
+    public native java.lang.String getItem(int i, int j);
 }
 //</generated-proxy>

@@ -42,6 +42,7 @@ namespace net.sf.jni4net.tested {
             global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> methods = new global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod>();
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "createCWithJavaInterface", "createCWithJavaInterface0", "(I)Lnet/sf/jni4net/tested/CWithJavaInterface;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "CWithJavaInterfaceUnreg", "CWithJavaInterfaceUnreg1", "(I)Lsystem/Object;"));
+            methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "getItem", "Item2", "(I)Lsystem/Object;"));
             methods.Add(global::net.sf.jni4net.jni.JNINativeMethod.Create(@__type, "__ctorCInterfacesHelper0", "__ctorCInterfacesHelper0", "(Lnet/sf/jni4net/inj/IClrProxy;)V"));
             return methods;
         }
@@ -66,6 +67,18 @@ namespace net.sf.jni4net.tested {
             try {
             global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
             @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.tested.CWithJavaInterfaceUnreg>(@__env, @__real.CWithJavaInterfaceUnreg(i));
+            }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
+            return @__return;
+        }
+        
+        private static global::net.sf.jni4net.utils.JniHandle Item2(global::System.IntPtr @__envp, global::net.sf.jni4net.utils.JniLocalHandle @__obj, int i) {
+            // (I)Lsystem/Object;
+            // (I)Lnet/sf/jni4net/tested/CWithJavaInterfaceUnreg;
+            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.Wrap(@__envp);
+            global::net.sf.jni4net.utils.JniHandle @__return = default(global::net.sf.jni4net.utils.JniHandle);
+            try {
+            global::net.sf.jni4net.tested.CInterfacesHelper @__real = global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::net.sf.jni4net.tested.CInterfacesHelper>(@__env, @__obj);
+            @__return = global::net.sf.jni4net.utils.Convertor.StrongC2Jp<global::net.sf.jni4net.tested.CWithJavaInterfaceUnreg>(@__env, @__real[i]);
             }catch (global::System.Exception __ex){@__env.ThrowExisting(__ex);}
             return @__return;
         }
