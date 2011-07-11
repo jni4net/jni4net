@@ -7,5 +7,6 @@ echo [assembly: System.Reflection.AssemblyVersion("0.8.5.0")] > jni4net.tested.n
 if not exist jni4net.test.n\target\build-sources\generated-sources\META-INF\ mkdir jni4net.test.n\target\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.8.5.0")] > jni4net.test.n\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs 
 
+move jni4net.proxygen\target\proxygen.exe.config jni4net.proxygen\target\proxygen.exe.config.no
 jni4net.proxygen\target\proxygen.exe tools\proxygen\tested.proxygen.xml 
-
+move jni4net.proxygen\target\proxygen.exe.config.no jni4net.proxygen\target\proxygen.exe.config 

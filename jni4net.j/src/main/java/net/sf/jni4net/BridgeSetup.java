@@ -71,6 +71,12 @@ public class BridgeSetup extends system.Object {
     public native void setDebug(boolean value);
     
     @net.sf.jni4net.attributes.ClrMethod("()Z")
+    public native boolean getIgnoreJavaHome();
+    
+    @net.sf.jni4net.attributes.ClrMethod("(Z)V")
+    public native void setIgnoreJavaHome(boolean value);
+    
+    @net.sf.jni4net.attributes.ClrMethod("()Z")
     public native boolean getBindNative();
     
     @net.sf.jni4net.attributes.ClrMethod("(Z)V")
