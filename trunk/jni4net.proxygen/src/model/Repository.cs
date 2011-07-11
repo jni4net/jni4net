@@ -182,6 +182,10 @@ namespace net.sf.jni4net.proxygen.model
             {
                 Console.WriteLine("clr.version         :" + RuntimeEnvironment.GetSystemVersion());
                 Console.WriteLine("clr.arch            :" + ((IntPtr.Size == 8) ? "64bit" : "32bit"));
+            }
+            LoadClasspath();
+            if (config.Verbose)
+            {
                 Console.WriteLine("java.home           :" + Bridge.Setup.JavaHome);
                 Console.WriteLine("java.version        :" + java.lang.System.getProperty("java.version"));
                 Console.WriteLine("sun.arch.data.model :" + java.lang.System.getProperty("sun.arch.data.model"));
@@ -189,7 +193,7 @@ namespace net.sf.jni4net.proxygen.model
             }
 
             LoadAssemblies();
-            LoadClasspath();
+
             RegisterAssemblies();
 
             if (config.JavaClass != null)
