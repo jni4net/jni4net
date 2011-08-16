@@ -2,6 +2,7 @@ Version 0.8.5
 -----------
 + [#09] - fixed - support for indexer properties [by Johannes Rudolph]
 + [#24] - fixed - Change of current directory during init may disrupt other code running in parallel
++ [#25] - fixed - 	DirectByteBuffer doesn't work with Java 7
 
 Version 0.8.4
 -----------
