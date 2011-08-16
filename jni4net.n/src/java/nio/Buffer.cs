@@ -30,13 +30,13 @@ namespace java.nio
         public void Limit(int par0)
         {
             JNIEnv @__env = Env;
-            @__env.DeleteLocalRef(@__env.CallObjectMethodPtr(this, _limit1, Convertor.ParPrimC2J(par0)));
+            @__env.DeleteLocalRef(@__env.CallObjectMethodPtr(this, j4n_limit1, Convertor.ParPrimC2J(par0)));
         }
 
         public void Position(int par0)
         {
             JNIEnv @__env = Env;
-            @__env.DeleteLocalRef(@__env.CallObjectMethodPtr(this, _position3, Convertor.ParPrimC2J(par0)));
+            @__env.DeleteLocalRef(@__env.CallObjectMethodPtr(this, j4n_position3, Convertor.ParPrimC2J(par0)));
         }
 
     }

@@ -17,16 +17,16 @@ namespace net.sf.jni4net {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getValue0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getValue0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorRef1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorRef1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)V")]
         public Ref(global::java.lang.Object par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::net.sf.jni4net.Ref.staticClass, global::net.sf.jni4net.Ref.@__ctorRef1, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
+            @__env.NewObject(global::net.sf.jni4net.Ref.staticClass, global::net.sf.jni4net.Ref.j4n__ctorRef1, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
             }
         }
         
@@ -42,15 +42,15 @@ namespace net.sf.jni4net {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.Ref.staticClass = @__class;
-            global::net.sf.jni4net.Ref._getValue0 = @__env.GetMethodID(global::net.sf.jni4net.Ref.staticClass, "getValue", "()Ljava/lang/Object;");
-            global::net.sf.jni4net.Ref.@__ctorRef1 = @__env.GetMethodID(global::net.sf.jni4net.Ref.staticClass, "<init>", "(Ljava/lang/Object;)V");
+            global::net.sf.jni4net.Ref.j4n_getValue0 = @__env.GetMethodID(global::net.sf.jni4net.Ref.staticClass, "getValue", "()Ljava/lang/Object;");
+            global::net.sf.jni4net.Ref.j4n__ctorRef1 = @__env.GetMethodID(global::net.sf.jni4net.Ref.staticClass, "<init>", "(Ljava/lang/Object;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/Object;")]
         public virtual global::java.lang.Object getValue() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.Ref._getValue0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.Ref.j4n_getValue0));
             }
         }
         

@@ -29,15 +29,15 @@ namespace System.Collections {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetEnumerator0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetEnumerator0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _CopyTo1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_CopyTo1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Count2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Count2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _SyncRoot3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_SyncRoot3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _IsSynchronized4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_IsSynchronized4;
         
         private @__ICollection(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -47,7 +47,7 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.CallIntMethod(this, global::System.Collections.@__ICollection._Count2)));
+                return ((int)(@__env.CallIntMethod(this, global::System.Collections.@__ICollection.j4n_Count2)));
             }
             }
         }
@@ -56,7 +56,7 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._SyncRoot3));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection.j4n_SyncRoot3));
             }
             }
         }
@@ -65,31 +65,31 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__ICollection._IsSynchronized4)));
+                return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__ICollection.j4n_IsSynchronized4)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Collections.@__ICollection.staticClass = @__class;
-            global::System.Collections.@__ICollection._GetEnumerator0 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
-            global::System.Collections.@__ICollection._CopyTo1 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "CopyTo", "(Lsystem/Array;I)V");
-            global::System.Collections.@__ICollection._Count2 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "getCount", "()I");
-            global::System.Collections.@__ICollection._SyncRoot3 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "getSyncRoot", "()Lsystem/Object;");
-            global::System.Collections.@__ICollection._IsSynchronized4 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "isSynchronized", "()Z");
+            global::System.Collections.@__ICollection.j4n_GetEnumerator0 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
+            global::System.Collections.@__ICollection.j4n_CopyTo1 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "CopyTo", "(Lsystem/Array;I)V");
+            global::System.Collections.@__ICollection.j4n_Count2 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "getCount", "()I");
+            global::System.Collections.@__ICollection.j4n_SyncRoot3 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "getSyncRoot", "()Lsystem/Object;");
+            global::System.Collections.@__ICollection.j4n_IsSynchronized4 = @__env.GetMethodID(global::System.Collections.@__ICollection.staticClass, "isSynchronized", "()Z");
         }
         
         public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection._GetEnumerator0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__ICollection.j4n_GetEnumerator0));
             }
         }
         
         public void CopyTo(global::System.Array array, int index) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection._CopyTo1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
+            @__env.CallVoidMethod(this, global::System.Collections.@__ICollection.j4n_CopyTo1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Array>(@__env, array), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(index));
             }
         }
         

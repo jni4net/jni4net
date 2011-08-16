@@ -17,16 +17,16 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayInputStream0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByteArrayInputStream0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayInputStream1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByteArrayInputStream1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("([BII)V")]
         public ByteArrayInputStream(byte[] par0, int par1, int par2) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            @__env.NewObject(global::java.io.ByteArrayInputStream.staticClass, global::java.io.ByteArrayInputStream.@__ctorByteArrayInputStream0, this, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2));
+            @__env.NewObject(global::java.io.ByteArrayInputStream.staticClass, global::java.io.ByteArrayInputStream.j4n__ctorByteArrayInputStream0, this, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2));
             }
         }
         
@@ -35,7 +35,7 @@ namespace java.io {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.ByteArrayInputStream.staticClass, global::java.io.ByteArrayInputStream.@__ctorByteArrayInputStream1, this, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
+            @__env.NewObject(global::java.io.ByteArrayInputStream.staticClass, global::java.io.ByteArrayInputStream.j4n__ctorByteArrayInputStream1, this, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
             }
         }
         
@@ -51,8 +51,8 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.ByteArrayInputStream.staticClass = @__class;
-            global::java.io.ByteArrayInputStream.@__ctorByteArrayInputStream0 = @__env.GetMethodID(global::java.io.ByteArrayInputStream.staticClass, "<init>", "([BII)V");
-            global::java.io.ByteArrayInputStream.@__ctorByteArrayInputStream1 = @__env.GetMethodID(global::java.io.ByteArrayInputStream.staticClass, "<init>", "([B)V");
+            global::java.io.ByteArrayInputStream.j4n__ctorByteArrayInputStream0 = @__env.GetMethodID(global::java.io.ByteArrayInputStream.staticClass, "<init>", "([BII)V");
+            global::java.io.ByteArrayInputStream.j4n__ctorByteArrayInputStream1 = @__env.GetMethodID(global::java.io.ByteArrayInputStream.staticClass, "<init>", "([B)V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

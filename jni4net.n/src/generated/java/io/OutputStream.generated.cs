@@ -17,15 +17,15 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _close0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_close0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _flush1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_flush1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _write2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_write2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _write3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_write3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _write4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_write4;
         
         protected OutputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -39,18 +39,18 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.OutputStream.staticClass = @__class;
-            global::java.io.OutputStream._close0 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "close", "()V");
-            global::java.io.OutputStream._flush1 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "flush", "()V");
-            global::java.io.OutputStream._write2 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([B)V");
-            global::java.io.OutputStream._write3 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([BII)V");
-            global::java.io.OutputStream._write4 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "(I)V");
+            global::java.io.OutputStream.j4n_close0 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "close", "()V");
+            global::java.io.OutputStream.j4n_flush1 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "flush", "()V");
+            global::java.io.OutputStream.j4n_write2 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([B)V");
+            global::java.io.OutputStream.j4n_write3 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "([BII)V");
+            global::java.io.OutputStream.j4n_write4 = @__env.GetMethodID(global::java.io.OutputStream.staticClass, "write", "(I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public virtual void close() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.OutputStream._close0);
+            @__env.CallVoidMethod(this, global::java.io.OutputStream.j4n_close0);
             }
         }
         
@@ -58,7 +58,7 @@ namespace java.io {
         public virtual void flush() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.OutputStream._flush1);
+            @__env.CallVoidMethod(this, global::java.io.OutputStream.j4n_flush1);
             }
         }
         
@@ -66,7 +66,7 @@ namespace java.io {
         public virtual void write(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.OutputStream._write2, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.OutputStream.j4n_write2, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0));
             }
         }
         
@@ -74,7 +74,7 @@ namespace java.io {
         public virtual void write(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            @__env.CallVoidMethod(this, global::java.io.OutputStream._write3, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2));
+            @__env.CallVoidMethod(this, global::java.io.OutputStream.j4n_write3, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2));
             }
         }
         
@@ -82,7 +82,7 @@ namespace java.io {
         public virtual void write(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.OutputStream._write4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.OutputStream.j4n_write4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         

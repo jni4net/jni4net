@@ -29,7 +29,7 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Clone0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Clone0;
         
         private @__ICloneable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,13 +37,13 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__ICloneable.staticClass = @__class;
-            global::System.@__ICloneable._Clone0 = @__env.GetMethodID(global::System.@__ICloneable.staticClass, "Clone", "()Lsystem/Object;");
+            global::System.@__ICloneable.j4n_Clone0 = @__env.GetMethodID(global::System.@__ICloneable.staticClass, "Clone", "()Lsystem/Object;");
         }
         
         public object Clone() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__ICloneable._Clone0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__ICloneable.j4n_Clone0));
             }
         }
         

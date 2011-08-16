@@ -17,31 +17,31 @@ namespace java.nio {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _limit0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_limit0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _limit1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_limit1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _clear2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_clear2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _position3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_position3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _position4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_position4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remaining5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_remaining5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _capacity6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_capacity6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _flip7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_flip7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hasRemaining8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hasRemaining8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isReadOnly9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isReadOnly9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _mark10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_mark10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _reset11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_reset11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _rewind12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_rewind12;
         
         protected Buffer(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -55,26 +55,26 @@ namespace java.nio {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.nio.Buffer.staticClass = @__class;
-            global::java.nio.Buffer._limit0 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "()I");
-            global::java.nio.Buffer._limit1 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "(I)Ljava/nio/Buffer;");
-            global::java.nio.Buffer._clear2 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "clear", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._position3 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "(I)Ljava/nio/Buffer;");
-            global::java.nio.Buffer._position4 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "()I");
-            global::java.nio.Buffer._remaining5 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "remaining", "()I");
-            global::java.nio.Buffer._capacity6 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "capacity", "()I");
-            global::java.nio.Buffer._flip7 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "flip", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._hasRemaining8 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "hasRemaining", "()Z");
-            global::java.nio.Buffer._isReadOnly9 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "isReadOnly", "()Z");
-            global::java.nio.Buffer._mark10 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "mark", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._reset11 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "reset", "()Ljava/nio/Buffer;");
-            global::java.nio.Buffer._rewind12 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "rewind", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_limit0 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "()I");
+            global::java.nio.Buffer.j4n_limit1 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "limit", "(I)Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_clear2 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "clear", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_position3 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "(I)Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_position4 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "position", "()I");
+            global::java.nio.Buffer.j4n_remaining5 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "remaining", "()I");
+            global::java.nio.Buffer.j4n_capacity6 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "capacity", "()I");
+            global::java.nio.Buffer.j4n_flip7 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "flip", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_hasRemaining8 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "hasRemaining", "()Z");
+            global::java.nio.Buffer.j4n_isReadOnly9 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "isReadOnly", "()Z");
+            global::java.nio.Buffer.j4n_mark10 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "mark", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_reset11 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "reset", "()Ljava/nio/Buffer;");
+            global::java.nio.Buffer.j4n_rewind12 = @__env.GetMethodID(global::java.nio.Buffer.staticClass, "rewind", "()Ljava/nio/Buffer;");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public int limit() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._limit0)));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer.j4n_limit0)));
             }
         }
         
@@ -82,7 +82,7 @@ namespace java.nio {
         public global::java.nio.Buffer limit(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._limit1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_limit1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -90,7 +90,7 @@ namespace java.nio {
         public global::java.nio.Buffer clear() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._clear2));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_clear2));
             }
         }
         
@@ -98,7 +98,7 @@ namespace java.nio {
         public global::java.nio.Buffer position(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._position3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_position3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -106,7 +106,7 @@ namespace java.nio {
         public int position() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._position4)));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer.j4n_position4)));
             }
         }
         
@@ -114,7 +114,7 @@ namespace java.nio {
         public int remaining() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._remaining5)));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer.j4n_remaining5)));
             }
         }
         
@@ -122,7 +122,7 @@ namespace java.nio {
         public int capacity() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer._capacity6)));
+            return ((int)(@__env.CallIntMethod(this, global::java.nio.Buffer.j4n_capacity6)));
             }
         }
         
@@ -130,7 +130,7 @@ namespace java.nio {
         public global::java.nio.Buffer flip() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._flip7));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_flip7));
             }
         }
         
@@ -138,7 +138,7 @@ namespace java.nio {
         public bool hasRemaining() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer._hasRemaining8)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer.j4n_hasRemaining8)));
             }
         }
         
@@ -146,7 +146,7 @@ namespace java.nio {
         public virtual bool isReadOnly() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer._isReadOnly9)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.nio.Buffer.j4n_isReadOnly9)));
             }
         }
         
@@ -154,7 +154,7 @@ namespace java.nio {
         public global::java.nio.Buffer mark() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._mark10));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_mark10));
             }
         }
         
@@ -162,7 +162,7 @@ namespace java.nio {
         public global::java.nio.Buffer reset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._reset11));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_reset11));
             }
         }
         
@@ -170,7 +170,7 @@ namespace java.nio {
         public global::java.nio.Buffer rewind() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer._rewind12));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.Buffer>(@__env, @__env.CallObjectMethodPtr(this, global::java.nio.Buffer.j4n_rewind12));
             }
         }
         

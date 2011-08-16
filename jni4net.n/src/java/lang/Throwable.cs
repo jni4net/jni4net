@@ -188,9 +188,9 @@ namespace java.lang
         public override string ToString()
         {
             JNIEnv env = Env;
-            if ((_toString4 == null))
+            if ((j4n_toString4 == null))
             {
-                _toString4 = env.GetMethodID(((IJvmProxy)this).getClass(), "toString", "()Ljava/lang/String;");
+                j4n_toString4 = env.GetMethodID(((IJvmProxy)this).getClass(), "toString", "()Ljava/lang/String;");
             }
             return toString();
         }

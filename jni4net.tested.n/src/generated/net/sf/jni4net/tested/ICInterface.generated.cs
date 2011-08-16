@@ -29,21 +29,21 @@ namespace net.sf.jni4net.tested {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _intProp0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_intProp0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _intProp1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_intProp1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _fcePtr2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_fcePtr2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _fcePtr3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_fcePtr3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _EnvDispatcher4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_EnvDispatcher4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _EnvDispatcher5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_EnvDispatcher5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _xx6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_xx6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Item7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Item7;
         
         private @__ICInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -53,13 +53,13 @@ namespace net.sf.jni4net.tested {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.@__ICInterface._intProp0)));
+                return ((int)(@__env.CallIntMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_intProp0)));
             }
             }
             set {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._intProp1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(value));
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_intProp1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(value));
             }
             }
         }
@@ -68,13 +68,13 @@ namespace net.sf.jni4net.tested {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__ICInterface._fcePtr2));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_fcePtr2));
             }
             }
             set {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._fcePtr3, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_fcePtr3, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
             }
             }
         }
@@ -83,13 +83,13 @@ namespace net.sf.jni4net.tested {
             add {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher4, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_EnvDispatcher4, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
             }
             }
             remove {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher5, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
+                @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_EnvDispatcher5, global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, value));
             }
             }
         }
@@ -98,27 +98,27 @@ namespace net.sf.jni4net.tested {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__ICInterface._Item7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(i), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(j)));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_Item7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(i), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(j)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.@__ICInterface.staticClass = @__class;
-            global::net.sf.jni4net.tested.@__ICInterface._intProp0 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getintProp", "()I");
-            global::net.sf.jni4net.tested.@__ICInterface._intProp1 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "setintProp", "(I)V");
-            global::net.sf.jni4net.tested.@__ICInterface._fcePtr2 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getfcePtr", "()Lnet/sf/jni4net/tested/TestDelegate;");
-            global::net.sf.jni4net.tested.@__ICInterface._fcePtr3 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "setfcePtr", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
-            global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher4 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "addEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
-            global::net.sf.jni4net.tested.@__ICInterface._EnvDispatcher5 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "removeEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
-            global::net.sf.jni4net.tested.@__ICInterface._xx6 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "xx", "([Ljava/lang/String;)V");
-            global::net.sf.jni4net.tested.@__ICInterface._Item7 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getItem", "(II)Ljava/lang/String;");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_intProp0 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getintProp", "()I");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_intProp1 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "setintProp", "(I)V");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_fcePtr2 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getfcePtr", "()Lnet/sf/jni4net/tested/TestDelegate;");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_fcePtr3 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "setfcePtr", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_EnvDispatcher4 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "addEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_EnvDispatcher5 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "removeEnvDispatcher", "(Lnet/sf/jni4net/tested/TestDelegate;)V");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_xx6 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "xx", "([Ljava/lang/String;)V");
+            global::net.sf.jni4net.tested.@__ICInterface.j4n_Item7 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__ICInterface.staticClass, "getItem", "(II)Ljava/lang/String;");
         }
         
         public void xx(string[] strs) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface._xx6, global::net.sf.jni4net.utils.Convertor.ParArrayStrongC2JString(@__env, strs));
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__ICInterface.j4n_xx6, global::net.sf.jni4net.utils.Convertor.ParArrayStrongC2JString(@__env, strs));
             }
         }
         

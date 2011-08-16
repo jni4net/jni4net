@@ -29,7 +29,7 @@ namespace System.Runtime.Serialization {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetObjectData0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetObjectData0;
         
         private @__ISerializable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,14 +37,14 @@ namespace System.Runtime.Serialization {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Runtime.Serialization.@__ISerializable.staticClass = @__class;
-            global::System.Runtime.Serialization.@__ISerializable._GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
+            global::System.Runtime.Serialization.@__ISerializable.j4n_GetObjectData0 = @__env.GetMethodID(global::System.Runtime.Serialization.@__ISerializable.staticClass, "GetObjectData", "(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/St" +
                     "reamingContext;)V");
         }
         
         public void GetObjectData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable._GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
+            @__env.CallVoidMethod(this, global::System.Runtime.Serialization.@__ISerializable.j4n_GetObjectData0, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Runtime.Serialization.SerializationInfo>(@__env, info), global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Runtime.Serialization.StreamingContext>(@__env, context));
             }
         }
         

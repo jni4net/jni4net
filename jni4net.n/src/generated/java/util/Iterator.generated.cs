@@ -44,11 +44,11 @@ namespace java.util {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hasNext0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hasNext0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _next1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_next1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remove2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_remove2;
         
         private @__Iterator(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -56,29 +56,29 @@ namespace java.util {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.util.@__Iterator.staticClass = @__class;
-            global::java.util.@__Iterator._hasNext0 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "hasNext", "()Z");
-            global::java.util.@__Iterator._next1 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "next", "()Ljava/lang/Object;");
-            global::java.util.@__Iterator._remove2 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "remove", "()V");
+            global::java.util.@__Iterator.j4n_hasNext0 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "hasNext", "()Z");
+            global::java.util.@__Iterator.j4n_next1 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "next", "()Ljava/lang/Object;");
+            global::java.util.@__Iterator.j4n_remove2 = @__env.GetMethodID(global::java.util.@__Iterator.staticClass, "remove", "()V");
         }
         
         public bool hasNext() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Iterator._hasNext0)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Iterator.j4n_hasNext0)));
             }
         }
         
         public global::java.lang.Object next() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Iterator._next1));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Iterator.j4n_next1));
             }
         }
         
         public void remove() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.util.@__Iterator._remove2);
+            @__env.CallVoidMethod(this, global::java.util.@__Iterator.j4n_remove2);
             }
         }
         

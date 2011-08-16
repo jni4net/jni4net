@@ -29,13 +29,13 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _IsCompleted0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_IsCompleted0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _AsyncWaitHandle1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_AsyncWaitHandle1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _AsyncState2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_AsyncState2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _CompletedSynchronously3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_CompletedSynchronously3;
         
         private @__IAsyncResult(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -45,7 +45,7 @@ namespace System {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IAsyncResult._IsCompleted0)));
+                return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IAsyncResult.j4n_IsCompleted0)));
             }
             }
         }
@@ -54,7 +54,7 @@ namespace System {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Threading.WaitHandle>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IAsyncResult._AsyncWaitHandle1));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Threading.WaitHandle>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IAsyncResult.j4n_AsyncWaitHandle1));
             }
             }
         }
@@ -63,7 +63,7 @@ namespace System {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IAsyncResult._AsyncState2));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IAsyncResult.j4n_AsyncState2));
             }
             }
         }
@@ -72,17 +72,17 @@ namespace System {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IAsyncResult._CompletedSynchronously3)));
+                return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IAsyncResult.j4n_CompletedSynchronously3)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__IAsyncResult.staticClass = @__class;
-            global::System.@__IAsyncResult._IsCompleted0 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "isCompleted", "()Z");
-            global::System.@__IAsyncResult._AsyncWaitHandle1 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getAsyncWaitHandle", "()Lsystem/MarshalByRefObject;");
-            global::System.@__IAsyncResult._AsyncState2 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getAsyncState", "()Lsystem/Object;");
-            global::System.@__IAsyncResult._CompletedSynchronously3 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getCompletedSynchronously", "()Z");
+            global::System.@__IAsyncResult.j4n_IsCompleted0 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "isCompleted", "()Z");
+            global::System.@__IAsyncResult.j4n_AsyncWaitHandle1 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getAsyncWaitHandle", "()Lsystem/MarshalByRefObject;");
+            global::System.@__IAsyncResult.j4n_AsyncState2 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getAsyncState", "()Lsystem/Object;");
+            global::System.@__IAsyncResult.j4n_CompletedSynchronously3 = @__env.GetMethodID(global::System.@__IAsyncResult.staticClass, "getCompletedSynchronously", "()Z");
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {

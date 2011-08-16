@@ -44,11 +44,11 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getName0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getName0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getBounds1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getBounds1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getGenericDeclaration2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getGenericDeclaration2;
         
         private @__TypeVariable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -56,29 +56,29 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__TypeVariable.staticClass = @__class;
-            global::java.lang.reflect.@__TypeVariable._getName0 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getName", "()Ljava/lang/String;");
-            global::java.lang.reflect.@__TypeVariable._getBounds1 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getBounds", "()[Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__TypeVariable._getGenericDeclaration2 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getGenericDeclaration", "()Ljava/lang/reflect/GenericDeclaration;");
+            global::java.lang.reflect.@__TypeVariable.j4n_getName0 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getName", "()Ljava/lang/String;");
+            global::java.lang.reflect.@__TypeVariable.j4n_getBounds1 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getBounds", "()[Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__TypeVariable.j4n_getGenericDeclaration2 = @__env.GetMethodID(global::java.lang.reflect.@__TypeVariable.staticClass, "getGenericDeclaration", "()Ljava/lang/reflect/GenericDeclaration;");
         }
         
         public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getName0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable.j4n_getName0));
             }
         }
         
         public java.lang.reflect.Type[] getBounds() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getBounds1));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable.j4n_getBounds1));
             }
         }
         
         public global::java.lang.reflect.GenericDeclaration getGenericDeclaration() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.GenericDeclaration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable._getGenericDeclaration2));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.GenericDeclaration>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__TypeVariable.j4n_getGenericDeclaration2));
             }
         }
         

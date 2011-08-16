@@ -17,98 +17,98 @@ namespace java.util.zip {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getNextEntry0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getNextEntry0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _closeEntry1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_closeEntry1;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCSIG2;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCSIG2;
         
-        internal static global::net.sf.jni4net.jni.FieldId _EXTSIG3;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_EXTSIG3;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENSIG4;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENSIG4;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDSIG5;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDSIG5;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCHDR6;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCHDR6;
         
-        internal static global::net.sf.jni4net.jni.FieldId _EXTHDR7;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_EXTHDR7;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENHDR8;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENHDR8;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDHDR9;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDHDR9;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCVER10;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCVER10;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCFLG11;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCFLG11;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCHOW12;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCHOW12;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCTIM13;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCTIM13;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCCRC14;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCCRC14;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCSIZ15;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCSIZ15;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCLEN16;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCLEN16;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCNAM17;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCNAM17;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LOCEXT18;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LOCEXT18;
         
-        internal static global::net.sf.jni4net.jni.FieldId _EXTCRC19;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_EXTCRC19;
         
-        internal static global::net.sf.jni4net.jni.FieldId _EXTSIZ20;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_EXTSIZ20;
         
-        internal static global::net.sf.jni4net.jni.FieldId _EXTLEN21;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_EXTLEN21;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENVEM22;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENVEM22;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENVER23;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENVER23;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENFLG24;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENFLG24;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENHOW25;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENHOW25;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENTIM26;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENTIM26;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENCRC27;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENCRC27;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENSIZ28;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENSIZ28;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENLEN29;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENLEN29;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENNAM30;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENNAM30;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENEXT31;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENEXT31;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENCOM32;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENCOM32;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENDSK33;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENDSK33;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENATT34;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENATT34;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENATX35;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENATX35;
         
-        internal static global::net.sf.jni4net.jni.FieldId _CENOFF36;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_CENOFF36;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDSUB37;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDSUB37;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDTOT38;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDTOT38;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDSIZ39;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDSIZ39;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDOFF40;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDOFF40;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ENDCOM41;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ENDCOM41;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorZipInputStream42;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorZipInputStream42;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/InputStream;)V")]
         public ZipInputStream(global::java.io.InputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.@__ctorZipInputStream42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n__ctorZipInputStream42, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -127,7 +127,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCSIG2)));
+                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCSIG2)));
             }
             }
         }
@@ -137,7 +137,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._EXTSIG3)));
+                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_EXTSIG3)));
             }
             }
         }
@@ -147,7 +147,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENSIG4)));
+                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENSIG4)));
             }
             }
         }
@@ -157,7 +157,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDSIG5)));
+                return ((long)(@__env.GetStaticLongField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDSIG5)));
             }
             }
         }
@@ -167,7 +167,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCHDR6)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCHDR6)));
             }
             }
         }
@@ -177,7 +177,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._EXTHDR7)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_EXTHDR7)));
             }
             }
         }
@@ -187,7 +187,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENHDR8)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENHDR8)));
             }
             }
         }
@@ -197,7 +197,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDHDR9)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDHDR9)));
             }
             }
         }
@@ -207,7 +207,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCVER10)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCVER10)));
             }
             }
         }
@@ -217,7 +217,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCFLG11)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCFLG11)));
             }
             }
         }
@@ -227,7 +227,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCHOW12)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCHOW12)));
             }
             }
         }
@@ -237,7 +237,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCTIM13)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCTIM13)));
             }
             }
         }
@@ -247,7 +247,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCCRC14)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCCRC14)));
             }
             }
         }
@@ -257,7 +257,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCSIZ15)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCSIZ15)));
             }
             }
         }
@@ -267,7 +267,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCLEN16)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCLEN16)));
             }
             }
         }
@@ -277,7 +277,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCNAM17)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCNAM17)));
             }
             }
         }
@@ -287,7 +287,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._LOCEXT18)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_LOCEXT18)));
             }
             }
         }
@@ -297,7 +297,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._EXTCRC19)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_EXTCRC19)));
             }
             }
         }
@@ -307,7 +307,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._EXTSIZ20)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_EXTSIZ20)));
             }
             }
         }
@@ -317,7 +317,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._EXTLEN21)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_EXTLEN21)));
             }
             }
         }
@@ -327,7 +327,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENVEM22)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENVEM22)));
             }
             }
         }
@@ -337,7 +337,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENVER23)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENVER23)));
             }
             }
         }
@@ -347,7 +347,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENFLG24)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENFLG24)));
             }
             }
         }
@@ -357,7 +357,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENHOW25)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENHOW25)));
             }
             }
         }
@@ -367,7 +367,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENTIM26)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENTIM26)));
             }
             }
         }
@@ -377,7 +377,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENCRC27)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENCRC27)));
             }
             }
         }
@@ -387,7 +387,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENSIZ28)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENSIZ28)));
             }
             }
         }
@@ -397,7 +397,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENLEN29)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENLEN29)));
             }
             }
         }
@@ -407,7 +407,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENNAM30)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENNAM30)));
             }
             }
         }
@@ -417,7 +417,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENEXT31)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENEXT31)));
             }
             }
         }
@@ -427,7 +427,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENCOM32)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENCOM32)));
             }
             }
         }
@@ -437,7 +437,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENDSK33)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENDSK33)));
             }
             }
         }
@@ -447,7 +447,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENATT34)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENATT34)));
             }
             }
         }
@@ -457,7 +457,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENATX35)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENATX35)));
             }
             }
         }
@@ -467,7 +467,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._CENOFF36)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_CENOFF36)));
             }
             }
         }
@@ -477,7 +477,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDSUB37)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDSUB37)));
             }
             }
         }
@@ -487,7 +487,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDTOT38)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDTOT38)));
             }
             }
         }
@@ -497,7 +497,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDSIZ39)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDSIZ39)));
             }
             }
         }
@@ -507,7 +507,7 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDOFF40)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDOFF40)));
             }
             }
         }
@@ -517,63 +517,63 @@ namespace java.util.zip {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream._ENDCOM41)));
+                return ((int)(@__env.GetStaticIntField(global::java.util.zip.ZipInputStream.staticClass, global::java.util.zip.ZipInputStream.j4n_ENDCOM41)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.util.zip.ZipInputStream.staticClass = @__class;
-            global::java.util.zip.ZipInputStream._getNextEntry0 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "getNextEntry", "()Ljava/util/zip/ZipEntry;");
-            global::java.util.zip.ZipInputStream._closeEntry1 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "closeEntry", "()V");
-            global::java.util.zip.ZipInputStream._LOCSIG2 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCSIG", "J");
-            global::java.util.zip.ZipInputStream._EXTSIG3 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTSIG", "J");
-            global::java.util.zip.ZipInputStream._CENSIG4 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENSIG", "J");
-            global::java.util.zip.ZipInputStream._ENDSIG5 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSIG", "J");
-            global::java.util.zip.ZipInputStream._LOCHDR6 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCHDR", "I");
-            global::java.util.zip.ZipInputStream._EXTHDR7 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTHDR", "I");
-            global::java.util.zip.ZipInputStream._CENHDR8 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENHDR", "I");
-            global::java.util.zip.ZipInputStream._ENDHDR9 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDHDR", "I");
-            global::java.util.zip.ZipInputStream._LOCVER10 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCVER", "I");
-            global::java.util.zip.ZipInputStream._LOCFLG11 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCFLG", "I");
-            global::java.util.zip.ZipInputStream._LOCHOW12 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCHOW", "I");
-            global::java.util.zip.ZipInputStream._LOCTIM13 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCTIM", "I");
-            global::java.util.zip.ZipInputStream._LOCCRC14 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCCRC", "I");
-            global::java.util.zip.ZipInputStream._LOCSIZ15 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCSIZ", "I");
-            global::java.util.zip.ZipInputStream._LOCLEN16 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCLEN", "I");
-            global::java.util.zip.ZipInputStream._LOCNAM17 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCNAM", "I");
-            global::java.util.zip.ZipInputStream._LOCEXT18 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCEXT", "I");
-            global::java.util.zip.ZipInputStream._EXTCRC19 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTCRC", "I");
-            global::java.util.zip.ZipInputStream._EXTSIZ20 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTSIZ", "I");
-            global::java.util.zip.ZipInputStream._EXTLEN21 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTLEN", "I");
-            global::java.util.zip.ZipInputStream._CENVEM22 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENVEM", "I");
-            global::java.util.zip.ZipInputStream._CENVER23 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENVER", "I");
-            global::java.util.zip.ZipInputStream._CENFLG24 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENFLG", "I");
-            global::java.util.zip.ZipInputStream._CENHOW25 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENHOW", "I");
-            global::java.util.zip.ZipInputStream._CENTIM26 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENTIM", "I");
-            global::java.util.zip.ZipInputStream._CENCRC27 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENCRC", "I");
-            global::java.util.zip.ZipInputStream._CENSIZ28 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENSIZ", "I");
-            global::java.util.zip.ZipInputStream._CENLEN29 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENLEN", "I");
-            global::java.util.zip.ZipInputStream._CENNAM30 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENNAM", "I");
-            global::java.util.zip.ZipInputStream._CENEXT31 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENEXT", "I");
-            global::java.util.zip.ZipInputStream._CENCOM32 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENCOM", "I");
-            global::java.util.zip.ZipInputStream._CENDSK33 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENDSK", "I");
-            global::java.util.zip.ZipInputStream._CENATT34 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENATT", "I");
-            global::java.util.zip.ZipInputStream._CENATX35 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENATX", "I");
-            global::java.util.zip.ZipInputStream._CENOFF36 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENOFF", "I");
-            global::java.util.zip.ZipInputStream._ENDSUB37 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSUB", "I");
-            global::java.util.zip.ZipInputStream._ENDTOT38 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDTOT", "I");
-            global::java.util.zip.ZipInputStream._ENDSIZ39 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSIZ", "I");
-            global::java.util.zip.ZipInputStream._ENDOFF40 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDOFF", "I");
-            global::java.util.zip.ZipInputStream._ENDCOM41 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDCOM", "I");
-            global::java.util.zip.ZipInputStream.@__ctorZipInputStream42 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "<init>", "(Ljava/io/InputStream;)V");
+            global::java.util.zip.ZipInputStream.j4n_getNextEntry0 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "getNextEntry", "()Ljava/util/zip/ZipEntry;");
+            global::java.util.zip.ZipInputStream.j4n_closeEntry1 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "closeEntry", "()V");
+            global::java.util.zip.ZipInputStream.j4n_LOCSIG2 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCSIG", "J");
+            global::java.util.zip.ZipInputStream.j4n_EXTSIG3 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTSIG", "J");
+            global::java.util.zip.ZipInputStream.j4n_CENSIG4 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENSIG", "J");
+            global::java.util.zip.ZipInputStream.j4n_ENDSIG5 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSIG", "J");
+            global::java.util.zip.ZipInputStream.j4n_LOCHDR6 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCHDR", "I");
+            global::java.util.zip.ZipInputStream.j4n_EXTHDR7 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTHDR", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENHDR8 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENHDR", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDHDR9 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDHDR", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCVER10 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCVER", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCFLG11 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCFLG", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCHOW12 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCHOW", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCTIM13 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCTIM", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCCRC14 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCCRC", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCSIZ15 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCSIZ", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCLEN16 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCLEN", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCNAM17 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCNAM", "I");
+            global::java.util.zip.ZipInputStream.j4n_LOCEXT18 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "LOCEXT", "I");
+            global::java.util.zip.ZipInputStream.j4n_EXTCRC19 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTCRC", "I");
+            global::java.util.zip.ZipInputStream.j4n_EXTSIZ20 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTSIZ", "I");
+            global::java.util.zip.ZipInputStream.j4n_EXTLEN21 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "EXTLEN", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENVEM22 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENVEM", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENVER23 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENVER", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENFLG24 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENFLG", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENHOW25 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENHOW", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENTIM26 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENTIM", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENCRC27 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENCRC", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENSIZ28 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENSIZ", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENLEN29 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENLEN", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENNAM30 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENNAM", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENEXT31 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENEXT", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENCOM32 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENCOM", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENDSK33 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENDSK", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENATT34 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENATT", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENATX35 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENATX", "I");
+            global::java.util.zip.ZipInputStream.j4n_CENOFF36 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "CENOFF", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDSUB37 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSUB", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDTOT38 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDTOT", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDSIZ39 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDSIZ", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDOFF40 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDOFF", "I");
+            global::java.util.zip.ZipInputStream.j4n_ENDCOM41 = @__env.GetStaticFieldID(global::java.util.zip.ZipInputStream.staticClass, "ENDCOM", "I");
+            global::java.util.zip.ZipInputStream.j4n__ctorZipInputStream42 = @__env.GetMethodID(global::java.util.zip.ZipInputStream.staticClass, "<init>", "(Ljava/io/InputStream;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/util/zip/ZipEntry;")]
         public virtual global::java.util.zip.ZipEntry getNextEntry() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.util.zip.ZipEntry>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.zip.ZipInputStream._getNextEntry0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.util.zip.ZipEntry>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.zip.ZipInputStream.j4n_getNextEntry0));
             }
         }
         
@@ -581,7 +581,7 @@ namespace java.util.zip {
         public virtual void closeEntry() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.util.zip.ZipInputStream._closeEntry1);
+            @__env.CallVoidMethod(this, global::java.util.zip.ZipInputStream.j4n_closeEntry1);
             }
         }
         

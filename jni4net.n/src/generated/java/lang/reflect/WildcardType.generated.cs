@@ -41,9 +41,9 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getLowerBounds0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getLowerBounds0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getUpperBounds1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getUpperBounds1;
         
         private @__WildcardType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -51,21 +51,21 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__WildcardType.staticClass = @__class;
-            global::java.lang.reflect.@__WildcardType._getLowerBounds0 = @__env.GetMethodID(global::java.lang.reflect.@__WildcardType.staticClass, "getLowerBounds", "()[Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__WildcardType._getUpperBounds1 = @__env.GetMethodID(global::java.lang.reflect.@__WildcardType.staticClass, "getUpperBounds", "()[Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__WildcardType.j4n_getLowerBounds0 = @__env.GetMethodID(global::java.lang.reflect.@__WildcardType.staticClass, "getLowerBounds", "()[Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__WildcardType.j4n_getUpperBounds1 = @__env.GetMethodID(global::java.lang.reflect.@__WildcardType.staticClass, "getUpperBounds", "()[Ljava/lang/reflect/Type;");
         }
         
         public java.lang.reflect.Type[] getLowerBounds() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType._getLowerBounds0));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType.j4n_getLowerBounds0));
             }
         }
         
         public java.lang.reflect.Type[] getUpperBounds() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType._getUpperBounds1));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__WildcardType.j4n_getUpperBounds1));
             }
         }
         

@@ -29,39 +29,39 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetTypeCode0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetTypeCode0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToBoolean1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToBoolean1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToChar2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToChar2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToSByte3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToSByte3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToByte4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToByte4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToInt165;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToInt165;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToUInt166;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToUInt166;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToInt327;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToInt327;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToUInt328;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToUInt328;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToInt649;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToInt649;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToUInt6410;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToUInt6410;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToSingle11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToSingle11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToDouble12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToDouble12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToDecimal13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToDecimal13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToDateTime14;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToDateTime14;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToString15;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToString15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToType16;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToType16;
         
         private @__IConvertible(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -69,141 +69,141 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__IConvertible.staticClass = @__class;
-            global::System.@__IConvertible._GetTypeCode0 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "GetTypeCode", "()Lsystem/Enum;");
-            global::System.@__IConvertible._ToBoolean1 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToBoolean", "(Lsystem/IFormatProvider;)Z");
-            global::System.@__IConvertible._ToChar2 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToChar", "(Lsystem/IFormatProvider;)C");
-            global::System.@__IConvertible._ToSByte3 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToSByte", "(Lsystem/IFormatProvider;)B");
-            global::System.@__IConvertible._ToByte4 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToByte", "(Lsystem/IFormatProvider;)B");
-            global::System.@__IConvertible._ToInt165 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt16", "(Lsystem/IFormatProvider;)S");
-            global::System.@__IConvertible._ToUInt166 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt16", "(Lsystem/IFormatProvider;)S");
-            global::System.@__IConvertible._ToInt327 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt32", "(Lsystem/IFormatProvider;)I");
-            global::System.@__IConvertible._ToUInt328 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt32", "(Lsystem/IFormatProvider;)I");
-            global::System.@__IConvertible._ToInt649 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt64", "(Lsystem/IFormatProvider;)J");
-            global::System.@__IConvertible._ToUInt6410 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt64", "(Lsystem/IFormatProvider;)J");
-            global::System.@__IConvertible._ToSingle11 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToSingle", "(Lsystem/IFormatProvider;)F");
-            global::System.@__IConvertible._ToDouble12 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDouble", "(Lsystem/IFormatProvider;)D");
-            global::System.@__IConvertible._ToDecimal13 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDecimal", "(Lsystem/IFormatProvider;)Lsystem/Decimal;");
-            global::System.@__IConvertible._ToDateTime14 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDateTime", "(Lsystem/IFormatProvider;)Lsystem/DateTime;");
-            global::System.@__IConvertible._ToString15 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToString", "(Lsystem/IFormatProvider;)Ljava/lang/String;");
-            global::System.@__IConvertible._ToType16 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToType", "(Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;");
+            global::System.@__IConvertible.j4n_GetTypeCode0 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "GetTypeCode", "()Lsystem/Enum;");
+            global::System.@__IConvertible.j4n_ToBoolean1 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToBoolean", "(Lsystem/IFormatProvider;)Z");
+            global::System.@__IConvertible.j4n_ToChar2 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToChar", "(Lsystem/IFormatProvider;)C");
+            global::System.@__IConvertible.j4n_ToSByte3 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToSByte", "(Lsystem/IFormatProvider;)B");
+            global::System.@__IConvertible.j4n_ToByte4 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToByte", "(Lsystem/IFormatProvider;)B");
+            global::System.@__IConvertible.j4n_ToInt165 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt16", "(Lsystem/IFormatProvider;)S");
+            global::System.@__IConvertible.j4n_ToUInt166 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt16", "(Lsystem/IFormatProvider;)S");
+            global::System.@__IConvertible.j4n_ToInt327 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt32", "(Lsystem/IFormatProvider;)I");
+            global::System.@__IConvertible.j4n_ToUInt328 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt32", "(Lsystem/IFormatProvider;)I");
+            global::System.@__IConvertible.j4n_ToInt649 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToInt64", "(Lsystem/IFormatProvider;)J");
+            global::System.@__IConvertible.j4n_ToUInt6410 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToUInt64", "(Lsystem/IFormatProvider;)J");
+            global::System.@__IConvertible.j4n_ToSingle11 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToSingle", "(Lsystem/IFormatProvider;)F");
+            global::System.@__IConvertible.j4n_ToDouble12 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDouble", "(Lsystem/IFormatProvider;)D");
+            global::System.@__IConvertible.j4n_ToDecimal13 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDecimal", "(Lsystem/IFormatProvider;)Lsystem/Decimal;");
+            global::System.@__IConvertible.j4n_ToDateTime14 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToDateTime", "(Lsystem/IFormatProvider;)Lsystem/DateTime;");
+            global::System.@__IConvertible.j4n_ToString15 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToString", "(Lsystem/IFormatProvider;)Ljava/lang/String;");
+            global::System.@__IConvertible.j4n_ToType16 = @__env.GetMethodID(global::System.@__IConvertible.staticClass, "ToType", "(Lsystem/Type;Lsystem/IFormatProvider;)Lsystem/Object;");
         }
         
         public global::System.TypeCode GetTypeCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.TypeCode>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._GetTypeCode0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.TypeCode>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible.j4n_GetTypeCode0));
             }
         }
         
         public bool ToBoolean(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IConvertible._ToBoolean1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::System.@__IConvertible.j4n_ToBoolean1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public char ToChar(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((char)(@__env.CallCharMethod(this, global::System.@__IConvertible._ToChar2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((char)(@__env.CallCharMethod(this, global::System.@__IConvertible.j4n_ToChar2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public sbyte ToSByte(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((sbyte)(@__env.CallByteMethod(this, global::System.@__IConvertible._ToSByte3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((sbyte)(@__env.CallByteMethod(this, global::System.@__IConvertible.j4n_ToSByte3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public byte ToByte(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((byte)(@__env.CallByteMethod(this, global::System.@__IConvertible._ToByte4, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((byte)(@__env.CallByteMethod(this, global::System.@__IConvertible.j4n_ToByte4, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public short ToInt16(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((short)(@__env.CallShortMethod(this, global::System.@__IConvertible._ToInt165, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((short)(@__env.CallShortMethod(this, global::System.@__IConvertible.j4n_ToInt165, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public ushort ToUInt16(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((ushort)(@__env.CallShortMethod(this, global::System.@__IConvertible._ToUInt166, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((ushort)(@__env.CallShortMethod(this, global::System.@__IConvertible.j4n_ToUInt166, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public int ToInt32(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallIntMethod(this, global::System.@__IConvertible._ToInt327, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((int)(@__env.CallIntMethod(this, global::System.@__IConvertible.j4n_ToInt327, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public uint ToUInt32(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((uint)(@__env.CallIntMethod(this, global::System.@__IConvertible._ToUInt328, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((uint)(@__env.CallIntMethod(this, global::System.@__IConvertible.j4n_ToUInt328, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public long ToInt64(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((long)(@__env.CallLongMethod(this, global::System.@__IConvertible._ToInt649, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((long)(@__env.CallLongMethod(this, global::System.@__IConvertible.j4n_ToInt649, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public ulong ToUInt64(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((ulong)(@__env.CallLongMethod(this, global::System.@__IConvertible._ToUInt6410, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((ulong)(@__env.CallLongMethod(this, global::System.@__IConvertible.j4n_ToUInt6410, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public float ToSingle(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((float)(@__env.CallFloatMethod(this, global::System.@__IConvertible._ToSingle11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((float)(@__env.CallFloatMethod(this, global::System.@__IConvertible.j4n_ToSingle11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public double ToDouble(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((double)(@__env.CallDoubleMethod(this, global::System.@__IConvertible._ToDouble12, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
+            return ((double)(@__env.CallDoubleMethod(this, global::System.@__IConvertible.j4n_ToDouble12, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider))));
             }
         }
         
         public decimal ToDecimal(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToDecimal13, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<decimal>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible.j4n_ToDecimal13, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
             }
         }
         
         public global::System.DateTime ToDateTime(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.DateTime>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToDateTime14, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.DateTime>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible.j4n_ToDateTime14, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
             }
         }
         
         public string ToString(global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToString15, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible.j4n_ToString15, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
             }
         }
         
         public object ToType(global::System.Type conversionType, global::System.IFormatProvider provider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible._ToType16, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IConvertible.j4n_ToType16, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, conversionType), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, provider)));
             }
         }
         

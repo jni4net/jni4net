@@ -29,11 +29,11 @@ namespace System.Reflection {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetCustomAttributes0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetCustomAttributes0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetCustomAttributes1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetCustomAttributes1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _IsDefined2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_IsDefined2;
         
         private @__ICustomAttributeProvider(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -41,29 +41,29 @@ namespace System.Reflection {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Reflection.@__ICustomAttributeProvider.staticClass = @__class;
-            global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "GetCustomAttributes", "(Z)[Lsystem/Object;");
-            global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "GetCustomAttributes", "(Lsystem/Type;Z)[Lsystem/Object;");
-            global::System.Reflection.@__ICustomAttributeProvider._IsDefined2 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "IsDefined", "(Lsystem/Type;Z)Z");
+            global::System.Reflection.@__ICustomAttributeProvider.j4n_GetCustomAttributes0 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "GetCustomAttributes", "(Z)[Lsystem/Object;");
+            global::System.Reflection.@__ICustomAttributeProvider.j4n_GetCustomAttributes1 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "GetCustomAttributes", "(Lsystem/Type;Z)[Lsystem/Object;");
+            global::System.Reflection.@__ICustomAttributeProvider.j4n_IsDefined2 = @__env.GetMethodID(global::System.Reflection.@__ICustomAttributeProvider.staticClass, "IsDefined", "(Lsystem/Type;Z)Z");
         }
         
         public object[] GetCustomAttributes(bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider.j4n_GetCustomAttributes0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
             }
         }
         
         public object[] GetCustomAttributes(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider._GetCustomAttributes1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<object[], object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Reflection.@__ICustomAttributeProvider.j4n_GetCustomAttributes1, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit)));
             }
         }
         
         public bool IsDefined(global::System.Type attributeType, bool inherit) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::System.Reflection.@__ICustomAttributeProvider._IsDefined2, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::System.Reflection.@__ICustomAttributeProvider.j4n_IsDefined2, global::net.sf.jni4net.utils.Convertor.ParStrongC2Jp<global::System.Type>(@__env, attributeType), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(inherit))));
             }
         }
         

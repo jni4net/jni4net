@@ -17,55 +17,55 @@ namespace java.net {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _openStream0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_openStream0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getPath1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getPath1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getAuthority2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getAuthority2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getQuery3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getQuery3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toURI4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toURI4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFile5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getFile5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getHost6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getHost6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getProtocol7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getProtocol7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _openConnection8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_openConnection8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _openConnection9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_openConnection9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getRef10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getRef10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getContent11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getContent11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getContent12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getContent12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDefaultPort13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getDefaultPort13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getPort14;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getPort14;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getUserInfo15;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getUserInfo15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _sameFile16;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_sameFile16;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setURLStreamHandlerFactory17;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setURLStreamHandlerFactory17;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toExternalForm18;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toExternalForm18;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL19;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL19;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL20;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL20;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL21;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL21;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL22;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL22;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL23;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL23;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorURL24;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorURL24;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandle" +
             "r;)V")]
@@ -73,7 +73,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 20)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL19, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par3), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par4));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL19, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par3), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par4));
             }
         }
         
@@ -82,7 +82,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL20, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL20, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -91,7 +91,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL21, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL21, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1));
             }
         }
         
@@ -100,7 +100,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL22, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL22, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2));
             }
         }
         
@@ -109,7 +109,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL23, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL23, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2));
             }
         }
         
@@ -118,7 +118,7 @@ namespace java.net {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 18)){
-            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.@__ctorURL24, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par3));
+            @__env.NewObject(global::java.net.URL.staticClass, global::java.net.URL.j4n__ctorURL24, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par3));
             }
         }
         
@@ -134,39 +134,39 @@ namespace java.net {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.net.URL.staticClass = @__class;
-            global::java.net.URL._openStream0 = @__env.GetMethodID(global::java.net.URL.staticClass, "openStream", "()Ljava/io/InputStream;");
-            global::java.net.URL._getPath1 = @__env.GetMethodID(global::java.net.URL.staticClass, "getPath", "()Ljava/lang/String;");
-            global::java.net.URL._getAuthority2 = @__env.GetMethodID(global::java.net.URL.staticClass, "getAuthority", "()Ljava/lang/String;");
-            global::java.net.URL._getQuery3 = @__env.GetMethodID(global::java.net.URL.staticClass, "getQuery", "()Ljava/lang/String;");
-            global::java.net.URL._toURI4 = @__env.GetMethodID(global::java.net.URL.staticClass, "toURI", "()Ljava/net/URI;");
-            global::java.net.URL._getFile5 = @__env.GetMethodID(global::java.net.URL.staticClass, "getFile", "()Ljava/lang/String;");
-            global::java.net.URL._getHost6 = @__env.GetMethodID(global::java.net.URL.staticClass, "getHost", "()Ljava/lang/String;");
-            global::java.net.URL._getProtocol7 = @__env.GetMethodID(global::java.net.URL.staticClass, "getProtocol", "()Ljava/lang/String;");
-            global::java.net.URL._openConnection8 = @__env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "(Ljava/net/Proxy;)Ljava/net/URLConnection;");
-            global::java.net.URL._openConnection9 = @__env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "()Ljava/net/URLConnection;");
-            global::java.net.URL._getRef10 = @__env.GetMethodID(global::java.net.URL.staticClass, "getRef", "()Ljava/lang/String;");
-            global::java.net.URL._getContent11 = @__env.GetMethodID(global::java.net.URL.staticClass, "getContent", "()Ljava/lang/Object;");
-            global::java.net.URL._getContent12 = @__env.GetMethodID(global::java.net.URL.staticClass, "getContent", "([Ljava/lang/Class;)Ljava/lang/Object;");
-            global::java.net.URL._getDefaultPort13 = @__env.GetMethodID(global::java.net.URL.staticClass, "getDefaultPort", "()I");
-            global::java.net.URL._getPort14 = @__env.GetMethodID(global::java.net.URL.staticClass, "getPort", "()I");
-            global::java.net.URL._getUserInfo15 = @__env.GetMethodID(global::java.net.URL.staticClass, "getUserInfo", "()Ljava/lang/String;");
-            global::java.net.URL._sameFile16 = @__env.GetMethodID(global::java.net.URL.staticClass, "sameFile", "(Ljava/net/URL;)Z");
-            global::java.net.URL._setURLStreamHandlerFactory17 = @__env.GetStaticMethodID(global::java.net.URL.staticClass, "setURLStreamHandlerFactory", "(Ljava/net/URLStreamHandlerFactory;)V");
-            global::java.net.URL._toExternalForm18 = @__env.GetMethodID(global::java.net.URL.staticClass, "toExternalForm", "()Ljava/lang/String;");
-            global::java.net.URL.@__ctorURL19 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandle" +
+            global::java.net.URL.j4n_openStream0 = @__env.GetMethodID(global::java.net.URL.staticClass, "openStream", "()Ljava/io/InputStream;");
+            global::java.net.URL.j4n_getPath1 = @__env.GetMethodID(global::java.net.URL.staticClass, "getPath", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_getAuthority2 = @__env.GetMethodID(global::java.net.URL.staticClass, "getAuthority", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_getQuery3 = @__env.GetMethodID(global::java.net.URL.staticClass, "getQuery", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_toURI4 = @__env.GetMethodID(global::java.net.URL.staticClass, "toURI", "()Ljava/net/URI;");
+            global::java.net.URL.j4n_getFile5 = @__env.GetMethodID(global::java.net.URL.staticClass, "getFile", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_getHost6 = @__env.GetMethodID(global::java.net.URL.staticClass, "getHost", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_getProtocol7 = @__env.GetMethodID(global::java.net.URL.staticClass, "getProtocol", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_openConnection8 = @__env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "(Ljava/net/Proxy;)Ljava/net/URLConnection;");
+            global::java.net.URL.j4n_openConnection9 = @__env.GetMethodID(global::java.net.URL.staticClass, "openConnection", "()Ljava/net/URLConnection;");
+            global::java.net.URL.j4n_getRef10 = @__env.GetMethodID(global::java.net.URL.staticClass, "getRef", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_getContent11 = @__env.GetMethodID(global::java.net.URL.staticClass, "getContent", "()Ljava/lang/Object;");
+            global::java.net.URL.j4n_getContent12 = @__env.GetMethodID(global::java.net.URL.staticClass, "getContent", "([Ljava/lang/Class;)Ljava/lang/Object;");
+            global::java.net.URL.j4n_getDefaultPort13 = @__env.GetMethodID(global::java.net.URL.staticClass, "getDefaultPort", "()I");
+            global::java.net.URL.j4n_getPort14 = @__env.GetMethodID(global::java.net.URL.staticClass, "getPort", "()I");
+            global::java.net.URL.j4n_getUserInfo15 = @__env.GetMethodID(global::java.net.URL.staticClass, "getUserInfo", "()Ljava/lang/String;");
+            global::java.net.URL.j4n_sameFile16 = @__env.GetMethodID(global::java.net.URL.staticClass, "sameFile", "(Ljava/net/URL;)Z");
+            global::java.net.URL.j4n_setURLStreamHandlerFactory17 = @__env.GetStaticMethodID(global::java.net.URL.staticClass, "setURLStreamHandlerFactory", "(Ljava/net/URLStreamHandlerFactory;)V");
+            global::java.net.URL.j4n_toExternalForm18 = @__env.GetMethodID(global::java.net.URL.staticClass, "toExternalForm", "()Ljava/lang/String;");
+            global::java.net.URL.j4n__ctorURL19 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandle" +
                     "r;)V");
-            global::java.net.URL.@__ctorURL20 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.net.URL.@__ctorURL21 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;)V");
-            global::java.net.URL.@__ctorURL22 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V");
-            global::java.net.URL.@__ctorURL23 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
-            global::java.net.URL.@__ctorURL24 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V");
+            global::java.net.URL.j4n__ctorURL20 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.net.URL.j4n__ctorURL21 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;)V");
+            global::java.net.URL.j4n__ctorURL22 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V");
+            global::java.net.URL.j4n__ctorURL23 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+            global::java.net.URL.j4n__ctorURL24 = @__env.GetMethodID(global::java.net.URL.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/io/InputStream;")]
         public global::java.io.InputStream openStream() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._openStream0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_openStream0));
             }
         }
         
@@ -174,7 +174,7 @@ namespace java.net {
         public virtual global::java.lang.String getPath() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getPath1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getPath1));
             }
         }
         
@@ -182,7 +182,7 @@ namespace java.net {
         public virtual global::java.lang.String getAuthority() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getAuthority2));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getAuthority2));
             }
         }
         
@@ -190,7 +190,7 @@ namespace java.net {
         public virtual global::java.lang.String getQuery() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getQuery3));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getQuery3));
             }
         }
         
@@ -198,7 +198,7 @@ namespace java.net {
         public virtual global::java.lang.Object toURI() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._toURI4));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_toURI4));
             }
         }
         
@@ -206,7 +206,7 @@ namespace java.net {
         public virtual global::java.lang.String getFile() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getFile5));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getFile5));
             }
         }
         
@@ -214,7 +214,7 @@ namespace java.net {
         public virtual global::java.lang.String getHost() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getHost6));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getHost6));
             }
         }
         
@@ -222,7 +222,7 @@ namespace java.net {
         public virtual global::java.lang.String getProtocol() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getProtocol7));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getProtocol7));
             }
         }
         
@@ -230,7 +230,7 @@ namespace java.net {
         public virtual global::java.lang.Object openConnection(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._openConnection8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_openConnection8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -238,7 +238,7 @@ namespace java.net {
         public virtual global::java.lang.Object openConnection() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._openConnection9));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_openConnection9));
             }
         }
         
@@ -246,7 +246,7 @@ namespace java.net {
         public virtual global::java.lang.String getRef() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getRef10));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getRef10));
             }
         }
         
@@ -254,7 +254,7 @@ namespace java.net {
         public global::java.lang.Object getContent() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getContent11));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getContent11));
             }
         }
         
@@ -262,7 +262,7 @@ namespace java.net {
         public global::java.lang.Object getContent(java.lang.Class[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getContent12, global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getContent12, global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par0)));
             }
         }
         
@@ -270,7 +270,7 @@ namespace java.net {
         public virtual int getDefaultPort() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.net.URL._getDefaultPort13)));
+            return ((int)(@__env.CallIntMethod(this, global::java.net.URL.j4n_getDefaultPort13)));
             }
         }
         
@@ -278,7 +278,7 @@ namespace java.net {
         public virtual int getPort() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.net.URL._getPort14)));
+            return ((int)(@__env.CallIntMethod(this, global::java.net.URL.j4n_getPort14)));
             }
         }
         
@@ -286,7 +286,7 @@ namespace java.net {
         public virtual global::java.lang.String getUserInfo() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._getUserInfo15));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_getUserInfo15));
             }
         }
         
@@ -294,7 +294,7 @@ namespace java.net {
         public virtual bool sameFile(global::java.net.URL par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.net.URL._sameFile16, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.net.URL.j4n_sameFile16, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
             }
         }
         
@@ -302,7 +302,7 @@ namespace java.net {
         public static void setURLStreamHandlerFactory(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.net.URL.staticClass, global::java.net.URL._setURLStreamHandlerFactory17, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallStaticVoidMethod(global::java.net.URL.staticClass, global::java.net.URL.j4n_setURLStreamHandlerFactory17, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
             }
         }
         
@@ -310,7 +310,7 @@ namespace java.net {
         public virtual global::java.lang.String toExternalForm() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL._toExternalForm18));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.net.URL.j4n_toExternalForm18));
             }
         }
         

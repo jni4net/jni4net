@@ -18,20 +18,20 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIllegalArgumentException0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIllegalArgumentException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIllegalArgumentException1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIllegalArgumentException1;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIllegalArgumentException2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIllegalArgumentException2;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIllegalArgumentException3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIllegalArgumentException3;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public IllegalArgumentException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -40,7 +40,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
             }
         }
         
@@ -49,7 +49,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException2, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
+            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException2, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
             }
         }
         
@@ -58,7 +58,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException3, this);
+            @__env.NewObject(global::java.lang.IllegalArgumentException.staticClass, global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException3, this);
             }
         }
         
@@ -78,10 +78,10 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.IllegalArgumentException.staticClass = @__class;
-            global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException0 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException1 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
-            global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException2 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
-            global::java.lang.IllegalArgumentException.@__ctorIllegalArgumentException3 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "()V");
+            global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException0 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException1 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
+            global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException2 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.IllegalArgumentException.j4n__ctorIllegalArgumentException3 = @__env.GetMethodID(global::java.lang.IllegalArgumentException.staticClass, "<init>", "()V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

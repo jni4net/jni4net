@@ -18,14 +18,14 @@ namespace java.nio {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorBufferOverflowException0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorBufferOverflowException0;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public BufferOverflowException() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.nio.BufferOverflowException.staticClass, global::java.nio.BufferOverflowException.@__ctorBufferOverflowException0, this);
+            @__env.NewObject(global::java.nio.BufferOverflowException.staticClass, global::java.nio.BufferOverflowException.j4n__ctorBufferOverflowException0, this);
             }
         }
         
@@ -45,7 +45,7 @@ namespace java.nio {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.nio.BufferOverflowException.staticClass = @__class;
-            global::java.nio.BufferOverflowException.@__ctorBufferOverflowException0 = @__env.GetMethodID(global::java.nio.BufferOverflowException.staticClass, "<init>", "()V");
+            global::java.nio.BufferOverflowException.j4n__ctorBufferOverflowException0 = @__env.GetMethodID(global::java.nio.BufferOverflowException.staticClass, "<init>", "()V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

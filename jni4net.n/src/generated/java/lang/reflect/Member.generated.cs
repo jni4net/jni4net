@@ -43,7 +43,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member._PUBLIC4)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member.j4n_PUBLIC4)));
             }
             }
         }
@@ -53,7 +53,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member._DECLARED5)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.@__Member.staticClass, global::java.lang.reflect.@__Member.j4n_DECLARED5)));
             }
             }
         }
@@ -67,17 +67,17 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getModifiers0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getModifiers0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getName1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getName1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getDeclaringClass2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getDeclaringClass2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSynthetic3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isSynthetic3;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PUBLIC4;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PUBLIC4;
         
-        internal static global::net.sf.jni4net.jni.FieldId _DECLARED5;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_DECLARED5;
         
         private @__Member(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -85,39 +85,39 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__Member.staticClass = @__class;
-            global::java.lang.reflect.@__Member._getModifiers0 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getModifiers", "()I");
-            global::java.lang.reflect.@__Member._getName1 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getName", "()Ljava/lang/String;");
-            global::java.lang.reflect.@__Member._getDeclaringClass2 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getDeclaringClass", "()Ljava/lang/Class;");
-            global::java.lang.reflect.@__Member._isSynthetic3 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "isSynthetic", "()Z");
-            global::java.lang.reflect.@__Member._PUBLIC4 = @__env.GetStaticFieldID(global::java.lang.reflect.@__Member.staticClass, "PUBLIC", "I");
-            global::java.lang.reflect.@__Member._DECLARED5 = @__env.GetStaticFieldID(global::java.lang.reflect.@__Member.staticClass, "DECLARED", "I");
+            global::java.lang.reflect.@__Member.j4n_getModifiers0 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getModifiers", "()I");
+            global::java.lang.reflect.@__Member.j4n_getName1 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getName", "()Ljava/lang/String;");
+            global::java.lang.reflect.@__Member.j4n_getDeclaringClass2 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "getDeclaringClass", "()Ljava/lang/Class;");
+            global::java.lang.reflect.@__Member.j4n_isSynthetic3 = @__env.GetMethodID(global::java.lang.reflect.@__Member.staticClass, "isSynthetic", "()Z");
+            global::java.lang.reflect.@__Member.j4n_PUBLIC4 = @__env.GetStaticFieldID(global::java.lang.reflect.@__Member.staticClass, "PUBLIC", "I");
+            global::java.lang.reflect.@__Member.j4n_DECLARED5 = @__env.GetStaticFieldID(global::java.lang.reflect.@__Member.staticClass, "DECLARED", "I");
         }
         
         public int getModifiers() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.reflect.@__Member._getModifiers0)));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.reflect.@__Member.j4n_getModifiers0)));
             }
         }
         
         public global::java.lang.String getName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member._getName1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member.j4n_getName1));
             }
         }
         
         public global::java.lang.Class getDeclaringClass() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member._getDeclaringClass2));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__Member.j4n_getDeclaringClass2));
             }
         }
         
         public bool isSynthetic() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.@__Member._isSynthetic3)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.reflect.@__Member.j4n_isSynthetic3)));
             }
         }
         

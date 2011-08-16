@@ -38,7 +38,7 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _close0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_close0;
         
         private @__Closeable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -46,13 +46,13 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.@__Closeable.staticClass = @__class;
-            global::java.io.@__Closeable._close0 = @__env.GetMethodID(global::java.io.@__Closeable.staticClass, "close", "()V");
+            global::java.io.@__Closeable.j4n_close0 = @__env.GetMethodID(global::java.io.@__Closeable.staticClass, "close", "()V");
         }
         
         public void close() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.@__Closeable._close0);
+            @__env.CallVoidMethod(this, global::java.io.@__Closeable.j4n_close0);
             }
         }
         

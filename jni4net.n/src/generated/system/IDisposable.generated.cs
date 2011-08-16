@@ -29,7 +29,7 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Dispose0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Dispose0;
         
         private @__IDisposable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,13 +37,13 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__IDisposable.staticClass = @__class;
-            global::System.@__IDisposable._Dispose0 = @__env.GetMethodID(global::System.@__IDisposable.staticClass, "Dispose", "()V");
+            global::System.@__IDisposable.j4n_Dispose0 = @__env.GetMethodID(global::System.@__IDisposable.staticClass, "Dispose", "()V");
         }
         
         public void Dispose() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::System.@__IDisposable._Dispose0);
+            @__env.CallVoidMethod(this, global::System.@__IDisposable.j4n_Dispose0);
             }
         }
         

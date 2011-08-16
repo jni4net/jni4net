@@ -17,28 +17,28 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _size2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_size2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _reset3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_reset3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toByteArray4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toByteArray4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeTo5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeTo5;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayOutputStream6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByteArrayOutputStream6;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByteArrayOutputStream7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByteArrayOutputStream7;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public ByteArrayOutputStream(int par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream6, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.j4n__ctorByteArrayOutputStream6, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -47,7 +47,7 @@ namespace java.io {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream7, this);
+            @__env.NewObject(global::java.io.ByteArrayOutputStream.staticClass, global::java.io.ByteArrayOutputStream.j4n__ctorByteArrayOutputStream7, this);
             }
         }
         
@@ -63,21 +63,21 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.ByteArrayOutputStream.staticClass = @__class;
-            global::java.io.ByteArrayOutputStream._toString0 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toString", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::java.io.ByteArrayOutputStream._toString1 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toString", "(I)Ljava/lang/String;");
-            global::java.io.ByteArrayOutputStream._size2 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "size", "()I");
-            global::java.io.ByteArrayOutputStream._reset3 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "reset", "()V");
-            global::java.io.ByteArrayOutputStream._toByteArray4 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toByteArray", "()[B");
-            global::java.io.ByteArrayOutputStream._writeTo5 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "writeTo", "(Ljava/io/OutputStream;)V");
-            global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream6 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "(I)V");
-            global::java.io.ByteArrayOutputStream.@__ctorByteArrayOutputStream7 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "()V");
+            global::java.io.ByteArrayOutputStream.j4n_toString0 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toString", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::java.io.ByteArrayOutputStream.j4n_toString1 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toString", "(I)Ljava/lang/String;");
+            global::java.io.ByteArrayOutputStream.j4n_size2 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "size", "()I");
+            global::java.io.ByteArrayOutputStream.j4n_reset3 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "reset", "()V");
+            global::java.io.ByteArrayOutputStream.j4n_toByteArray4 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "toByteArray", "()[B");
+            global::java.io.ByteArrayOutputStream.j4n_writeTo5 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "writeTo", "(Ljava/io/OutputStream;)V");
+            global::java.io.ByteArrayOutputStream.j4n__ctorByteArrayOutputStream6 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "(I)V");
+            global::java.io.ByteArrayOutputStream.j4n__ctorByteArrayOutputStream7 = @__env.GetMethodID(global::java.io.ByteArrayOutputStream.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public virtual global::java.lang.String toString(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream._toString0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream.j4n_toString0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -85,7 +85,7 @@ namespace java.io {
         public virtual global::java.lang.String toString(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream._toString1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream.j4n_toString1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -93,7 +93,7 @@ namespace java.io {
         public virtual int size() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.io.ByteArrayOutputStream._size2)));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.ByteArrayOutputStream.j4n_size2)));
             }
         }
         
@@ -101,7 +101,7 @@ namespace java.io {
         public virtual void reset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.ByteArrayOutputStream._reset3);
+            @__env.CallVoidMethod(this, global::java.io.ByteArrayOutputStream.j4n_reset3);
             }
         }
         
@@ -109,7 +109,7 @@ namespace java.io {
         public virtual byte[] toByteArray() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream._toByteArray4));
+            return global::net.sf.jni4net.utils.Convertor.ArrayPrimJ2Cbyte(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ByteArrayOutputStream.j4n_toByteArray4));
             }
         }
         
@@ -117,7 +117,7 @@ namespace java.io {
         public virtual void writeTo(global::java.io.OutputStream par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ByteArrayOutputStream._writeTo5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ByteArrayOutputStream.j4n_writeTo5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         

@@ -17,42 +17,42 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _compareTo0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_compareTo0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _compareTo1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_compareTo1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _decode3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_decode3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _valueOf4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_valueOf4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _valueOf5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_valueOf5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _valueOf6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_valueOf6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _parseByte7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_parseByte7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _parseByte8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_parseByte8;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MIN_VALUE9;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_MIN_VALUE9;
         
-        internal static global::net.sf.jni4net.jni.FieldId _MAX_VALUE10;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_MAX_VALUE10;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TYPE11;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TYPE11;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SIZE12;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SIZE12;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByte13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByte13;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorByte14;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorByte14;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(B)V")]
         public Byte(byte par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctorByte13, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n__ctorByte13, this, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -61,7 +61,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.@__ctorByte14, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n__ctorByte14, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -80,7 +80,7 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.lang.Byte.staticClass, global::java.lang.Byte._MIN_VALUE9)));
+                return ((byte)(@__env.GetStaticByteField(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_MIN_VALUE9)));
             }
             }
         }
@@ -90,7 +90,7 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.lang.Byte.staticClass, global::java.lang.Byte._MAX_VALUE10)));
+                return ((byte)(@__env.GetStaticByteField(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_MAX_VALUE10)));
             }
             }
         }
@@ -100,7 +100,7 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._TYPE11));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_TYPE11));
             }
             }
         }
@@ -110,35 +110,35 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.Byte.staticClass, global::java.lang.Byte._SIZE12)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_SIZE12)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.Byte.staticClass = @__class;
-            global::java.lang.Byte._compareTo0 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "compareTo", "(Ljava/lang/Object;)I");
-            global::java.lang.Byte._compareTo1 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "compareTo", "(Ljava/lang/Byte;)I");
-            global::java.lang.Byte._toString2 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "toString", "(B)Ljava/lang/String;");
-            global::java.lang.Byte._decode3 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Byte;");
-            global::java.lang.Byte._valueOf4 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(B)Ljava/lang/Byte;");
-            global::java.lang.Byte._valueOf5 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Byte;");
-            global::java.lang.Byte._valueOf6 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Byte;");
-            global::java.lang.Byte._parseByte7 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "parseByte", "(Ljava/lang/String;)B");
-            global::java.lang.Byte._parseByte8 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "parseByte", "(Ljava/lang/String;I)B");
-            global::java.lang.Byte._MIN_VALUE9 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "MIN_VALUE", "B");
-            global::java.lang.Byte._MAX_VALUE10 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "MAX_VALUE", "B");
-            global::java.lang.Byte._TYPE11 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "TYPE", "Ljava/lang/Class;");
-            global::java.lang.Byte._SIZE12 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "SIZE", "I");
-            global::java.lang.Byte.@__ctorByte13 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(B)V");
-            global::java.lang.Byte.@__ctorByte14 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.Byte.j4n_compareTo0 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "compareTo", "(Ljava/lang/Object;)I");
+            global::java.lang.Byte.j4n_compareTo1 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "compareTo", "(Ljava/lang/Byte;)I");
+            global::java.lang.Byte.j4n_toString2 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "toString", "(B)Ljava/lang/String;");
+            global::java.lang.Byte.j4n_decode3 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "decode", "(Ljava/lang/String;)Ljava/lang/Byte;");
+            global::java.lang.Byte.j4n_valueOf4 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(B)Ljava/lang/Byte;");
+            global::java.lang.Byte.j4n_valueOf5 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(Ljava/lang/String;I)Ljava/lang/Byte;");
+            global::java.lang.Byte.j4n_valueOf6 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "valueOf", "(Ljava/lang/String;)Ljava/lang/Byte;");
+            global::java.lang.Byte.j4n_parseByte7 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "parseByte", "(Ljava/lang/String;)B");
+            global::java.lang.Byte.j4n_parseByte8 = @__env.GetStaticMethodID(global::java.lang.Byte.staticClass, "parseByte", "(Ljava/lang/String;I)B");
+            global::java.lang.Byte.j4n_MIN_VALUE9 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "MIN_VALUE", "B");
+            global::java.lang.Byte.j4n_MAX_VALUE10 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "MAX_VALUE", "B");
+            global::java.lang.Byte.j4n_TYPE11 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "TYPE", "Ljava/lang/Class;");
+            global::java.lang.Byte.j4n_SIZE12 = @__env.GetStaticFieldID(global::java.lang.Byte.staticClass, "SIZE", "I");
+            global::java.lang.Byte.j4n__ctorByte13 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(B)V");
+            global::java.lang.Byte.j4n__ctorByte14 = @__env.GetMethodID(global::java.lang.Byte.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;)I")]
         public virtual int compareTo(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Byte._compareTo0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Byte.j4n_compareTo0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
@@ -146,7 +146,7 @@ namespace java.lang {
         public virtual int compareTo(global::java.lang.Byte par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Byte._compareTo1, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Byte.j4n_compareTo1, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
             }
         }
         
@@ -154,7 +154,7 @@ namespace java.lang {
         public static global::java.lang.String toString(byte par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._toString2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_toString2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -162,7 +162,7 @@ namespace java.lang {
         public static global::java.lang.Byte decode(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._decode3, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_decode3, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -170,7 +170,7 @@ namespace java.lang {
         public static global::java.lang.Byte valueOf(byte par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._valueOf4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_valueOf4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -178,7 +178,7 @@ namespace java.lang {
         public static global::java.lang.Byte valueOf(global::java.lang.String par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._valueOf5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_valueOf5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
             }
         }
         
@@ -186,7 +186,7 @@ namespace java.lang {
         public static global::java.lang.Byte valueOf(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte._valueOf6, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Byte>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_valueOf6, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -194,7 +194,7 @@ namespace java.lang {
         public static byte parseByte(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((byte)(@__env.CallStaticByteMethod(global::java.lang.Byte.staticClass, global::java.lang.Byte._parseByte7, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
+            return ((byte)(@__env.CallStaticByteMethod(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_parseByte7, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0))));
             }
         }
         
@@ -202,7 +202,7 @@ namespace java.lang {
         public static byte parseByte(global::java.lang.String par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return ((byte)(@__env.CallStaticByteMethod(global::java.lang.Byte.staticClass, global::java.lang.Byte._parseByte8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
+            return ((byte)(@__env.CallStaticByteMethod(global::java.lang.Byte.staticClass, global::java.lang.Byte.j4n_parseByte8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1))));
             }
         }
         

@@ -47,13 +47,13 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _charAt1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_charAt1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _length2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_length2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _subSequence3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_subSequence3;
         
         private @__CharSequence(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -61,37 +61,37 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.@__CharSequence.staticClass = @__class;
-            global::java.lang.@__CharSequence._toString0 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.@__CharSequence._charAt1 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "charAt", "(I)C");
-            global::java.lang.@__CharSequence._length2 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "length", "()I");
-            global::java.lang.@__CharSequence._subSequence3 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "subSequence", "(II)Ljava/lang/CharSequence;");
+            global::java.lang.@__CharSequence.j4n_toString0 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "toString", "()Ljava/lang/String;");
+            global::java.lang.@__CharSequence.j4n_charAt1 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "charAt", "(I)C");
+            global::java.lang.@__CharSequence.j4n_length2 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "length", "()I");
+            global::java.lang.@__CharSequence.j4n_subSequence3 = @__env.GetMethodID(global::java.lang.@__CharSequence.staticClass, "subSequence", "(II)Ljava/lang/CharSequence;");
         }
         
         public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._toString0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence.j4n_toString0));
             }
         }
         
         public char charAt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((char)(@__env.CallCharMethod(this, global::java.lang.@__CharSequence._charAt1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((char)(@__env.CallCharMethod(this, global::java.lang.@__CharSequence.j4n_charAt1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
         public int length() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.@__CharSequence._length2)));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.@__CharSequence.j4n_length2)));
             }
         }
         
         public global::java.lang.CharSequence subSequence(int par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence._subSequence3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.CharSequence>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__CharSequence.j4n_subSequence3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1)));
             }
         }
         

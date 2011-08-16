@@ -47,13 +47,13 @@ namespace java.lang.annotation {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hashCode0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hashCode0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _equals1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_equals1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _annotationType3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_annotationType3;
         
         private @__Annotation(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -61,37 +61,37 @@ namespace java.lang.annotation {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.annotation.@__Annotation.staticClass = @__class;
-            global::java.lang.annotation.@__Annotation._hashCode0 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "hashCode", "()I");
-            global::java.lang.annotation.@__Annotation._equals1 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::java.lang.annotation.@__Annotation._toString2 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.annotation.@__Annotation._annotationType3 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "annotationType", "()Ljava/lang/Class;");
+            global::java.lang.annotation.@__Annotation.j4n_hashCode0 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "hashCode", "()I");
+            global::java.lang.annotation.@__Annotation.j4n_equals1 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::java.lang.annotation.@__Annotation.j4n_toString2 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "toString", "()Ljava/lang/String;");
+            global::java.lang.annotation.@__Annotation.j4n_annotationType3 = @__env.GetMethodID(global::java.lang.annotation.@__Annotation.staticClass, "annotationType", "()Ljava/lang/Class;");
         }
         
         public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.annotation.@__Annotation._hashCode0)));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.annotation.@__Annotation.j4n_hashCode0)));
             }
         }
         
         public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation._equals1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.annotation.@__Annotation.j4n_equals1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
         public global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._toString2));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation.j4n_toString2));
             }
         }
         
         public global::java.lang.Class annotationType() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation._annotationType3));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.annotation.@__Annotation.j4n_annotationType3));
             }
         }
         

@@ -17,23 +17,23 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _close0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_close0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _mark1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_mark1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _reset2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_reset2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _read3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_read3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _read4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_read4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _read5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_read5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _available6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_available6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _skip7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_skip7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _markSupported8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_markSupported8;
         
         protected InputStream(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -47,22 +47,22 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.InputStream.staticClass = @__class;
-            global::java.io.InputStream._close0 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "close", "()V");
-            global::java.io.InputStream._mark1 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "mark", "(I)V");
-            global::java.io.InputStream._reset2 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "reset", "()V");
-            global::java.io.InputStream._read3 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([BII)I");
-            global::java.io.InputStream._read4 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([B)I");
-            global::java.io.InputStream._read5 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "()I");
-            global::java.io.InputStream._available6 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "available", "()I");
-            global::java.io.InputStream._skip7 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "skip", "(J)J");
-            global::java.io.InputStream._markSupported8 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "markSupported", "()Z");
+            global::java.io.InputStream.j4n_close0 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "close", "()V");
+            global::java.io.InputStream.j4n_mark1 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "mark", "(I)V");
+            global::java.io.InputStream.j4n_reset2 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "reset", "()V");
+            global::java.io.InputStream.j4n_read3 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([BII)I");
+            global::java.io.InputStream.j4n_read4 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "([B)I");
+            global::java.io.InputStream.j4n_read5 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "read", "()I");
+            global::java.io.InputStream.j4n_available6 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "available", "()I");
+            global::java.io.InputStream.j4n_skip7 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "skip", "(J)J");
+            global::java.io.InputStream.j4n_markSupported8 = @__env.GetMethodID(global::java.io.InputStream.staticClass, "markSupported", "()Z");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public virtual void close() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.InputStream._close0);
+            @__env.CallVoidMethod(this, global::java.io.InputStream.j4n_close0);
             }
         }
         
@@ -70,7 +70,7 @@ namespace java.io {
         public virtual void mark(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.InputStream._mark1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.InputStream.j4n_mark1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -78,7 +78,7 @@ namespace java.io {
         public virtual void reset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.InputStream._reset2);
+            @__env.CallVoidMethod(this, global::java.io.InputStream.j4n_reset2);
             }
         }
         
@@ -86,7 +86,7 @@ namespace java.io {
         public virtual int read(byte[] par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read3, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream.j4n_read3, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2))));
             }
         }
         
@@ -94,7 +94,7 @@ namespace java.io {
         public virtual int read(byte[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read4, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0))));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream.j4n_read4, global::net.sf.jni4net.utils.Convertor.ParArrayPrimC2J(@__env, par0))));
             }
         }
         
@@ -102,7 +102,7 @@ namespace java.io {
         public virtual int read() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._read5)));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream.j4n_read5)));
             }
         }
         
@@ -110,7 +110,7 @@ namespace java.io {
         public virtual int available() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream._available6)));
+            return ((int)(@__env.CallIntMethod(this, global::java.io.InputStream.j4n_available6)));
             }
         }
         
@@ -118,7 +118,7 @@ namespace java.io {
         public virtual long skip(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((long)(@__env.CallLongMethod(this, global::java.io.InputStream._skip7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((long)(@__env.CallLongMethod(this, global::java.io.InputStream.j4n_skip7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -126,7 +126,7 @@ namespace java.io {
         public virtual bool markSupported() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.InputStream._markSupported8)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.io.InputStream.j4n_markSupported8)));
             }
         }
         
