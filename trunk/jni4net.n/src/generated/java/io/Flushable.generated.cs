@@ -38,7 +38,7 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _flush0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_flush0;
         
         private @__Flushable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -46,13 +46,13 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.@__Flushable.staticClass = @__class;
-            global::java.io.@__Flushable._flush0 = @__env.GetMethodID(global::java.io.@__Flushable.staticClass, "flush", "()V");
+            global::java.io.@__Flushable.j4n_flush0 = @__env.GetMethodID(global::java.io.@__Flushable.staticClass, "flush", "()V");
         }
         
         public void flush() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.@__Flushable._flush0);
+            @__env.CallVoidMethod(this, global::java.io.@__Flushable.j4n_flush0);
             }
         }
         

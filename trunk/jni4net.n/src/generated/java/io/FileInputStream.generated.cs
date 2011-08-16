@@ -17,22 +17,22 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getChannel0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getChannel0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFD1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getFD1;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorFileInputStream2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorFileInputStream2;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorFileInputStream3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorFileInputStream3;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorFileInputStream4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorFileInputStream4;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/File;)V")]
         public FileInputStream(global::java.io.File par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.@__ctorFileInputStream2, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.j4n__ctorFileInputStream2, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -41,7 +41,7 @@ namespace java.io {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.@__ctorFileInputStream3, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.j4n__ctorFileInputStream3, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -50,7 +50,7 @@ namespace java.io {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.@__ctorFileInputStream4, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.FileInputStream.staticClass, global::java.io.FileInputStream.j4n__ctorFileInputStream4, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -66,18 +66,18 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.FileInputStream.staticClass = @__class;
-            global::java.io.FileInputStream._getChannel0 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "getChannel", "()Ljava/nio/channels/FileChannel;");
-            global::java.io.FileInputStream._getFD1 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "getFD", "()Ljava/io/FileDescriptor;");
-            global::java.io.FileInputStream.@__ctorFileInputStream2 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/io/File;)V");
-            global::java.io.FileInputStream.@__ctorFileInputStream3 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/io/FileDescriptor;)V");
-            global::java.io.FileInputStream.@__ctorFileInputStream4 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.io.FileInputStream.j4n_getChannel0 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "getChannel", "()Ljava/nio/channels/FileChannel;");
+            global::java.io.FileInputStream.j4n_getFD1 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "getFD", "()Ljava/io/FileDescriptor;");
+            global::java.io.FileInputStream.j4n__ctorFileInputStream2 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/io/File;)V");
+            global::java.io.FileInputStream.j4n__ctorFileInputStream3 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/io/FileDescriptor;)V");
+            global::java.io.FileInputStream.j4n__ctorFileInputStream4 = @__env.GetMethodID(global::java.io.FileInputStream.staticClass, "<init>", "(Ljava/lang/String;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/channels/FileChannel;")]
         public virtual global::java.lang.Object getChannel() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.FileInputStream._getChannel0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.FileInputStream.j4n_getChannel0));
             }
         }
         
@@ -85,7 +85,7 @@ namespace java.io {
         public global::java.lang.Object getFD() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.FileInputStream._getFD1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.FileInputStream.j4n_getFD1));
             }
         }
         

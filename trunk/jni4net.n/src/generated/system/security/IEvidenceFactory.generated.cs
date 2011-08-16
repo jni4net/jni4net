@@ -29,7 +29,7 @@ namespace System.Security {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Evidence0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Evidence0;
         
         private @__IEvidenceFactory(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -39,14 +39,14 @@ namespace System.Security {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Security.Policy.Evidence>(@__env, @__env.CallObjectMethodPtr(this, global::System.Security.@__IEvidenceFactory._Evidence0));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Security.Policy.Evidence>(@__env, @__env.CallObjectMethodPtr(this, global::System.Security.@__IEvidenceFactory.j4n_Evidence0));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Security.@__IEvidenceFactory.staticClass = @__class;
-            global::System.Security.@__IEvidenceFactory._Evidence0 = @__env.GetMethodID(global::System.Security.@__IEvidenceFactory.staticClass, "getEvidence", "()Lsystem/Object;");
+            global::System.Security.@__IEvidenceFactory.j4n_Evidence0 = @__env.GetMethodID(global::System.Security.@__IEvidenceFactory.staticClass, "getEvidence", "()Lsystem/Object;");
         }
         
         private static global::System.Collections.Generic.List<global::net.sf.jni4net.jni.JNINativeMethod> @__Init(global::net.sf.jni4net.jni.JNIEnv @__env, global::java.lang.Class @__class) {

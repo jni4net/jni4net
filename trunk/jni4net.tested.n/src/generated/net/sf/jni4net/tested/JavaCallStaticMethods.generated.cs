@@ -17,26 +17,26 @@ namespace net.sf.jni4net.tested {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _stringMethod0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_stringMethod0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _stringArrayMethod1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_stringArrayMethod1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _voidMethod2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_voidMethod2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _testDelegate3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_testDelegate3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _testDelegatePtr4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_testDelegatePtr4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _testDelegateEvent5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_testDelegateEvent5;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorJavaCallStaticMethods6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorJavaCallStaticMethods6;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaCallStaticMethods() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.@__ctorJavaCallStaticMethods6, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n__ctorJavaCallStaticMethods6, this);
             }
         }
         
@@ -52,20 +52,20 @@ namespace net.sf.jni4net.tested {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass = @__class;
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._stringMethod0 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringMethod", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._stringArrayMethod1 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringArrayMethod", "([Ljava/lang/String;)Ljava/lang/String;");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod2 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "voidMethod", "(Ljava/lang/Object;)V");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegate3 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegate", "()Lnet/sf/jni4net/tested/TestDelegate;");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegatePtr4 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegatePtr", "()V");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegateEvent5 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegateEvent", "()V");
-            global::net.sf.jni4net.tested.JavaCallStaticMethods.@__ctorJavaCallStaticMethods6 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_stringMethod0 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringMethod", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_stringArrayMethod1 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "stringArrayMethod", "([Ljava/lang/String;)Ljava/lang/String;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_voidMethod2 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "voidMethod", "(Ljava/lang/Object;)V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegate3 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegate", "()Lnet/sf/jni4net/tested/TestDelegate;");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegatePtr4 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegatePtr", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegateEvent5 = @__env.GetStaticMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "testDelegateEvent", "()V");
+            global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n__ctorJavaCallStaticMethods6 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)Ljava/lang/String;")]
         public static global::java.lang.String stringMethod(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._stringMethod0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_stringMethod0, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -73,7 +73,7 @@ namespace net.sf.jni4net.tested {
         public static global::java.lang.String stringArrayMethod(java.lang.String[] par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._stringArrayMethod1, global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_stringArrayMethod1, global::net.sf.jni4net.utils.Convertor.ParArrayStrongCp2J(@__env, par0)));
             }
         }
         
@@ -81,7 +81,7 @@ namespace net.sf.jni4net.tested {
         public static void voidMethod(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._voidMethod2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_voidMethod2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
             }
         }
         
@@ -89,7 +89,7 @@ namespace net.sf.jni4net.tested {
         public static global::net.sf.jni4net.tested.TestDelegate testDelegate() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegate3));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpDelegate<global::net.sf.jni4net.tested.TestDelegate>(@__env, @__env.CallStaticObjectMethodPtr(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegate3));
             }
         }
         
@@ -97,7 +97,7 @@ namespace net.sf.jni4net.tested {
         public static void testDelegatePtr() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegatePtr4);
+            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegatePtr4);
             }
         }
         
@@ -105,7 +105,7 @@ namespace net.sf.jni4net.tested {
         public static void testDelegateEvent() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods._testDelegateEvent5);
+            @__env.CallStaticVoidMethod(global::net.sf.jni4net.tested.JavaCallStaticMethods.staticClass, global::net.sf.jni4net.tested.JavaCallStaticMethods.j4n_testDelegateEvent5);
             }
         }
         

@@ -141,7 +141,7 @@ namespace net.sf.jni4net.proxygen.generator
             int m = 0;
             foreach (GMethod method in type.MethodsWithInterfaces)
             {
-                string uName = ("_" + method.CLRName + m);
+                string uName = ("j4n_" + method.CLRName + m);
                 if (method.IsField && method.IsStatic)
                 {
                     CreateMethodC2J(method, tgtType, uName, false);
@@ -196,13 +196,13 @@ namespace net.sf.jni4net.proxygen.generator
             int m = 0;
             foreach (GMethod method in type.MethodsWithInterfaces)
             {
-                string uName = ("_" + method.CLRName + m);
+                string uName = ("j4n_" + method.CLRName + m);
                 CreateMethodC2J(method, tgtType, uName, true);
                 m++;
             }
             foreach (GMethod method in type.Constructors)
             {
-                string uName = ("_" + method.CLRName + m);
+                string uName = ("j4n_" + method.CLRName + m);
                 CreateMethodC2J(method, tgtType, uName, false);
                 m++;
             }

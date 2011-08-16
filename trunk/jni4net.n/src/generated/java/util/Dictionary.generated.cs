@@ -17,19 +17,19 @@ namespace java.util {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_put0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_get1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _size2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_size2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remove3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_remove3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _elements4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_elements4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _keys5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_keys5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isEmpty6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isEmpty6;
         
         protected Dictionary(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -43,20 +43,20 @@ namespace java.util {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.util.Dictionary.staticClass = @__class;
-            global::java.util.Dictionary._put0 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._get1 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._size2 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "size", "()I");
-            global::java.util.Dictionary._remove3 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.Dictionary._elements4 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "elements", "()Ljava/util/Enumeration;");
-            global::java.util.Dictionary._keys5 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "keys", "()Ljava/util/Enumeration;");
-            global::java.util.Dictionary._isEmpty6 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "isEmpty", "()Z");
+            global::java.util.Dictionary.j4n_put0 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary.j4n_get1 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary.j4n_size2 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "size", "()I");
+            global::java.util.Dictionary.j4n_remove3 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.Dictionary.j4n_elements4 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "elements", "()Ljava/util/Enumeration;");
+            global::java.util.Dictionary.j4n_keys5 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "keys", "()Ljava/util/Enumeration;");
+            global::java.util.Dictionary.j4n_isEmpty6 = @__env.GetMethodID(global::java.util.Dictionary.staticClass, "isEmpty", "()Z");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")]
         public virtual global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary._put0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary.j4n_put0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par1)));
             }
         }
         
@@ -64,7 +64,7 @@ namespace java.util {
         public virtual global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary._get1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary.j4n_get1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
             }
         }
         
@@ -72,7 +72,7 @@ namespace java.util {
         public virtual int size() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.util.Dictionary._size2)));
+            return ((int)(@__env.CallIntMethod(this, global::java.util.Dictionary.j4n_size2)));
             }
         }
         
@@ -80,7 +80,7 @@ namespace java.util {
         public virtual global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary._remove3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary.j4n_remove3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
             }
         }
         
@@ -88,7 +88,7 @@ namespace java.util {
         public virtual global::java.util.Enumeration elements() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary._elements4));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary.j4n_elements4));
             }
         }
         
@@ -96,7 +96,7 @@ namespace java.util {
         public virtual global::java.util.Enumeration keys() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary._keys5));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Enumeration>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.Dictionary.j4n_keys5));
             }
         }
         
@@ -104,7 +104,7 @@ namespace java.util {
         public virtual bool isEmpty() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Dictionary._isEmpty6)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.Dictionary.j4n_isEmpty6)));
             }
         }
         

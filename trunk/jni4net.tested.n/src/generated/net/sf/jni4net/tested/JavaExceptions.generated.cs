@@ -17,16 +17,16 @@ namespace net.sf.jni4net.tested {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _throwBack0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_throwBack0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorJavaExceptions1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorJavaExceptions1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public JavaExceptions() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::net.sf.jni4net.tested.JavaExceptions.staticClass, global::net.sf.jni4net.tested.JavaExceptions.@__ctorJavaExceptions1, this);
+            @__env.NewObject(global::net.sf.jni4net.tested.JavaExceptions.staticClass, global::net.sf.jni4net.tested.JavaExceptions.j4n__ctorJavaExceptions1, this);
             }
         }
         
@@ -42,15 +42,15 @@ namespace net.sf.jni4net.tested {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.JavaExceptions.staticClass = @__class;
-            global::net.sf.jni4net.tested.JavaExceptions._throwBack0 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "throwBack", "()V");
-            global::net.sf.jni4net.tested.JavaExceptions.@__ctorJavaExceptions1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "<init>", "()V");
+            global::net.sf.jni4net.tested.JavaExceptions.j4n_throwBack0 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "throwBack", "()V");
+            global::net.sf.jni4net.tested.JavaExceptions.j4n__ctorJavaExceptions1 = @__env.GetMethodID(global::net.sf.jni4net.tested.JavaExceptions.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public virtual void throwBack() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaExceptions._throwBack0);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.JavaExceptions.j4n_throwBack0);
             }
         }
         

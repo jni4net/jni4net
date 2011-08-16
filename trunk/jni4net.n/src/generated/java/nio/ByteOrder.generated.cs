@@ -17,11 +17,11 @@ namespace java.nio {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _nativeOrder0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_nativeOrder0;
         
-        internal static global::net.sf.jni4net.jni.FieldId _BIG_ENDIAN1;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_BIG_ENDIAN1;
         
-        internal static global::net.sf.jni4net.jni.FieldId _LITTLE_ENDIAN2;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_LITTLE_ENDIAN2;
         
         protected ByteOrder(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -38,7 +38,7 @@ namespace java.nio {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.GetStaticObjectFieldPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder._BIG_ENDIAN1));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.GetStaticObjectFieldPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder.j4n_BIG_ENDIAN1));
             }
             }
         }
@@ -48,23 +48,23 @@ namespace java.nio {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.GetStaticObjectFieldPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder._LITTLE_ENDIAN2));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.GetStaticObjectFieldPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder.j4n_LITTLE_ENDIAN2));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.nio.ByteOrder.staticClass = @__class;
-            global::java.nio.ByteOrder._nativeOrder0 = @__env.GetStaticMethodID(global::java.nio.ByteOrder.staticClass, "nativeOrder", "()Ljava/nio/ByteOrder;");
-            global::java.nio.ByteOrder._BIG_ENDIAN1 = @__env.GetStaticFieldID(global::java.nio.ByteOrder.staticClass, "BIG_ENDIAN", "Ljava/nio/ByteOrder;");
-            global::java.nio.ByteOrder._LITTLE_ENDIAN2 = @__env.GetStaticFieldID(global::java.nio.ByteOrder.staticClass, "LITTLE_ENDIAN", "Ljava/nio/ByteOrder;");
+            global::java.nio.ByteOrder.j4n_nativeOrder0 = @__env.GetStaticMethodID(global::java.nio.ByteOrder.staticClass, "nativeOrder", "()Ljava/nio/ByteOrder;");
+            global::java.nio.ByteOrder.j4n_BIG_ENDIAN1 = @__env.GetStaticFieldID(global::java.nio.ByteOrder.staticClass, "BIG_ENDIAN", "Ljava/nio/ByteOrder;");
+            global::java.nio.ByteOrder.j4n_LITTLE_ENDIAN2 = @__env.GetStaticFieldID(global::java.nio.ByteOrder.staticClass, "LITTLE_ENDIAN", "Ljava/nio/ByteOrder;");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/nio/ByteOrder;")]
         public static global::java.nio.ByteOrder nativeOrder() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder._nativeOrder0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.nio.ByteOrder>(@__env, @__env.CallStaticObjectMethodPtr(global::java.nio.ByteOrder.staticClass, global::java.nio.ByteOrder.j4n_nativeOrder0));
             }
         }
         

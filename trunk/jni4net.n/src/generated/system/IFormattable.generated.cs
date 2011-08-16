@@ -29,7 +29,7 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _ToString0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_ToString0;
         
         private @__IFormattable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,13 +37,13 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__IFormattable.staticClass = @__class;
-            global::System.@__IFormattable._ToString0 = @__env.GetMethodID(global::System.@__IFormattable.staticClass, "ToString", "(Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;");
+            global::System.@__IFormattable.j4n_ToString0 = @__env.GetMethodID(global::System.@__IFormattable.staticClass, "ToString", "(Ljava/lang/String;Lsystem/IFormatProvider;)Ljava/lang/String;");
         }
         
         public string ToString(string format, global::System.IFormatProvider formatProvider) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormattable._ToString0, global::net.sf.jni4net.utils.Convertor.ParStrongC2JString(@__env, format), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, formatProvider)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CString(@__env, @__env.CallObjectMethodPtr(this, global::System.@__IFormattable.j4n_ToString0, global::net.sf.jni4net.utils.Convertor.ParStrongC2JString(@__env, format), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IFormatProvider>(@__env, formatProvider)));
             }
         }
         

@@ -17,14 +17,14 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorFilterOutputStream0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorFilterOutputStream0;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
         public FilterOutputStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.@__ctorFilterOutputStream0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.FilterOutputStream.staticClass, global::java.io.FilterOutputStream.j4n__ctorFilterOutputStream0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -40,7 +40,7 @@ namespace java.io {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.FilterOutputStream.staticClass = @__class;
-            global::java.io.FilterOutputStream.@__ctorFilterOutputStream0 = @__env.GetMethodID(global::java.io.FilterOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
+            global::java.io.FilterOutputStream.j4n__ctorFilterOutputStream0 = @__env.GetMethodID(global::java.io.FilterOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

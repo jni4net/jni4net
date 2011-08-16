@@ -44,11 +44,11 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _append0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_append0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _append1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_append1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _append2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_append2;
         
         private @__Appendable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -56,29 +56,29 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.@__Appendable.staticClass = @__class;
-            global::java.lang.@__Appendable._append0 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;");
-            global::java.lang.@__Appendable._append1 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(C)Ljava/lang/Appendable;");
-            global::java.lang.@__Appendable._append2 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;");
+            global::java.lang.@__Appendable.j4n_append0 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;");
+            global::java.lang.@__Appendable.j4n_append1 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(C)Ljava/lang/Appendable;");
+            global::java.lang.@__Appendable.j4n_append2 = @__env.GetMethodID(global::java.lang.@__Appendable.staticClass, "append", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;");
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0, int par1, int par2) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable.j4n_append0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par2)));
             }
         }
         
         public global::java.lang.Appendable append(char par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable.j4n_append1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
         public global::java.lang.Appendable append(global::java.lang.CharSequence par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable._append2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Appendable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.@__Appendable.j4n_append2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.CharSequence>(@__env, par0)));
             }
         }
         

@@ -29,7 +29,7 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _CompareTo0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_CompareTo0;
         
         private @__IComparable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,13 +37,13 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__IComparable.staticClass = @__class;
-            global::System.@__IComparable._CompareTo0 = @__env.GetMethodID(global::System.@__IComparable.staticClass, "CompareTo", "(Lsystem/Object;)I");
+            global::System.@__IComparable.j4n_CompareTo0 = @__env.GetMethodID(global::System.@__IComparable.staticClass, "CompareTo", "(Lsystem/Object;)I");
         }
         
         public int CompareTo(object obj) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable._CompareTo0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, obj))));
+            return ((int)(@__env.CallIntMethod(this, global::System.@__IComparable.j4n_CompareTo0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, obj))));
             }
         }
         

@@ -29,17 +29,17 @@ namespace System.Collections {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _MoveNext0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_MoveNext0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Current1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Current1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Reset2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Reset2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Key3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Key3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Value4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Value4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Entry5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Entry5;
         
         private @__IDictionaryEnumerator(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -49,7 +49,7 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Current1));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator.j4n_Current1));
             }
             }
         }
@@ -58,7 +58,7 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Key3));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator.j4n_Key3));
             }
             }
         }
@@ -67,7 +67,7 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Value4));
+                return global::net.sf.jni4net.utils.Convertor.FullJ2C<object>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator.j4n_Value4));
             }
             }
         }
@@ -76,32 +76,32 @@ namespace System.Collections {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Collections.DictionaryEntry>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator._Entry5));
+                return global::net.sf.jni4net.utils.Convertor.StrongJp2C<global::System.Collections.DictionaryEntry>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IDictionaryEnumerator.j4n_Entry5));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Collections.@__IDictionaryEnumerator.staticClass = @__class;
-            global::System.Collections.@__IDictionaryEnumerator._MoveNext0 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "MoveNext", "()Z");
-            global::System.Collections.@__IDictionaryEnumerator._Current1 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getCurrent", "()Lsystem/Object;");
-            global::System.Collections.@__IDictionaryEnumerator._Reset2 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "Reset", "()V");
-            global::System.Collections.@__IDictionaryEnumerator._Key3 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getKey", "()Lsystem/Object;");
-            global::System.Collections.@__IDictionaryEnumerator._Value4 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getValue", "()Lsystem/Object;");
-            global::System.Collections.@__IDictionaryEnumerator._Entry5 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getEntry", "()Lsystem/ValueType;");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_MoveNext0 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "MoveNext", "()Z");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_Current1 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getCurrent", "()Lsystem/Object;");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_Reset2 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "Reset", "()V");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_Key3 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getKey", "()Lsystem/Object;");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_Value4 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getValue", "()Lsystem/Object;");
+            global::System.Collections.@__IDictionaryEnumerator.j4n_Entry5 = @__env.GetMethodID(global::System.Collections.@__IDictionaryEnumerator.staticClass, "getEntry", "()Lsystem/ValueType;");
         }
         
         public bool MoveNext() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__IDictionaryEnumerator._MoveNext0)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::System.Collections.@__IDictionaryEnumerator.j4n_MoveNext0)));
             }
         }
         
         public void Reset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionaryEnumerator._Reset2);
+            @__env.CallVoidMethod(this, global::System.Collections.@__IDictionaryEnumerator.j4n_Reset2);
             }
         }
         

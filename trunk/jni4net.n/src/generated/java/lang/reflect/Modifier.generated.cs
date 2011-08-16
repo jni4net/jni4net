@@ -17,64 +17,64 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isAbstract1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isAbstract1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isInterface2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isInterface2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isProtected3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isProtected3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isPublic4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isPublic4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isFinal5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isFinal5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isNative6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isNative6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isPrivate7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isPrivate7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isStatic8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isStatic8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isStrict9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isStrict9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isSynchronized10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isSynchronized10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isTransient11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isTransient11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isVolatile12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isVolatile12;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PUBLIC13;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PUBLIC13;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PRIVATE14;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PRIVATE14;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PROTECTED15;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PROTECTED15;
         
-        internal static global::net.sf.jni4net.jni.FieldId _STATIC16;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_STATIC16;
         
-        internal static global::net.sf.jni4net.jni.FieldId _FINAL17;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_FINAL17;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SYNCHRONIZED18;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SYNCHRONIZED18;
         
-        internal static global::net.sf.jni4net.jni.FieldId _VOLATILE19;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_VOLATILE19;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TRANSIENT20;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TRANSIENT20;
         
-        internal static global::net.sf.jni4net.jni.FieldId _NATIVE21;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_NATIVE21;
         
-        internal static global::net.sf.jni4net.jni.FieldId _INTERFACE22;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_INTERFACE22;
         
-        internal static global::net.sf.jni4net.jni.FieldId _ABSTRACT23;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_ABSTRACT23;
         
-        internal static global::net.sf.jni4net.jni.FieldId _STRICT24;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_STRICT24;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorModifier25;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorModifier25;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Modifier() : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.@__ctorModifier25, this);
+            @__env.NewObject(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n__ctorModifier25, this);
             }
         }
         
@@ -93,7 +93,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._PUBLIC13)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_PUBLIC13)));
             }
             }
         }
@@ -103,7 +103,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._PRIVATE14)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_PRIVATE14)));
             }
             }
         }
@@ -113,7 +113,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._PROTECTED15)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_PROTECTED15)));
             }
             }
         }
@@ -123,7 +123,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._STATIC16)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_STATIC16)));
             }
             }
         }
@@ -133,7 +133,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._FINAL17)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_FINAL17)));
             }
             }
         }
@@ -143,7 +143,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._SYNCHRONIZED18)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_SYNCHRONIZED18)));
             }
             }
         }
@@ -153,7 +153,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._VOLATILE19)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_VOLATILE19)));
             }
             }
         }
@@ -163,7 +163,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._TRANSIENT20)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_TRANSIENT20)));
             }
             }
         }
@@ -173,7 +173,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._NATIVE21)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_NATIVE21)));
             }
             }
         }
@@ -183,7 +183,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._INTERFACE22)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_INTERFACE22)));
             }
             }
         }
@@ -193,7 +193,7 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._ABSTRACT23)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_ABSTRACT23)));
             }
             }
         }
@@ -203,46 +203,46 @@ namespace java.lang.reflect {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._STRICT24)));
+                return ((int)(@__env.GetStaticIntField(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_STRICT24)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.Modifier.staticClass = @__class;
-            global::java.lang.reflect.Modifier._toString0 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "toString", "(I)Ljava/lang/String;");
-            global::java.lang.reflect.Modifier._isAbstract1 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isAbstract", "(I)Z");
-            global::java.lang.reflect.Modifier._isInterface2 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isInterface", "(I)Z");
-            global::java.lang.reflect.Modifier._isProtected3 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isProtected", "(I)Z");
-            global::java.lang.reflect.Modifier._isPublic4 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPublic", "(I)Z");
-            global::java.lang.reflect.Modifier._isFinal5 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isFinal", "(I)Z");
-            global::java.lang.reflect.Modifier._isNative6 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isNative", "(I)Z");
-            global::java.lang.reflect.Modifier._isPrivate7 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPrivate", "(I)Z");
-            global::java.lang.reflect.Modifier._isStatic8 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStatic", "(I)Z");
-            global::java.lang.reflect.Modifier._isStrict9 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStrict", "(I)Z");
-            global::java.lang.reflect.Modifier._isSynchronized10 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isSynchronized", "(I)Z");
-            global::java.lang.reflect.Modifier._isTransient11 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isTransient", "(I)Z");
-            global::java.lang.reflect.Modifier._isVolatile12 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isVolatile", "(I)Z");
-            global::java.lang.reflect.Modifier._PUBLIC13 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PUBLIC", "I");
-            global::java.lang.reflect.Modifier._PRIVATE14 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PRIVATE", "I");
-            global::java.lang.reflect.Modifier._PROTECTED15 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PROTECTED", "I");
-            global::java.lang.reflect.Modifier._STATIC16 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "STATIC", "I");
-            global::java.lang.reflect.Modifier._FINAL17 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "FINAL", "I");
-            global::java.lang.reflect.Modifier._SYNCHRONIZED18 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "SYNCHRONIZED", "I");
-            global::java.lang.reflect.Modifier._VOLATILE19 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "VOLATILE", "I");
-            global::java.lang.reflect.Modifier._TRANSIENT20 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "TRANSIENT", "I");
-            global::java.lang.reflect.Modifier._NATIVE21 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "NATIVE", "I");
-            global::java.lang.reflect.Modifier._INTERFACE22 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "INTERFACE", "I");
-            global::java.lang.reflect.Modifier._ABSTRACT23 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "ABSTRACT", "I");
-            global::java.lang.reflect.Modifier._STRICT24 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "STRICT", "I");
-            global::java.lang.reflect.Modifier.@__ctorModifier25 = @__env.GetMethodID(global::java.lang.reflect.Modifier.staticClass, "<init>", "()V");
+            global::java.lang.reflect.Modifier.j4n_toString0 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "toString", "(I)Ljava/lang/String;");
+            global::java.lang.reflect.Modifier.j4n_isAbstract1 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isAbstract", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isInterface2 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isInterface", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isProtected3 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isProtected", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isPublic4 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPublic", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isFinal5 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isFinal", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isNative6 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isNative", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isPrivate7 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isPrivate", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isStatic8 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStatic", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isStrict9 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isStrict", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isSynchronized10 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isSynchronized", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isTransient11 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isTransient", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_isVolatile12 = @__env.GetStaticMethodID(global::java.lang.reflect.Modifier.staticClass, "isVolatile", "(I)Z");
+            global::java.lang.reflect.Modifier.j4n_PUBLIC13 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PUBLIC", "I");
+            global::java.lang.reflect.Modifier.j4n_PRIVATE14 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PRIVATE", "I");
+            global::java.lang.reflect.Modifier.j4n_PROTECTED15 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "PROTECTED", "I");
+            global::java.lang.reflect.Modifier.j4n_STATIC16 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "STATIC", "I");
+            global::java.lang.reflect.Modifier.j4n_FINAL17 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "FINAL", "I");
+            global::java.lang.reflect.Modifier.j4n_SYNCHRONIZED18 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "SYNCHRONIZED", "I");
+            global::java.lang.reflect.Modifier.j4n_VOLATILE19 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "VOLATILE", "I");
+            global::java.lang.reflect.Modifier.j4n_TRANSIENT20 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "TRANSIENT", "I");
+            global::java.lang.reflect.Modifier.j4n_NATIVE21 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "NATIVE", "I");
+            global::java.lang.reflect.Modifier.j4n_INTERFACE22 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "INTERFACE", "I");
+            global::java.lang.reflect.Modifier.j4n_ABSTRACT23 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "ABSTRACT", "I");
+            global::java.lang.reflect.Modifier.j4n_STRICT24 = @__env.GetStaticFieldID(global::java.lang.reflect.Modifier.staticClass, "STRICT", "I");
+            global::java.lang.reflect.Modifier.j4n__ctorModifier25 = @__env.GetMethodID(global::java.lang.reflect.Modifier.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)Ljava/lang/String;")]
         public static global::java.lang.String toString(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._toString0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_toString0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0)));
             }
         }
         
@@ -250,7 +250,7 @@ namespace java.lang.reflect {
         public static bool isAbstract(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isAbstract1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isAbstract1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -258,7 +258,7 @@ namespace java.lang.reflect {
         public static bool isInterface(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isInterface2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isInterface2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -266,7 +266,7 @@ namespace java.lang.reflect {
         public static bool isProtected(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isProtected3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isProtected3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -274,7 +274,7 @@ namespace java.lang.reflect {
         public static bool isPublic(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPublic4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isPublic4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -282,7 +282,7 @@ namespace java.lang.reflect {
         public static bool isFinal(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isFinal5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isFinal5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -290,7 +290,7 @@ namespace java.lang.reflect {
         public static bool isNative(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isNative6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isNative6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -298,7 +298,7 @@ namespace java.lang.reflect {
         public static bool isPrivate(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isPrivate7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isPrivate7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -306,7 +306,7 @@ namespace java.lang.reflect {
         public static bool isStatic(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isStatic8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isStatic8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -314,7 +314,7 @@ namespace java.lang.reflect {
         public static bool isStrict(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isStrict9, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isStrict9, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -322,7 +322,7 @@ namespace java.lang.reflect {
         public static bool isSynchronized(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isSynchronized10, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isSynchronized10, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -330,7 +330,7 @@ namespace java.lang.reflect {
         public static bool isTransient(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isTransient11, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isTransient11, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         
@@ -338,7 +338,7 @@ namespace java.lang.reflect {
         public static bool isVolatile(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier._isVolatile12, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
+            return ((bool)(@__env.CallStaticBooleanMethod(global::java.lang.reflect.Modifier.staticClass, global::java.lang.reflect.Modifier.j4n_isVolatile12, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0))));
             }
         }
         

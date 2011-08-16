@@ -41,9 +41,9 @@ namespace java.util {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hasMoreElements0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hasMoreElements0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _nextElement1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_nextElement1;
         
         private @__Enumeration(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -51,21 +51,21 @@ namespace java.util {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.util.@__Enumeration.staticClass = @__class;
-            global::java.util.@__Enumeration._hasMoreElements0 = @__env.GetMethodID(global::java.util.@__Enumeration.staticClass, "hasMoreElements", "()Z");
-            global::java.util.@__Enumeration._nextElement1 = @__env.GetMethodID(global::java.util.@__Enumeration.staticClass, "nextElement", "()Ljava/lang/Object;");
+            global::java.util.@__Enumeration.j4n_hasMoreElements0 = @__env.GetMethodID(global::java.util.@__Enumeration.staticClass, "hasMoreElements", "()Z");
+            global::java.util.@__Enumeration.j4n_nextElement1 = @__env.GetMethodID(global::java.util.@__Enumeration.staticClass, "nextElement", "()Ljava/lang/Object;");
         }
         
         public bool hasMoreElements() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Enumeration._hasMoreElements0)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Enumeration.j4n_hasMoreElements0)));
             }
         }
         
         public global::java.lang.Object nextElement() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Enumeration._nextElement1));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Enumeration.j4n_nextElement1));
             }
         }
         

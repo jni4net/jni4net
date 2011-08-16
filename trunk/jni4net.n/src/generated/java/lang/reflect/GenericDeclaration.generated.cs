@@ -38,7 +38,7 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getTypeParameters0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getTypeParameters0;
         
         private @__GenericDeclaration(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -46,13 +46,13 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__GenericDeclaration.staticClass = @__class;
-            global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0 = @__env.GetMethodID(global::java.lang.reflect.@__GenericDeclaration.staticClass, "getTypeParameters", "()[Ljava/lang/reflect/TypeVariable;");
+            global::java.lang.reflect.@__GenericDeclaration.j4n_getTypeParameters0 = @__env.GetMethodID(global::java.lang.reflect.@__GenericDeclaration.staticClass, "getTypeParameters", "()[Ljava/lang/reflect/TypeVariable;");
         }
         
         public java.lang.reflect.TypeVariable[] getTypeParameters() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.TypeVariable[], global::java.lang.reflect.TypeVariable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericDeclaration._getTypeParameters0));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.TypeVariable[], global::java.lang.reflect.TypeVariable>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericDeclaration.j4n_getTypeParameters0));
             }
         }
         

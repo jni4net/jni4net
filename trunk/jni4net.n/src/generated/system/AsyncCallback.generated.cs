@@ -29,11 +29,11 @@ namespace System {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _Invoke0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_Invoke0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _BeginInvoke1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_BeginInvoke1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _EndInvoke2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_EndInvoke2;
         
         private @__AsyncCallback(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -41,30 +41,30 @@ namespace System {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.@__AsyncCallback.staticClass = @__class;
-            global::System.@__AsyncCallback._Invoke0 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "Invoke", "(Lsystem/IAsyncResult;)V");
-            global::System.@__AsyncCallback._BeginInvoke1 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "BeginInvoke", "(Lsystem/IAsyncResult;Lsystem/AsyncCallback;Lsystem/Object;)Lsystem/IAsyncResult;" +
+            global::System.@__AsyncCallback.j4n_Invoke0 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "Invoke", "(Lsystem/IAsyncResult;)V");
+            global::System.@__AsyncCallback.j4n_BeginInvoke1 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "BeginInvoke", "(Lsystem/IAsyncResult;Lsystem/AsyncCallback;Lsystem/Object;)Lsystem/IAsyncResult;" +
                     "");
-            global::System.@__AsyncCallback._EndInvoke2 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "EndInvoke", "(Lsystem/IAsyncResult;)V");
+            global::System.@__AsyncCallback.j4n_EndInvoke2 = @__env.GetMethodID(global::System.@__AsyncCallback.staticClass, "EndInvoke", "(Lsystem/IAsyncResult;)V");
         }
         
         public void Invoke(global::System.IAsyncResult ar) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::System.@__AsyncCallback._Invoke0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar));
+            @__env.CallVoidMethod(this, global::System.@__AsyncCallback.j4n_Invoke0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar));
             }
         }
         
         public global::System.IAsyncResult BeginInvoke(global::System.IAsyncResult ar, global::System.AsyncCallback callback, object @object) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 16)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__AsyncCallback._BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.IAsyncResult>(@__env, @__env.CallObjectMethodPtr(this, global::System.@__AsyncCallback.j4n_BeginInvoke1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, ar), global::net.sf.jni4net.utils.Convertor.ParStrongC2JDelegate(@__env, callback), global::net.sf.jni4net.utils.Convertor.ParFullC2J<object>(@__env, @object)));
             }
         }
         
         public void EndInvoke(global::System.IAsyncResult result) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::System.@__AsyncCallback._EndInvoke2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, result));
+            @__env.CallVoidMethod(this, global::System.@__AsyncCallback.j4n_EndInvoke2, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::System.IAsyncResult>(@__env, result));
             }
         }
         

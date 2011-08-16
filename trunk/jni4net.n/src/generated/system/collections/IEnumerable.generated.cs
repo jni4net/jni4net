@@ -29,7 +29,7 @@ namespace System.Collections {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _GetEnumerator0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_GetEnumerator0;
         
         private @__IEnumerable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -37,13 +37,13 @@ namespace System.Collections {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::System.Collections.@__IEnumerable.staticClass = @__class;
-            global::System.Collections.@__IEnumerable._GetEnumerator0 = @__env.GetMethodID(global::System.Collections.@__IEnumerable.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
+            global::System.Collections.@__IEnumerable.j4n_GetEnumerator0 = @__env.GetMethodID(global::System.Collections.@__IEnumerable.staticClass, "GetEnumerator", "()Lsystem/collections/IEnumerator;");
         }
         
         public global::System.Collections.IEnumerator GetEnumerator() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable._GetEnumerator0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::System.Collections.IEnumerator>(@__env, @__env.CallObjectMethodPtr(this, global::System.Collections.@__IEnumerable.j4n_GetEnumerator0));
             }
         }
         

@@ -77,33 +77,33 @@ namespace java.util {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hashCode0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hashCode0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _put1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_put1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _clear2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_clear2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _equals3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_equals3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _entrySet4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_entrySet4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _get5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_get5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putAll6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_putAll6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _size7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_size7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _values8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_values8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _remove9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_remove9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _containsKey10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_containsKey10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _containsValue11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_containsValue11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isEmpty12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isEmpty12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _keySet13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_keySet13;
         
         private @__Map(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -111,117 +111,117 @@ namespace java.util {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.util.@__Map.staticClass = @__class;
-            global::java.util.@__Map._hashCode0 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "hashCode", "()I");
-            global::java.util.@__Map._put1 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._clear2 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "clear", "()V");
-            global::java.util.@__Map._equals3 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._entrySet4 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "entrySet", "()Ljava/util/Set;");
-            global::java.util.@__Map._get5 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._putAll6 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "putAll", "(Ljava/util/Map;)V");
-            global::java.util.@__Map._size7 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "size", "()I");
-            global::java.util.@__Map._values8 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "values", "()Ljava/util/Collection;");
-            global::java.util.@__Map._remove9 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
-            global::java.util.@__Map._containsKey10 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsKey", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._containsValue11 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsValue", "(Ljava/lang/Object;)Z");
-            global::java.util.@__Map._isEmpty12 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "isEmpty", "()Z");
-            global::java.util.@__Map._keySet13 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "keySet", "()Ljava/util/Set;");
+            global::java.util.@__Map.j4n_hashCode0 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "hashCode", "()I");
+            global::java.util.@__Map.j4n_put1 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map.j4n_clear2 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "clear", "()V");
+            global::java.util.@__Map.j4n_equals3 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map.j4n_entrySet4 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "entrySet", "()Ljava/util/Set;");
+            global::java.util.@__Map.j4n_get5 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map.j4n_putAll6 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "putAll", "(Ljava/util/Map;)V");
+            global::java.util.@__Map.j4n_size7 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "size", "()I");
+            global::java.util.@__Map.j4n_values8 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "values", "()Ljava/util/Collection;");
+            global::java.util.@__Map.j4n_remove9 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "remove", "(Ljava/lang/Object;)Ljava/lang/Object;");
+            global::java.util.@__Map.j4n_containsKey10 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsKey", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map.j4n_containsValue11 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "containsValue", "(Ljava/lang/Object;)Z");
+            global::java.util.@__Map.j4n_isEmpty12 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "isEmpty", "()Z");
+            global::java.util.@__Map.j4n_keySet13 = @__env.GetMethodID(global::java.util.@__Map.staticClass, "keySet", "()Ljava/util/Set;");
         }
         
         public int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.util.@__Map._hashCode0)));
+            return ((int)(@__env.CallIntMethod(this, global::java.util.@__Map.j4n_hashCode0)));
             }
         }
         
         public global::java.lang.Object put(global::java.lang.Object par0, global::java.lang.Object par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._put1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par1)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_put1, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par1)));
             }
         }
         
         public void clear() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.util.@__Map._clear2);
+            @__env.CallVoidMethod(this, global::java.util.@__Map.j4n_clear2);
             }
         }
         
         public bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map._equals3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map.j4n_equals3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
         public global::java.util.Set entrySet() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._entrySet4));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_entrySet4));
             }
         }
         
         public global::java.lang.Object get(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._get5, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_get5, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
             }
         }
         
         public void putAll(global::java.util.Map par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.util.@__Map._putAll6, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.util.Map>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.util.@__Map.j4n_putAll6, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.util.Map>(@__env, par0));
             }
         }
         
         public int size() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.util.@__Map._size7)));
+            return ((int)(@__env.CallIntMethod(this, global::java.util.@__Map.j4n_size7)));
             }
         }
         
         public global::java.util.Collection values() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._values8));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Collection>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_values8));
             }
         }
         
         public global::java.lang.Object remove(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._remove9, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_remove9, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0)));
             }
         }
         
         public bool containsKey(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map._containsKey10, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map.j4n_containsKey10, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
         public bool containsValue(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map._containsValue11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map.j4n_containsValue11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
         public bool isEmpty() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map._isEmpty12)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.util.@__Map.j4n_isEmpty12)));
             }
         }
         
         public global::java.util.Set keySet() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map._keySet13));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Set>(@__env, @__env.CallObjectMethodPtr(this, global::java.util.@__Map.j4n_keySet13));
             }
         }
         

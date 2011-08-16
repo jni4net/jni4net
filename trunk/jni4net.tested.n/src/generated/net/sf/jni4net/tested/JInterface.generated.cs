@@ -41,11 +41,11 @@ namespace net.sf.jni4net.tested {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _run0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_run0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _runForrestRun1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_runForrestRun1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _cdefined2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_cdefined2;
         
         private @__JInterface(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -53,29 +53,29 @@ namespace net.sf.jni4net.tested {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::net.sf.jni4net.tested.@__JInterface.staticClass = @__class;
-            global::net.sf.jni4net.tested.@__JInterface._run0 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "run", "()V");
-            global::net.sf.jni4net.tested.@__JInterface._runForrestRun1 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "runForrestRun", "()V");
-            global::net.sf.jni4net.tested.@__JInterface._cdefined2 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "cdefined", "()V");
+            global::net.sf.jni4net.tested.@__JInterface.j4n_run0 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "run", "()V");
+            global::net.sf.jni4net.tested.@__JInterface.j4n_runForrestRun1 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "runForrestRun", "()V");
+            global::net.sf.jni4net.tested.@__JInterface.j4n_cdefined2 = @__env.GetMethodID(global::net.sf.jni4net.tested.@__JInterface.staticClass, "cdefined", "()V");
         }
         
         public void run() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._run0);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface.j4n_run0);
             }
         }
         
         public void runForrestRun() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._runForrestRun1);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface.j4n_runForrestRun1);
             }
         }
         
         public void cdefined() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface._cdefined2);
+            @__env.CallVoidMethod(this, global::net.sf.jni4net.tested.@__JInterface.j4n_cdefined2);
             }
         }
         

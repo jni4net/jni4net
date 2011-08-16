@@ -17,108 +17,108 @@ namespace java.io {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeInt0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeInt0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeByte1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeByte1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeLong2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeLong2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeShort3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeShort3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeUTF4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeUTF4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeBytes5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeBytes5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeChar6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeChar6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeFloat7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeFloat7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeBoolean8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeBoolean8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeChars9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeChars9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeDouble10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeDouble10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeObject11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeObject11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _defaultWriteObject12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_defaultWriteObject12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _putFields13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_putFields13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeFields14;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeFields14;
         
-        internal static global::net.sf.jni4net.jni.MethodId _reset15;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_reset15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _useProtocolVersion16;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_useProtocolVersion16;
         
-        internal static global::net.sf.jni4net.jni.MethodId _writeUnshared17;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_writeUnshared17;
         
-        internal static global::net.sf.jni4net.jni.FieldId _STREAM_MAGIC18;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_STREAM_MAGIC18;
         
-        internal static global::net.sf.jni4net.jni.FieldId _STREAM_VERSION19;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_STREAM_VERSION19;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_BASE20;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_BASE20;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_NULL21;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_NULL21;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_REFERENCE22;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_REFERENCE22;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_CLASSDESC23;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_CLASSDESC23;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_OBJECT24;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_OBJECT24;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_STRING25;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_STRING25;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_ARRAY26;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_ARRAY26;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_CLASS27;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_CLASS27;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_BLOCKDATA28;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_BLOCKDATA28;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_ENDBLOCKDATA29;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_ENDBLOCKDATA29;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_RESET30;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_RESET30;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_BLOCKDATALONG31;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_BLOCKDATALONG31;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_EXCEPTION32;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_EXCEPTION32;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_LONGSTRING33;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_LONGSTRING33;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_PROXYCLASSDESC34;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_PROXYCLASSDESC34;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_ENUM35;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_ENUM35;
         
-        internal static global::net.sf.jni4net.jni.FieldId _TC_MAX36;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_TC_MAX36;
         
-        internal static global::net.sf.jni4net.jni.FieldId _baseWireHandle37;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_baseWireHandle37;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SC_WRITE_METHOD38;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SC_WRITE_METHOD38;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SC_BLOCK_DATA39;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SC_BLOCK_DATA39;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SC_SERIALIZABLE40;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SC_SERIALIZABLE40;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SC_EXTERNALIZABLE41;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SC_EXTERNALIZABLE41;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SC_ENUM42;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SC_ENUM42;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SUBSTITUTION_PERMISSION43;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SUBSTITUTION_PERMISSION43;
         
-        internal static global::net.sf.jni4net.jni.FieldId _SUBCLASS_IMPLEMENTATION_PERMISSION44;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_SUBCLASS_IMPLEMENTATION_PERMISSION44;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PROTOCOL_VERSION_145;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PROTOCOL_VERSION_145;
         
-        internal static global::net.sf.jni4net.jni.FieldId _PROTOCOL_VERSION_246;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_PROTOCOL_VERSION_246;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorObjectOutputStream47;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorObjectOutputStream47;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/io/OutputStream;)V")]
         public ObjectOutputStream(global::java.io.OutputStream par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.@__ctorObjectOutputStream47, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n__ctorObjectOutputStream47, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -137,7 +137,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((short)(@__env.GetStaticShortField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._STREAM_MAGIC18)));
+                return ((short)(@__env.GetStaticShortField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_STREAM_MAGIC18)));
             }
             }
         }
@@ -147,7 +147,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((short)(@__env.GetStaticShortField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._STREAM_VERSION19)));
+                return ((short)(@__env.GetStaticShortField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_STREAM_VERSION19)));
             }
             }
         }
@@ -157,7 +157,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_BASE20)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_BASE20)));
             }
             }
         }
@@ -167,7 +167,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_NULL21)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_NULL21)));
             }
             }
         }
@@ -177,7 +177,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_REFERENCE22)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_REFERENCE22)));
             }
             }
         }
@@ -187,7 +187,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_CLASSDESC23)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_CLASSDESC23)));
             }
             }
         }
@@ -197,7 +197,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_OBJECT24)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_OBJECT24)));
             }
             }
         }
@@ -207,7 +207,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_STRING25)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_STRING25)));
             }
             }
         }
@@ -217,7 +217,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_ARRAY26)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_ARRAY26)));
             }
             }
         }
@@ -227,7 +227,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_CLASS27)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_CLASS27)));
             }
             }
         }
@@ -237,7 +237,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_BLOCKDATA28)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_BLOCKDATA28)));
             }
             }
         }
@@ -247,7 +247,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_ENDBLOCKDATA29)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_ENDBLOCKDATA29)));
             }
             }
         }
@@ -257,7 +257,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_RESET30)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_RESET30)));
             }
             }
         }
@@ -267,7 +267,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_BLOCKDATALONG31)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_BLOCKDATALONG31)));
             }
             }
         }
@@ -277,7 +277,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_EXCEPTION32)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_EXCEPTION32)));
             }
             }
         }
@@ -287,7 +287,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_LONGSTRING33)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_LONGSTRING33)));
             }
             }
         }
@@ -297,7 +297,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_PROXYCLASSDESC34)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_PROXYCLASSDESC34)));
             }
             }
         }
@@ -307,7 +307,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_ENUM35)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_ENUM35)));
             }
             }
         }
@@ -317,7 +317,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._TC_MAX36)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_TC_MAX36)));
             }
             }
         }
@@ -327,7 +327,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._baseWireHandle37)));
+                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_baseWireHandle37)));
             }
             }
         }
@@ -337,7 +337,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SC_WRITE_METHOD38)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SC_WRITE_METHOD38)));
             }
             }
         }
@@ -347,7 +347,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SC_BLOCK_DATA39)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SC_BLOCK_DATA39)));
             }
             }
         }
@@ -357,7 +357,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SC_SERIALIZABLE40)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SC_SERIALIZABLE40)));
             }
             }
         }
@@ -367,7 +367,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SC_EXTERNALIZABLE41)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SC_EXTERNALIZABLE41)));
             }
             }
         }
@@ -377,7 +377,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SC_ENUM42)));
+                return ((byte)(@__env.GetStaticByteField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SC_ENUM42)));
             }
             }
         }
@@ -387,7 +387,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.GetStaticObjectFieldPtr(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SUBSTITUTION_PERMISSION43));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.GetStaticObjectFieldPtr(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SUBSTITUTION_PERMISSION43));
             }
             }
         }
@@ -397,7 +397,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.GetStaticObjectFieldPtr(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._SUBCLASS_IMPLEMENTATION_PERMISSION44));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.GetStaticObjectFieldPtr(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_SUBCLASS_IMPLEMENTATION_PERMISSION44));
             }
             }
         }
@@ -407,7 +407,7 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._PROTOCOL_VERSION_145)));
+                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_PROTOCOL_VERSION_145)));
             }
             }
         }
@@ -417,68 +417,68 @@ namespace java.io {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream._PROTOCOL_VERSION_246)));
+                return ((int)(@__env.GetStaticIntField(global::java.io.ObjectOutputStream.staticClass, global::java.io.ObjectOutputStream.j4n_PROTOCOL_VERSION_246)));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.io.ObjectOutputStream.staticClass = @__class;
-            global::java.io.ObjectOutputStream._writeInt0 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeInt", "(I)V");
-            global::java.io.ObjectOutputStream._writeByte1 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeByte", "(I)V");
-            global::java.io.ObjectOutputStream._writeLong2 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeLong", "(J)V");
-            global::java.io.ObjectOutputStream._writeShort3 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeShort", "(I)V");
-            global::java.io.ObjectOutputStream._writeUTF4 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeUTF", "(Ljava/lang/String;)V");
-            global::java.io.ObjectOutputStream._writeBytes5 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeBytes", "(Ljava/lang/String;)V");
-            global::java.io.ObjectOutputStream._writeChar6 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeChar", "(I)V");
-            global::java.io.ObjectOutputStream._writeFloat7 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeFloat", "(F)V");
-            global::java.io.ObjectOutputStream._writeBoolean8 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeBoolean", "(Z)V");
-            global::java.io.ObjectOutputStream._writeChars9 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeChars", "(Ljava/lang/String;)V");
-            global::java.io.ObjectOutputStream._writeDouble10 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeDouble", "(D)V");
-            global::java.io.ObjectOutputStream._writeObject11 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeObject", "(Ljava/lang/Object;)V");
-            global::java.io.ObjectOutputStream._defaultWriteObject12 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "defaultWriteObject", "()V");
-            global::java.io.ObjectOutputStream._putFields13 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "putFields", "()Ljava/io/ObjectOutputStream$PutField;");
-            global::java.io.ObjectOutputStream._writeFields14 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeFields", "()V");
-            global::java.io.ObjectOutputStream._reset15 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "reset", "()V");
-            global::java.io.ObjectOutputStream._useProtocolVersion16 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "useProtocolVersion", "(I)V");
-            global::java.io.ObjectOutputStream._writeUnshared17 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeUnshared", "(Ljava/lang/Object;)V");
-            global::java.io.ObjectOutputStream._STREAM_MAGIC18 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "STREAM_MAGIC", "S");
-            global::java.io.ObjectOutputStream._STREAM_VERSION19 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "STREAM_VERSION", "S");
-            global::java.io.ObjectOutputStream._TC_BASE20 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BASE", "B");
-            global::java.io.ObjectOutputStream._TC_NULL21 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_NULL", "B");
-            global::java.io.ObjectOutputStream._TC_REFERENCE22 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_REFERENCE", "B");
-            global::java.io.ObjectOutputStream._TC_CLASSDESC23 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_CLASSDESC", "B");
-            global::java.io.ObjectOutputStream._TC_OBJECT24 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_OBJECT", "B");
-            global::java.io.ObjectOutputStream._TC_STRING25 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_STRING", "B");
-            global::java.io.ObjectOutputStream._TC_ARRAY26 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ARRAY", "B");
-            global::java.io.ObjectOutputStream._TC_CLASS27 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_CLASS", "B");
-            global::java.io.ObjectOutputStream._TC_BLOCKDATA28 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BLOCKDATA", "B");
-            global::java.io.ObjectOutputStream._TC_ENDBLOCKDATA29 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ENDBLOCKDATA", "B");
-            global::java.io.ObjectOutputStream._TC_RESET30 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_RESET", "B");
-            global::java.io.ObjectOutputStream._TC_BLOCKDATALONG31 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BLOCKDATALONG", "B");
-            global::java.io.ObjectOutputStream._TC_EXCEPTION32 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_EXCEPTION", "B");
-            global::java.io.ObjectOutputStream._TC_LONGSTRING33 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_LONGSTRING", "B");
-            global::java.io.ObjectOutputStream._TC_PROXYCLASSDESC34 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_PROXYCLASSDESC", "B");
-            global::java.io.ObjectOutputStream._TC_ENUM35 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ENUM", "B");
-            global::java.io.ObjectOutputStream._TC_MAX36 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_MAX", "B");
-            global::java.io.ObjectOutputStream._baseWireHandle37 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "baseWireHandle", "I");
-            global::java.io.ObjectOutputStream._SC_WRITE_METHOD38 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_WRITE_METHOD", "B");
-            global::java.io.ObjectOutputStream._SC_BLOCK_DATA39 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_BLOCK_DATA", "B");
-            global::java.io.ObjectOutputStream._SC_SERIALIZABLE40 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_SERIALIZABLE", "B");
-            global::java.io.ObjectOutputStream._SC_EXTERNALIZABLE41 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_EXTERNALIZABLE", "B");
-            global::java.io.ObjectOutputStream._SC_ENUM42 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_ENUM", "B");
-            global::java.io.ObjectOutputStream._SUBSTITUTION_PERMISSION43 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SUBSTITUTION_PERMISSION", "Ljava/io/SerializablePermission;");
-            global::java.io.ObjectOutputStream._SUBCLASS_IMPLEMENTATION_PERMISSION44 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SUBCLASS_IMPLEMENTATION_PERMISSION", "Ljava/io/SerializablePermission;");
-            global::java.io.ObjectOutputStream._PROTOCOL_VERSION_145 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "PROTOCOL_VERSION_1", "I");
-            global::java.io.ObjectOutputStream._PROTOCOL_VERSION_246 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "PROTOCOL_VERSION_2", "I");
-            global::java.io.ObjectOutputStream.@__ctorObjectOutputStream47 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
+            global::java.io.ObjectOutputStream.j4n_writeInt0 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeInt", "(I)V");
+            global::java.io.ObjectOutputStream.j4n_writeByte1 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeByte", "(I)V");
+            global::java.io.ObjectOutputStream.j4n_writeLong2 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeLong", "(J)V");
+            global::java.io.ObjectOutputStream.j4n_writeShort3 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeShort", "(I)V");
+            global::java.io.ObjectOutputStream.j4n_writeUTF4 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeUTF", "(Ljava/lang/String;)V");
+            global::java.io.ObjectOutputStream.j4n_writeBytes5 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeBytes", "(Ljava/lang/String;)V");
+            global::java.io.ObjectOutputStream.j4n_writeChar6 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeChar", "(I)V");
+            global::java.io.ObjectOutputStream.j4n_writeFloat7 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeFloat", "(F)V");
+            global::java.io.ObjectOutputStream.j4n_writeBoolean8 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeBoolean", "(Z)V");
+            global::java.io.ObjectOutputStream.j4n_writeChars9 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeChars", "(Ljava/lang/String;)V");
+            global::java.io.ObjectOutputStream.j4n_writeDouble10 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeDouble", "(D)V");
+            global::java.io.ObjectOutputStream.j4n_writeObject11 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeObject", "(Ljava/lang/Object;)V");
+            global::java.io.ObjectOutputStream.j4n_defaultWriteObject12 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "defaultWriteObject", "()V");
+            global::java.io.ObjectOutputStream.j4n_putFields13 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "putFields", "()Ljava/io/ObjectOutputStream$PutField;");
+            global::java.io.ObjectOutputStream.j4n_writeFields14 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeFields", "()V");
+            global::java.io.ObjectOutputStream.j4n_reset15 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "reset", "()V");
+            global::java.io.ObjectOutputStream.j4n_useProtocolVersion16 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "useProtocolVersion", "(I)V");
+            global::java.io.ObjectOutputStream.j4n_writeUnshared17 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "writeUnshared", "(Ljava/lang/Object;)V");
+            global::java.io.ObjectOutputStream.j4n_STREAM_MAGIC18 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "STREAM_MAGIC", "S");
+            global::java.io.ObjectOutputStream.j4n_STREAM_VERSION19 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "STREAM_VERSION", "S");
+            global::java.io.ObjectOutputStream.j4n_TC_BASE20 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BASE", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_NULL21 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_NULL", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_REFERENCE22 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_REFERENCE", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_CLASSDESC23 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_CLASSDESC", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_OBJECT24 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_OBJECT", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_STRING25 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_STRING", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_ARRAY26 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ARRAY", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_CLASS27 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_CLASS", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_BLOCKDATA28 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BLOCKDATA", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_ENDBLOCKDATA29 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ENDBLOCKDATA", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_RESET30 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_RESET", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_BLOCKDATALONG31 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_BLOCKDATALONG", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_EXCEPTION32 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_EXCEPTION", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_LONGSTRING33 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_LONGSTRING", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_PROXYCLASSDESC34 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_PROXYCLASSDESC", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_ENUM35 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_ENUM", "B");
+            global::java.io.ObjectOutputStream.j4n_TC_MAX36 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "TC_MAX", "B");
+            global::java.io.ObjectOutputStream.j4n_baseWireHandle37 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "baseWireHandle", "I");
+            global::java.io.ObjectOutputStream.j4n_SC_WRITE_METHOD38 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_WRITE_METHOD", "B");
+            global::java.io.ObjectOutputStream.j4n_SC_BLOCK_DATA39 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_BLOCK_DATA", "B");
+            global::java.io.ObjectOutputStream.j4n_SC_SERIALIZABLE40 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_SERIALIZABLE", "B");
+            global::java.io.ObjectOutputStream.j4n_SC_EXTERNALIZABLE41 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_EXTERNALIZABLE", "B");
+            global::java.io.ObjectOutputStream.j4n_SC_ENUM42 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SC_ENUM", "B");
+            global::java.io.ObjectOutputStream.j4n_SUBSTITUTION_PERMISSION43 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SUBSTITUTION_PERMISSION", "Ljava/io/SerializablePermission;");
+            global::java.io.ObjectOutputStream.j4n_SUBCLASS_IMPLEMENTATION_PERMISSION44 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "SUBCLASS_IMPLEMENTATION_PERMISSION", "Ljava/io/SerializablePermission;");
+            global::java.io.ObjectOutputStream.j4n_PROTOCOL_VERSION_145 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "PROTOCOL_VERSION_1", "I");
+            global::java.io.ObjectOutputStream.j4n_PROTOCOL_VERSION_246 = @__env.GetStaticFieldID(global::java.io.ObjectOutputStream.staticClass, "PROTOCOL_VERSION_2", "I");
+            global::java.io.ObjectOutputStream.j4n__ctorObjectOutputStream47 = @__env.GetMethodID(global::java.io.ObjectOutputStream.staticClass, "<init>", "(Ljava/io/OutputStream;)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(I)V")]
         public virtual void writeInt(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeInt0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeInt0, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -486,7 +486,7 @@ namespace java.io {
         public virtual void writeByte(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeByte1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeByte1, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -494,7 +494,7 @@ namespace java.io {
         public virtual void writeLong(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeLong2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeLong2, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -502,7 +502,7 @@ namespace java.io {
         public virtual void writeShort(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeShort3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeShort3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -510,7 +510,7 @@ namespace java.io {
         public virtual void writeUTF(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeUTF4, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeUTF4, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -518,7 +518,7 @@ namespace java.io {
         public virtual void writeBytes(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeBytes5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeBytes5, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -526,7 +526,7 @@ namespace java.io {
         public virtual void writeChar(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeChar6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeChar6, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -534,7 +534,7 @@ namespace java.io {
         public virtual void writeFloat(float par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeFloat7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeFloat7, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -542,7 +542,7 @@ namespace java.io {
         public virtual void writeBoolean(bool par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeBoolean8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeBoolean8, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -550,7 +550,7 @@ namespace java.io {
         public virtual void writeChars(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeChars9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeChars9, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -558,7 +558,7 @@ namespace java.io {
         public virtual void writeDouble(double par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeDouble10, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeDouble10, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -566,7 +566,7 @@ namespace java.io {
         public virtual void writeObject(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeObject11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeObject11, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
             }
         }
         
@@ -574,7 +574,7 @@ namespace java.io {
         public virtual void defaultWriteObject() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._defaultWriteObject12);
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_defaultWriteObject12);
             }
         }
         
@@ -582,7 +582,7 @@ namespace java.io {
         public virtual global::java.lang.Object putFields() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ObjectOutputStream._putFields13));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallObjectMethodPtr(this, global::java.io.ObjectOutputStream.j4n_putFields13));
             }
         }
         
@@ -590,7 +590,7 @@ namespace java.io {
         public virtual void writeFields() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeFields14);
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeFields14);
             }
         }
         
@@ -598,7 +598,7 @@ namespace java.io {
         public virtual void reset() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._reset15);
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_reset15);
             }
         }
         
@@ -606,7 +606,7 @@ namespace java.io {
         public virtual void useProtocolVersion(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._useProtocolVersion16, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_useProtocolVersion16, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -614,7 +614,7 @@ namespace java.io {
         public virtual void writeUnshared(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream._writeUnshared17, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
+            @__env.CallVoidMethod(this, global::java.io.ObjectOutputStream.j4n_writeUnshared17, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0));
             }
         }
         

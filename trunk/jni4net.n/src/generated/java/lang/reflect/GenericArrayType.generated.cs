@@ -38,7 +38,7 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getGenericComponentType0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getGenericComponentType0;
         
         private @__GenericArrayType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -46,13 +46,13 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__GenericArrayType.staticClass = @__class;
-            global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0 = @__env.GetMethodID(global::java.lang.reflect.@__GenericArrayType.staticClass, "getGenericComponentType", "()Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__GenericArrayType.j4n_getGenericComponentType0 = @__env.GetMethodID(global::java.lang.reflect.@__GenericArrayType.staticClass, "getGenericComponentType", "()Ljava/lang/reflect/Type;");
         }
         
         public global::java.lang.reflect.Type getGenericComponentType() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericArrayType._getGenericComponentType0));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__GenericArrayType.j4n_getGenericComponentType0));
             }
         }
         

@@ -44,11 +44,11 @@ namespace java.lang.reflect {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getActualTypeArguments0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getActualTypeArguments0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getOwnerType1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getOwnerType1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getRawType2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getRawType2;
         
         private @__ParameterizedType(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -56,29 +56,29 @@ namespace java.lang.reflect {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.reflect.@__ParameterizedType.staticClass = @__class;
-            global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getActualTypeArguments", "()[Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__ParameterizedType._getOwnerType1 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getOwnerType", "()Ljava/lang/reflect/Type;");
-            global::java.lang.reflect.@__ParameterizedType._getRawType2 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getRawType", "()Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__ParameterizedType.j4n_getActualTypeArguments0 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getActualTypeArguments", "()[Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__ParameterizedType.j4n_getOwnerType1 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getOwnerType", "()Ljava/lang/reflect/Type;");
+            global::java.lang.reflect.@__ParameterizedType.j4n_getRawType2 = @__env.GetMethodID(global::java.lang.reflect.@__ParameterizedType.staticClass, "getRawType", "()Ljava/lang/reflect/Type;");
         }
         
         public java.lang.reflect.Type[] getActualTypeArguments() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getActualTypeArguments0));
+            return global::net.sf.jni4net.utils.Convertor.ArrayFullJ2C<java.lang.reflect.Type[], global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType.j4n_getActualTypeArguments0));
             }
         }
         
         public global::java.lang.reflect.Type getOwnerType() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getOwnerType1));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType.j4n_getOwnerType1));
             }
         }
         
         public global::java.lang.reflect.Type getRawType() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType._getRawType2));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.lang.reflect.Type>(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.reflect.@__ParameterizedType.j4n_getRawType2));
             }
         }
         

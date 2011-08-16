@@ -17,31 +17,31 @@ namespace java.lang {
         
         internal static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _hashCode0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_hashCode0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getClass1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getClass1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wait2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_wait2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wait3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_wait3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _wait4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_wait4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _equals5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_equals5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _notify6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_notify6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _notifyAll7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_notifyAll7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _toString8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_toString8;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorObject9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorObject9;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()V")]
         public Object() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.lang.Object.staticClass, global::java.lang.Object.@__ctorObject9, this);
+            @__env.NewObject(global::java.lang.Object.staticClass, global::java.lang.Object.j4n__ctorObject9, this);
             }
         }
         
@@ -53,23 +53,23 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.Object.staticClass = @__class;
-            global::java.lang.Object._hashCode0 = @__env.GetMethodID(global::java.lang.Object.staticClass, "hashCode", "()I");
-            global::java.lang.Object._getClass1 = @__env.GetMethodID(global::java.lang.Object.staticClass, "getClass", "()Ljava/lang/Class;");
-            global::java.lang.Object._wait2 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "()V");
-            global::java.lang.Object._wait3 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "(JI)V");
-            global::java.lang.Object._wait4 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "(J)V");
-            global::java.lang.Object._equals5 = @__env.GetMethodID(global::java.lang.Object.staticClass, "equals", "(Ljava/lang/Object;)Z");
-            global::java.lang.Object._notify6 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notify", "()V");
-            global::java.lang.Object._notifyAll7 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notifyAll", "()V");
-            global::java.lang.Object._toString8 = @__env.GetMethodID(global::java.lang.Object.staticClass, "toString", "()Ljava/lang/String;");
-            global::java.lang.Object.@__ctorObject9 = @__env.GetMethodID(global::java.lang.Object.staticClass, "<init>", "()V");
+            global::java.lang.Object.j4n_hashCode0 = @__env.GetMethodID(global::java.lang.Object.staticClass, "hashCode", "()I");
+            global::java.lang.Object.j4n_getClass1 = @__env.GetMethodID(global::java.lang.Object.staticClass, "getClass", "()Ljava/lang/Class;");
+            global::java.lang.Object.j4n_wait2 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "()V");
+            global::java.lang.Object.j4n_wait3 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "(JI)V");
+            global::java.lang.Object.j4n_wait4 = @__env.GetMethodID(global::java.lang.Object.staticClass, "wait", "(J)V");
+            global::java.lang.Object.j4n_equals5 = @__env.GetMethodID(global::java.lang.Object.staticClass, "equals", "(Ljava/lang/Object;)Z");
+            global::java.lang.Object.j4n_notify6 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notify", "()V");
+            global::java.lang.Object.j4n_notifyAll7 = @__env.GetMethodID(global::java.lang.Object.staticClass, "notifyAll", "()V");
+            global::java.lang.Object.j4n_toString8 = @__env.GetMethodID(global::java.lang.Object.staticClass, "toString", "()Ljava/lang/String;");
+            global::java.lang.Object.j4n__ctorObject9 = @__env.GetMethodID(global::java.lang.Object.staticClass, "<init>", "()V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()I")]
         public virtual int hashCode() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.Object._hashCode0)));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.Object.j4n_hashCode0)));
             }
         }
         
@@ -77,7 +77,7 @@ namespace java.lang {
         public global::java.lang.Class getClass() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Object._getClass1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpClass(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Object.j4n_getClass1));
             }
         }
         
@@ -85,7 +85,7 @@ namespace java.lang {
         public void wait() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.lang.Object._wait2);
+            @__env.CallVoidMethod(this, global::java.lang.Object.j4n_wait2);
             }
         }
         
@@ -93,7 +93,7 @@ namespace java.lang {
         public void wait(long par0, int par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.CallVoidMethod(this, global::java.lang.Object._wait3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
+            @__env.CallVoidMethod(this, global::java.lang.Object.j4n_wait3, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1));
             }
         }
         
@@ -101,7 +101,7 @@ namespace java.lang {
         public void wait(long par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallVoidMethod(this, global::java.lang.Object._wait4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallVoidMethod(this, global::java.lang.Object.j4n_wait4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -109,7 +109,7 @@ namespace java.lang {
         public virtual bool equals(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Object._equals5, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.Object.j4n_equals5, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
@@ -117,7 +117,7 @@ namespace java.lang {
         public void notify() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.lang.Object._notify6);
+            @__env.CallVoidMethod(this, global::java.lang.Object.j4n_notify6);
             }
         }
         
@@ -125,7 +125,7 @@ namespace java.lang {
         public void notifyAll() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.lang.Object._notifyAll7);
+            @__env.CallVoidMethod(this, global::java.lang.Object.j4n_notifyAll7);
             }
         }
         
@@ -133,7 +133,7 @@ namespace java.lang {
         public virtual global::java.lang.String toString() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Object._toString8));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.Object.j4n_toString8));
             }
         }
         

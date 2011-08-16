@@ -18,16 +18,16 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIndexOutOfBoundsException0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIndexOutOfBoundsException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorIndexOutOfBoundsException1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorIndexOutOfBoundsException1;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public IndexOutOfBoundsException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.IndexOutOfBoundsException.staticClass, global::java.lang.IndexOutOfBoundsException.@__ctorIndexOutOfBoundsException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.IndexOutOfBoundsException.staticClass, global::java.lang.IndexOutOfBoundsException.j4n__ctorIndexOutOfBoundsException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -36,7 +36,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.lang.IndexOutOfBoundsException.staticClass, global::java.lang.IndexOutOfBoundsException.@__ctorIndexOutOfBoundsException1, this);
+            @__env.NewObject(global::java.lang.IndexOutOfBoundsException.staticClass, global::java.lang.IndexOutOfBoundsException.j4n__ctorIndexOutOfBoundsException1, this);
             }
         }
         
@@ -56,8 +56,8 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.IndexOutOfBoundsException.staticClass = @__class;
-            global::java.lang.IndexOutOfBoundsException.@__ctorIndexOutOfBoundsException0 = @__env.GetMethodID(global::java.lang.IndexOutOfBoundsException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.IndexOutOfBoundsException.@__ctorIndexOutOfBoundsException1 = @__env.GetMethodID(global::java.lang.IndexOutOfBoundsException.staticClass, "<init>", "()V");
+            global::java.lang.IndexOutOfBoundsException.j4n__ctorIndexOutOfBoundsException0 = @__env.GetMethodID(global::java.lang.IndexOutOfBoundsException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.IndexOutOfBoundsException.j4n__ctorIndexOutOfBoundsException1 = @__env.GetMethodID(global::java.lang.IndexOutOfBoundsException.staticClass, "<init>", "()V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

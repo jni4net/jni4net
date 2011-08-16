@@ -17,24 +17,24 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getClassName0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getClassName0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getFileName1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getFileName1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getLineNumber2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getLineNumber2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getMethodName3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getMethodName3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _isNativeMethod4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_isNativeMethod4;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorStackTraceElement5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorStackTraceElement5;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V")]
         public StackTraceElement(global::java.lang.String par0, global::java.lang.String par1, global::java.lang.String par2, int par3) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 18)){
-            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.@__ctorStackTraceElement5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
+            @__env.NewObject(global::java.lang.StackTraceElement.staticClass, global::java.lang.StackTraceElement.j4n__ctorStackTraceElement5, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3));
             }
         }
         
@@ -50,19 +50,19 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.StackTraceElement.staticClass = @__class;
-            global::java.lang.StackTraceElement._getClassName0 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getClassName", "()Ljava/lang/String;");
-            global::java.lang.StackTraceElement._getFileName1 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getFileName", "()Ljava/lang/String;");
-            global::java.lang.StackTraceElement._getLineNumber2 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getLineNumber", "()I");
-            global::java.lang.StackTraceElement._getMethodName3 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getMethodName", "()Ljava/lang/String;");
-            global::java.lang.StackTraceElement._isNativeMethod4 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "isNativeMethod", "()Z");
-            global::java.lang.StackTraceElement.@__ctorStackTraceElement5 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V");
+            global::java.lang.StackTraceElement.j4n_getClassName0 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getClassName", "()Ljava/lang/String;");
+            global::java.lang.StackTraceElement.j4n_getFileName1 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getFileName", "()Ljava/lang/String;");
+            global::java.lang.StackTraceElement.j4n_getLineNumber2 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getLineNumber", "()I");
+            global::java.lang.StackTraceElement.j4n_getMethodName3 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "getMethodName", "()Ljava/lang/String;");
+            global::java.lang.StackTraceElement.j4n_isNativeMethod4 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "isNativeMethod", "()Z");
+            global::java.lang.StackTraceElement.j4n__ctorStackTraceElement5 = @__env.GetMethodID(global::java.lang.StackTraceElement.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("()Ljava/lang/String;")]
         public virtual global::java.lang.String getClassName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getClassName0));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement.j4n_getClassName0));
             }
         }
         
@@ -70,7 +70,7 @@ namespace java.lang {
         public virtual global::java.lang.String getFileName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getFileName1));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement.j4n_getFileName1));
             }
         }
         
@@ -78,7 +78,7 @@ namespace java.lang {
         public virtual int getLineNumber() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((int)(@__env.CallIntMethod(this, global::java.lang.StackTraceElement._getLineNumber2)));
+            return ((int)(@__env.CallIntMethod(this, global::java.lang.StackTraceElement.j4n_getLineNumber2)));
             }
         }
         
@@ -86,7 +86,7 @@ namespace java.lang {
         public virtual global::java.lang.String getMethodName() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement._getMethodName3));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallObjectMethodPtr(this, global::java.lang.StackTraceElement.j4n_getMethodName3));
             }
         }
         
@@ -94,7 +94,7 @@ namespace java.lang {
         public virtual bool isNativeMethod() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.StackTraceElement._isNativeMethod4)));
+            return ((bool)(@__env.CallBooleanMethod(this, global::java.lang.StackTraceElement.j4n_isNativeMethod4)));
             }
         }
         

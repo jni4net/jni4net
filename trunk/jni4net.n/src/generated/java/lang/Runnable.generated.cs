@@ -38,7 +38,7 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _run0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_run0;
         
         private @__Runnable(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -46,13 +46,13 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.@__Runnable.staticClass = @__class;
-            global::java.lang.@__Runnable._run0 = @__env.GetMethodID(global::java.lang.@__Runnable.staticClass, "run", "()V");
+            global::java.lang.@__Runnable.j4n_run0 = @__env.GetMethodID(global::java.lang.@__Runnable.staticClass, "run", "()V");
         }
         
         public void run() {
             global::net.sf.jni4net.jni.JNIEnv @__env = this.Env;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallVoidMethod(this, global::java.lang.@__Runnable._run0);
+            @__env.CallVoidMethod(this, global::java.lang.@__Runnable.j4n_run0);
             }
         }
         

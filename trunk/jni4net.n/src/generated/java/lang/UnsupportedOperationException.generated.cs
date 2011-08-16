@@ -18,20 +18,20 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorUnsupportedOperationException0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorUnsupportedOperationException0;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorUnsupportedOperationException1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorUnsupportedOperationException1;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorUnsupportedOperationException2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorUnsupportedOperationException2;
         
-        internal static global::net.sf.jni4net.jni.MethodId @__ctorUnsupportedOperationException3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n__ctorUnsupportedOperationException3;
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/String;)V")]
         public UnsupportedOperationException(global::java.lang.String par0) : 
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException0, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -40,7 +40,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
+            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException1, this, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par1));
             }
         }
         
@@ -49,7 +49,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException2, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
+            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException2, this, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Throwable>(@__env, par0));
             }
         }
         
@@ -58,7 +58,7 @@ namespace java.lang {
                 base(((global::net.sf.jni4net.jni.JNIEnv)(null))) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException3, this);
+            @__env.NewObject(global::java.lang.UnsupportedOperationException.staticClass, global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException3, this);
             }
         }
         
@@ -78,10 +78,10 @@ namespace java.lang {
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.UnsupportedOperationException.staticClass = @__class;
-            global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException0 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/String;)V");
-            global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException1 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
-            global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException2 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
-            global::java.lang.UnsupportedOperationException.@__ctorUnsupportedOperationException3 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "()V");
+            global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException0 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/String;)V");
+            global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException1 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/String;Ljava/lang/Throwable;)V");
+            global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException2 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "(Ljava/lang/Throwable;)V");
+            global::java.lang.UnsupportedOperationException.j4n__ctorUnsupportedOperationException3 = @__env.GetMethodID(global::java.lang.UnsupportedOperationException.staticClass, "<init>", "()V");
         }
         
         new internal sealed class ContructionHelper : global::net.sf.jni4net.utils.IConstructionHelper {

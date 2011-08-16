@@ -17,61 +17,61 @@ namespace java.lang {
         
         internal new static global::java.lang.Class staticClass;
         
-        internal static global::net.sf.jni4net.jni.MethodId _arraycopy0;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_arraycopy0;
         
-        internal static global::net.sf.jni4net.jni.MethodId _currentTimeMillis1;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_currentTimeMillis1;
         
-        internal static global::net.sf.jni4net.jni.MethodId _nanoTime2;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_nanoTime2;
         
-        internal static global::net.sf.jni4net.jni.MethodId _identityHashCode3;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_identityHashCode3;
         
-        internal static global::net.sf.jni4net.jni.MethodId _exit4;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_exit4;
         
-        internal static global::net.sf.jni4net.jni.MethodId _runFinalizersOnExit5;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_runFinalizersOnExit5;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setProperty6;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setProperty6;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getProperty7;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getProperty7;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getProperty8;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getProperty8;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getSecurityManager9;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getSecurityManager9;
         
-        internal static global::net.sf.jni4net.jni.MethodId _load10;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_load10;
         
-        internal static global::net.sf.jni4net.jni.MethodId _loadLibrary11;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_loadLibrary11;
         
-        internal static global::net.sf.jni4net.jni.MethodId _mapLibraryName12;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_mapLibraryName12;
         
-        internal static global::net.sf.jni4net.jni.MethodId _clearProperty13;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_clearProperty13;
         
-        internal static global::net.sf.jni4net.jni.MethodId _gc14;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_gc14;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getProperties15;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getProperties15;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getenv16;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getenv16;
         
-        internal static global::net.sf.jni4net.jni.MethodId _getenv17;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_getenv17;
         
-        internal static global::net.sf.jni4net.jni.MethodId _inheritedChannel18;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_inheritedChannel18;
         
-        internal static global::net.sf.jni4net.jni.MethodId _runFinalization19;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_runFinalization19;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setErr20;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setErr20;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setIn21;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setIn21;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setOut22;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setOut22;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setProperties23;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setProperties23;
         
-        internal static global::net.sf.jni4net.jni.MethodId _setSecurityManager24;
+        internal static global::net.sf.jni4net.jni.MethodId j4n_setSecurityManager24;
         
-        internal static global::net.sf.jni4net.jni.FieldId _in25;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_in25;
         
-        internal static global::net.sf.jni4net.jni.FieldId _out26;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_out26;
         
-        internal static global::net.sf.jni4net.jni.FieldId _err27;
+        internal static global::net.sf.jni4net.jni.FieldId j4n_err27;
         
         protected System(global::net.sf.jni4net.jni.JNIEnv @__env) : 
                 base(@__env) {
@@ -88,7 +88,7 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System._in25));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.InputStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_in25));
             }
             }
         }
@@ -98,7 +98,7 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System._out26));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_out26));
             }
             }
         }
@@ -108,48 +108,48 @@ namespace java.lang {
             get {
                 global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System._err27));
+                return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.io.PrintStream>(@__env, @__env.GetStaticObjectFieldPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_err27));
             }
             }
         }
         
         private static void InitJNI(global::net.sf.jni4net.jni.JNIEnv @__env, java.lang.Class @__class) {
             global::java.lang.System.staticClass = @__class;
-            global::java.lang.System._arraycopy0 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "arraycopy", "(Ljava/lang/Object;ILjava/lang/Object;II)V");
-            global::java.lang.System._currentTimeMillis1 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "currentTimeMillis", "()J");
-            global::java.lang.System._nanoTime2 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "nanoTime", "()J");
-            global::java.lang.System._identityHashCode3 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "identityHashCode", "(Ljava/lang/Object;)I");
-            global::java.lang.System._exit4 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "exit", "(I)V");
-            global::java.lang.System._runFinalizersOnExit5 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "runFinalizersOnExit", "(Z)V");
-            global::java.lang.System._setProperty6 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._getProperty7 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._getProperty8 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._getSecurityManager9 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getSecurityManager", "()Ljava/lang/SecurityManager;");
-            global::java.lang.System._load10 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "load", "(Ljava/lang/String;)V");
-            global::java.lang.System._loadLibrary11 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "loadLibrary", "(Ljava/lang/String;)V");
-            global::java.lang.System._mapLibraryName12 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "mapLibraryName", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._clearProperty13 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "clearProperty", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._gc14 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "gc", "()V");
-            global::java.lang.System._getProperties15 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperties", "()Ljava/util/Properties;");
-            global::java.lang.System._getenv16 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getenv", "(Ljava/lang/String;)Ljava/lang/String;");
-            global::java.lang.System._getenv17 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getenv", "()Ljava/util/Map;");
-            global::java.lang.System._inheritedChannel18 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "inheritedChannel", "()Ljava/nio/channels/Channel;");
-            global::java.lang.System._runFinalization19 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "runFinalization", "()V");
-            global::java.lang.System._setErr20 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setErr", "(Ljava/io/PrintStream;)V");
-            global::java.lang.System._setIn21 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setIn", "(Ljava/io/InputStream;)V");
-            global::java.lang.System._setOut22 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setOut", "(Ljava/io/PrintStream;)V");
-            global::java.lang.System._setProperties23 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setProperties", "(Ljava/util/Properties;)V");
-            global::java.lang.System._setSecurityManager24 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setSecurityManager", "(Ljava/lang/SecurityManager;)V");
-            global::java.lang.System._in25 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "in", "Ljava/io/InputStream;");
-            global::java.lang.System._out26 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "out", "Ljava/io/PrintStream;");
-            global::java.lang.System._err27 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "err", "Ljava/io/PrintStream;");
+            global::java.lang.System.j4n_arraycopy0 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "arraycopy", "(Ljava/lang/Object;ILjava/lang/Object;II)V");
+            global::java.lang.System.j4n_currentTimeMillis1 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "currentTimeMillis", "()J");
+            global::java.lang.System.j4n_nanoTime2 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "nanoTime", "()J");
+            global::java.lang.System.j4n_identityHashCode3 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "identityHashCode", "(Ljava/lang/Object;)I");
+            global::java.lang.System.j4n_exit4 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "exit", "(I)V");
+            global::java.lang.System.j4n_runFinalizersOnExit5 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "runFinalizersOnExit", "(Z)V");
+            global::java.lang.System.j4n_setProperty6 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_getProperty7 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_getProperty8 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_getSecurityManager9 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getSecurityManager", "()Ljava/lang/SecurityManager;");
+            global::java.lang.System.j4n_load10 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "load", "(Ljava/lang/String;)V");
+            global::java.lang.System.j4n_loadLibrary11 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "loadLibrary", "(Ljava/lang/String;)V");
+            global::java.lang.System.j4n_mapLibraryName12 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "mapLibraryName", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_clearProperty13 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "clearProperty", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_gc14 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "gc", "()V");
+            global::java.lang.System.j4n_getProperties15 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperties", "()Ljava/util/Properties;");
+            global::java.lang.System.j4n_getenv16 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getenv", "(Ljava/lang/String;)Ljava/lang/String;");
+            global::java.lang.System.j4n_getenv17 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getenv", "()Ljava/util/Map;");
+            global::java.lang.System.j4n_inheritedChannel18 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "inheritedChannel", "()Ljava/nio/channels/Channel;");
+            global::java.lang.System.j4n_runFinalization19 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "runFinalization", "()V");
+            global::java.lang.System.j4n_setErr20 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setErr", "(Ljava/io/PrintStream;)V");
+            global::java.lang.System.j4n_setIn21 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setIn", "(Ljava/io/InputStream;)V");
+            global::java.lang.System.j4n_setOut22 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setOut", "(Ljava/io/PrintStream;)V");
+            global::java.lang.System.j4n_setProperties23 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setProperties", "(Ljava/util/Properties;)V");
+            global::java.lang.System.j4n_setSecurityManager24 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setSecurityManager", "(Ljava/lang/SecurityManager;)V");
+            global::java.lang.System.j4n_in25 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "in", "Ljava/io/InputStream;");
+            global::java.lang.System.j4n_out26 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "out", "Ljava/io/PrintStream;");
+            global::java.lang.System.j4n_err27 = @__env.GetStaticFieldID(global::java.lang.System.staticClass, "err", "Ljava/io/PrintStream;");
         }
         
         [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Ljava/lang/Object;ILjava/lang/Object;II)V")]
         public static void arraycopy(global::java.lang.Object par0, int par1, global::java.lang.Object par2, int par3, int par4) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 20)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._arraycopy0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par4));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_arraycopy0, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par1), global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par2), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par3), global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par4));
             }
         }
         
@@ -157,7 +157,7 @@ namespace java.lang {
         public static long currentTimeMillis() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((long)(@__env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System._currentTimeMillis1)));
+            return ((long)(@__env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_currentTimeMillis1)));
             }
         }
         
@@ -165,7 +165,7 @@ namespace java.lang {
         public static long nanoTime() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return ((long)(@__env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System._nanoTime2)));
+            return ((long)(@__env.CallStaticLongMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_nanoTime2)));
             }
         }
         
@@ -173,7 +173,7 @@ namespace java.lang {
         public static int identityHashCode(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return ((int)(@__env.CallStaticIntMethod(global::java.lang.System.staticClass, global::java.lang.System._identityHashCode3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
+            return ((int)(@__env.CallStaticIntMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_identityHashCode3, global::net.sf.jni4net.utils.Convertor.ParFullC2J<global::java.lang.Object>(@__env, par0))));
             }
         }
         
@@ -181,7 +181,7 @@ namespace java.lang {
         public static void exit(int par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._exit4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_exit4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -189,7 +189,7 @@ namespace java.lang {
         public static void runFinalizersOnExit(bool par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._runFinalizersOnExit5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_runFinalizersOnExit5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
@@ -197,7 +197,7 @@ namespace java.lang {
         public static global::java.lang.String setProperty(global::java.lang.String par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._setProperty6, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_setProperty6, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1)));
             }
         }
         
@@ -205,7 +205,7 @@ namespace java.lang {
         public static global::java.lang.String getProperty(global::java.lang.String par0, global::java.lang.String par1) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 14)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getProperty7, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getProperty7, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0), global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par1)));
             }
         }
         
@@ -213,7 +213,7 @@ namespace java.lang {
         public static global::java.lang.String getProperty(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getProperty8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getProperty8, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -221,7 +221,7 @@ namespace java.lang {
         public static global::java.lang.Object getSecurityManager() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getSecurityManager9));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.lang.Object>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getSecurityManager9));
             }
         }
         
@@ -229,7 +229,7 @@ namespace java.lang {
         public static void load(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._load10, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_load10, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -237,7 +237,7 @@ namespace java.lang {
         public static void loadLibrary(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._loadLibrary11, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_loadLibrary11, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -245,7 +245,7 @@ namespace java.lang {
         public static global::java.lang.String mapLibraryName(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._mapLibraryName12, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_mapLibraryName12, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -253,7 +253,7 @@ namespace java.lang {
         public static global::java.lang.String clearProperty(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._clearProperty13, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_clearProperty13, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -261,7 +261,7 @@ namespace java.lang {
         public static void gc() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._gc14);
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_gc14);
             }
         }
         
@@ -269,7 +269,7 @@ namespace java.lang {
         public static global::java.util.Properties getProperties() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.util.Properties>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getProperties15));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2Cp<global::java.util.Properties>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getProperties15));
             }
         }
         
@@ -277,7 +277,7 @@ namespace java.lang {
         public static global::java.lang.String getenv(global::java.lang.String par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getenv16, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
+            return global::net.sf.jni4net.utils.Convertor.StrongJ2CpString(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getenv16, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0)));
             }
         }
         
@@ -285,7 +285,7 @@ namespace java.lang {
         public static global::java.util.Map getenv() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Map>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._getenv17));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.util.Map>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_getenv17));
             }
         }
         
@@ -293,7 +293,7 @@ namespace java.lang {
         public static global::java.io.Closeable inheritedChannel() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.io.Closeable>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System._inheritedChannel18));
+            return global::net.sf.jni4net.utils.Convertor.FullJ2C<global::java.io.Closeable>(@__env, @__env.CallStaticObjectMethodPtr(global::java.lang.System.staticClass, global::java.lang.System.j4n_inheritedChannel18));
             }
         }
         
@@ -301,7 +301,7 @@ namespace java.lang {
         public static void runFinalization() {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 10)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._runFinalization19);
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_runFinalization19);
             }
         }
         
@@ -309,7 +309,7 @@ namespace java.lang {
         public static void setErr(global::java.io.PrintStream par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setErr20, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_setErr20, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -317,7 +317,7 @@ namespace java.lang {
         public static void setIn(global::java.io.InputStream par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setIn21, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_setIn21, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -325,7 +325,7 @@ namespace java.lang {
         public static void setOut(global::java.io.PrintStream par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setOut22, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_setOut22, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -333,7 +333,7 @@ namespace java.lang {
         public static void setProperties(global::java.util.Properties par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setProperties23, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_setProperties23, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
@@ -341,7 +341,7 @@ namespace java.lang {
         public static void setSecurityManager(global::java.lang.Object par0) {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System._setSecurityManager24, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
+            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_setSecurityManager24, global::net.sf.jni4net.utils.Convertor.ParStrongCp2J(par0));
             }
         }
         
