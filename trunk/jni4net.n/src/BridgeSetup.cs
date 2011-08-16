@@ -53,7 +53,7 @@ namespace net.sf.jni4net
                     foreach (string path in JVMCLassPath)
                     {
                         sb.Append(path);
-                        sb.Append(";");
+                        sb.Append(Path.PathSeparator);
                     }
                     sb.Length--;
                     res.Add(sb.ToString());
@@ -75,17 +75,30 @@ namespace net.sf.jni4net
         }
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        public void AddClassPath(string jarOrClassRoot, bool expand)
+        {
+            var jarOrClassRootEx = Path.GetFullPath(jarOrClassRoot);
+            if (!Directory.Exists(jarOrClassRootEx) && !File.Exists(jarOrClassRootEx))
+            {
+                if (Debug || Verbose)
+                {
+                    Console.Error.WriteLine("Can't find " + jarOrClassRootEx);
+                }
+            }
+            else
+            {
+                if (Verbose)
+                {
+                    Console.WriteLine("Adding " + jarOrClassRootEx);
+                }
+            }
+            jvmCLassPath.Add(expand ? jarOrClassRootEx : jarOrClassRoot);
+        }
+
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddClassPath(string jarOrClassRoot)
         {
-            jvmCLassPath.Add(jarOrClassRoot);
-            if ((Debug || Verbose) && !Directory.Exists(jarOrClassRoot) && !File.Exists(jarOrClassRoot))
-            {
-                Console.Error.WriteLine("Can't find " + Path.GetFullPath(jarOrClassRoot));
-            }
-            else if (Verbose)
-            {
-                Console.WriteLine("Adding " + Path.GetFullPath(jarOrClassRoot));
-            }
+            AddClassPath(jarOrClassRoot, true);
         }
 
         public void AddJVMOption(string name, string value)

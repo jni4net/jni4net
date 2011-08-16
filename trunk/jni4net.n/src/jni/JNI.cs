@@ -61,11 +61,23 @@ namespace net.sf.jni4net.jni
         {
             if (!init)
             {
-                AddEnvironmentPath(FindJvmDir());
+                string findJvmDir = FindJvmDir();
+                AddEnvironmentPath(findJvmDir);
                 var args = new JavaVMInitArgs();
-                //just load DLL
-                Dll.JNI_GetDefaultJavaVMInitArgs(&args);
-                init = true;
+                try
+                {
+                    //just load DLL
+                    Dll.JNI_GetDefaultJavaVMInitArgs(&args);
+                    init = true;
+                }
+                catch (BadImageFormatException ex)
+                {
+                    // it didn't help, throw original exception
+                    throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
+                                           + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
+                                           + "\nJAVA_HOME: " + Path.GetFullPath(Bridge.Setup.JavaHome)
+                                           , ex);
+                }
             }
         }
 
