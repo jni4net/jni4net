@@ -24,6 +24,7 @@ using System;
 using java.lang;
 using java.nio;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 using Exception = java.lang.Exception;
 using Object = java.lang.Object;
 
@@ -33,6 +34,7 @@ namespace net.sf.jni4net.nio
     {
         private static Class dbClazz;
         private static MethodId ctor;
+        private static bool jdk6;
         private static bool initDone;
         private static void Init()
         {
@@ -46,7 +48,15 @@ namespace net.sf.jni4net.nio
                 // sun JVM specific
                 JNIEnv env = JNIEnv.ThreadEnv;
                 dbClazz = env.FindClass("java/nio/DirectByteBuffer");
-                ctor = env.GetMethodID(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+
+                // java 7 and above
+                ctor = env.GetMethodIDNoThrow(dbClazz, "<init>", "(IJLjava/io/FileDescriptor;Ljava/lang/Runnable;)V");
+                if (ctor == null)
+                {
+                    // java 6 and below
+                    ctor = env.GetMethodIDNoThrow(dbClazz, "<init>", "(IJLjava/lang/Runnable;)V");
+                    jdk6 = true;
+                }
             }
             catch (Exception)
             {
@@ -71,10 +81,22 @@ namespace net.sf.jni4net.nio
             {
                 // sun JVM specific
                 Object wrap = Bridge.WrapCLR(cleaner);
-                buffer = (ByteBuffer)env.NewObject(dbClazz, ctor,
-                                                    new Value { _int = len },
-                                                    new Value { _long = offset },
-                                                    new Value { _object = wrap.jvmHandle });
+                if (jdk6)
+                {
+                    buffer = (ByteBuffer)env.NewObject(dbClazz, ctor,
+                                                        new Value { _int = len },
+                                                        new Value { _long = offset },
+                                                        new Value { _object = wrap.jvmHandle });
+                }
+                else
+                {
+                    buffer = (ByteBuffer)env.NewObject(dbClazz, ctor,
+                                                        new Value { _int = len },
+                                                        new Value { _long = offset },
+                                                        new Value { _object = JniHandle.Zero }, //FileDescriptor
+                                                        new Value { _object = wrap.jvmHandle }
+                                                        );
+                }
                 ((IJvmProxy)wrap).JvmHandle.HoldThisHandle();
             }
             else
