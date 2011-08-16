@@ -1,3 +1,5 @@
+@echo off
+
 cd helloWorldFromCLR
 call build.cmd
 call run.cmd
@@ -43,8 +45,8 @@ call run.cmd
 cd ..\..
 
 
-cd fop
-call generateProxies.cmd
-call build.cmd
-call run.cmd
-cd ..
+REM cd fop
+REM call generateProxies.cmd
+REM call build.cmd
+REM call run.cmd
+REM cd ..

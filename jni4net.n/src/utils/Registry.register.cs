@@ -295,29 +295,29 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private static Class LoadClass(string name, JNIEnv env, java.lang.ClassLoader classLoader)
+        private static Class LoadClass(string name, JNIEnv env, ClassLoader classLoader)
         {
             Class res;
             string rn = name.Replace('.', '/');
             res = env.FindClassNoThrow(rn);
-            if (classLoader == null)
-            {
-              classLoader = systemClassLoader;
-            }
-
-            if (res == null && classLoader != null)
-            {
-                try
-                {
-                    res = classLoader.loadClass(name);
-                }
-                catch(Throwable th)
-                {
-                }
-            }
             if (res == null)
             {
-              throw new JNIException("Can't find java class for " + name + ((classLoader== null) ? "" : " from classLoader " + classLoader));
+                if (classLoader == null)
+                {
+                    classLoader = systemClassLoader;
+                }
+                if (classLoader != null)
+                {
+                    try
+                    {
+                        res = classLoader.loadClass(name);
+                    }
+                    catch (Throwable th)
+                    {
+                        throw new JNIException("Can't load java class for " + name +
+                                               ((classLoader == null) ? "" : " from classLoader " + classLoader), th);
+                    }
+                }
             }
             return res;
         }

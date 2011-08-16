@@ -109,7 +109,7 @@ namespace net.sf.jni4net
                     // it didn't help, throw original exception
                     throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
                                            + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
-                                           + "\nJAVA_HOME: " + Path.GetFullPath(Setup.JavaHome)
+                                           + "\nJAVA_HOME: " + Path.GetFullPath(setup.JavaHome)
                                            , ex);
                 }
                 throw;
@@ -297,6 +297,8 @@ namespace net.sf.jni4net
             return 0;
         }
 
+        [EnvironmentPermission(SecurityAction.Assert, Read = "PATH")]
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         private static void DumpRuntimeVersions()
         {
             if (Setup.Verbose)
@@ -306,6 +308,15 @@ namespace net.sf.jni4net
                 Console.WriteLine("java.home           :" + Setup.JavaHome);
                 Console.WriteLine("java.version        :" + java.lang.System.getProperty("java.version"));
                 Console.WriteLine("sun.arch.data.model :" + java.lang.System.getProperty("sun.arch.data.model"));
+                if (setup.Debug)
+                {
+                    Console.WriteLine("current.dir         :" + Directory.GetCurrentDirectory());
+                    Console.WriteLine();
+                    Console.WriteLine("java.class.path     :" + java.lang.System.getProperty("java.class.path"));
+                    Console.WriteLine();
+                    Console.WriteLine("env.PATH            :" + Environment.GetEnvironmentVariable("PATH"));
+                    Console.WriteLine();
+                }
             }
         }
 
