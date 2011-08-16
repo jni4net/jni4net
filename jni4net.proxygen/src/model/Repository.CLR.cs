@@ -566,12 +566,19 @@ namespace net.sf.jni4net.proxygen.model
 			bool isIndexerProperty = method.IsSpecialName && pname == "Item";
 			if (isIndexerProperty)
 			{
-                List<Type> pts=new List<Type>();
-                foreach (var parameter in method.GetParameters())
+                var pts=new List<Type>();
+			    int length = method.GetParameters().Length;
+                if (method.Name.StartsWith("set_"))
+                {
+                    // setter value
+                    length--;
+                }
+			    for (int index = 0; index < length; index++)
 			    {
-                    pts.Add(parameter.ParameterType);
+			        var parameter = method.GetParameters()[index];
+			        pts.Add(parameter.ParameterType);
 			    }
-                return FindIndexerProperty(f, type.CLRType, method.ReturnType, pts.ToArray());
+			    return FindIndexerProperty(f, type.CLRType, method.ReturnType, pts.ToArray());
             }
 
 			return FindProperty( f, type.CLRType, pname );
