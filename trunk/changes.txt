@@ -1,6 +1,7 @@
 Version 0.8.5
 -----------
-+ [#9] - fixed - support for indexer properties [by Johannes Rudolph]
++ [#09] - fixed - support for indexer properties [by Johannes Rudolph]
++ [#24] - fixed - Change of current directory during init may disrupt other code running in parallel
 
 Version 0.8.4
 -----------

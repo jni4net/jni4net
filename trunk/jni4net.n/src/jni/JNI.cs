@@ -40,6 +40,7 @@ namespace net.sf.jni4net.jni
         private const string JDK_REGISTRY_KEY = @"HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit";
         private const string JAVA_HOME_ENV = "JAVA_HOME";
         private const string ARCH_ENV = "PROCESSOR_ARCHITECTURE";
+        private const string PATH_ENV = "PATH";
 
         private static bool init;
 
@@ -50,6 +51,8 @@ namespace net.sf.jni4net.jni
 
         [EnvironmentPermission(SecurityAction.Assert, Read = JAVA_HOME_ENV)]
         [EnvironmentPermission(SecurityAction.Assert, Read = ARCH_ENV)]
+        [EnvironmentPermission(SecurityAction.Assert, Read = PATH_ENV)]
+        [EnvironmentPermission(SecurityAction.Assert, Write = PATH_ENV)]
         [RegistryPermission(SecurityAction.Assert, Read = JRE_REGISTRY_KEY)]
         [RegistryPermission(SecurityAction.Assert, Read = JDK_REGISTRY_KEY)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
@@ -58,22 +61,11 @@ namespace net.sf.jni4net.jni
         {
             if (!init)
             {
-                string jvmDir = FindJvmDir();
-
-                string oldDirectory = Directory.GetCurrentDirectory();
-                try
-                {
-                    Directory.SetCurrentDirectory(jvmDir);
-                    var args = new JavaVMInitArgs();
-
-                    //just load DLL
-                    Dll.JNI_GetDefaultJavaVMInitArgs(&args);
-                    init = true;
-                }
-                finally
-                {
-                    Directory.SetCurrentDirectory(oldDirectory);
-                }
+                AddEnvironmentPath(FindJvmDir());
+                var args = new JavaVMInitArgs();
+                //just load DLL
+                Dll.JNI_GetDefaultJavaVMInitArgs(&args);
+                init = true;
             }
         }
 
@@ -263,6 +255,14 @@ namespace net.sf.jni4net.jni
             jvm = new JavaVM(njvm);
             env = new JNIEnv(nenv);
         }
+
+        private static void AddEnvironmentPath(string jvm)
+        {
+            string path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
+            path = jvm + Path.PathSeparator + path;
+            Environment.SetEnvironmentVariable("PATH", path);
+        }
+
 
         #region Nested type: Dll
 
