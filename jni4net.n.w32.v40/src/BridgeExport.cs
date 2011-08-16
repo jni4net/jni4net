@@ -40,20 +40,11 @@ namespace net.sf.jni4net
             try
             {
                 string jni4net = typeof(BridgeExport).Assembly.Location.Replace(".w32.v40", "");
-                string oldDir = Environment.CurrentDirectory;
-                try
-                {
-                    Environment.CurrentDirectory = Path.GetDirectoryName(jni4net);
-                    Assembly assembly = Assembly.LoadFile(jni4net);
-                    Type type = assembly.GetType("net.sf.jni4net.Bridge");
-                    MethodInfo method = type.GetMethod("initDotNetImpl", BindingFlags.NonPublic | BindingFlags.Static);
-                    object res = method.Invoke(null, new object[] { envi, clazz });
-                    return (int)res;
-                }
-                finally
-                {
-                    Environment.CurrentDirectory = oldDir;
-                }
+                Assembly assembly = Assembly.LoadFile(jni4net);
+                Type type = assembly.GetType("net.sf.jni4net.Bridge");
+                MethodInfo method = type.GetMethod("initDotNetImpl", BindingFlags.NonPublic | BindingFlags.Static);
+                object res = method.Invoke(null, new object[] { envi, clazz });
+                return (int)res;
             }
             catch (NotSupportedException ex)
             {
