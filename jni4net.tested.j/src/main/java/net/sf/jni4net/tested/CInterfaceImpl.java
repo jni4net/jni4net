@@ -35,4 +35,8 @@ public class CInterfaceImpl implements ICInterface{
     public void xx(String[] strs) {
 
     }
+
+	public String getItem(int i, int j) {
+		return "";
+	}
 }
