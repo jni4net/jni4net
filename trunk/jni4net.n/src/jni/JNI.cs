@@ -40,7 +40,6 @@ namespace net.sf.jni4net.jni
         private const string JDK_REGISTRY_KEY = @"HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit";
         private const string JAVA_HOME_ENV = "JAVA_HOME";
         private const string ARCH_ENV = "PROCESSOR_ARCHITECTURE";
-        private const string PATH_ENV = "PATH";
 
         private static bool init;
 
@@ -49,10 +48,7 @@ namespace net.sf.jni4net.jni
             Init();
         }*/
 
-        [EnvironmentPermission(SecurityAction.Assert, Read = JAVA_HOME_ENV)]
-        [EnvironmentPermission(SecurityAction.Assert, Read = ARCH_ENV)]
-        [EnvironmentPermission(SecurityAction.Assert, Read = PATH_ENV)]
-        [EnvironmentPermission(SecurityAction.Assert, Write = PATH_ENV)]
+        [EnvironmentPermission(SecurityAction.Assert, Unrestricted = true)]
         [RegistryPermission(SecurityAction.Assert, Read = JRE_REGISTRY_KEY)]
         [RegistryPermission(SecurityAction.Assert, Read = JDK_REGISTRY_KEY)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
@@ -271,8 +267,11 @@ namespace net.sf.jni4net.jni
         private static void AddEnvironmentPath(string jvm)
         {
             string path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
-            path = jvm + Path.PathSeparator + path;
-            Environment.SetEnvironmentVariable("PATH", path);
+            if (!path.StartsWith(jvm))
+            {
+                path = jvm + Path.PathSeparator + path;
+                Environment.SetEnvironmentVariable("PATH", path);
+            }
         }
 
 

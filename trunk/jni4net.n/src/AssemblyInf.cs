@@ -7,7 +7,5 @@ using System.Security.Permissions;
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, Flags = SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.Assertion | SecurityPermissionFlag.Execution)]
 [assembly: ReflectionPermission(SecurityAction.RequestMinimum, Unrestricted = true)]
 [assembly: FileIOPermission(SecurityAction.RequestMinimum, Unrestricted = true)]
-[assembly: EnvironmentPermission(SecurityAction.RequestMinimum, Read = "JAVA_HOME")]
-[assembly: EnvironmentPermission(SecurityAction.RequestMinimum, Read = "PATH")]
-[assembly: EnvironmentPermission(SecurityAction.RequestMinimum, Write = "PATH")]
+[assembly: EnvironmentPermission(SecurityAction.RequestMinimum, Unrestricted = true)]
 

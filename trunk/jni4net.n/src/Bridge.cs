@@ -297,7 +297,7 @@ namespace net.sf.jni4net
             return 0;
         }
 
-        [EnvironmentPermission(SecurityAction.Assert, Read = "PATH")]
+        [EnvironmentPermission(SecurityAction.Assert, Unrestricted = true)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         private static void DumpRuntimeVersions()
         {

@@ -1,3 +1,7 @@
+Version 0.8.5.1
+-----------
++ fixed permission demand for sandboxed environments (Robocode)
+
 Version 0.8.5
 -----------
 + [#09] - fixed - support for indexer properties [by Johannes Rudolph]
