@@ -91,7 +91,7 @@ namespace net.sf.jni4net.proxygen
         [SecurityPermission(SecurityAction.Assert, Flags = SecurityPermissionFlag.UnmanagedCode | SecurityPermissionFlag.Assertion | SecurityPermissionFlag.Execution)]
         [ReflectionPermission(SecurityAction.Assert, Unrestricted = true)]
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        [EnvironmentPermission(SecurityAction.Assert, Read = "JAVA_HOME")]
+        [EnvironmentPermission(SecurityAction.Assert, Unrestricted = true)]
         private static int Work(string[] args)
         {
             ToolConfig cfg;
