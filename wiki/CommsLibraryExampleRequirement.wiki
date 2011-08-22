@@ -39,4 +39,4 @@ This is basically just serial data transported over IP; it behaves much like a p
   # Send to particular IP/port (could be a broadcast).
   # Received data (also IP/UDP) is tagged with the IP/port from where it was sent.
   # Close the port.
-In general messages can be sent to and received from multiple other ends, in arbitrary order.
+In general, messages can be sent to and received from multiple other ends, in arbitrary order.
