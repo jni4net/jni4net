@@ -1,0 +1,42 @@
+#summary Jni4net example - communication library for Java
+
+= The requirement =
+
+The context for this is a system comprising a number of MS-Windows programs (written in Java) that need to communicate with other parts of the system. All the communication methods make use of _byte streams_ which contain structured _messages_. In particular, the following communication methods are needed:
+
+  * Asynchronous RS232 serial
+  * Bluetooth serial
+  * IP/UDP
+
+The first two are operating system dependent,so they _must_ be implemented in a native fashion. That is, the actual communication must ultimately be done by the operating system, since it is not provided in the Java VM. The third can in fact be done completely in Java, although of course the real stuff is also done by the operating system.
+
+There are two reasons for wanting to implement this in C# (rather than C++).
+
+  * The existing RS232 comms for Java (javax.comm implemented by an unsupported win32com.dll, and gnu.io, aka RXTX) are over-complicated. Also, moving this forward to Windows7 (x64) is problematical.
+  * The C# version of comms (System.IO.Ports etc) looks much more elegant (and I hate C++).
+
+All the proposed communication methods share a common, simple, modus operandi.
+  # A _named port_ is _opened_, using specified parameters. If successful, this returns a _handle_ to the port. This handle is used in all subsequent interaction to/from the port to signify _which_ port is involved (there may be any number of them open at the same time).
+  # Sending (bytes) to the port is logically an atomic operation (although in practice, it may block due to flow control or other things).
+  # Events are received from the port in an asynchronous, unpredictable fashion. They are delivered to an _input handler_ that is one of the parameters to the open. The events may comprise received bytes, changes of state (such as control signals) or anomalous conditions (such as failures).
+  # When the port is no longer needed it is _closed_.
+
+The methods differ in the details of how they are handled, as follows.
+
+== RS232 Serial ==
+This really is a piece of wire with just two ends. Therefore there is no need to label outgoing bytes or incoming events - they can only go to or come from one place - the other end of the wire.
+
+== Bluetooth ==
+The specific use of Bluetooth that is needed (for my application) is an _initiator_ role. That is, the Java program wants to connect to a Bluetooth device (using a known device address) and then send/receive raw serial data down the resulting connection.
+  # Open the port (target = address A).
+  # Await connect indication.
+  # Send/receive data.
+  # Close the port (which causes disconnection).
+
+== IP/UDP ==
+This is basically just serial data transported over IP; it behaves much like a piece of wire. In this case it is handled as follows.
+  # Open the port (using a particular local port number).
+  # Send to particular IP/port (could be a broadcast).
+  # Received data (also IP/UDP) is tagged with the IP/port from where it was sent.
+  # Close the port.
+In general messages can be sent to and received from multiple other ends, in arbitrary order.
