@@ -77,6 +77,11 @@ namespace net.sf.jni4net
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddClassPath(string jarOrClassRoot, bool expand)
         {
+            if (string.IsNullOrEmpty(jarOrClassRoot))
+            {
+                throw new ArgumentNullException(jarOrClassRoot);
+            }
+
             var jarOrClassRootEx = Path.GetFullPath(jarOrClassRoot);
             if (!Directory.Exists(jarOrClassRootEx) && !File.Exists(jarOrClassRootEx))
             {
