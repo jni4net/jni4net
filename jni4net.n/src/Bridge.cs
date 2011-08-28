@@ -109,7 +109,9 @@ namespace net.sf.jni4net
                     // it didn't help, throw original exception
                     throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
                                            + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
-                                           + "\nJAVA_HOME: " + Path.GetFullPath(setup.JavaHome)
+                                           + "\nJAVA_HOME: " + (setup==null || setup.JavaHome == null
+                                                                    ? "null"
+                                                                    : Path.GetFullPath(setup.JavaHome))
                                            , ex);
                 }
                 throw;
@@ -216,7 +218,7 @@ namespace net.sf.jni4net
                 Console.WriteLine("loading " + assembly + " from " + assembly.Location);
             }
             knownAssemblies.Add(assembly, assembly);
-            Registry.RegisterAssembly(assembly, true);
+            Registry.RegisterAssembly(assembly, true, classLoader);
 
             if (Setup.Verbose)
             {

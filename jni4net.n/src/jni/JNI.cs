@@ -71,7 +71,9 @@ namespace net.sf.jni4net.jni
                     // it didn't help, throw original exception
                     throw new JNIException("Can't initialize jni4net. (32bit vs 64bit JVM vs CLR ?)"
                                            + "\nCLR architecture: " + ((IntPtr.Size == 8) ? "64bit" : "32bit")
-                                           + "\nJAVA_HOME: " + Path.GetFullPath(Bridge.Setup.JavaHome)
+                                           + "\nJAVA_HOME: " + (Bridge.Setup == null || Bridge.Setup.JavaHome == null
+                                                                    ? "null"
+                                                                    : Path.GetFullPath(Bridge.Setup.JavaHome))
                                            , ex);
                 }
             }
@@ -80,7 +82,7 @@ namespace net.sf.jni4net.jni
         private static string FindJvmDir()
         {
             string jvmDir = null;
-            if (Bridge.Setup.JavaHome == null)
+            if (string.IsNullOrEmpty(Bridge.Setup.JavaHome))
             {
                 Bridge.Setup.JavaHome = Environment.GetEnvironmentVariable(JAVA_HOME_ENV);
                 if (string.IsNullOrEmpty(Bridge.Setup.JavaHome))
