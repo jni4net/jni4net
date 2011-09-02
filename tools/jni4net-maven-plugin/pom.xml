@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>net.sf.jni4net</groupId>
+  <artifactId>jni4net-maven-plugin</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>maven-plugin</packaging>
+
+  <name>Maven Plugin for jni4net support</name>
+  <url>http://jni4net.sourceforge.net</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <distributionManagement>
+    <downloadUrl>http://nexus:8081/nexus/content/groups/public</downloadUrl>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>nexus</id>
+      <name>Kodak Release Repository</name>
+      <url>http://nexus:8081/nexus/content/repositories/releases</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Kodak Snapshot Repository</name>
+      <url>http://nexus:8081/nexus/content/repositories/snapshots</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <goalPrefix>jni4net</goalPrefix>
+        </configuration>
+        <executions>
+          <execution>
+            <id>generated-helpmojo</id>
+            <goals>
+              <goal>helpmojo</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.maven</groupId>
+  		<artifactId>maven-plugin-api</artifactId>
+  		<version>3.0.3</version>
+  	</dependency>
+<!--   	<dependency> -->
+<!--   		<groupId>net.sf.jni4net</groupId> -->
+<!--   		<artifactId>jni4net.proxygen</artifactId> -->
+<!--   		<version>0.8.5.1</version> -->
+<!--   	</dependency> -->
+  	<dependency>
+  		<groupId>org.apache.maven</groupId>
+  		<artifactId>maven-artifact</artifactId>
+  		<version>2.0.6</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.maven</groupId>
+  		<artifactId>maven-project</artifactId>
+  		<version>2.2.1</version>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  	  <groupId>org.apache.servicemix.bundles</groupId>
+  	  <artifactId>org.apache.servicemix.bundles.commons-io</artifactId>
+  	  <version>1.4_2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>javassist</groupId>
+  		<artifactId>javassist</artifactId>
+  		<version>3.12.1.GA</version>
+  	</dependency>
+  	  	<dependency>
+  		<groupId>org.apache.servicemix.bundles</groupId>
+  		<artifactId>
+  			org.apache.servicemix.bundles.commons-io
+  		</artifactId>
+  		<version>1.4_2</version>
+  	</dependency>
+  </dependencies>
+</project>
