@@ -515,7 +515,7 @@ namespace net.sf.jni4net.proxygen.model
 
         private static void RegisterClass(string clazzName)
         {
-            Class clazz = loadClass(clazzName);
+            Class clazz = loadClass(clazzName, false);
             if (clazz != null && ((ModifierFlags)clazz.getModifiers() & ModifierFlags.Public) != 0)
             {
                 TypeRegistration registration = new TypeRegistration();

@@ -273,7 +273,7 @@ namespace net.sf.jni4net.proxygen.model
                         (type.IsInterface && javaInterfaceA != null))
                     {
                         string clazzName = GetInterfaceName(type);
-                        Class clazz = loadClass(clazzName);
+                        Class clazz = loadClass(clazzName, false);
                         if (clazz != null)
                         {
                             RegisterClass(clazz);
@@ -287,7 +287,7 @@ namespace net.sf.jni4net.proxygen.model
                         if (realType != null)
                         {
                             string clazzName = GetInterfaceName(type);
-                            Class clazz = loadClass(clazzName);
+                            Class clazz = loadClass(clazzName, false);
                             if (clazz != null)
                             {
                                 RegisterClass(clazz);
@@ -301,7 +301,7 @@ namespace net.sf.jni4net.proxygen.model
         }
 
         static ClassLoader systemClassLoader;
-        private static Class loadClass(string clazzName)
+        private static Class loadClass(string clazzName, bool logDetails)
         {
             Class clazz = JNIEnv.ThreadEnv.FindClassNoThrow(clazzName);
             if (clazz == null && systemClassLoader!=null)
@@ -313,7 +313,11 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 catch(Throwable ex)
                 {
-
+                    Console.Error.WriteLine("Can't load class " + clazzName);
+                    if (config.Verbose)
+                    {
+                        Console.Error.WriteLine(ex.ToString());
+                    }
                     clazz = null;
                 }
             }
@@ -325,17 +329,13 @@ namespace net.sf.jni4net.proxygen.model
             foreach (TypeRegistration registration in config.JavaClass)
             {
                 string name = registration.TypeName.Replace(".", "/");
-                Class clazz = loadClass(name);
+                Class clazz = loadClass(name, true);
                 if (clazz != null)
                 {
                     GType reg = RegisterClass(clazz, registration);
                     reg.IsCLRGenerate = registration.Generate;
                     reg.IsSkipJVMInterface = !registration.SyncInterface;
                     reg.MergeJavaSource = registration.MergeJavaSource;
-                }
-                else
-                {
-                    Console.Error.WriteLine("Can't load class " + registration.TypeName);
                 }
             }
         }
