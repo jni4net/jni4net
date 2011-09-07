@@ -158,8 +158,6 @@ namespace net.sf.jni4net.proxygen
                 }
             }
 
-            cfg.Verbose = true;
-
             Generator.config = cfg;
             Repository.config = cfg;
             Repository.Register();
