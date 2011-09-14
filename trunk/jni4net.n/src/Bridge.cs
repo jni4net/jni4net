@@ -48,6 +48,12 @@ namespace net.sf.jni4net
         {
             homeDll = typeof (Bridge).Assembly.Location;
             homeDir = Path.GetDirectoryName(homeDll);
+            if (homeDir==null 
+                ||homeDir.Contains("Temporary ASP.NET Files")
+                || homeDir.Contains(@"Windows\assembly\GAC_MSIL"))
+            {
+                homeDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+            }
         }
 
         public static BridgeSetup Setup
@@ -125,14 +131,15 @@ namespace net.sf.jni4net
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public static string FindJar()
         {
-            string jar = homeDll.Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
+            string dir;
+            string jar = homeDll.ToLowerInvariant().Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
             if (System.IO.File.Exists(jar))
             {
                 return jar;
             }
             if (homeDll.Contains("jni4net.proxygen\\target"))
             {
-                string dir = Path.GetDirectoryName(homeDll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
+                dir = Path.GetDirectoryName(homeDll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
                 if (Directory.Exists(dir))
                 {
                     return dir;
@@ -140,7 +147,7 @@ namespace net.sf.jni4net
             }
             if (homeDll.Contains("jni4net.n\\target"))
             {
-                string dir = Path.GetDirectoryName(homeDll).Replace("jni4net.n", "jni4net.j") + "\\classes";
+                dir = Path.GetDirectoryName(homeDll).Replace("jni4net.n", "jni4net.j") + "\\classes";
                 if (Directory.Exists(dir))
                 {
                     return dir;
@@ -148,7 +155,7 @@ namespace net.sf.jni4net
             }
             if (homeDll.Contains("jni4net.test.n\\target"))
             {
-                string dir =
+                dir =
                     Path.GetDirectoryName(homeDll).Replace("jni4net.test.n", "jni4net.j").Replace("jni4net.n",
                                                                                                   "jni4net.j") +
                     "\\classes";
@@ -157,6 +164,12 @@ namespace net.sf.jni4net
                     return dir;
                 }
             }
+            jar=Path.Combine(homeDir, "jni4net.j-"+typeof(Bridge).Assembly.GetName().Version+".jar");
+            if (System.IO.File.Exists(jar))
+            {
+                return jar;
+            }
+            
             throw new JNIException("Can't find " + jar);
         }
 
