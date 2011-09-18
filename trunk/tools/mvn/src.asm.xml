@@ -40,5 +40,11 @@
                 <exclude>**/*.snk</exclude>
             </excludes>
         </fileSet>
+        <fileSet>
+						<includes>
+							<include>tools/bin/*.bat</include>
+							<include>tools/bin/*.conf</include>
+						</includes>        
+        </fileSet>
     </fileSets>
 </assembly>

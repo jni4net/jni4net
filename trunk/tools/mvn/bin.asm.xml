@@ -43,7 +43,7 @@
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
-            <source>c:\Data\Sf\jni4net\trunk\jni4net.proxygen\src\proxygen.exe.config</source>
+            <source>jni4net.proxygen\src\proxygen.exe.config</source>
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
