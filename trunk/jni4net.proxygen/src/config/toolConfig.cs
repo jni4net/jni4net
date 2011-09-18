@@ -20,8 +20,8 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
-    [System.Xml.Serialization.XmlRootAttribute("jni4net-proxygen", Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlRootAttribute("jni4net-proxygen", Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd", IsNullable=false)]
     public partial class ToolConfig {
         
         private string targetDirJvmField;
@@ -151,7 +151,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
     public partial class ClassPath {
         
         private string pathField;
@@ -191,7 +191,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
     public partial class MethodModifier {
         
         private string methodNameField;
@@ -326,7 +326,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
     public partial class TypeReference {
         
         private string typeNameField;
@@ -348,7 +348,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
     public partial class TypeRegistration {
         
         private TypeReference[] ignoreInterfaceField;
@@ -459,7 +459,7 @@ namespace net.sf.jni4net.proxygen.config {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd")]
     public partial class AssemblyReference {
         
         private string assemblyField;

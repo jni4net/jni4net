@@ -8,7 +8,7 @@
     <ProjectGuid>{774AED55-E9EC-457D-8EEB-1B2481C578B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>net.sf.jni4net</RootNamespace>
-    <AssemblyName>jni4net.n.w32.v40-0.8.5.1</AssemblyName>
+    <AssemblyName>jni4net.n.w32.v40-0.8.6.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkSubset>
@@ -71,7 +71,7 @@
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\ildasm.exe" "c:\Windows\Microsoft.NET\Framework64\v4.0.30128\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
-echo [assembly: System.Reflection.AssemblyVersion("0.8.5.1")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+echo [assembly: System.Reflection.AssemblyVersion("0.8.6.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 </PreBuildEvent>
   </PropertyGroup>
 </Project>
