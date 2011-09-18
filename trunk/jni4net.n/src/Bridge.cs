@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Mime;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
@@ -38,22 +39,14 @@ namespace net.sf.jni4net
     {
         private static readonly Dictionary<Assembly, object> knownAssemblies = new Dictionary<Assembly, object>();
         private static bool jvmLoaded;
-        internal static bool clrLoaded;
+        private static bool clrLoaded;
         private static BridgeSetup setup;
         private static readonly string homeDir;
-        private static readonly string homeDll;
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         static Bridge()
         {
-            homeDll = typeof (Bridge).Assembly.Location;
-            homeDir = Path.GetDirectoryName(homeDll);
-            if (homeDir==null 
-                ||homeDir.Contains("Temporary ASP.NET Files")
-                || homeDir.Contains(@"Windows\assembly\GAC_MSIL"))
-            {
-                homeDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
-            }
+            homeDir = AppDomain.CurrentDomain.BaseDirectory.ToLowerInvariant();
         }
 
         public static BridgeSetup Setup
@@ -131,46 +124,61 @@ namespace net.sf.jni4net
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public static string FindJar()
         {
-            string dir;
-            string jar = homeDll.ToLowerInvariant().Replace(".dll", ".jar").Replace("jni4net.n", "jni4net.j");
-            if (System.IO.File.Exists(jar))
+            string dir = homeDir;
+            var jarName = "jni4net.j-" + typeof(Bridge).Assembly.GetName().Version + ".jar";
+            var jar1 = Path.GetFullPath(Path.Combine(dir, jarName));
+            if (System.IO.File.Exists(jar1))
             {
-                return jar;
+                return jar1;
             }
-            if (homeDll.Contains("jni4net.proxygen\\target"))
+            var jar2 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\bin"), jarName));
+            if (System.IO.File.Exists(jar2))
             {
-                dir = Path.GetDirectoryName(homeDll).Replace("jni4net.proxygen", "jni4net.j") + "\\classes";
-                if (Directory.Exists(dir))
-                {
-                    return dir;
-                }
+                return jar2;
             }
-            if (homeDll.Contains("jni4net.n\\target"))
+            var jar3 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\lib"), jarName));
+            if (System.IO.File.Exists(jar3))
             {
-                dir = Path.GetDirectoryName(homeDll).Replace("jni4net.n", "jni4net.j") + "\\classes";
-                if (Directory.Exists(dir))
-                {
-                    return dir;
-                }
+                return jar3;
             }
-            if (homeDll.Contains("jni4net.test.n\\target"))
+            var jar4 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\..\lib"), jarName));
+            if (System.IO.File.Exists(jar4))
             {
-                dir =
-                    Path.GetDirectoryName(homeDll).Replace("jni4net.test.n", "jni4net.j").Replace("jni4net.n",
-                                                                                                  "jni4net.j") +
-                    "\\classes";
-                if (Directory.Exists(dir))
-                {
-                    return dir;
-                }
+                return jar4;
             }
-            jar=Path.Combine(homeDir, "jni4net.j-"+typeof(Bridge).Assembly.GetName().Version+".jar");
-            if (System.IO.File.Exists(jar))
+
+            dir = Path.GetDirectoryName(new Uri(typeof(Bridge).Assembly.GetName().CodeBase).AbsolutePath);
+            var jar5 = Path.GetFullPath(Path.Combine(dir, jarName));
+            if (System.IO.File.Exists(jar5))
             {
-                return jar;
+                return jar5;
             }
-            
-            throw new JNIException("Can't find " + jar);
+            var jar6 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\bin"), jarName));
+            if (System.IO.File.Exists(jar6))
+            {
+                return jar6;
+            }
+            var jar7 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\lib"), jarName));
+            if (System.IO.File.Exists(jar7))
+            {
+                return jar7;
+            }
+            var jar8 = Path.GetFullPath(Path.Combine(Path.Combine(dir, @".\..\lib"), jarName));
+            if (System.IO.File.Exists(jar8))
+            {
+                return jar8;
+            }
+
+            throw new JNIException("Can't find " + jarName
+                + "\nat " + jar1
+                + "\nor " + jar2
+                + "\nor " + jar3
+                + "\nor " + jar4
+                + "\nor " + jar5
+                + "\nor " + jar6
+                + "\nor " + jar7
+                + "\nor " + jar8
+                );
         }
 
         public static string GetVersion()
@@ -345,6 +353,7 @@ namespace net.sf.jni4net
 
             if (newSetup.Verbose)
             {
+                var homeDll = new Uri(typeof(Bridge).Assembly.GetName().CodeBase).AbsolutePath;
                 Console.WriteLine("loading core from " + homeDll);
             }
             setup = newSetup;
@@ -372,6 +381,7 @@ namespace net.sf.jni4net
             }
             if (Setup.Verbose)
             {
+                var homeDll = new Uri(typeof(Bridge).Assembly.GetName().CodeBase).AbsolutePath;
                 Console.WriteLine("core loaded from " + homeDll);
             }
 
