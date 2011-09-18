@@ -2,8 +2,8 @@
 <xs:schema id="toolConfig"
     targetNamespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd"
     elementFormDefault="qualified"
-    xmlns="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd"
-    xmlns:jni4net="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd"
+    xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd"
+    xmlns:jni4net="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
 
