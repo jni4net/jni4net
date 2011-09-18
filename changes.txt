@@ -3,6 +3,7 @@ Version 0.8.6.0
 + fixed permission demand for sandboxed environments (Robocode)
 + improved proxygen can't find class reporting
 + improved the way we are looking for jni4net.j-xxx-.jar while installed in GAC
++ [#27] - fixed - build script problems
 
 Version 0.8.5
 -----------
