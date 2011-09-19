@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd">
+  <TargetDirJvm>jni4net.j/src/main/java</TargetDirJvm>
+  <TargetDirClr>jni4net.n/src/generated</TargetDirClr>
+  <ClassPath Path="jni4net.j/target/classes"/>
+  <!-- 
+  <Verbose>true</Verbose>
+  -->
+
+  <!-- basics -->
+  <JavaClass TypeName="java.lang.Object">
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJvmProxy"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
+  </JavaClass>
+  <JavaClass TypeName="java.lang.Class"/>
+  <JavaClass TypeName="java.lang.ClassLoader"/>
+  <JavaClass TypeName="java.lang.String"/>
+  <JavaClass TypeName="java.lang.StringBuffer"/>
+  <JavaClass TypeName="java.lang.StringBuilder"/>
+  <JavaClass TypeName="java.lang.Runnable"/>
+
+  <!-- collections -->
+  <JavaClass TypeName="java.util.Dictionary"/>
+  <JavaClass TypeName="java.util.Hashtable">
+	  <MethodModifier MethodName="clone" Signature="()Ljava/lang/Object;" Skip="true"/>
+  </JavaClass>
+  <JavaClass TypeName="java.util.List"/>
+  <JavaClass TypeName="java.util.Map"/>
+  <JavaClass TypeName="java.util.Set"/>
+  <JavaClass TypeName="java.util.Properties"/>
+  <JavaClass TypeName="java.util.Iterator"/>
+  <JavaClass TypeName="java.util.Enumeration"/>
+  <JavaClass TypeName="java.util.Collection"/>
+  
+  <!-- interfaces -->
+  <JavaClass TypeName="java.lang.Iterable"/>
+  <JavaClass TypeName="java.lang.Comparable"/>
+  <JavaClass TypeName="java.lang.Cloneable"/>
+
+  <!-- io,nio,net -->
+  <JavaClass TypeName="java.io.InputStream"/>
+  <JavaClass TypeName="java.io.OutputStream"/>
+  <JavaClass TypeName="java.io.FileInputStream"/>
+  <JavaClass TypeName="java.io.PrintStream">
+  <!-- 
+  -->
+	  <MethodModifier MethodName="append" Signature="(C)Ljava/io/PrintStream;" Return="java.lang.Appendable"/>
+	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;" Return="java.lang.Appendable"/>
+	  <MethodModifier MethodName="append" Signature="(Ljava/lang/CharSequence;)Ljava/io/PrintStream;" Return="java.lang.Appendable"/>
+  </JavaClass>
+  <JavaClass TypeName="java.util.zip.ZipInputStream"/>
+  <JavaClass TypeName="java.util.zip.ZipEntry"/>
+  <JavaClass TypeName="java.io.Closeable"/>
+  <JavaClass TypeName="java.io.Flushable"/>
+  <JavaClass TypeName="java.io.Serializable"/>
+  <JavaClass TypeName="java.io.FilterOutputStream"/>
+  <JavaClass TypeName="java.io.ObjectOutputStream"/>
+  <JavaClass TypeName="java.io.ObjectInputStream"/>
+  <JavaClass TypeName="java.io.ByteArrayOutputStream"/>
+  <JavaClass TypeName="java.io.ByteArrayInputStream"/>
+  <JavaClass TypeName="java.lang.Appendable"/>
+  <JavaClass TypeName="java.io.File">
+	  <MethodModifier MethodName="listFiles" Signature="(Ljava/io/FileFilter;)[Ljava/io/File;" Skip="true"/>
+  </JavaClass>
+  <JavaClass TypeName="java.net.URL"/>
+  <JavaClass TypeName="java.nio.Buffer"/>
+  <JavaClass TypeName="java.nio.ByteBuffer"/>
+  <JavaClass TypeName="java.nio.ByteOrder"/>
+  <JavaClass TypeName="java.lang.System"/>
+  <JavaClass TypeName="java.lang.CharSequence"/>
+  <JavaClass TypeName="java.util.Date"/>
+
+  <!-- primitive types -->
+  <JavaClass TypeName="java.lang.Number"/>
+  <JavaClass TypeName="java.lang.Boolean"/>
+  <JavaClass TypeName="java.lang.Byte"/>
+  <JavaClass TypeName="java.lang.Double"/>
+  <JavaClass TypeName="java.lang.Float"/>
+  <JavaClass TypeName="java.lang.Integer"/>
+  <JavaClass TypeName="java.lang.Long"/>
+  <JavaClass TypeName="java.lang.Short"/>
+  <JavaClass TypeName="java.lang.Character"/>
+
+  <!-- exceptions -->
+  <JavaClass TypeName="java.lang.Throwable">
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJvmProxy"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
+  </JavaClass>
+  <JavaClass TypeName="java.lang.Error"/>
+  <JavaClass TypeName="java.lang.Exception"/>
+  <JavaClass TypeName="java.lang.LinkageError"/>
+  <JavaClass TypeName="java.lang.NoClassDefFoundError"/>
+  <JavaClass TypeName="java.lang.NoSuchFieldException"/>
+  <JavaClass TypeName="java.lang.NoSuchMethodException"/>
+  <JavaClass TypeName="java.lang.RuntimeException"/>
+  <JavaClass TypeName="java.lang.StackTraceElement"/>
+  <JavaClass TypeName="java.lang.ClassNotFoundException"/>
+  <JavaClass TypeName="java.lang.IllegalArgumentException"/>
+  <JavaClass TypeName="java.lang.IndexOutOfBoundsException"/>
+  <JavaClass TypeName="java.lang.UnsupportedOperationException"/>
+  <JavaClass TypeName="java.lang.NullPointerException"/>
+  <JavaClass TypeName="java.nio.BufferOverflowException"/>
+  <JavaClass TypeName="java.nio.BufferUnderflowException"/>
+  <JavaClass TypeName="java.nio.InvalidMarkException"/>
+  <JavaClass TypeName="java.nio.ReadOnlyBufferException"/>
+  
+ 
+
+  <!-- reflection -->
+  <JavaClass TypeName="java.lang.reflect.Constructor">
+	  <MethodModifier MethodName="getParameterAnnotations" Signature="()[[Ljava/lang/annotation/Annotation;" Skip="true"/>
+  </JavaClass>
+  <JavaClass TypeName="java.lang.reflect.Field"/>
+  <JavaClass TypeName="java.lang.reflect.Method">
+  	<!-- 
+	  <MethodModifier MethodName="getParameterAnnotations" Signature="()[[Ljava/lang/annotation/Annotation;" Skip="true"/>
+	  -->
+  </JavaClass>
+  <JavaClass TypeName="java.lang.reflect.Member"/>
+  <JavaClass TypeName="java.lang.reflect.Type"/>
+  <JavaClass TypeName="java.lang.reflect.TypeVariable"/>
+  <JavaClass TypeName="java.lang.reflect.WildcardType"/>
+  <JavaClass TypeName="java.lang.reflect.ParameterizedType"/>
+  <JavaClass TypeName="java.lang.reflect.Modifier"/>
+  <JavaClass TypeName="java.lang.reflect.GenericArrayType"/>
+  <JavaClass TypeName="java.lang.annotation.Annotation"/>
+  <JavaClass TypeName="java.lang.reflect.AccessibleObject"/>
+  <JavaClass TypeName="java.lang.reflect.GenericDeclaration"/>
+  <JavaClass TypeName="java.lang.reflect.AnnotatedElement"/>
+  
+  <JavaClass TypeName="net.sf.jni4net.Ref"/>
+  <JavaClass TypeName="net.sf.jni4net.Out"/>
+
+
+  <!-- basics -->
+  <ClrType TypeName="System.Object" MergeJavaSource="true">
+    <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
+    <IgnoreInterface TypeName="system.IObject"/>
+  </ClrType>
+  <ClrType TypeName="System.String" MergeJavaSource="true">
+	  <MethodModifier MethodName="GetEnumerator" Signature="()LSystem/CharEnumerator;" Skip="true"/>
+  </ClrType>
+  <ClrType TypeName="System.Type"/>
+  <ClrType TypeName="System.ValueType"/>
+  <ClrType TypeName="System.MarshalByRefObject"/>
+
+  <!-- primitive -->
+  <ClrType TypeName="System.DateTime"/>
+  <ClrType TypeName="System.Decimal"/>
+  <ClrType TypeName="System.Guid"/>
+  <ClrType TypeName="System.Enum"/>
+  <ClrType TypeName="System.Array"/>
+  <!-- 
+  <ClrType TypeName="System.Boolean"/>
+  <ClrType TypeName="System.Byte"/>
+  <ClrType TypeName="System.Double"/>
+  <ClrType TypeName="System.Single"/>
+  <ClrType TypeName="System.Int32"/>
+  <ClrType TypeName="System.Int64"/>
+  <ClrType TypeName="System.Int16"/>
+  <ClrType TypeName="System.Char"/>
+  <ClrType TypeName="System.UInt32"/>
+  <ClrType TypeName="System.UInt64"/>
+  <ClrType TypeName="System.UInt16"/>
+  <ClrType TypeName="System.SByte"/>
+  -->
+
+  <!-- exceptions -->
+  <ClrType TypeName="System.Exception" MergeJavaSource="true">
+    <IgnoreInterface TypeName="net.sf.jni4net.inj.IClrProxy"/>
+    <IgnoreInterface TypeName="system.IObject"/>
+    <MethodModifier MethodName="get_StackTrace" Signature="()LSystem/String;" RenameJVM="getStackTraceNet"/>
+  </ClrType>
+  <ClrType TypeName="System.SystemException"/>
+  <ClrType TypeName="System.NullReferenceException"/>
+  <ClrType TypeName="System.ArgumentException"/>
+  <ClrType TypeName="System.IO.IOException"/>
+  <ClrType TypeName="System.NotImplementedException"/>
+  <ClrType TypeName="System.NotSupportedException"/>
+  <ClrType TypeName="System.InvalidOperationException"/>
+
+  <!-- io -->
+  <ClrType TypeName="System.IO.FileStream"/>
+  <ClrType TypeName="System.IO.Stream"/>
+  <ClrType TypeName="System.Console"/>
+  <ClrType TypeName="System.Environment"/>
+  <ClrType TypeName="System.IO.TextWriter"/>
+  <ClrType TypeName="System.IO.TextReader"/>
+
+  <!-- colections -->
+  <ClrType TypeName="System.Collections.IList"/>
+  <ClrType TypeName="System.Collections.IEnumerator"/>
+  <ClrType TypeName="System.Collections.IDictionaryEnumerator"/>
+  <ClrType TypeName="System.Collections.ICollection"/>
+  <ClrType TypeName="System.Collections.IEnumerable"/>
+  <ClrType TypeName="System.Collections.IDictionary">
+	  <MethodModifier MethodName="GetEnumerator" Signature="()LSystem/Collections/IEnumerator;" Interface="System.Collections.IEnumerable" RenameJVM="IEnumerable_GetEnumerator"/>
+  </ClrType>
+
+  <!-- interfaces -->
+  <ClrType TypeName="System.Runtime.Serialization.ISerializable"/>
+	  <ClrType TypeName="System.Runtime.Serialization.SerializationInfo"/>
+	  <ClrType TypeName="System.Runtime.Serialization.StreamingContext"/>
+  <ClrType TypeName="System.Security.IEvidenceFactory"/>
+  <ClrType TypeName="System.IComparable"/>
+  <ClrType TypeName="System.IConvertible">
+	  <!-- 
+	  <MethodModifier MethodName="GetTypeCode" Signature="()LSystem/TypeCode;" Skip="true"/>
+	  <MethodModifier MethodName="ToUInt16" Signature="(LSystem/IFormatProvider;)LSystem/UInt16;" Return="short"/>
+	  <MethodModifier MethodName="ToSByte" Signature="(LSystem/IFormatProvider;)LSystem/SByte;" Return="byte"/>
+	  <MethodModifier MethodName="ToUInt32" Signature="(LSystem/IFormatProvider;)LSystem/UInt32;" Return="int"/>
+	  <MethodModifier MethodName="ToUInt64" Signature="(LSystem/IFormatProvider;)LSystem/UInt64;" Return="long"/>
+	  -->
+  </ClrType>
+  <ClrType TypeName="System.IDisposable"/>
+  <ClrType TypeName="System.IFormattable"/>
+  <ClrType TypeName="System.IFormatProvider"/>
+  <ClrType TypeName="System.ICloneable"/>
+
+  <ClrType TypeName="System.Delegate"/>
+  <ClrType TypeName="System.MulticastDelegate"/>
+  <ClrType TypeName="System.AsyncCallback"/>
+  <ClrType TypeName="System.IAsyncResult"/>
+
+  <!-- reflection -->
+  <ClrType TypeName="System.Reflection.MemberInfo"/>
+  <ClrType TypeName="System.Reflection.Assembly"/>
+  <ClrType TypeName="System.Reflection.ConstructorInfo"/>
+  <ClrType TypeName="System.Reflection.MethodInfo"/>
+  <ClrType TypeName="System.Reflection.PropertyInfo"/>
+  <ClrType TypeName="System.Runtime.InteropServices._FieldInfo" Generate="false">
+	  <MethodModifier MethodName="SetValueDirect" Signature="(LSystem/TypedReference;LSystem/Object;)V" Skip="true"/>
+	  <MethodModifier MethodName="GetValueDirect" Signature="(LSystem/TypedReference;)LSystem/Object;" Skip="true"/>
+  </ClrType>
+  <ClrType TypeName="System.Reflection.FieldInfo">
+	  <MethodModifier MethodName="SetValueDirect" Signature="(LSystem/TypedReference;LSystem/Object;)V" Skip="true"/>
+	  <MethodModifier MethodName="GetValueDirect" Signature="(LSystem/TypedReference;)LSystem/Object;" Skip="true"/>
+  </ClrType>
+  <ClrType TypeName="System.Reflection.ParameterInfo"/>
+  <ClrType TypeName="System.Reflection.BindingFlags"/>
+  <ClrType TypeName="System.Reflection.MethodBase"/>
+  <ClrType TypeName="System.Reflection.ICustomAttributeProvider"/>
+  <!-- 
+  <ClrType TypeName="System.Runtime.InteropServices._Exception"/>
+  <ClrType TypeName="System.Runtime.InteropServices._Assembly"/>
+  <ClrType TypeName="System.Runtime.InteropServices._ConstructorInfo"/>
+  <ClrType TypeName="System.Runtime.InteropServices._FieldInfo"/>
+  <ClrType TypeName="System.Runtime.InteropServices._MemberInfo"/>
+  <ClrType TypeName="System.Runtime.InteropServices._MethodBase"/>
+  <ClrType TypeName="System.Runtime.InteropServices._ParameterInfo"/>
+  -->
+
+  <!-- bridges -->
+  <ClrType TypeName="net.sf.jni4net.BridgeSetup"/>
+  <ClrType TypeName="net.sf.jni4net.Bridge" MergeJavaSource="true">
+	  <MethodModifier MethodName="CreateJVM" Signature="(Lnet/sf/jni4net/BridgeSetup;)V" Skip="true"/>
+	  <MethodModifier MethodName="CreateJVM" Signature="([LSystem/String;)V" Skip="true"/>
+	  <MethodModifier MethodName="IsCLRInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
+	  <MethodModifier MethodName="IsJVMInstance" Signature="(LSystem/Object;)Z" Skip="true"/>
+	  <MethodModifier MethodName="WrapCLR" Signature="(LSystem/Object;)Ljava/lang/Object;" Skip="true"/>
+	  <MethodModifier MethodName="FindJar" Signature="()LSystem/String;" Skip="true"/>
+	  <MethodModifier MethodName="GetVersion" Signature="()LSystem/String;" Skip="true"/>
+  </ClrType>
+  
+  <!-- 
+  <ClrType TypeName="net.sf.jni4net.nio.DirectBufferCleaner"/>
+  <ClrType TypeName="net.sf.jni4net.jni.IJvmProxy" MergeJavaSource="true">
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
+  </ClrType>
+  <ClrType TypeName="net.sf.jni4net.inj.IClrProxy" MergeJavaSource="true">
+    <IgnoreInterface TypeName="net.sf.jni4net.jni.IJvmProxy"/>
+    <IgnoreInterface TypeName="java_.lang.IObject"/>
+  </ClrType>
+  -->
+
+</jni4net-proxygen>

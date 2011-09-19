@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of jni4net library - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, either version 3 
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd">
+  <TargetDirJvm>jni4net.tested.j/src/main/java</TargetDirJvm>
+  <TargetDirClr>jni4net.tested.n/src/generated</TargetDirClr>
+  <ClassPath Path="jni4net.j/target/classes"/>
+  <ClassPath Path="jni4net.tested.j/target/classes"/>
+  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.n-0.8.6.0.dll"/>
+  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.tested.n-0.8.6.0.dll"/>
+
+  <!-- 
+  <Verbose>true</Verbose>
+  -->
+
+  <ClrType TypeName="net.sf.jni4net.tested.ClrException"/>
+  <ClrType TypeName="net.sf.jni4net.tested.CWithJavaInterface"/>
+  <ClrType TypeName="net.sf.jni4net.tested.CInterfacesHelper"/>
+  <ClrType TypeName="net.sf.jni4net.tested.StaticMethods"/>
+  <ClrType TypeName="net.sf.jni4net.tested.ICInterface"/>
+  <ClrType TypeName="net.sf.jni4net.tested.CIfcImpl"/>
+  <ClrType TypeName="net.sf.jni4net.tested.TestDelegate"/>
+
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaCallInstanceMethods"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaInstanceFields"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaStaticFields"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaCallStaticMethods"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaExceptions"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JavaCallBack"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JWithClrInterface"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JInterfacesHelper"/>
+  <JavaClass TypeName="net.sf.jni4net.tested.JInterface"/>
+  <!-- 
+  <JavaClass TypeName="net.sf.jni4net.tested.CInterfaceImpl"/>
+  -->
+
+
+</jni4net-proxygen>

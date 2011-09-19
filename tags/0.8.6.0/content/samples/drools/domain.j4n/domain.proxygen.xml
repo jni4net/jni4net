@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd">
+  <TargetDirJvm>.\jvm</TargetDirJvm>
+  <TargetDirClr>.\clr</TargetDirClr>
+  <AssemblyReference Assembly="domain.dll" Generate="true" />
+  <Verbose>true</Verbose>
+</jni4net-proxygen>

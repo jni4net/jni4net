@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd">
+  <!-- Location where .java files will be generated into. It's relative or absolute path. -->
+  <TargetDirJvm>java</TargetDirJvm>
+
+  <!-- Location where .cs files will be generated into. It's relative or absolute path. -->
+  <TargetDirClr>csharp</TargetDirClr>
+
+  <!-- List of assemblies, which define known types for generator -->
+  <AssemblyReference Assembly="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <AssemblyReference Assembly="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <AssemblyReference Assembly="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+
+  <!-- List of CLR types which should have proxy generated -->
+  <ClrType TypeName="System.EventHandler"/>
+  <ClrType TypeName="System.EventArgs"/>
+  <ClrType TypeName="System.EventArgs"/>
+  <ClrType TypeName="System.Drawing.SizeF"/>
+  <ClrType TypeName="System.Drawing.Size"/>
+  <ClrType TypeName="System.Windows.Forms.Button"/>
+  <ClrType TypeName="System.Drawing.Point"/>
+  <ClrType TypeName="System.Drawing.Point"/>
+  <ClrType TypeName="System.Windows.Forms.AutoScaleMode"/>
+  <ClrType TypeName="System.Windows.Forms.Layout.ArrangedElementCollection"/>
+  <ClrType TypeName="System.Windows.Forms.Form"/>
+  <ClrType TypeName="System.Windows.Forms.ContainerControl"/>
+  <ClrType TypeName="System.Windows.Forms.ScrollableControl"/>
+  <ClrType TypeName="System.Windows.Forms.Control"/>
+  <ClrType TypeName="System.Windows.Forms.Control"/>
+  <ClrType TypeName="System.ComponentModel.Component"/>
+  <ClrType TypeName="System.Windows.Forms.Application"/>
+  <ClrType TypeName="System.Windows.Forms.Message"/>
+  
+</jni4net-proxygen>

@@ -1,0 +1,83 @@
+Version 0.8.6.0
+-----------
++ fixed permission demand for sandboxed environments (Robocode)
++ improved proxygen can't find class reporting
++ improved the way we are looking for jni4net.j-xxx-.jar while installed in GAC
++ [#27] - fixed - build script problems
+
+Version 0.8.5
+-----------
++ [#09] - fixed - support for indexer properties [by Johannes Rudolph]
++ [#24] - fixed - Change of current directory during init may disrupt other code running in parallel
++ [#25] - fixed - DirectByteBuffer doesn't work with Java 7
++ [#22] - fixed - Potential field name clash due to increasing numbering strategy of field names
+
+Version 0.8.4
+-----------
++ added JNIEnv.DetachCurrentThread() [by Renier B.]
++ fixed Bridge.setClrVersion() to static [by Leonid Bogdanov]
++ added ability to load proxies into specified classLoader [by Jose Chillan]
+
+Version 0.8.3
+-----------
++ improved error logging during init from Java
++ added support for IBM JRE
++ added BridgeSetup.IgnoreJavaHome which will try detect/find proper JAVA_HOME based on the platform
++ added drools sample
++ added java.util.Date
+
+Version 0.8.2
+-----------
++ upgraded nMaven, NUnit, made build 32bit only
++ fixed throwing exceptions for missing proxy classes
++ [#18] - fixed - C# string[]{null} -> JVM -> null reference exception
+
+Version 0.8.1
+-----------
++ patch for CLR detection from Leonid Bogdanov
++ [#17] - Fixed Memory leak of CLR instances wrapped to JVM, while calling from CLR
+
+Version 0.8
+-----------
++ added support for CLR v 4.0. v40 is now default if it could be found
++ [#8] - added BridgeSetup.AddJVMOption(string)
+
+Version 0.7.1
+-----------
++ [#7] - added ParPrimC2J(IntPtr)
++ [#5] - Reading Java home location from the Windows registry (Contributed by Martin Matula)
++      - BridgeSetup extended with JavaHome, and improved JavaHome auto detection
++ fixed missing assembly version for jni4net.n.*.dll 
+
+Version 0.7
+-----------
++ added support for delegates and events
++ static class is no longer found by name, attribute parameter added (this is breaking change)
++ assembly loading now uses java.io.File (breaking change)
++ solved problem with spaces in path
+
+Version 0.6
+-----------
++ JVM exceptions are serializable for CLR binary serialization
++ declarative security for running in partially trusted environments
++ possibility to specify alternate classloader
++ switched off signed .jar, because it prevents other people generating (unsigned) proxies into same packages. For example java.util_
++ native methods unregistration when appdomain unloads
++ upgrade to IDEA 9.0
++ sun specific DirectBufferCleaner, which holds the reference to pinned buffer
++ strongly typed JNI references (this is breaking change)
++ improved proxygen to not generate virtual method overrides
++ eliminated lot of warnings in generated code
++ implemented out and ref parameter from C#
+
+Version 0.5
+-----------
+
++ java.lang.Object proxy is no more IDisposable. There is rather IJvmProxy.Dispose()
++ implemented java.nio.ByteBuffer as direct buffer on CLR byte[], as well as net.sf.jni4net.nio.HeapByteBuffer for fast CLR local access
++ implemented missing equals and hashcode methods
++ changed format of proxygen config to ver 0.5. References and classpath format changed.
++ created CloseableToIDisposable adapter
++ implemented .dll and .jar exploration in proxygen. Added samples.
++ new http://jni4net.sourceforge.net/troubleshoot.shtml
++ this file

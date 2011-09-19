@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="toolConfig"
+    targetNamespace="http://jni4net.sf.net/0.8.5.1/toolConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd"
+    xmlns:jni4net="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="jni4net-proxygen" type="jni4net:ToolConfig"/>
+  
+  <xs:complexType name="ToolConfig">
+    <xs:sequence>
+      <xs:element name="TargetDirJvm" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="TargetDirClr" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="SkipSignatures"  type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="SkipInterfaceTypeInfo"  type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="ClassPath" type="jni4net:ClassPath" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="AssemblyReference" type="jni4net:AssemblyReference" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="Verbose"  type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="JavaClass"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="ClrType"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TypeRegistration">
+    <xs:sequence>
+      <xs:element name="IgnoreInterface" type="jni4net:TypeReference" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="MethodModifier" type="jni4net:MethodModifier" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="TypeName" type="xs:string" use="required"/>
+    <xs:attribute name="NoMethods" default="false" use="optional" type="xs:boolean"/>
+    <xs:attribute name="SyncInterface" default="false" use="optional" type="xs:boolean"/>
+    <xs:attribute name="MergeJavaSource" default="false" use="optional" type="xs:boolean"/>
+    <xs:attribute name="Generate" default="true" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="MethodModifier">
+    <xs:attribute name="MethodName" type="xs:string" use="required"/>
+    <xs:attribute name="Signature" type="xs:string" use="required"/>
+    <xs:attribute name="Skip" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="Hide" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="Force" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="Return" type="xs:string" use="optional"/>
+    <xs:attribute name="Interface" type="xs:string" use="optional"/>
+    <xs:attribute name="RenameJVM" type="xs:string" use="optional"/>
+    <xs:attribute name="RenameCLR" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="TypeReference">
+    <xs:attribute name="TypeName" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="AssemblyReference">
+    <xs:attribute name="Assembly" type="xs:string" use="optional"/>
+    <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+  <xs:complexType name="ClassPath">
+    <xs:attribute name="Path" type="xs:string" use="required"/>
+    <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+</xs:schema>
+

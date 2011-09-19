@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24E0C64C-BC2A-4A99-9521-465E58E481A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>drools_api</RootNamespace>
+    <AssemblyName>drools-api-5.1.1.j4n</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="jni4net.n-0.8.6.0, Version=0.8.6.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\jni4net.n-0.8.6.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="org\drools\agent\KnowledgeAgent.generated.cs" />
+    <Compile Include="org\drools\agent\KnowledgeAgentConfiguration.generated.cs" />
+    <Compile Include="org\drools\agent\KnowledgeAgentFactory.generated.cs" />
+    <Compile Include="org\drools\agent\KnowledgeAgentProvider.generated.cs" />
+    <Compile Include="org\drools\builder\conf\AccumulateFunctionOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\ClassLoaderCacheOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\DefaultDialectOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\DefaultPackageNameOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\DumpDirOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\EvaluatorOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\KnowledgeBuilderOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\KnowledgeBuilderOptionsConfiguration.generated.cs" />
+    <Compile Include="org\drools\builder\conf\MultiValueKnowledgeBuilderOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\ProcessStringEscapesOption.generated.cs" />
+    <Compile Include="org\drools\builder\conf\SingleValueKnowledgeBuilderOption.generated.cs" />
+    <Compile Include="org\drools\builder\DecisionTableConfiguration.generated.cs" />
+    <Compile Include="org\drools\builder\DecisionTableInputType.generated.cs" />
+    <Compile Include="org\drools\builder\DirectoryLookupFactoryService.generated.cs" />
+    <Compile Include="org\drools\builder\help\DroolsJaxbHelperProvider.generated.cs" />
+    <Compile Include="org\drools\builder\help\KnowledgeBuilderHelper.generated.cs" />
+    <Compile Include="org\drools\builder\JaxbConfiguration.generated.cs" />
+    <Compile Include="org\drools\builder\JPAKnowledgeFactoryService.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilder.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilderConfiguration.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilderError.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilderErrors.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilderFactory.generated.cs" />
+    <Compile Include="org\drools\builder\KnowledgeBuilderFactoryService.generated.cs" />
+    <Compile Include="org\drools\builder\ProcessBuilder.generated.cs" />
+    <Compile Include="org\drools\builder\ResourceConfiguration.generated.cs" />
+    <Compile Include="org\drools\builder\ResourceType.generated.cs" />
+    <Compile Include="org\drools\builder\RuleBuilder.generated.cs" />
+    <Compile Include="org\drools\ChangeSet.generated.cs" />
+    <Compile Include="org\drools\command\BatchExecutionCommand.generated.cs" />
+    <Compile Include="org\drools\command\Command.generated.cs" />
+    <Compile Include="org\drools\command\CommandFactory.generated.cs" />
+    <Compile Include="org\drools\command\CommandFactoryService.generated.cs" />
+    <Compile Include="org\drools\command\Setter.generated.cs" />
+    <Compile Include="org\drools\conf\AlphaThresholdOption.generated.cs" />
+    <Compile Include="org\drools\conf\AssertBehaviorOption.generated.cs" />
+    <Compile Include="org\drools\conf\CompositeKeyDepthOption.generated.cs" />
+    <Compile Include="org\drools\conf\ConsequenceExceptionHandlerOption.generated.cs" />
+    <Compile Include="org\drools\conf\EventProcessingOption.generated.cs" />
+    <Compile Include="org\drools\conf\IndexLeftBetaMemoryOption.generated.cs" />
+    <Compile Include="org\drools\conf\IndexRightBetaMemoryOption.generated.cs" />
+    <Compile Include="org\drools\conf\KnowledgeBaseOption.generated.cs" />
+    <Compile Include="org\drools\conf\KnowledgeBaseOptionsConfiguration.generated.cs" />
+    <Compile Include="org\drools\conf\LogicalOverrideOption.generated.cs" />
+    <Compile Include="org\drools\conf\MaintainTMSOption.generated.cs" />
+    <Compile Include="org\drools\conf\MaxThreadsOption.generated.cs" />
+    <Compile Include="org\drools\conf\MBeansOption.generated.cs" />
+    <Compile Include="org\drools\conf\MultithreadEvaluationOption.generated.cs" />
+    <Compile Include="org\drools\conf\MultiValueKnowledgeBaseOption.generated.cs" />
+    <Compile Include="org\drools\conf\Option.generated.cs" />
+    <Compile Include="org\drools\conf\RemoveIdentitiesOption.generated.cs" />
+    <Compile Include="org\drools\conf\SequentialAgendaOption.generated.cs" />
+    <Compile Include="org\drools\conf\SequentialOption.generated.cs" />
+    <Compile Include="org\drools\conf\ShareAlphaNodesOption.generated.cs" />
+    <Compile Include="org\drools\conf\ShareBetaNodesOption.generated.cs" />
+    <Compile Include="org\drools\conf\SingleValueKnowledgeBaseOption.generated.cs" />
+    <Compile Include="org\drools\definition\KnowledgeDefinition.generated.cs" />
+    <Compile Include="org\drools\definition\KnowledgePackage.generated.cs" />
+    <Compile Include="org\drools\definition\process\Connection.generated.cs" />
+    <Compile Include="org\drools\definition\process\Node.generated.cs" />
+    <Compile Include="org\drools\definition\process\NodeContainer.generated.cs" />
+    <Compile Include="org\drools\definition\process\Process.generated.cs" />
+    <Compile Include="org\drools\definition\process\WorkflowProcess.generated.cs" />
+    <Compile Include="org\drools\definition\rule\Query.generated.cs" />
+    <Compile Include="org\drools\definition\rule\Rule.generated.cs" />
+    <Compile Include="org\drools\definition\type\FactField.generated.cs" />
+    <Compile Include="org\drools\definition\type\FactType.generated.cs" />
+    <Compile Include="org\drools\event\io\ResourceChangeListener.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\AfterChangeSetAppliedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\AfterChangeSetProcessedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\AfterResourceProcessedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\BeforeChangeSetAppliedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\BeforeChangeSetProcessedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\BeforeResourceProcessedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\ChangeSetProcessingEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\KnowledgeAgentEventListener.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\KnowledgeBaseUpdatedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgeagent\ResourceCompilationFailedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterFunctionRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterKnowledgeBaseLockedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterKnowledgeBaseUnlockedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterKnowledgePackageAddedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterKnowledgePackageRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterRuleAddedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\AfterRuleRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeFunctionRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeKnowledgeBaseLockedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeKnowledgeBaseUnlockedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeKnowledgePackageAddedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeKnowledgePackageRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeRuleAddedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\BeforeRuleRemovedEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\DefaultKnowledgeBaseEventListener.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\KnowledgeBaseEvent.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\KnowledgeBaseEventListener.generated.cs" />
+    <Compile Include="org\drools\event\knowledgebase\KnowledgeBaseEventManager.generated.cs" />
+    <Compile Include="org\drools\event\KnowledgeRuntimeEvent.generated.cs" />
+    <Compile Include="org\drools\event\KnowledgeRuntimeEventManager.generated.cs" />
+    <Compile Include="org\drools\event\process\DefaultProcessEventListener.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessCompletedEvent.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessEvent.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessEventListener.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessEventManager.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessNodeEvent.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessNodeLeftEvent.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessNodeTriggeredEvent.generated.cs" />
+    <Compile Include="org\drools\event\process\ProcessStartedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\ActivationCancelledCause.generated.cs" />
+    <Compile Include="org\drools\event\rule\ActivationCancelledEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\ActivationCreatedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\ActivationEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\AfterActivationFiredEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\AgendaEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\AgendaGroupEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\AgendaGroupPoppedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\AgendaGroupPushedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\BeforeActivationFiredEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\DebugAgendaEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\DebugKnowledgeAgentEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\DebugWorkingMemoryEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\DefaultAgendaEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\DefaultKnowledgeAgentEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\DefaultWorkingMemoryEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\ObjectInsertedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\ObjectRetractedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\ObjectUpdatedEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\WorkingMemoryEvent.generated.cs" />
+    <Compile Include="org\drools\event\rule\WorkingMemoryEventListener.generated.cs" />
+    <Compile Include="org\drools\event\rule\WorkingMemoryEventManager.generated.cs" />
+    <Compile Include="org\drools\io\Resource.generated.cs" />
+    <Compile Include="org\drools\io\ResourceChangeMonitor.generated.cs" />
+    <Compile Include="org\drools\io\ResourceChangeNotifier.generated.cs" />
+    <Compile Include="org\drools\io\ResourceChangeScanner.generated.cs" />
+    <Compile Include="org\drools\io\ResourceChangeScannerConfiguration.generated.cs" />
+    <Compile Include="org\drools\io\ResourceFactory.generated.cs" />
+    <Compile Include="org\drools\io\ResourceFactoryService.generated.cs" />
+    <Compile Include="org\drools\KnowledgeBase.generated.cs" />
+    <Compile Include="org\drools\KnowledgeBaseConfiguration.generated.cs" />
+    <Compile Include="org\drools\KnowledgeBaseFactory.generated.cs" />
+    <Compile Include="org\drools\KnowledgeBaseFactoryService.generated.cs" />
+    <Compile Include="org\drools\logger\KnowledgeLog.generated.cs" />
+    <Compile Include="org\drools\logger\KnowledgeRuntimeLogger.generated.cs" />
+    <Compile Include="org\drools\logger\KnowledgeRuntimeLoggerFactory.generated.cs" />
+    <Compile Include="org\drools\logger\KnowledgeRuntimeLoggerFactoryService.generated.cs" />
+    <Compile Include="org\drools\management\DroolsManagementAgentMBean.generated.cs" />
+    <Compile Include="org\drools\management\KBaseConfigurationMonitorMBean.generated.cs" />
+    <Compile Include="org\drools\management\KnowledgeSessionMonitoringMBean.generated.cs" />
+    <Compile Include="org\drools\management\ObjectTypeNodeMonitorMBean.generated.cs" />
+    <Compile Include="org\drools\marshalling\Marshaller.generated.cs" />
+    <Compile Include="org\drools\marshalling\MarshallerFactory.generated.cs" />
+    <Compile Include="org\drools\marshalling\MarshallerProvider.generated.cs" />
+    <Compile Include="org\drools\marshalling\ObjectMarshallingStrategy.generated.cs" />
+    <Compile Include="org\drools\marshalling\ObjectMarshallingStrategyAcceptor.generated.cs" />
+    <Compile Include="org\drools\persistence\jpa\JPAKnowledgeService.generated.cs" />
+    <Compile Include="org\drools\persistence\jpa\KnowledgeStoreService.generated.cs" />
+    <Compile Include="org\drools\PropertiesConfiguration.generated.cs" />
+    <Compile Include="org\drools\runtime\BatchRequestMessage.generated.cs" />
+    <Compile Include="org\drools\runtime\Calendars.generated.cs" />
+    <Compile Include="org\drools\runtime\Channel.generated.cs" />
+    <Compile Include="org\drools\runtime\ClassObjectFilter.generated.cs" />
+    <Compile Include="org\drools\runtime\CommandExecutor.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\ClockTypeOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\KeepReferenceOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\KnowledgeSessionOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\KnowledgeSessionOptionsConfiguration.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\MultiValueKnowledgeSessionOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\QueryListenerOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\SingleValueKnowledgeSessionOption.generated.cs" />
+    <Compile Include="org\drools\runtime\conf\WorkItemHandlerOption.generated.cs" />
+    <Compile Include="org\drools\runtime\Environment.generated.cs" />
+    <Compile Include="org\drools\runtime\EnvironmentName.generated.cs" />
+    <Compile Include="org\drools\runtime\ExecutionResults.generated.cs" />
+    <Compile Include="org\drools\runtime\ExitPoint.generated.cs" />
+    <Compile Include="org\drools\runtime\Globals.generated.cs" />
+    <Compile Include="org\drools\runtime\KnowledgeContext.generated.cs" />
+    <Compile Include="org\drools\runtime\KnowledgeRuntime.generated.cs" />
+    <Compile Include="org\drools\runtime\KnowledgeSessionConfiguration.generated.cs" />
+    <Compile Include="org\drools\runtime\ObjectFilter.generated.cs" />
+    <Compile Include="org\drools\runtime\process\EventListener.generated.cs" />
+    <Compile Include="org\drools\runtime\process\NodeInstance.generated.cs" />
+    <Compile Include="org\drools\runtime\process\NodeInstanceContainer.generated.cs" />
+    <Compile Include="org\drools\runtime\process\ProcessContext.generated.cs" />
+    <Compile Include="org\drools\runtime\process\ProcessInstance.generated.cs" />
+    <Compile Include="org\drools\runtime\process\ProcessRuntime.generated.cs" />
+    <Compile Include="org\drools\runtime\process\StatefulProcessSession.generated.cs" />
+    <Compile Include="org\drools\runtime\process\StatelessProcessSession.generated.cs" />
+    <Compile Include="org\drools\runtime\process\WorkflowProcessInstance.generated.cs" />
+    <Compile Include="org\drools\runtime\process\WorkItem.generated.cs" />
+    <Compile Include="org\drools\runtime\process\WorkItemHandler.generated.cs" />
+    <Compile Include="org\drools\runtime\process\WorkItemManager.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\AccumulateFunction.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\Activation.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\ActivationGroup.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\Agenda.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\AgendaFilter.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\AgendaGroup.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\AttachedViewChangedEventListener.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\ConsequenceException.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\ConsequenceExceptionHandler.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\Evaluator.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\EvaluatorDefinition.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\FactHandle.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\LiveQuery.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\Operator.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\PropagationContext.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\QueryResults.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\QueryResultsRow.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\Row.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\RuleContext.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\RuleFlowGroup.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\StatefulRuleSession.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\StatelessRuleSession.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\ViewChangedEventListener.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\WorkingMemory.generated.cs" />
+    <Compile Include="org\drools\runtime\rule\WorkingMemoryEntryPoint.generated.cs" />
+    <Compile Include="org\drools\runtime\StatefulKnowledgeSession.generated.cs" />
+    <Compile Include="org\drools\runtime\StatelessKnowledgeSession.generated.cs" />
+    <Compile Include="org\drools\runtime\StatelessKnowledgeSessionResults.generated.cs" />
+    <Compile Include="org\drools\Service.generated.cs" />
+    <Compile Include="org\drools\SystemEventListener.generated.cs" />
+    <Compile Include="org\drools\SystemEventListenerFactory.generated.cs" />
+    <Compile Include="org\drools\SystemEventListenerService.generated.cs" />
+    <Compile Include="org\drools\task\service\ResponseHandler.generated.cs" />
+    <Compile Include="org\drools\time\Calendar.generated.cs" />
+    <Compile Include="org\drools\time\SessionClock.generated.cs" />
+    <Compile Include="org\drools\util\ChainedProperties.generated.cs" />
+    <Compile Include="org\drools\util\ClassLoaderUtil.generated.cs" />
+    <Compile Include="org\drools\util\CompositeClassLoader.generated.cs" />
+    <Compile Include="org\drools\util\OSGiLocator.generated.cs" />
+    <Compile Include="org\drools\util\ServiceRegistry.generated.cs" />
+    <Compile Include="org\drools\util\ServiceRegistryImpl.generated.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

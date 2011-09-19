@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>net.sf.jni4net</RootNamespace>
+    <AssemblyName>jni4net.n-0.8.6.0</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\target\</OutputPath>
+    <IntermediateOutputPath>..\target\obj\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\target\</OutputPath>
+    <IntermediateOutputPath>..\target\obj\</IntermediateOutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="attributes\ClrWrapperAttribute.cs" />
+    <Compile Include="attributes\JavaClassAttribute.cs" />
+    <Compile Include="attributes\JavaInterfaceAttribute.cs" />
+    <Compile Include="attributes\JavaMethodAttribute.cs" />
+    <Compile Include="attributes\JavaProxyAttribute.cs" />
+    <Compile Include="jni\JNINativeMethod.cs" />
+    <Compile Include="jni\MethodInfoExt.cs" />
+    <Compile Include="Bridge.cs" />
+    <Compile Include="jni\FieldId.cs" />
+    <Compile Include="jni\IJvmProxy.cs" />
+    <Compile Include="jni\JavaVM.cs" />
+    <Compile Include="jni\JavaVM.delegates.cs" />
+    <Compile Include="jni\JavaVMInitArgs.cs" />
+    <Compile Include="jni\JNIEnv.delegates.cs" />
+    <Compile Include="jni\MethodId.cs" />
+    <Compile Include="jni\JNI.cs" />
+    <Compile Include="jni\JNIEnv.cs" />
+    <Compile Include="jni\JNIException.cs" />
+    <Compile Include="jni\LocalFrame.cs" />
+    <Compile Include="jni\MethodWrapper.cs" />
+    <Compile Include="jni\Structures.cs" />
+    <Compile Include="jni\Value.cs" />
+    <Compile Include="utils\IntHandle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\target\build-sources\generated-sources\META-INF\AssemblyInfo.cs">
+      <Link>generated\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="generated\java\io\Closeable.generated.cs" />
+    <Compile Include="generated\java\io\File.generated.cs" />
+    <Compile Include="generated\java\io\FilterOutputStream.generated.cs" />
+    <Compile Include="generated\java\io\Flushable.generated.cs" />
+    <Compile Include="generated\java\io\InputStream.generated.cs" />
+    <Compile Include="generated\java\io\OutputStream.generated.cs" />
+    <Compile Include="generated\java\io\PrintStream.generated.cs" />
+    <Compile Include="generated\java\io\Serializable.generated.cs" />
+    <Compile Include="generated\java\lang\AbstractStringBuilder.generated.cs" />
+    <Compile Include="generated\java\lang\annotation\Annotation.generated.cs" />
+    <Compile Include="generated\java\lang\Appendable.generated.cs" />
+    <Compile Include="generated\java\lang\Boolean.generated.cs" />
+    <Compile Include="generated\java\lang\Byte.generated.cs" />
+    <Compile Include="generated\java\lang\Character.generated.cs" />
+    <Compile Include="generated\java\lang\CharSequence.generated.cs" />
+    <Compile Include="generated\java\lang\Class.generated.cs" />
+    <Compile Include="generated\java\lang\ClassLoader.generated.cs" />
+    <Compile Include="generated\java\lang\ClassNotFoundException.generated.cs" />
+    <Compile Include="generated\java\lang\Cloneable.generated.cs" />
+    <Compile Include="generated\java\lang\Comparable.generated.cs" />
+    <Compile Include="generated\java\lang\Double.generated.cs" />
+    <Compile Include="generated\java\lang\Error.generated.cs" />
+    <Compile Include="generated\java\lang\Exception.generated.cs" />
+    <Compile Include="generated\java\lang\Float.generated.cs" />
+    <Compile Include="generated\java\lang\Integer.generated.cs" />
+    <Compile Include="generated\java\lang\Iterable.generated.cs" />
+    <Compile Include="generated\java\lang\LinkageError.generated.cs" />
+    <Compile Include="generated\java\lang\Long.generated.cs" />
+    <Compile Include="generated\java\lang\NoClassDefFoundError.generated.cs" />
+    <Compile Include="generated\java\lang\NoSuchFieldException.generated.cs" />
+    <Compile Include="generated\java\lang\NoSuchMethodException.generated.cs" />
+    <Compile Include="generated\java\lang\Number.generated.cs" />
+    <Compile Include="generated\java\lang\Object.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\AccessibleObject.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\AnnotatedElement.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Constructor.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Field.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\GenericArrayType.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\GenericDeclaration.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Member.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Method.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Modifier.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\ParameterizedType.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\Type.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\TypeVariable.generated.cs" />
+    <Compile Include="generated\java\lang\reflect\WildcardType.generated.cs" />
+    <Compile Include="generated\java\lang\Runnable.generated.cs" />
+    <Compile Include="generated\java\lang\RuntimeException.generated.cs" />
+    <Compile Include="generated\java\lang\Short.generated.cs" />
+    <Compile Include="generated\java\lang\StackTraceElement.generated.cs" />
+    <Compile Include="generated\java\lang\String.generated.cs" />
+    <Compile Include="generated\java\lang\StringBuffer.generated.cs" />
+    <Compile Include="generated\java\lang\StringBuilder.generated.cs" />
+    <Compile Include="generated\java\lang\System.generated.cs" />
+    <Compile Include="generated\java\lang\Throwable.generated.cs" />
+    <Compile Include="generated\java\net\URL.generated.cs" />
+    <Compile Include="generated\java\nio\Buffer.generated.cs" />
+    <Compile Include="generated\java\nio\ByteBuffer.generated.cs" />
+    <Compile Include="generated\java\util\Collection.generated.cs" />
+    <Compile Include="generated\java\util\Dictionary.generated.cs" />
+    <Compile Include="generated\java\util\Enumeration.generated.cs" />
+    <Compile Include="generated\java\util\Hashtable.generated.cs" />
+    <Compile Include="generated\java\util\Iterator.generated.cs" />
+    <Compile Include="generated\java\util\List.generated.cs" />
+    <Compile Include="generated\java\util\Map.generated.cs" />
+    <Compile Include="generated\java\util\Properties.generated.cs" />
+    <Compile Include="generated\java\util\Set.generated.cs" />
+    <Compile Include="generated\java_\lang\IObject.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\Bridge.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\inj\IClrProxy.generated.cs" />
+    <Compile Include="generated\system\ArgumentException.generated.cs" />
+    <Compile Include="generated\system\Array.generated.cs" />
+    <Compile Include="generated\system\collections\ICollection.generated.cs" />
+    <Compile Include="generated\system\collections\IDictionary.generated.cs" />
+    <Compile Include="generated\system\collections\IDictionaryEnumerator.generated.cs" />
+    <Compile Include="generated\system\collections\IEnumerable.generated.cs" />
+    <Compile Include="generated\system\collections\IEnumerator.generated.cs" />
+    <Compile Include="generated\system\collections\IList.generated.cs" />
+    <Compile Include="generated\system\Console.generated.cs" />
+    <Compile Include="generated\system\DateTime.generated.cs" />
+    <Compile Include="generated\system\Decimal.generated.cs" />
+    <Compile Include="generated\system\Enum.generated.cs" />
+    <Compile Include="generated\system\Exception.generated.cs" />
+    <Compile Include="generated\system\Guid.generated.cs" />
+    <Compile Include="generated\system\ICloneable.generated.cs" />
+    <Compile Include="generated\system\IComparable.generated.cs" />
+    <Compile Include="generated\system\IConvertible.generated.cs" />
+    <Compile Include="generated\system\IDisposable.generated.cs" />
+    <Compile Include="generated\system\IFormatProvider.generated.cs" />
+    <Compile Include="generated\system\IFormattable.generated.cs" />
+    <Compile Include="generated\system\InvalidOperationException.generated.cs" />
+    <Compile Include="generated\system\io\FileStream.generated.cs" />
+    <Compile Include="generated\system\io\IOException.generated.cs" />
+    <Compile Include="generated\system\io\Stream.generated.cs" />
+    <Compile Include="generated\system\MarshalByRefObject.generated.cs" />
+    <Compile Include="generated\system\NotImplementedException.generated.cs" />
+    <Compile Include="generated\system\NotSupportedException.generated.cs" />
+    <Compile Include="generated\system\NullReferenceException.generated.cs" />
+    <Compile Include="generated\system\Object.generated.cs" />
+    <Compile Include="generated\system\reflection\Assembly.generated.cs" />
+    <Compile Include="generated\system\reflection\BindingFlags.generated.cs" />
+    <Compile Include="generated\system\reflection\ConstructorInfo.generated.cs" />
+    <Compile Include="generated\system\reflection\FieldInfo.generated.cs" />
+    <Compile Include="generated\system\reflection\ICustomAttributeProvider.generated.cs" />
+    <Compile Include="generated\system\reflection\MemberInfo.generated.cs" />
+    <Compile Include="generated\system\reflection\MethodBase.generated.cs" />
+    <Compile Include="generated\system\reflection\MethodInfo.generated.cs" />
+    <Compile Include="generated\system\reflection\ParameterInfo.generated.cs" />
+    <Compile Include="generated\system\reflection\PropertyInfo.generated.cs" />
+    <Compile Include="generated\system\runtime\serialization\ISerializable.generated.cs" />
+    <Compile Include="generated\system\security\IEvidenceFactory.generated.cs" />
+    <Compile Include="generated\system\String.generated.cs" />
+    <Compile Include="generated\system\SystemException.generated.cs" />
+    <Compile Include="generated\system\Type.generated.cs" />
+    <Compile Include="generated\system\ValueType.generated.cs" />
+    <Compile Include="inj\IClrProxy.cs" />
+    <Compile Include="java\lang\Class.cs" />
+    <Compile Include="java\lang\Integer.cs" />
+    <Compile Include="java\lang\IObject.cs" />
+    <Compile Include="java\lang\Object.cs" />
+    <Compile Include="java\lang\reflect\Constructor.cs" />
+    <Compile Include="java\lang\reflect\Field.cs" />
+    <Compile Include="java\lang\reflect\Method.cs" />
+    <Compile Include="java\lang\reflect\ModifierFlags.cs" />
+    <Compile Include="java\lang\String.cs" />
+    <Compile Include="java\lang\Throwable.cs" />
+    <Compile Include="java\util\List.cs" />
+    <Compile Include="jni\JNIEnv.env.cs" />
+    <Compile Include="jni\JNIEnv.functions.cs" />
+    <Compile Include="system\__Exception.cs" />
+    <Compile Include="system\__Object.cs" />
+    <Compile Include="utils\Convertor.cs" />
+    <Compile Include="utils\Convertor.C2J.params.cs" />
+    <Compile Include="utils\IConstructionHelper.cs" />
+    <Compile Include="utils\Registry.resolve.cs" />
+    <Compile Include="utils\Registry.cs" />
+    <Compile Include="utils\Registry.helpers.cs" />
+    <Compile Include="utils\Registry.register.cs" />
+    <Compile Include="utils\RegistryRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adaptors\Adapt.cs" />
+    <Compile Include="adaptors\Disposable.cs" />
+    <Compile Include="adaptors\Enumerator.cs" />
+    <Compile Include="AssemblyInf.cs" />
+    <Compile Include="Bridge.JVM.convertor.cs" />
+    <Compile Include="BridgeSetup.cs" />
+    <Compile Include="generated\java\io\ByteArrayInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ByteArrayOutputStream.generated.cs" />
+    <Compile Include="generated\java\io\FileInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ObjectInputStream.generated.cs" />
+    <Compile Include="generated\java\io\ObjectOutputStream.generated.cs" />
+    <Compile Include="generated\java\lang\IllegalArgumentException.generated.cs" />
+    <Compile Include="generated\java\lang\IndexOutOfBoundsException.generated.cs" />
+    <Compile Include="generated\java\lang\NullPointerException.generated.cs" />
+    <Compile Include="generated\java\lang\UnsupportedOperationException.generated.cs" />
+    <Compile Include="generated\java\nio\BufferOverflowException.generated.cs" />
+    <Compile Include="generated\java\nio\BufferUnderflowException.generated.cs" />
+    <Compile Include="generated\java\nio\ByteOrder.generated.cs" />
+    <Compile Include="generated\java\nio\InvalidMarkException.generated.cs" />
+    <Compile Include="generated\java\nio\ReadOnlyBufferException.generated.cs" />
+    <Compile Include="generated\java\util\zip\ZipEntry.generated.cs" />
+    <Compile Include="generated\java\util\zip\ZipInputStream.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\BridgeSetup.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\jni\IJvmProxy.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\nio\DirectBufferCleaner.generated.cs" />
+    <Compile Include="generated\net\sf\jni4net\Out.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="generated\net\sf\jni4net\Ref.generated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="generated\system\AsyncCallback.generated.cs" />
+    <Compile Include="generated\system\Delegate.generated.cs" />
+    <Compile Include="generated\system\Environment.generated.cs" />
+    <Compile Include="generated\system\IAsyncResult.generated.cs" />
+    <Compile Include="generated\system\io\TextReader.generated.cs" />
+    <Compile Include="generated\system\io\TextWriter.generated.cs" />
+    <Compile Include="generated\system\MulticastDelegate.generated.cs" />
+    <Compile Include="generated\system\runtime\serialization\SerializationInfo.generated.cs" />
+    <Compile Include="generated\system\runtime\serialization\StreamingContext.generated.cs" />
+    <Compile Include="java\lang\Boolean.cs" />
+    <Compile Include="java\lang\Byte.cs" />
+    <Compile Include="java\lang\Character.cs" />
+    <Compile Include="java\lang\Double.cs" />
+    <Compile Include="java\lang\Float.cs" />
+    <Compile Include="java\lang\Long.cs" />
+    <Compile Include="java\lang\Short.cs" />
+    <Compile Include="java\nio\Buffer.cs" />
+    <Compile Include="jni\JNIEnv.array.cs" />
+    <Compile Include="jni\JNIEnv.convert.cs" />
+    <Compile Include="jni\JNIEnv.raw.cs" />
+    <Compile Include="Bridge.CLR.convertor.cs" />
+    <Compile Include="nio\BufferN.cs" />
+    <Compile Include="nio\ByteBufferN.cs" />
+    <Compile Include="nio\DirectBufferCleaner.cs" />
+    <Compile Include="nio\DirectByteBuffer.cs" />
+    <Compile Include="nio\HeapByteBufferN.cs" />
+    <Compile Include="Out.cs" />
+    <Compile Include="Ref.cs" />
+    <Compile Include="utils\Convertor.C2J.array.cs" />
+    <Compile Include="utils\Convertor.C2J.cs" />
+    <Compile Include="utils\Convertor.C2J.strong.cs" />
+    <Compile Include="utils\Convertor.J2C.array.cs" />
+    <Compile Include="utils\Convertor.J2C.cs" />
+    <Compile Include="utils\Convertor.J2C.strong.cs" />
+    <Compile Include="utils\JniGlobalHandle.cs" />
+    <Compile Include="utils\JniHandle.cs" />
+    <Compile Include="utils\JniLocalHandle.cs" />
+    <Compile Include="utils\MutexLocker.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
+echo [assembly: System.Reflection.AssemblyVersion("0.8.6.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

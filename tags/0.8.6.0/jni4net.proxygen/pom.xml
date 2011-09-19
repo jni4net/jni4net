@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jni4net</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>0.8.6.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net.proxygen</artifactId>
+    <version>0.8.6.0</version>
+    <packaging>dotnet:exe</packaging>
+    <name>jni4net proxy generator</name>
+    <description>jni4net proxy generator</description>
+    <organization>
+        <name>jni4net</name>
+        <url>http://jni4net.sf.net</url>
+    </organization>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.j</artifactId>
+            <version>0.8.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>jni4net.n</artifactId>
+            <version>0.8.6.0</version>
+            <type>dotnet:library</type>
+        </dependency>
+	</dependencies>
+    <build>
+		<finalName>proxygen</finalName>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.nmaven.plugins</groupId>
+                <artifactId>maven-dotnet-compiler-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>0.17.jni4net.0</version>
+                <configuration>
+                    <frameworkVersion>3.5</frameworkVersion>
+                    <aditionalOptions>/unsafe /win32icon:"${basedir}/src/favicon.ico" /warn:0 /keyfile:"${basedir}/../tools/keys/jni4net.snk"</aditionalOptions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
+                <artifactId>maven-antrun-extended-plugin</artifactId>
+                <version>1.39</version>
+                <executions>
+                    <execution>
+                    		<id>key</id>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <tasks>
+                                <exec executable="cmd.exe" failonerror="true">
+                                    <arg value="/c &quot;${basedir}\..\tools\keys\gennetkey.cmd&quot;"/>
+                                </exec>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                    		<id>selvin</id>
+                        <phase>process-classes</phase>
+                        <configuration>
+                            <tasks>
+                                <resolveArtifact property="jni4net.n" groupId="net.sf.jni4net"
+                                                 artifactId="jni4net.n" version="0.8.6.0"
+                                                 type="dotnet:library"/>
+                                <copy file="${jni4net.n}" todir="target"/>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+               <artifactId>maven-deploy-plugin</artifactId>
+               <version>2.4</version>
+               <configuration>
+                 <skip>false</skip>
+              </configuration>
+            </plugin>
+        </plugins>
+    </build> 
+</project>
