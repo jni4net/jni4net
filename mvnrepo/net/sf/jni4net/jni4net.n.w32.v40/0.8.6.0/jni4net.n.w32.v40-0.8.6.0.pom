@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jni4net</artifactId>
+        <groupId>net.sf.jni4net</groupId>
+        <version>0.8.6.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.jni4net</groupId>
+    <artifactId>jni4net.n.w32.v40</artifactId>
+    <version>0.8.6.0</version>
+    <packaging>dotnet:library</packaging>
+    <name>jni4net bootstrap Win32 for CLR 4.0</name>
+    <description>jni4net .NET</description>
+    <organization>
+        <name>jni4net</name>
+        <url>http://jni4net.sf.net</url>
+    </organization>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>selvin.exportdllattribute</artifactId>
+            <version>0.2.6.0</version>
+            <type>dotnet:library</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jni4net</groupId>
+            <artifactId>selvin.exportdll</artifactId>
+            <version>0.2.6.0</version>
+            <type>dotnet:exe</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.nmaven.plugins</groupId>
+                <artifactId>maven-dotnet-compiler-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>0.17.jni4net.0</version>
+                <configuration>
+                    <aditionalOptions>/unsafe /warn:0 /keyfile:"${basedir}/../tools/keys/jni4net.snk"</aditionalOptions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.maven-antrun-extended-plugin</groupId>
+                <artifactId>maven-antrun-extended-plugin</artifactId>
+                <version>1.39</version>
+                <executions>
+                    <execution>
+                    		<id>key</id>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <tasks>
+                                <exec executable="cmd.exe" failonerror="true">
+                                    <arg value="/c &quot;${basedir}\..\tools\keys\gennetkey.cmd&quot;"/>
+                                </exec>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                    		<id>selvin</id>
+                        <phase>process-classes</phase>
+                        <configuration>
+                            <tasks>
+                                <resolveArtifact property="exportdll" groupId="net.sf.jni4net"
+                                                 artifactId="selvin.exportdll" version="0.2.6.0"
+                                                 type="dotnet:exe"/>
+                                <resolveArtifact property="exportdllattribute" groupId="net.sf.jni4net"
+                                                 artifactId="selvin.exportdllattribute" version="0.2.6.0"
+                                                 type="dotnet:library"/>
+                                <copy file="${exportdll}" todir="target/tool"/>
+                                <copy file="${exportdllattribute}" todir="target/tool"/>
+                                <exec executable="cmd.exe" failonerror="false" dir="target">
+                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v40-${jni4net.version}.dll &quot;%ProgramFiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
+                                </exec>
+                                <exec executable="cmd.exe" failonerror="false" dir="target">
+                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v40-${jni4net.version}.dll &quot;%ProgramFiles%\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
+                                </exec>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+               <artifactId>maven-deploy-plugin</artifactId>
+               <version>2.4</version>
+               <configuration>
+                 <skip>false</skip>
+              </configuration>
+            </plugin>
+        </plugins>
+    </build> 
+</project>
