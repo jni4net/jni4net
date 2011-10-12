@@ -1,0 +1,64 @@
+#summary Maven plug-in for managing jni4net projects.
+#labels maven,plugin
+
+= Introduction =
+
+Much of the difficulty in utilizing jni4net is getting all the configuration options correct, and keeping them correct - in particular setting up proxygen. The jni4net-maven-plugin is designed to aid in automating jni4net configuration and project builds using Maven.
+
+
+= Details =
+
+Let's start with an example snippet from a pom.xml file for maven.
+
+{{{
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>net.sf.jni4net</groupId>
+  	<artifactId>jni4net-maven-plugin</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+ 	<configuration>
+          <version>${net.sf.jni4net.version}</version>
+ 	  <exe>P:\Tools\Windows\x86\SourceForge\jni4net-${net.sf.jni4net.version}-bin\bin\proxygen.exe</exe>
+<!--      <xml>proxygen.xml</xml> -->
+	  <targetDirJvm>src/main/java</targetDirJvm>
+	  <targetDirClr>../../platform.NET/intersystem-jni4net/src/main/csharp</targetDirClr>
+	  <artifacts>
+	    <param>color-repository</param>
+	    <param>intersystem-client</param>
+	    <param>intersystem-common</param>
+	    <param>intersystem-service</param>
+<!-- 	    <param>hibernate-core</param> -->
+	  </artifacts>
+<!--      <classes> -->
+<!--        <param> org.hibernate.Session</param> -->
+<!-- 	  </classes> -->
+ 	</configuration>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>proxygen</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+}}}
+
+Without going into all the details of Maven here is roughly what is going on here:
+  * groupId, artifactID and version are the coordinates of the plug-in
+  * By convention net.sf.jni4net.version is the Maven property you should set to indicate which version of jni4net you are using
+  * The exe element tells the plug-in where to find proxygen. In the future this will be more automated by downloading the correct proxygen automatically
+  * The xml element is for the proxygen configuration file. The defaul name is proxygen.xml, which is why it is commented out here
+  * targetDirJvm is where proxygen is to store the Java sources
+  * targetDirClr is where proxygen is to store the C# sources
+  * artifacts is a list of artifact names you want the plug-in to search. Any class with the @net.sf.jni4net.annotation.DotNet annotation will be added to the list of classes you want proxies for
+  * classes is a list of classes you do not have sources for to annotate with @DotNet
+  * proxygen is run before the compilation phase of Maven
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
