@@ -3,14 +3,18 @@
 
 = Introduction =
 
-Much of the difficulty in utilizing jni4net is getting all the configuration options correct, and keeping them correct - in particular setting up proxygen. The jni4net-maven-plugin is designed to aid in automating jni4net configuration and project builds using Maven.
+Many of the challenges in utilizing jni4net is getting all the configuration options correct, and keeping them correct - in particular setting up proxygen. The jni4net-maven-plugin is designed to aid in automating jni4net configuration and project builds using Maven.
 
+= Example =
 
-= Details =
-
-Let's start with an example snippet from a pom.xml file for maven.
+Let's start with some example snippets from a some pom.xml files for maven.
 
 {{{
+  <properties>
+    <net.sf.jni4net.version>0.8.6.0</net.sf.jni4net.version>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  . . .
   <build>
     <plugins>
       <plugin>
@@ -48,6 +52,7 @@ Let's start with an example snippet from a pom.xml file for maven.
 }}}
 
 Without going into all the details of Maven here is roughly what is going on here:
+  * properties can go anywhere in the pom.xml hierarchy, whereas you will typically only have one build project for all your proxies
   * groupId, artifactID and version are the coordinates of the plug-in
   * By convention net.sf.jni4net.version is the Maven property you should set to indicate which version of jni4net you are using
   * The exe element tells the plug-in where to find proxygen. In the future this will be more automated by downloading the correct proxygen automatically
@@ -57,6 +62,9 @@ Without going into all the details of Maven here is roughly what is going on her
   * artifacts is a list of artifact names you want the plug-in to search. Any class with the @net.sf.jni4net.annotation.DotNet annotation will be added to the list of classes you want proxies for
   * classes is a list of classes you do not have sources for to annotate with @DotNet
   * proxygen is run before the compilation phase of Maven
+  * This stuff is intended to be in harmony with NPanday, the .NET side of Maven, but NPanday is still young
+
+= Details =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
