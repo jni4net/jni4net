@@ -11,8 +11,8 @@ Let's start with some example snippets from a some pom.xml files for maven.
 
 {{{
   <properties>
-    <net.sf.jni4net.version>0.8.6.0</net.sf.jni4net.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <net.sf.jni4net.version>0.8.6.0</net.sf.jni4net.version>
   </properties>
   . . .
   <build>
@@ -53,6 +53,7 @@ Let's start with some example snippets from a some pom.xml files for maven.
 
 Without going into all the details of Maven here is roughly what is going on here:
   * properties can go anywhere in the pom.xml hierarchy, whereas you will typically only have one build project for all your proxies. It is recommended you put the properties high enough in your pom.xml hierarchy to cover both the Java and .NET side of things
+  * You don't have to use UTF-8, but why would you not?
   * groupId, artifactID and version are the coordinates of the plug-in
   * By convention net.sf.jni4net.version is the Maven property you should set to indicate which version of jni4net you are using
   * The exe element tells the plug-in where to find proxygen. In the future this will be more automated by downloading the correct proxygen automatically
