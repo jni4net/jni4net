@@ -12,7 +12,7 @@ Let's start with some example snippets from a some pom.xml files for maven.
 {{{
   <properties>
     <net.sf.jni4net.version>0.8.6.0</net.sf.jni4net.version>
-  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   . . .
   <build>
