@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain", "domain\domain.csproj", "{0345D128-3D41-4CA3-916D-8FBB08F71540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drools-api", "api\clr\drools-api.csproj", "{24E0C64C-BC2A-4A99-9521-465E58E481A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drools-api", "drools-api-5.1.1.j4n\clr\drools-api.csproj", "{24E0C64C-BC2A-4A99-9521-465E58E481A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "examples", "examples\examples.csproj", "{F3786FE3-09B3-4B64-9049-20373217B122}"
 EndProject
