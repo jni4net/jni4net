@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -50,7 +50,7 @@
     <Compile Include="RuleRunner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\api\clr\drools-api.csproj">
+    <ProjectReference Include="..\drools-api-5.1.1.j4n\clr\drools-api.csproj">
       <Project>{24E0C64C-BC2A-4A99-9521-465E58E481A7}</Project>
       <Name>drools-api</Name>
     </ProjectReference>
@@ -68,7 +68,7 @@
       <Link>jni4net.j-0.8.6.0.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\api\drools-api-5.1.1.j4n.jar">
+    <Content Include="..\drools-api-5.1.1.j4n\drools-api-5.1.1.j4n.jar">
       <Link>drools-api-5.1.1.j4n.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -138,6 +138,10 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cd $(SolutionDir)\domain.j4n
+$(SolutionDir)\domain.j4n\build.cmd</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
