@@ -42,6 +42,8 @@
         </fileSet>
         <fileSet>
 						<includes>
+							<include>content\samples\myJavaDemoCalc\work\myJavaDemoCalc.jar</include>
+							<include>content\samples\myCSharpDemoCalc\work\MyCSharpDemoCalc.dll</include>
 							<include>tools/bin/*.bat</include>
 							<include>tools/bin/*.conf</include>
 						</includes>        
