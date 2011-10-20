@@ -1,2 +1,2 @@
 Please enter bugs and feature requests here
-http://jni4net.myjetbrains.com/youtrack/dashboard
+http://jni4net.myjetbrains.com/youtrack/issues/J4N?q=%23Open
