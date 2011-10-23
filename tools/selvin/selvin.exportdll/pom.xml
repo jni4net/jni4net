@@ -29,7 +29,7 @@
                 <extensions>true</extensions>
                 <version>0.17.jni4net.0</version>
                 <configuration>
-                    <frameworkVersion>3.5</frameworkVersion>
+                    <frameworkVersion>4.0</frameworkVersion>
                     <aditionalOptions>/main:selvin.exportdll.Program /nowarn:1591</aditionalOptions>
                 </configuration>
             </plugin>
