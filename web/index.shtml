@@ -19,7 +19,7 @@
       <li><b>Troubleshooting</b> - use <a href="/troubleshoot.shtml">knowledge base</a> or <a href="http://groups.google.com/group/jni4net?hl=en&amp;pli=1">ask people</a></li>
       <li><b>Platforms</b> - at the moment only Windows 32 and 64 bits. CLR 2.0 and CLR 4.0. JRE 1.5 and above.</li>
       <li><b>License</b> - opensource, GPL tools and LGPL runtime</li>
-      <li><b>Status</b> - currently <span style="color:red">Alpha quality</span>. Lot of work ahead, <a href="http://docs.google.com/View?id=dfkkjd4x_14hpxjqfd9">lot of ideas</a>, lot of missing features, looking forward to community feedback.</li>
+      <li><b>Status</b> - currently <span style="color:red">Alpha quality</span>. Lot of work ahead, lot of ideas, lot of <a href="http://code.google.com/p/jni4net/issues/list">missing features</a>, looking forward to community feedback.</li>
       <li><b>Contact</b> - use <a href="http://groups.google.com/group/jni4net?hl=en&amp;pli=1">mailing group</a> or talk to <a href="mailto:pavel.savara@gmail.com">pavel.savara@gmail.com</a></li>
     </ul>
     <br/><br/>
