@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -57,6 +57,7 @@
     <Compile Include="attributes\JavaMethodAttribute.cs" />
     <Compile Include="attributes\JavaProxyAttribute.cs" />
     <Compile Include="generated\java\util\Date.generated.cs" />
+    <Compile Include="java\lang\reflect\Member.cs" />
     <Compile Include="jni\JNINativeMethod.cs" />
     <Compile Include="jni\MethodInfoExt.cs" />
     <Compile Include="Bridge.cs" />
