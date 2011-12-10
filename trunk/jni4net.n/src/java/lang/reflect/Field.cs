@@ -21,12 +21,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 #if !JNI4NET_MINI
+using java_.lang.reflect;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
 
 namespace java.lang.reflect
 {
-    partial class Field
+    partial class Field : _Member
     {
         public string GetSignature()
         {

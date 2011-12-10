@@ -22,12 +22,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #if !JNI4NET_MINI
 using java.lang.annotation;
+using java_.lang.reflect;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.utils;
 
 namespace java.lang.reflect
 {
-    public partial class Method
+    public partial class Method : _Member
     {
         public string GetSignature()
         {
