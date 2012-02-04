@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <project projectName="dummy-j-j4n" projectKey="../../_tools/keys/jni4net.snk" projectVersion="0.9.0.0">
+    <classPath classPathDirectory="..\..\dummies\dummy-j\bin\classes" >
+      <javaClass name="dummy.jvm.*" />
+    </classPath>
+  </project>
+</jni4net-proxygen>

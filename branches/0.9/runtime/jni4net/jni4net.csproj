@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CCC5ECB-A6DE-45CE-B6F1-B2925A3D2376}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>net.sf.jni4net</RootNamespace>
+    <AssemblyName>jni4net</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../../_tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Compile Include="j4n\java\lang\Object.j4n.cs" />
+    <Compile Include="j4n\net\sf\jni4net\Out.j4n.cs" />
+    <Compile Include="j4n\net\sf\jni4net\Ref.j4n.cs" />
+    <Compile Include="j4n\System\Object.j4n.cs" />
+    <Compile Include="j4n\net\sf\jni4net\CurrentBridgeSetup.j4n.cs" />
+    <Compile Include="j4n\net\sf\jni4net\modules\jni4net.j4n.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="java\io\Closeable.cs" />
+    <None Include="java\util\Enumeration.cs" />
+    <None Include="java\lang\Iterable.cs" />
+    <None Include="java\util\Iterator.cs" />
+    <Compile Include="net.sf.jni4net\Adapt.cs" />
+    <Compile Include="net.sf.jni4net\AttachedJVM.cs" />
+    <Compile Include="net.sf.jni4net\attributes\J4NProxyAttribute.cs" />
+    <Compile Include="net.sf.jni4net\core\DictionarySWMR.cs" />
+    <Compile Include="net.sf.jni4net\core\IClrCoreHooks.cs" />
+    <Compile Include="net.sf.jni4net\core\LongClrHandle.cs" />
+    <Compile Include="net.sf.jni4net\core\MethodWrapper.cs" />
+    <Compile Include="net.sf.jni4net\core\ProxyInfo.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.clr.lookup.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.clr.registration.cs" />
+    <Compile Include="net.sf.jni4net\AttachedThread.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.find.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.init.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.unload.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIHandle.cs" />
+    <Compile Include="net.sf.jni4net\LogLevel.cs" />
+    <Compile Include="net.sf.jni4net\ILogListener.cs" />
+    <Compile Include="net.sf.jni4net\J4NBridge.createCLR.cs" />
+    <Compile Include="net.sf.jni4net\J4NBridge.createJVM.cs" />
+    <Compile Include="net.sf.jni4net\CurrentBridgeSetup.cs" />
+    <Compile Include="net.sf.jni4net\BridgeSetup.cs" />
+    <Compile Include="net.sf.jni4net\utils\OsUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.common.cs" />
+    <Compile Include="Properties\AssemblyInfo.local.cs" />
+    <Compile Include="Properties\ExtensionAttribute.cs" />
+    <None Include="java\lang\Class.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertAbstract.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertBoolean.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertByte.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertChar.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertClass.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertFloat.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertDouble.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertInt.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertLong.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertSealed.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertShort.cs" />
+    <Compile Include="net.sf.jni4net\core\ConvertString.cs" />
+    <Compile Include="net.sf.jni4net\core\JavaHomeFinder.cs" />
+    <Compile Include="net.sf.jni4net\core\Logger.cs" />
+    <Compile Include="net.sf.jni4net\core\MemberId.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.jvm.lookup.cs" />
+    <Compile Include="net.sf.jni4net\J4NException.cs" />
+    <None Include="java\lang\ClassLoader.cs" />
+    <Compile Include="java\lang\IClass.cs" />
+    <Compile Include="java\lang\IClassLoader.cs" />
+    <Compile Include="net.sf.jni4net\core\IJvmCoreHooks.cs" />
+    <Compile Include="java\lang\IObject.cs" />
+    <Compile Include="java\lang\Object.cs" />
+    <None Include="java\lang\Throwable.cs" />
+    <Compile Include="net.sf.jni4net\J4NBridge.cs" />
+    <Compile Include="net.sf.jni4net\core\Delegates.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.jvm.registration.cs" />
+    <Compile Include="java\lang\IThrowable.cs" />
+    <None Include="java\lang\String.cs" />
+    <None Include="java\net\URLClassLoader.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIDelegates.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.arrays.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.exceptions.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.field.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.handles.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.identity.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.method.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.new.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.class.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.string.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNILib.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNILib.functions.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNILibInterface.cs" />
+    <Compile Include="net.sf.jni4net\jni\JVMInitArgs.cs" />
+    <Compile Include="net.sf.jni4net\jni\JVMInstance.functions.cs" />
+    <Compile Include="net.sf.jni4net\jni\JVMNativeInterface.cs" />
+    <Compile Include="net.sf.jni4net\jni\JVMOption.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.functions.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNINativeInterface.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNINativeMethod.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIResult.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIValue.cs" />
+    <Compile Include="net.sf.jni4net\jni\JVMInstance.cs" />
+    <Compile Include="net.sf.jni4net\jni\LocalFrame.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIGlobalHandle.cs" />
+    <Compile Include="net.sf.jni4net\jni\StringPtr.cs" />
+    <Compile Include="net.sf.jni4net\IJvmProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="net.sf.jni4net\jni\JNIEnv.env.cs" />
+    <Compile Include="net.sf.jni4net\core\Registry.clr.callback.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jni4net-j4n.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

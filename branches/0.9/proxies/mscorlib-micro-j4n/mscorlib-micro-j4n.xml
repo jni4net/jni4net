@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <project projectName="mscorlib-micro-j4n" projectKey="../../_tools/keys/jni4net.snk" projectVersion="0.9.0.0">
+    <assembly assemblyName="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <!-- move -->
+      <clrType name="system.IComparable" move="system.nongeneric"/>
+      <clrType name="system.Nullable" move="system.nongeneric"/>
+
+      <!-- omit -->
+      <clrType name="system.runtime.interopservices.comtypes.ITypeLib2" exclude="true"/>
+      <clrType name="system.runtime.interopservices.comtypes.ITypeInfo2" exclude="true"/>
+
+      <clrType name="System.Collections.IDictionary">
+        <member signature="IDictionaryEnumerator GetEnumerator()" explicitInterface="true"/>
+      </clrType>
+
+      <clrType name="System.String"/>
+      <clrType name="System.Type"/>
+      <clrType name="System.ValueType"/>
+      <clrType name="System.MarshalByRefObject"/>
+      <clrType name="System.DateTime"/>
+      <clrType name="System.Decimal"/>
+      <clrType name="System.Guid"/>
+      <clrType name="System.Enum"/>
+      <clrType name="System.Array"/>
+
+      <clrType name="System.Boolean"/>
+      <clrType name="System.Byte"/>
+      <clrType name="System.Double"/>
+      <clrType name="System.Single"/>
+      <clrType name="System.Int32"/>
+      <clrType name="System.Int64"/>
+      <clrType name="System.Int16"/>
+      <clrType name="System.Char"/>
+      <clrType name="System.UInt32"/>
+      <clrType name="System.UInt64"/>
+      <clrType name="System.UInt16"/>
+      <clrType name="System.SByte"/>
+      <clrType name="System.IntPtr"/>
+      <clrType name="System.UIntPtr"/>
+
+      <clrType name="System.Exception" addBaseMethods="true">
+        <extends declaration="java.lang.RuntimeException"/>
+        <member signature="String get_StackTrace()" rename="getClrStackTrace"/>
+      </clrType>
+      <clrType name="System.SystemException"/>
+      <clrType name="System.NullReferenceException"/>
+      <clrType name="System.ArgumentException"/>
+      <clrType name="System.IO.IOException"/>
+      <clrType name="System.NotImplementedException"/>
+      <clrType name="System.NotSupportedException"/>
+      <clrType name="System.InvalidOperationException"/>
+
+
+      <clrType name="System.IO.FileStream"/>
+      <clrType name="System.IO.Stream"/>
+      <clrType name="System.Console"/>
+      <clrType name="System.Environment"/>
+      <clrType name="System.IO.TextWriter"/>
+      <clrType name="System.IO.TextReader"/>
+
+      <!-- colections -->
+      <clrType name="System.Collections.IList"/>
+      <clrType name="System.Collections.IEnumerator"/>
+      <clrType name="System.Collections.IDictionaryEnumerator"/>
+      <clrType name="System.Collections.ICollection"/>
+      <clrType name="System.Collections.IEnumerable"/>
+      <clrType name="System.CharEnumerator"/>
+
+
+      <!-- interfaces -->
+      <clrType name="System.Runtime.Serialization.ISerializable"/>
+      <clrType name="System.Runtime.Serialization.SerializationInfo"/>
+      <clrType name="System.Runtime.Serialization.StreamingContext"/>
+      <clrType name="System.Security.IEvidenceFactory"/>
+      <clrType name="System.IConvertible"/>
+      <clrType name="System.IDisposable"/>
+      <clrType name="System.IFormattable"/>
+      <clrType name="System.IFormatProvider"/>
+      <clrType name="System.ICloneable"/>
+
+      <clrType name="System.Delegate"/>
+      <clrType name="System.MulticastDelegate"/>
+      <clrType name="System.AsyncCallback">
+        <member signature="Void .ctor(System.Object, System.IntPtr)" exclude="true"/>
+      </clrType>
+      <clrType name="System.IAsyncResult"/>
+
+      <!-- reflection -->
+      <clrType name="System.Reflection.MemberInfo"/>
+      <clrType name="System.Reflection.Assembly"/>
+      <clrType name="System.Reflection.ConstructorInfo"/>
+      <clrType name="System.Reflection.MethodInfo"/>
+      <clrType name="System.Reflection.PropertyInfo"/>
+      <clrType name="System.Reflection.FieldInfo">
+        <member signature="Object GetValueDirect(System.TypedReference)" exclude="true"/>
+        <member signature="Void SetValueDirect(System.TypedReference, System.Object)" exclude="true"/>
+      </clrType>
+      <clrType name="System.Reflection.ParameterInfo"/>
+      <clrType name="System.Reflection.BindingFlags"/>
+      <clrType name="System.Reflection.MethodBase"/>
+      <clrType name="System.Reflection.ICustomAttributeProvider"/>
+      <clrType name="System.Reflection.IReflect"/>
+
+    </assembly>
+  </project>
+</jni4net-proxygen>

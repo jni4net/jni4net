@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dummy2-j" default="compile.module.dummy2-j">
+  <dirname property="module.dummy2-j.basedir" file="${ant.file.module_dummy2-j}"/>
+  
+  <property name="module.jdk.home.dummy2-j" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dummy2-j" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dummy2-j" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dummy2-j" value="${compiler.args}"/>
+  
+  <property name="dummy2-j.output.dir" value="${module.dummy2-j.basedir}/bin/classes"/>
+  <property name="dummy2-j.testoutput.dir" value="${module.dummy2-j.basedir}/bin/testclasses"/>
+  
+  <path id="dummy2-j.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dummy2-j.module.production.classpath">
+    <path refid="${module.jdk.classpath.dummy2-j}"/>
+    <pathelement location="${dummy-n-j4n.output.dir}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.output.dir}"/>
+  </path>
+  
+  <path id="dummy2-j.runtime.production.module.classpath">
+    <pathelement location="${dummy2-j.output.dir}"/>
+    <path refid="dummy-n-j4n.runtime.production.module.classpath"/>
+    <path refid="jni4net.runtime.production.module.classpath"/>
+    <path refid="mscorlib-micro-j4n.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="dummy2-j.module.classpath">
+    <path refid="${module.jdk.classpath.dummy2-j}"/>
+    <pathelement location="${dummy2-j.output.dir}"/>
+    <pathelement location="${dummy-n-j4n.testoutput.dir}"/>
+    <pathelement location="${dummy-n-j4n.output.dir}"/>
+    <pathelement location="${jni4net.testoutput.dir}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.testoutput.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.output.dir}"/>
+  </path>
+  
+  <path id="dummy2-j.runtime.module.classpath">
+    <pathelement location="${dummy2-j.testoutput.dir}"/>
+    <pathelement location="${dummy2-j.output.dir}"/>
+    <path refid="dummy-n-j4n.runtime.module.classpath"/>
+    <path refid="jni4net.runtime.module.classpath"/>
+    <path refid="mscorlib-micro-j4n.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dummy2-j">
+    <patternset refid="ignored.files"/>
+    <exclude name="bin/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dummy2-j">
+    <patternset refid="excluded.from.module.dummy2-j"/>
+  </patternset>
+  
+  <path id="dummy2-j.module.sourcepath">
+    <dirset dir="${module.dummy2-j.basedir}/../../dummies">
+      <include name="dummy2-j"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dummy2-j" depends="compile.module.dummy2-j.production,compile.module.dummy2-j.tests" description="Compile module dummy2-j"/>
+  
+  <target name="compile.module.dummy2-j.production" depends="compile.module.dummy-n-j4n,compile.module.jni4net,compile.module.mscorlib-micro-j4n" description="Compile module dummy2-j; production classes">
+    <mkdir dir="${dummy2-j.output.dir}"/>
+    <javac destdir="${dummy2-j.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dummy2-j}/javac">
+      <compilerarg line="${compiler.args.dummy2-j}"/>
+      <bootclasspath refid="dummy2-j.module.bootclasspath"/>
+      <classpath refid="dummy2-j.module.production.classpath"/>
+      <src refid="dummy2-j.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dummy2-j"/>
+    </javac>
+    
+    <copy todir="${dummy2-j.output.dir}">
+      <fileset dir="${module.dummy2-j.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dummy2-j.tests" depends="compile.module.dummy2-j.production" description="compile module dummy2-j; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dummy2-j" description="cleanup module">
+    <delete dir="${dummy2-j.output.dir}"/>
+    <delete dir="${dummy2-j.testoutput.dir}"/>
+  </target>
+</project>

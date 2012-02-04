@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3DCCDC8-E43D-4DE8-9E85-E920556885C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>jre_micro_j4n</RootNamespace>
+    <AssemblyName>jre-micro-j4n</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../../_tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Compile Include="..\..\runtime\jni4net\java\io\Closeable.cs">
+      <Link>java.io\Closeable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\lang\ClassLoader.cs">
+      <Link>java.lang\ClassLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\lang\Iterable.cs">
+      <Link>java.lang\Iterable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\net\URLClassLoader.cs">
+      <Link>java.net\URLClassLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\util\Enumeration.cs">
+      <Link>java.util\Enumeration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\util\Iterator.cs">
+      <Link>java.util\Iterator.cs</Link>
+    </Compile>
+    <Compile Include="j4n\java\lang\Runnable.j4n.cs" />
+    <Compile Include="j4n\java\io\Closeable.j4n.cs" />
+    <Compile Include="j4n\java\io\Flushable.j4n.cs" />
+    <Compile Include="j4n\java\io\Serializable.j4n.cs" />
+    <Compile Include="j4n\java\util\Map.j4n.cs" />
+    <Compile Include="j4n\java\util\Iterator.j4n.cs" />
+    <Compile Include="j4n\java\util\Enumeration.j4n.cs" />
+    <Compile Include="j4n\java\util\Comparator.j4n.cs" />
+    <Compile Include="j4n\java\lang\Iterable.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Member.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Type.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\TypeVariable.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\WildcardType.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\ParameterizedType.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\GenericArrayType.j4n.cs" />
+    <Compile Include="j4n\java\lang\annotation\Annotation.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\GenericDeclaration.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\AnnotatedElement.j4n.cs" />
+    <Compile Include="j4n\java\lang\Comparable.j4n.cs" />
+    <Compile Include="j4n\java\lang\CharSequence.j4n.cs" />
+    <Compile Include="j4n\java\lang\Appendable.j4n.cs" />
+    <Compile Include="j4n\java\io\DataInput.j4n.cs" />
+    <Compile Include="j4n\java\io\ObjectStreamConstants.j4n.cs" />
+    <Compile Include="j4n\java\io\DataOutput.j4n.cs" />
+    <Compile Include="j4n\java\lang\Cloneable.j4n.cs" />
+    <Compile Include="j4n\java\util\MapNest\Entry.j4n.cs" />
+    <Compile Include="j4n\java\util\AbstractMap.j4n.cs" />
+    <Compile Include="j4n\java\util\Dictionary.j4n.cs" />
+    <Compile Include="j4n\java\lang\Number.j4n.cs" />
+    <Compile Include="j4n\java\lang\Boolean.j4n.cs" />
+    <Compile Include="j4n\java\lang\Byte.j4n.cs" />
+    <Compile Include="j4n\java\lang\Double.j4n.cs" />
+    <Compile Include="j4n\java\lang\Float.j4n.cs" />
+    <Compile Include="j4n\java\lang\Short.j4n.cs" />
+    <Compile Include="j4n\java\lang\Character.j4n.cs" />
+    <Compile Include="j4n\java\lang\Class.j4n.cs" />
+    <Compile Include="j4n\java\lang\ClassLoader.j4n.cs" />
+    <Compile Include="j4n\java\net\URL.j4n.cs" />
+    <Compile Include="j4n\java\net\URI.j4n.cs" />
+    <Compile Include="j4n\java\lang\System.j4n.cs" />
+    <Compile Include="j4n\java\lang\String.j4n.cs" />
+    <Compile Include="j4n\java\io\InputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\OutputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\FileInputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\ByteArrayInputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\ByteArrayOutputStream.j4n.cs" />
+    <Compile Include="j4n\java\util\zip\ZipEntry.j4n.cs" />
+    <Compile Include="j4n\java\io\File.j4n.cs" />
+    <Compile Include="j4n\java\util\HashMap.j4n.cs" />
+    <Compile Include="j4n\java\util\Collection.j4n.cs" />
+    <Compile Include="j4n\java\util\Arrays.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Array.j4n.cs" />
+    <Compile Include="j4n\java\lang\Throwable.j4n.cs" />
+    <Compile Include="j4n\java\lang\StackTraceElement.j4n.cs" />
+    <Compile Include="j4n\java\lang\Error.j4n.cs" />
+    <Compile Include="j4n\java\lang\Exception.j4n.cs" />
+    <Compile Include="j4n\java\lang\LinkageError.j4n.cs" />
+    <Compile Include="j4n\java\lang\NoClassDefFoundError.j4n.cs" />
+    <Compile Include="j4n\java\lang\NoSuchFieldException.j4n.cs" />
+    <Compile Include="j4n\java\lang\NoSuchMethodException.j4n.cs" />
+    <Compile Include="j4n\java\lang\RuntimeException.j4n.cs" />
+    <Compile Include="j4n\java\lang\ClassNotFoundException.j4n.cs" />
+    <Compile Include="j4n\java\lang\IllegalArgumentException.j4n.cs" />
+    <Compile Include="j4n\java\lang\IndexOutOfBoundsException.j4n.cs" />
+    <Compile Include="j4n\java\lang\UnsupportedOperationException.j4n.cs" />
+    <Compile Include="j4n\java\lang\NullPointerException.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\InvocationTargetException.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Modifier.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\AccessibleObject.j4n.cs" />
+    <Compile Include="j4n\java\security\SecureClassLoader.j4n.cs" />
+    <Compile Include="j4n\java\io\FilterOutputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\ObjectInput.j4n.cs" />
+    <Compile Include="j4n\java\io\ObjectOutput.j4n.cs" />
+    <Compile Include="j4n\java\io\FilterInputStream.j4n.cs" />
+    <Compile Include="j4n\java\util\Hashtable.j4n.cs" />
+    <Compile Include="j4n\java\lang\Long.j4n.cs" />
+    <Compile Include="j4n\java\lang\Integer.j4n.cs" />
+    <Compile Include="j4n\java\net\URLClassLoader.j4n.cs" />
+    <Compile Include="j4n\java\lang\StringBuffer.j4n.cs" />
+    <Compile Include="j4n\java\lang\StringBuilder.j4n.cs" />
+    <Compile Include="j4n\java\io\PrintStream.j4n.cs" />
+    <Compile Include="j4n\java\io\ObjectInputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\ObjectOutputStream.j4n.cs" />
+    <Compile Include="j4n\java\util\List.j4n.cs" />
+    <Compile Include="j4n\java\util\Set.j4n.cs" />
+    <Compile Include="j4n\java\util\Properties.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Constructor.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Field.j4n.cs" />
+    <Compile Include="j4n\java\lang\reflect\Method.j4n.cs" />
+    <Compile Include="j4n\java\util\zip\InflaterInputStream.j4n.cs" />
+    <Compile Include="j4n\java\util\zip\ZipInputStream.j4n.cs" />
+    <Compile Include="j4n\net\sf\jni4net\modules\jremicroj4n.j4n.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\runtime\jni4net\java\lang\Class.cs">
+      <Link>java.lang\Class.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\lang\String.cs">
+      <Link>java.lang\String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\java\lang\Throwable.cs">
+      <Link>java.lang\Throwable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\runtime\jni4net\Properties\AssemblyInfo.common.cs">
+      <Link>Properties\AssemblyInfo.common.cs</Link>
+    </Compile>
+    <Compile Include="net.sf.jni4net\JvmCoreHooks.common.cs" />
+    <Compile Include="net.sf.jni4net\JvmCoreHooks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\runtime\jni4net\jni4net.csproj">
+      <Project>{9CCC5ECB-A6DE-45CE-B6F1-B2925A3D2376}</Project>
+      <Name>jni4net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jre-micro-j4n.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

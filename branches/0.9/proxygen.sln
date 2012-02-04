@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proxygen", "tools\proxygen\proxygen.csproj", "{72D5E643-C91D-4B81-A802-DF8794EE41C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test-proxygen", "tools\test-proxygen\test-proxygen.csproj", "{C25004E6-CED0-4EAF-9C46-8121A7EAF307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gen", "gen", "{D6DB2AFD-735C-4B71-AFF4-BF1290813271}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C2ED53C8-6C1F-46F7-A1D4-1639B930B143}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72D5E643-C91D-4B81-A802-DF8794EE41C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D5E643-C91D-4B81-A802-DF8794EE41C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D5E643-C91D-4B81-A802-DF8794EE41C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D5E643-C91D-4B81-A802-DF8794EE41C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25004E6-CED0-4EAF-9C46-8121A7EAF307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25004E6-CED0-4EAF-9C46-8121A7EAF307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25004E6-CED0-4EAF-9C46-8121A7EAF307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25004E6-CED0-4EAF-9C46-8121A7EAF307}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72D5E643-C91D-4B81-A802-DF8794EE41C1} = {D6DB2AFD-735C-4B71-AFF4-BF1290813271}
+		{C25004E6-CED0-4EAF-9C46-8121A7EAF307} = {C2ED53C8-6C1F-46F7-A1D4-1639B930B143}
+	EndGlobalSection
+EndGlobal

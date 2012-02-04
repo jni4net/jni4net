@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <project projectName="jni4net" projectKey="../../_tools/keys/jni4net.snk" projectVersion="0.9.0.0">
+    <classPath jarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar" >
+      <javaClass name="java.lang.Object">
+        <member signature="public final native java.lang.Class java.lang.Object.getClass()" exclude="true"/>
+      </javaClass>
+    </classPath>
+    <classPath classPathDirectory="..\..\runtime\jni4net\bin\classes" >
+      <javaClass name="net.sf.jni4net.Out">
+      </javaClass>
+      <javaClass name="net.sf.jni4net.Ref">
+      </javaClass>
+    </classPath>
+
+    <assembly assemblyName="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <clrType name="System.Object">
+        <member signature="Type GetType()">
+          <ret changeType="system.IType"/>
+        </member>
+      </clrType>
+    </assembly>
+    <assembly file="..\..\runtime\jni4net\bin\jni4net.dll">
+      <clrType name="net.sf.jni4net.CurrentBridgeSetup">
+      </clrType>
+    </assembly>
+  </project>
+</jni4net-proxygen>

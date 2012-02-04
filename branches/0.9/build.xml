@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="runtime" default="all">
+  
+  
+  <property file="build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.5_x86" value="${jdk.home.1.5_x86}/bin"/>
+  <path id="jdk.classpath.1.5_x86">
+    <fileset dir="${jdk.home.1.5_x86}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.5_x86}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.5_x86}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.5_x86"/>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/dummies/dummy-j/module_dummy-j.xml"/>
+  
+  <import file="${basedir}/runtime/jni4net/module_jni4net.xml"/>
+  
+  <import file="${basedir}/proxies/dummy-j-j4n/module_dummy-j-j4n.xml"/>
+  
+  <import file="${basedir}/proxies/jre-micro-j4n/module_jre-micro-j4n.xml"/>
+  
+  <import file="${basedir}/proxies/mscorlib-micro-j4n/module_mscorlib-micro-j4n.xml"/>
+  
+  <import file="${basedir}/proxies/dummy-n-j4n/module_dummy-n-j4n.xml"/>
+  
+  <import file="${basedir}/dummies/dummy2-j/module_dummy2-j.xml"/>
+  
+  <import file="${basedir}/tests/tests-j/module_tests-j.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.dummy-j, clean.module.jni4net, clean.module.dummy-j-j4n, clean.module.jre-micro-j4n, clean.module.mscorlib-micro-j4n, clean.module.dummy-n-j4n, clean.module.dummy2-j, clean.module.tests-j, clean.artifact.target" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.dummy-j, compile.module.jni4net, compile.module.dummy-j-j4n, compile.module.jre-micro-j4n, compile.module.mscorlib-micro-j4n, compile.module.dummy-n-j4n, compile.module.dummy2-j, compile.module.tests-j" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.dummy-j-j4n:jar" value="${basedir}/proxies/dummy-j-j4n/bin"/>
+    <property name="artifact.output.dummy-j:jar" value="${basedir}/dummies/dummy-j/bin"/>
+    <property name="artifact.output.dummy-n-j4n:jar" value="${basedir}/proxies/dummy-n-j4n/bin"/>
+    <property name="artifact.output.dummy2-j:jar" value="${basedir}/dummies/dummy2-j/bin"/>
+    <property name="artifact.output.jni4net:jar" value="${basedir}/runtime/jni4net/bin"/>
+    <property name="artifact.output.jre-micro-j4n:jar" value="${basedir}/proxies/jre-micro-j4n/bin"/>
+    <property name="artifact.output.mscorlib-micro-j4n:jar" value="${basedir}/proxies/mscorlib-micro-j4n/bin"/>
+    <property name="artifact.output.target" value="${basedir}/_target"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.dummy-j-j4n.jar" value="${artifacts.temp.dir}/dummy-j-j4n.jar"/>
+    <property name="temp.jar.path.dummy-j.jar" value="${artifacts.temp.dir}/dummy-j.jar"/>
+    <property name="temp.jar.path.dummy-n-j4n.jar" value="${artifacts.temp.dir}/dummy-n-j4n.jar"/>
+    <property name="temp.jar.path.dummy2-j.jar" value="${artifacts.temp.dir}/dummy2-j.jar"/>
+    <property name="temp.jar.path.jni4net.jar" value="${artifacts.temp.dir}/jni4net.jar"/>
+    <property name="temp.jar.path.jre-micro-j4n.jar" value="${artifacts.temp.dir}/jre-micro-j4n.jar"/>
+    <property name="temp.jar.path.mscorlib-micro-j4n.jar" value="${artifacts.temp.dir}/mscorlib-micro-j4n.jar"/>
+  </target>
+  
+  <target name="clean.artifact.target" description="clean target artifact output">
+    <delete dir="${artifact.output.target}"/>
+  </target>
+  
+  <target name="artifact.dummy-j-j4n:jar" depends="init.artifacts, compile.module.dummy-j-j4n" description="Build &#39;dummy-j-j4n:jar&#39; artifact">
+    <property name="artifact.temp.output.dummy-j-j4n:jar" value="${artifacts.temp.dir}/dummy_j_j4n_jar"/>
+    <mkdir dir="${artifact.temp.output.dummy-j-j4n:jar}"/>
+    <jar destfile="${temp.jar.path.dummy-j-j4n.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${dummy-j-j4n.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.dummy-j-j4n.jar}" tofile="${artifact.temp.output.dummy-j-j4n:jar}/dummy-j-j4n.jar"/>
+  </target>
+  
+  <target name="artifact.dummy-j:jar" depends="init.artifacts, compile.module.dummy-j" description="Build &#39;dummy-j:jar&#39; artifact">
+    <property name="artifact.temp.output.dummy-j:jar" value="${artifacts.temp.dir}/dummy_j_jar"/>
+    <mkdir dir="${artifact.temp.output.dummy-j:jar}"/>
+    <jar destfile="${temp.jar.path.dummy-j.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${dummy-j.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.dummy-j.jar}" tofile="${artifact.temp.output.dummy-j:jar}/dummy-j.jar"/>
+  </target>
+  
+  <target name="artifact.dummy-n-j4n:jar" depends="init.artifacts, compile.module.dummy-n-j4n" description="Build &#39;dummy-n-j4n:jar&#39; artifact">
+    <property name="artifact.temp.output.dummy-n-j4n:jar" value="${artifacts.temp.dir}/dummy_n_j4n_jar"/>
+    <mkdir dir="${artifact.temp.output.dummy-n-j4n:jar}"/>
+    <jar destfile="${temp.jar.path.dummy-n-j4n.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${dummy-n-j4n.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.dummy-n-j4n.jar}" tofile="${artifact.temp.output.dummy-n-j4n:jar}/dummy-n-j4n.jar"/>
+  </target>
+  
+  <target name="artifact.dummy2-j:jar" depends="init.artifacts, compile.module.dummy2-j" description="Build &#39;dummy2-j:jar&#39; artifact">
+    <property name="artifact.temp.output.dummy2-j:jar" value="${artifacts.temp.dir}/dummy2_j_jar"/>
+    <mkdir dir="${artifact.temp.output.dummy2-j:jar}"/>
+    <jar destfile="${temp.jar.path.dummy2-j.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${dummy2-j.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.dummy2-j.jar}" tofile="${artifact.temp.output.dummy2-j:jar}/dummy2-j.jar"/>
+  </target>
+  
+  <target name="artifact.jni4net:jar" depends="init.artifacts, compile.module.jni4net" description="Build &#39;jni4net:jar&#39; artifact">
+    <property name="artifact.temp.output.jni4net:jar" value="${artifacts.temp.dir}/jni4net_jar"/>
+    <mkdir dir="${artifact.temp.output.jni4net:jar}"/>
+    <jar destfile="${temp.jar.path.jni4net.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${jni4net.output.dir}"/>
+      <zipfileset file="${basedir}/runtime/jni4net/Properties/MANIFEST.MF" prefix="META-INF"/>
+    </jar>
+    <copy file="${temp.jar.path.jni4net.jar}" tofile="${artifact.temp.output.jni4net:jar}/jni4net.jar"/>
+  </target>
+  
+  <target name="artifact.jre-micro-j4n:jar" depends="init.artifacts, compile.module.jre-micro-j4n" description="Build &#39;jre-micro-j4n:jar&#39; artifact">
+    <property name="artifact.temp.output.jre-micro-j4n:jar" value="${artifacts.temp.dir}/jre_micro_j4n_jar"/>
+    <mkdir dir="${artifact.temp.output.jre-micro-j4n:jar}"/>
+    <jar destfile="${temp.jar.path.jre-micro-j4n.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${jre-micro-j4n.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.jre-micro-j4n.jar}" tofile="${artifact.temp.output.jre-micro-j4n:jar}/jre-micro-j4n.jar"/>
+  </target>
+  
+  <target name="artifact.mscorlib-micro-j4n:jar" depends="init.artifacts, compile.module.mscorlib-micro-j4n" description="Build &#39;mscorlib-micro-j4n:jar&#39; artifact">
+    <property name="artifact.temp.output.mscorlib-micro-j4n:jar" value="${artifacts.temp.dir}/mscorlib_micro_j4n_jar"/>
+    <mkdir dir="${artifact.temp.output.mscorlib-micro-j4n:jar}"/>
+    <jar destfile="${temp.jar.path.mscorlib-micro-j4n.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${mscorlib-micro-j4n.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.mscorlib-micro-j4n.jar}" tofile="${artifact.temp.output.mscorlib-micro-j4n:jar}/mscorlib-micro-j4n.jar"/>
+  </target>
+  
+  <target name="artifact.target" depends="init.artifacts, artifact.jni4net:jar, artifact.jre-micro-j4n:jar, artifact.mscorlib-micro-j4n:jar" description="Build &#39;target&#39; artifact">
+    <mkdir dir="${artifact.output.target}"/>
+    <mkdir dir="${artifact.output.target}/0.9.0.0"/>
+    <mkdir dir="${artifact.output.target}/0.9.0.0/bin"/>
+    <copy file="${basedir}/tools/proxygen/bin/Microsoft.Practices.Unity.dll" tofile="${artifact.output.target}/0.9.0.0/bin/Microsoft.Practices.Unity.dll"/>
+    <copy file="${basedir}/tools/proxygen/bin/Microsoft.Practices.ServiceLocation.dll" tofile="${artifact.output.target}/0.9.0.0/bin/Microsoft.Practices.ServiceLocation.dll"/>
+    <copy file="${basedir}/tools/proxygen/bin/IKVM.Reflection.dll" tofile="${artifact.output.target}/0.9.0.0/bin/IKVM.Reflection.dll"/>
+    <copy file="${basedir}/tools/proxygen/bin/polyglottos.dll" tofile="${artifact.output.target}/0.9.0.0/bin/polyglottos.dll"/>
+    <copy file="${basedir}/tools/proxygen/bin/proxygen.exe" tofile="${artifact.output.target}/0.9.0.0/bin/proxygen.exe"/>
+    <copy file="${basedir}/tools/proxygen/bin/proxygen.exe.config" tofile="${artifact.output.target}/0.9.0.0/bin/proxygen.exe.config"/>
+    <copy file="${basedir}/license/jni4net-proxygen-GPL.3.0.txt" tofile="${artifact.output.target}/0.9.0.0/bin/jni4net-proxygen-GPL.3.0.txt"/>
+    <copy file="${basedir}/_lib/IKVM.license.txt" tofile="${artifact.output.target}/0.9.0.0/bin/IKVM.license.txt"/>
+    <copy file="${basedir}/_lib/polyglottos-GPL.3.0.txt" tofile="${artifact.output.target}/0.9.0.0/bin/polyglottos-GPL.3.0.txt"/>
+    <copy file="${basedir}/_lib/Unity.Ioc.MsPL.txt" tofile="${artifact.output.target}/0.9.0.0/bin/Unity.Ioc.MsPL.txt"/>
+    <mkdir dir="${artifact.output.target}/0.9.0.0/runtime"/>
+    <copy file="${basedir}/runtime/jni4net-w32v20/bin/Debug/jni4net-w32v20.dll" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net-w32v20.dll"/>
+    <copy file="${basedir}/runtime/jni4net-w32v40/bin/jni4net-w32v40.dll" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net-w32v40.dll"/>
+    <copy file="${basedir}/runtime/jni4net/bin/jni4net.dll" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net.dll"/>
+    <copy file="${basedir}/proxies/jre-micro-j4n/bin/jre-micro-j4n.dll" tofile="${artifact.output.target}/0.9.0.0/runtime/jre-micro-j4n.dll"/>
+    <copy file="${basedir}/proxies/mscorlib-micro-j4n/bin/mscorlib-micro-j4n.dll" tofile="${artifact.output.target}/0.9.0.0/runtime/mscorlib-micro-j4n.dll"/>
+    <copy todir="${artifact.output.target}/0.9.0.0/runtime">
+      <fileset dir="${artifact.temp.output.jni4net:jar}"/>
+    </copy>
+    <copy todir="${artifact.output.target}/0.9.0.0/runtime">
+      <fileset dir="${artifact.temp.output.jre-micro-j4n:jar}"/>
+    </copy>
+    <copy todir="${artifact.output.target}/0.9.0.0/runtime">
+      <fileset dir="${artifact.temp.output.mscorlib-micro-j4n:jar}"/>
+    </copy>
+    <copy file="${basedir}/license/jni4net-runtime-LGPL-3.0.txt" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net-runtime-LGPL-3.0.txt"/>
+    <mkdir dir="${artifact.output.target}/0.9.0.0/samples"/>
+    <copy file="${basedir}/changes.txt" tofile="${artifact.output.target}/0.9.0.0/changes.txt"/>
+    <copy file="${basedir}/ReadMe.txt" tofile="${artifact.output.target}/0.9.0.0/ReadMe.txt"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.dummy-j-j4n:jar, artifact.dummy-j:jar, artifact.dummy-n-j4n:jar, artifact.dummy2-j:jar, artifact.jni4net:jar, artifact.jre-micro-j4n:jar, artifact.mscorlib-micro-j4n:jar, artifact.target" description="Build all artifacts">
+    <mkdir dir="${artifact.output.dummy-j-j4n:jar}"/>
+    <copy todir="${artifact.output.dummy-j-j4n:jar}">
+      <fileset dir="${artifact.temp.output.dummy-j-j4n:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.dummy-j:jar}"/>
+    <copy todir="${artifact.output.dummy-j:jar}">
+      <fileset dir="${artifact.temp.output.dummy-j:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.dummy-n-j4n:jar}"/>
+    <copy todir="${artifact.output.dummy-n-j4n:jar}">
+      <fileset dir="${artifact.temp.output.dummy-n-j4n:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.dummy2-j:jar}"/>
+    <copy todir="${artifact.output.dummy2-j:jar}">
+      <fileset dir="${artifact.temp.output.dummy2-j:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.jni4net:jar}"/>
+    <copy todir="${artifact.output.jni4net:jar}">
+      <fileset dir="${artifact.temp.output.jni4net:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.jre-micro-j4n:jar}"/>
+    <copy todir="${artifact.output.jre-micro-j4n:jar}">
+      <fileset dir="${artifact.temp.output.jre-micro-j4n:jar}"/>
+    </copy>
+    <mkdir dir="${artifact.output.mscorlib-micro-j4n:jar}"/>
+    <copy todir="${artifact.output.mscorlib-micro-j4n:jar}">
+      <fileset dir="${artifact.temp.output.mscorlib-micro-j4n:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

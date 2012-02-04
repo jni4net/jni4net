@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_jni4net" default="compile.module.jni4net">
+  <dirname property="module.jni4net.basedir" file="${ant.file.module_jni4net}"/>
+  
+  <property name="module.jdk.home.jni4net" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jni4net" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jni4net" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jni4net" value="${compiler.args}"/>
+  
+  <property name="jni4net.output.dir" value="${module.jni4net.basedir}/bin/classes"/>
+  <property name="jni4net.testoutput.dir" value="${module.jni4net.basedir}/bin/testclasses"/>
+  
+  <path id="jni4net.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jni4net.module.production.classpath">
+    <path refid="${module.jdk.classpath.jni4net}"/>
+  </path>
+  
+  <path id="jni4net.runtime.production.module.classpath">
+    <pathelement location="${jni4net.output.dir}"/>
+  </path>
+  
+  <path id="jni4net.module.classpath">
+    <path refid="${module.jdk.classpath.jni4net}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+  </path>
+  
+  <path id="jni4net.runtime.module.classpath">
+    <pathelement location="${jni4net.testoutput.dir}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jni4net">
+    <patternset refid="ignored.files"/>
+    <exclude name="obj/**"/>
+    <exclude name="bin/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jni4net">
+    <patternset refid="excluded.from.module.jni4net"/>
+  </patternset>
+  
+  <path id="jni4net.module.sourcepath">
+    <dirset dir="${module.jni4net.basedir}/../../runtime">
+      <include name="jni4net"/>
+      <include name="jni4net/j4n"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jni4net" depends="compile.module.jni4net.production,compile.module.jni4net.tests" description="Compile module jni4net"/>
+  
+  <target name="compile.module.jni4net.production" description="Compile module jni4net; production classes">
+    <mkdir dir="${jni4net.output.dir}"/>
+    <javac destdir="${jni4net.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jni4net}/javac">
+      <compilerarg line="${compiler.args.jni4net}"/>
+      <bootclasspath refid="jni4net.module.bootclasspath"/>
+      <classpath refid="jni4net.module.production.classpath"/>
+      <src refid="jni4net.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jni4net"/>
+    </javac>
+    
+    <copy todir="${jni4net.output.dir}">
+      <fileset dir="${module.jni4net.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.jni4net.basedir}/j4n">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jni4net.tests" depends="compile.module.jni4net.production" description="compile module jni4net; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jni4net" description="cleanup module">
+    <delete dir="${jni4net.output.dir}"/>
+    <delete dir="${jni4net.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dummy-j" default="compile.module.dummy-j">
+  <dirname property="module.dummy-j.basedir" file="${ant.file.module_dummy-j}"/>
+  
+  <property name="module.jdk.home.dummy-j" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dummy-j" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dummy-j" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dummy-j" value="${compiler.args}"/>
+  
+  <property name="dummy-j.output.dir" value="${module.dummy-j.basedir}/bin/classes"/>
+  <property name="dummy-j.testoutput.dir" value="${module.dummy-j.basedir}/bin/testclasses"/>
+  
+  <path id="dummy-j.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dummy-j.module.production.classpath">
+    <path refid="${module.jdk.classpath.dummy-j}"/>
+  </path>
+  
+  <path id="dummy-j.runtime.production.module.classpath">
+    <pathelement location="${dummy-j.output.dir}"/>
+  </path>
+  
+  <path id="dummy-j.module.classpath">
+    <path refid="${module.jdk.classpath.dummy-j}"/>
+    <pathelement location="${dummy-j.output.dir}"/>
+  </path>
+  
+  <path id="dummy-j.runtime.module.classpath">
+    <pathelement location="${dummy-j.testoutput.dir}"/>
+    <pathelement location="${dummy-j.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dummy-j">
+    <patternset refid="ignored.files"/>
+    <exclude name="bin/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dummy-j">
+    <patternset refid="excluded.from.module.dummy-j"/>
+  </patternset>
+  
+  <path id="dummy-j.module.sourcepath">
+    <dirset dir="${module.dummy-j.basedir}/../../dummies">
+      <include name="dummy-j"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dummy-j" depends="compile.module.dummy-j.production,compile.module.dummy-j.tests" description="Compile module dummy-j"/>
+  
+  <target name="compile.module.dummy-j.production" description="Compile module dummy-j; production classes">
+    <mkdir dir="${dummy-j.output.dir}"/>
+    <javac destdir="${dummy-j.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dummy-j}/javac">
+      <compilerarg line="${compiler.args.dummy-j}"/>
+      <bootclasspath refid="dummy-j.module.bootclasspath"/>
+      <classpath refid="dummy-j.module.production.classpath"/>
+      <src refid="dummy-j.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dummy-j"/>
+    </javac>
+    
+    <copy todir="${dummy-j.output.dir}">
+      <fileset dir="${module.dummy-j.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dummy-j.tests" depends="compile.module.dummy-j.production" description="compile module dummy-j; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dummy-j" description="cleanup module">
+    <delete dir="${dummy-j.output.dir}"/>
+    <delete dir="${dummy-j.testoutput.dir}"/>
+  </target>
+</project>

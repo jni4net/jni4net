@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_jre-micro-j4n" default="compile.module.jre-micro-j4n">
+  <dirname property="module.jre-micro-j4n.basedir" file="${ant.file.module_jre-micro-j4n}"/>
+  
+  <property name="module.jdk.home.jre-micro-j4n" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jre-micro-j4n" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jre-micro-j4n" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jre-micro-j4n" value="${compiler.args}"/>
+  
+  <property name="jre-micro-j4n.output.dir" value="${module.jre-micro-j4n.basedir}/bin/classes"/>
+  <property name="jre-micro-j4n.testoutput.dir" value="${module.jre-micro-j4n.basedir}/bin/testclasses"/>
+  
+  <path id="jre-micro-j4n.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jre-micro-j4n.module.production.classpath">
+    <path refid="${module.jdk.classpath.jre-micro-j4n}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+  </path>
+  
+  <path id="jre-micro-j4n.runtime.production.module.classpath">
+    <pathelement location="${jre-micro-j4n.output.dir}"/>
+    <path refid="jni4net.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="jre-micro-j4n.module.classpath">
+    <path refid="${module.jdk.classpath.jre-micro-j4n}"/>
+    <pathelement location="${jre-micro-j4n.output.dir}"/>
+    <pathelement location="${jni4net.testoutput.dir}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+  </path>
+  
+  <path id="jre-micro-j4n.runtime.module.classpath">
+    <pathelement location="${jre-micro-j4n.testoutput.dir}"/>
+    <pathelement location="${jre-micro-j4n.output.dir}"/>
+    <path refid="jni4net.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jre-micro-j4n">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jre-micro-j4n">
+    <patternset refid="excluded.from.module.jre-micro-j4n"/>
+  </patternset>
+  
+  <path id="jre-micro-j4n.module.sourcepath">
+    <dirset dir="${module.jre-micro-j4n.basedir}">
+      <include name="j4n"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jre-micro-j4n" depends="compile.module.jre-micro-j4n.production,compile.module.jre-micro-j4n.tests" description="Compile module jre-micro-j4n"/>
+  
+  <target name="compile.module.jre-micro-j4n.production" depends="compile.module.jni4net" description="Compile module jre-micro-j4n; production classes">
+    <mkdir dir="${jre-micro-j4n.output.dir}"/>
+    <javac destdir="${jre-micro-j4n.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jre-micro-j4n}/javac">
+      <compilerarg line="${compiler.args.jre-micro-j4n}"/>
+      <bootclasspath refid="jre-micro-j4n.module.bootclasspath"/>
+      <classpath refid="jre-micro-j4n.module.production.classpath"/>
+      <src refid="jre-micro-j4n.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jre-micro-j4n"/>
+    </javac>
+    
+    <copy todir="${jre-micro-j4n.output.dir}">
+      <fileset dir="${module.jre-micro-j4n.basedir}/j4n">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jre-micro-j4n.tests" depends="compile.module.jre-micro-j4n.production" description="compile module jre-micro-j4n; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jre-micro-j4n" description="cleanup module">
+    <delete dir="${jre-micro-j4n.output.dir}"/>
+    <delete dir="${jre-micro-j4n.testoutput.dir}"/>
+  </target>
+</project>

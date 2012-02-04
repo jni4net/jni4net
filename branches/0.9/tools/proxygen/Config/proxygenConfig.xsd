@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="proxygenConfig"
+    targetNamespace="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd"
+    xmlns:jni4net="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <!--
+  All path are relative to config file location or baseDirectory
+  -->
+
+  <xs:element name="jni4net-proxygen" type="jni4net:ProxygenConfig"/>
+
+  <xs:complexType name="ProxygenConfig">
+    <xs:sequence>
+      <xs:element name="project" type="jni4net:ProjectRegistration" maxOccurs="unbounded" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProjectRegistration">
+    <xs:sequence>
+      <xs:element name="jarsDirectory" type="jni4net:Directory" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="classPath" type="jni4net:ClassPath" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="assembliesDirectory" type="jni4net:Directory" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="assembly" type="jni4net:Assembly" maxOccurs="unbounded" minOccurs="0"/>
+
+      <xs:element name="jvmClass" type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="clrClass" type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+
+    <xs:attribute name="projectName" type="xs:string" use="required"/>
+    <xs:attribute name="projectVersion" type="xs:string" use="optional"/>
+    <xs:attribute name="projectKey" type="xs:string" use="optional"/>
+
+    <xs:attribute name="forceGenerateBaseClass" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="forceGenerateInterfaces" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="forceGenerateNestedClasses" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="forceGenerateGenericParams" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="autoGenerateBaseClass" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="autoGenerateInterfaces" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="autoGenerateNestedClasses" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="autoGenerateGenericParams" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="autoGenerateMethodParams" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="autoSubstituteMethodParams" type="xs:boolean" default="true" use="optional"/>
+    <xs:attribute name="forceAutoGenerate" type="xs:boolean" default="false" use="optional"/>
+    <xs:attribute name="targetDirJvm" type="xs:string" use="optional" default="j4n"/>
+    <xs:attribute name="targetDirClr" type="xs:string" use="optional" default="j4n"/>
+    <xs:attribute name="baseDirectory" type="xs:string" use="optional"/>
+    <xs:attribute name="disableProjectGeneration" type="xs:boolean" default="false" use="optional"/>
+  </xs:complexType>
+
+
+
+  <xs:complexType name="TargetOptions">
+    <xs:attribute name="targetDirJvm" type="xs:string" use="optional" />
+    <xs:attribute name="targetDirClr" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="TypeContainer" abstract="true">
+    <xs:complexContent >
+      <xs:extension base="TargetOptions">
+        <xs:attribute name="generate" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory" >
+    <xs:complexContent >
+      <xs:extension base="TypeContainer">
+        <xs:attribute name="directory" type="xs:string" use="optional"/>
+        <xs:attribute name="pattern" type="xs:string" use="optional"/>
+        <xs:attribute name="recurse" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Assembly" >
+    <xs:complexContent >
+      <xs:extension base="TypeContainer">
+        <xs:sequence>
+          <xs:element name="clrType"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="file" type="xs:string" use="optional"/>
+        <xs:attribute name="assemblyName" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ClassPath" >
+    <xs:complexContent >
+      <xs:extension base="TypeContainer">
+        <xs:sequence>
+          <xs:element name="javaClass"  type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="jarFile" type="xs:string" use="optional"/>
+        <xs:attribute name="classPathDirectory" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TypeRegistration">
+    <xs:complexContent >
+      <xs:extension base="TargetOptions">
+        <xs:sequence>
+          <xs:element name="extends"  type="jni4net:ExtendsRegistration" maxOccurs="1" minOccurs="0"/>
+          <xs:element name="implements"  type="jni4net:ImplementsRegistration" maxOccurs="unbounded" minOccurs="0"/>
+          <xs:element name="member"  type="jni4net:MemberRegistration" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="rename" type="xs:string" use="optional"/>
+        <xs:attribute name="move" type="xs:string" use="optional"/>
+        <xs:attribute name="generate" type="xs:boolean" use="optional" default="true"/>
+        <xs:attribute name="exclude" type="xs:boolean" use="optional" default="false"/>
+        <xs:attribute name="verbose" type="xs:boolean" use="optional" default="false"/>
+        <xs:attribute name="addBaseMethods" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ExtendsRegistration">
+    <xs:attribute name="declaration" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="ImplementsRegistration">
+    <xs:complexContent >
+      <xs:extension base="ExtendsRegistration">
+        <xs:attribute name="exclude" type="xs:boolean" use="optional" default="false"/>
+        <xs:attribute name="include" type="xs:boolean" use="optional" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MemberRegistration" >
+    <xs:sequence>
+      <xs:element name="ret"  type="jni4net:ParameterRegistration" maxOccurs="1" minOccurs="0"/>
+      <xs:element name="parameter"  type="jni4net:ParameterRegistration" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="signature" type="xs:string" use="required"/>
+    <xs:attribute name="rename" type="xs:string" use="optional"/>
+    <xs:attribute name="exclude" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="explicitInterface" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterRegistration" >
+    <xs:attribute name="rename" type="xs:string" use="optional"/>
+    <xs:attribute name="changeType" type="xs:string" use="optional"/>
+  </xs:complexType>
+</xs:schema>
+

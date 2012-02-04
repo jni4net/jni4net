@@ -1,0 +1,240 @@
+// This code was generated using jni4net. See http://jni4net.sourceforge.net/
+
+#region Component Designer generated code
+// ReSharper disable InconsistentNaming
+// ReSharper disable CheckNamespace
+// ReSharper disable RedundantNameQualifier
+// ReSharper disable RedundantCast
+// ReSharper disable RedundantCommaInArrayInitializer
+// ReSharper disable RedundantExplicitArrayCreation
+// ReSharper disable UnassignedField.Local
+// ReSharper disable UnusedMember.Local
+// ReSharper disable PartialTypeWithSinglePart
+// ReSharper disable RedundantExtendsListEntry
+// ReSharper disable SuggestUseVarKeywordEvident
+// ReSharper disable PossibleMultipleEnumeration
+// ReSharper disable MemberHidesStaticFromOuterClass
+// ReSharper disable UnusedParameter.Local
+// ReSharper disable UnusedMember.Global
+#pragma warning disable 109
+#pragma warning disable 649
+#pragma warning disable 618
+
+namespace System
+{
+    [global::net.sf.jni4net.attributes.J4NProxy(typeof(System.IntPtr_))]
+    static public partial class IntPtr_
+    {
+        static IntPtr_()
+        {
+            global::net.sf.jni4net.modules.mscorlibmicroj4n.InitModule();
+            global::net.sf.jni4net.core.Registry.InitClrProxy(typeof(global::System.ValueType_));
+            global::net.sf.jni4net.core.Registry.InitJvmProxy(typeof(global::System.Runtime.Serialization.ISerializable_));
+            global::net.sf.jni4net.core.Registry.InitClrProxy(typeof(global::System.Runtime.Serialization.ISerializable_));
+            global::net.sf.jni4net.core.Registry.InitClrProxy(typeof(System.IntPtr_));
+        }
+        
+        static private global::net.sf.jni4net.core.ProxyInfo j4n_TypeInfo;
+        
+        static private global::java.lang.IClass j4n_Class;
+        
+        static private global::System.IntPtr[] j4n_Members = global::net.sf.jni4net.core.Registry.dummyMethods;
+        
+        new static public global::java.lang.IClass _class {
+            get {
+                return j4n_Class;
+            }
+        }
+        
+        /// <signature>#0 .ctor(I)V (I)V</signature>
+        static long j4n_0(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, int value)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
+            try
+            {
+                return global::net.sf.jni4net.core.ConvertAbstract.ToClrHandle(new global::System.IntPtr(value));
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(long);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#1 .ctor(J)V (J)V</signature>
+        static long j4n_1(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, long value)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
+            try
+            {
+                return global::net.sf.jni4net.core.ConvertAbstract.ToClrHandle(new global::System.IntPtr(value));
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(long);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#2 get_Size()I ()I</signature>
+        static int j4n_2(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_clazz)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                int j4n_result = global::System.IntPtr.Size;
+                return j4n_result;
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(int);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#3 Zero()Lsystem/IntPtr; ()LSystem/IntPtr;</signature>
+        static global::System.IntPtr j4n_3(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_clazz)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, global::System.IntPtr.Zero, "system.IntPtr");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#4 GetObjectData(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/StreamingContext;)V (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V</signature>
+        static void j4n_4(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr info, global::System.IntPtr context)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 14);
+            try
+            {
+                global::System.Runtime.Serialization.ISerializable j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.Runtime.Serialization.ISerializable>(j4n_env, j4n_self);
+                j4n_real.GetObjectData(global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.Runtime.Serialization.SerializationInfo>(j4n_env, info), global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.Runtime.Serialization.StreamingContext>(j4n_env, context));
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#5 ToInt32()I ()I</signature>
+        static int j4n_5(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::System.IntPtr j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.IntPtr>(j4n_env, j4n_self);
+                int j4n_result = j4n_real.ToInt32();
+                return j4n_result;
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(int);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#6 ToInt64()J ()J</signature>
+        static long j4n_6(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::System.IntPtr j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.IntPtr>(j4n_env, j4n_self);
+                long j4n_result = j4n_real.ToInt64();
+                return j4n_result;
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(long);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+        }
+        
+        /// <signature>#7 ToString(Ljava/lang/String;)Ljava/lang/String; (Lsystem/String;)Lsystem/String;</signature>
+        static global::System.IntPtr j4n_7(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr format)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
+            try
+            {
+                global::System.IntPtr j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::System.IntPtr>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.ToString(global::net.sf.jni4net.core.ConvertAbstract.ToCLR<string>(j4n_env, format)), "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        new static internal global::net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(global::net.sf.jni4net.core.ProxyInfo proxyInfo)
+        {
+            lock (typeof(global::System.IntPtr))
+            {
+                if (j4n_TypeInfo==null)
+                {
+                    j4n_TypeInfo = proxyInfo;
+                    proxyInfo.IsCLR = true;
+                    proxyInfo.IsInterface = false;
+                    proxyInfo.JVMApiName = "system.IntPtr";
+                    proxyInfo.JVMProxyName = "system.IntPtr";
+                    proxyInfo.JVMStaticApiName = "system.IntPtr";
+                    proxyInfo.CLRApi = typeof(System.IntPtr);
+                    proxyInfo.CLRStaticApi = typeof(System.IntPtr_);
+                    proxyInfo.MemberIds = new global::net.sf.jni4net.core.MemberId[]{
+                        new global::net.sf.jni4net.core.MemberId("<init>","(I)V", false, false), // #0 (I)V
+                        new global::net.sf.jni4net.core.MemberId("<init>","(J)V", false, false), // #1 (J)V
+                        new global::net.sf.jni4net.core.MemberId("getSize","()I", false, true), // #2 ()I
+                        new global::net.sf.jni4net.core.MemberId("Zero","()Lsystem/IntPtr;", true, true), // #3 ()LSystem/IntPtr;
+                        new global::net.sf.jni4net.core.MemberId("GetObjectData","(Lsystem/runtime/serialization/SerializationInfo;Lsystem/runtime/serialization/StreamingContext;)V", false, false), // #4 (LSystem/Runtime/Serialization/SerializationInfo;LSystem/Runtime/Serialization/StreamingContext;)V
+                        new global::net.sf.jni4net.core.MemberId("ToInt32","()I", false, false), // #5 ()I
+                        new global::net.sf.jni4net.core.MemberId("ToInt64","()J", false, false), // #6 ()J
+                        new global::net.sf.jni4net.core.MemberId("ToString","(Ljava/lang/String;)Ljava/lang/String;", false, false), // #7 (Ljava/lang/String;)Ljava/lang/String;
+                        };
+                }
+                return j4n_TypeInfo;
+            }
+        }
+    }
+}
+
+#endregion Component Designer generated code

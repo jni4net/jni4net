@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dummy-n-j4n" default="compile.module.dummy-n-j4n">
+  <dirname property="module.dummy-n-j4n.basedir" file="${ant.file.module_dummy-n-j4n}"/>
+  
+  <property name="module.jdk.home.dummy-n-j4n" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dummy-n-j4n" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dummy-n-j4n" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dummy-n-j4n" value="${compiler.args}"/>
+  
+  <property name="dummy-n-j4n.output.dir" value="${module.dummy-n-j4n.basedir}/bin/classes"/>
+  <property name="dummy-n-j4n.testoutput.dir" value="${module.dummy-n-j4n.basedir}/bin/testclasses"/>
+  
+  <path id="dummy-n-j4n.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dummy-n-j4n.module.production.classpath">
+    <path refid="${module.jdk.classpath.dummy-n-j4n}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.output.dir}"/>
+  </path>
+  
+  <path id="dummy-n-j4n.runtime.production.module.classpath">
+    <pathelement location="${dummy-n-j4n.output.dir}"/>
+    <path refid="jni4net.runtime.production.module.classpath"/>
+    <path refid="mscorlib-micro-j4n.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="dummy-n-j4n.module.classpath">
+    <path refid="${module.jdk.classpath.dummy-n-j4n}"/>
+    <pathelement location="${dummy-n-j4n.output.dir}"/>
+    <pathelement location="${jni4net.testoutput.dir}"/>
+    <pathelement location="${jni4net.output.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.testoutput.dir}"/>
+    <pathelement location="${mscorlib-micro-j4n.output.dir}"/>
+  </path>
+  
+  <path id="dummy-n-j4n.runtime.module.classpath">
+    <pathelement location="${dummy-n-j4n.testoutput.dir}"/>
+    <pathelement location="${dummy-n-j4n.output.dir}"/>
+    <path refid="jni4net.runtime.module.classpath"/>
+    <path refid="mscorlib-micro-j4n.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dummy-n-j4n">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dummy-n-j4n">
+    <patternset refid="excluded.from.module.dummy-n-j4n"/>
+  </patternset>
+  
+  <path id="dummy-n-j4n.module.sourcepath">
+    <dirset dir="${module.dummy-n-j4n.basedir}">
+      <include name="j4n"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dummy-n-j4n" depends="compile.module.dummy-n-j4n.production,compile.module.dummy-n-j4n.tests" description="Compile module dummy-n-j4n"/>
+  
+  <target name="compile.module.dummy-n-j4n.production" depends="compile.module.jni4net,compile.module.mscorlib-micro-j4n" description="Compile module dummy-n-j4n; production classes">
+    <mkdir dir="${dummy-n-j4n.output.dir}"/>
+    <javac destdir="${dummy-n-j4n.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dummy-n-j4n}/javac">
+      <compilerarg line="${compiler.args.dummy-n-j4n}"/>
+      <bootclasspath refid="dummy-n-j4n.module.bootclasspath"/>
+      <classpath refid="dummy-n-j4n.module.production.classpath"/>
+      <src refid="dummy-n-j4n.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dummy-n-j4n"/>
+    </javac>
+    
+    <copy todir="${dummy-n-j4n.output.dir}">
+      <fileset dir="${module.dummy-n-j4n.basedir}/j4n">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dummy-n-j4n.tests" depends="compile.module.dummy-n-j4n.production" description="compile module dummy-n-j4n; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dummy-n-j4n" description="cleanup module">
+    <delete dir="${dummy-n-j4n.output.dir}"/>
+    <delete dir="${dummy-n-j4n.testoutput.dir}"/>
+  </target>
+</project>
