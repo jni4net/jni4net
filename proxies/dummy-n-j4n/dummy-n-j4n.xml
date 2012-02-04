@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <project projectName="dummy-n-j4n" projectKey="../../_tools/keys/jni4net.snk" projectVersion="0.9.0.0">
+    <assembly assemblyName="dummy-n" generate="true" file="..\..\dummies\dummy-n\bin\dummy-n.dll">
+      <clrType name="dummy.clr.ITested">
+        <member signature="Void testSkip()" exclude="true"/>
+      </clrType>
+    </assembly>
+  </project>
+</jni4net-proxygen>

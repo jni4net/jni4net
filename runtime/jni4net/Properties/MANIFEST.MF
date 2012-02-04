@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+jni4net.version: 0.9.0.0
+Created-By: 1.6.0 (Sun Microsystems Inc.)

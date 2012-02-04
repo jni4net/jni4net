@@ -1,1 +1,0 @@
-work\helloWorldFromCLR.exe

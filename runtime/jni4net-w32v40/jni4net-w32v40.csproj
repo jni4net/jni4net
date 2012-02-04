@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D201AC15-89FB-46E1-929A-289128FB7664}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>net.sf.jni4net</RootNamespace>
+    <AssemblyName>jni4net-w32v40</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;J4NEXPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../../_tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;J4NEXPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="selvin.exportdllattribute-0.2.6.0">
+      <HintPath>..\..\_lib\selvin.exportdllattribute-0.2.6.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\jni4net-w32v20\core\J4NBridgeExport.cs">
+      <Link>core\J4NBridgeExport.cs</Link>
+    </Compile>
+    <Compile Include="..\jni4net-w32v20\jniexport\JNIEnvMini.cs">
+      <Link>jniexport\JNIEnvMini.cs</Link>
+    </Compile>
+    <Compile Include="..\jni4net\net.sf.jni4net\jni\JNINativeInterface.cs">
+      <Link>jniexport\JNINativeInterface.cs</Link>
+    </Compile>
+    <Compile Include="..\jni4net\Properties\AssemblyInfo.common.cs">
+      <Link>Properties\AssemblyInfo.common.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\jni4net\jni4net.csproj">
+      <Project>{9CCC5ECB-A6DE-45CE-B6F1-B2925A3D2386}</Project>
+      <Name>jni4net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)\_lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/_tools/keys/jni4net.snk" "$(SolutionDir)/_tools/keys/jni4net.snk" /Debug /x32
+rem copy "$(TargetPath)" "$(ProjectPath)\obj\$(ConfigurationName)"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

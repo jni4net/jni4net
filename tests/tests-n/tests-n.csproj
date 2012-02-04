@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF65E4D5-3AD6-4EB8-9828-E161E5A8362E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tests.n</RootNamespace>
+    <AssemblyName>tests-n</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>../../_tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>1685</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="jni4net, Version=0.9.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\runtime\jni4net\bin\jni4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\_lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\runtime\jni4net\Properties\AssemblyInfo.common.cs">
+      <Link>Properties\AssemblyInfo.common.cs</Link>
+    </Compile>
+    <Compile Include="JvmClassTest.cs" />
+    <Compile Include="JvmPrimitiveTest.cs" />
+    <Compile Include="NativeBindingTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\dummies\dummy-n\dummy-n.csproj">
+      <Project>{97D78FFB-7AE4-4D9B-9C46-F88D219B5A33}</Project>
+      <Name>dummy-n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\proxies\dummy-j-j4n\dummy-j-j4n.csproj">
+      <Project>{E01F2B41-E2C5-42B0-9A4F-8CBB9873F5D9}</Project>
+      <Name>dummy-j-j4n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\proxies\dummy-n-j4n\dummy-n-j4n.csproj">
+      <Project>{EC35A13B-7985-4714-B17D-86016A7AE05F}</Project>
+      <Name>dummy-n-j4n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\proxies\jre-micro-j4n\jre-micro-j4n.csproj">
+      <Project>{D3DCCDC8-E43D-4DE8-9E85-E920556885C3}</Project>
+      <Name>jre-micro-j4n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\proxies\mscorlib-micro-j4n\mscorlib-micro-j4n.csproj">
+      <Project>{4CD2CC87-D09B-415F-9BDC-1202919355AD}</Project>
+      <Name>mscorlib-micro-j4n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\runtime\jni4net-w32v20\jni4net-w32v20.csproj">
+      <Project>{199901E3-A07C-43F6-9850-459D024FE0FE}</Project>
+      <Name>jni4net-w32v20</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\runtime\jni4net-w32v40\jni4net-w32v40.csproj">
+      <Project>{D201AC15-89FB-46E1-929A-289128FB7664}</Project>
+      <Name>jni4net-w32v40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\dummies\dummy-j\bin\dummy-j.jar">
+      <Link>dummy-j.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\dummies\dummy2-j\bin\dummy2-j.jar">
+      <Link>dummy2-j.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\runtime\jni4net\bin\jni4net.jar">
+      <Link>jni4net.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\proxies\dummy-n-j4n\bin\dummy-n-j4n.jar">
+      <Link>dummy-n-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\proxies\dummy-j-j4n\bin\dummy-j-j4n.jar">
+      <Link>dummy-j-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\proxies\jre-micro-j4n\bin\jre-micro-j4n.jar">
+      <Link>jre-micro-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\proxies\mscorlib-micro-j4n\bin\mscorlib-micro-j4n.jar">
+      <Link>mscorlib-micro-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni4net-n.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

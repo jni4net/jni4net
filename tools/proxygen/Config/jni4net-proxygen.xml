@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <options
+    forceAutoGenerate="true"
+    targetDirClr="."
+    targetDirJvm="."
+    />
+  <assembliesDirectory directory="c:\Data\Sf\jni4net.pro\trunk\lib\" />
+  <assembly assemblyName="mscorlib">
+    <clrType name="System.String" />
+  </assembly>
+  <assembly assemblyName="nunit.framework, Version=2.5.7.10213, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+    <clrType name="NUnit.Framework.Assert" />
+  </assembly>
+</jni4net-proxygen>
