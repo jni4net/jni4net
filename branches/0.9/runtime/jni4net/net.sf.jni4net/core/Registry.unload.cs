@@ -55,10 +55,6 @@ namespace net.sf.jni4net.core
 
                 foreach (var proxyInfo in CLRApiToInfo.Values)
                 {
-                    if (proxyInfo.JVMApiName.Contains("Foobararable"))
-                    {
-                        int xxx = 0;
-                    }
                     if (proxyInfo.IsBound || proxyInfo.IsBackBound)
                     {
                         var j4nMembers = proxyInfo.CLRStaticApi.GetField("j4n_Members", BindingFlags.Static | BindingFlags.NonPublic);

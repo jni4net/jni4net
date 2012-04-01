@@ -44,7 +44,7 @@ namespace tests.n
         public void Stupid()
         {
             int res;
-            string value1 = ConfigurationSettings.AppSettings["testAppConfig"];
+            string value1 = ConfigurationManager.AppSettings["testAppConfig"];
             Int32.TryParse(value1, out res);
         }
 

@@ -46,7 +46,7 @@ namespace dummy.clr
         public int test1(int value, string s, IList l)
         {
             int res;
-            string value1 = ConfigurationSettings.AppSettings["testAppConfig"];
+            string value1 = ConfigurationManager.AppSettings["testAppConfig"];
             Console.WriteLine(value1);
             Int32.TryParse(value1, out res);
             return res;
