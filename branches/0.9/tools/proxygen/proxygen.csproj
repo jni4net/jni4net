@@ -207,7 +207,7 @@
     <PreBuildEvent>if not exist $(SolutionDir)\_tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\_tools\keys\jni4net.snk</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy /y $(ProjectDir)Config\proxygenConfig.xsd "c:\Program Files (x86)\Microsoft Visual Studio 10.0\Xml\Schemas"</PostBuildEvent>
+    <PostBuildEvent>rem copy /y $(ProjectDir)Config\proxygenConfig.xsd "c:\Program Files (x86)\Microsoft Visual Studio 10.0\Xml\Schemas"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

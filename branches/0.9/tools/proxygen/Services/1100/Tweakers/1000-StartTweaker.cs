@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using com.jni4net.proxygen.Interfaces;
 using com.jni4net.proxygen.Model;
 using Microsoft.Practices.Unity;
@@ -32,6 +33,9 @@ namespace com.jni4net.proxygen.Services.Generators
     {
         [Dependency]
         public ITypeRepository Repository { get; set; }
+
+        [Dependency]
+        public ILogger Logger { get; set; }
 
         public override ProxyGenPass ExpectedPass
         {
@@ -93,6 +97,25 @@ namespace com.jni4net.proxygen.Services.Generators
         public override void RoundStarted(IList<MType> models)
         {
             this.models = new List<MType>();
+            var l=0;
+            var sb = new StringBuilder("Explorer round : ");
+            foreach (var model in models)
+            {
+                if(model.IsGenerate)
+                {
+                    string name = model.ToShortString();
+                    l += name.Length+1;
+                    if (l > 120)
+                    {
+                        l = 0;
+                        sb.AppendLine();
+                        sb.Append("                 ");
+                    }
+                    sb.Append(name);
+                    sb.Append(' ');
+                }
+            }
+            Logger.LogMessage(sb.ToString(), null);
         }
 
         public override void RoundFinished(IList<MType> models)

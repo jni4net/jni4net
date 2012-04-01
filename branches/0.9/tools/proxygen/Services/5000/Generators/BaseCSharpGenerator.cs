@@ -225,7 +225,7 @@ namespace com.jni4net.proxygen.Services.Generators
                 {
                     method.IsStatic = true;
                     method.IsInternal = true;
-                    method.IsNew = !model.IsRoot && !model.IsInterface;
+                    method.IsNew = !model.IsRoot;
                     method.AddParameter(GTypeJ4N.JNIEnv, Configurator.PrivateParamPrefix + "env");
                     method.AddParameter(GTypeClr.IntPtr, Configurator.PrivateParamPrefix + "handle");
                     method.AddParameter(GTypeJ4N.JvmInstanceInfo, Configurator.PrivateParamPrefix + "instanceInfo");
