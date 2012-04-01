@@ -431,7 +431,7 @@ namespace dummy.jvm
             {
             }
             
-            static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
+            new static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
             {
                 return new dummy.jvm.Interfaces._Bar(j4n_env, j4n_env.NewGlobalRef(j4n_handle), j4n_instanceInfo);
             }
@@ -568,7 +568,7 @@ namespace dummy.jvm
             {
             }
             
-            static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
+            new static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
             {
                 return new dummy.jvm.Interfaces._Foo(j4n_env, j4n_env.NewGlobalRef(j4n_handle), j4n_instanceInfo);
             }
@@ -725,7 +725,7 @@ namespace dummy.jvm
             {
             }
             
-            static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
+            new static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
             {
                 return new dummy.jvm.Interfaces._Goo(j4n_env, j4n_env.NewGlobalRef(j4n_handle), j4n_instanceInfo);
             }
@@ -1028,7 +1028,7 @@ namespace dummy.jvm
             {
             }
             
-            static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
+            new static internal global::net.sf.jni4net.IJvmProxy j4n_ProxyFactory(global::net.sf.jni4net.jni.JNIEnv j4n_env, global::System.IntPtr j4n_handle, global::net.sf.jni4net.core.JvmInstanceInfo j4n_instanceInfo)
             {
                 return new dummy.jvm.Interfaces._Zoo(j4n_env, j4n_env.NewGlobalRef(j4n_handle), j4n_instanceInfo);
             }

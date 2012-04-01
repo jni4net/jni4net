@@ -40,9 +40,9 @@ namespace net.sf.jni4net.modules
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(dummy.clr.Interfaces_.Zuu_), typeof(dummy.clr.Interfaces.Zuu), "dummy.clr.Interfaces$Zuu");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(dummy.clr.Interfaces_.Rab_), typeof(dummy.clr.Interfaces.Rab), "dummy.clr.Interfaces$Rab");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.ITested_), typeof(dummy.clr.ITested), "dummy.clr.ITested");
-                global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Tested_), typeof(dummy.clr.Tested), "dummy.clr.Tested");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Interfaces_), typeof(dummy.clr.Interfaces), "dummy.clr.Interfaces");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.InterfacesFactory_), typeof(dummy.clr.InterfacesFactory), "dummy.clr.InterfacesFactory");
+                global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Tested_), typeof(dummy.clr.Tested), "dummy.clr.Tested");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Interfaces_.Buufararable_), typeof(dummy.clr.Interfaces.Buufararable), "dummy.clr.Interfaces$Buufararable");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Interfaces_.Fuu_), typeof(dummy.clr.Interfaces.Fuu), "dummy.clr.Interfaces$Fuu");
                 global::net.sf.jni4net.core.Registry.RegisterClrProxy(typeof(dummy.clr.Interfaces_.Guu_), typeof(dummy.clr.Interfaces.Guu), "dummy.clr.Interfaces$Guu");

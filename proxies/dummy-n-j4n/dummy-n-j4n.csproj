@@ -43,9 +43,9 @@
     <Content Include="dummy-n-j4n.xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="j4n\dummy\clr\ITested.j4n.cs" />
-    <Compile Include="j4n\dummy\clr\Tested.j4n.cs" />
     <Compile Include="j4n\dummy\clr\Interfaces.j4n.cs" />
     <Compile Include="j4n\dummy\clr\InterfacesFactory.j4n.cs" />
+    <Compile Include="j4n\dummy\clr\Tested.j4n.cs" />
     <Compile Include="j4n\net\sf\jni4net\modules\dummynj4n.j4n.cs" />
   </ItemGroup>
   <ItemGroup>
