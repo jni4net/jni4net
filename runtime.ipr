@@ -64,7 +64,7 @@
             <element id="file-copy" path="$PROJECT_DIR$/tools/proxygen/Config/proxygenConfig.xsd" />
           </element>
           <element id="directory" name="runtime">
-            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v20/bin/Debug/jni4net-w32v20.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v20/bin/jni4net-w32v20.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v40/bin/jni4net-w32v40.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net/bin/jni4net.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/proxies/jre-micro-j4n/bin/jre-micro-j4n.dll" />
@@ -73,6 +73,7 @@
             <element id="artifact" artifact-name="jre-micro-j4n:jar" />
             <element id="artifact" artifact-name="mscorlib-micro-j4n:jar" />
             <element id="file-copy" path="$PROJECT_DIR$/license/jni4net-runtime-LGPL-3.0.txt" />
+            <element id="file-copy" path="$PROJECT_DIR$/license/jni4net-runtime-MIT.txt" />
           </element>
           <element id="directory" name="samples" />
           <element id="file-copy" path="$PROJECT_DIR$/changes.txt" />
