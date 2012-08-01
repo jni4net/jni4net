@@ -72,7 +72,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\_lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/_tools/keys/jni4net.snk" "$(SolutionDir)/_tools/keys/jni4net.snk" /Debug /x32
+    <PostBuildEvent>"$(SolutionDir)\_lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/_tools/keys/jni4net.snk" /Debug /x32
 rem copy "$(TargetPath)" "$(ProjectPath)\obj\$(ConfigurationName)"
 </PostBuildEvent>
   </PropertyGroup>
