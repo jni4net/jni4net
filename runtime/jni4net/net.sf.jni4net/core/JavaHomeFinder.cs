@@ -80,7 +80,7 @@ namespace net.sf.jni4net.core
                         jvmDir = Path.GetDirectoryName(jvmDir);
                     }
                     javaHome = (string)Microsoft.Win32.Registry.GetValue(keyName, "JavaHome", null);
-                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
+                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, null))
                     {
                         return true;
                     }
@@ -105,7 +105,7 @@ namespace net.sf.jni4net.core
                         jvmDir = Path.GetDirectoryName(jvmDir);
                     }
                     javaHome = (string)Microsoft.Win32.Registry.GetValue(keyName, "JavaHome", null);
-                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
+                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, null))
                     {
                         return true;
                     }

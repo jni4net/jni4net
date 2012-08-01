@@ -60,7 +60,11 @@ namespace net.sf.jni4net
         /// </summary>
         public string JavaHome { get; set; }
 
+        /// <summary>
+        /// Version in JAVA_HOME name, when searching by directories
         /// <example>1.5</example>
+        /// <example>jre6</example>
+        /// </summary>
         public string JavaVersion { get; set; }
 
         /// <summary>

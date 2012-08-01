@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using java.lang;
 using net.sf.jni4net.jni;
 
 namespace net.sf.jni4net.core
@@ -123,6 +124,7 @@ namespace net.sf.jni4net.core
             }
 
             var list = new List<JNINativeMethod>();
+            var jvmProxy = proxyInfo.JVMProxy;
             for (int i = 0; i < proxyInfo.MemberIds.Length; i++)
             {
                 var memberId = proxyInfo.MemberIds[i];
@@ -135,21 +137,44 @@ namespace net.sf.jni4net.core
                 {
                     throw new J4NException("Can't find method j4n_" + i + " on " + proxyInfo.CLRStaticApi.FullName);
                 }
-                JNINativeMethod nativeMethod;
+                var name = memberId.Name;
+                var signature = memberId.Signature;
                 if(memberId.Name=="<init>")
                 {
                     int lb = memberId.Signature.LastIndexOf(")");
-                    string javaSignature = memberId.Signature.Substring(0, lb+1)+"J";
-                    nativeMethod = new JNINativeMethod(method, "j4n_constructor", javaSignature);
+                    signature = memberId.Signature.Substring(0, lb+1)+"J";
+                    name = "j4n_constructor";
+                }
+                if(i==0)
+                {
+                    // workaround for Java 1.6 bug
+                    // force method definition
+                    // http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6493522
+                    LoadJvmMember(env, memberId, jvmProxy, name, signature);
+                }
+                list.Add(new JNINativeMethod(method, name, signature));
+            }
+            env.RegisterNatives(list, jvmProxy.JvmHandle, jvmProxy.getName());
+            proxyInfo.IsBackBound = true;
+        }
+
+        private static void LoadJvmMember(JNIEnv env, MemberId memberId, IClass jvmProxy, string name, string signature)
+        {
+            try
+            {
+                if (memberId.IsStatic)
+                {
+                    env.GetStaticMethodID(jvmProxy, name, signature);
                 }
                 else
                 {
-                    nativeMethod = new JNINativeMethod(method, memberId.Name, memberId.Signature);
+                    env.GetMethodID(jvmProxy, name, signature);
                 }
-                list.Add(nativeMethod);
             }
-            env.RegisterNatives(list, proxyInfo.JVMProxy.JvmHandle, proxyInfo.JVMProxy.getName());
-            proxyInfo.IsBackBound = true;
+            catch(Exception ex)
+            {
+                Logger.LogWarn(jvmProxy.getName() + " " + name + " " + ex.Message);
+            }
         }
     }
 }
