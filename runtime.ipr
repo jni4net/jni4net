@@ -66,6 +66,8 @@
           <element id="directory" name="runtime">
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v20/bin/jni4net-w32v20.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v40/bin/jni4net-w32v40.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w64v20/bin/jni4net-w64v20.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w64v40/bin/jni4net-w64v40.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net/bin/jni4net.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/proxies/jre-micro-j4n/bin/jre-micro-j4n.dll" />
             <element id="file-copy" path="$PROJECT_DIR$/proxies/mscorlib-micro-j4n/bin/mscorlib-micro-j4n.dll" />
