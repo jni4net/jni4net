@@ -43,6 +43,7 @@ namespace tests.n
                                    //EnforceThreadDetach = true,
                                    AllowJVMJoin = true,
                                    EnforceImmediateBinding = true,
+                                   JavaVersion = "1.5",
                                    //JavaHome = @"c:\Program Files (x86)\Java\jdk1.7.0" ,
                                };
             //j4NSetup.AddJVMOption("-verbose");

@@ -42,7 +42,7 @@ namespace net.sf.jni4net.core
         public static bool FindJavaHome(BridgeSetup setup, ref string javaHome, ref JNILib jvmDll)
         {
             string jvmDir = null;
-            if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+            if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
             {
                 return true;
             }
@@ -54,7 +54,7 @@ namespace net.sf.jni4net.core
             // environment
             javaHome = Environment.GetEnvironmentVariable(JAVA_HOME_ENV);
             jvmDir = null;
-            if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+            if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
             {
                 return true;
             }
@@ -62,7 +62,15 @@ namespace net.sf.jni4net.core
             if (OsUtils.IsRunningWindows)
             {
                 //registry JRE
-                var jreVersion = (string)Microsoft.Win32.Registry.GetValue(JRE_REGISTRY_KEY, "CurrentVersion", null);
+                string jreVersion;
+                if (setup.JavaVersion == null)
+                {
+                    jreVersion = (string)Microsoft.Win32.Registry.GetValue(JRE_REGISTRY_KEY, "CurrentVersion", null);
+                }
+                else
+                {
+                    jreVersion = setup.JavaVersion;
+                }
                 if (jreVersion != null)
                 {
                     string keyName = Path.Combine(JRE_REGISTRY_KEY, jreVersion);
@@ -72,14 +80,22 @@ namespace net.sf.jni4net.core
                         jvmDir = Path.GetDirectoryName(jvmDir);
                     }
                     javaHome = (string)Microsoft.Win32.Registry.GetValue(keyName, "JavaHome", null);
-                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                     {
                         return true;
                     }
                 }
 
                 //registry JDK
-                var jdkVersion = (string)Microsoft.Win32.Registry.GetValue(JDK_REGISTRY_KEY, "CurrentVersion", null);
+                string jdkVersion;
+                if (setup.JavaVersion == null)
+                {
+                    jdkVersion = (string)Microsoft.Win32.Registry.GetValue(JDK_REGISTRY_KEY, "CurrentVersion", null);
+                }
+                else
+                {
+                    jdkVersion = setup.JavaVersion;
+                }
                 if (jdkVersion != null)
                 {
                     string keyName = Path.Combine(JDK_REGISTRY_KEY, jdkVersion);
@@ -89,7 +105,7 @@ namespace net.sf.jni4net.core
                         jvmDir = Path.GetDirectoryName(jvmDir);
                     }
                     javaHome = (string)Microsoft.Win32.Registry.GetValue(keyName, "JavaHome", null);
-                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                    if (!string.IsNullOrEmpty(javaHome) && ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                     {
                         return true;
                     }
@@ -111,7 +127,7 @@ namespace net.sf.jni4net.core
                             {
                                 jvmDir = null;
                                 javaHome = directories[i];
-                                if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                                if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                                 {
                                     return true;
                                 }
@@ -123,7 +139,7 @@ namespace net.sf.jni4net.core
                             {
                                 jvmDir = null;
                                 javaHome = directories[i];
-                                if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                                if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                                 {
                                     return true;
                                 }
@@ -144,7 +160,7 @@ namespace net.sf.jni4net.core
                         {
                             jvmDir = null;
                             javaHome = directories[i];
-                            if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                            if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                             {
                                 return true;
                             }
@@ -156,7 +172,7 @@ namespace net.sf.jni4net.core
                         {
                             jvmDir = null;
                             javaHome = directories[i];
-                            if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll))
+                            if (ConfirmJavaHome(ref javaHome, ref jvmDir, ref jvmDll, setup.JavaVersion))
                             {
                                 return true;
                             }
@@ -168,7 +184,7 @@ namespace net.sf.jni4net.core
             return false;
         }
 
-        private static bool ConfirmJavaHome(ref string javaHome, ref string jvmDir, ref JNILib jvmDll)
+        private static bool ConfirmJavaHome(ref string javaHome, ref string jvmDir, ref JNILib jvmDll, string javaVersion)
         {
             try
             {
@@ -201,8 +217,12 @@ namespace net.sf.jni4net.core
                         }
                     }
                 }
+                if (javaVersion != null && !javaHome.ToLowerInvariant().Contains(javaVersion.ToLowerInvariant()))
+                {
+                    return false;
+                }
                 jvmDll = new JNILib(jvmDir, false);
-                //TODO check expected version
+
                 return true;
 
             }
