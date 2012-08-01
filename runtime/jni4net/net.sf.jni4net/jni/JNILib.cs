@@ -36,7 +36,7 @@ namespace net.sf.jni4net.jni
             return createJavaVM(out pjvm, out penv, &args);
         }
 
-        public unsafe JNIResult GetCreatedJavaVMs(out IntPtr[] pjvm)
+        public JNIResult GetCreatedJavaVMs(out IntPtr[] pjvm)
         {
             int s;
             var w = new IntPtr[100];
@@ -60,7 +60,14 @@ namespace net.sf.jni4net.jni
 
         public JNIResult GetDefaultJavaVMInitArgs(out JVMInitArgs args)
         {
-            return getDefaultJavaVMInitArgs(out args);
+            args=new JVMInitArgs
+                {
+                    version = JVMInitArgs.JNI_VERSION_1_4
+                };
+            fixed (JVMInitArgs* a = &args)
+            {
+                return getDefaultJavaVMInitArgs(a);
+            }
         }
     }
 }

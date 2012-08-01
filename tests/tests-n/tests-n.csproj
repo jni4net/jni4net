@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <NoWarn>1685</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -92,6 +92,14 @@
     <ProjectReference Include="..\..\runtime\jni4net-w32v40\jni4net-w32v40.csproj">
       <Project>{D201AC15-89FB-46E1-929A-289128FB7664}</Project>
       <Name>jni4net-w32v40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\runtime\jni4net-w64v20\jni4net-w64v20.csproj">
+      <Project>{199901E3-A07C-43F6-9850-959D024FE0FE}</Project>
+      <Name>jni4net-w64v20</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\runtime\jni4net-w64v40\jni4net-w64v40.csproj">
+      <Project>{D201AC15-89FB-46E1-929A-389128FB7664}</Project>
+      <Name>jni4net-w64v40</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

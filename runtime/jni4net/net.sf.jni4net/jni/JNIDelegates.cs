@@ -59,7 +59,7 @@ namespace net.sf.jni4net.jni
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             [SuppressUnmanagedCodeSecurity]
-            public delegate JNIResult GetDefaultJavaVMInitArgs(out JVMInitArgs args);
+            public delegate JNIResult GetDefaultJavaVMInitArgs(JVMInitArgs* args);
         }
     }
 

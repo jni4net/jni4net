@@ -60,6 +60,9 @@ namespace net.sf.jni4net
         /// </summary>
         public string JavaHome { get; set; }
 
+        /// <example>1.5</example>
+        public string JavaVersion { get; set; }
+
         /// <summary>
         /// Assembly with JRE version to bind.
         /// <example>jre15-core-j4n</example>

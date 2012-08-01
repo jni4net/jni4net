@@ -201,12 +201,7 @@ namespace net.sf.jni4net.core
         internal static IntPtr CreateClrProxy(JNIEnv env, object value, Type instanceType, IJvmProxy clrProxyFactoryImpl)
         {
             long clrHandle = LongClrHandle.Alloc(value);
-            var jniValue = new JNIValue();
-            if (instanceType != null)
-            {
-                jniValue = ConvertSealed.ToValue(env, instanceType);
-            }
-            return env.CallObjectMethod(clrProxyFactoryImpl, clrProxyFactoryMethodId, new JNIValue { _long = clrHandle }, jniValue);
+            return env.CallObjectMethod(clrProxyFactoryImpl, clrProxyFactoryMethodId, new JNIValue { _long = clrHandle });
         }
 
 
