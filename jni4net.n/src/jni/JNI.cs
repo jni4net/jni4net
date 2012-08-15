@@ -1,4 +1,4 @@
-#region Copyright (C) 2009 by Pavel Savara
+#region Copyright (C) 2012 by Pavel Savara
 
 /*
 This file is part of jni4net library - bridge between Java and .NET
@@ -81,7 +81,7 @@ namespace net.sf.jni4net.jni
 
         private static string FindJvmDir()
         {
-            string jvmDir = null;
+            string directory = null;
             if (string.IsNullOrEmpty(Bridge.Setup.JavaHome))
             {
                 Bridge.Setup.JavaHome = Environment.GetEnvironmentVariable(JAVA_HOME_ENV);
@@ -114,7 +114,7 @@ namespace net.sf.jni4net.jni
                     if (jreVersion != null)
                     {
                         string keyName = Path.Combine(JRE_REGISTRY_KEY, jreVersion);
-                        jvmDir = (string)Registry.GetValue(keyName, "RuntimeLib", null);
+                        directory = (string)Registry.GetValue(keyName, "RuntimeLib", null);
                         Bridge.Setup.JavaHome = (string)Registry.GetValue(keyName, "JavaHome", null);
                     }
                 }
@@ -125,7 +125,7 @@ namespace net.sf.jni4net.jni
                     if (jdkVersion != null)
                     {
                         string keyName = Path.Combine(JDK_REGISTRY_KEY, jdkVersion);
-                        jvmDir = (string)Registry.GetValue(keyName, "RuntimeLib", null);
+                        directory = (string)Registry.GetValue(keyName, "RuntimeLib", null);
                         Bridge.Setup.JavaHome = (string)Registry.GetValue(keyName, "JavaHome", null);
                     }
                 }
@@ -175,31 +175,42 @@ namespace net.sf.jni4net.jni
                 throw new JNIException("JAVA_HOME environment variable is not set");
             }
 
-            if ((jvmDir == null) || !Directory.Exists(jvmDir))
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
             {
-                jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"bin\client\");
-                if (!Directory.Exists(jvmDir))
-                {
-                    jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"bin\server\");
-                    if (!Directory.Exists(jvmDir))
-                    {
-                        jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\client\");
-                        if (!Directory.Exists(jvmDir))
-                        {
-                            jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\server\");
-                            if (!Directory.Exists(jvmDir))
-                            {
-                                jvmDir = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\classic\");
-                                if (!Directory.Exists(jvmDir))
-                                {
-                                    throw new JNIException("JAVA_HOME environment variable points to an invalid location: " + Bridge.Setup.JavaHome);
-                                }
-                            }
-                        }
-                    }
-                }
+                return directory;
             }
-            return jvmDir;
+            directory = Path.Combine(Bridge.Setup.JavaHome, @"bin\client\");
+
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
+            {
+                return directory;
+            }
+            directory = Path.Combine(Bridge.Setup.JavaHome, @"bin\server\");
+
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
+            {
+                return directory;
+            }
+            directory = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\client\");
+
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
+            {
+                return directory;
+            }
+            directory = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\server\");
+
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
+            {
+                return directory;
+            }
+            directory = Path.Combine(Bridge.Setup.JavaHome, @"jre\bin\classic\");
+
+            if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
+            {
+                return directory;
+            }
+
+            throw new JNIException("JAVA_HOME environment variable points to an invalid location: " + Bridge.Setup.JavaHome);
         }
 
         private static bool IsRunningOnUnix()
