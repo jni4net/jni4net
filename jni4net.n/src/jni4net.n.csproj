@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,10 +11,12 @@
     <AssemblyName>jni4net.n-0.8.6.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkSubset>
-    </TargetFrameworkSubset>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +56,8 @@
     <Compile Include="attributes\JavaInterfaceAttribute.cs" />
     <Compile Include="attributes\JavaMethodAttribute.cs" />
     <Compile Include="attributes\JavaProxyAttribute.cs" />
+    <Compile Include="generated\java\util\Date.generated.cs" />
+    <Compile Include="java\lang\reflect\Member.cs" />
     <Compile Include="jni\JNINativeMethod.cs" />
     <Compile Include="jni\MethodInfoExt.cs" />
     <Compile Include="Bridge.cs" />
@@ -85,7 +89,6 @@
     <Compile Include="generated\java\io\OutputStream.generated.cs" />
     <Compile Include="generated\java\io\PrintStream.generated.cs" />
     <Compile Include="generated\java\io\Serializable.generated.cs" />
-    <Compile Include="generated\java\lang\AbstractStringBuilder.generated.cs" />
     <Compile Include="generated\java\lang\annotation\Annotation.generated.cs" />
     <Compile Include="generated\java\lang\Appendable.generated.cs" />
     <Compile Include="generated\java\lang\Boolean.generated.cs" />
@@ -301,6 +304,7 @@
     </PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.8.6.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+if not exist $(SolutionDir)\tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\tools\keys\jni4net.snk
 </PreBuildEvent>
   </PropertyGroup>
 </Project>

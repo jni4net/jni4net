@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,12 +12,14 @@
     <AssemblyName>jni4net.tested.n-0.8.6.0</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkSubset>
-    </TargetFrameworkSubset>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
     <StartupObject>
     </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +55,7 @@
       <Link>generated\AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AssemblyInf.cs" />
+    <Compile Include="CIfcImpl.cs" />
     <Compile Include="CInterfacesHelper.cs" />
     <Compile Include="CWithJavaInterfaceUnreg.cs" />
     <Compile Include="generated\net\sf\jni4net\tested\CIfcImpl.generated.cs" />
@@ -82,19 +85,19 @@
   <ItemGroup>
     <ProjectReference Include="..\..\jni4net.n.w32.v20\src\jni4net.n.w32.v20.csproj">
       <Project>{774AED55-B9EC-457D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w32.v20</Name>
+      <Name>jni4net.n.w32.v20.10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n.w32.v40\src\jni4net.n.w32.v40.csproj">
       <Project>{774AED55-E9EC-457D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w32.v40</Name>
+      <Name>jni4net.n.w32.v40.10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n.w64.v20\src\jni4net.n.w64.v20.csproj">
       <Project>{774AED55-B9EC-447D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w64.v20</Name>
+      <Name>jni4net.n.w64.v20.10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n.w64.v40\src\jni4net.n.w64.v40.csproj">
       <Project>{774AED55-E9EC-447D-8EEB-1B2481C578B2}</Project>
-      <Name>jni4net.n.w64.v40</Name>
+      <Name>jni4net.n.w64.v40.10</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\jni4net.n\src\jni4net.n.csproj">
       <Project>{774AED55-B9EC-4C7D-8EEB-1B2481C578B2}</Project>
