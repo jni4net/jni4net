@@ -32,7 +32,7 @@ namespace net.sf.jni4net
 {
     public static partial class J4NBridge
     {
-        private static readonly object syncRoot=new object();
+        internal static readonly object syncRoot=new object();
         internal static bool isInitialized;
         internal static AttachedJVM currentJVM;
         internal static CurrentBridgeSetup currentSetup;
