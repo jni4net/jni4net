@@ -111,7 +111,12 @@ namespace net.sf.jni4net.jni
                     JNIEnv env = JNIEnv.ThreadEnvGC;
                     if (env != null)
                     {
-                        env.DeleteGlobalRef(cpy);
+#if SYNCGC
+                        lock (J4NBridge.syncRoot)
+#endif
+                        {
+                            env.DeleteGlobalRef(cpy);
+                        }
                     }
                 }
             }

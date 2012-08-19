@@ -33,7 +33,7 @@ namespace net.sf.jni4net.core
     {
         public static IntPtr[] dummyMethods=new IntPtr[1000];
 
-        internal static readonly object syncroot = new object();
+        internal static readonly object syncroot = J4NBridge.syncRoot;
 
         const string netSfJni4netCoreRegistry = "net.sf.jni4net.core.Registry";
         const string netSfJni4netCoreIClrProxyFactory = "net.sf.jni4net.core.IClrProxyFactory";
