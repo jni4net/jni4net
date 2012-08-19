@@ -1,4 +1,5 @@
 @echo off
+call build.cmd
 
 echo JavaHome-MaxClr.cmd
 call JavaHome-MaxClr.cmd
@@ -32,3 +33,15 @@ call Sun64-Jvm16toClr20.cmd
 
 echo Sun64-Jvm16toClr40.cmd
 call Sun64-Jvm16toClr40.cmd
+
+echo Oracle32-Jvm17toClr20.cmd
+call Oracle32-Jvm17toClr20.cmd
+
+echo Oracle32-Jvm17toClr40.cmd
+call Oracle32-Jvm17toClr40.cmd
+
+echo Oracle64-Jvm17toClr20.cmd
+call Oracle64-Jvm17toClr20.cmd
+
+echo Oracle64-Jvm17toClr40.cmd
+call Oracle64-Jvm17toClr40.cmd

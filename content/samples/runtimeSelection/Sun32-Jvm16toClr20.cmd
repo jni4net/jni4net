@@ -7,7 +7,7 @@ goto end
 
 :java
 if EXIST "c:\Program Files (x86)\Java\jdk1.6.0_22\bin\java.exe" GOTO run
-echo and have c:\Program Files (x86)\Java\jdk1.6.0_22\ installed
+echo this asumes that you have c:\Program Files (x86)\Java\jdk1.6.0_22\ installed
 goto end
 
 :run
