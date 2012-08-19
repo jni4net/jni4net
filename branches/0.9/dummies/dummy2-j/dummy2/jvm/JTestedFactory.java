@@ -18,8 +18,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 package dummy2.jvm;
 
-public final class JTestedFactory {
-    public static JTested createJTested(){
+import dummy.clr.ITested;
+import dummy.clr.ITestedFactory;
+
+public final class JTestedFactory implements ITestedFactory {
+    public ITested createJTested(){
         return new JTested();
     }
 }

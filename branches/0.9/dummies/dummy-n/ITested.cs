@@ -25,6 +25,11 @@ using System.ComponentModel;
 
 namespace dummy.clr
 {
+    public interface ITestedFactory
+    {
+        ITested createJTested();
+    }
+
     public interface ITested
     {
         int test1(int value, string s, IList l);

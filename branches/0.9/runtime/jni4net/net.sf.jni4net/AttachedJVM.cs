@@ -80,9 +80,6 @@ namespace net.sf.jni4net
         {
             isDisposed = true;
 
-            Logger.LogWarn("JVM disposal is not implemented yet");
-            return;
-            /* TODO !!!
 #if DEBUG
             JNIGlobalHandle.ResolveHandles();
 #endif
@@ -116,7 +113,6 @@ namespace net.sf.jni4net
             //JVMInstance.DestroyJavaVM();
 
             //TODO unload DLL
-             */
         }
 
         ~AttachedJVM()

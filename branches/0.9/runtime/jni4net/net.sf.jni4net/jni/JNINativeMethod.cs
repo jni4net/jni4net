@@ -28,7 +28,7 @@ using net.sf.jni4net.core;
 
 namespace net.sf.jni4net.jni
 {
-    [StructLayout(LayoutKind.Sequential, Size = 12), NativeCppClass]
+    [StructLayout(LayoutKind.Sequential), NativeCppClass]
     public struct JNINativeMethod
     {
         public IntPtr name; //char* 
