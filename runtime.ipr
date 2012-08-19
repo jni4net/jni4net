@@ -75,7 +75,6 @@
             <element id="artifact" artifact-name="jre-micro-j4n:jar" />
             <element id="artifact" artifact-name="mscorlib-micro-j4n:jar" />
             <element id="file-copy" path="$PROJECT_DIR$/license/jni4net-runtime-LGPL-3.0.txt" />
-            <element id="file-copy" path="$PROJECT_DIR$/license/jni4net-runtime-MIT.txt" />
           </element>
           <element id="directory" name="samples" />
           <element id="file-copy" path="$PROJECT_DIR$/changes.txt" />

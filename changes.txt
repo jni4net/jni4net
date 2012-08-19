@@ -6,7 +6,6 @@ Version 0.9.0.0
 + methods with ref and out params could we implemented on both sides, including interfaces
 + Class instances are cached and reference equal
 + configurable AppDomain base directory
-+ runtime is dual licensed with LGPLv3 and MIT licenses
 
 
 Version 0.8.6.0
