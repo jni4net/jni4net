@@ -187,13 +187,38 @@ namespace net.sf.jni4net
         }
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        public static void LoadAndRegisterAssemblyFrom(File assemblyFile)
+        public static void LoadAndRegisterAssemblyByName(string strongName)
         {
-            LoadAndRegisterAssemblyFromClassLoader(assemblyFile, null);
+            Assembly assembly = Assembly.Load(strongName);
+            RegisterAssembly(assembly);
         }
 
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        public static void LoadAndRegisterAssemblyFromClassLoader(File assemblyFile, ClassLoader classLoader)
+        public static void RegisterAssembly(Assembly assembly)
+        {
+            if (knownAssemblies.ContainsKey(assembly))
+            {
+                if (Setup.Verbose)
+                {
+                    Console.WriteLine("skipped " + assembly + " from " + assembly.Location);
+                }
+                return;
+            }
+            if (Setup.Verbose)
+            {
+                Console.WriteLine("loading " + assembly + " from " + assembly.Location);
+            }
+            knownAssemblies.Add(assembly, assembly);
+            Registry.RegisterAssembly(assembly, true);
+
+            if (Setup.Verbose)
+            {
+                Console.WriteLine("loaded " + assembly + " from " + assembly.Location);
+            }
+        }
+
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        public static void LoadAndRegisterAssemblyFrom(File assemblyFile)
         {
             string assemblyPath = new Uri(assemblyFile.getCanonicalFile().toURI().toString()).LocalPath;
 
@@ -214,18 +239,31 @@ namespace net.sf.jni4net
                     throw new FileNotFoundException(assemblyPath);
                 }
             }
-            RegisterAssembly(assembly, classLoader);
-        }
-
-        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        public static void LoadAndRegisterAssemblyByName(string strongName)
-        {
-            Assembly assembly = Assembly.Load(strongName);
             RegisterAssembly(assembly);
         }
 
-        private static void RegisterAssembly(Assembly assembly, ClassLoader classLoader)
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        public static void LoadAndRegisterAssemblyFrom(File assemblyFile, ClassLoader classLoader)
         {
+            string assemblyPath = new Uri(assemblyFile.getCanonicalFile().toURI().toString()).LocalPath;
+
+            Assembly assembly;
+            if (System.IO.File.Exists(assemblyPath))
+            {
+                assembly = Assembly.LoadFrom(assemblyPath);
+            }
+            else
+            {
+                string current = Path.Combine(homeDir, assemblyPath);
+                if (System.IO.File.Exists(current))
+                {
+                    assembly = Assembly.LoadFrom(current);
+                }
+                else
+                {
+                    throw new FileNotFoundException(assemblyPath);
+                }
+            }
             if (knownAssemblies.ContainsKey(assembly))
             {
                 if (Setup.Verbose)
@@ -245,12 +283,6 @@ namespace net.sf.jni4net
             {
                 Console.WriteLine("loaded " + assembly + " from " + assembly.Location);
             }
-        }
-
-        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
-        public static void RegisterAssembly(Assembly assembly)
-        {
-            RegisterAssembly(assembly, null);
         }
 
         public static void SetSystemClassLoader(ClassLoader classLoader)

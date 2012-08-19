@@ -126,12 +126,7 @@ namespace net.sf.jni4net.utils
             systemClassLoader = ClassLoader.getSystemClassLoader();
         }
 
-        public static void RegisterAssembly(Assembly assembly, bool bindJVM)
-        {
-          RegisterAssembly(assembly, bindJVM, null);
-        }
- 
-        public static void RegisterAssembly(Assembly assembly, bool bindJVM, java.lang.ClassLoader classLoader)
+        public static void RegisterAssembly(Assembly assembly, bool bindJVM, ClassLoader classLoader)
         {
             lock (typeof (Registry))
             {
@@ -141,10 +136,40 @@ namespace net.sf.jni4net.utils
                     var types = assembly.GetTypes();
                     foreach (Type type in types)
                     {
-                        RegisterType(type, bindJVM, env, classLoader);
+                        RegisterType(type, bindJVM, classLoader, env);
                     }
                 }
                 catch(ReflectionTypeLoadException ex)
+                {
+                    if (Bridge.Setup.Debug)
+                    {
+                        Console.WriteLine(ex);
+                        Console.WriteLine();
+                        foreach (var exception in ex.LoaderExceptions)
+                        {
+                            Console.WriteLine(exception);
+                            Console.WriteLine();
+                        }
+                    }
+                    throw;
+                }
+            }
+        }
+
+        public static void RegisterAssembly(Assembly assembly, bool bindJVM)
+        {
+            lock (typeof(Registry))
+            {
+                JNIEnv env = JNIEnv.ThreadEnv;
+                try
+                {
+                    var types = assembly.GetTypes();
+                    foreach (Type type in types)
+                    {
+                        RegisterType(type, bindJVM, env);
+                    }
+                }
+                catch (ReflectionTypeLoadException ex)
                 {
                     if (Bridge.Setup.Debug)
                     {
@@ -186,12 +211,7 @@ namespace net.sf.jni4net.utils
             //knownCLR[record.CLRInterface] = record;
         }
 
-        public static void RegisterType(Type type, bool bindJVM, JNIEnv env)
-        {
-          RegisterType(type, bindJVM, env, null);
-        }
-
-        private static void RegisterType(Type type, bool bindJVM, JNIEnv env, java.lang.ClassLoader classLoader)
+        private static void RegisterType(Type type, bool bindJVM, ClassLoader classLoader, JNIEnv env)
         {
           if (Bridge.Setup.VeryVerbose)
           {
@@ -205,19 +225,33 @@ namespace net.sf.jni4net.utils
           {
             if (bindJVM && !record.JVMBound)
             {
-              BindJvm(record, env, classLoader);
+              BindJvm(record, classLoader, env);
             }
           }
         }
 
-        private static void BindJvm(RegistryRecord record, JNIEnv env)
+        public static void RegisterType(Type type, bool bindJVM, JNIEnv env)
         {
-          BindJvm(record, env, null);
+            if (Bridge.Setup.VeryVerbose)
+            {
+                Console.WriteLine("Registration : " + type.FullName);
+            }
+            RegistryRecord record = null;
+            RegisterWrapper(type, ref record);
+            RegisterInterfaceProxy(type, ref record);
+            RegisterClassProxy(type, ref record);
+            if (record != null)
+            {
+                if (bindJVM && !record.JVMBound)
+                {
+                    BindJvm(record, env);
+                }
+            }
         }
-    
-        private static void BindJvm(RegistryRecord record, JNIEnv env, java.lang.ClassLoader classLoader)
+
+        private static void BindJvm(RegistryRecord record, ClassLoader classLoader, JNIEnv env)
         {
-            RegisterClass(record, env, classLoader);
+            RegisterClass(record, classLoader, env);
             if (record.CLRProxy != null)
             {
                 if (record.IsJVMClass || Bridge.Setup.BindCLRTypes)
@@ -251,7 +285,12 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private static void RegisterClass(RegistryRecord record, JNIEnv env, java.lang.ClassLoader classLoader)
+        private static void BindJvm(RegistryRecord record, JNIEnv env)
+        {
+            BindJvm(record, null, env);
+        }
+
+        private static void RegisterClass(RegistryRecord record, ClassLoader classLoader, JNIEnv env)
         {
             string package = record.CLRInterface.Namespace;
             string className = record.CLRInterface.Name;
@@ -280,14 +319,14 @@ namespace net.sf.jni4net.utils
             }
             if (Bridge.Setup.BindCLRTypes || record.IsJVMClass)
             {
-                record.JVMInterface = LoadClass(interfaceName, env, classLoader);
+                record.JVMInterface = LoadClass(interfaceName, classLoader, env);
             }
             if (Bridge.Setup.BindStatic)
             {
-                record.JVMStatic = LoadClass(staticName, env, classLoader);
+                record.JVMStatic = LoadClass(staticName, classLoader, env);
                 if (proxyName != null)
                 {
-                    record.JVMProxy = LoadClass(proxyName, env, classLoader);
+                    record.JVMProxy = LoadClass(proxyName, classLoader, env);
                     record.JVMConstructor = GetJVMConstructor(env, record.JVMProxy);
                     knownJVMProxies[record.JVMProxy] = record;
                     knownJVM[record.JVMProxy] = record;
@@ -295,30 +334,27 @@ namespace net.sf.jni4net.utils
             }
         }
 
-        private static Class LoadClass(string name, JNIEnv env, ClassLoader classLoader)
+        private static Class LoadClass(string name, ClassLoader classLoader, JNIEnv env)
         {
-            Class res;
-            string rn = name.Replace('.', '/');
-            res = env.FindClassNoThrow(rn);
-            if (res == null)
+            Class res = null;
+            if (classLoader == null)
             {
-                if (classLoader == null)
+                classLoader = systemClassLoader;
+                string rn = name.Replace('.', '/');
+                res = env.FindClassNoThrow(rn);
+            }
+            if (classLoader != null && res==null)
+            {
+                try
                 {
-                    classLoader = systemClassLoader;
+                    res = classLoader.loadClass(name);
                 }
-                if (classLoader != null)
+                catch (Throwable th)
                 {
-                    try
-                    {
-                        res = classLoader.loadClass(name);
-                    }
-                    catch (Throwable th)
-                    {
-                        throw new JNIException("Can't load java class for " + name +
-                                               ((classLoader == null) ? "" : " from classLoader " + classLoader), th);
-                    }
+                    throw new JNIException("Can't load java class for " + name + " from classLoader " + classLoader, th);
                 }
             }
+            
             return res;
         }
 

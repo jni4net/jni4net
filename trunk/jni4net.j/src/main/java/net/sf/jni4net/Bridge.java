@@ -161,7 +161,7 @@ public class Bridge extends system.Object {
     public native static void LoadAndRegisterAssemblyFrom(java.io.File assemblyFile);
     
     @net.sf.jni4net.attributes.ClrMethod("(Ljava/io/File;Ljava/lang/ClassLoader;)V")
-    public native static void LoadAndRegisterAssemblyFromClassLoader(java.io.File assemblyFile, java.lang.ClassLoader classLoader);
+    public native static void LoadAndRegisterAssemblyFrom(java.io.File assemblyFile, java.lang.ClassLoader classLoader);
     
     @net.sf.jni4net.attributes.ClrMethod("(LSystem/String;)V")
     public native static void LoadAndRegisterAssemblyByName(java.lang.String strongName);
