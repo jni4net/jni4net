@@ -6,7 +6,7 @@ goto end
 
 :java
 if EXIST "%JAVA_HOME%\bin\java.exe" GOTO run
-echo and have %JAVA_HOME%\ installed
+echo this asumes that you have %JAVA_HOME%\ installed
 goto end
 
 :run

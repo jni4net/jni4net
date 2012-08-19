@@ -7,7 +7,7 @@ goto end
 
 :java
 if EXIST "c:\Program Files (x86)\Java\ibm_sdk60\bin\java.exe" GOTO run
-echo and have c:\Program Files (x86)\Java\ibm_sdk60\ installed
+echo this asumes that you have c:\Program Files (x86)\Java\ibm_sdk60\ installed
 goto end
 
 :run
