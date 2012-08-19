@@ -1,5 +1,5 @@
 Visit and read http://jni4net.sf.net
-Make sure you understand GPL and LGPL licenses.
+Make sure you understand GPLv3 and LGPLv3 licenses.
 Talk back at jni4net@googlegroups.com
 
 ----------------

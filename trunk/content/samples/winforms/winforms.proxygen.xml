@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.6.0/toolConfig.xsd">
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.8.7.0/toolConfig.xsd">
   <!-- Location where .java files will be generated into. It's relative or absolute path. -->
   <TargetDirJvm>java</TargetDirJvm>
 
