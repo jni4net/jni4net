@@ -103,7 +103,7 @@
   -->
   <PropertyGroup>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
-echo [assembly: System.Reflection.AssemblyVersion("0.8.6.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
+echo [assembly: System.Reflection.AssemblyVersion("0.8.7.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 if not exist $(SolutionDir)\tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\tools\keys\jni4net.snk
 </PreBuildEvent>
     <PostBuildEvent>

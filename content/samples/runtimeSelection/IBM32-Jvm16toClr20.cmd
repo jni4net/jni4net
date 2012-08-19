@@ -11,6 +11,6 @@ echo and have c:\Program Files (x86)\Java\ibm_sdk60\ installed
 goto end
 
 :run
-"c:\Program Files (x86)\Java\ibm_sdk60\bin\java.exe" -cp ../../lib/jni4net.j-0.8.6.0.jar;target/classes Program v20
+"c:\Program Files (x86)\Java\ibm_sdk60\bin\java.exe" -cp ../../lib/jni4net.j-0.8.7.0.jar;target/classes Program v20
 
 :end
