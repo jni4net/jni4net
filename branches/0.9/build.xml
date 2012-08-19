@@ -222,7 +222,6 @@
       <fileset dir="${artifact.temp.output.mscorlib-micro-j4n:jar}"/>
     </copy>
     <copy file="${basedir}/license/jni4net-runtime-LGPL-3.0.txt" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net-runtime-LGPL-3.0.txt"/>
-    <copy file="${basedir}/license/jni4net-runtime-MIT.txt" tofile="${artifact.output.target}/0.9.0.0/runtime/jni4net-runtime-MIT.txt"/>
     <mkdir dir="${artifact.output.target}/0.9.0.0/samples"/>
     <copy file="${basedir}/changes.txt" tofile="${artifact.output.target}/0.9.0.0/changes.txt"/>
     <copy file="${basedir}/ReadMe.txt" tofile="${artifact.output.target}/0.9.0.0/ReadMe.txt"/>
