@@ -168,8 +168,11 @@ namespace net.sf.jni4net.core
                     var staticApi = JvmCoreHooks.LoadAnnotatedProxy(ifc);
                     if (staticApi != null)
                     {
-                        var sc = env.GetMethodIDNoThrow(staticApi.JvmHandle, "<init>", "()V");
-                        env.CallStaticVoidMethod(staticApi,sc);
+                        var sc = env.GetStaticMethodIDNoThrow(staticApi.JvmHandle, "j4n_ProxyInit", "(Lnet/sf/jni4net/inj/INJEnv;)Lnet/sf/jni4net/core/ProxyInfo;");
+                        if (sc != IntPtr.Zero)
+                        {
+                            env.CallStaticObjectMethod(staticApi, sc, new JNIValue());
+                        }
                     }
                     proxyInfo = LoadProxyByName(ifc.getName(), true);
                     if (proxyInfo != null && (proxyInfo.IsInterface || proxyInfo.IsJVM))

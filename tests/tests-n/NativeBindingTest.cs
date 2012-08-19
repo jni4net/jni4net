@@ -64,8 +64,8 @@ namespace tests.n
         public void OutTest()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory) ifact.newInstance();
+            var jtested = factory.createJTested();
 
             int v;
             object v2;
@@ -86,8 +86,8 @@ namespace tests.n
         public void OutTest2()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             int[] v;
             object[] v2;
@@ -104,8 +104,8 @@ namespace tests.n
         public void OutTest3()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             int[] v;
             object[] v2;
@@ -122,8 +122,8 @@ namespace tests.n
         public void RefTest()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             int v=5;
             object v2="aaa";
@@ -143,8 +143,8 @@ namespace tests.n
         public void RefTest2()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             var v=new int[1];
             var v2=new object[1];
@@ -161,8 +161,8 @@ namespace tests.n
         public void RefTest3()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             var v=new int[1];
             var v2=new object[1];
@@ -179,8 +179,8 @@ namespace tests.n
         public void RefTest4()
         {
             var ifact = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass("dummy2.jvm.JTestedFactory");
-            Method method = ifact.getMethod("createJTested", new Class[] { });
-            var jtested = (ITested)method.invoke(null, new object[] { });
+            var factory = (ITestedFactory)ifact.newInstance();
+            var jtested = factory.createJTested();
 
             var v=new []{new int[1]};
             var v2 = new[] { new object[1] };

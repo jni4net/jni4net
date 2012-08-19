@@ -164,7 +164,10 @@ namespace net.sf.jni4net.core
                     if (name == "net.sf.jni4net.attributes.J4NProxy")
                     {
                         var valueMethod = annotationType.getMethod("value", new Class[] {});
-                        return (Class) valueMethod.invoke(annotation, new object[] {});
+                        var cls = (Class) valueMethod.invoke(annotation, new object[] {});
+                        // enforce class load
+                        var methods = cls.getMethods();
+                        return cls;
                     }
                 }
             }

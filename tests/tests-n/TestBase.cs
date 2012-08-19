@@ -39,11 +39,12 @@ namespace tests.n
         {
             var j4NSetup = new BridgeSetup
                                {
-                                   LogLevel = LogLevel.Debug,
+                                   LogLevel = LogLevel.Info,
                                    //EnforceThreadDetach = true,
                                    AllowJVMJoin = true,
+                                   //BindClrProxies = false,
                                    EnforceImmediateBinding = true,
-                                   JavaVersion = "1.5",
+                                   JavaVersion = "1.7",
                                    //JavaHome = @"c:\Program Files (x86)\Java\jdk1.7.0" ,
                                };
             //j4NSetup.AddJVMOption("-verbose");
