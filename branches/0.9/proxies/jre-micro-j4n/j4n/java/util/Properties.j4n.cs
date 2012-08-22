@@ -107,8 +107,8 @@ namespace java.util
             }
         }
         
-        /// <signature>#5 (Ljava/io/PrintWriter;)V (Ljava/lang/Appendable;)V</signature>
-        public virtual void list(global::java.lang.Appendable par0)
+        /// <signature>#5 (Ljava/io/PrintWriter;)V (Ljava/io/PrintWriter;)V</signature>
+        public virtual void list(global::java.io.PrintWriter par0)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12))
@@ -218,7 +218,7 @@ namespace java.util
                         new global::net.sf.jni4net.core.MemberId("getProperty","(Ljava/lang/String;)Ljava/lang/String;", false, false), // #2 (Lsystem/String;)Lsystem/String;
                         new global::net.sf.jni4net.core.MemberId("getProperty","(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", false, false), // #3 (Lsystem/String;Lsystem/String;)Lsystem/String;
                         new global::net.sf.jni4net.core.MemberId("list","(Ljava/io/PrintStream;)V", false, false), // #4 (Ljava/io/PrintStream;)V
-                        new global::net.sf.jni4net.core.MemberId("list","(Ljava/io/PrintWriter;)V", false, false), // #5 (Ljava/lang/Appendable;)V
+                        new global::net.sf.jni4net.core.MemberId("list","(Ljava/io/PrintWriter;)V", false, false), // #5 (Ljava/io/PrintWriter;)V
                         new global::net.sf.jni4net.core.MemberId("load","(Ljava/io/InputStream;)V", false, false), // #6 (Ljava/io/InputStream;)V
                         new global::net.sf.jni4net.core.MemberId("loadFromXML","(Ljava/io/InputStream;)V", false, false), // #7 (Ljava/io/InputStream;)V
                         new global::net.sf.jni4net.core.MemberId("propertyNames","()Ljava/util/Enumeration;", false, false), // #8 ()Ljava/util/Enumeration;

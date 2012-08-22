@@ -38,7 +38,10 @@ namespace com.jni4net.proxygen.Utils
         {
             if (String.IsNullOrEmpty(fromPath)) throw new ArgumentNullException("fromPath");
             if (String.IsNullOrEmpty(toPath)) throw new ArgumentNullException("toPath");
-
+            if (!fromPath.EndsWith(""+Path.DirectorySeparatorChar))
+            {
+                fromPath = fromPath + Path.DirectorySeparatorChar;
+            }
             var fromUri = new Uri(fromPath);
             var toUri = new Uri(toPath);
 

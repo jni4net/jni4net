@@ -21,25 +21,32 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.IO;
+using System.Text;
 using System.Xml.Serialization;
+using Microsoft.Practices.Unity;
 using com.jni4net.config;
+using com.jni4net.proxygen.Services;
 using com.jni4net.proxygen.Utils;
+using Directory = System.IO.Directory;
 
 namespace com.jni4net.proxygen.Config
 {
     public class Configurator
     {
+        [Dependency]
+        public Logger Logger { get; set; }
+
         public Configurator()
         {
             Config=new ProxygenConfig();
             Verbose = false;
-            Generate = true;
             Compile = false;
         }
 
         public bool Verbose { get; set; }
-        public bool Generate { get; set; }
         public bool Compile { get; set; }
         public bool Debug { get; set; }
 
@@ -51,24 +58,31 @@ namespace com.jni4net.proxygen.Config
         public ProxygenConfig Config { get; set; }
         public string FileName { get; set; }
 
-        public void ProcessCommandLine(string[] args)
+        public bool ProcessCommandLine(string[] args)
         {
-            var ser = new XmlSerializer(typeof (ProxygenConfig));
-
-            //TODO
-            if (args==null || args.Length==0)
+            if (args.Length==0 || args.Any(x=>x.ToLowerInvariant().Contains("help")) || args.Any(x=>x.Contains("/?")))
             {
-                FileName = @"c:\Data\Sf\jni4net.pro\trunk\proxygen\Config\jni4net-proxygen.xml";
+                Help();
+                return false;
+            }
+            var ser = new XmlSerializer(typeof(ProxygenConfig));
+
+            FileName = Path.GetFullPath(args[0]);
+            if (File.Exists(FileName))
+            {
+                using (var fs = new FileStream(FileName, FileMode.Open, FileAccess.Read))
+                {
+                    Config = ser.Deserialize(fs) as ProxygenConfig;
+                }
             }
             else
             {
-                FileName = args[0];
+                Config = new ProxygenConfig();
             }
-            FileName = Path.GetFullPath(FileName);
-
-            using (var fs = new FileStream(FileName, FileMode.Open, FileAccess.Read))
+            ProjectRegistration currentProject=null;
+            if(Config.project.Count>0)
             {
-                Config = ser.Deserialize(fs) as ProxygenConfig;
+                currentProject = Config.project[0];
             }
 
             foreach (var projectRegistration in Config.project)
@@ -76,10 +90,231 @@ namespace com.jni4net.proxygen.Config
                 projectRegistration.Parent = this;
             }
 
-            //TODO
-            //Verbose = true;
-            //Debug = true;
-            Generate = true;
+            var options=new Queue<string>(args);
+            options.Dequeue(); // config
+
+            while (options.Count>0)
+            {
+                var o=options.Dequeue();
+                if (o == "--verbose" || o == "--verbose+")
+                {
+                    Verbose = true;
+                }
+                else if (o == "--verbose-")
+                {
+                    Verbose = false;
+                }
+                else if (o == "--debug" || o == "--debug+")
+                {
+                    Debug = true;
+                }
+                else if (o == "--debug-")
+                {
+                    Debug = false;
+                }
+                else if (o == "--compile" || o == "--compile+")
+                {
+                    Compile = true;
+                }
+                else if (o == "--compile-")
+                {
+                    Compile = false;
+                }
+                else if (o == "-jar")
+                {
+                    if(options.Count==0)
+                    {
+                        Logger.LogError("-jar argument missing");
+                        return false;
+                    }
+                    var cp = Path.GetFullPath(options.Dequeue());
+                    var file = File.Exists(cp);
+                    if (!file && Directory.Exists(cp))
+                    {
+                        Logger.LogError(string.Format("Can't find jar file or directory {0}", cp));
+                        return false;
+                    }
+                    string name;
+                    if(file)
+                    {
+                        name = Path.GetFileNameWithoutExtension(cp);
+                    }
+                    else
+                    {
+                        name = Path.GetDirectoryName(cp);
+                    }
+
+                    currentProject = Config.project.SingleOrDefault(p => p.projectName.ToLowerInvariant() == name.ToLowerInvariant());
+                    if (currentProject==null)
+                    {
+                        currentProject = new ProjectRegistration();
+                        currentProject.projectName = name;
+                        Config.project.Add(currentProject);
+                    }
+
+                    if (!AddCp(currentProject, cp, true))
+                    {
+                        return false;
+                    }
+                }
+                else if (o == "-dll")
+                {
+                    if(options.Count==0)
+                    {
+                        Logger.LogError("-dll argument missing");
+                        return false;
+                    }
+                    var dp = Path.GetFullPath(options.Dequeue());
+                    if (!File.Exists(dp))
+                    {
+                        Logger.LogError(string.Format("Can't find dll file {0}", dp));
+                        return false;
+                    }
+                    string name = Path.GetFileNameWithoutExtension(dp);
+
+                    currentProject = Config.project.SingleOrDefault(p => p.projectName.ToLowerInvariant() == name.ToLowerInvariant());
+                    if (currentProject==null)
+                    {
+                        currentProject = new ProjectRegistration();
+                        currentProject.projectName = name;
+                        Config.project.Add(currentProject);
+                    }
+
+                    if (!AddDp(currentProject, dp, true))
+                    {
+                        return false;
+                    }
+                }
+                else if (o == "-cp")
+                {
+                    if(currentProject==null)
+                    {
+                        Logger.LogError("use -dll or -jar first");
+                        return false;
+                    }
+                    if (options.Count == 0)
+                    {
+                        Logger.LogError("-cp argument missing");
+                        return false;
+                    }
+                    if(!AddCp(currentProject,options.Dequeue(), false))
+                    {
+                        return false;
+                    }
+                }
+                else if (o == "-dp")
+                {
+                    if (currentProject == null)
+                    {
+                        Logger.LogError("use -dll or -jar first");
+                        return false;
+                    }
+                    if (options.Count == 0)
+                    {
+                        Logger.LogError("-dp argument missing");
+                        return false;
+                    }
+                    if (!AddDp(currentProject, options.Dequeue(), false))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            var configDir = Path.GetDirectoryName(FileName);
+            if (!Directory.Exists(configDir))
+            {
+                Directory.CreateDirectory(configDir);
+            }
+            using (var fs = new FileStream(FileName, FileMode.Create, FileAccess.Write))
+            {
+                ser.Serialize(fs, Config);
+            }
+
+            return true;
+        }
+
+        private bool AddCp(ProjectRegistration currentProject, string cp, bool generate)
+        {
+            cp = Path.GetFullPath(cp);
+            var file = File.Exists(cp);
+            if (!file && Directory.Exists(cp))
+            {
+                Logger.LogError(string.Format("Can't find jar file or directory {0}", cp));
+                return false;
+            }
+
+            ClassPath classPath;
+            if (file)
+            {
+                var filename = Path.GetFileName(cp);
+                classPath = currentProject.classPath.SingleOrDefault(c => c.jarFile != null && c.jarFile.ToLowerInvariant().EndsWith(filename.ToLowerInvariant()));
+            }
+            else
+            {
+                var directoryName = Path.GetDirectoryName(cp);
+                classPath = currentProject.classPath.SingleOrDefault(c => c.jarFile != null && c.jarFile.ToLowerInvariant().EndsWith(directoryName.ToLowerInvariant()));
+            }
+
+            if (classPath == null)
+            {
+                classPath = new ClassPath();
+                currentProject.classPath.Add(classPath);
+            }
+            if (file)
+            {
+                classPath.jarFile = PathUtils.MakeRelativePath(currentProject.BaseDirectory, cp);
+            }
+            else
+            {
+                classPath.classPathDirectory = PathUtils.MakeRelativePath(currentProject.BaseDirectory, cp);
+            }
+            if (generate && classPath.javaClass.Count == 0)
+            {
+                classPath.generate = true;
+            }
+            return true;
+        }
+
+        private bool AddDp(ProjectRegistration currentProject, string dp, bool generate)
+        {
+            dp = Path.GetFullPath(dp);
+            if (!File.Exists(dp))
+            {
+                Logger.LogError(string.Format("Can't find jar file or directory {0}", dp));
+                return false;
+            }
+
+            var filename = Path.GetFileName(dp);
+            Assembly assembly = currentProject.assembly.SingleOrDefault(c => c.file != null && c.file.ToLowerInvariant().EndsWith(filename.ToLowerInvariant()));
+
+            if (assembly == null)
+            {
+                assembly = new Assembly();
+                currentProject.assembly.Add(assembly);
+            }
+            assembly.file = PathUtils.MakeRelativePath(currentProject.BaseDirectory, dp);
+            if (generate && assembly.clrType.Count == 0)
+            {
+                assembly.generate = true;
+            }
+            return true;
+        }
+
+        private void Help()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("proxygen.exe config-file-j4n.xml [options]");
+            sb.AppendLine(" --verbose             turns on verbose mnessages");
+            sb.AppendLine(" --debug               turns on all debug messages");
+            sb.AppendLine(" --compile             will attemt compilation of proxies");
+            sb.AppendLine("options below would create or update config file");
+            sb.AppendLine(" -jar <path/file.jar>  will wrap the jar file");
+            sb.AppendLine(" -dll <path/file.dll>  will wrap the dll file");
+            sb.AppendLine(" -cp <path/file.jar>  java dependencies");
+            sb.AppendLine(" -dp <path/file.dll>  .NET dependencies");
+
+            Console.WriteLine(sb);
         }
     }
 }

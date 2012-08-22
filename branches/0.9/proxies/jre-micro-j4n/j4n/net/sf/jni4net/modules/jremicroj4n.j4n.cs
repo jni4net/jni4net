@@ -54,6 +54,7 @@ namespace net.sf.jni4net.modules
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.lang.Comparable_), typeof(java.lang.Comparable), "java.lang.Comparable");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.lang.CharSequence_), typeof(java.lang.CharSequence), "java.lang.CharSequence");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.lang.Appendable_), typeof(java.lang.Appendable), "java.lang.Appendable");
+                global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.Writer), typeof(java.io.Writer), "java.io.Writer");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.DataInput_), typeof(java.io.DataInput), "java.io.DataInput");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.ObjectStreamConstants_), typeof(java.io.ObjectStreamConstants), "java.io.ObjectStreamConstants");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.DataOutput_), typeof(java.io.DataOutput), "java.io.DataOutput");
@@ -77,6 +78,7 @@ namespace net.sf.jni4net.modules
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.InputStream), typeof(java.io.InputStream), "java.io.InputStream");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.OutputStream), typeof(java.io.OutputStream), "java.io.OutputStream");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.FileInputStream), typeof(java.io.FileInputStream), "java.io.FileInputStream");
+                global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.PrintWriter), typeof(java.io.PrintWriter), "java.io.PrintWriter");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.ByteArrayInputStream), typeof(java.io.ByteArrayInputStream), "java.io.ByteArrayInputStream");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.io.ByteArrayOutputStream), typeof(java.io.ByteArrayOutputStream), "java.io.ByteArrayOutputStream");
                 global::net.sf.jni4net.core.Registry.RegisterJvmProxy(typeof(java.util.zip.ZipEntry), typeof(java.util.zip.ZipEntry), "java.util.zip.ZipEntry");

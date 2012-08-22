@@ -79,6 +79,7 @@
     <Compile Include="j4n\java\lang\Comparable.j4n.cs" />
     <Compile Include="j4n\java\lang\CharSequence.j4n.cs" />
     <Compile Include="j4n\java\lang\Appendable.j4n.cs" />
+    <Compile Include="j4n\java\io\Writer.j4n.cs" />
     <Compile Include="j4n\java\io\DataInput.j4n.cs" />
     <Compile Include="j4n\java\io\ObjectStreamConstants.j4n.cs" />
     <Compile Include="j4n\java\io\DataOutput.j4n.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="j4n\java\io\InputStream.j4n.cs" />
     <Compile Include="j4n\java\io\OutputStream.j4n.cs" />
     <Compile Include="j4n\java\io\FileInputStream.j4n.cs" />
+    <Compile Include="j4n\java\io\PrintWriter.j4n.cs" />
     <Compile Include="j4n\java\io\ByteArrayInputStream.j4n.cs" />
     <Compile Include="j4n\java\io\ByteArrayOutputStream.j4n.cs" />
     <Compile Include="j4n\java\util\zip\ZipEntry.j4n.cs" />

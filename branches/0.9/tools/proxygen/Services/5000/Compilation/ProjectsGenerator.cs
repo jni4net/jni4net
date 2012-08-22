@@ -165,7 +165,7 @@ namespace com.jni4net.proxygen.Services.Compilation
             }
         }
 
-        public void CreateVSProject()
+        public void CreateProjectFiles()
         {
             var nsManager=new XmlNamespaceManager(new NameTable());
             const string vsns = "http://schemas.microsoft.com/developer/msbuild/2003";

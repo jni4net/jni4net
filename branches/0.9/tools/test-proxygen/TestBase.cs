@@ -60,6 +60,7 @@ namespace test.proxygen
                 bridgeSetup.JavaHome = @"c:\Program Files (x86)\Java\jdk1.5.0_22";
                 bridgeSetup.AllowJVMJoin = true;
                 bridgeSetup.BindClrProxies = false;
+                bridgeSetup.AddAllJarsClassPathBaseDirectory();
                 //bridgeSetup.IgnoreJavaHome = true;
                 J4NBridge.CreateJVM(bridgeSetup);
                 _bridgeInit = true;

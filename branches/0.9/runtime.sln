@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net", "runtime\jni4net\jni4net.csproj", "{9CCC5ECB-A6DE-45CE-B6F1-B2925A3D2376}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net-w32v20", "runtime\jni4net-w32v20\jni4net-w32v20.csproj", "{199901E3-A07C-43F6-9850-459D024FE0FE}"
@@ -30,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net-w64v40", "runtime\jni4net-w64v40\jni4net-w64v40.csproj", "{D201AC15-89FB-46E1-929A-389128FB7664}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jni4net-w64v20", "runtime\jni4net-w64v20\jni4net-w64v20.csproj", "{199901E3-A07C-43F6-9850-959D024FE0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecj-j4n", "proxies\ecj-j4n\ecj-j4n.csproj", "{933972FA-2003-482F-B5E9-83AD38E7E23F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{199901E3-A07C-43F6-9850-959D024FE0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{199901E3-A07C-43F6-9850-959D024FE0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{199901E3-A07C-43F6-9850-959D024FE0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933972FA-2003-482F-B5E9-83AD38E7E23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933972FA-2003-482F-B5E9-83AD38E7E23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933972FA-2003-482F-B5E9-83AD38E7E23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933972FA-2003-482F-B5E9-83AD38E7E23F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +102,7 @@ Global
 		{E01F2B41-E2C5-42B0-9A4F-8CBB9873F5D9} = {C02A5E11-E40F-48F0-A937-3EE23F047291}
 		{EC35A13B-7985-4714-B17D-86016A7AE05F} = {C02A5E11-E40F-48F0-A937-3EE23F047291}
 		{4CD2CC87-D09B-415F-9BDC-1202919355AD} = {C02A5E11-E40F-48F0-A937-3EE23F047291}
+		{933972FA-2003-482F-B5E9-83AD38E7E23F} = {C02A5E11-E40F-48F0-A937-3EE23F047291}
 		{EF65E4D5-3AD6-4EB8-9828-E161E5A8362E} = {E30B55E0-0E8D-4C34-BCE9-32BC7937C530}
 	EndGlobalSection
 EndGlobal
