@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<jni4net-proxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
+  <project projectKey="../../_tools/keys/jni4net.snk" projectName="ecj-j4n" projectVersion="4.2.0.0">
+    <classPath jarFile="../../_lib/ecj-4.2.jar">
+      <javaClass name="org.eclipse.jdt.core.compiler.batch.BatchCompiler">
+        <extends />
+      </javaClass>
+    </classPath>
+  </project>
+</jni4net-proxygen>

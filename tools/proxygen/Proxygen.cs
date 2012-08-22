@@ -31,6 +31,7 @@ using com.jni4net.proxygen.Services.Compilation;
 using Microsoft.Practices.Unity;
 using com.jni4net.proxygen.Interfaces;
 using com.jni4net.proxygen.Services;
+using com.jni4net.proxygen.Services._5000.Compilation;
 
 namespace com.jni4net.proxygen
 {
@@ -47,7 +48,10 @@ namespace com.jni4net.proxygen
 
         [Dependency]
         public ProjectsGenerator ProjectsGenerator { get; set; }
-        
+
+        [Dependency]
+        public ProjectsCompiler ProjectsCompiler { get; set; }
+
         public static IContainer Configure(bool loadPlugins)
         {
             var c = new Container();
@@ -96,18 +100,19 @@ namespace com.jni4net.proxygen
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
 
             // process commandline
-            Configurator.ProcessCommandLine(args);
-
-            if (Configurator.Generate)
+            if(!Configurator.ProcessCommandLine(args))
             {
-                Explorer.Explore();
-
-                ProjectsGenerator.CreateClrModule();
-                ProjectsGenerator.CreateVSProject();
+                return -1;
             }
+
+            Explorer.Explore();
+
+            ProjectsGenerator.CreateClrModule();
+            ProjectsGenerator.CreateProjectFiles();
 
             if (Configurator.Compile)
             {
+                ProjectsCompiler.Compile();
             }
 
             return 0;

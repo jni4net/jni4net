@@ -62,6 +62,16 @@
             <element id="file-copy" path="$PROJECT_DIR$/_lib/polyglottos-GPL.3.0.txt" />
             <element id="file-copy" path="$PROJECT_DIR$/_lib/Unity.Ioc.MsPL.txt" />
             <element id="file-copy" path="$PROJECT_DIR$/tools/proxygen/Config/proxygenConfig.xsd" />
+            <element id="artifact" artifact-name="ecj-j4n:jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/_lib/ecj-4.2.jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/_lib/ecj.epl1.txt" />
+            <element id="file-copy" path="$PROJECT_DIR$/proxies/ecj-j4n/bin/ecj-j4n.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/proxies/jre-micro-j4n/bin/jre-micro-j4n.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/proxies/mscorlib-micro-j4n/bin/mscorlib-micro-j4n.jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/proxies/mscorlib-micro-j4n/bin/mscorlib-micro-j4n.dll" />
+            <element id="file-copy" path="$PROJECT_DIR$/proxies/jre-micro-j4n/bin/jre-micro-j4n.jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net/bin/jni4net.jar" />
+            <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net/bin/jni4net.dll" />
           </element>
           <element id="directory" name="runtime">
             <element id="file-copy" path="$PROJECT_DIR$/runtime/jni4net-w32v20/bin/jni4net-w32v20.dll" />
@@ -80,6 +90,12 @@
           <element id="file-copy" path="$PROJECT_DIR$/changes.txt" />
           <element id="file-copy" path="$PROJECT_DIR$/ReadMe.txt" />
         </element>
+      </root>
+    </artifact>
+    <artifact type="jar" build-on-make="true" name="ecj-j4n:jar">
+      <output-path>$PROJECT_DIR$/proxies/ecj-j4n/bin/</output-path>
+      <root id="archive" name="ecj-j4n.jar">
+        <element id="module-output" name="ecj-j4n" />
       </root>
     </artifact>
   </component>
@@ -276,6 +292,7 @@
       <module fileurl="file://$PROJECT_DIR$/proxies/dummy-j-j4n/dummy-j-j4n.iml" filepath="$PROJECT_DIR$/proxies/dummy-j-j4n/dummy-j-j4n.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxies/dummy-n-j4n/dummy-n-j4n.iml" filepath="$PROJECT_DIR$/proxies/dummy-n-j4n/dummy-n-j4n.iml" />
       <module fileurl="file://$PROJECT_DIR$/dummies/dummy2-j/dummy2-j.iml" filepath="$PROJECT_DIR$/dummies/dummy2-j/dummy2-j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxies/ecj-j4n/ecj-j4n.iml" filepath="$PROJECT_DIR$/proxies/ecj-j4n/ecj-j4n.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtime/jni4net/jni4net.iml" filepath="$PROJECT_DIR$/runtime/jni4net/jni4net.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxies/jre-micro-j4n/jre-micro-j4n.iml" filepath="$PROJECT_DIR$/proxies/jre-micro-j4n/jre-micro-j4n.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxies/mscorlib-micro-j4n/mscorlib-micro-j4n.iml" filepath="$PROJECT_DIR$/proxies/mscorlib-micro-j4n/mscorlib-micro-j4n.iml" />

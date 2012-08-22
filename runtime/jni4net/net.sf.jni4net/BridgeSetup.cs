@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Permissions;
@@ -123,6 +124,15 @@ namespace net.sf.jni4net
         public void AddAllJarsClassPath(string directory)
         {
             foreach (string jar in Directory.GetFiles(directory, "*.jar"))
+            {
+                AddClassPath(jar);
+            }
+        }
+
+        [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
+        public void AddAllJarsClassPathBaseDirectory()
+        {
+            foreach (string jar in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.jar"))
             {
                 AddClassPath(jar);
             }

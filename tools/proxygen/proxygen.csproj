@@ -64,6 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ecj-j4n">
+      <HintPath>..\..\_lib\ecj-j4n.dll</HintPath>
+    </Reference>
     <Reference Include="IKVM.Reflection, Version=0.0.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\_lib\IKVM.Reflection.dll</HintPath>
@@ -81,6 +84,9 @@
     <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\_lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib-micro-j4n">
+      <HintPath>..\..\_lib\mscorlib-micro-j4n.dll</HintPath>
     </Reference>
     <Reference Include="polyglottos, Version=0.1.0.0, Culture=neutral, PublicKeyToken=7c250c6017cbba9a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -136,6 +142,7 @@
     <Compile Include="Services\2500\Translators\3100-JvmProxyCopyTranslator.cs" />
     <Compile Include="Services\2500\Translators\3100-ClrProxyCopyTranslator.cs" />
     <Compile Include="Services\2500\Translators\3100-BaseProxyCopyTranslator.cs" />
+    <Compile Include="Services\5000\Compilation\ProjectsCompiler.cs" />
     <Compile Include="Services\5000\Generators\5000-StartGenerator.cs" />
     <Compile Include="Services\5000\Generators\BaseCSharpGenerator.native.cs" />
     <Compile Include="Services\5000\Generators\BaseCSharpGenerator.cs" />
@@ -173,6 +180,26 @@
     <Compile Include="Services\TypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\_lib\ecj-4.2.jar">
+      <Link>ecj-4.2.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\_lib\ecj-j4n.jar">
+      <Link>ecj-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\_lib\jni4net.jar">
+      <Link>jni4net.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\_lib\jre-micro-j4n.jar">
+      <Link>jre-micro-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\_lib\mscorlib-micro-j4n.jar">
+      <Link>mscorlib-micro-j4n.jar</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\jni4net-proxygen.xml" />
     <EmbeddedResource Include="Services\5000\Compilation\template-iml.xml" />
     <EmbeddedResource Include="Services\5000\Compilation\template-ai.cs" />

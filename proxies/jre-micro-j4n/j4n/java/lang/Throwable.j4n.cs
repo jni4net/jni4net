@@ -166,8 +166,8 @@ namespace java.lang
             }
         }
         
-        /// <signature>#12 (Ljava/io/PrintWriter;)V (Ljava/lang/Appendable;)V</signature>
-        public virtual void printStackTrace(global::java.lang.Appendable par0)
+        /// <signature>#12 (Ljava/io/PrintWriter;)V (Ljava/io/PrintWriter;)V</signature>
+        public virtual void printStackTrace(global::java.io.PrintWriter par0)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12))
@@ -294,7 +294,7 @@ namespace java.lang
                         new global::net.sf.jni4net.core.MemberId("initCause","(Ljava/lang/Throwable;)Ljava/lang/Throwable;", false, false), // #9 (LSystem/Exception;)LSystem/Exception;
                         new global::net.sf.jni4net.core.MemberId("printStackTrace","()V", false, false), // #10 ()V
                         new global::net.sf.jni4net.core.MemberId("printStackTrace","(Ljava/io/PrintStream;)V", false, false), // #11 (Ljava/io/PrintStream;)V
-                        new global::net.sf.jni4net.core.MemberId("printStackTrace","(Ljava/io/PrintWriter;)V", false, false), // #12 (Ljava/lang/Appendable;)V
+                        new global::net.sf.jni4net.core.MemberId("printStackTrace","(Ljava/io/PrintWriter;)V", false, false), // #12 (Ljava/io/PrintWriter;)V
                         new global::net.sf.jni4net.core.MemberId("setStackTrace","([Ljava/lang/StackTraceElement;)V", false, false), // #13 ([Ljava/lang/StackTraceElement;)V
                         new global::net.sf.jni4net.core.MemberId("equals","(Ljava/lang/Object;)Z", false, false), // #14 (Lsystem/Object;)Z
                         new global::net.sf.jni4net.core.MemberId("hashCode","()I", false, false), // #15 ()I

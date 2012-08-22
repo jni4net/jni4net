@@ -34,6 +34,7 @@
       <javaClass name="java.io.OutputStream"/>
       <javaClass name="java.io.FileInputStream"/>
       <javaClass name="java.io.PrintStream"/>
+      <javaClass name="java.io.PrintWriter"/>
       <javaClass name="java.io.Closeable"/>
       <javaClass name="java.io.Flushable"/>
       <javaClass name="java.io.Serializable"/>

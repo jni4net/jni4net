@@ -65,7 +65,7 @@ namespace com.jni4net.config
     public partial class ProjectRegistration
     {
         [XmlIgnore]
-        public Configurator Parent { get; set; }
+        internal Configurator Parent { get; set; }
 
         [XmlIgnore] public List<string> JavaFiles = new List<string>();
 

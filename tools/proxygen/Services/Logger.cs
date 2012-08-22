@@ -28,17 +28,14 @@ using Microsoft.Practices.Unity;
 
 namespace com.jni4net.proxygen.Services
 {
-    internal class Logger : ILogger
+    public class Logger : ILogger
     {
-        [Dependency]
-        public Configurator Configurator { get; set; }
-
-        public void LogMessage(string message, MType model)
+        public void LogMessage(string message, MType model = null)
         {
             Console.WriteLine(message);
         }
 
-        public void LogError(string message, Exception ex, MType model)
+        public void LogError(string message, Exception ex = null, MType model = null)
         {
             try
             {
@@ -72,13 +69,15 @@ namespace com.jni4net.proxygen.Services
             LogVerbose(ex.ToString(), model);
         }
 
-        public void LogVerbose(string message, MType model)
+        public void LogVerbose(string message, MType model = null)
         {
             bool verboseModel = (model!=null && model.IsVerbose);
-            if (Configurator.Verbose || verboseModel)
+            if (Verbose || verboseModel)
             {
                 Console.WriteLine(message);
             }
         }
+
+        public bool Verbose { get; set; }
     }
 }

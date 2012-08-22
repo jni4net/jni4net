@@ -63,6 +63,12 @@ namespace test.proxygen
             com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\proxies\dummy-n-j4n\dummy-n-j4n.xml" });
         }
 
+        [Test, Explicit]
+        public void Generate_Ecj()
+        {
+            com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\proxies\ecj-j4n\ecj-j4n.xml" });
+        }
+
         /*
         [Test, Explicit]
         public void Generate_Core_Jre15()
