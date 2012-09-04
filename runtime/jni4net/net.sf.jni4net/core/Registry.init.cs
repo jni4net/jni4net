@@ -58,6 +58,7 @@ namespace net.sf.jni4net.core
         internal static ProxyInfo javaLangLong;
         internal static ProxyInfo javaLangFloat;
         internal static ProxyInfo javaLangDouble;
+        internal static ProxyInfo javaLangComparable;
 
         internal static ProxyInfo systemType;
         internal static ProxyInfo systemObject;
@@ -156,7 +157,7 @@ namespace net.sf.jni4net.core
             {
                 Logger.LogDebug("Registry.Init() ");
 
-                Assembly coreJvm = Assembly.Load(J4NBridge.currentSetup.JVMCoreLib);
+                Assembly coreJvm = Assembly.Load(J4NBridge.currentSetup.JVMCoreAssembly);
                 Type hooksType = coreJvm.GetType("net.sf.jni4net.core.JvmCoreHooks");
                 if (hooksType == null)
                 {
@@ -254,7 +255,7 @@ namespace net.sf.jni4net.core
                 clazz = env.FindClassNoThrow(netSfJni4netCoreIClrProxyFactory);
                 clrProxyFactoryMethodId = env.GetMethodID(clazz, "CreateInstance", jlsystemItypeLnetSfJni4netIclrproxy);
 
-                Assembly coreClr = Assembly.Load(J4NBridge.currentSetup.CLRCoreLib);
+                Assembly coreClr = Assembly.Load(J4NBridge.currentSetup.CLRCoreAssembly);
                 Type hooksType = coreClr.GetType("net.sf.jni4net.core.ClrCoreHooks");
                 if (hooksType == null)
                 {

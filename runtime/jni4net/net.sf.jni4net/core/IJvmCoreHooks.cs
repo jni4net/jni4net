@@ -35,6 +35,7 @@ namespace net.sf.jni4net.core
         void UnloadJ4N();
         void AddURL(IClassLoader urlClassLoader, string url);
         IList<string> GetURLs(IClassLoader urlClassLoader);
+        string GetLocation(IClass clazz);
         string systemGetProperty(string name);
         IClass LoadAnnotatedProxy(IClass type);
         IClass ClassForName(string name);

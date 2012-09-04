@@ -26,8 +26,10 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using java.lang;
 using net.sf.jni4net.core;
 using net.sf.jni4net.jni;
+using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net
 {
@@ -39,10 +41,12 @@ namespace net.sf.jni4net
         public static AttachedJVM CreateJVM()
         {
             Assembly callingAssembly = Assembly.GetCallingAssembly();
+            var ja = FindJVMCoreAssembly(callingAssembly);
+            var ca = FindCLRCoreAssembly(callingAssembly);
             var setup = new BridgeSetup
             {
-                JVMCoreLib = FindJVMCoreAssembly(callingAssembly),
-                CLRCoreLib = FindCLRCoreAssembly(callingAssembly),
+                JVMCoreAssembly = ja == null ? null : ja.FullName,
+                CLRCoreAssembly = ca == null ? null : ca.FullName,
             };
             return CreateJVM(setup);
         }
@@ -94,6 +98,10 @@ namespace net.sf.jni4net
                 if (currentSetup.BindClrProxies)
                 {
                     Registry.InitNative(env);
+
+                    currentSetup.J4NJarLocation = ClassUtils.ClassLocation(Registry.currentBridgeSetup.JVMApi);
+                    currentSetup.CLRCoreJarLocation = ClassUtils.ClassLocation(Registry.systemBool.JVMStaticApi);
+                    currentSetup.JVMCoreJarLocation = ClassUtils.ClassLocation(Registry.javaLangComparable.JVMStaticApi);
                 }
 
                 if (currentJVM.IsAttached)
@@ -202,39 +210,49 @@ namespace net.sf.jni4net
 
         private static void LoadCoreLibs(BridgeSetup setup, Assembly caller)
         {
-            if (setup.JVMCoreLib == null)
+            if (setup.JVMCoreAssembly == null)
             {
-                setup.JVMCoreLib = FindJVMCoreAssembly(caller);
+                var a = FindJVMCoreAssembly(caller);
+                setup.JVMCoreAssembly = a.FullName;
+                setup.JVMCoreDllLocation = a.Location;
             }
             else
             {
-                var jvmCoreLib = setup.JVMCoreLib;
-                if (!TryLoadAssembly(ref jvmCoreLib, netSfJni4netCoreJvmcorehooks))
+                var jvmCoreLib = setup.JVMCoreAssembly;
+                var a = TryLoadAssembly(ref jvmCoreLib, netSfJni4netCoreJvmcorehooks);
+                if (a == null)
                 {
                     throw J4NException.CantFindJVMCoreAssembly();
                 }
-                setup.JVMCoreLib = jvmCoreLib;
+                setup.JVMCoreAssembly = jvmCoreLib;
+                setup.JVMCoreAssembly = a.Location;
             }
 
             if (setup.BindClrProxies)
             {
-                if (setup.CLRCoreLib == null)
+                if (setup.CLRCoreAssembly == null)
                 {
-                    setup.CLRCoreLib = FindCLRCoreAssembly(caller);
+                    var a = FindCLRCoreAssembly(caller);
+                    setup.CLRCoreAssembly = a.FullName;
+                    setup.CLRCoreDllLocation = a.Location;
                 }
                 else
                 {
-                    var clrCoreLib = setup.CLRCoreLib;
-                    if (!TryLoadAssembly(ref clrCoreLib, netSfJni4netCoreClrcorehooks))
+                    var clrCoreLib = setup.CLRCoreAssembly;
+                    var a = TryLoadAssembly(ref clrCoreLib, netSfJni4netCoreClrcorehooks);
+                    if (a==null)
                     {
                         throw J4NException.CantFindCLRCoreAssembly();
                     }
-                    setup.CLRCoreLib = clrCoreLib;
+                    setup.CLRCoreAssembly = clrCoreLib;
+                    setup.CLRCoreDllLocation = a.Location;
                 }
             }
+            setup.J4NAssembly = typeof (J4NBridge).Assembly.FullName;
+            setup.J4NDllLocation = typeof(J4NBridge).Assembly.Location;
         }
 
-        private static string FindJVMCoreAssembly(Assembly caller)
+        private static Assembly FindJVMCoreAssembly(Assembly caller)
         {
             return FindCoreAssembly(caller, netSfJni4netCoreJvmcorehooks, new[]
             {
@@ -246,7 +264,7 @@ namespace net.sf.jni4net
             });
         }
 
-        private static string FindCLRCoreAssembly(Assembly caller)
+        private static Assembly FindCLRCoreAssembly(Assembly caller)
         {
             return FindCoreAssembly(caller, netSfJni4netCoreClrcorehooks, new[]
             {
@@ -257,7 +275,7 @@ namespace net.sf.jni4net
             });
         }
 
-        private static string FindCoreAssembly(Assembly caller, string coreHooks, string[] libnames)
+        private static Assembly FindCoreAssembly(Assembly caller, string coreHooks, string[] libnames)
         {
             try
             {
@@ -270,10 +288,11 @@ namespace net.sf.jni4net
                             if (an.FullName.StartsWith(libname))
                             {
                                 var ln = an.FullName;
-                                if (TryLoadAssembly(ref ln, coreHooks))
+                                var a = TryLoadAssembly(ref ln, coreHooks);
+                                if (a!=null)
                                 {
                                     Logger.LogInfo("Guessed CoreLib by loaded assemblies to " + ln);
-                                    return ln;
+                                    return a;
                                 }
                             }
                         }
@@ -286,16 +305,17 @@ namespace net.sf.jni4net
                     if (type != null)
                     {
                         Logger.LogInfo("Guessed CoreLib by loaded assemblies to " + assembly.FullName);
-                        return assembly.FullName;
+                        return assembly;
                     }
                 }
 
                 foreach (var libname in libnames)
                 {
                     var m = libname;
-                    if (TryLoadAssembly(ref m, coreHooks))
+                    var a = TryLoadAssembly(ref m, coreHooks);
+                    if (a!=null)
                     {
-                        return m;
+                        return a;
                     }
                 }
             }
@@ -306,18 +326,18 @@ namespace net.sf.jni4net
             throw J4NException.CantFindCLRCoreAssembly();
         }
 
-        private static bool TryLoadAssembly(ref string name, string coreHooks)
+        private static Assembly TryLoadAssembly(ref string name, string coreHooks)
         {
             try
             {
                 var mscj4n = AppDomain.CurrentDomain.Load(name);
                 name = mscj4n.FullName;
                 var type = mscj4n.GetType(coreHooks, false);
-                return type != null;
+                return type != null ? type.Assembly : null;
             }
             catch(Exception)
             {
-                return false;
+                return null;
             }
         }
     }

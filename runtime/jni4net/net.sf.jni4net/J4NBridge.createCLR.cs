@@ -50,8 +50,8 @@ namespace net.sf.jni4net
                     initialSetup.AllowJVMJoin = true;
                     if (initialJavaSetup != IntPtr.Zero)
                     {
-                        initialSetup.JVMCoreLib = env.GetStringField(initialJavaSetup, "jvmCoreLib");
-                        initialSetup.CLRCoreLib = env.GetStringField(initialJavaSetup, "clrCoreLib");
+                        initialSetup.JVMCoreAssembly = env.GetStringField(initialJavaSetup, "jvmCoreLib");
+                        initialSetup.CLRCoreAssembly = env.GetStringField(initialJavaSetup, "clrCoreLib");
                         initialSetup.JavaHome = env.GetStringField(initialJavaSetup, "javaHome");
                         initialSetup.LogLevel = (LogLevel)env.GetIntField(initialJavaSetup, "logLevel");
                         //TODO log redirect

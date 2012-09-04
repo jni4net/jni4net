@@ -86,7 +86,18 @@
             <element id="artifact" artifact-name="mscorlib-micro-j4n:jar" />
             <element id="file-copy" path="$PROJECT_DIR$/license/jni4net-runtime-LGPL-3.0.txt" />
           </element>
-          <element id="directory" name="samples" />
+          <element id="directory" name="samples">
+            <element id="directory" name="01.myCSharpDemoCalc">
+              <element id="directory" name="work">
+                <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/work/MyCSharpDemoCalc.dll" />
+              </element>
+              <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/generateProxies.cmd" />
+              <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/MyCalcUsageInJava.java" />
+              <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/MyCSharpDemoCalc.zip" />
+              <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/ReadMe.txt" />
+              <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/run.cmd" />
+            </element>
+          </element>
           <element id="file-copy" path="$PROJECT_DIR$/changes.txt" />
           <element id="file-copy" path="$PROJECT_DIR$/ReadMe.txt" />
         </element>

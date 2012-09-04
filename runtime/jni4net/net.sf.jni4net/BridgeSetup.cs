@@ -72,14 +72,22 @@ namespace net.sf.jni4net
         /// Assembly with JRE version to bind.
         /// <example>jre15-core-j4n</example>
         /// </summary>
-        public string JVMCoreLib { get; set; }
+        public string JVMCoreAssembly { get; set; }
 
         /// <summary>
         /// Assembly with mscorlib version to bind.
         /// <example>mscorlib-20-j4n</example>
         /// </summary>
-        public string CLRCoreLib { get; set; }
+        public string CLRCoreAssembly { get; set; }
 
+        public string J4NAssembly { get; set; }
+
+        internal string JVMCoreDllLocation { get; set; }
+
+        internal string CLRCoreDllLocation { get; set; }
+        
+        internal string J4NDllLocation { get; set; }
+        
         /// <summary>
         /// If true, it will throw exception for any thread which was not attached via <typeparamref name="net.sf.jni4net.core.AttachedThread"/>
         /// </summary>

@@ -86,6 +86,8 @@ namespace net.sf.jni4net.core
                 Registry.javaLangDouble.JVMApiArray = Class.forName("[D");
                 Registry.javaLangString.JVMApiArray = ((IJvmProxy)Array.newInstance((Class)Registry.javaLangString.JVMApi, 0)).getClass();
 
+                Registry.javaLangComparable = Registry.InitJvmProxy(typeof(Comparable), env);
+
                 PostInitJ4N(env);
             }
         }
@@ -140,6 +142,13 @@ namespace net.sf.jni4net.core
                 res.Add(urL.toString());
             }
             return res;
+        }
+
+        public string GetLocation(IClass clazz)
+        {
+            var klass = (Class) clazz;
+            var location = klass.getResource('/' + klass.getName().Replace('.', '/') + ".class");
+            return location.toString();
         }
 
         public string systemGetProperty(string name)

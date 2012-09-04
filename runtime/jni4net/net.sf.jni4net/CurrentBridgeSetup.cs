@@ -20,10 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
-using System;
 using java.lang;
 using net.sf.jni4net.core;
-using net.sf.jni4net.utils;
 
 namespace net.sf.jni4net
 {
@@ -33,8 +31,12 @@ namespace net.sf.jni4net
         {
             LogLevel = setup.LogLevel;
             JavaHome = setup.JavaHome;
-            JVMCoreLib = setup.JVMCoreLib;
-            CLRCoreLib = setup.CLRCoreLib;
+            JVMCoreAssembly = setup.JVMCoreAssembly;
+            JVMCoreDllLocation = setup.JVMCoreDllLocation;
+            CLRCoreAssembly = setup.CLRCoreAssembly;
+            CLRCoreDllLocation = setup.CLRCoreDllLocation;
+            J4NAssembly = setup.J4NAssembly;
+            J4NDllLocation = setup.J4NDllLocation;
             BindClrProxies = setup.BindClrProxies;
             AllowJVMJoin = setup.AllowJVMJoin;
             EnforceThreadDetach = setup.EnforceThreadDetach;
@@ -56,8 +58,17 @@ namespace net.sf.jni4net
         
         public IClassLoader DefaultClassLoader { get; set; }
 
-        public string JVMCoreLib { get; internal set; }
-        public string CLRCoreLib { get; internal set; }
+        public string JVMCoreAssembly { get; internal set; }
+        public string JVMCoreDllLocation { get; internal set; }
+        public string JVMCoreJarLocation { get; internal set; }
+        public string CLRCoreAssembly { get; internal set; }
+        public string CLRCoreDllLocation { get; internal set; }
+        public string CLRCoreJarLocation { get; internal set; }
+
+        public string J4NAssembly { get; internal set; }
+        public string J4NDllLocation { get; internal set; }
+        
+        public string J4NJarLocation { get; internal set; }
 
         public LogLevel LogLevel
         {

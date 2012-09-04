@@ -7,7 +7,7 @@ namespace com.jni4net.proxygen.Services._5000.Compilation
     {
         public void Compile()
         {
-            BatchCompiler.compile("-help", new PrintWriter(java.lang.System.@out), new PrintWriter(java.lang.System.err), null);
+            //BatchCompiler.compile("-help", new PrintWriter(@"C:\a.txt"), new PrintWriter(java.lang.System.err), null);
         }
     }
 }

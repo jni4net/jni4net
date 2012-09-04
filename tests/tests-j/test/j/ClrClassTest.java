@@ -28,7 +28,7 @@ import org.junit.Test;
 public class ClrClassTest extends TestBase {
     @Test
     public void TestIfcFactory(){
-        System.out.println(J4NBridge.getSetup().getCLRCoreLib());
+        System.out.println(J4NBridge.getSetup().getCLRCoreAssembly());
 
         ITested tested = InterfacesFactory.createITested();
         System.out.println(((system.Object)tested).GetType());

@@ -181,6 +181,8 @@ namespace com.jni4net.proxygen.Services.Compilation
                 
                 var csprojFile = Path.Combine(project.ProjectLocation, project.projectName + ".csproj");
                 var imlFile = Path.Combine(project.ProjectLocation, project.projectName + ".iml");
+                var javacFile = Path.Combine(project.ProjectLocation, project.projectName + ".javac");
+                var cmdFile = Path.Combine(project.ProjectLocation, project.projectName + ".cmd");
                 var guid = Guid.NewGuid().ToString().ToUpperInvariant();
                 XDocument xDocument;
 
@@ -211,10 +213,9 @@ namespace com.jni4net.proxygen.Services.Compilation
                     an.Value = project.projectName;
 
                     var refer = xDocument.Root.XPathSelectElement("ms:ItemGroup/ms:Reference[@Include='jni4net']", nsManager);
-                    var jni4net = typeof(J4NBridge).Assembly;
-                    refer.SetAttributeValue(XName.Get("Include"), jni4net.GetName());
+                    refer.SetAttributeValue(XName.Get("Include"), J4NBridge.Setup.J4NAssembly);
                     var hint = refer.XPathSelectElement("ms:HintPath", nsManager);
-                    hint.Value = jni4net.Location;
+                    hint.Value = PathUtils.MakeRelativePath(project.ProjectLocation,J4NBridge.Setup.J4NDllLocation);
 
                     var cnt = xDocument.Root.XPathSelectElement("ms:ItemGroup/ms:Content", nsManager);
                     var pgConfig = Path.GetFileName(Configurator.FileName);
@@ -241,7 +242,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                 for (int i = 0; i < project.CsharpFiles.Count; i++)
                 {
                     var file = project.CsharpFiles[i];
-                    var relative = PathUtils.MakeRelativePath(project.TargetDirClr, file);
+                    var relative = PathUtils.MakeRelativePath(project.ProjectLocation, file);
                     var compile = new XElement(XName.Get("Compile", vsns));
                     compile.SetAttributeValue(XName.Get("Include"), relative);
                     @group.Add(compile);
@@ -310,7 +311,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                     }
                     else
                     {
-                        string keyRelative = PathUtils.MakeRelativePath(props, keyFile);
+                        string keyRelative = PathUtils.MakeRelativePath(project.ProjectLocation, keyFile);
                         sb.AppendLine("[assembly: AssemblyKeyFileAttribute(@\"" + keyRelative + "\")]");
                     }
                 }
@@ -339,7 +340,57 @@ namespace com.jni4net.proxygen.Services.Compilation
 
                 #endregion
 
-            
+                #region .javac
+
+                var javac = new StringBuilder();
+                javac.Append("-classpath ");
+                foreach (var classPath in project.classPath)
+                {
+                    javac.Append(classPath.jarFile ?? classPath.classPathDirectory);
+                    javac.Append(";");
+                }
+                javac.Append(PathUtils.MakeRelativePath(project.ProjectLocation, J4NBridge.Setup.J4NJarLocation ?? J4NBridge.Setup.J4NDllLocation.Replace(".dll", ".jar")));
+                if (J4NBridge.Setup.CLRCoreDllLocation!=null)
+                {
+                    javac.Append(";");
+                    javac.Append(PathUtils.MakeRelativePath(project.ProjectLocation, J4NBridge.Setup.CLRCoreJarLocation ?? J4NBridge.Setup.CLRCoreDllLocation.Replace(".dll", ".jar")));
+                }
+
+                javac.AppendLine();
+
+                for (int i = 0; i < project.JavaFiles.Count; i++)
+                {
+                    var file = project.JavaFiles[i];
+                    var relative = PathUtils.MakeRelativePath(project.ProjectLocation, file);
+                    javac.AppendLine(relative);
+                }
+
+                File.WriteAllText(javacFile, javac.ToString());
+
+                #endregion
+
+                #region .cmd
+                if(!File.Exists(cmdFile))
+                {
+                    var cmd = new StringBuilder();
+                    cmd.AppendLine("@echo off");
+                    cmd.AppendLine("REM change this to your JDK location");
+                    cmd.AppendLine("set JAVA_HOME=\"c:\\Program Files\\Java\\jdk1.5.0_22\\\"");
+                    cmd.AppendLine("");
+                    cmd.AppendLine("PUSHD %~dp0\\");
+                    cmd.AppendLine("mkdir bin\\classes");
+                    cmd.AppendLine("echo compile java");
+                    cmd.AppendLine("%JAVA_HOME%\\bin\\javac -d bin\\classes -encoding UTF-8 -g:none @" + project.projectName + ".javac");
+                    cmd.AppendLine("");
+                    cmd.AppendLine("echo create jar");
+                    cmd.AppendLine("%JAVA_HOME%\\bin\\jar -cf bin\\" + project.projectName + ".j4n.jar -C bin\\classes .");
+                    cmd.AppendLine("POPD");
+                    File.WriteAllText(cmdFile, cmd.ToString());
+                }
+
+                #endregion
+
+
             }
         }
     }
