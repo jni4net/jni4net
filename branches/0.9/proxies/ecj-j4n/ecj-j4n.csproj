@@ -11,7 +11,6 @@
     <RootNamespace>jni4net</RootNamespace>
     <AssemblyName>ecj-j4n</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>../../_tools/keys/template.snk</AssemblyOriginatorKeyFile>
@@ -39,7 +38,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="jni4net, Version=0.9.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\sf\jni4net\0.9\tools\test-proxygen\bin\jni4net.dll</HintPath>
+      <HintPath>..\..\tools\test-proxygen\bin\jni4net.dll</HintPath>
     </Reference>
 
     <Content Include="ecj-j4n.xml" />

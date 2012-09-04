@@ -1,0 +1,3 @@
+-classpath ../../_lib/ecj-4.2.jar;..\..\tools\test-proxygen\bin\jni4net.jar
+j4n\org\eclipse\jdt\core\compiler\batch\BatchCompiler_.java
+j4n\net\sf\jni4net\modules\ecjj4n.java

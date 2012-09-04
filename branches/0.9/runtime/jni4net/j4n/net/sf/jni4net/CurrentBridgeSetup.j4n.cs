@@ -126,7 +126,7 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#4 get_CLRCoreLib()Ljava/lang/String; ()Lsystem/String;</signature>
+        /// <signature>#4 get_CLRCoreAssembly()Ljava/lang/String; ()Lsystem/String;</signature>
         static global::System.IntPtr j4n_4(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
@@ -134,7 +134,7 @@ namespace net.sf.jni4net
             try
             {
                 global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
-                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.CLRCoreLib, "java.lang.String");
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.CLRCoreAssembly, "java.lang.String");
             }
             catch (global::System.Exception j4n_ex)
             {
@@ -147,8 +147,50 @@ namespace net.sf.jni4net
             return j4n_frame.Result;
         }
         
-        /// <signature>#5 get_DefaultClassLoader()Lsystem/Object; ()Ljava/lang/IClassLoader;</signature>
+        /// <signature>#5 get_CLRCoreDllLocation()Ljava/lang/String; ()Lsystem/String;</signature>
         static global::System.IntPtr j4n_5(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.CLRCoreDllLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#6 get_CLRCoreJarLocation()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_6(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.CLRCoreJarLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#7 get_DefaultClassLoader()Lsystem/Object; ()Ljava/lang/IClassLoader;</signature>
+        static global::System.IntPtr j4n_7(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -168,8 +210,8 @@ namespace net.sf.jni4net
             return j4n_frame.Result;
         }
         
-        /// <signature>#6 get_DisableJavaHomeDetection()Z ()Z</signature>
-        static bool j4n_6(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#8 get_DisableJavaHomeDetection()Z ()Z</signature>
+        static bool j4n_8(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -189,8 +231,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#7 get_EnforceImmediateBinding()Z ()Z</signature>
-        static bool j4n_7(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#9 get_EnforceImmediateBinding()Z ()Z</signature>
+        static bool j4n_9(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -210,8 +252,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#8 get_EnforceThreadDetach()Z ()Z</signature>
-        static bool j4n_8(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#10 get_EnforceThreadDetach()Z ()Z</signature>
+        static bool j4n_10(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -231,8 +273,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#9 get_HideJNIFromStackTrace()Z ()Z</signature>
-        static bool j4n_9(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#11 get_HideJNIFromStackTrace()Z ()Z</signature>
+        static bool j4n_11(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -252,8 +294,71 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#10 get_JavaHome()Ljava/lang/String; ()Lsystem/String;</signature>
-        static global::System.IntPtr j4n_10(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#12 get_J4NAssembly()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_12(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.J4NAssembly, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#13 get_J4NDllLocation()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_13(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.J4NDllLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#14 get_J4NJarLocation()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_14(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.J4NJarLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#15 get_JavaHome()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_15(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -273,15 +378,15 @@ namespace net.sf.jni4net
             return j4n_frame.Result;
         }
         
-        /// <signature>#11 get_JVMCoreLib()Ljava/lang/String; ()Lsystem/String;</signature>
-        static global::System.IntPtr j4n_11(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#16 get_JVMCoreAssembly()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_16(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
             try
             {
                 global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
-                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.JVMCoreLib, "java.lang.String");
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.JVMCoreAssembly, "java.lang.String");
             }
             catch (global::System.Exception j4n_ex)
             {
@@ -294,8 +399,50 @@ namespace net.sf.jni4net
             return j4n_frame.Result;
         }
         
-        /// <signature>#12 get_LogLevel()Lnet/sf/jni4net/LogLevel; ()Lnet/sf/jni4net/LogLevel;</signature>
-        static global::System.IntPtr j4n_12(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        /// <signature>#17 get_JVMCoreDllLocation()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_17(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.JVMCoreDllLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#18 get_JVMCoreJarLocation()Ljava/lang/String; ()Lsystem/String;</signature>
+        static global::System.IntPtr j4n_18(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
+        {
+            global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
+            global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
+            try
+            {
+                global::net.sf.jni4net.CurrentBridgeSetup j4n_real = global::net.sf.jni4net.core.ConvertAbstract.ToCLR<global::net.sf.jni4net.CurrentBridgeSetup>(j4n_env, j4n_self);
+                j4n_frame.Result = global::net.sf.jni4net.core.ConvertAbstract.ToPtr(j4n_env, j4n_real.JVMCoreJarLocation, "java.lang.String");
+            }
+            catch (global::System.Exception j4n_ex)
+            {
+                j4n_env.ThrowExisting(j4n_ex);
+                return default(global::System.IntPtr);
+            }
+            finally{
+                j4n_frame.Dispose();
+            }
+            return j4n_frame.Result;
+        }
+        
+        /// <signature>#19 get_LogLevel()Lnet/sf/jni4net/LogLevel; ()Lnet/sf/jni4net/LogLevel;</signature>
+        static global::System.IntPtr j4n_19(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 10);
@@ -315,8 +462,8 @@ namespace net.sf.jni4net
             return j4n_frame.Result;
         }
         
-        /// <signature>#13 set_AllowJVMJoin(Z)V (Z)V</signature>
-        static void j4n_13(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#20 set_AllowJVMJoin(Z)V (Z)V</signature>
+        static void j4n_20(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -334,8 +481,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#14 set_AutoCreateLocalFrame(Z)V (Z)V</signature>
-        static void j4n_14(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#21 set_AutoCreateLocalFrame(Z)V (Z)V</signature>
+        static void j4n_21(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -353,8 +500,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#15 set_BindClrProxies(Z)V (Z)V</signature>
-        static void j4n_15(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#22 set_BindClrProxies(Z)V (Z)V</signature>
+        static void j4n_22(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -372,8 +519,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#16 set_DefaultClassLoader(Lsystem/Object;)V (Ljava/lang/IClassLoader;)V</signature>
-        static void j4n_16(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr value)
+        /// <signature>#23 set_DefaultClassLoader(Lsystem/Object;)V (Ljava/lang/IClassLoader;)V</signature>
+        static void j4n_23(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -391,8 +538,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#17 set_DisableJavaHomeDetection(Z)V (Z)V</signature>
-        static void j4n_17(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#24 set_DisableJavaHomeDetection(Z)V (Z)V</signature>
+        static void j4n_24(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -410,8 +557,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#18 set_EnforceImmediateBinding(Z)V (Z)V</signature>
-        static void j4n_18(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#25 set_EnforceImmediateBinding(Z)V (Z)V</signature>
+        static void j4n_25(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -429,8 +576,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#19 set_EnforceThreadDetach(Z)V (Z)V</signature>
-        static void j4n_19(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#26 set_EnforceThreadDetach(Z)V (Z)V</signature>
+        static void j4n_26(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -448,8 +595,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#20 set_HideJNIFromStackTrace(Z)V (Z)V</signature>
-        static void j4n_20(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
+        /// <signature>#27 set_HideJNIFromStackTrace(Z)V (Z)V</signature>
+        static void j4n_27(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, bool value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -467,8 +614,8 @@ namespace net.sf.jni4net
             }
         }
         
-        /// <signature>#21 set_LogLevel(Lnet/sf/jni4net/LogLevel;)V (Lnet/sf/jni4net/LogLevel;)V</signature>
-        static void j4n_21(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr value)
+        /// <signature>#28 set_LogLevel(Lnet/sf/jni4net/LogLevel;)V (Lnet/sf/jni4net/LogLevel;)V</signature>
+        static void j4n_28(global::System.IntPtr j4n_penv, global::System.IntPtr j4n_self, global::System.IntPtr value)
         {
             global::net.sf.jni4net.jni.JNIEnv j4n_env = new global::net.sf.jni4net.jni.JNIEnv(j4n_penv);
             global::net.sf.jni4net.jni.LocalFrame j4n_frame = new global::net.sf.jni4net.jni.LocalFrame(j4n_env, 12);
@@ -505,24 +652,31 @@ namespace net.sf.jni4net
                         new global::net.sf.jni4net.core.MemberId("getAllowJVMJoin","()Z", false, false), // #1 ()Z
                         new global::net.sf.jni4net.core.MemberId("getAutoCreateLocalFrame","()Z", false, false), // #2 ()Z
                         new global::net.sf.jni4net.core.MemberId("getBindClrProxies","()Z", false, false), // #3 ()Z
-                        new global::net.sf.jni4net.core.MemberId("getCLRCoreLib","()Ljava/lang/String;", false, false), // #4 ()Ljava/lang/String;
-                        new global::net.sf.jni4net.core.MemberId("getDefaultClassLoader","()Lsystem/Object;", false, false), // #5 ()Lsystem/Object;
-                        new global::net.sf.jni4net.core.MemberId("getDisableJavaHomeDetection","()Z", false, false), // #6 ()Z
-                        new global::net.sf.jni4net.core.MemberId("getEnforceImmediateBinding","()Z", false, false), // #7 ()Z
-                        new global::net.sf.jni4net.core.MemberId("getEnforceThreadDetach","()Z", false, false), // #8 ()Z
-                        new global::net.sf.jni4net.core.MemberId("getHideJNIFromStackTrace","()Z", false, false), // #9 ()Z
-                        new global::net.sf.jni4net.core.MemberId("getJavaHome","()Ljava/lang/String;", false, false), // #10 ()Ljava/lang/String;
-                        new global::net.sf.jni4net.core.MemberId("getJVMCoreLib","()Ljava/lang/String;", false, false), // #11 ()Ljava/lang/String;
-                        new global::net.sf.jni4net.core.MemberId("getLogLevel","()Lnet/sf/jni4net/LogLevel;", false, false), // #12 ()Lnet/sf/jni4net/LogLevel;
-                        new global::net.sf.jni4net.core.MemberId("setAllowJVMJoin","(Z)V", false, false), // #13 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setAutoCreateLocalFrame","(Z)V", false, false), // #14 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setBindClrProxies","(Z)V", false, false), // #15 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setDefaultClassLoader","(Lsystem/Object;)V", false, false), // #16 (Lsystem/Object;)V
-                        new global::net.sf.jni4net.core.MemberId("setDisableJavaHomeDetection","(Z)V", false, false), // #17 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setEnforceImmediateBinding","(Z)V", false, false), // #18 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setEnforceThreadDetach","(Z)V", false, false), // #19 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setHideJNIFromStackTrace","(Z)V", false, false), // #20 (Z)V
-                        new global::net.sf.jni4net.core.MemberId("setLogLevel","(Lnet/sf/jni4net/LogLevel;)V", false, false), // #21 (Lnet/sf/jni4net/LogLevel;)V
+                        new global::net.sf.jni4net.core.MemberId("getCLRCoreAssembly","()Ljava/lang/String;", false, false), // #4 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getCLRCoreDllLocation","()Ljava/lang/String;", false, false), // #5 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getCLRCoreJarLocation","()Ljava/lang/String;", false, false), // #6 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getDefaultClassLoader","()Lsystem/Object;", false, false), // #7 ()Lsystem/Object;
+                        new global::net.sf.jni4net.core.MemberId("getDisableJavaHomeDetection","()Z", false, false), // #8 ()Z
+                        new global::net.sf.jni4net.core.MemberId("getEnforceImmediateBinding","()Z", false, false), // #9 ()Z
+                        new global::net.sf.jni4net.core.MemberId("getEnforceThreadDetach","()Z", false, false), // #10 ()Z
+                        new global::net.sf.jni4net.core.MemberId("getHideJNIFromStackTrace","()Z", false, false), // #11 ()Z
+                        new global::net.sf.jni4net.core.MemberId("getJ4NAssembly","()Ljava/lang/String;", false, false), // #12 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJ4NDllLocation","()Ljava/lang/String;", false, false), // #13 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJ4NJarLocation","()Ljava/lang/String;", false, false), // #14 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJavaHome","()Ljava/lang/String;", false, false), // #15 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJVMCoreAssembly","()Ljava/lang/String;", false, false), // #16 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJVMCoreDllLocation","()Ljava/lang/String;", false, false), // #17 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getJVMCoreJarLocation","()Ljava/lang/String;", false, false), // #18 ()Ljava/lang/String;
+                        new global::net.sf.jni4net.core.MemberId("getLogLevel","()Lnet/sf/jni4net/LogLevel;", false, false), // #19 ()Lnet/sf/jni4net/LogLevel;
+                        new global::net.sf.jni4net.core.MemberId("setAllowJVMJoin","(Z)V", false, false), // #20 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setAutoCreateLocalFrame","(Z)V", false, false), // #21 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setBindClrProxies","(Z)V", false, false), // #22 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setDefaultClassLoader","(Lsystem/Object;)V", false, false), // #23 (Lsystem/Object;)V
+                        new global::net.sf.jni4net.core.MemberId("setDisableJavaHomeDetection","(Z)V", false, false), // #24 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setEnforceImmediateBinding","(Z)V", false, false), // #25 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setEnforceThreadDetach","(Z)V", false, false), // #26 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setHideJNIFromStackTrace","(Z)V", false, false), // #27 (Z)V
+                        new global::net.sf.jni4net.core.MemberId("setLogLevel","(Lnet/sf/jni4net/LogLevel;)V", false, false), // #28 (Lnet/sf/jni4net/LogLevel;)V
                         };
                 }
                 return j4n_TypeInfo;

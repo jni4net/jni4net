@@ -144,18 +144,23 @@ namespace com.jni4net.config
         }
 
 
+        private string projectLocation;
         [XmlIgnore]
         public string ProjectLocation
         {
             get
             {
-                string targetDir = targetDirJvm;
-                if (string.IsNullOrEmpty(targetDir))
+                if (projectLocation == null)
                 {
-                    targetDir = BaseDirectory;
+                    projectLocation = targetDirJvm;
+                    if (string.IsNullOrEmpty(projectLocation))
+                    {
+                        projectLocation = BaseDirectory;
+                    }
+                    projectLocation = PathUtils.MakeAbsolutePath(BaseDirectory, projectLocation);
+                    projectLocation = PathUtils.MakeAbsolutePath(projectLocation, "..");
                 }
-                targetDir = MakeAbsolutePath(targetDir + "/../");
-                return targetDir;
+                return projectLocation;
             }
         }
 

@@ -1,12 +1,15 @@
 @echo off
-set JNI4NETHOME=..\..\
-if NOT EXIST ..\..\bin\proxygen.exe set JNI4NETHOME=..\..\..\_target\0.9.0.0\
+set JNI4NETHOME=%~dp0\..\..\
+if NOT EXIST %~dp0\..\..\bin\proxygen.exe set JNI4NETHOME=%~dp0\..\..\..\_target\0.9.0.0\
 
-copy %JNI4NETHOME%\runtime\*.* work
-%JNI4NETHOME%\bin\proxygen.exe work\MyCSharpDemoCalc-j4n.xml -dll work\MyCSharpDemoCalc.dll
-rem cd work
-rem call build.cmd
-rem cd ..
+REM change this to your JDK location
+set JAVA_HOME="c:\Program Files\Java\jdk1.5.0_22\"
 
-rem echo compiling usage
-rem javac -d work\ -cp work\jni4net.j-0.8.7.0.jar;work\MyCSharpDemoCalc.j4n.jar MyCalcUsageInJava.java
+copy %JNI4NETHOME%\runtime\*.* %~dp0\bin
+%JNI4NETHOME%\bin\proxygen.exe %~dp0\MyCSharpDemoCalc\MyCSharpDemoCalc-j4n.xml -dll %~dp0\bin\MyCSharpDemoCalc.dll
+call %~dp0\MyCSharpDemoCalc\MyCSharpDemoCalc.cmd
+copy %~dp0\MyCSharpDemoCalc\bin\MyCSharpDemoCalc.j4n.jar %~dp0\bin\MyCSharpDemoCalc.j4n.jar
+
+echo compiling usage
+mkdir bin\classes
+%JAVA_HOME%\bin\javac -d bin\classes -cp %~dp0\bin\jni4net.jar;%~dp0\bin\mscorlib-micro-j4n.jar;%~dp0\bin\MyCSharpDemoCalc.j4n.jar MyCalcUsageInJava.java

@@ -78,6 +78,7 @@
     <Compile Include="net.sf.jni4net\J4NBridge.createJVM.cs" />
     <Compile Include="net.sf.jni4net\CurrentBridgeSetup.cs" />
     <Compile Include="net.sf.jni4net\BridgeSetup.cs" />
+    <Compile Include="net.sf.jni4net\utils\ClassUtils.cs" />
     <Compile Include="net.sf.jni4net\utils\OsUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.common.cs" />
     <Compile Include="Properties\AssemblyInfo.local.cs" />

@@ -150,6 +150,7 @@ namespace com.jni4net.proxygen.Config
                         currentProject = new ProjectRegistration();
                         currentProject.projectName = name;
                         Config.project.Add(currentProject);
+                        currentProject.Parent = this;
                     }
 
                     if (!AddCp(currentProject, cp, true))
@@ -178,6 +179,7 @@ namespace com.jni4net.proxygen.Config
                         currentProject = new ProjectRegistration();
                         currentProject.projectName = name;
                         Config.project.Add(currentProject);
+                        currentProject.Parent = this;
                     }
 
                     if (!AddDp(currentProject, dp, true))
@@ -218,6 +220,26 @@ namespace com.jni4net.proxygen.Config
                     {
                         return false;
                     }
+                }
+                else if (o == "--keyfile")
+                {
+                    if (currentProject == null)
+                    {
+                        Logger.LogError("use -dll or -jar first");
+                        return false;
+                    }
+                    if (options.Count == 0)
+                    {
+                        Logger.LogError("--keyfile argument missing");
+                        return false;
+                    }
+                    var cp = Path.GetFullPath(options.Dequeue());
+                    if (!File.Exists(cp))
+                    {
+                        Logger.LogError(string.Format("Can't find jar file or directory {0}", cp));
+                        return false;
+                    }
+                    currentProject.projectKey = PathUtils.MakeRelativePath(currentProject.BaseDirectory, cp);
                 }
             }
 

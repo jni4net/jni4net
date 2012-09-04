@@ -49,57 +49,78 @@ public class CurrentBridgeSetup extends system.Object
     public final native boolean getBindClrProxies();
     
     /// <signature>#4 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
-    public final native java.lang.String getCLRCoreLib();
+    public final native java.lang.String getCLRCoreAssembly();
     
-    /// <signature>#5 ()Lsystem/Object; ()Lsystem/Object;</signature>
+    /// <signature>#5 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getCLRCoreDllLocation();
+    
+    /// <signature>#6 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getCLRCoreJarLocation();
+    
+    /// <signature>#7 ()Lsystem/Object; ()Lsystem/Object;</signature>
     public final native system.Object getDefaultClassLoader();
     
-    /// <signature>#6 ()Z ()Z</signature>
+    /// <signature>#8 ()Z ()Z</signature>
     public final native boolean getDisableJavaHomeDetection();
     
-    /// <signature>#7 ()Z ()Z</signature>
+    /// <signature>#9 ()Z ()Z</signature>
     public final native boolean getEnforceImmediateBinding();
     
-    /// <signature>#8 ()Z ()Z</signature>
+    /// <signature>#10 ()Z ()Z</signature>
     public final native boolean getEnforceThreadDetach();
     
-    /// <signature>#9 ()Z ()Z</signature>
+    /// <signature>#11 ()Z ()Z</signature>
     public final native boolean getHideJNIFromStackTrace();
     
-    /// <signature>#10 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    /// <signature>#12 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJ4NAssembly();
+    
+    /// <signature>#13 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJ4NDllLocation();
+    
+    /// <signature>#14 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJ4NJarLocation();
+    
+    /// <signature>#15 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
     public final native java.lang.String getJavaHome();
     
-    /// <signature>#11 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
-    public final native java.lang.String getJVMCoreLib();
+    /// <signature>#16 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJVMCoreAssembly();
     
-    /// <signature>#12 ()Lnet/sf/jni4net/LogLevel; ()Lnet/sf/jni4net/LogLevel;</signature>
+    /// <signature>#17 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJVMCoreDllLocation();
+    
+    /// <signature>#18 ()Ljava/lang/String; ()Ljava/lang/String;</signature>
+    public final native java.lang.String getJVMCoreJarLocation();
+    
+    /// <signature>#19 ()Lnet/sf/jni4net/LogLevel; ()Lnet/sf/jni4net/LogLevel;</signature>
     public final native net.sf.jni4net.LogLevel getLogLevel();
     
-    /// <signature>#13 (Z)V (Z)V</signature>
+    /// <signature>#20 (Z)V (Z)V</signature>
     public final native void setAllowJVMJoin(boolean value);
     
-    /// <signature>#14 (Z)V (Z)V</signature>
+    /// <signature>#21 (Z)V (Z)V</signature>
     public final native void setAutoCreateLocalFrame(boolean value);
     
-    /// <signature>#15 (Z)V (Z)V</signature>
+    /// <signature>#22 (Z)V (Z)V</signature>
     public final native void setBindClrProxies(boolean value);
     
-    /// <signature>#16 (Lsystem/Object;)V (Lsystem/Object;)V</signature>
+    /// <signature>#23 (Lsystem/Object;)V (Lsystem/Object;)V</signature>
     public final native void setDefaultClassLoader(system.Object value);
     
-    /// <signature>#17 (Z)V (Z)V</signature>
+    /// <signature>#24 (Z)V (Z)V</signature>
     public final native void setDisableJavaHomeDetection(boolean value);
     
-    /// <signature>#18 (Z)V (Z)V</signature>
+    /// <signature>#25 (Z)V (Z)V</signature>
     public final native void setEnforceImmediateBinding(boolean value);
     
-    /// <signature>#19 (Z)V (Z)V</signature>
+    /// <signature>#26 (Z)V (Z)V</signature>
     public final native void setEnforceThreadDetach(boolean value);
     
-    /// <signature>#20 (Z)V (Z)V</signature>
+    /// <signature>#27 (Z)V (Z)V</signature>
     public final native void setHideJNIFromStackTrace(boolean value);
     
-    /// <signature>#21 (Lnet/sf/jni4net/LogLevel;)V (Lnet/sf/jni4net/LogLevel;)V</signature>
+    /// <signature>#28 (Lnet/sf/jni4net/LogLevel;)V (Lnet/sf/jni4net/LogLevel;)V</signature>
     public final native void setLogLevel(net.sf.jni4net.LogLevel value);
     
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {

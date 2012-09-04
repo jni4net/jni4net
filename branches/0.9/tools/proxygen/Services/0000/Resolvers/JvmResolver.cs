@@ -87,7 +87,8 @@ namespace com.jni4net.proxygen.Services.Resolvers
 
             foreach (var projectRegistration in Configurator.Config.project)
             {
-                if (projectRegistration.jarsDirectory != null)
+                // TODO
+                /*if (projectRegistration.jarsDirectory != null)
                 {
                     foreach (var directory in projectRegistration.jarsDirectory)
                     {
@@ -114,7 +115,7 @@ namespace com.jni4net.proxygen.Services.Resolvers
                             J4NBridge.AddClassPath(jar);
                         }
                     }
-                }
+                }*/
 
 
                 if (projectRegistration.classPath != null)
