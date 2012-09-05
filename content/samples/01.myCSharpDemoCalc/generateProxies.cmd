@@ -8,7 +8,8 @@ set JAVA_HOME="c:\Program Files\Java\jdk1.5.0_22\"
 copy %JNI4NETHOME%\runtime\*.* %~dp0\bin
 %JNI4NETHOME%\bin\proxygen.exe %~dp0\MyCSharpDemoCalc\MyCSharpDemoCalc-j4n.xml -dll %~dp0\bin\MyCSharpDemoCalc.dll
 call %~dp0\MyCSharpDemoCalc\MyCSharpDemoCalc.cmd
-copy %~dp0\MyCSharpDemoCalc\bin\MyCSharpDemoCalc.j4n.jar %~dp0\bin\MyCSharpDemoCalc.j4n.jar
+copy %~dp0\MyCSharpDemoCalc\bin\MyCSharpDemoCalc-j4n.jar %~dp0\bin\
+copy %~dp0\MyCSharpDemoCalc\bin\MyCSharpDemoCalc-j4n.dll %~dp0\bin\
 
 echo compiling usage
 mkdir bin\classes

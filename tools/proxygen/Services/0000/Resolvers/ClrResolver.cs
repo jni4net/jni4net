@@ -101,7 +101,7 @@ namespace com.jni4net.proxygen.Services.Resolvers
 
             foreach (var projectRegistration in Configurator.Config.project)
             {
-                if (projectRegistration.assembliesDirectory != null)
+                /*if (projectRegistration.assembliesDirectory != null)
                 {
                     foreach (var directory in projectRegistration.assembliesDirectory)
                     {
@@ -134,7 +134,7 @@ namespace com.jni4net.proxygen.Services.Resolvers
                             }
                         }
                     }
-                }
+                }*/
                 if (projectRegistration.assembly != null)
                 {
                     foreach (config.Assembly assembly in projectRegistration.assembly)

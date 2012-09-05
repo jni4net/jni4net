@@ -23,9 +23,9 @@
     <xs:sequence>
       <!--
       <xs:element name="jarsDirectory" type="jni4net:Directory" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="assembliesDirectory" type="jni4net:Directory" maxOccurs="unbounded" minOccurs="0"/>
       -->
       <xs:element name="classPath" type="jni4net:ClassPath" maxOccurs="unbounded" minOccurs="0"/>
-      <xs:element name="assembliesDirectory" type="jni4net:Directory" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element name="assembly" type="jni4net:Assembly" maxOccurs="unbounded" minOccurs="0"/>
 
       <xs:element name="jvmClass" type="jni4net:TypeRegistration" maxOccurs="unbounded" minOccurs="0"/>

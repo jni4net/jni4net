@@ -21,13 +21,20 @@ package test.j;
 import dummy.clr.ITested;
 import dummy.clr.InterfacesFactory;
 import dummy.clr.Tested;
+import net.sf.jni4net.BridgeSetup;
 import net.sf.jni4net.J4NBridge;
+import net.sf.jni4net.LogLevel;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ClrClassTest extends TestBase {
     @Test
     public void TestIfcFactory(){
+
+        BridgeSetup initialSetup = new BridgeSetup();
+        initialSetup.setLogLevel(LogLevel.DEBUG);
+        J4NBridge.CreateCLR(initialSetup);
+
         System.out.println(J4NBridge.getSetup().getCLRCoreAssembly());
 
         ITested tested = InterfacesFactory.createITested();

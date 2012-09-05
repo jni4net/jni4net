@@ -43,7 +43,7 @@ namespace com.jni4net.proxygen.Utils
                 fromPath = fromPath + Path.DirectorySeparatorChar;
             }
             var fromUri = new Uri(fromPath);
-            var toUri = new Uri(toPath);
+            var toUri=new Uri(toPath);
 
             Uri relativeUri = fromUri.MakeRelativeUri(toUri);
             String relativePath = Uri.UnescapeDataString(relativeUri.ToString());
