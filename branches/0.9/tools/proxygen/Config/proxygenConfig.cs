@@ -47,8 +47,6 @@ namespace com.jni4net.config {
         
         private List<ClassPath> classPathField;
         
-        private List<Directory> assembliesDirectoryField;
-        
         private List<Assembly> assemblyField;
         
         private List<TypeRegistration> jvmClassField;
@@ -95,7 +93,6 @@ namespace com.jni4net.config {
             this.clrClassField = new List<TypeRegistration>();
             this.jvmClassField = new List<TypeRegistration>();
             this.assemblyField = new List<Assembly>();
-            this.assembliesDirectoryField = new List<Directory>();
             this.classPathField = new List<ClassPath>();
             this.forceGenerateBaseClassField = false;
             this.forceGenerateInterfacesField = false;
@@ -123,17 +120,7 @@ namespace com.jni4net.config {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("assembliesDirectory", Order=1)]
-        public List<Directory> assembliesDirectory {
-            get {
-                return this.assembliesDirectoryField;
-            }
-            set {
-                this.assembliesDirectoryField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("assembly", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("assembly", Order=1)]
         public List<Assembly> assembly {
             get {
                 return this.assemblyField;
@@ -143,7 +130,7 @@ namespace com.jni4net.config {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("jvmClass", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("jvmClass", Order=2)]
         public List<TypeRegistration> jvmClass {
             get {
                 return this.jvmClassField;
@@ -153,7 +140,7 @@ namespace com.jni4net.config {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("clrClass", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute("clrClass", Order=3)]
         public List<TypeRegistration> clrClass {
             get {
                 return this.clrClassField;

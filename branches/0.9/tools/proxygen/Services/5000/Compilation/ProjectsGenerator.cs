@@ -70,7 +70,7 @@ namespace com.jni4net.proxygen.Services.Compilation
 
                 IGFileRegion module = BaseCSharpGenerator.CreateGeneratedRegion(csFile);
                 module.AddNamespace(project.ModuleNamespace,
-                    ns => ns.AddClass(project.ModuleName,
+                    ns => ns.AddClass(project.ModuleName+"j4n",
                     mcls =>
                         {
                             mcls.AddField(GTypeClr.Bool, "isModuleInitialized",
@@ -84,7 +84,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                                                {
                                                    init.IsStatic = true;
 
-                                                   init.AddTextLine("if(!isModuleInitialized) lock(typeof(" + project.ModuleName + "))");
+                                                   init.AddTextLine("if(!isModuleInitialized) lock(typeof(" + project.ModuleName + "j4n" + "))");
                                                    init.BlockStatement(
                                                        lck =>
                                                         {
@@ -92,8 +92,8 @@ namespace com.jni4net.proxygen.Services.Compilation
                                                             lck.CallStatic(GTypeJ4N.Registry, "RegisterModule",
                                                                 call =>
                                                                     {
-                                                                        call.AddParameter().TypeOf(project.ModuleName);
-                                                                        call.AddParameter().Value(project.ModuleNamespace + "." + project.ModuleName);
+                                                                        call.AddParameter().TypeOf(project.ModuleName + "j4n");
+                                                                        call.AddParameter().Value(project.ModuleNamespace + "." + project.ModuleName + "j4n");
                                                                         call.AddParameter().Value(project.projectName);
                                                                     });
 
@@ -124,12 +124,12 @@ namespace com.jni4net.proxygen.Services.Compilation
                         }));
                 GProjectCSharp.GenerateFile(csFile);
 
-                string jvFullPath = project.GetJvmFileName(null, project.ModuleNamespace, project.ModuleName);
+                string jvFullPath = project.GetJvmFileName(null, project.ModuleNamespace, project.ModuleName + "j4n");
                 var jvFile = GProjectJava.AddFile(jvFullPath);
                 project.JavaFiles.Add(jvFullPath);
 
                 jvFile.AddNamespace(project.ModuleNamespace)
-                    .AddClass(project.ModuleName,
+                    .AddClass(project.ModuleName + "j4n",
                         mcls =>
                             {
                                 mcls.AddField(GTypeJvm.String, "assemblyName",
@@ -210,12 +210,46 @@ namespace com.jni4net.proxygen.Services.Compilation
                     guidEl.Value = "{" + guid + "}";
 
                     var an = xDocument.Root.XPathSelectElement("ms:PropertyGroup/ms:AssemblyName", nsManager);
-                    an.Value = project.projectName;
+                    an.Value = project.projectName+"-j4n";
 
                     var refer = xDocument.Root.XPathSelectElement("ms:ItemGroup/ms:Reference[@Include='jni4net']", nsManager);
                     refer.SetAttributeValue(XName.Get("Include"), J4NBridge.Setup.J4NAssembly);
                     var hint = refer.XPathSelectElement("ms:HintPath", nsManager);
-                    hint.Value = PathUtils.MakeRelativePath(project.ProjectLocation,J4NBridge.Setup.J4NDllLocation);
+                    hint.Value = PathUtils.MakeRelativePath(project.ProjectLocation,J4NBridge.Setup.J4NDllLocation).Replace("\\","\\\\");
+
+                    var grp = refer.Parent;
+
+                    foreach (var assembly in project.assembly)
+                    {
+                        var refe = new XElement(XName.Get("Reference", vsns));
+                        var inc = new XAttribute(XName.Get("Include"), assembly.assemblyName);
+                        refe.Add(inc);
+                        var sv = new XElement(XName.Get("SpecificVersion", vsns));
+                        sv.Value = "False";
+                        refe.Add(sv);
+                        if (assembly.file!=null)
+                        {
+                            var hp = new XElement(XName.Get("HintPath", vsns));
+                            var absolutePath = PathUtils.MakeAbsolutePath(project.BaseDirectory, assembly.file);
+                            hp.Value = PathUtils.MakeRelativePath(project.ProjectLocation, absolutePath).Replace("\\","\\\\");
+                            refe.Add(hp);
+                        }
+                        grp.Add(refe);
+                        refe.AddAfterSelf("\r\n    ");
+                    }
+                    {
+                        var refe = new XElement(XName.Get("Reference", vsns));
+                        var inc = new XAttribute(XName.Get("Include"), J4NBridge.Setup.JVMCoreAssembly);
+                        refe.Add(inc);
+                        var sv = new XElement(XName.Get("SpecificVersion", vsns));
+                        sv.Value = "False";
+                        refe.Add(sv);
+                        var hp = new XElement(XName.Get("HintPath", vsns));
+                        hp.Value =PathUtils.MakeRelativePath(project.ProjectLocation, J4NBridge.Setup.JVMCoreDllLocation).Replace("\\", "\\\\");
+                        refe.Add(hp);
+                        grp.Add(refe);
+                        refe.AddAfterSelf("\r\n    ");
+                    }
 
                     var cnt = xDocument.Root.XPathSelectElement("ms:ItemGroup/ms:Content", nsManager);
                     var pgConfig = Path.GetFileName(Configurator.FileName);
@@ -242,7 +276,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                 for (int i = 0; i < project.CsharpFiles.Count; i++)
                 {
                     var file = project.CsharpFiles[i];
-                    var relative = PathUtils.MakeRelativePath(project.ProjectLocation, file);
+                    var relative = PathUtils.MakeRelativePath(project.ProjectLocation, file).Replace("\\","\\\\");
                     var compile = new XElement(XName.Get("Compile", vsns));
                     compile.SetAttributeValue(XName.Get("Include"), relative);
                     @group.Add(compile);
@@ -329,7 +363,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                     }
 
                     var nameEl = xDocument.Root.XPathSelectElement("component/orderEntry[@type='module']");
-                    nameEl.SetAttributeValue(XName.Get("module-name"), project.projectName);
+                    nameEl.SetAttributeValue(XName.Get("module-name"), project.projectName+"-j4n");
                     xDocument.Save(imlFile);
 
                     using (var xw = new XmlTextWriter(imlFile, new UTF8Encoding(false)))
@@ -383,7 +417,11 @@ namespace com.jni4net.proxygen.Services.Compilation
                     cmd.AppendLine("%JAVA_HOME%\\bin\\javac -d bin\\classes -encoding UTF-8 -g:none @" + project.projectName + ".javac");
                     cmd.AppendLine("");
                     cmd.AppendLine("echo create jar");
-                    cmd.AppendLine("%JAVA_HOME%\\bin\\jar -cf bin\\" + project.projectName + ".j4n.jar -C bin\\classes .");
+                    cmd.AppendLine("%JAVA_HOME%\\bin\\jar -cf bin\\" + project.projectName + "-j4n.jar -C bin\\classes .");
+                    cmd.AppendLine("");
+                    cmd.AppendLine("echo create dll");
+                    cmd.AppendLine("c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /verbosity:m /nologo " + project.projectName + ".csproj");
+                    cmd.AppendLine("");
                     cmd.AppendLine("POPD");
                     File.WriteAllText(cmdFile, cmd.ToString());
                 }
