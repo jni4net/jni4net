@@ -7,7 +7,7 @@ import net.sf.jni4net.LogLevel;
 public class MyCalcUsageInJava {
     public static void main(String arsg[]) {
         BridgeSetup initialSetup = new BridgeSetup();
-        initialSetup.setLogLevel(LogLevel.DEBUG);
+        initialSetup.setLogLevel(LogLevel.INFO);
         J4NBridge.CreateCLR(initialSetup);
     		
         ICalc calc = new DemoCalc();

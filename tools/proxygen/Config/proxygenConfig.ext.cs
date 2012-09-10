@@ -113,6 +113,25 @@ namespace com.jni4net.config
             }
         }
 
+        [XmlIgnore]
+        public string ProxyAssemblyQualifiedName
+        {
+            get
+            {
+                var aqName = projectName+"-j4n";
+                if (projectVersion != null)
+                {
+                    aqName += ", Version=" + projectVersion;
+                }
+                string pkToken = PKToken;
+                if (pkToken != null)
+                {
+                    aqName += ", PublicKeyToken=" + pkToken;
+                }
+
+                return aqName;
+            }
+        }
         
         [XmlIgnore]
         public string PKToken

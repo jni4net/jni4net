@@ -139,6 +139,14 @@ namespace com.jni4net.proxygen.Services.Compilation
                                         assemblyName.IsPublic = true;
                                         assemblyName.IsSealed = true;
                                     }).TextExpression(" \"" + project.AssemblyQualifiedName + "\"");
+
+                                mcls.AddField(GTypeJvm.String, "proxyAssemblyName",
+                                    assemblyName =>
+                                    {
+                                        assemblyName.IsStatic = true;
+                                        assemblyName.IsPublic = true;
+                                        assemblyName.IsSealed = true;
+                                    }).TextExpression(" \"" + project.ProxyAssemblyQualifiedName + "\"");
                                 /*
                                 mcls.AddField(GTypeJvm.Bool, "isModuleInitialized",
                                     isModuleInitialized =>

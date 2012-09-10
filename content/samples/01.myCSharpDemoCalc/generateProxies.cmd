@@ -13,4 +13,4 @@ copy %~dp0\MyCSharpDemoCalc\bin\MyCSharpDemoCalc-j4n.dll %~dp0\bin\
 
 echo compiling usage
 mkdir bin\classes
-%JAVA_HOME%\bin\javac -d bin\classes -cp %~dp0\bin\jni4net.jar;%~dp0\bin\mscorlib-micro-j4n.jar;%~dp0\bin\MyCSharpDemoCalc.j4n.jar MyCalcUsageInJava.java
+%JAVA_HOME%\bin\javac -d bin\classes -cp %~dp0\bin\jni4net.jar;%~dp0\bin\mscorlib-micro-j4n.jar;%~dp0\bin\MyCSharpDemoCalc-j4n.jar MyCalcUsageInJava.java

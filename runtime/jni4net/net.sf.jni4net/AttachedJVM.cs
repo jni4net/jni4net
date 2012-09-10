@@ -78,6 +78,7 @@ namespace net.sf.jni4net
 
         public void Dispose()
         {
+            Logger.LogInfo("Trying to dispose JVM");
             isDisposed = true;
 
 #if DEBUG
