@@ -291,7 +291,7 @@ namespace com.jni4net.proxygen.Services.Generators
                                                   .Value(staticClrName + ", ")
                                                   .Operator("+")
                                                   .TextExpression(model.ProjectRegistration.ModuleNamespace + "." +
-                                                         model.ProjectRegistration.ModuleName + "j4n" + ".assemblyName")
+                                                         model.ProjectRegistration.ModuleName + "j4n" + ".proxyAssemblyName")
                                                   ;
                                               RegisterProxyParams(model, registerProxy);
                                           }));

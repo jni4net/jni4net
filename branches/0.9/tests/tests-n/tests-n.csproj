@@ -38,6 +38,10 @@
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="jni4net, Version=0.9.0.0, Culture=neutral, PublicKeyToken=134a23405600bab4, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>

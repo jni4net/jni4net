@@ -30,6 +30,13 @@ namespace tests.n.pro
 namespace tests.n
 #endif
 {
+    public class M
+    {
+        public static void Main(string[] args)
+        {
+        }
+    }
+
     public abstract class TestBase
     {
         private AttachedJVM jvm;
