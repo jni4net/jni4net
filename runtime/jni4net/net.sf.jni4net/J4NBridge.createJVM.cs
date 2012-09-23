@@ -65,6 +65,11 @@ namespace net.sf.jni4net
                     AttachCurrentThreadAsDaemon();
                     currentJVM.AttachedThread.JNIEnv = JNIEnv.threadJNIEnv;
                 }
+                foreach (var cp in setup.ClassPathList)
+                {
+                    Logger.LogInfo("Adding to classPath " + cp);
+                    Registry.JvmCoreHooks.AddURL(currentSetup.DefaultClassLoader, cp);
+                }
                 return currentJVM;
             }
 
@@ -112,6 +117,14 @@ namespace net.sf.jni4net
                         currentSetup.JavaHome = jh;
                         Logger.LogWarn("Updated JAVA_HOME to " + jh);
                     }
+                    if(setup.Joined)
+                    {
+                        foreach (var cp in setup.ClassPathList)
+                        {
+                            Logger.LogInfo("Adding to classPath " + cp);
+                            Registry.JvmCoreHooks.AddURL(currentSetup.DefaultClassLoader, cp);
+                        }
+                    }
                 }
                 isInitialized = true;
                 if (clrStart)
@@ -148,6 +161,7 @@ namespace net.sf.jni4net
                     throw J4NException.ExistingJvm();
                 }
                 currentJVM = new AttachedJVM(new JVMInstance(jvms[0]), true);
+                setup.Joined = true;
             }
             else
             {

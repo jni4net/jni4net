@@ -124,7 +124,13 @@ namespace net.sf.jni4net.core
                 Logger.LogDebug("Can't find " + file);
             }
             URL ur = file.toURL();
-
+            foreach (var urL in cl.getURLs())
+            {
+                if(ur.Equals(urL))
+                {
+                    return;
+                }
+            }
             cl.AddUrl(ur);
         }
 
