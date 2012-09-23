@@ -257,7 +257,7 @@ namespace com.jni4net.proxygen.Services.Generators
                     {
                         staticConstructor.CallStatic(
                             new GTextType(model.ProjectRegistration.ModuleNamespace + "." +
-                                          model.ProjectRegistration.ModuleName + "j4n") { IsLocalName = false }, "InitModule");
+                                          model.ProjectRegistration.ModuleName) { IsLocalName = false }, "InitModule");
                     }
                     UTypeUsage bse = model.Exploration.Base;
                     if (bse!=null && bse.Root.IsProtected)

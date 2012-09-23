@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
     <Content Include="dummy-j-j4n.xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="j4n\dummy\jvm\Foobararable.j4n.cs" />
-    <Compile Include="j4n\dummy\jvm\Arrays.j4n.cs" />
-    <Compile Include="j4n\dummy\jvm\Interfaces.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\modules\dummyjj4n.j4n.cs" />
+    <Compile Include="j4n\\dummy\\jvm\\Foobararable.j4n.cs" />
+    <Compile Include="j4n\\dummy\\jvm\\Arrays.j4n.cs" />
+    <Compile Include="j4n\\dummy\\jvm\\Interfaces.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\modules\\dummyjj4n.j4n.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\runtime\jni4net\jni4net.csproj">

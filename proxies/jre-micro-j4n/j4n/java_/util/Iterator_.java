@@ -33,7 +33,7 @@ public class Iterator_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Iterator_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.util.Iterator.class, java_.util.Iterator_.class, java_.util._Iterator.class, new java_.util.Iterator_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Iterator_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.util.Iterator.class, java_.util.Iterator_.class, java_.util._Iterator.class, new java_.util.Iterator_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

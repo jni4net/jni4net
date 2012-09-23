@@ -33,7 +33,7 @@ public class IEnumerable_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Collections.IEnumerable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.collections.IEnumerable.class, system.collections.IEnumerable_.class, system.collections._IEnumerable.class, new system.collections.IEnumerable_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Collections.IEnumerable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.collections.IEnumerable.class, system.collections.IEnumerable_.class, system.collections._IEnumerable.class, new system.collections.IEnumerable_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

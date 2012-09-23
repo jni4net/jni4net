@@ -1,0 +1,9 @@
+-classpath ..\..\tools\test-proxygen\bin\jni4net.jar
+j4n\dummy\clr\ITested.java
+j4n\dummy\clr\ITested_.java
+j4n\dummy\clr\ITestedFactory.java
+j4n\dummy\clr\ITestedFactory_.java
+j4n\dummy\clr\Interfaces.java
+j4n\dummy\clr\InterfacesFactory.java
+j4n\dummy\clr\Tested.java
+j4n\net\sf\jni4net\modules\dummynj4n.java

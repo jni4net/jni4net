@@ -61,7 +61,7 @@ public final class StreamingContext extends system.ValueType
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Runtime.Serialization.StreamingContext_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.runtime.serialization.StreamingContext.class, system.runtime.serialization.StreamingContext.class, system.runtime.serialization.StreamingContext.class, new system.runtime.serialization.StreamingContext.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Runtime.Serialization.StreamingContext_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.runtime.serialization.StreamingContext.class, system.runtime.serialization.StreamingContext.class, system.runtime.serialization.StreamingContext.class, new system.runtime.serialization.StreamingContext.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

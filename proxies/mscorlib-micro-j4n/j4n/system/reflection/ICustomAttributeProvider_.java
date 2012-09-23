@@ -33,7 +33,7 @@ public class ICustomAttributeProvider_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Reflection.ICustomAttributeProvider_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.reflection.ICustomAttributeProvider.class, system.reflection.ICustomAttributeProvider_.class, system.reflection._ICustomAttributeProvider.class, new system.reflection.ICustomAttributeProvider_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Reflection.ICustomAttributeProvider_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.reflection.ICustomAttributeProvider.class, system.reflection.ICustomAttributeProvider_.class, system.reflection._ICustomAttributeProvider.class, new system.reflection.ICustomAttributeProvider_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -69,7 +69,7 @@ public class TextReader extends system.MarshalByRefObject implements system.IDis
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IO.TextReader_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.io.TextReader.class, system.io.TextReader.class, system.io.TextReader.class, new system.io.TextReader.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IO.TextReader_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.io.TextReader.class, system.io.TextReader.class, system.io.TextReader.class, new system.io.TextReader.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

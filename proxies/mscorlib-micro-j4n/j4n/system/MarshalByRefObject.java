@@ -48,7 +48,7 @@ public class MarshalByRefObject extends system.Object
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.MarshalByRefObject_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.MarshalByRefObject.class, system.MarshalByRefObject.class, system.MarshalByRefObject.class, new system.MarshalByRefObject.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.MarshalByRefObject_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.MarshalByRefObject.class, system.MarshalByRefObject.class, system.MarshalByRefObject.class, new system.MarshalByRefObject.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

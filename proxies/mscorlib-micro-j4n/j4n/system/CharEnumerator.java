@@ -57,7 +57,7 @@ public final class CharEnumerator extends system.Object implements system.IClone
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.CharEnumerator_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.CharEnumerator.class, system.CharEnumerator.class, system.CharEnumerator.class, new system.CharEnumerator.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.CharEnumerator_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.CharEnumerator.class, system.CharEnumerator.class, system.CharEnumerator.class, new system.CharEnumerator.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

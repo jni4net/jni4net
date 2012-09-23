@@ -88,8 +88,8 @@
           </element>
           <element id="directory" name="samples">
             <element id="directory" name="01.myCSharpDemoCalc">
-              <element id="directory" name="work">
-                <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/work/MyCSharpDemoCalc.dll" />
+              <element id="directory" name="bin">
+                <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/bin/MyCSharpDemoCalc.dll" />
               </element>
               <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/generateProxies.cmd" />
               <element id="file-copy" path="$PROJECT_DIR$/content/samples/01.myCSharpDemoCalc/MyCalcUsageInJava.java" />

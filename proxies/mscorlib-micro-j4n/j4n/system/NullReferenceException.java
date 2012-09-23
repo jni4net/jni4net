@@ -63,7 +63,7 @@ public class NullReferenceException extends system.SystemException
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.NullReferenceException_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.NullReferenceException.class, system.NullReferenceException.class, system.NullReferenceException.class, new system.NullReferenceException.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.NullReferenceException_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.NullReferenceException.class, system.NullReferenceException.class, system.NullReferenceException.class, new system.NullReferenceException.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

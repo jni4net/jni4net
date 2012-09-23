@@ -53,7 +53,7 @@ public class InterfacesFactory extends system.Object
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.InterfacesFactory_, " + net.sf.jni4net.modules.dummynj4n.assemblyName, dummy.clr.InterfacesFactory.class, dummy.clr.InterfacesFactory.class, dummy.clr.InterfacesFactory.class, new dummy.clr.InterfacesFactory.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.InterfacesFactory_, " + net.sf.jni4net.modules.dummynj4n.proxyAssemblyName, dummy.clr.InterfacesFactory.class, dummy.clr.InterfacesFactory.class, dummy.clr.InterfacesFactory.class, new dummy.clr.InterfacesFactory.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

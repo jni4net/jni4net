@@ -33,7 +33,7 @@ public class IDictionaryEnumerator_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Collections.IDictionaryEnumerator_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.collections.IDictionaryEnumerator.class, system.collections.IDictionaryEnumerator_.class, system.collections._IDictionaryEnumerator.class, new system.collections.IDictionaryEnumerator_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Collections.IDictionaryEnumerator_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.collections.IDictionaryEnumerator.class, system.collections.IDictionaryEnumerator_.class, system.collections._IDictionaryEnumerator.class, new system.collections.IDictionaryEnumerator_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

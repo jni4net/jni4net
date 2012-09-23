@@ -33,7 +33,7 @@ public class DataOutput_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.io.DataOutput_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.io.DataOutput.class, java_.io.DataOutput_.class, java_.io._DataOutput.class, new java_.io.DataOutput_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.io.DataOutput_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.io.DataOutput.class, java_.io.DataOutput_.class, java_.io._DataOutput.class, new java_.io.DataOutput_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

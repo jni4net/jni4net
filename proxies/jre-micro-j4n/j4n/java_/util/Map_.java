@@ -33,7 +33,7 @@ public class Map_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Map_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.util.Map.class, java_.util.Map_.class, java_.util._Map.class, new java_.util.Map_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Map_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.util.Map.class, java_.util.Map_.class, java_.util._Map.class, new java_.util.Map_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }
@@ -71,7 +71,7 @@ public class Map_
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.MapNest.Entry_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.util.Map.Entry.class, java_.util.Map_.Entry_.class, java_.util.Map_._Entry.class, new java_.util.Map_.Entry_.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.MapNest.Entry_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.util.Map.Entry.class, java_.util.Map_.Entry_.class, java_.util.Map_._Entry.class, new java_.util.Map_.Entry_.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }

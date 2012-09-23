@@ -385,7 +385,7 @@ public final class DateTime extends system.ValueType implements system.nongeneri
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.DateTime_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.DateTime.class, system.DateTime.class, system.DateTime.class, new system.DateTime.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.DateTime_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.DateTime.class, system.DateTime.class, system.DateTime.class, new system.DateTime.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

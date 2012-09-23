@@ -33,7 +33,7 @@ public class GenericDeclaration_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.reflect.GenericDeclaration_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.lang.reflect.GenericDeclaration.class, java_.lang.reflect.GenericDeclaration_.class, java_.lang.reflect._GenericDeclaration.class, new java_.lang.reflect.GenericDeclaration_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.reflect.GenericDeclaration_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.lang.reflect.GenericDeclaration.class, java_.lang.reflect.GenericDeclaration_.class, java_.lang.reflect._GenericDeclaration.class, new java_.lang.reflect.GenericDeclaration_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -129,7 +129,7 @@ public class Environment extends system.Object
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Environment_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.Environment.class, system.Environment.class, system.Environment.class, new system.Environment.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Environment_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.Environment.class, system.Environment.class, system.Environment.class, new system.Environment.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }
@@ -240,7 +240,7 @@ public class Environment extends system.Object
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Environment_+SpecialFolder_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.Environment.SpecialFolder.class, system.Environment.SpecialFolder.class, system.Environment.SpecialFolder.class, new system.Environment.SpecialFolder.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Environment_+SpecialFolder_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.Environment.SpecialFolder.class, system.Environment.SpecialFolder.class, system.Environment.SpecialFolder.class, new system.Environment.SpecialFolder.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }

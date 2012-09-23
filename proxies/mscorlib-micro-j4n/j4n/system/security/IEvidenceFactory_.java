@@ -33,7 +33,7 @@ public class IEvidenceFactory_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Security.IEvidenceFactory_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.security.IEvidenceFactory.class, system.security.IEvidenceFactory_.class, system.security._IEvidenceFactory.class, new system.security.IEvidenceFactory_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Security.IEvidenceFactory_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.security.IEvidenceFactory.class, system.security.IEvidenceFactory_.class, system.security._IEvidenceFactory.class, new system.security.IEvidenceFactory_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

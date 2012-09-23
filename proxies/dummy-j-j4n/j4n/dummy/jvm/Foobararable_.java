@@ -33,7 +33,7 @@ public class Foobararable_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Foobararable_, " + net.sf.jni4net.modules.dummyjj4n.assemblyName, dummy.jvm.Foobararable.class, dummy.jvm.Foobararable_.class, dummy.jvm._Foobararable.class, new dummy.jvm.Foobararable_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Foobararable_, " + net.sf.jni4net.modules.dummyjj4n.proxyAssemblyName, dummy.jvm.Foobararable.class, dummy.jvm.Foobararable_.class, dummy.jvm._Foobararable.class, new dummy.jvm.Foobararable_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

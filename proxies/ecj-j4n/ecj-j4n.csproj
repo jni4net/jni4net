@@ -44,8 +44,8 @@
     <Content Include="ecj-j4n.xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 
-    <Compile Include="j4n\org\eclipse\jdt\core\compiler\batch\BatchCompiler.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\modules\ecjj4n.j4n.cs" />
+    <Compile Include="j4n\\org\\eclipse\\jdt\\core\\compiler\\batch\\BatchCompiler.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\modules\\ecjj4n.j4n.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

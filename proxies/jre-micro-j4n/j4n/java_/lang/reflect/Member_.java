@@ -33,7 +33,7 @@ public class Member_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.reflect.Member_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.lang.reflect.Member.class, java_.lang.reflect.Member_.class, java_.lang.reflect._Member.class, new java_.lang.reflect.Member_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.reflect.Member_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.lang.reflect.Member.class, java_.lang.reflect.Member_.class, java_.lang.reflect._Member.class, new java_.lang.reflect.Member_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

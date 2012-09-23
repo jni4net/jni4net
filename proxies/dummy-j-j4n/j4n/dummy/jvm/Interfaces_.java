@@ -52,7 +52,7 @@ public class Interfaces_
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Bar_, " + net.sf.jni4net.modules.dummyjj4n.assemblyName, dummy.jvm.Interfaces.Bar.class, dummy.jvm.Interfaces_.Bar_.class, dummy.jvm.Interfaces_._Bar.class, new dummy.jvm.Interfaces_.Bar_.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Bar_, " + net.sf.jni4net.modules.dummyjj4n.proxyAssemblyName, dummy.jvm.Interfaces.Bar.class, dummy.jvm.Interfaces_.Bar_.class, dummy.jvm.Interfaces_._Bar.class, new dummy.jvm.Interfaces_.Bar_.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }
@@ -117,7 +117,7 @@ public class Interfaces_
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Foo_, " + net.sf.jni4net.modules.dummyjj4n.assemblyName, dummy.jvm.Interfaces.Foo.class, dummy.jvm.Interfaces_.Foo_.class, dummy.jvm.Interfaces_._Foo.class, new dummy.jvm.Interfaces_.Foo_.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Foo_, " + net.sf.jni4net.modules.dummyjj4n.proxyAssemblyName, dummy.jvm.Interfaces.Foo.class, dummy.jvm.Interfaces_.Foo_.class, dummy.jvm.Interfaces_._Foo.class, new dummy.jvm.Interfaces_.Foo_.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }
@@ -182,7 +182,7 @@ public class Interfaces_
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Goo_, " + net.sf.jni4net.modules.dummyjj4n.assemblyName, dummy.jvm.Interfaces.Goo.class, dummy.jvm.Interfaces_.Goo_.class, dummy.jvm.Interfaces_._Goo.class, new dummy.jvm.Interfaces_.Goo_.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Goo_, " + net.sf.jni4net.modules.dummyjj4n.proxyAssemblyName, dummy.jvm.Interfaces.Goo.class, dummy.jvm.Interfaces_.Goo_.class, dummy.jvm.Interfaces_._Goo.class, new dummy.jvm.Interfaces_.Goo_.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }
@@ -290,7 +290,7 @@ public class Interfaces_
         static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
             if (j4n_TypeInfo==null)
             {
-                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Zoo_, " + net.sf.jni4net.modules.dummyjj4n.assemblyName, dummy.jvm.Interfaces.Zoo.class, dummy.jvm.Interfaces_.Zoo_.class, dummy.jvm.Interfaces_._Zoo.class, new dummy.jvm.Interfaces_.Zoo_.j4n_ProxyFactory());
+                j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.jvm.Interfaces+Zoo_, " + net.sf.jni4net.modules.dummyjj4n.proxyAssemblyName, dummy.jvm.Interfaces.Zoo.class, dummy.jvm.Interfaces_.Zoo_.class, dummy.jvm.Interfaces_._Zoo.class, new dummy.jvm.Interfaces_.Zoo_.j4n_ProxyFactory());
             }
             return j4n_TypeInfo;
         }
