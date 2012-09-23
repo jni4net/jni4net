@@ -102,7 +102,7 @@ namespace com.jni4net.proxygen.Services
         public List<IMType> GenerateAs(string asm, string regex = null)
         {
             var res = new List<IMType>();
-            var rx = regex == null ? null : new Regex(regex);
+            var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^"+regex+"$");
             foreach (var record in ams[asm].Where(record => rx == null || rx.IsMatch(record.PlainName)))
             {
                 LoadType(record);

@@ -36,7 +36,7 @@ namespace test.proxygen
         [Test, Explicit]
         public void Generate_Objects()
         {
-            com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\runtime\jni4net\jni4net-j4n.xml","--verbose" });
+            com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\runtime\jni4net\jni4net-j4n.xml"});
         }
 
         [Test, Explicit]
