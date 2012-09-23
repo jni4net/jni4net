@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 <jni4net-proxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
-  <project projectKey="../../_tools/keys/jni4net.snk" projectName="jni4net" projectVersion="0.9.0.0">
-    <classPath jarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar">
-      <javaClass name="java.lang.Object">
+  <Project ProjectKey="../../_tools/keys/jni4net.snk" ProjectName="jni4net" ProjectVersion="0.9.0.0">
+    <ClassPath JarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar">
+      <JavaClass Name="java.lang.Object">
+        <Extends />
+        <Member Exclude="true" Signature="public final native java.lang.Class java.lang.Object.getClass()">
+          <Ret />
+        </Member>
+      </JavaClass>
+    </ClassPath>
+    <ClassPath ClassPathDirectory="..\..\runtime\jni4net\bin\classes">
+      <JavaClass Name="net.sf.jni4net.Out">
         <extends />
-        <member exclude="true" signature="public final native java.lang.Class java.lang.Object.getClass()">
-          <ret />
-        </member>
-      </javaClass>
-    </classPath>
-    <classPath classPathDirectory="..\..\runtime\jni4net\bin\classes">
-      <javaClass name="net.sf.jni4net.Out">
+      </JavaClass>
+      <JavaClass Name="net.sf.jni4net.Ref">
         <extends />
-      </javaClass>
-      <javaClass name="net.sf.jni4net.Ref">
-        <extends />
-      </javaClass>
-    </classPath>
-    <assembly assemblyName="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-      <clrType name="System.Object">
-        <extends />
-        <member signature="Type GetType()">
-          <ret changeType="system.IType" />
-        </member>
-      </clrType>
-    </assembly>
-    <assembly file="..\..\runtime\jni4net\bin\jni4net.dll">
-      <clrType name="net.sf.jni4net.CurrentBridgeSetup">
-        <extends />
-      </clrType>
-    </assembly>
-  </project>
+      </JavaClass>
+    </ClassPath>
+    <Assembly AssemblyName="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <ClrType Name="System.Object">
+        <Extends />
+        <Member Signature="Type GetType()">
+          <Ret ChangeType="system.IType" />
+        </Member>
+      </ClrType>
+    </Assembly>
+    <Assembly File="..\..\runtime\jni4net\bin\jni4net.dll">
+      <ClrType Name="net.sf.jni4net.CurrentBridgeSetup">
+        <Extends />
+      </ClrType>
+    </Assembly>
+  </Project>
 </jni4net-proxygen>

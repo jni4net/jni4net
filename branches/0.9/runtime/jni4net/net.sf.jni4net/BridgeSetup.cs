@@ -106,6 +106,8 @@ namespace net.sf.jni4net
         readonly List<string> classPathList = new List<string>();
         internal string[] ClassPathList { get { return classPathList.ToArray(); } }
 
+        internal bool Joined { get; set; }
+
         [FileIOPermission(SecurityAction.Assert, Unrestricted = true)]
         public void AddClassPath(string classPath)
         {
