@@ -70,7 +70,7 @@ namespace com.jni4net.proxygen.Services.Compilation
 
                 IGFileRegion module = BaseCSharpGenerator.CreateGeneratedRegion(csFile);
                 module.AddNamespace(project.ModuleNamespace,
-                    ns => ns.AddClass(project.ModuleName+"j4n",
+                    ns => ns.AddClass(project.ModuleName,
                     mcls =>
                         {
                             mcls.AddField(GTypeClr.Bool, "isModuleInitialized",
@@ -84,7 +84,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                                                {
                                                    init.IsStatic = true;
 
-                                                   init.AddTextLine("if(!isModuleInitialized) lock(typeof(" + project.ModuleName + "j4n" + "))");
+                                                   init.AddTextLine("if(!isModuleInitialized) lock(typeof(" + project.ModuleName + "))");
                                                    init.BlockStatement(
                                                        lck =>
                                                         {
@@ -92,8 +92,8 @@ namespace com.jni4net.proxygen.Services.Compilation
                                                             lck.CallStatic(GTypeJ4N.Registry, "RegisterModule",
                                                                 call =>
                                                                     {
-                                                                        call.AddParameter().TypeOf(project.ModuleName + "j4n");
-                                                                        call.AddParameter().Value(project.ModuleNamespace + "." + project.ModuleName + "j4n");
+                                                                        call.AddParameter().TypeOf(project.ModuleName);
+                                                                        call.AddParameter().Value(project.ModuleNamespace + "." + project.ModuleName);
                                                                         call.AddParameter().Value(project.projectName);
                                                                     });
 
@@ -124,12 +124,12 @@ namespace com.jni4net.proxygen.Services.Compilation
                         }));
                 GProjectCSharp.GenerateFile(csFile);
 
-                string jvFullPath = project.GetJvmFileName(null, project.ModuleNamespace, project.ModuleName + "j4n");
+                string jvFullPath = project.GetJvmFileName(null, project.ModuleNamespace, project.ModuleName);
                 var jvFile = GProjectJava.AddFile(jvFullPath);
                 project.JavaFiles.Add(jvFullPath);
 
                 jvFile.AddNamespace(project.ModuleNamespace)
-                    .AddClass(project.ModuleName + "j4n",
+                    .AddClass(project.ModuleName,
                         mcls =>
                             {
                                 mcls.AddField(GTypeJvm.String, "assemblyName",
@@ -218,7 +218,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                     guidEl.Value = "{" + guid + "}";
 
                     var an = xDocument.Root.XPathSelectElement("ms:PropertyGroup/ms:AssemblyName", nsManager);
-                    an.Value = project.projectName+"-j4n";
+                    an.Value = project.projectName;
 
                     var refer = xDocument.Root.XPathSelectElement("ms:ItemGroup/ms:Reference[@Include='jni4net']", nsManager);
                     refer.SetAttributeValue(XName.Get("Include"), J4NBridge.Setup.J4NAssembly);
@@ -371,7 +371,7 @@ namespace com.jni4net.proxygen.Services.Compilation
                     }
 
                     var nameEl = xDocument.Root.XPathSelectElement("component/orderEntry[@type='module']");
-                    nameEl.SetAttributeValue(XName.Get("module-name"), project.projectName+"-j4n");
+                    nameEl.SetAttributeValue(XName.Get("module-name"), project.projectName);
                     xDocument.Save(imlFile);
 
                     using (var xw = new XmlTextWriter(imlFile, new UTF8Encoding(false)))
@@ -417,15 +417,15 @@ namespace com.jni4net.proxygen.Services.Compilation
                     var cmd = new StringBuilder();
                     cmd.AppendLine("@echo off");
                     cmd.AppendLine("REM change this to your JDK location");
-                    cmd.AppendLine("set JAVA_HOME=\"c:\\Program Files\\Java\\jdk1.5.0_22\\\"");
+                    cmd.AppendLine("if NOT EXIST \"%JAVA_HOME%\\bin\\javac.exe\" set JAVA_HOME=\"c:\\Program Files\\Java\\jdk1.7.0\\\"");
                     cmd.AppendLine("");
-                    cmd.AppendLine("PUSHD %~dp0\\");
+                    cmd.AppendLine("PUSHD \"%~dp0\\\"");
                     cmd.AppendLine("mkdir bin\\classes");
                     cmd.AppendLine("echo compile java");
-                    cmd.AppendLine("%JAVA_HOME%\\bin\\javac -d bin\\classes -encoding UTF-8 -g:none @" + project.projectName + ".javac");
+                    cmd.AppendLine("%JAVA_HOME%\\bin\\javac.exe -d bin\\classes -encoding UTF-8 -g:none @" + project.projectName + ".javac");
                     cmd.AppendLine("");
                     cmd.AppendLine("echo create jar");
-                    cmd.AppendLine("%JAVA_HOME%\\bin\\jar -cf bin\\" + project.projectName + "-j4n.jar -C bin\\classes .");
+                    cmd.AppendLine("%JAVA_HOME%\\bin\\jar.exe -cf bin\\" + project.projectName + ".jar -C bin\\classes .");
                     cmd.AppendLine("");
                     cmd.AppendLine("echo create dll");
                     cmd.AppendLine("c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe /verbosity:m /nologo " + project.projectName + ".csproj");

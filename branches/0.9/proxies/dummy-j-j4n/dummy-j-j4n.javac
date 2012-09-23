@@ -1,0 +1,5 @@
+-classpath ..\..\dummies\dummy-j\bin\classes;..\..\tools\test-proxygen\bin\jni4net.jar
+j4n\dummy\jvm\Foobararable_.java
+j4n\dummy\jvm\Arrays_.java
+j4n\dummy\jvm\Interfaces_.java
+j4n\net\sf\jni4net\modules\dummyjj4n.java

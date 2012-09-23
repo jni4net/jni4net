@@ -42,7 +42,7 @@ public class Nullable extends system.Object
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Nullable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.nongeneric.Nullable.class, system.nongeneric.Nullable.class, system.nongeneric.Nullable.class, new system.nongeneric.Nullable.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Nullable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.nongeneric.Nullable.class, system.nongeneric.Nullable.class, system.nongeneric.Nullable.class, new system.nongeneric.Nullable.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

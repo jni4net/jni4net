@@ -45,12 +45,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Compile Include="j4n\java\lang\Object.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\Out.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\Ref.j4n.cs" />
-    <Compile Include="j4n\System\Object.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\CurrentBridgeSetup.j4n.cs" />
-    <Compile Include="j4n\net\sf\jni4net\modules\jni4net.j4n.cs" />
+    <Compile Include="j4n\\java\\lang\\Object.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\Out.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\Ref.j4n.cs" />
+    <Compile Include="j4n\\System\\Object.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\CurrentBridgeSetup.j4n.cs" />
+    <Compile Include="j4n\\net\\sf\\jni4net\\modules\\jni4net.j4n.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="java\io\Closeable.cs" />

@@ -33,7 +33,7 @@ public class ITested_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.ITested_, " + net.sf.jni4net.modules.dummynj4n.assemblyName, dummy.clr.ITested.class, dummy.clr.ITested_.class, dummy.clr._ITested.class, new dummy.clr.ITested_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.ITested_, " + net.sf.jni4net.modules.dummynj4n.proxyAssemblyName, dummy.clr.ITested.class, dummy.clr.ITested_.class, dummy.clr._ITested.class, new dummy.clr.ITested_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

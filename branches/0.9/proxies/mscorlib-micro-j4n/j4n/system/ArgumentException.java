@@ -82,7 +82,7 @@ public class ArgumentException extends system.SystemException
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.ArgumentException_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.ArgumentException.class, system.ArgumentException.class, system.ArgumentException.class, new system.ArgumentException.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.ArgumentException_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.ArgumentException.class, system.ArgumentException.class, system.ArgumentException.class, new system.ArgumentException.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

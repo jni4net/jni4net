@@ -118,7 +118,7 @@ namespace com.jni4net.config
         {
             get
             {
-                var aqName = projectName+"-j4n";
+                var aqName = projectName;
                 if (projectVersion != null)
                 {
                     aqName += ", Version=" + projectVersion;

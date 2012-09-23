@@ -261,7 +261,7 @@ public class Array extends system.Object implements system.ICloneable, system.co
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Array_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.Array.class, system.Array.class, system.Array.class, new system.Array.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.Array_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.Array.class, system.Array.class, system.Array.class, new system.Array.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

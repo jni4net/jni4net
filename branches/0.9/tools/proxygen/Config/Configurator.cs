@@ -49,6 +49,7 @@ namespace com.jni4net.proxygen.Config
         public bool Verbose { get; set; }
         public bool Compile { get; set; }
         public bool Debug { get; set; }
+        public bool UpdateConfig { get; set; }
 
         public string PrivateMethodPrefix = "j4n_";
         public string PrivateFieldPrefix = "j4n_";
@@ -78,6 +79,7 @@ namespace com.jni4net.proxygen.Config
             else
             {
                 Config = new ProxygenConfig();
+                UpdateConfig = true;
             }
             ProjectRegistration currentProject=null;
             if(Config.project.Count>0)
@@ -111,6 +113,14 @@ namespace com.jni4net.proxygen.Config
                 else if (o == "--debug-")
                 {
                     Debug = false;
+                }
+                else if (o == "--update-")
+                {
+                    UpdateConfig = false;
+                }
+                else if (o == "--update" || o == "--update+")
+                {
+                    UpdateConfig = true;
                 }
                 else if (o == "--compile" || o == "--compile+")
                 {
@@ -148,7 +158,7 @@ namespace com.jni4net.proxygen.Config
                     if (currentProject==null)
                     {
                         currentProject = new ProjectRegistration();
-                        currentProject.projectName = name;
+                        currentProject.projectName = name+"-j4n";
                         Config.project.Add(currentProject);
                         currentProject.Parent = this;
                     }
@@ -177,7 +187,7 @@ namespace com.jni4net.proxygen.Config
                     if (currentProject==null)
                     {
                         currentProject = new ProjectRegistration();
-                        currentProject.projectName = name;
+                        currentProject.projectName = name + "-j4n";
                         Config.project.Add(currentProject);
                         currentProject.Parent = this;
                     }
@@ -243,14 +253,17 @@ namespace com.jni4net.proxygen.Config
                 }
             }
 
-            var configDir = Path.GetDirectoryName(FileName);
-            if (!Directory.Exists(configDir))
+            if(UpdateConfig)
             {
-                Directory.CreateDirectory(configDir);
-            }
-            using (var fs = new FileStream(FileName, FileMode.Create, FileAccess.Write))
-            {
-                ser.Serialize(fs, Config);
+                var configDir = Path.GetDirectoryName(FileName);
+                if (!Directory.Exists(configDir))
+                {
+                    Directory.CreateDirectory(configDir);
+                }
+                using (var fs = new FileStream(FileName, FileMode.Create, FileAccess.Write))
+                {
+                    ser.Serialize(fs, Config);
+                }
             }
 
             return true;

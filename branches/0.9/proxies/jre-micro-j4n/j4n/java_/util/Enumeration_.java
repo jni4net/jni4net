@@ -33,7 +33,7 @@ public class Enumeration_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Enumeration_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.util.Enumeration.class, java_.util.Enumeration_.class, java_.util._Enumeration.class, new java_.util.Enumeration_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.util.Enumeration_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.util.Enumeration.class, java_.util.Enumeration_.class, java_.util._Enumeration.class, new java_.util.Enumeration_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

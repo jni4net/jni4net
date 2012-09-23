@@ -33,7 +33,7 @@ public class IFormattable_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IFormattable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.IFormattable.class, system.IFormattable_.class, system._IFormattable.class, new system.IFormattable_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IFormattable_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.IFormattable.class, system.IFormattable_.class, system._IFormattable.class, new system.IFormattable_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

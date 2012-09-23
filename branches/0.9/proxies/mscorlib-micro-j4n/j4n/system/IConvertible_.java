@@ -33,7 +33,7 @@ public class IConvertible_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IConvertible_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.IConvertible.class, system.IConvertible_.class, system._IConvertible.class, new system.IConvertible_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IConvertible_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.IConvertible.class, system.IConvertible_.class, system._IConvertible.class, new system.IConvertible_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -27,15 +27,13 @@ public class ITestedFactory_
     }
     
     static  {
-        System.out.printf("static constructopr");
         dummy.clr.ITestedFactory_.j4n_ProxyInit(null);
     }
     
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
-        System.out.printf("j4n_ProxyInit");
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.ITestedFactory_, " + net.sf.jni4net.modules.dummynj4n.assemblyName, dummy.clr.ITestedFactory.class, dummy.clr.ITestedFactory_.class, dummy.clr._ITestedFactory.class, new dummy.clr.ITestedFactory_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "dummy.clr.ITestedFactory_, " + net.sf.jni4net.modules.dummynj4n.proxyAssemblyName, dummy.clr.ITestedFactory.class, dummy.clr.ITestedFactory_.class, dummy.clr._ITestedFactory.class, new dummy.clr.ITestedFactory_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -70,7 +70,7 @@ public final class UIntPtr extends system.ValueType implements system.runtime.se
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.UIntPtr_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.UIntPtr.class, system.UIntPtr.class, system.UIntPtr.class, new system.UIntPtr.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.UIntPtr_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.UIntPtr.class, system.UIntPtr.class, system.UIntPtr.class, new system.UIntPtr.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -33,7 +33,7 @@ public class Iterable_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.Iterable_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.lang.Iterable.class, java_.lang.Iterable_.class, java_.lang._Iterable.class, new java_.lang.Iterable_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.Iterable_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.lang.Iterable.class, java_.lang.Iterable_.class, java_.lang._Iterable.class, new java_.lang.Iterable_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

@@ -33,7 +33,7 @@ public class Comparable_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.Comparable_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.lang.Comparable.class, java_.lang.Comparable_.class, java_.lang._Comparable.class, new java_.lang.Comparable_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.lang.Comparable_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.lang.Comparable.class, java_.lang.Comparable_.class, java_.lang._Comparable.class, new java_.lang.Comparable_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

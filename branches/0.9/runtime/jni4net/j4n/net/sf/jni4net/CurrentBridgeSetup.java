@@ -126,7 +126,7 @@ public class CurrentBridgeSetup extends system.Object
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "net.sf.jni4net.CurrentBridgeSetup_, " + net.sf.jni4net.modules.jni4net.assemblyName, net.sf.jni4net.CurrentBridgeSetup.class, net.sf.jni4net.CurrentBridgeSetup.class, net.sf.jni4net.CurrentBridgeSetup.class, new net.sf.jni4net.CurrentBridgeSetup.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "net.sf.jni4net.CurrentBridgeSetup_, " + net.sf.jni4net.modules.jni4net.proxyAssemblyName, net.sf.jni4net.CurrentBridgeSetup.class, net.sf.jni4net.CurrentBridgeSetup.class, net.sf.jni4net.CurrentBridgeSetup.class, new net.sf.jni4net.CurrentBridgeSetup.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

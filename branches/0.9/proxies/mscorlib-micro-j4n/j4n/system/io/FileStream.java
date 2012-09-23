@@ -143,7 +143,7 @@ public class FileStream extends system.io.Stream
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IO.FileStream_, " + net.sf.jni4net.modules.mscorlibmicroj4n.assemblyName, system.io.FileStream.class, system.io.FileStream.class, system.io.FileStream.class, new system.io.FileStream.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "System.IO.FileStream_, " + net.sf.jni4net.modules.mscorlibmicroj4n.proxyAssemblyName, system.io.FileStream.class, system.io.FileStream.class, system.io.FileStream.class, new system.io.FileStream.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }

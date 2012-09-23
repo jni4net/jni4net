@@ -33,7 +33,7 @@ public class DataInput_
     static protected synchronized net.sf.jni4net.core.ProxyInfo j4n_ProxyInit(net.sf.jni4net.inj.INJEnv env) {
         if (j4n_TypeInfo==null)
         {
-            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.io.DataInput_, " + net.sf.jni4net.modules.jremicroj4n.assemblyName, java.io.DataInput.class, java_.io.DataInput_.class, java_.io._DataInput.class, new java_.io.DataInput_.j4n_ProxyFactory());
+            j4n_TypeInfo = net.sf.jni4net.core.Registry.registerProxy(env, "java.io.DataInput_, " + net.sf.jni4net.modules.jremicroj4n.proxyAssemblyName, java.io.DataInput.class, java_.io.DataInput_.class, java_.io._DataInput.class, new java_.io.DataInput_.j4n_ProxyFactory());
         }
         return j4n_TypeInfo;
     }
