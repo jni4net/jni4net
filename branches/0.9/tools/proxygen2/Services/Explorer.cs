@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
-using java.lang;
 
 namespace com.jni4net.proxygen.Services
 {
@@ -24,67 +22,135 @@ namespace com.jni4net.proxygen.Services
         {
             foreach (var projectRegistration in config.Project)
             {
-                foreach (var classPath in projectRegistration.ClassPath)
-                {
-                    if (!string.IsNullOrEmpty(classPath.ClassPathDirectory))
-                    {
-                        JvmResolver.AddDir(projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory));
-                    }
-                    else if (!string.IsNullOrEmpty(classPath.JarFile))
-                    {
-                        JvmResolver.AddJar(projectRegistration.MakeAbsolutePath(classPath.JarFile));
-                    }
-                    else
-                    {
-                        const string message = "ClassPathDirectory or JarFile missing";
-                        Logger.LogError(message, null, null);
-                        throw new ProxygenConfigException(message);
-                    }
-                }
-
-                foreach (var assembly in projectRegistration.Assembly)
-                {
-                    if (!string.IsNullOrEmpty(assembly.AssemblyName))
-                    {
-                        ClrResolver.AddName(assembly.AssemblyName);
-                    }
-                    else if (!string.IsNullOrEmpty(assembly.File))
-                    {
-                        ClrResolver.AddPath(projectRegistration.MakeAbsolutePath(assembly.File));
-                    }
-                    else
-                    {
-                        const string message = "ClassPathDirectory or JarFile missing";
-                        Logger.LogError(message, null, null);
-                        throw new ProxygenConfigException(message);
-                    }
-                }
+                InitJvm(projectRegistration);
+                InitClr(projectRegistration);
             }
 
             ClrResolver.Init();
             JvmResolver.Init();
         }
 
+        private void InitClr(ProjectRegistration projectRegistration)
+        {
+            if (projectRegistration.Assembly == null)
+            {
+                return;
+            }
+            foreach (var assembly in projectRegistration.Assembly)
+            {
+                if (!string.IsNullOrEmpty(assembly.AssemblyName))
+                {
+                    ClrResolver.AddName(assembly.AssemblyName);
+                }
+                else if (!string.IsNullOrEmpty(assembly.File))
+                {
+                    ClrResolver.AddPath(projectRegistration.MakeAbsolutePath(assembly.File));
+                }
+                else
+                {
+                    const string message = "ClassPathDirectory or JarFile missing";
+                    Logger.LogError(message);
+                    throw new ProxygenConfigException(message);
+                }
+            }
+        }
+
+        private void InitJvm(ProjectRegistration projectRegistration)
+        {
+            if (projectRegistration.ClassPath==null)
+            {
+                return;
+            }
+            foreach (var classPath in projectRegistration.ClassPath)
+            {
+                if (!string.IsNullOrEmpty(classPath.ClassPathDirectory))
+                {
+                    JvmResolver.AddDir(projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory));
+                }
+                else if (!string.IsNullOrEmpty(classPath.JarFile))
+                {
+                    JvmResolver.AddJar(projectRegistration.MakeAbsolutePath(classPath.JarFile));
+                }
+                else
+                {
+                    const string message = "ClassPathDirectory or JarFile missing";
+                    Logger.LogError(message);
+                    throw new ProxygenConfigException(message);
+                }
+            }
+        }
+
         public void Explore(ProxygenConfig config)
         {
             foreach (var projectRegistration in config.Project)
             {
-                foreach (var classPath in projectRegistration.ClassPath)
+                ExploreJvm(projectRegistration);
+                ExploreClr(projectRegistration);
+            }
+        }
+
+        private void ExploreClr(ProjectRegistration projectRegistration)
+        {
+            foreach (var assembly in projectRegistration.Assembly)
+            {
+                if (assembly.Generate && (assembly.ClrType == null || assembly.ClrType.Count==0))
                 {
-                    if (classPath.Generate)
+                    var models = string.IsNullOrEmpty(assembly.AssemblyName)
+                                     ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File))
+                                     : ClrResolver.GenerateAs(assembly.AssemblyName);
+                    foreach (var model in models)
                     {
-                        var models = string.IsNullOrEmpty(classPath.ClassPathDirectory)
-                                         ? JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.JarFile))
-                                         : JvmResolver.GenerateCp(
-                                             projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory));
+                        model.IsGenerate = true;
+                        model.IsExplore = true;
+                        model.IsClr = true;
+                        TypeRepository.Register(model);
+                    }
+                }
+                if (assembly.ClrType!=null)
+                {
+                    foreach (var registration in assembly.ClrType)
+                    {
+                        var models = string.IsNullOrEmpty(assembly.AssemblyName)
+                                         ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File),
+                                             registration.Name)
+                                         : ClrResolver.GenerateAs(assembly.AssemblyName, registration.Name);
+                        if (models.Count == 0)
+                        {
+                            Logger.LogMessage("Can't find type " + registration.Name);
+                        }
                         foreach (var model in models)
                         {
-                            model.IsGenerate = true;
-                            model.IsExplore = true;
+                            model.Registration = registration;
+                            model.IsGenerate = registration.Generate && !registration.Exclude;
+                            model.IsExplore = registration.Exclude;
+                            model.IsClr = true;
                             TypeRepository.Register(model);
                         }
                     }
+                }
+            }
+        }
 
+        private void ExploreJvm(ProjectRegistration projectRegistration)
+        {
+            foreach (var classPath in projectRegistration.ClassPath)
+            {
+                if (classPath.Generate && (classPath.JavaClass==null || classPath.JavaClass.Count == 0))
+                {
+                    var models = string.IsNullOrEmpty(classPath.ClassPathDirectory)
+                                     ? JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.JarFile))
+                                     : JvmResolver.GenerateCp(
+                                         projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory));
+                    foreach (var model in models)
+                    {
+                        model.IsGenerate = true;
+                        model.IsExplore = true;
+                        model.IsClr = false;
+                        TypeRepository.Register(model);
+                    }
+                }
+                if (classPath.JavaClass != null)
+                {
                     foreach (var registration in classPath.JavaClass)
                     {
                         var models = string.IsNullOrEmpty(classPath.ClassPathDirectory)
@@ -102,41 +168,7 @@ namespace com.jni4net.proxygen.Services
                             model.Registration = registration;
                             model.IsGenerate = registration.Generate && !registration.Exclude;
                             model.IsExplore = !registration.Exclude;
-                            TypeRepository.Register(model);
-                        }
-                    }
-                }
-
-                foreach (var assembly in projectRegistration.Assembly)
-                {
-                    if (assembly.Generate)
-                    {
-                        var models = string.IsNullOrEmpty(assembly.AssemblyName)
-                                         ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File))
-                                         : ClrResolver.GenerateAs(assembly.AssemblyName);
-                        foreach (var model in models)
-                        {
-                            model.IsGenerate = true;
-                            model.IsExplore = true;
-                            TypeRepository.Register(model);
-                        }
-                    }
-
-                    foreach (var registration in assembly.ClrType)
-                    {
-                        var models = string.IsNullOrEmpty(assembly.AssemblyName)
-                                         ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File),
-                                             registration.Name)
-                                         : ClrResolver.GenerateAs(assembly.AssemblyName, registration.Name);
-                        if (models.Count == 0)
-                        {
-                            Logger.LogMessage("Can't find type " + registration.Name);
-                        }
-                        foreach (var model in models)
-                        {
-                            model.Registration = registration;
-                            model.IsGenerate = registration.Generate && !registration.Exclude;
-                            model.IsExplore = registration.Exclude;
+                            model.IsClr = false;
                             TypeRepository.Register(model);
                         }
                     }

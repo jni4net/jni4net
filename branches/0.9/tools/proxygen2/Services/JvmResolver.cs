@@ -129,7 +129,7 @@ namespace com.jni4net.proxygen.Services
         public List<IMType> GenerateCp(string cp, string regex)
         {
             var res = new List<IMType>();
-            var rx = regex == null ? null : new Regex(regex);
+            var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^" + regex + "$");
             foreach (var record in cps[cp].Where(record => rx == null || rx.IsMatch(record.PlainName)))
             {
                 LoadClass(record);
