@@ -40,7 +40,7 @@ namespace com.jni4net.proxygen.Services
         public Configurator Configurator { get; set; }
 
         private readonly BridgeSetup bridgeSetup = new BridgeSetup();
-        Dictionary<string, List<Record>> cps = new Dictionary<string, List<Record>>();
+        readonly Dictionary<string, List<Record>> cps = new Dictionary<string, List<Record>>();
         List<string> jars = new List<string>();
         List<string> dirs = new List<string>();
         readonly Dictionary<string, Record> byLowName = new Dictionary<string, Record>();
@@ -121,9 +121,9 @@ namespace com.jni4net.proxygen.Services
             jars = null;
             dirs = null;
 
-            TypeRepository.JavaLangClass = ResolveType((Class)Class._class);
-            TypeRepository.JavaLangObject = ResolveType((Class)Object._class);
-            TypeRepository.JavaLangThrowable = ResolveType((Class)Throwable._class);
+            TypeRepository.JavaLangClass = ResolveModel((Class)Class._class);
+            TypeRepository.JavaLangObject = ResolveModel((Class)Object._class);
+            TypeRepository.JavaLangThrowable = ResolveModel((Class)Throwable._class);
         }
 
         public List<IMType> GenerateCp(string cp, string regex)
@@ -163,7 +163,7 @@ namespace com.jni4net.proxygen.Services
             }
         }
 
-        public IMType ResolveType(Class clazz)
+        public IMType ResolveModel(Class clazz)
         {
             Record res;
             if(byClass.TryGetValue(clazz, out res))
@@ -177,6 +177,27 @@ namespace com.jni4net.proxygen.Services
             res = new Record {Clazz = clazz, ReflectionName = reflectionName, PlainName = plainName};
             LoadClass(res, true);
             return res.Model;
+        }
+
+        public IMType ResolveModel(string fullname)
+        {
+            Record res;
+            if (byName.TryGetValue(fullname, out res))
+            {
+                LoadClass(res, true);
+                return res.Model;
+            }
+            if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
+            {
+                LoadClass(res, true);
+                return res.Model;
+            }
+            return null;
+        }
+
+        public void UpdateModel(IMType model)
+        {
+            byClass[model.JvmType].Model = model;
         }
 
         private IEnumerable<string> EnumerateClassesInDir(string dir)

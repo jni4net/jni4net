@@ -28,7 +28,7 @@ namespace com.jni4net.proxygen.Services
         [Dependency]
         public ITypeRepository TypeRepository { get; set; }
 
-        Dictionary<string, List<Record>> ams = new Dictionary<string, List<Record>>();
+        readonly Dictionary<string, List<Record>> ams = new Dictionary<string, List<Record>>();
         readonly Dictionary<string, Record> byLowName = new Dictionary<string, Record>();
         readonly Dictionary<string, Record> byName = new Dictionary<string, Record>();
         readonly Dictionary<Type, Record> byType = new Dictionary<Type, Record>();
@@ -136,7 +136,7 @@ namespace com.jni4net.proxygen.Services
             }
         }
 
-        public IMType ResolveType(Type type)
+        public IMType ResolveModel(Type type)
         {
             Record res;
             if (byType.TryGetValue(type, out res))
@@ -150,6 +150,27 @@ namespace com.jni4net.proxygen.Services
             LoadType(res, true);
             return res.Model;
         
+        }
+
+        public IMType ResolveModel(string fullname)
+        {
+            Record res;
+            if (byName.TryGetValue(fullname, out res))
+            {
+                LoadType(res, true);
+                return res.Model;
+            }
+            if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
+            {
+                LoadType(res, true);
+                return res.Model;
+            }
+            return null;
+        }
+
+        public void UpdateModel(IMType model)
+        {
+            byType[model.ClrType].Model = model;
         }
 
         private Record RegisterType(Type type)

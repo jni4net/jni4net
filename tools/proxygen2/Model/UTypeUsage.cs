@@ -4,5 +4,6 @@ namespace com.jni4net.proxygen.Model
 {
     public class UTypeUsage : /*IGSnippet,*/ IUTypeUsage
     {
+        public IMTypeView Parent { get; set; }
     }
 }

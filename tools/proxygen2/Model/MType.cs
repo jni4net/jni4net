@@ -1,14 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Text;
+using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
 using java.lang;
+using StringBuilder = System.Text.StringBuilder;
 using Type = IKVM.Reflection.Type;
 
 namespace com.jni4net.proxygen.Model
 {
     public class MType : IMType
     {
+        public MType()
+        {
+            Interfaces=new List<IMType>();
+            Views=new Dictionary<ViewKind, IMTypeView>();
+            Members=new List<IMMember>();
+            Registration = new TypeRegistration {IsSyntetic = true};
+        }
+
+        public Stage Stage { get; set; }
+
         public bool IsGenerate { get; set; }
         public bool IsExplore { get; set; }
+        public bool IsQueueing { get; set; }
         public bool IsVerbose { get; set; }
         public Class JvmType { get; set; }
         public Type ClrType { get; set; }
@@ -24,103 +38,21 @@ namespace com.jni4net.proxygen.Model
 
         public override string ToString()
         {
-            return IsClr 
-                ? ClrType.FullName 
-                : JvmType.getName();
+            var sb=new StringBuilder();
+            sb.Append(IsClr? ClrType.FullName : JvmType.getName());
+            sb.Append('{');
+            if (IsClr)
+            {
+                sb.Append('C');
+                sb.Append(JvmType != null ? 'j' : ' ');
+            }
+            else
+            {
+                sb.Append(ClrType != null ? 'c' : ' ');
+                sb.Append('J');
+            }
+            sb.Append('}');
+            return sb.ToString();
         }
-    }
-
-    public class MTypeView : IMTypeView
-    {
-        public MTypeView(IMType owner, ViewKind viewKind)
-        {
-            Owner = owner;
-            ViewKind = viewKind;
-            Interfaces=new List<IMType>();
-            Members=new List<IMMember>();
-        }
-
-        public ViewKind ViewKind { get; set; }
-
-        public IMType Owner { get; set; }
-
-        public List<IMType> Interfaces { get; set; }
-        public List<IMMember> Members { get; set; }
-
-
-        #region forward to owner
-
-        public Class JvmType
-        {
-            get { return Owner.JvmType; }
-            set { Owner.JvmType = value; }
-        }
-        
-        public Type ClrType 
-        {
-            get { return Owner.ClrType; }
-            set { Owner.ClrType = value; }
-        }
-
-        public IMType Parent
-        {
-            get { return Owner.Parent; }
-            set { Owner.Parent = value; }
-        }
-
-        public IMType Base
-        {
-            get { return Owner.Base; }
-            set { Owner.Base = value; }
-        }
-
-        public Dictionary<ViewKind, IMTypeView> Views
-        {
-            get { return Owner.Views; }
-        }
-
-        public bool IsClr
-        {
-            get { return Owner.IsClr; }
-            set { Owner.IsClr = value; }
-        }
-
-        public bool IsJvm
-        {
-            get { return Owner.IsJvm; }
-            set { Owner.IsJvm = value; }
-        }
-        
-        public bool IsGenerate
-        {
-            get { return Owner.IsGenerate; }
-            set { Owner.IsGenerate = value; }
-        }
-
-        public bool IsExplore
-        {
-            get { return Owner.IsExplore; }
-            set { Owner.IsExplore = value; }
-        }
-
-        public bool IsVerbose
-        {
-            get { return Owner.IsVerbose; }
-            set { Owner.IsVerbose = value; }
-        }
-
-        public ITypeRegistration Registration
-        {
-            get { return Owner.Registration; }
-            set { Owner.Registration = value; }
-        }
-
-
-        public override string ToString()
-        {
-            return Owner.ToString();
-        }
-
-        #endregion
     }
 }

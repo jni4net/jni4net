@@ -57,10 +57,20 @@ namespace com.jni4net.config
             get { return Member.Cast<IMemberRegistration>().ToList(); }
         }
 
+        [XmlIgnore]
+        public List<IImplementsRegistration> Implement
+        {
+            get { return Implements.Cast<IImplementsRegistration>().ToList(); }
+        }
+
         public override string ToString()
         {
             return Name;
         }
+    }
+
+    public partial class ImplementsRegistration : IImplementsRegistration
+    {
     }
 
     public partial class MemberRegistration : IMemberRegistration

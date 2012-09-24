@@ -9,6 +9,8 @@ namespace com.jni4net.proxygen.Interfaces
         void AddPath(string filename);
         void Init();
         List<IMType> GenerateAs(string asm, string regex = null);
-        IMType ResolveType(Type clazz);
+        IMType ResolveModel(Type clazz);
+        IMType ResolveModel(string fullname);
+        void UpdateModel(IMType model);
     }
 }
