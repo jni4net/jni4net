@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System.Collections.Generic;
+using Microsoft.Practices.Unity;
 using com.jni4net.proxygen.Interfaces;
 
 namespace com.jni4net.proxygen.Services
@@ -8,10 +9,17 @@ namespace com.jni4net.proxygen.Services
         [Dependency]
         public ILogger Logger { get; set; }
 
+        List<IMType> models=new List<IMType>();
 
         public void Register(IMType type)
         {
-            Logger.LogMessage(type.ToString());
+            //Logger.LogMessage(type.ToString());
+            models.Add(type);
+        }
+
+        public List<IMType> AllModels()
+        {
+            return models;
         }
 
         public IMType SystemObject { get; set; }

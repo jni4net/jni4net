@@ -21,9 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endregion
 
 using System;
-using com.jni4net.proxygen.Config;
 using com.jni4net.proxygen.Interfaces;
-using Microsoft.Practices.Unity;
 
 namespace com.jni4net.proxygen.Services
 {
@@ -53,19 +51,22 @@ namespace com.jni4net.proxygen.Services
                 {
                     if (ex != null)
                     {
-                        LogMessage(message + ": " + ex.GetType() + " " + ex.Message, null);
+                        LogMessage(message + ": " + ex.GetType() + " " + ex.Message);
                     }
                     else
                     {
-                        LogMessage(message, null);
+                        LogMessage(message);
                     }
                 }
             }
-            catch(Exception)
+            catch(Exception exception)
             {
-                LogMessage(message + ": " + ex.GetType() + " " + ex.Message, null);
+                LogMessage(message + ": " + exception.GetType() + " " + exception.Message);
             }
-            LogVerbose(ex.ToString(), model);
+            if (ex != null)
+            {
+                LogVerbose(ex.ToString(), model);
+            }
         }
 
         public void LogVerbose(string message, IMType model = null)

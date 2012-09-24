@@ -9,6 +9,5 @@ namespace com.jni4net.proxygen.Interfaces
     public interface IExplorer
     {
         void Init(ProxygenConfig config);
-        void Explore(ProxygenConfig config);
     }
 }

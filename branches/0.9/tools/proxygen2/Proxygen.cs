@@ -42,6 +42,9 @@ namespace com.jni4net.proxygen
         public IExplorer Explorer { get; set; }
 
         [Dependency]
+        public IWorkQueue WorkQueue { get; set; }
+
+        [Dependency]
         public ILogger Logger { get; set; }
 
         public static IContainer Configure(bool loadPlugins)
@@ -102,7 +105,8 @@ namespace com.jni4net.proxygen
             Logger.Verbose = Configurator.Verbose;
 
             Explorer.Init(Configurator.Config);
-            Explorer.Explore(Configurator.Config);
+
+            WorkQueue.Run();
 
             return 0;
         }

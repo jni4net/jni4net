@@ -67,11 +67,16 @@
     <Compile Include="Interfaces\IKnownTypes.cs" />
     <Compile Include="Interfaces\IMMember.cs" />
     <Compile Include="Interfaces\IMType.cs" />
+    <Compile Include="Interfaces\INTypeName.cs" />
     <Compile Include="Interfaces\ITypeRegistration.cs" />
     <Compile Include="Interfaces\ITypeRepository.cs" />
     <Compile Include="Interfaces\IUTypeUsage.cs" />
+    <Compile Include="Interfaces\IWorkQueue.cs" />
     <Compile Include="Model\MMember.cs" />
+    <Compile Include="Model\MMemberView.cs" />
     <Compile Include="Model\MType.cs" />
+    <Compile Include="Model\MTypeView.cs" />
+    <Compile Include="Model\NTypeName.cs" />
     <Compile Include="Model\UTypeUsage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -122,15 +127,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Proxygen.cs" />
     <Compile Include="ProxygenException.cs" />
-    <Compile Include="Services\ClrResolver.cs" />
-    <Compile Include="Services\Explorer.cs" />
-    <Compile Include="Services\JvmResolver.cs" />
-    <Compile Include="Services\TypeRepository.cs" />
+    <Compile Include="Services\0100 New\ClrResolver.cs" />
+    <Compile Include="Services\0100 New\Explorer.cs" />
+    <Compile Include="Services\0100 New\JvmResolver.cs" />
+    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="Model\Stage.cs" />
+    <Compile Include="Services\1 Match\NameProcessor.cs" />
+    <Compile Include="Services\Utils\ProcessorBase.cs" />
+    <Compile Include="Services\Utils\TypeRepository.cs" />
+    <Compile Include="Services\Utils\WorkQueue.cs" />
     <Compile Include="Utils\EnumUtils.cs" />
     <Compile Include="Utils\PathUtils.cs" />
     <Compile Include="Utils\ReflectionUtils.cs" />
-    <Compile Include="Services\Container.cs" />
-    <Compile Include="Services\Logger.cs" />
+    <Compile Include="Services\Utils\Container.cs" />
+    <Compile Include="Services\Utils\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\_lib\ecj-4.2.jar">

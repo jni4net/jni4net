@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using com.jni4net.proxygen.Model;
 
 namespace com.jni4net.proxygen.Interfaces
 {
-    public interface IUTypeUsage
+    public interface IWorkQueue
     {
-        IMTypeView Parent { get; set; }
+        void Run();
+        void Enqueue(IMType model, Stage stage);
     }
 }

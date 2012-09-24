@@ -10,6 +10,8 @@ namespace com.jni4net.proxygen.Interfaces
         void AddJar(string cp);
         void Init();
         List<IMType> GenerateCp(string cp, string regex=null);
-        IMType ResolveType(Class clazz);
+        IMType ResolveModel(Class clazz);
+        IMType ResolveModel(string fullname);
+        void UpdateModel(IMType model);
     }
 }

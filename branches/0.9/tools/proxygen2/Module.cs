@@ -41,11 +41,13 @@ namespace com.jni4net.proxygen
 
 
                 .RegisterType<IExplorer,Explorer>(new ContainerControlledLifetimeManager())
+                .RegisterType<IWorkQueue, WorkQueue>(new ContainerControlledLifetimeManager())
                 .RegisterType<IJvmResolver, JvmResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<IClrResolver, ClrResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<ITypeRepository, TypeRepository>(new ContainerControlledLifetimeManager())
 
-                //.RegisterType<IEnumerable<IModelHandler>, IModelHandler[]>()
+                .RegisterType<IProcessor, NameProcessor>("NameProcessor")
+                .RegisterType<IEnumerable<IProcessor>, IProcessor[]>()
                 ;
 
         }
