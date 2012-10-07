@@ -37,18 +37,8 @@
     <xs:attribute name="ProjectKey" type="xs:string" use="optional"/>
 
     <xs:attribute name="BaseDirectory" type="xs:string" use="optional"/>
+    <xs:attribute name="GenerateNestedClasses" type="xs:boolean" default="true" use="optional"/>
     <!--
-    <xs:attribute name="ForceGenerateBaseClass" type="xs:boolean" default="false" use="optional"/>
-    <xs:attribute name="ForceGenerateInterfaces" type="xs:boolean" default="false" use="optional"/>
-    <xs:attribute name="ForceGenerateNestedClasses" type="xs:boolean" default="false" use="optional"/>
-    <xs:attribute name="ForceGenerateGenericParams" type="xs:boolean" default="false" use="optional"/>
-    <xs:attribute name="AutoGenerateBaseClass" type="xs:boolean" default="true" use="optional"/>
-    <xs:attribute name="AutoGenerateInterfaces" type="xs:boolean" default="true" use="optional"/>
-    <xs:attribute name="AutoGenerateNestedClasses" type="xs:boolean" default="true" use="optional"/>
-    <xs:attribute name="AutoGenerateGenericParams" type="xs:boolean" default="true" use="optional"/>
-    <xs:attribute name="AutoGenerateMethodParams" type="xs:boolean" default="false" use="optional"/>
-    <xs:attribute name="AutoSubstituteMethodParams" type="xs:boolean" default="true" use="optional"/>
-    <xs:attribute name="ForceAutoGenerate" type="xs:boolean" default="false" use="optional"/>
     <xs:attribute name="TargetDirJvm" type="xs:string" use="optional" default="j4n"/>
     <xs:attribute name="TargetDirClr" type="xs:string" use="optional" default="j4n"/>
     <xs:attribute name="DisableProjectGeneration" type="xs:boolean" default="false" use="optional"/>
@@ -60,12 +50,12 @@
   <xs:complexType name="TargetOptions">
     <xs:attribute name="TargetDirJvm" type="xs:string" use="optional" />
     <xs:attribute name="TargetDirClr" type="xs:string" use="optional" />
-    <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
   </xs:complexType>
 
   <xs:complexType name="TypeContainer" abstract="true">
     <xs:complexContent >
       <xs:extension base="TargetOptions">
+        <xs:attribute name="Generate" type="xs:boolean" use="optional" default="false"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -112,6 +102,7 @@
           <xs:element name="Implements"  type="jni4net:ImplementsRegistration" maxOccurs="unbounded" minOccurs="0"/>
           <xs:element name="Member"  type="jni4net:MemberRegistration" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="Generate" type="xs:boolean" use="optional" default="true"/>
         <xs:attribute name="Name" type="xs:string" use="required"/>
         <xs:attribute name="Rename" type="xs:string" use="optional"/>
         <xs:attribute name="Move" type="xs:string" use="optional"/>

@@ -10,5 +10,6 @@ namespace com.jni4net.proxygen.Interfaces
     {
         void Run();
         void Enqueue(IMType model, Stage stage);
+        void Enqueue(IMType model, bool generate, bool explore);
     }
 }

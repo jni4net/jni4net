@@ -17,8 +17,8 @@ namespace com.jni4net.proxygen.Interfaces
         Dictionary<ViewKind, IMTypeView> Views { get; }
         ITypeRegistration Registration { get; set; }
 
-        Class JvmType { get; set; }
-        Type ClrType { get; set; }
+        Class JvmReflection { get; set; }
+        Type ClrReflection { get; set; }
 
         bool IsClr { get; set; }
         bool IsJvm { get; set; }

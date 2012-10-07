@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
+using com.jni4net.proxygen.Model;
 
 namespace com.jni4net.proxygen.Services
 {
@@ -83,16 +84,19 @@ namespace com.jni4net.proxygen.Services
 
         private void ExploreConfigClr(ProjectRegistration projectRegistration)
         {
+            var configParent = new MType(null) {Registration = new TypeRegistration {Parent = projectRegistration,Name = "Config parent", Generate = false,Exclude = true}};
+            configParent.Parent = configParent;
+            
             foreach (var assembly in projectRegistration.Assembly)
             {
                 if (assembly.Generate && assembly.ClrType.Count == 0)
                 {
                     var models = string.IsNullOrEmpty(assembly.AssemblyName)
-                                     ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File))
-                                     : ClrResolver.GenerateAs(assembly.AssemblyName);
+                                     ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File), configParent)
+                                     : ClrResolver.GenerateAs(assembly.AssemblyName, configParent);
                     foreach (var model in models)
                     {
-                        model.Registration = new TypeRegistration{Generate = true, IsSyntetic = true};
+                        model.Registration = new TypeRegistration{Generate = true, IsSyntetic = true, Parent = projectRegistration};
                         model.IsGenerate = true;
                         model.IsExplore = true;
                         model.IsClr = true;
@@ -101,10 +105,10 @@ namespace com.jni4net.proxygen.Services
                 }
                 foreach (var registration in assembly.ClrType)
                 {
+                    registration.Parent = projectRegistration;
                     var models = string.IsNullOrEmpty(assembly.AssemblyName)
-                                     ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File),
-                                         registration.Name)
-                                     : ClrResolver.GenerateAs(assembly.AssemblyName, registration.Name);
+                                     ? ClrResolver.GenerateAs(projectRegistration.MakeAbsolutePath(assembly.File), configParent, registration.Name)
+                                     : ClrResolver.GenerateAs(assembly.AssemblyName, configParent, registration.Name);
                     if (models.Count == 0)
                     {
                         Logger.LogMessage("Can't find type " + registration.Name);
@@ -124,17 +128,19 @@ namespace com.jni4net.proxygen.Services
 
         private void ExploreConfigJvm(ProjectRegistration projectRegistration)
         {
+            var configParent = new MType(null) { Registration = new TypeRegistration { Parent = projectRegistration, Name = "Config parent", Generate = false, Exclude = true } };
+            configParent.Parent = configParent;
+
             foreach (var classPath in projectRegistration.ClassPath)
             {
                 if (classPath.Generate && classPath.JavaClass.Count == 0)
                 {
                     var models = string.IsNullOrEmpty(classPath.ClassPathDirectory)
-                                     ? JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.JarFile))
-                                     : JvmResolver.GenerateCp(
-                                         projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory));
+                                     ? JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.JarFile), configParent)
+                                     : JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory), configParent);
                     foreach (var model in models)
                     {
-                        model.Registration = new TypeRegistration { Generate = true, IsSyntetic = true };
+                        model.Registration = new TypeRegistration { Generate = true, IsSyntetic = true,Parent = projectRegistration};
                         model.IsGenerate = true;
                         model.IsExplore = true;
                         model.IsClr = false;
@@ -143,12 +149,10 @@ namespace com.jni4net.proxygen.Services
                 }
                 foreach (var registration in classPath.JavaClass)
                 {
+                    registration.Parent = projectRegistration;
                     var models = string.IsNullOrEmpty(classPath.ClassPathDirectory)
-                                     ? JvmResolver.GenerateCp(
-                                         projectRegistration.MakeAbsolutePath(classPath.JarFile), registration.Name)
-                                     : JvmResolver.GenerateCp(
-                                         projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory),
-                                         registration.Name);
+                                     ? JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.JarFile), configParent, registration.Name)
+                                     : JvmResolver.GenerateCp(projectRegistration.MakeAbsolutePath(classPath.ClassPathDirectory), configParent, registration.Name);
                     if (models.Count == 0)
                     {
                         Logger.LogMessage("Can't find class " + registration.Name);

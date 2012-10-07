@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using IKVM.Reflection;
 using Microsoft.Practices.Unity;
+using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
 using com.jni4net.proxygen.Model;
+using Assembly = IKVM.Reflection.Assembly;
 using Type = IKVM.Reflection.Type;
 
 namespace com.jni4net.proxygen.Services
@@ -48,7 +50,7 @@ namespace com.jni4net.proxygen.Services
             catch(Exception ex)
             {
                 string message = "ClrResolver: can't load " + fullName;
-                Logger.LogError(message, ex, null);
+                Logger.LogError(message, ex);
                 throw new ProxygenConfigException(message);
             }
         }
@@ -58,7 +60,7 @@ namespace com.jni4net.proxygen.Services
             if(!File.Exists(filename))
             {
                 string message = "ClrResolver: file doesn't exist " + filename;
-                Logger.LogError(message, null, null);
+                Logger.LogError(message);
                 throw new ProxygenConfigException(message);
             }
             Assembly assembly = universe.LoadFile(filename);
@@ -93,19 +95,22 @@ namespace com.jni4net.proxygen.Services
             files = null;
             names = null;
 
-            //TypeRepository.SystemObject = ResolveType(universe.GetType(typeof(System.Object).FullName));
-            //TypeRepository.JavaLangObject = ResolveType((Class)Object._class);
-            //TypeRepository.JavaLangThrowable = ResolveType((Class)Throwable._class);
+            var knownParent = new MType(null) { Registration = new TypeRegistration { Parent = new ProjectRegistration() { ProjectName = "Knowntypes stub" }, Name = "Knowntypes stub", Generate = false,Exclude = true} };
+            knownParent.Parent = knownParent;
+
+            TypeRepository.SystemObject = ResolveModel(universe.GetType("System.Object"), knownParent);
+            TypeRepository.SystemException = ResolveModel(universe.GetType("System.Exception"), knownParent);
+            TypeRepository.SystemType = ResolveModel(universe.GetType("System.Type"), knownParent);
 
         }
 
-        public List<IMType> GenerateAs(string asm, string regex = null)
+        public List<IMType> GenerateAs(string asm, IMType parent, string regex = null)
         {
             var res = new List<IMType>();
             var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^"+regex+"$");
             foreach (var record in ams[asm].Where(record => rx == null || rx.IsMatch(record.PlainName)))
             {
-                LoadType(record);
+                LoadType(record, parent);
                 if (record.Model != null)
                 {
                     res.Add(record.Model);
@@ -114,7 +119,7 @@ namespace com.jni4net.proxygen.Services
             return res;
         }
 
-        private void LoadType(Record record, bool forceModel = false)
+        private void LoadType(Record record, IMType parent, bool forceModel = false)
         {
             if (record.Type == null && !record.CantLoad)
             {
@@ -132,37 +137,43 @@ namespace com.jni4net.proxygen.Services
             }
             if (record.Type != null && record.Model == null && (forceModel || record.Type.IsPublic))
             {
-                record.Model = new MType { ClrType = record.Type };
+                record.Model = new MType(parent) { ClrReflection = record.Type };
             }
+            if (record.Type != null)
+            {
+                byType[record.Type] = record;
+            }
+            byLowName[record.PlainName] = record;
+            byName[record.PlainName.ToLowerInvariant()] = record;
         }
 
-        public IMType ResolveModel(Type type)
+        public IMType ResolveModel(Type type, IMType parent)
         {
             Record res;
             if (byType.TryGetValue(type, out res))
             {
-                LoadType(res, true);
+                LoadType(res, parent, true);
                 return res.Model;
             }
 
             var plainName = type.FullName.Replace('+', '.');
             res = new Record { Type = type, ReflectionName = type.AssemblyQualifiedName, PlainName = plainName };
-            LoadType(res, true);
+            LoadType(res, parent, true);
             return res.Model;
         
         }
 
-        public IMType ResolveModel(string fullname)
+        public IMType ResolveModel(string fullname, IMType parent)
         {
             Record res;
             if (byName.TryGetValue(fullname, out res))
             {
-                LoadType(res, true);
+                LoadType(res, parent, true);
                 return res.Model;
             }
             if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
             {
-                LoadType(res, true);
+                LoadType(res, parent, true);
                 return res.Model;
             }
             return null;
@@ -170,7 +181,25 @@ namespace com.jni4net.proxygen.Services
 
         public void UpdateModel(IMType model)
         {
-            byType[model.ClrType].Model = model;
+            byType[model.ClrReflection].Model = model;
+        }
+
+        public Type FindPlainType(Type clr)
+        {
+            while (clr.IsArray || clr.IsPointer || clr.IsByRef)
+            {
+                clr = clr.GetElementType();
+            }
+            if (clr.IsGenericParameter)
+            {
+                clr = TypeRepository.SystemObject.ClrReflection;
+            }
+            while (clr.IsGenericType)
+            {
+                clr = clr.BaseType ?? TypeRepository.SystemObject.ClrReflection;
+            }
+            return clr;
+            
         }
 
         private Record RegisterType(Type type)
