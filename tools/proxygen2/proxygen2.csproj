@@ -133,6 +133,7 @@
     <Compile Include="Services\0000 New\JvmResolver.cs" />
     <Compile Include="Interfaces\IProcessor.cs" />
     <Compile Include="Model\Stage.cs" />
+    <Compile Include="Services\0000 New\ResolverRecord.cs" />
     <Compile Include="Services\0100 Match\NameProcessor.cs" />
     <Compile Include="Services\0200 Roots\RootsProcessor.cs" />
     <Compile Include="Services\0300 Leaves\LeavesProcessor.cs" />

@@ -10,18 +10,24 @@ namespace com.jni4net.proxygen.Model
 {
     public class MType : IMType
     {
-        public MType(IMType parent)
+        public MType(IMType father)
         {
             Interfaces=new List<IMType>();
             Views=new Dictionary<ViewKind, IMTypeView>();
             Members=new List<IMMember>();
             Registration = new TypeRegistration
-                {IsSyntetic = true, Parent = parent == null ? null : parent.Registration.Parent};
+                {IsSyntetic = true, Parent = father == null ? null : father.Registration.Parent};
+            Nested=new List<IMType>();
+            HomeView=new MTypeView(this, ViewKind.Home);
+            ForeignView = new MTypeView(this, ViewKind.Foreign);
+            Views.Add(ViewKind.Home,HomeView);
+            Views.Add(ViewKind.Foreign,ForeignView);
         }
 
         public Stage Stage { get; set; }
 
         public bool IsGenerate { get; set; }
+        public bool IsGenerateIfMissing { get; set; }
         public bool IsExplore { get; set; }
         public bool IsQueueing { get; set; }
         public bool IsVerbose { get; set; }
@@ -29,11 +35,16 @@ namespace com.jni4net.proxygen.Model
         public Type ClrReflection { get; set; }
         public bool IsClr { get; set; }
         public bool IsJvm { get { return !IsClr; } set { IsClr = !value; } }
+        public bool IsSideLocked { get; set; }
 
         public IMType Parent { get; set; }
         public IMType Base { get; set; }
+        public IMTypeView HomeView { get; private set; }
+        public IMTypeView ForeignView { get; private set; }
+        public IMType Enclosing { get; set; }
         public List<IMType> Interfaces { get; set; }
-        public Dictionary<ViewKind,IMTypeView> Views { get; set; }
+        public List<IMType> Nested { get; set; }
+        public Dictionary<ViewKind, IMTypeView> Views { get; set; }
         public List<IMMember> Members { get; set; }
         public ITypeRegistration Registration { get; set; }
 
@@ -42,6 +53,22 @@ namespace com.jni4net.proxygen.Model
             var sb=new StringBuilder();
             sb.Append(IsClr? ClrReflection.FullName : JvmReflection.getName());
             sb.Append('{');
+            if(IsGenerate)
+            {
+                sb.Append('G');
+            }
+            else if(IsGenerateIfMissing)
+            {
+                sb.Append('g');
+            }
+            else if (IsExplore)
+            {
+                sb.Append('e');
+            }
+            else
+            {
+                sb.Append(' ');
+            }
             if (IsClr)
             {
                 sb.Append('C');
@@ -52,6 +79,8 @@ namespace com.jni4net.proxygen.Model
                 sb.Append(ClrReflection != null ? 'c' : ' ');
                 sb.Append('J');
             }
+            sb.Append(' ');
+            sb.Append(GetHashCode());
             sb.Append('}');
             return sb.ToString();
         }

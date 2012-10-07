@@ -11,7 +11,7 @@ namespace com.jni4net.proxygen.Services
     {
         public override Stage Stage
         {
-            get { return Stage.S0200_FindBase; }
+            get { return Stage.S0200_FindRoots; }
         }
 
         public override int Priority
@@ -21,18 +21,15 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            var foreign = model.Views[ViewKind.Foreign];
-            var home = model.Views[ViewKind.Home];
-
             model = model.IsClr
-                        ? Clr(model, home, foreign)
-                        : Jvm(model, home, foreign);
+                        ? Clr(model)
+                        : Jvm(model);
 
             Logger.LogVerbose(GetType().Name + " " + model, model);
-            WorkQueue.Enqueue(model, Stage.S0400_FindLeaves);
+            WorkQueue.Enqueue(model, Stage.S0300_FindLeaves);
         }
 
-        private IMType Clr(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Clr(IMType model)
         {
             var clr = model.ClrReflection;
             if (clr == KnownTypes.SystemObject.ClrReflection || clr.IsInterface)
@@ -44,10 +41,13 @@ namespace com.jni4net.proxygen.Services
             if (clrBase != null)
             {
                 IMType baseModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrBase), model);
-                WorkQueue.Enqueue(baseModel, model.IsGenerate, model.IsExplore);
+                model.Base = baseModel;
+                model.HomeView.Base = ClrResolver.CreateUsage(clrBase, model.HomeView);
+                WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             model.Interfaces.Clear();
+            model.HomeView.Interfaces.Clear();
             Type[] clrInterfaces = clr.GetInterfaces();
             foreach (var ifc in clrInterfaces)
             {
@@ -57,22 +57,24 @@ namespace com.jni4net.proxygen.Services
                 }
 
                 IMType ifcModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrBase), model);
+                model.HomeView.Interfaces.Add(ClrResolver.CreateUsage(ifc, model.HomeView));
                 model.Interfaces.Add(ifcModel);
 
-                WorkQueue.Enqueue(ifcModel, model.IsGenerate,model.IsExplore);
+                WorkQueue.Enqueue(ifcModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             Type clrEnclosing = clr.DeclaringType;
             if (clrEnclosing != null)
             {
-                IMType clrEnclosingModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrEnclosing), model);
-                WorkQueue.Enqueue(clrEnclosingModel, model.IsGenerate, model.IsExplore);
+                IMType enclosingModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrEnclosing), model);
+                model.Enclosing = enclosingModel;
+                WorkQueue.Enqueue(enclosingModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             return model;
         }
 
-        private IMType Jvm(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Jvm(IMType model)
         {
             var jvm = model.JvmReflection;
             if (jvm == KnownTypes.JavaLangObject.JvmReflection || jvm.isInterface())
@@ -84,10 +86,13 @@ namespace com.jni4net.proxygen.Services
             if (jvmBase != null)
             {
                 IMType baseModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(jvmBase), model);
-                WorkQueue.Enqueue(baseModel, model.IsGenerate, model.IsExplore);
+                model.Base = baseModel;
+                model.HomeView.Base = JvmResolver.CreateUsage(jvmBase, model.HomeView);
+                WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             model.Interfaces.Clear();
+            model.HomeView.Interfaces.Clear();
             Class[] jvmInterfaces = jvm.getInterfaces();
             foreach (var ifc in jvmInterfaces)
             {
@@ -96,17 +101,19 @@ namespace com.jni4net.proxygen.Services
                     continue;
                 }
 
-                IMType ifcModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(jvmBase), model);
+                IMType ifcModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(ifc), model);
+                model.HomeView.Interfaces.Add(JvmResolver.CreateUsage(ifc, model.HomeView));
                 model.Interfaces.Add(ifcModel);
 
-                WorkQueue.Enqueue(ifcModel, model.IsGenerate, model.IsExplore);
+                WorkQueue.Enqueue(ifcModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             Class jvmEnclosing = jvm.getEnclosingClass();
             if (jvmEnclosing!=null)
             {
                 IMType enclosingModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(jvmEnclosing), model);
-                WorkQueue.Enqueue(enclosingModel, model.IsGenerate, model.IsExplore);
+                model.Enclosing = enclosingModel;
+                WorkQueue.Enqueue(enclosingModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
             }
 
             return model;

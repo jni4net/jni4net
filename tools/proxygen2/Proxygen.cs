@@ -106,6 +106,8 @@ namespace com.jni4net.proxygen
 
             Explorer.Init(Configurator.Config);
 
+            WorkQueue.Init();
+
             WorkQueue.Run();
 
             return 0;

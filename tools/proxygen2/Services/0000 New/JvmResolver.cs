@@ -23,15 +23,6 @@ namespace com.jni4net.proxygen.Services
 {
     public class JvmResolver : IJvmResolver,IDisposable
     {
-        class Record
-        {
-            public bool CantLoad;
-            public string PlainName;
-            public string ReflectionName;
-            public Class Clazz;
-            public IMType Model;
-        }
-
         [Dependency]
         public ILogger Logger { get; set; }
 
@@ -41,13 +32,25 @@ namespace com.jni4net.proxygen.Services
         [Dependency]
         public Configurator Configurator { get; set; }
 
+        [Dependency]
+        public ICommonResolver CommonResolver { get; set; }
+
+        private IWorkQueue workQueue;
+        public IWorkQueue WorkQueue
+        {
+            get { return workQueue ?? (workQueue = Container.Resolve<IWorkQueue>()); }
+        }
+
+        [Dependency]
+        public IContainer Container { get; set; }
+
         private readonly BridgeSetup bridgeSetup = new BridgeSetup();
-        readonly Dictionary<string, List<Record>> cps = new Dictionary<string, List<Record>>();
+        readonly Dictionary<string, List<ResolverRecord>> cps = new Dictionary<string, List<ResolverRecord>>();
         List<string> jars = new List<string>();
         List<string> dirs = new List<string>();
-        readonly Dictionary<string, Record> byLowName = new Dictionary<string, Record>();
-        readonly Dictionary<string, Record> byName = new Dictionary<string, Record>();
-        readonly Dictionary<Class, Record> byClass = new Dictionary<Class, Record>();
+        readonly Dictionary<Class, ResolverRecord> byClass = new Dictionary<Class, ResolverRecord>();
+        readonly Dictionary<string, ResolverRecord> byLowName = new Dictionary<string, ResolverRecord>();
+        readonly Dictionary<string, ResolverRecord> byName = new Dictionary<string, ResolverRecord>();
         private AttachedJVM jvm;
 
         public void AddDir(string cp)
@@ -93,13 +96,10 @@ namespace com.jni4net.proxygen.Services
             foreach (var jar in jars)
             {
                 IEnumerable<string> classesInJar = EnumerateClassesInJar(jar);
-                var records = new List<Record>();
+                var records = new List<ResolverRecord>();
                 foreach (var clazzName in classesInJar)
                 {
-                    string plainName = clazzName.Replace('$', '.');
-                    var record = new Record { ReflectionName = clazzName, PlainName = plainName };
-                    byName.Add(plainName, record);
-                    byLowName.Add(plainName.ToLowerInvariant(), record);
+                    var record = RegisterClass(clazzName);
                     records.Add(record);
                 }
                 cps[jar] = records;
@@ -108,13 +108,10 @@ namespace com.jni4net.proxygen.Services
             foreach (var dir in dirs)
             {
                 IEnumerable<string> classesInDir = EnumerateClassesInDir(dir);
-                var records = new List<Record>();
+                var records = new List<ResolverRecord>();
                 foreach (var clazzName in classesInDir)
                 {
-                    string plainName = clazzName.Replace('$', '.');
-                    var record = new Record { ReflectionName = clazzName, PlainName = plainName };
-                    byName.Add(plainName, record);
-                    byLowName.Add(plainName.ToLowerInvariant(), record);
+                    var record = RegisterClass(clazzName);
                     records.Add(record);
                 }
                 cps[dir] = records;
@@ -126,18 +123,58 @@ namespace com.jni4net.proxygen.Services
             var knownParent = new MType(null) { Registration = new TypeRegistration { Parent = new ProjectRegistration() { ProjectName = "Knowntypes stub" }, Name = "Knowntypes stub", Generate = false, Exclude = true } };
             knownParent.Parent = knownParent;
 
-            TypeRepository.JavaLangClass = ResolveModel((Class)Class._class, knownParent);
-            TypeRepository.JavaLangObject = ResolveModel((Class)Object._class, knownParent);
-            TypeRepository.JavaLangThrowable = ResolveModel((Class)Throwable._class, knownParent);
+            TypeRepository.JavaLangObject = ResolveModel("java.lang.Object", knownParent);
+            TypeRepository.JavaLangClass = ResolveModel("java.lang.Class", knownParent);
+            TypeRepository.JavaLangThrowable = ResolveModel("java.lang.Throwable", knownParent);
+            TypeRepository.JavaLangString = ResolveModel("java.lang.String", knownParent);
+            TypeRepository.JavaLangVoid = ResolveModel("java.lang.Void", knownParent);
+
+            TypeRepository.JavaLangBoolean = ResolveModel("java.lang.Boolean", knownParent);
+            TypeRepository.JavaLangByte = ResolveModel("java.lang.Byte", knownParent);
+            TypeRepository.JavaLangCharacter = ResolveModel("java.lang.Character", knownParent);
+            TypeRepository.JavaLangShort = ResolveModel("java.lang.Short", knownParent);
+            TypeRepository.JavaLangInteger = ResolveModel("java.lang.Integer", knownParent);
+            TypeRepository.JavaLangLong = ResolveModel("java.lang.Long", knownParent);
+            TypeRepository.JavaLangFloat = ResolveModel("java.lang.Float", knownParent);
+            TypeRepository.JavaLangDouble = ResolveModel("java.lang.Double", knownParent);
+
+            TypeRepository.JvmVoid = ResolveModel(ReflectionUtils.getPrimitiveClass("void"), knownParent);
+            TypeRepository.JvmBool = ResolveModel(ReflectionUtils.getPrimitiveClass("boolean"), knownParent);
+            TypeRepository.JvmByte = ResolveModel(ReflectionUtils.getPrimitiveClass("byte"), knownParent);
+            TypeRepository.JvmChar = ResolveModel(ReflectionUtils.getPrimitiveClass("char"), knownParent);
+            TypeRepository.JvmShort = ResolveModel(ReflectionUtils.getPrimitiveClass("short"), knownParent);
+            TypeRepository.JvmInt = ResolveModel(ReflectionUtils.getPrimitiveClass("int"), knownParent);
+            TypeRepository.JvmLong = ResolveModel(ReflectionUtils.getPrimitiveClass("long"), knownParent);
+            TypeRepository.JvmFloat = ResolveModel(ReflectionUtils.getPrimitiveClass("float"), knownParent);
+            TypeRepository.JvmDouble = ResolveModel(ReflectionUtils.getPrimitiveClass("double"), knownParent);
         }
 
-        public List<IMType> GenerateCp(string cp, IMType parent, string regex)
+        private ResolverRecord RegisterClass(string clazzName)
+        {
+            string plainName = clazzName.Replace('$', '.').Replace('/', '.');
+            var lowName = plainName.ToLowerInvariant();
+            ResolverRecord record;
+            if (!CommonResolver.ByName.TryGetValue(plainName, out record))
+            {
+                if (!CommonResolver.ByLowName.TryGetValue(lowName, out record))
+                {
+                    record = new ResolverRecord { JvmReflectionName = clazzName, JvmPlainName = plainName };
+                }
+            }
+            CommonResolver.ByName.Add(plainName, record);
+            CommonResolver.ByLowName.Add(lowName, record);
+            byName.Add(plainName, record);
+            byLowName.Add(lowName, record);
+            return record;
+        }
+
+        public List<IMType> GenerateCp(string cp, IMType father, string regex)
         {
             var res = new List<IMType>();
             var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^" + regex + "$");
-            foreach (var record in cps[cp].Where(record => rx == null || rx.IsMatch(record.PlainName)))
+            foreach (var record in cps[cp].Where(record => rx == null || rx.IsMatch(record.JvmPlainName)))
             {
-                LoadClass(record, parent);
+                LoadClass(record, father);
                 if(record.Model!=null)
                 {
                     res.Add(record.Model);
@@ -146,60 +183,89 @@ namespace com.jni4net.proxygen.Services
             return res;
         }
 
-        private void LoadClass(Record record, IMType parent, bool forceModel = false)
+        private void LoadClass(ResolverRecord record, IMType father, bool forceModel = false)
         {
-            if (record.Clazz == null && !record.CantLoad)
+            if (record.Clazz == null && !record.JvmCantLoad && record.JvmReflectionName!=null)
             {
                 try
                 {
-                    string loadName = record.ReflectionName.Replace('/', '.');
+                    string loadName = record.JvmReflectionName.Replace('/', '.');
                     record.Clazz = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass(loadName);
                 }
                 catch (Exception)
                 {
-                    record.CantLoad = true;
-                    Logger.LogVerbose("Can't load " + record.ReflectionName);
+                    record.JvmCantLoad = true;
+                    Logger.LogVerbose("Can't load " + record.JvmReflectionName);
                 }
             }
             if (record.Clazz != null && record.Model == null && (forceModel || record.Clazz.IsPublic()))
             {
-                record.Model = new MType(parent) { JvmReflection = record.Clazz };
+                record.Model = new MType(father) { JvmReflection = record.Clazz };
             }
             if (record.Clazz != null)
             {
                 byClass[record.Clazz] = record;
+                if(record.JvmReflectionName==null)
+                {
+                    var name = record.Clazz.getName();
+                    record.JvmReflectionName = name.Replace('.', '/');
+                    record.JvmPlainName = name.Replace('$', '.');
+                }
             }
-            byLowName[record.PlainName] = record;
-            byName[record.PlainName.ToLowerInvariant()] = record;
+            if (record.JvmPlainName!=null)
+            {
+                var lowName = record.JvmPlainName.ToLowerInvariant();
+
+                CommonResolver.ByLowName[record.JvmPlainName] = record;
+                CommonResolver.ByName[lowName] = record;
+                byLowName[record.JvmPlainName] = record;
+                byName[lowName] = record;
+            }
         }
 
-        public IMType ResolveModel(Class clazz, IMType parent)
+        public IMType ResolveModel(Class clazz, IMType father)
         {
-            Record res;
+            ResolverRecord res;
             if(byClass.TryGetValue(clazz, out res))
             {
-                LoadClass(res, parent, true);
+                LoadClass(res, father, true);
                 return res.Model;
             }
             string reflectionName = clazz.getName();
             string plainName = reflectionName.Replace('$', '.');
+            if (CommonResolver.ByName.TryGetValue(plainName, out res))
+            {
+                res.Clazz = clazz;
+                res.JvmReflectionName = reflectionName;
+                res.JvmPlainName = plainName;
+                LoadClass(res, father, true);
+                return res.Model;
+            }
+            if (CommonResolver.ByLowName.TryGetValue(plainName.ToLowerInvariant(), out res))
+            {
+                res.Clazz = clazz;
+                res.JvmReflectionName = reflectionName;
+                res.JvmPlainName = plainName;
+                LoadClass(res, father, true);
+                return res.Model;
+            }
 
-            res = new Record {Clazz = clazz, ReflectionName = reflectionName, PlainName = plainName};
-            LoadClass(res, parent, true);
+            res = new ResolverRecord {Clazz = clazz, JvmReflectionName = reflectionName, JvmPlainName = plainName};
+            LoadClass(res, father, true);
             return res.Model;
         }
 
-        public IMType ResolveModel(string fullname, IMType parent)
+        public IMType ResolveModel(string fullname, IMType father)
         {
-            Record res;
+            ResolverRecord res;
             if (byName.TryGetValue(fullname, out res))
             {
-                LoadClass(res, parent, true);
+                LoadClass(res, father, true);
                 return res.Model;
             }
             if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
             {
-                LoadClass(res, parent, true);
+                LoadClass(res, father, true);
                 return res.Model;
             }
             return null;
@@ -212,7 +278,29 @@ namespace com.jni4net.proxygen.Services
 
         public Class FindPlainType(Class clazz)
         {
+            while (clazz.isArray())
+            {
+                clazz = clazz.getComponentType();
+            }
             return clazz;
+        }
+
+        public UTypeUsage CreateUsage(Class type, IMTypeView father)
+        {
+            var parModel = ResolveModel(FindPlainType(type), father);
+            WorkQueue.Enqueue(parModel, false, father.IsExplore);
+            //TODO modifiers
+            return new UTypeUsage(parModel.IsClr ? parModel.HomeView : parModel.ForeignView, father);
+        }
+
+        public UTypeUsage CreateUsage(Class type, string paramName, IMTypeView father)
+        {
+            var parModel = ResolveModel(FindPlainType(type), father);
+            WorkQueue.Enqueue(parModel, false, father.IsExplore);
+            //TODO modifiers
+            var usage = new UTypeUsage(parModel.IsClr ? parModel.HomeView : parModel.ForeignView, father);
+            usage.MethodParameterName = paramName;
+            return usage;
         }
 
         private IEnumerable<string> EnumerateClassesInDir(string dir)

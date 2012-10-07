@@ -42,7 +42,7 @@ namespace test.proxygen
         [Test, Explicit]
         public void Generate_Micro_Jre15()
         {
-            com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\proxies\jre-micro-j4n\jre-micro-j4n.xml" });
+            com.jni4net.proxygen.Proxygen.Run(new[] { @"..\..\..\proxies\jre-micro-j4n\jre-micro-j4n.xml" ,"--verbose-"});
         }
 
         [Test, Explicit]

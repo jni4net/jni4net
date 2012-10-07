@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -9,20 +8,13 @@ using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
 using com.jni4net.proxygen.Model;
 using Assembly = IKVM.Reflection.Assembly;
+using Exception = System.Exception;
 using Type = IKVM.Reflection.Type;
 
 namespace com.jni4net.proxygen.Services
 {
     public class ClrResolver : IClrResolver
     {
-        class Record
-        {
-            public bool CantLoad;
-            public string PlainName;
-            public string ReflectionName;
-            public Type Type;
-            public IMType Model;
-        }
 
         [Dependency]
         public ILogger Logger { get; set; }
@@ -30,10 +22,21 @@ namespace com.jni4net.proxygen.Services
         [Dependency]
         public ITypeRepository TypeRepository { get; set; }
 
-        readonly Dictionary<string, List<Record>> ams = new Dictionary<string, List<Record>>();
-        readonly Dictionary<string, Record> byLowName = new Dictionary<string, Record>();
-        readonly Dictionary<string, Record> byName = new Dictionary<string, Record>();
-        readonly Dictionary<Type, Record> byType = new Dictionary<Type, Record>();
+        [Dependency]
+        public ICommonResolver CommonResolver { get; set; }
+
+        private IWorkQueue workQueue;
+        public IWorkQueue WorkQueue
+        {
+            get { return workQueue ?? (workQueue = Container.Resolve<IWorkQueue>()); }
+        }
+
+        [Dependency]
+        public IContainer Container { get; set; }
+        readonly Dictionary<string, List<ResolverRecord>> ams = new Dictionary<string, List<ResolverRecord>>();
+        readonly Dictionary<Type, ResolverRecord> byType = new Dictionary<Type, ResolverRecord>();
+        readonly Dictionary<string, ResolverRecord> byLowName = new Dictionary<string, ResolverRecord>();
+        readonly Dictionary<string, ResolverRecord> byName = new Dictionary<string, ResolverRecord>();
         Dictionary<string, Assembly> names = new Dictionary<string, Assembly>();
         Dictionary<string, Assembly> files = new Dictionary<string, Assembly>();
 
@@ -44,7 +47,7 @@ namespace com.jni4net.proxygen.Services
             try
             {
                 Assembly assembly = universe.Load(fullName);
-                ams.Add(fullName,new List<Record>());
+                ams.Add(fullName,new List<ResolverRecord>());
                 names.Add(fullName, assembly);
             }
             catch(Exception ex)
@@ -64,7 +67,7 @@ namespace com.jni4net.proxygen.Services
                 throw new ProxygenConfigException(message);
             }
             Assembly assembly = universe.LoadFile(filename);
-            ams.Add(filename, new List<Record>());
+            ams.Add(filename, new List<ResolverRecord>());
             files.Add(filename, assembly);
         }
 
@@ -72,10 +75,10 @@ namespace com.jni4net.proxygen.Services
         {
             foreach (var file in files)
             {
-                var records = new List<Record>();
+                var records = new List<ResolverRecord>();
                 foreach (var type in file.Value.GetTypes())
                 {
-                    Record record = RegisterType(type);
+                    ResolverRecord record = RegisterType(type);
                     records.Add(record);
                 }
                 ams[file.Key] = records;
@@ -83,10 +86,10 @@ namespace com.jni4net.proxygen.Services
 
             foreach (var name in names)
             {
-                var records = new List<Record>();
+                var records = new List<ResolverRecord>();
                 foreach (var type in name.Value.GetTypes())
                 {
-                    Record record = RegisterType(type);
+                    ResolverRecord record = RegisterType(type);
                     records.Add(record);
                 }
                 ams[name.Key] = records;
@@ -101,16 +104,52 @@ namespace com.jni4net.proxygen.Services
             TypeRepository.SystemObject = ResolveModel(universe.GetType("System.Object"), knownParent);
             TypeRepository.SystemException = ResolveModel(universe.GetType("System.Exception"), knownParent);
             TypeRepository.SystemType = ResolveModel(universe.GetType("System.Type"), knownParent);
+            TypeRepository.ClrVoid = ResolveModel(universe.GetType("System.Void"), knownParent);
 
+            TypeRepository.ClrBool = ResolveModel(universe.GetType("System.Boolean"), knownParent);
+            TypeRepository.ClrByte = ResolveModel(universe.GetType("System.Byte"), knownParent);
+            TypeRepository.ClrChar = ResolveModel(universe.GetType("System.Char"), knownParent);
+            TypeRepository.ClrShort = ResolveModel(universe.GetType("System.Int16"), knownParent);
+            TypeRepository.ClrInt = ResolveModel(universe.GetType("System.Int32"), knownParent);
+            TypeRepository.ClrLong = ResolveModel(universe.GetType("System.Int64"), knownParent);
+            TypeRepository.ClrFloat = ResolveModel(universe.GetType("System.Single"), knownParent);
+            TypeRepository.ClrDouble = ResolveModel(universe.GetType("System.Double"), knownParent);
+            TypeRepository.ClrSByte = ResolveModel(universe.GetType("System.SByte"), knownParent);
+            TypeRepository.ClrUShort = ResolveModel(universe.GetType("System.UInt16"), knownParent);
+            TypeRepository.ClrUInt = ResolveModel(universe.GetType("System.UInt32"), knownParent);
+            TypeRepository.ClrULong = ResolveModel(universe.GetType("System.UInt64"), knownParent);
+            TypeRepository.ClrIntPtr = ResolveModel(universe.GetType("System.IntPtr"), knownParent);
+            TypeRepository.ClrUIntPtr = ResolveModel(universe.GetType("System.UIntPtr"), knownParent);
         }
 
-        public List<IMType> GenerateAs(string asm, IMType parent, string regex = null)
+        private ResolverRecord RegisterType(Type type)
+        {
+            var plainName = type.FullName.Replace('+', '.');
+            var lowName = plainName.ToLowerInvariant();
+
+            ResolverRecord record;
+            if (!CommonResolver.ByName.TryGetValue(plainName, out record))
+            {
+                if (!CommonResolver.ByLowName.TryGetValue(lowName, out record))
+                {
+                    record = new ResolverRecord { Type = type, ClrPlainName = plainName, ClrReflectionName = type.AssemblyQualifiedName };
+                }
+            }
+            CommonResolver.ByName.Add(plainName, record);
+            CommonResolver.ByLowName.Add(lowName, record);
+            byLowName.Add(lowName, record);
+            byName.Add(plainName, record);
+            byType.Add(type, record);
+            return record;
+        }
+
+        public List<IMType> GenerateAs(string asm, IMType father, string regex = null)
         {
             var res = new List<IMType>();
             var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^"+regex+"$");
-            foreach (var record in ams[asm].Where(record => rx == null || rx.IsMatch(record.PlainName)))
+            foreach (var record in ams[asm].Where(record => rx == null || rx.IsMatch(record.ClrPlainName)))
             {
-                LoadType(record, parent);
+                LoadType(record, father);
                 if (record.Model != null)
                 {
                     res.Add(record.Model);
@@ -119,61 +158,89 @@ namespace com.jni4net.proxygen.Services
             return res;
         }
 
-        private void LoadType(Record record, IMType parent, bool forceModel = false)
+        private void LoadType(ResolverRecord record, IMType father, bool forceModel = false)
         {
-            if (record.Type == null && !record.CantLoad)
+            if (record.Type == null && !record.ClrCantLoad && record.ClrReflectionName!=null)
             {
                 try
                 {
-                    string loadName = record.ReflectionName;
+                    string loadName = record.ClrReflectionName;
                     record.Type = universe.GetType(loadName);
                     byType[record.Type] = record;
                 }
                 catch (Exception)
                 {
-                    record.CantLoad = true;
-                    Logger.LogVerbose("Can't load " + record.ReflectionName);
+                    record.ClrCantLoad = true;
+                    Logger.LogVerbose("Can't load " + record.ClrReflectionName);
                 }
             }
             if (record.Type != null && record.Model == null && (forceModel || record.Type.IsPublic))
             {
-                record.Model = new MType(parent) { ClrReflection = record.Type };
+                record.Model = new MType(father) { ClrReflection = record.Type };
             }
             if (record.Type != null)
             {
                 byType[record.Type] = record;
+                if (record.ClrReflectionName==null)
+                {
+                    record.ClrReflectionName = record.Type.AssemblyQualifiedName;
+                    record.ClrPlainName = record.Type.FullName.Replace('+', '.');
+                }
             }
-            byLowName[record.PlainName] = record;
-            byName[record.PlainName.ToLowerInvariant()] = record;
+            if (record.ClrPlainName!=null)
+            {
+                var lowName = record.ClrPlainName.ToLowerInvariant();
+
+                CommonResolver.ByLowName[record.ClrPlainName] = record;
+                CommonResolver.ByName[lowName] = record;
+                byLowName[record.ClrPlainName] = record;
+                byName[lowName] = record;
+            }
         }
 
-        public IMType ResolveModel(Type type, IMType parent)
+        public IMType ResolveModel(Type type, IMType father)
         {
-            Record res;
+            ResolverRecord res;
             if (byType.TryGetValue(type, out res))
             {
-                LoadType(res, parent, true);
+                LoadType(res, father, true);
+                return res.Model;
+            }
+            var plainName = type.FullName.Replace('+', '.');
+            if (CommonResolver.ByName.TryGetValue(plainName, out res))
+            {
+                res.Type = type;
+                res.ClrReflectionName = type.AssemblyQualifiedName;
+                res.ClrPlainName = plainName;
+                LoadType(res, father, true);
+                return res.Model;
+            }
+            if (CommonResolver.ByLowName.TryGetValue(plainName.ToLowerInvariant(), out res))
+            {
+                res.Type = type;
+                res.ClrReflectionName = type.AssemblyQualifiedName;
+                res.ClrPlainName = plainName;
+                LoadType(res, father, true);
                 return res.Model;
             }
 
-            var plainName = type.FullName.Replace('+', '.');
-            res = new Record { Type = type, ReflectionName = type.AssemblyQualifiedName, PlainName = plainName };
-            LoadType(res, parent, true);
+            res = new ResolverRecord { Type = type, ClrReflectionName = type.AssemblyQualifiedName, ClrPlainName = plainName };
+            LoadType(res, father, true);
             return res.Model;
         
         }
 
-        public IMType ResolveModel(string fullname, IMType parent)
+        public IMType ResolveModel(string fullname, IMType father)
         {
-            Record res;
+            ResolverRecord res;
             if (byName.TryGetValue(fullname, out res))
             {
-                LoadType(res, parent, true);
+                LoadType(res, father, true);
                 return res.Model;
             }
             if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
             {
-                LoadType(res, parent, true);
+                LoadType(res, father, true);
                 return res.Model;
             }
             return null;
@@ -184,32 +251,34 @@ namespace com.jni4net.proxygen.Services
             byType[model.ClrReflection].Model = model;
         }
 
-        public Type FindPlainType(Type clr)
+        public Type FindPlainType(Type type)
         {
-            while (clr.IsArray || clr.IsPointer || clr.IsByRef)
+            while (type.IsArray || type.IsPointer || type.IsByRef)
             {
-                clr = clr.GetElementType();
+                type = type.GetElementType();
             }
-            if (clr.IsGenericParameter)
-            {
-                clr = TypeRepository.SystemObject.ClrReflection;
-            }
-            while (clr.IsGenericType)
-            {
-                clr = clr.BaseType ?? TypeRepository.SystemObject.ClrReflection;
-            }
-            return clr;
-            
+            return type;
         }
 
-        private Record RegisterType(Type type)
+        public Type LoadType(string fullname)
         {
-            var plainName = type.FullName.Replace('+', '.');
-            var record = new Record { Type = type, PlainName = plainName, ReflectionName = type.AssemblyQualifiedName };
-            byLowName.Add(type.FullName.ToLowerInvariant(), record);
-            byName.Add(type.FullName, record);
-            byType.Add(type,record);
-            return record;
+            return universe.GetType(fullname);
+        }
+
+        public IUTypeUsage CreateUsage(ParameterInfo clr, IMTypeView father)
+        {
+            var parModel = ResolveModel(FindPlainType(clr.ParameterType), father);
+            WorkQueue.Enqueue(parModel, false, father.IsExplore);
+            //TODO modifiers
+            return new UTypeUsage(parModel.IsClr ? parModel.HomeView : parModel.ForeignView, father);
+        }
+
+        public IUTypeUsage CreateUsage(Type clr, IMTypeView father)
+        {
+            var parModel = ResolveModel(FindPlainType(clr), father);
+            WorkQueue.Enqueue(parModel, false, father.IsExplore);
+            //TODO modifiers
+            return new UTypeUsage(parModel.IsClr ? parModel.HomeView : parModel.ForeignView, father);
         }
     }
 }

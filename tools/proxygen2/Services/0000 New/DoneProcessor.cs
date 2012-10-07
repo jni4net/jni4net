@@ -21,25 +21,22 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            var foreign = model.Views[ViewKind.Foreign];
-            var home = model.Views[ViewKind.Home];
-
             model = model.IsClr
-                        ? Clr(model, home, foreign)
-                        : Jvm(model, home, foreign);
+                        ? Clr(model)
+                        : Jvm(model);
 
             Logger.LogVerbose(GetType().Name + " " + model, model);
             WorkQueue.Enqueue(model, Stage.S9999_Done);
         }
 
-        private IMType Clr(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Clr(IMType model)
         {
             var clr = model.ClrReflection;
 
             return model;
         }
 
-        private IMType Jvm(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Jvm(IMType model)
         {
             var jvm = model.JvmReflection;
 

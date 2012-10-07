@@ -17,15 +17,24 @@ namespace com.jni4net.proxygen.Interfaces
         Dictionary<ViewKind, IMTypeView> Views { get; }
         ITypeRegistration Registration { get; set; }
 
+        IMTypeView HomeView { get; }
+        IMTypeView ForeignView { get; }
+
+        IMType Enclosing { get; set; }
+        List<IMType> Nested { get; }
+
+
         Class JvmReflection { get; set; }
         Type ClrReflection { get; set; }
 
         bool IsClr { get; set; }
         bool IsJvm { get; set; }
+        bool IsSideLocked { get; set; }
 
         bool IsQueueing { get; set; }
         bool IsVerbose { get; set; }
         bool IsGenerate { get; set; }
+        bool IsGenerateIfMissing { get; set; }
         bool IsExplore { get; set; }
         string ToString();
     }
