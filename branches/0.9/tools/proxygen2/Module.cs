@@ -44,6 +44,7 @@ namespace com.jni4net.proxygen
                 .RegisterType<IWorkQueue, WorkQueue>(new ContainerControlledLifetimeManager())
                 .RegisterType<IJvmResolver, JvmResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<IClrResolver, ClrResolver>(new ContainerControlledLifetimeManager())
+                .RegisterType<ICommonResolver, CommonResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<ITypeRepository, TypeRepository>(new ContainerControlledLifetimeManager())
 
                 .RegisterType<IProcessor, NameProcessor>("NameProcessor")

@@ -20,50 +20,13 @@ namespace com.jni4net.proxygen.Services
         [Dependency]
         public IProcessor[] Processors { get; set; }
 
+        [Dependency("NameProcessor")]
+        public IProcessor NameProcessors { get; set; }
+
         [Dependency]
         public ILogger Logger { get; set; }
 
-        public void Run()
-        {
-            Init();
-            while (workCount>0)
-            {
-                foreach (Stage stage in stages)
-                {
-                    // there is queue for each stage
-                    var q = work[stage];
-                    if (q.Count > 0)
-                    {
-                        if (processors[stage].Count == 0)
-                        {
-                            throw new Exception("Processor missing for " + stage);
-                        }
-
-                        //clear the queue
-                        work[stage] = new List<IMType>();
-
-                        foreach (var model in q)
-                        {
-                            workCount--;
-                            if (model.Stage == stage)
-                            {
-                                model.IsQueueing = false;
-                                foreach (var processor in processors[stage])
-                                {
-                                    processor.Process(model);
-                                }
-                            }
-                            else if (model.Stage < stage)
-                            {
-                                throw new Exception();
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private void Init()
+        public void Init()
         {
             foreach (Stage stage in stages)
             {
@@ -81,57 +44,108 @@ namespace com.jni4net.proxygen.Services
             }
         }
 
+        public void Run()
+        {
+            while (workCount>0)
+            {
+                foreach (Stage stage in stages)
+                {
+                    // there is queue for each stage
+                    var q = work[stage];
+                    if (q.Count > 0)
+                    {
+                        if (processors[stage].Count == 0)
+                        {
+                            throw new Exception("Processor missing for " + stage);
+                        }
+
+                        //clear the queue
+                        work[stage].Reverse();
+
+                        for (int i = q.Count - 1; q.Count > 0; i = q.Count - 1)
+                        {
+                            var model = q[i];
+                            if (model.Stage == stage)
+                            {
+                                Dequeue(model);
+                                foreach (var processor in processors[stage])
+                                {
+                                    processor.Process(model);
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void Dequeue(IMType model)
+        {
+            if (model.IsQueueing)
+            {
+                workCount--;
+                work[model.Stage].Remove(model);
+                model.IsQueueing = false;
+            }
+        }
+
         public void Enqueue(IMType model, bool generate, bool explore)
         {
-            if(!model.IsGenerate && generate)
+            bool reexplore = false;
+            if (!model.IsGenerateIfMissing && generate)
             {
                 //enforce reevaluation
                 model.IsExplore = true;
-                model.IsGenerate = true;
-                model.Stage = Stage.S0100_ToMatch;
+                model.IsGenerateIfMissing = true;
+                reexplore = true;
                 Logger.LogVerbose("Reevaluate generate " + model, model);
             }
             if (!model.IsExplore && explore)
             {
                 //enforce reevaluation
                 model.IsExplore = true;
-                model.Stage = Stage.S0100_ToMatch;
+                reexplore = true;
                 Logger.LogVerbose("Reevaluate explore " + model, model);
             }
-            Enqueue(model, Stage.S0100_ToMatch);
+            if(reexplore)
+            {
+                Dequeue(model);
+                model.Stage = Stage.S0100_ToMatch;
+
+                // this should be processed inline
+                NameProcessors.Process(model);
+            }
         }
 
         public void Enqueue(IMType model, Stage stage)
         {
-            if (model.IsQueueing)
+            if(model.IsQueueing && model.Stage==stage)
             {
-                if (stage == Stage.S9999_Done)
-                {
-                    work[model.Stage].Remove(model);
-                    model.IsQueueing = false;
-                    model.Stage = Stage.S9999_Done;
-                    work[model.Stage].Add(model);
-                    Logger.LogMessage("Done for " + model, model);
-                }
+                return;
             }
-            else
+
+            Dequeue(model);
+            
+            if (stage > model.Stage)
             {
-                model.IsQueueing = true;
-                if (stage > model.Stage)
-                {
-                    model.Stage = stage;
-                }
-                work[model.Stage].Add(model);
-                if(model.Stage != Stage.S9999_Done)
-                {
-                    Logger.LogVerbose("Queued for " + model + " " + model.Stage, model);
-                    workCount++;
-                }
-                else
-                {
-                    Logger.LogMessage("Done for " + model, model);
-                }
+                model.Stage = stage;
             }
+
+            if (model.Stage == Stage.S9999_Done)
+            {
+                Logger.LogMessage("Done for " + model, model);
+                return;
+            }
+            
+            work[model.Stage].Add(model);
+            workCount++;
+            model.IsQueueing = true;
+
+            Logger.LogVerbose("Queued for " + model + " " + model.Stage, model);
         }
     }
 }

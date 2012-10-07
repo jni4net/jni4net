@@ -23,30 +23,21 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            var foreign = new MTypeView(model, ViewKind.Foreign);
-            var home = new MTypeView(model, ViewKind.Home);
-            model.Views[ViewKind.Foreign] = foreign;
-            model.Views[ViewKind.Home] = home;
-            
             model = model.IsClr 
-                ? Clr(model, home, foreign) 
-                : Jvm(model, home, foreign);
+                ? Clr(model) 
+                : Jvm(model);
 
             Logger.LogVerbose(GetType().Name + " " + model, model);
-            WorkQueue.Enqueue(model, Stage.S0200_FindBase);
+            WorkQueue.Enqueue(model, Stage.S0200_FindRoots);
         }
 
-        private IMType Clr(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Clr(IMType model)
         {
             var homeName = CreateClrName(model.ClrReflection);
-            home.Name = homeName;
+            model.HomeView.Name = homeName;
 
             var foreignName = new NTypeName(homeName);
-            foreign.Name = foreignName;
-            for (int i = 0; i < foreignName.Namespaces.Count; i++)
-            {
-                foreignName.Namespaces[i] = foreignName.Namespaces[i].ToLowerInvariant();
-            }
+            model.ForeignView.Name = foreignName;
             if (model.Registration.Rename != null)
             {
                 foreignName.Name = model.Registration.Rename;
@@ -55,38 +46,53 @@ namespace com.jni4net.proxygen.Services
             {
                 foreignName.Namespaces = new List<string>(model.Registration.Move.Split('.'));
             }
+            else
+            {
+                for (int i = 0; i < foreignName.Namespaces.Count; i++)
+                {
+                    foreignName.Namespaces[i] = foreignName.Namespaces[i].ToLowerInvariant();
+                }
+            }
 
             IMType foreignModel = JvmResolver.ResolveModel(foreignName.ToString(), model);
             if (foreignModel!=null)
             {
-                if (ReflectionUtils.DetectIsClr(foreignModel.JvmReflection, model.ClrReflection))
+                model.ForeignView.Name = CreateJvmName(foreignModel.JvmReflection);
+                var detectIsClr = ReflectionUtils.DetectIsClr(foreignModel.JvmReflection, model.ClrReflection);
+                if(foreignModel!=model)
                 {
-                    model.JvmReflection = foreignModel.JvmReflection;
-                    JvmResolver.UpdateModel(model);
-                    WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
+                    throw new NotImplementedException();
+                    // need to kill one of them and remap all usages so far
+                    if (detectIsClr)
+                    {
+                        model.JvmReflection = foreignModel.JvmReflection;
+                        JvmResolver.UpdateModel(model);
+                        WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
+                    }
+                    else
+                    {
+                        foreignModel.ClrReflection = model.ClrReflection;
+                        ClrResolver.UpdateModel(foreignModel);
+                        WorkQueue.Enqueue(model, Stage.S9999_Done);
+                        foreignModel.ForeignView.Name = model.HomeView.Name;
+                        model = foreignModel;
+                    }
+                    foreignModel.IsClr = detectIsClr;
+                    foreignModel.IsSideLocked = true;
                 }
-                else
-                {
-                    foreignModel.ClrReflection = model.ClrReflection;
-                    ClrResolver.UpdateModel(foreignModel);
-                    WorkQueue.Enqueue(model, Stage.S9999_Done);
-                    model = foreignModel;
-                }
+                model.IsClr = detectIsClr;
+                model.IsSideLocked = true;
             }
             return model;
         }
 
-        private IMType Jvm(IMType model, IMTypeView home, IMTypeView foreign)
+        private IMType Jvm(IMType model)
         {
             var homeName = CreateJvmName(model.JvmReflection);
-            home.Name = homeName;
+            model.HomeView.Name = homeName;
 
             var foreignName = new NTypeName(homeName);
-            foreign.Name = foreignName;
-            for (int i = 0; i < foreignName.Namespaces.Count; i++)
-            {
-                foreignName.Namespaces[i] = CamelCase(foreignName.Namespaces[i]);
-            }
+            model.ForeignView.Name = foreignName;
             if(model.Registration.Rename!=null)
             {
                 foreignName.Name = model.Registration.Rename;
@@ -99,33 +105,49 @@ namespace com.jni4net.proxygen.Services
             IMType foreignModel = ClrResolver.ResolveModel(foreignName.ToString(), model);
             if (foreignModel != null)
             {
-                if (!ReflectionUtils.DetectIsClr(model.JvmReflection, foreignModel.ClrReflection))
+                model.ForeignView.Name = CreateClrName(foreignModel.ClrReflection);
+                var detectIsClr = ReflectionUtils.DetectIsClr(model.JvmReflection, foreignModel.ClrReflection);
+                if(foreignModel!=model)
                 {
-                    model.ClrReflection = foreignModel.ClrReflection;
-                    ClrResolver.UpdateModel(model);
-                    WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
+                    throw new NotImplementedException();
+                    // need to kill one of them and remap all usages so far
+                    if (!detectIsClr)
+                    {
+                        model.ClrReflection = foreignModel.ClrReflection;
+                        ClrResolver.UpdateModel(model);
+                        WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
+                    }
+                    else
+                    {
+                        foreignModel.JvmReflection = model.JvmReflection;
+                        JvmResolver.UpdateModel(foreignModel);
+                        WorkQueue.Enqueue(model, Stage.S9999_Done);
+                        foreignModel.ForeignView.Name = model.HomeView.Name;
+                        model = foreignModel;
+                    }
+                    foreignModel.IsClr = detectIsClr;
+                    foreignModel.IsSideLocked = true;
                 }
-                else
-                {
-                    foreignModel.JvmReflection = model.JvmReflection;
-                    JvmResolver.UpdateModel(foreignModel);
-                    WorkQueue.Enqueue(model, Stage.S9999_Done);
-                    model = foreignModel;
-                }
+                model.IsClr = detectIsClr;
+                model.IsSideLocked = true;
             }
             return model;
         }
 
         private static NTypeName CreateClrName(Type clrType)
         {
-            var homeName = new NTypeName();
-            homeName.Name = clrType.Name;
-            homeName.Namespaces.AddRange(clrType.Namespace.Split('.'));
-            if (clrType.IsNested)
+            var name = new NTypeName();
+            name.Name = clrType.Name;
+            name.Namespaces.AddRange(clrType.Namespace.Split('.'));
+
+            var decl = clrType.DeclaringType;
+            while (decl != null)
             {
-                throw new NotImplementedException();
+                name.Enclosing.Insert(0, decl.Name);
+                decl = decl.DeclaringType;
             }
-            return homeName;
+            
+            return name;
         }
 
         private static NTypeName CreateJvmName(Class jvmType)
@@ -133,9 +155,12 @@ namespace com.jni4net.proxygen.Services
             var name = new NTypeName();
             name.Name = jvmType.GetShortName();
             name.Namespaces.AddRange(jvmType.GetPackageName().Split('.'));
-            if (jvmType.IsNested())
+
+            var decl = jvmType.getDeclaringClass();
+            while (decl!=null)
             {
-                throw new NotImplementedException();
+                name.Enclosing.Insert(0, decl.GetShortName());
+                decl = decl.getDeclaringClass();
             }
             return name;
         }

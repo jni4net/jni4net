@@ -8,6 +8,7 @@ namespace com.jni4net.proxygen.Interfaces
 {
     public interface IWorkQueue
     {
+        void Init();
         void Run();
         void Enqueue(IMType model, Stage stage);
         void Enqueue(IMType model, bool generate, bool explore);

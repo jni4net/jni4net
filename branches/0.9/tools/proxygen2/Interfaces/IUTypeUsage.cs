@@ -7,6 +7,12 @@ namespace com.jni4net.proxygen.Interfaces
 {
     public interface IUTypeUsage
     {
-        IMTypeView Parent { get; set; }
+        IParameterRegistration ParameterRegistration { get; set; }
+        string MethodParameterName { get; set; }
+        bool IsReturn { get; set; }
+        bool IsParameter { get; set; }
+
+        IMTypeView DeclaringType { get; set; }
+        IMTypeView UsedType { get; set; }
     }
 }

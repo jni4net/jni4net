@@ -4,9 +4,8 @@ namespace com.jni4net.proxygen.Model
     {
         S0000_New = 0,
         S0100_ToMatch, // rename, lock sides
-        S0200_FindBase,
-        S0300_FindRoots,
-        S0400_FindLeaves,
+        S0200_FindRoots,
+        S0300_FindLeaves,
 
         S0700_Foreign, // create view
         S0800_ForeignBase, // create usage, configure or reflect

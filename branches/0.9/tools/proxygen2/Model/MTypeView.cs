@@ -13,6 +13,7 @@ namespace com.jni4net.proxygen.Model
             ViewKind = viewKind;
             Interfaces=new List<IUTypeUsage>();
             Members=new List<IMMemberView>();
+            Name=new NTypeName();
         }
 
         public ViewKind ViewKind { get; set; }
@@ -30,6 +31,11 @@ namespace com.jni4net.proxygen.Model
             get { return Owner.Interfaces; }
         }
 
+        List<IMType> IMType.Nested
+        {
+            get { return Owner.Nested; }
+        }
+
         List<IMMember> IMType.Members
         {
             get { return Owner.Members; }
@@ -39,6 +45,20 @@ namespace com.jni4net.proxygen.Model
         {
             get { return Owner.Base; }
             set { Owner.Base = value; }
+        }
+
+        public IMTypeView HomeView {
+            get { return Owner.HomeView; }
+        }
+
+        public IMTypeView ForeignView {
+            get { return Owner.ForeignView; }
+        }
+
+        IMType IMType.Enclosing
+        {
+            get { return Owner.Enclosing; }
+            set { Owner.Enclosing = value; }
         }
 
         public Stage Stage
@@ -81,6 +101,12 @@ namespace com.jni4net.proxygen.Model
             set { Owner.IsJvm = value; }
         }
 
+        public bool IsSideLocked
+        {
+            get { return Owner.IsSideLocked; }
+            set { Owner.IsSideLocked = value; }
+        }
+
         public bool IsQueueing
         {
             get { return Owner.IsQueueing; }
@@ -91,6 +117,12 @@ namespace com.jni4net.proxygen.Model
         {
             get { return Owner.IsGenerate; }
             set { Owner.IsGenerate = value; }
+        }
+
+        public bool IsGenerateIfMissing
+        {
+            get { return Owner.IsGenerateIfMissing; }
+            set { Owner.IsGenerateIfMissing = value; }
         }
 
         public bool IsExplore
