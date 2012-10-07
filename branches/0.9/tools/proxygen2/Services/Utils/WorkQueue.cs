@@ -11,7 +11,7 @@ namespace com.jni4net.proxygen.Services
     {
         private int workCount;
         readonly Stage[] stages = (Stage[])Enum.GetValues(typeof(Stage));
-        readonly Dictionary<Stage, Queue<IMType>> work = new Dictionary<Stage, Queue<IMType>>();
+        readonly Dictionary<Stage, List<IMType>> work = new Dictionary<Stage, List<IMType>>();
         readonly Dictionary<Stage, List<IProcessor>> processors = new Dictionary<Stage, List<IProcessor>>();
 
         [Dependency]
@@ -30,17 +30,32 @@ namespace com.jni4net.proxygen.Services
             {
                 foreach (Stage stage in stages)
                 {
+                    // there is queue for each stage
                     var q = work[stage];
                     if (q.Count > 0)
                     {
-                        IMType model = q.Dequeue();
-                        workCount--;
-                        if (model.Stage == stage)
+                        if (processors[stage].Count == 0)
                         {
-                            model.IsQueueing = false;
-                            foreach (var processor in processors[stage])
+                            throw new Exception("Processor missing for " + stage);
+                        }
+
+                        //clear the queue
+                        work[stage] = new List<IMType>();
+
+                        foreach (var model in q)
+                        {
+                            workCount--;
+                            if (model.Stage == stage)
                             {
-                                processor.Process(model);
+                                model.IsQueueing = false;
+                                foreach (var processor in processors[stage])
+                                {
+                                    processor.Process(model);
+                                }
+                            }
+                            else if (model.Stage < stage)
+                            {
+                                throw new Exception();
                             }
                         }
                     }
@@ -52,29 +67,51 @@ namespace com.jni4net.proxygen.Services
         {
             foreach (Stage stage in stages)
             {
-                work[stage] = new Queue<IMType>();
+                work[stage] = new List<IMType>();
                 processors[stage] = Processors.Where(p => p.Stage == stage).OrderBy(p => p.Priority).ToList();
             }
 
-            foreach (IMType model in TypeRepository.AllModels())
+            var allModels = TypeRepository.AllModels();
+            foreach (IMType model in allModels)
             {
                 if (model.IsExplore)
                 {
-                    Enqueue(model, Stage.S0200_ToMatch);
+                    Enqueue(model, Stage.S0100_ToMatch);
                 }
             }
+        }
+
+        public void Enqueue(IMType model, bool generate, bool explore)
+        {
+            if(!model.IsGenerate && generate)
+            {
+                //enforce reevaluation
+                model.IsExplore = true;
+                model.IsGenerate = true;
+                model.Stage = Stage.S0100_ToMatch;
+                Logger.LogVerbose("Reevaluate generate " + model, model);
+            }
+            if (!model.IsExplore && explore)
+            {
+                //enforce reevaluation
+                model.IsExplore = true;
+                model.Stage = Stage.S0100_ToMatch;
+                Logger.LogVerbose("Reevaluate explore " + model, model);
+            }
+            Enqueue(model, Stage.S0100_ToMatch);
         }
 
         public void Enqueue(IMType model, Stage stage)
         {
             if (model.IsQueueing)
             {
-                if(stage==Stage.S9999_Done)
+                if (stage == Stage.S9999_Done)
                 {
+                    work[model.Stage].Remove(model);
                     model.IsQueueing = false;
                     model.Stage = Stage.S9999_Done;
-                    work[model.Stage].Enqueue(model);
-                    Logger.LogMessage("Done for " + model);
+                    work[model.Stage].Add(model);
+                    Logger.LogMessage("Done for " + model, model);
                 }
             }
             else
@@ -84,11 +121,15 @@ namespace com.jni4net.proxygen.Services
                 {
                     model.Stage = stage;
                 }
-                work[model.Stage].Enqueue(model);
+                work[model.Stage].Add(model);
                 if(model.Stage != Stage.S9999_Done)
                 {
-                    Logger.LogMessage("Queued for " + model + " "+model.Stage);
+                    Logger.LogVerbose("Queued for " + model + " " + model.Stage, model);
                     workCount++;
+                }
+                else
+                {
+                    Logger.LogMessage("Done for " + model, model);
                 }
             }
         }

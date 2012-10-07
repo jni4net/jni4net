@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Practices.Unity;
+using com.jni4net.config;
 using com.jni4net.proxygen.Config;
 using com.jni4net.proxygen.Interfaces;
 using com.jni4net.proxygen.Model;
@@ -12,6 +13,7 @@ using java.io;
 using java.lang;
 using java.util.zip;
 using net.sf.jni4net;
+using Directory = System.IO.Directory;
 using Exception = System.Exception;
 using File = System.IO.File;
 using JType = java.lang.reflect.Type;
@@ -121,18 +123,21 @@ namespace com.jni4net.proxygen.Services
             jars = null;
             dirs = null;
 
-            TypeRepository.JavaLangClass = ResolveModel((Class)Class._class);
-            TypeRepository.JavaLangObject = ResolveModel((Class)Object._class);
-            TypeRepository.JavaLangThrowable = ResolveModel((Class)Throwable._class);
+            var knownParent = new MType(null) { Registration = new TypeRegistration { Parent = new ProjectRegistration() { ProjectName = "Knowntypes stub" }, Name = "Knowntypes stub", Generate = false, Exclude = true } };
+            knownParent.Parent = knownParent;
+
+            TypeRepository.JavaLangClass = ResolveModel((Class)Class._class, knownParent);
+            TypeRepository.JavaLangObject = ResolveModel((Class)Object._class, knownParent);
+            TypeRepository.JavaLangThrowable = ResolveModel((Class)Throwable._class, knownParent);
         }
 
-        public List<IMType> GenerateCp(string cp, string regex)
+        public List<IMType> GenerateCp(string cp, IMType parent, string regex)
         {
             var res = new List<IMType>();
             var rx = regex == null ? null : new Regex(regex.Contains("*") ? regex : "^" + regex + "$");
             foreach (var record in cps[cp].Where(record => rx == null || rx.IsMatch(record.PlainName)))
             {
-                LoadClass(record);
+                LoadClass(record, parent);
                 if(record.Model!=null)
                 {
                     res.Add(record.Model);
@@ -141,7 +146,7 @@ namespace com.jni4net.proxygen.Services
             return res;
         }
 
-        private void LoadClass(Record record,bool forceModel=false)
+        private void LoadClass(Record record, IMType parent, bool forceModel = false)
         {
             if (record.Clazz == null && !record.CantLoad)
             {
@@ -149,7 +154,6 @@ namespace com.jni4net.proxygen.Services
                 {
                     string loadName = record.ReflectionName.Replace('/', '.');
                     record.Clazz = (Class)J4NBridge.Setup.DefaultClassLoader.loadClass(loadName);
-                    byClass[record.Clazz] = record;
                 }
                 catch (Exception)
                 {
@@ -159,37 +163,43 @@ namespace com.jni4net.proxygen.Services
             }
             if (record.Clazz != null && record.Model == null && (forceModel || record.Clazz.IsPublic()))
             {
-                record.Model = new MType {JvmType = record.Clazz};
+                record.Model = new MType(parent) { JvmReflection = record.Clazz };
             }
+            if (record.Clazz != null)
+            {
+                byClass[record.Clazz] = record;
+            }
+            byLowName[record.PlainName] = record;
+            byName[record.PlainName.ToLowerInvariant()] = record;
         }
 
-        public IMType ResolveModel(Class clazz)
+        public IMType ResolveModel(Class clazz, IMType parent)
         {
             Record res;
             if(byClass.TryGetValue(clazz, out res))
             {
-                LoadClass(res,true);
+                LoadClass(res, parent, true);
                 return res.Model;
             }
             string reflectionName = clazz.getName();
             string plainName = reflectionName.Replace('$', '.');
 
             res = new Record {Clazz = clazz, ReflectionName = reflectionName, PlainName = plainName};
-            LoadClass(res, true);
+            LoadClass(res, parent, true);
             return res.Model;
         }
 
-        public IMType ResolveModel(string fullname)
+        public IMType ResolveModel(string fullname, IMType parent)
         {
             Record res;
             if (byName.TryGetValue(fullname, out res))
             {
-                LoadClass(res, true);
+                LoadClass(res, parent, true);
                 return res.Model;
             }
             if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
             {
-                LoadClass(res, true);
+                LoadClass(res, parent, true);
                 return res.Model;
             }
             return null;
@@ -197,7 +207,12 @@ namespace com.jni4net.proxygen.Services
 
         public void UpdateModel(IMType model)
         {
-            byClass[model.JvmType].Model = model;
+            byClass[model.JvmReflection].Model = model;
+        }
+
+        public Class FindPlainType(Class clazz)
+        {
+            return clazz;
         }
 
         private IEnumerable<string> EnumerateClassesInDir(string dir)

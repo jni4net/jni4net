@@ -36,7 +36,7 @@ namespace com.jni4net.config
     public partial class TypeRegistration : ITypeRegistration
     {
         [XmlIgnore]
-        public ProjectRegistration Parent { get; set; }
+        public IProjectRegistration Parent { get; set; }
 
         [XmlIgnore]
         public bool IsSyntetic { get; set; }
@@ -104,7 +104,7 @@ namespace com.jni4net.config
         public string JVMApi;
     }
 
-    public partial class ProjectRegistration
+    public partial class ProjectRegistration : IProjectRegistration
     {
         [XmlIgnore]
         internal Configurator Parent { get; set; }

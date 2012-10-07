@@ -2,6 +2,11 @@
 
 namespace com.jni4net.proxygen.Interfaces
 {
+    public interface IProjectRegistration
+    {
+        bool GenerateNestedClasses { get; }
+    }
+
     public interface ITypeRegistration
     {
         List<IMemberRegistration> Members { get; }
@@ -9,6 +14,7 @@ namespace com.jni4net.proxygen.Interfaces
         string Name { get; }
         string Move { get; }
         bool AddBaseMethods { get; }
+        IProjectRegistration Parent { get; set; }
     }
 
     public interface IImplementsRegistration

@@ -10,12 +10,13 @@ namespace com.jni4net.proxygen.Model
 {
     public class MType : IMType
     {
-        public MType()
+        public MType(IMType parent)
         {
             Interfaces=new List<IMType>();
             Views=new Dictionary<ViewKind, IMTypeView>();
             Members=new List<IMMember>();
-            Registration = new TypeRegistration {IsSyntetic = true};
+            Registration = new TypeRegistration
+                {IsSyntetic = true, Parent = parent == null ? null : parent.Registration.Parent};
         }
 
         public Stage Stage { get; set; }
@@ -24,8 +25,8 @@ namespace com.jni4net.proxygen.Model
         public bool IsExplore { get; set; }
         public bool IsQueueing { get; set; }
         public bool IsVerbose { get; set; }
-        public Class JvmType { get; set; }
-        public Type ClrType { get; set; }
+        public Class JvmReflection { get; set; }
+        public Type ClrReflection { get; set; }
         public bool IsClr { get; set; }
         public bool IsJvm { get { return !IsClr; } set { IsClr = !value; } }
 
@@ -39,16 +40,16 @@ namespace com.jni4net.proxygen.Model
         public override string ToString()
         {
             var sb=new StringBuilder();
-            sb.Append(IsClr? ClrType.FullName : JvmType.getName());
+            sb.Append(IsClr? ClrReflection.FullName : JvmReflection.getName());
             sb.Append('{');
             if (IsClr)
             {
                 sb.Append('C');
-                sb.Append(JvmType != null ? 'j' : ' ');
+                sb.Append(JvmReflection != null ? 'j' : ' ');
             }
             else
             {
-                sb.Append(ClrType != null ? 'c' : ' ');
+                sb.Append(ClrReflection != null ? 'c' : ' ');
                 sb.Append('J');
             }
             sb.Append('}');

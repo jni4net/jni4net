@@ -47,8 +47,13 @@ namespace com.jni4net.proxygen
                 .RegisterType<ITypeRepository, TypeRepository>(new ContainerControlledLifetimeManager())
 
                 .RegisterType<IProcessor, NameProcessor>("NameProcessor")
+                .RegisterType<IProcessor, RootsProcessor>("RootsProcessor")
+                .RegisterType<IProcessor, LeavesProcessor>("LeavesProcessor")
+                .RegisterType<IProcessor, DoneProcessor>("DoneProcessor")
                 .RegisterType<IEnumerable<IProcessor>, IProcessor[]>()
                 ;
+            container
+                .RegisterInstance<IKnownTypes>(container.Resolve<ITypeRepository>());
 
         }
     }

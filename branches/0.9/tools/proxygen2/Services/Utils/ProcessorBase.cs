@@ -16,6 +16,9 @@ namespace com.jni4net.proxygen.Services
         public IContainer Container { get; set; }
 
         [Dependency]
+        public IKnownTypes KnownTypes { get; set; }
+
+        [Dependency]
         public ILogger Logger { get; set; }
 
         [Dependency]

@@ -47,16 +47,16 @@ namespace com.jni4net.proxygen.Model
             set { Owner.Stage = value; }
         }
         
-        public Class JvmType
+        public Class JvmReflection
         {
-            get { return Owner.JvmType; }
-            set { Owner.JvmType = value; }
+            get { return Owner.JvmReflection; }
+            set { Owner.JvmReflection = value; }
         }
         
-        public Type ClrType 
+        public Type ClrReflection 
         {
-            get { return Owner.ClrType; }
-            set { Owner.ClrType = value; }
+            get { return Owner.ClrReflection; }
+            set { Owner.ClrReflection = value; }
         }
 
         public IMType Parent

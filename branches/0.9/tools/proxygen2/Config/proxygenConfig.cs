@@ -61,11 +61,14 @@ namespace com.jni4net.config {
         
         private string baseDirectoryField;
         
+        private bool generateNestedClassesField;
+        
         public ProjectRegistration() {
             this.clrClassField = new List<TypeRegistration>();
             this.jvmClassField = new List<TypeRegistration>();
             this.assemblyField = new List<Assembly>();
             this.classPathField = new List<ClassPath>();
+            this.generateNestedClassesField = true;
         }
         
         [System.Xml.Serialization.XmlElementAttribute("ClassPath", Order=0)]
@@ -147,6 +150,17 @@ namespace com.jni4net.config {
                 this.baseDirectoryField = value;
             }
         }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool GenerateNestedClasses {
+            get {
+                return this.generateNestedClassesField;
+            }
+            set {
+                this.generateNestedClassesField = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Xsd2Code", "3.4.0.38968")]
@@ -210,6 +224,8 @@ namespace com.jni4net.config {
         
         private List<MemberRegistration> memberField;
         
+        private bool generateField;
+        
         private string nameField;
         
         private string renameField;
@@ -226,6 +242,7 @@ namespace com.jni4net.config {
             this.memberField = new List<MemberRegistration>();
             this.implementsField = new List<ImplementsRegistration>();
             this.extendsField = new ExtendsRegistration();
+            this.generateField = true;
             this.excludeField = false;
             this.verboseField = false;
             this.addBaseMethodsField = false;
@@ -258,6 +275,17 @@ namespace com.jni4net.config {
             }
             set {
                 this.memberField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool Generate {
+            get {
+                return this.generateField;
+            }
+            set {
+                this.generateField = value;
             }
         }
         
@@ -483,12 +511,6 @@ namespace com.jni4net.config {
         
         private string targetDirClrField;
         
-        private bool generateField;
-        
-        public TargetOptions() {
-            this.generateField = false;
-        }
-        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string TargetDirJvm {
             get {
@@ -508,17 +530,6 @@ namespace com.jni4net.config {
                 this.targetDirClrField = value;
             }
         }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool Generate {
-            get {
-                return this.generateField;
-            }
-            set {
-                this.generateField = value;
-            }
-        }
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClassPath))]
@@ -530,6 +541,23 @@ namespace com.jni4net.config {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd", IsNullable=true)]
     public abstract partial class TypeContainer : TargetOptions {
+        
+        private bool generateField;
+        
+        public TypeContainer() {
+            this.generateField = false;
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Generate {
+            get {
+                return this.generateField;
+            }
+            set {
+                this.generateField = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Xsd2Code", "3.4.0.38968")]

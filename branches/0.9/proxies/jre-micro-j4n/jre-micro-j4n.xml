@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jni4net-proxygen xmlns="http://jni4net.sf.net/0.9.0.0/proxygenConfig.xsd">
-  <project projectName="jre-micro-j4n" projectKey="../../_tools/keys/jni4net.snk" projectVersion="0.9.0.0">
-    <classPath jarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar" >
-      <javaClass name="java.lang.Long" >
+  <Project ProjectName="jre-micro-j4n" ProjectKey="../../_tools/keys/jni4net.snk" ProjectVersion="0.9.0.0">
+    <ClassPath JarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar" >
+      <JavaClass Name="java.lang.Long" >
         <!-- j4n bug so far-->
-        <member signature="public static java.lang.Long java.lang.Long.getLong(java.lang.String,java.lang.Long)" exclude="true"/>
-      </javaClass>
-      <javaClass name="java.lang.Integer" >
+        <Member Signature="public static java.lang.Long java.lang.Long.getLong(java.lang.String,java.lang.Long)" Exclude="true"/>
+      </JavaClass>
+      <JavaClass Name="java.lang.Integer" >
         <!-- j4n bug so far-->
-        <member signature="public static java.lang.Integer java.lang.Integer.getInteger(java.lang.String,java.lang.Integer)" exclude="true"/>
-      </javaClass>
-      <javaClass name="java.lang.Number"/>
-      <javaClass name="java.lang.Boolean"/>
-      <javaClass name="java.lang.Byte"/>
-      <javaClass name="java.lang.Double"/>
-      <javaClass name="java.lang.Float"/>
-      <javaClass name="java.lang.Short"/>
-      <javaClass name="java.lang.Character"/>
+        <Member Signature="public static java.lang.Integer java.lang.Integer.getInteger(java.lang.String,java.lang.Integer)" Exclude="true"/>
+      </JavaClass>
+      <JavaClass Name="java.lang.Number"/>
+      <JavaClass Name="java.lang.Boolean"/>
+      <JavaClass Name="java.lang.Byte"/>
+      <JavaClass Name="java.lang.Double"/>
+      <JavaClass Name="java.lang.Float"/>
+      <JavaClass Name="java.lang.Short"/>
+      <JavaClass Name="java.lang.Character"/>
 
-      <javaClass name="java.lang.Class"/>
-      <javaClass name="java.lang.ClassLoader"/>
-      <javaClass name="java.net.URL"/>
-      <javaClass name="java.net.URI"/>
-      <javaClass name="java.net.URLClassLoader"/>
-      <javaClass name="java.lang.Runnable"/>
-      <javaClass name="java.lang.System"/>
+      <JavaClass Name="java.lang.Class"/>
+      <JavaClass Name="java.lang.ClassLoader"/>
+      <JavaClass Name="java.net.URL"/>
+      <JavaClass Name="java.net.URI"/>
+      <JavaClass Name="java.net.URLClassLoader"/>
+      <JavaClass Name="java.lang.Runnable"/>
+      <JavaClass Name="java.lang.System"/>
 
-      <javaClass name="java.lang.String"/>
-      <javaClass name="java.lang.StringBuffer" addBaseMethods="true"/>
-      <javaClass name="java.lang.StringBuilder" addBaseMethods="true"/>
+      <JavaClass Name="java.lang.String"/>
+      <JavaClass Name="java.lang.StringBuffer" AddBaseMethods="true"/>
+      <JavaClass Name="java.lang.StringBuilder" AddBaseMethods="true"/>
 
-      <javaClass name="java.io.InputStream"/>
-      <javaClass name="java.io.OutputStream"/>
-      <javaClass name="java.io.FileInputStream"/>
-      <javaClass name="java.io.PrintStream"/>
-      <javaClass name="java.io.PrintWriter"/>
-      <javaClass name="java.io.Closeable"/>
-      <javaClass name="java.io.Flushable"/>
-      <javaClass name="java.io.Serializable"/>
-      <javaClass name="java.io.ByteArrayInputStream"/>
-      <javaClass name="java.io.ByteArrayOutputStream"/>
-      <javaClass name="java.io.ObjectInputStream"/>
-      <javaClass name="java.io.ObjectOutputStream"/>
-      <javaClass name="java.util.zip.ZipInputStream"/>
-      <javaClass name="java.util.zip.ZipEntry"/>
-      <javaClass name="java.io.File"/>
+      <JavaClass Name="java.io.InputStream"/>
+      <JavaClass Name="java.io.OutputStream"/>
+      <JavaClass Name="java.io.FileInputStream"/>
+      <JavaClass Name="java.io.PrintStream"/>
+      <JavaClass Name="java.io.PrintWriter"/>
+      <JavaClass Name="java.io.Closeable"/>
+      <JavaClass Name="java.io.Flushable"/>
+      <JavaClass Name="java.io.Serializable"/>
+      <JavaClass Name="java.io.ByteArrayInputStream"/>
+      <JavaClass Name="java.io.ByteArrayOutputStream"/>
+      <JavaClass Name="java.io.ObjectInputStream"/>
+      <JavaClass Name="java.io.ObjectOutputStream"/>
+      <JavaClass Name="java.util.zip.ZipInputStream"/>
+      <JavaClass Name="java.util.zip.ZipEntry"/>
+      <JavaClass Name="java.io.File"/>
       
       
 
-      <javaClass name="java.util.List"/>
-      <javaClass name="java.util.Map"/>
-      <javaClass name="java.util.Set"/>
-      <javaClass name="java.util.HashMap"/>
-      <javaClass name="java.util.Properties"/>
-      <javaClass name="java.util.Iterator"/>
-      <javaClass name="java.util.Enumeration"/>
-      <javaClass name="java.util.Collection"/>
-      <javaClass name="java.util.Arrays"/>
-      <javaClass name="java.lang.reflect.Array"/>
-      <javaClass name="java.util.Comparator"/>
-      <javaClass name="java.lang.Iterable"/>
+      <JavaClass Name="java.util.List"/>
+      <JavaClass Name="java.util.Map"/>
+      <JavaClass Name="java.util.Set"/>
+      <JavaClass Name="java.util.HashMap"/>
+      <JavaClass Name="java.util.Properties"/>
+      <JavaClass Name="java.util.Iterator"/>
+      <JavaClass Name="java.util.Enumeration"/>
+      <JavaClass Name="java.util.Collection"/>
+      <JavaClass Name="java.util.Arrays"/>
+      <JavaClass Name="java.lang.reflect.Array"/>
+      <JavaClass Name="java.util.Comparator"/>
+      <JavaClass Name="java.lang.Iterable"/>
 
-      <javaClass name="java.lang.Throwable" addBaseMethods="true"/>
-      <javaClass name="java.lang.StackTraceElement"/>
+      <JavaClass Name="java.lang.Throwable" AddBaseMethods="true"/>
+      <JavaClass Name="java.lang.StackTraceElement"/>
 
-      <javaClass name="java.lang.Error"/>
-      <javaClass name="java.lang.Exception"/>
-      <javaClass name="java.lang.LinkageError"/>
-      <javaClass name="java.lang.NoClassDefFoundError"/>
-      <javaClass name="java.lang.NoSuchFieldException"/>
-      <javaClass name="java.lang.NoSuchMethodException"/>
-      <javaClass name="java.lang.RuntimeException"/>
-      <javaClass name="java.lang.ClassNotFoundException"/>
-      <javaClass name="java.lang.IllegalArgumentException"/>
-      <javaClass name="java.lang.IndexOutOfBoundsException"/>
-      <javaClass name="java.lang.UnsupportedOperationException"/>
-      <javaClass name="java.lang.NullPointerException"/>
-      <javaClass name="java.lang.reflect.InvocationTargetException"/>
+      <JavaClass Name="java.lang.Error"/>
+      <JavaClass Name="java.lang.Exception"/>
+      <JavaClass Name="java.lang.LinkageError"/>
+      <JavaClass Name="java.lang.NoClassDefFoundError"/>
+      <JavaClass Name="java.lang.NoSuchFieldException"/>
+      <JavaClass Name="java.lang.NoSuchMethodException"/>
+      <JavaClass Name="java.lang.RuntimeException"/>
+      <JavaClass Name="java.lang.ClassNotFoundException"/>
+      <JavaClass Name="java.lang.IllegalArgumentException"/>
+      <JavaClass Name="java.lang.IndexOutOfBoundsException"/>
+      <JavaClass Name="java.lang.UnsupportedOperationException"/>
+      <JavaClass Name="java.lang.NullPointerException"/>
+      <JavaClass Name="java.lang.reflect.InvocationTargetException"/>
 
-      <javaClass name="java.lang.reflect.Constructor"/>
-      <javaClass name="java.lang.reflect.Field"/>
-      <javaClass name="java.lang.reflect.Method"/>
-      <javaClass name="java.lang.reflect.Member"/>
-      <javaClass name="java.lang.reflect.Type"/>
-      <javaClass name="java.lang.reflect.TypeVariable"/>
-      <javaClass name="java.lang.reflect.WildcardType"/>
-      <javaClass name="java.lang.reflect.ParameterizedType"/>
-      <javaClass name="java.lang.reflect.Modifier"/>
-      <javaClass name="java.lang.reflect.GenericArrayType"/>
-      <javaClass name="java.lang.annotation.Annotation"/>
-      <javaClass name="java.lang.reflect.AccessibleObject"/>
-      <javaClass name="java.lang.reflect.GenericDeclaration"/>
-      <javaClass name="java.lang.reflect.AnnotatedElement"/>
+      <JavaClass Name="java.lang.reflect.Constructor"/>
+      <JavaClass Name="java.lang.reflect.Field"/>
+      <JavaClass Name="java.lang.reflect.Method"/>
+      <JavaClass Name="java.lang.reflect.Member"/>
+      <JavaClass Name="java.lang.reflect.Type"/>
+      <JavaClass Name="java.lang.reflect.TypeVariable"/>
+      <JavaClass Name="java.lang.reflect.WildcardType"/>
+      <JavaClass Name="java.lang.reflect.ParameterizedType"/>
+      <JavaClass Name="java.lang.reflect.Modifier"/>
+      <JavaClass Name="java.lang.reflect.GenericArrayType"/>
+      <JavaClass Name="java.lang.annotation.Annotation"/>
+      <JavaClass Name="java.lang.reflect.AccessibleObject"/>
+      <JavaClass Name="java.lang.reflect.GenericDeclaration"/>
+      <JavaClass Name="java.lang.reflect.AnnotatedElement"/>
 
-    </classPath>
-  </project>
+    </ClassPath>
+  </Project>
 
 </jni4net-proxygen>

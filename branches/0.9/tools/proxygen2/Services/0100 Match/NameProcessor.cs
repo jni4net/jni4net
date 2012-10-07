@@ -13,7 +13,7 @@ namespace com.jni4net.proxygen.Services
     {
         public override Stage Stage
         {
-            get { return Stage.S0200_ToMatch; }
+            get { return Stage.S0100_ToMatch; }
         }
 
         public override int Priority
@@ -28,21 +28,17 @@ namespace com.jni4net.proxygen.Services
             model.Views[ViewKind.Foreign] = foreign;
             model.Views[ViewKind.Home] = home;
             
-            if(model.IsClr)
-            {
-                Clr(model, home, foreign);
-            }
-            else
-            {
-                Jvm(model, home, foreign);
-            }
+            model = model.IsClr 
+                ? Clr(model, home, foreign) 
+                : Jvm(model, home, foreign);
 
-            Logger.LogMessage("Name", model);
+            Logger.LogVerbose(GetType().Name + " " + model, model);
+            WorkQueue.Enqueue(model, Stage.S0200_FindBase);
         }
 
-        private void Clr(IMType model, MTypeView home, MTypeView foreign)
+        private IMType Clr(IMType model, IMTypeView home, IMTypeView foreign)
         {
-            var homeName = CreateClrName(model.ClrType);
+            var homeName = CreateClrName(model.ClrReflection);
             home.Name = homeName;
 
             var foreignName = new NTypeName(homeName);
@@ -60,29 +56,29 @@ namespace com.jni4net.proxygen.Services
                 foreignName.Namespaces = new List<string>(model.Registration.Move.Split('.'));
             }
 
-            IMType foreignModel = JvmResolver.ResolveModel(foreignName.ToString());
+            IMType foreignModel = JvmResolver.ResolveModel(foreignName.ToString(), model);
             if (foreignModel!=null)
             {
-                if (ReflectionUtils.DetectIsClr(foreignModel.JvmType, model.ClrType))
+                if (ReflectionUtils.DetectIsClr(foreignModel.JvmReflection, model.ClrReflection))
                 {
-                    model.JvmType = foreignModel.JvmType;
+                    model.JvmReflection = foreignModel.JvmReflection;
                     JvmResolver.UpdateModel(model);
                     WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
                 }
                 else
                 {
-                    foreignModel.ClrType = model.ClrType;
+                    foreignModel.ClrReflection = model.ClrReflection;
                     ClrResolver.UpdateModel(foreignModel);
                     WorkQueue.Enqueue(model, Stage.S9999_Done);
                     model = foreignModel;
                 }
             }
-            WorkQueue.Enqueue(model, Stage.S0300_FindBase);
+            return model;
         }
 
-        private void Jvm(IMType model, MTypeView home, MTypeView foreign)
+        private IMType Jvm(IMType model, IMTypeView home, IMTypeView foreign)
         {
-            var homeName = CreateJvmName(model.JvmType);
+            var homeName = CreateJvmName(model.JvmReflection);
             home.Name = homeName;
 
             var foreignName = new NTypeName(homeName);
@@ -100,24 +96,24 @@ namespace com.jni4net.proxygen.Services
                 foreignName.Namespaces = new List<string>(model.Registration.Move.Split('.'));
             }
 
-            IMType foreignModel = ClrResolver.ResolveModel(foreignName.ToString());
+            IMType foreignModel = ClrResolver.ResolveModel(foreignName.ToString(), model);
             if (foreignModel != null)
             {
-                if (!ReflectionUtils.DetectIsClr(model.JvmType, foreignModel.ClrType))
+                if (!ReflectionUtils.DetectIsClr(model.JvmReflection, foreignModel.ClrReflection))
                 {
-                    model.ClrType = foreignModel.ClrType;
+                    model.ClrReflection = foreignModel.ClrReflection;
                     ClrResolver.UpdateModel(model);
                     WorkQueue.Enqueue(foreignModel, Stage.S9999_Done);
                 }
                 else
                 {
-                    foreignModel.JvmType = model.JvmType;
+                    foreignModel.JvmReflection = model.JvmReflection;
                     JvmResolver.UpdateModel(foreignModel);
                     WorkQueue.Enqueue(model, Stage.S9999_Done);
                     model = foreignModel;
                 }
             }
-            WorkQueue.Enqueue(model, Stage.S0300_FindBase);
+            return model;
         }
 
         private static NTypeName CreateClrName(Type clrType)
