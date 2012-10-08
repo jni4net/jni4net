@@ -46,6 +46,7 @@ namespace com.jni4net.proxygen.Model
         public IMType Enclosing { get; set; }
         public List<IMType> Interfaces { get; set; }
         public List<IMType> Nested { get; set; }
+        public IMType Substitution { get; set; }
         public Dictionary<ViewKind, IMTypeView> Views { get; set; }
         public List<IMMember> Members { get; set; }
         public ITypeRegistration Registration { get; set; }

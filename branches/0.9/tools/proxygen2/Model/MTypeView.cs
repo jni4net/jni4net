@@ -85,6 +85,12 @@ namespace com.jni4net.proxygen.Model
             set { Owner.Parent = value; }
         }
 
+        public IMType Substitution
+        {
+            get { return Owner.Substitution; }
+            set { Owner.Substitution = value; }
+        }
+
         public Dictionary<ViewKind, IMTypeView> Views
         {
             get { return Owner.Views; }

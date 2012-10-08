@@ -136,6 +136,7 @@
     <Compile Include="Services\0100 Match\NameProcessor.cs" />
     <Compile Include="Services\0200 Roots\RootsProcessor.cs" />
     <Compile Include="Services\0300 Leaves\LeavesProcessor.cs" />
+    <Compile Include="Services\0400 Substitute\SubstituteProcessor.cs" />
     <Compile Include="Services\Utils\ProcessorBase.cs" />
     <Compile Include="Services\Utils\KnownTypes.cs" />
     <Compile Include="Services\Utils\WorkQueue.cs" />

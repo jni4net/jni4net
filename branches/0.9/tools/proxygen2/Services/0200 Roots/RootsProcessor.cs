@@ -30,6 +30,10 @@ namespace com.jni4net.proxygen.Services
                 Logger.LogVerbose(GetType().Name + " " + model, model);
                 WorkQueue.Enqueue(model, Stage.S0300_FindLeaves);
             }
+            else
+            {
+                WorkQueue.Enqueue(model, Stage.S9999_Done);
+            }
         }
 
         private IMType Clr(IMType model)

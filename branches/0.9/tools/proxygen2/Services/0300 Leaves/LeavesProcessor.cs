@@ -33,7 +33,11 @@ namespace com.jni4net.proxygen.Services
                             : Jvm(model);
 
                 Logger.LogVerbose(GetType().Name + " " + model, model);
-                WorkQueue.Enqueue(model, Stage.S9999_Done);
+                WorkQueue.Enqueue(model, Stage.S0400_Substitute);
+            }
+            else if(model.IsExplore)
+            {
+                WorkQueue.Enqueue(model, Stage.S0400_Substitute);
             }
         }
 

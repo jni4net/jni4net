@@ -23,6 +23,8 @@ namespace com.jni4net.proxygen.Interfaces
         IMType Enclosing { get; set; }
         List<IMType> Nested { get; }
 
+        IMType Substitution { get; set; }
+
 
         Class JvmReflection { get; set; }
         Type ClrReflection { get; set; }
