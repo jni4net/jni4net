@@ -50,6 +50,7 @@ namespace com.jni4net.proxygen
                 .RegisterType<IProcessor, NameProcessor>("NameProcessor")
                 .RegisterType<IProcessor, RootsProcessor>("RootsProcessor")
                 .RegisterType<IProcessor, LeavesProcessor>("LeavesProcessor")
+                .RegisterType<IProcessor, SubstituteProcessor>("SubstituteProcessor")
                 .RegisterType<IProcessor, DoneProcessor>("DoneProcessor")
                 .RegisterType<IEnumerable<IProcessor>, IProcessor[]>()
                 ;

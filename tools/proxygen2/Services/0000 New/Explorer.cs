@@ -34,6 +34,49 @@ namespace com.jni4net.proxygen.Services
                 ExploreConfigJvm(projectRegistration);
                 ExploreConfigClr(projectRegistration);
             }
+
+            KnownTypes.SystemObject.Substitution = KnownTypes.JavaLangObject;
+            KnownTypes.JavaLangObject.Substitution = KnownTypes.SystemObject;
+
+            KnownTypes.JavaLangThrowable.Substitution = KnownTypes.SystemException;
+            KnownTypes.SystemException.Substitution = KnownTypes.JavaLangThrowable;
+
+            KnownTypes.JavaLangBoolean.Substitution = KnownTypes.ClrBool;
+            KnownTypes.JavaLangByte.Substitution = KnownTypes.ClrByte;
+            KnownTypes.JavaLangCharacter.Substitution = KnownTypes.ClrChar;
+            KnownTypes.JavaLangShort.Substitution = KnownTypes.ClrShort;
+            KnownTypes.JavaLangInteger.Substitution = KnownTypes.ClrInt;
+            KnownTypes.JavaLangLong.Substitution = KnownTypes.ClrLong;
+            KnownTypes.JavaLangFloat.Substitution = KnownTypes.ClrFloat;
+            KnownTypes.JavaLangDouble.Substitution = KnownTypes.ClrDouble;
+            KnownTypes.JavaLangVoid.Substitution = KnownTypes.ClrVoid;
+
+            KnownTypes.JvmBool.Substitution = KnownTypes.ClrBool;
+            KnownTypes.JvmByte.Substitution = KnownTypes.ClrByte;
+            KnownTypes.JvmChar.Substitution = KnownTypes.ClrChar;
+            KnownTypes.JvmShort.Substitution = KnownTypes.ClrShort;
+            KnownTypes.JvmInt.Substitution = KnownTypes.ClrInt;
+            KnownTypes.JvmLong.Substitution = KnownTypes.ClrLong;
+            KnownTypes.JvmFloat.Substitution = KnownTypes.ClrFloat;
+            KnownTypes.JvmDouble.Substitution = KnownTypes.ClrDouble;
+            KnownTypes.JvmVoid.Substitution = KnownTypes.ClrVoid;
+
+            KnownTypes.ClrBool.Substitution = KnownTypes.JvmBool;
+            KnownTypes.ClrByte.Substitution = KnownTypes.JvmByte;
+            KnownTypes.ClrChar.Substitution = KnownTypes.JvmChar;
+            KnownTypes.ClrShort.Substitution = KnownTypes.JvmShort;
+            KnownTypes.ClrInt.Substitution = KnownTypes.JvmInt;
+            KnownTypes.ClrLong.Substitution = KnownTypes.JvmLong;
+            KnownTypes.ClrFloat.Substitution = KnownTypes.JvmFloat;
+            KnownTypes.ClrDouble.Substitution = KnownTypes.JvmDouble;
+            KnownTypes.ClrVoid.Substitution = KnownTypes.JvmVoid;
+
+            KnownTypes.ClrSByte.Substitution = KnownTypes.JvmByte;
+            KnownTypes.ClrUShort.Substitution = KnownTypes.JvmShort;
+            KnownTypes.ClrUInt.Substitution = KnownTypes.JvmInt;
+            KnownTypes.ClrULong.Substitution = KnownTypes.JvmLong;
+            KnownTypes.ClrIntPtr.Substitution = KnownTypes.JvmLong;
+            KnownTypes.ClrUIntPtr.Substitution = KnownTypes.JvmLong;
         }
 
         private void InitClr(ProjectRegistration projectRegistration)

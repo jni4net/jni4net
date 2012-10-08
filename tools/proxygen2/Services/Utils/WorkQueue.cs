@@ -64,12 +64,6 @@ namespace com.jni4net.proxygen.Services
                         if(stage>Stage.S0200_FindRoots)
                         {
                             q.Sort(OrderByInheritance);
-                            Console.WriteLine("-------------------------------------");
-                            foreach (var model in q)
-                            {
-                                Console.WriteLine(model);
-                            }
-                            Console.WriteLine("-------------------------------------");
                         }
 
                         for (int i = q.Count - 1; q.Count > 0; i = q.Count - 1)
@@ -104,8 +98,8 @@ namespace com.jni4net.proxygen.Services
         private int OrderByInheritance(IMType x, IMType y)
         {
             if (x == y) return 0;
-            if (x.IsAssignableFrom(y)) return -1;
-            if (y.IsAssignableFrom(x)) return 1;
+            if (x.IsAssignableFrom(y)) return 1;
+            if (y.IsAssignableFrom(x)) return -1;
             if (x.IsNestedIn(y)) return -1;
             if (y.IsNestedIn(x)) return 1;
             return String.Compare(x.HomeView.Name.Name, y.HomeView.Name.Name, StringComparison.Ordinal);
@@ -124,7 +118,7 @@ namespace com.jni4net.proxygen.Services
         public void Enqueue(IMType model, bool generate, bool explore)
         {
             bool reexplore = false;
-            if (!model.IsGenerateIfMissing && generate)
+            if (!model.IsGenerate && !model.IsGenerateIfMissing && generate)
             {
                 //enforce reevaluation
                 model.IsExplore = true;
