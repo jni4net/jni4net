@@ -27,7 +27,7 @@ namespace com.jni4net.proxygen.Services
         public ILogger Logger { get; set; }
 
         [Dependency]
-        public ITypeRepository TypeRepository { get; set; }
+        public IKnownTypes KnownTypes { get; set; }
 
         [Dependency]
         public Configurator Configurator { get; set; }
@@ -123,30 +123,30 @@ namespace com.jni4net.proxygen.Services
             var knownParent = new MType(null) { Registration = new TypeRegistration { Parent = new ProjectRegistration() { ProjectName = "Knowntypes stub" }, Name = "Knowntypes stub", Generate = false, Exclude = true } };
             knownParent.Parent = knownParent;
 
-            TypeRepository.JavaLangObject = ResolveModel("java.lang.Object", knownParent);
-            TypeRepository.JavaLangClass = ResolveModel("java.lang.Class", knownParent);
-            TypeRepository.JavaLangThrowable = ResolveModel("java.lang.Throwable", knownParent);
-            TypeRepository.JavaLangString = ResolveModel("java.lang.String", knownParent);
-            TypeRepository.JavaLangVoid = ResolveModel("java.lang.Void", knownParent);
+            KnownTypes.JavaLangObject = ResolveModel("java.lang.Object", knownParent);
+            KnownTypes.JavaLangClass = ResolveModel("java.lang.Class", knownParent);
+            KnownTypes.JavaLangThrowable = ResolveModel("java.lang.Throwable", knownParent);
+            KnownTypes.JavaLangString = ResolveModel("java.lang.String", knownParent);
+            KnownTypes.JavaLangVoid = ResolveModel("java.lang.Void", knownParent);
 
-            TypeRepository.JavaLangBoolean = ResolveModel("java.lang.Boolean", knownParent);
-            TypeRepository.JavaLangByte = ResolveModel("java.lang.Byte", knownParent);
-            TypeRepository.JavaLangCharacter = ResolveModel("java.lang.Character", knownParent);
-            TypeRepository.JavaLangShort = ResolveModel("java.lang.Short", knownParent);
-            TypeRepository.JavaLangInteger = ResolveModel("java.lang.Integer", knownParent);
-            TypeRepository.JavaLangLong = ResolveModel("java.lang.Long", knownParent);
-            TypeRepository.JavaLangFloat = ResolveModel("java.lang.Float", knownParent);
-            TypeRepository.JavaLangDouble = ResolveModel("java.lang.Double", knownParent);
+            KnownTypes.JavaLangBoolean = ResolveModel("java.lang.Boolean", knownParent);
+            KnownTypes.JavaLangByte = ResolveModel("java.lang.Byte", knownParent);
+            KnownTypes.JavaLangCharacter = ResolveModel("java.lang.Character", knownParent);
+            KnownTypes.JavaLangShort = ResolveModel("java.lang.Short", knownParent);
+            KnownTypes.JavaLangInteger = ResolveModel("java.lang.Integer", knownParent);
+            KnownTypes.JavaLangLong = ResolveModel("java.lang.Long", knownParent);
+            KnownTypes.JavaLangFloat = ResolveModel("java.lang.Float", knownParent);
+            KnownTypes.JavaLangDouble = ResolveModel("java.lang.Double", knownParent);
 
-            TypeRepository.JvmVoid = ResolveModel(ReflectionUtils.getPrimitiveClass("void"), knownParent);
-            TypeRepository.JvmBool = ResolveModel(ReflectionUtils.getPrimitiveClass("boolean"), knownParent);
-            TypeRepository.JvmByte = ResolveModel(ReflectionUtils.getPrimitiveClass("byte"), knownParent);
-            TypeRepository.JvmChar = ResolveModel(ReflectionUtils.getPrimitiveClass("char"), knownParent);
-            TypeRepository.JvmShort = ResolveModel(ReflectionUtils.getPrimitiveClass("short"), knownParent);
-            TypeRepository.JvmInt = ResolveModel(ReflectionUtils.getPrimitiveClass("int"), knownParent);
-            TypeRepository.JvmLong = ResolveModel(ReflectionUtils.getPrimitiveClass("long"), knownParent);
-            TypeRepository.JvmFloat = ResolveModel(ReflectionUtils.getPrimitiveClass("float"), knownParent);
-            TypeRepository.JvmDouble = ResolveModel(ReflectionUtils.getPrimitiveClass("double"), knownParent);
+            KnownTypes.JvmVoid = ResolveModel(ReflectionUtils.getPrimitiveClass("void"), knownParent);
+            KnownTypes.JvmBool = ResolveModel(ReflectionUtils.getPrimitiveClass("boolean"), knownParent);
+            KnownTypes.JvmByte = ResolveModel(ReflectionUtils.getPrimitiveClass("byte"), knownParent);
+            KnownTypes.JvmChar = ResolveModel(ReflectionUtils.getPrimitiveClass("char"), knownParent);
+            KnownTypes.JvmShort = ResolveModel(ReflectionUtils.getPrimitiveClass("short"), knownParent);
+            KnownTypes.JvmInt = ResolveModel(ReflectionUtils.getPrimitiveClass("int"), knownParent);
+            KnownTypes.JvmLong = ResolveModel(ReflectionUtils.getPrimitiveClass("long"), knownParent);
+            KnownTypes.JvmFloat = ResolveModel(ReflectionUtils.getPrimitiveClass("float"), knownParent);
+            KnownTypes.JvmDouble = ResolveModel(ReflectionUtils.getPrimitiveClass("double"), knownParent);
         }
 
         private ResolverRecord RegisterClass(string clazzName)

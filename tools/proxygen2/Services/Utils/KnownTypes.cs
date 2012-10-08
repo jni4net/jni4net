@@ -4,7 +4,7 @@ using com.jni4net.proxygen.Interfaces;
 
 namespace com.jni4net.proxygen.Services
 {
-    public class TypeRepository : ITypeRepository
+    public class KnownTypes : IKnownTypes
     {
         [Dependency]
         public ILogger Logger { get; set; }

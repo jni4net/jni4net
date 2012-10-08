@@ -26,12 +26,15 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            model = model.IsClr
-                        ? Clr(model)
-                        : Jvm(model);
+            if (model.IsGenerate || model.IsGenerateIfMissing)
+            {
+                model = model.IsClr
+                            ? Clr(model)
+                            : Jvm(model);
 
-            Logger.LogVerbose(GetType().Name + " " + model, model);
-            WorkQueue.Enqueue(model, Stage.S9999_Done);
+                Logger.LogVerbose(GetType().Name + " " + model, model);
+                WorkQueue.Enqueue(model, Stage.S9999_Done);
+            }
         }
 
         private IMType Clr(IMType model)
@@ -41,63 +44,63 @@ namespace com.jni4net.proxygen.Services
             model.Nested.Clear();
             model.Members.Clear();
             model.HomeView.Members.Clear();
-            if(model.IsExplore)
-            {
-                if (model.Registration.Parent.GenerateNestedClasses)
-                {
-                    var nestedTypes = clr.GetNestedTypes().Where(x => x.IsNestedPublic);
-                    foreach (var nestedType in nestedTypes)
-                    {
-                        IMType nestedModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(nestedType), model);
-                        model.Nested.Add(nestedModel);
 
-                        WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+            if (model.Registration.Parent.GenerateNestedClasses)
+            {
+                var nestedTypes = clr.GetNestedTypes().Where(x => x.IsNestedPublic);
+                foreach (var nestedType in nestedTypes)
+                {
+                    IMType nestedModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(nestedType), model);
+                    model.Nested.Add(nestedModel);
+
+                    WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                }
+            }
+
+            var members =
+                clr.GetMembers(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public |
+                               BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
+            foreach (var member in members)
+            {
+                ClrMember(model, member);
+            }
+
+            var regMap = new Dictionary<string, IMemberRegistration>();
+            foreach (var memberRegistration in model.Registration.Members)
+            {
+                regMap.Add(memberRegistration.Signature.Replace(" ", ""), memberRegistration);
+            }
+
+            foreach (var memberModel in model.Members)
+            {
+                string signature = memberModel.ClrReflection.ToString().Replace(" ", "");
+                IMemberRegistration reg;
+                if (regMap.TryGetValue(signature, out reg))
+                {
+                    regMap.Remove(signature);
+                    memberModel.Registration = reg;
+                    for (int i = 0; i < reg.Parameters.Count; i++)
+                    {
+                        var par = reg.Parameters[i];
+                        memberModel.HomeView.Parameters[i].ParameterRegistration = par;
                     }
                 }
+            }
 
-                var members = clr.GetMembers(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
-                foreach (var member in members)
+            if (regMap.Count > 0)
+            {
+                foreach (var memberReg in regMap.Values)
                 {
-                    ClrMember(model, member);
+                    Logger.LogMessage("Can't find member " + memberReg.Signature + " on " + model, model);
                 }
 
-                var regMap = new Dictionary<string, IMemberRegistration>();
-                foreach (var memberRegistration in model.Registration.Members)
-                {
-                    regMap.Add(memberRegistration.Signature.Replace(" ", ""), memberRegistration);
-                }
-
+                var sb = new StringBuilder();
                 foreach (var memberModel in model.Members)
                 {
-                    string signature = memberModel.ClrReflection.ToString().Replace(" ", "");
-                    IMemberRegistration reg;
-                    if (regMap.TryGetValue(signature, out reg))
-                    {
-                        regMap.Remove(signature);
-                        memberModel.Registration = reg;
-                        for (int i = 0; i < reg.Parameters.Count; i++)
-                        {
-                            var par = reg.Parameters[i];
-                            memberModel.HomeView.Parameters[i].ParameterRegistration = par;
-                        }
-                    }
+                    string signature = memberModel.ClrReflection.ToString();
+                    sb.AppendLine(signature);
                 }
-
-                if (regMap.Count > 0)
-                {
-                    foreach (var memberReg in regMap.Values)
-                    {
-                        Logger.LogMessage("Can't find member " + memberReg.Signature + " on " + model, model);
-                    }
-
-                    var sb = new StringBuilder();
-                    foreach (var memberModel in model.Members)
-                    {
-                        string signature = memberModel.ClrReflection.ToString();
-                        sb.AppendLine(signature);
-                    }
-                    Logger.LogMessage("Available signatures are :\n" + sb, model);
-                }
+                Logger.LogMessage("Available signatures are :\n" + sb, model);
             }
 
             return model;
@@ -311,72 +314,68 @@ namespace com.jni4net.proxygen.Services
             model.Nested.Clear();
             model.Members.Clear();
             model.HomeView.Members.Clear();
-            if (model.IsExplore)
+            var nestedTypes = jvm.getDeclaredClasses().Where(x => x.IsPublic());
+            foreach (var nestedType in nestedTypes)
             {
-                var nestedTypes = jvm.getDeclaredClasses().Where(x => x.IsPublic());
-                foreach (var nestedType in nestedTypes)
-                {
-                    IMType nestedModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(nestedType), model);
-                    model.Nested.Add(nestedModel);
+                IMType nestedModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(nestedType), model);
+                model.Nested.Add(nestedModel);
 
-                    WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+            }
+
+            var jvmConstructors = jvm.getConstructors().OrderBy(x => x.ToString());
+            foreach (Constructor member in jvmConstructors)
+            {
+                JvmMember(model, member);
+            }
+
+            var jvmMethods = jvm.getMethods().OrderBy(x => !x.IsStatic()).ThenBy(x => x.getName().ToString());
+            foreach (Method member in jvmMethods)
+            {
+                JvmMember(model, member);
+            }
+            var jvmFields = jvm.getFields().OrderBy(x => !x.IsStatic()).ThenBy(x => x.getName().ToString());
+            foreach (Field member in jvmFields)
+            {
+                JvmMember(model, member);
+            }
+
+            var regMap = new Dictionary<string, IMemberRegistration>();
+            foreach (var memberRegistration in model.Registration.Members)
+            {
+                regMap.Add(memberRegistration.Signature.Replace(" ", ""), memberRegistration);
+            }
+
+            foreach (var memberModel in model.Members)
+            {
+                string signature = memberModel.JvmReflection.ToString().Replace(" ", "");
+                IMemberRegistration reg;
+                if (regMap.TryGetValue(signature, out reg))
+                {
+                    regMap.Remove(signature);
+                    memberModel.Registration = reg;
+                    for (int i = 0; i < reg.Parameters.Count; i++)
+                    {
+                        var par = reg.Parameters[i];
+                        memberModel.HomeView.Parameters[i].ParameterRegistration = par;
+                    }
+                }
+            }
+
+            if (regMap.Count > 0)
+            {
+                foreach (var memberReg in regMap.Values)
+                {
+                    Logger.LogMessage("Can't find member " + memberReg.Signature + " on " + model, model);
                 }
 
-                var jvmConstructors = jvm.getConstructors().OrderBy(x => x.ToString());
-                foreach (Constructor member in jvmConstructors)
-                {
-                    JvmMember(model, member);
-                }
-
-                var jvmMethods = jvm.getMethods().OrderBy(x => !x.IsStatic()).ThenBy(x => x.getName().ToString());
-                foreach (Method member in jvmMethods)
-                {
-                    JvmMember(model, member);
-                }
-                var jvmFields = jvm.getFields().OrderBy(x => !x.IsStatic()).ThenBy(x => x.getName().ToString());
-                foreach (Field member in jvmFields)
-                {
-                    JvmMember(model, member);
-                }
-
-                var regMap = new Dictionary<string, IMemberRegistration>();
-                foreach (var memberRegistration in model.Registration.Members)
-                {
-                    regMap.Add(memberRegistration.Signature.Replace(" ", ""), memberRegistration);
-                }
-
+                var sb = new StringBuilder();
                 foreach (var memberModel in model.Members)
                 {
-                    string signature = memberModel.JvmReflection.ToString().Replace(" ", "");
-                    IMemberRegistration reg;
-                    if (regMap.TryGetValue(signature, out reg))
-                    {
-                        regMap.Remove(signature);
-                        memberModel.Registration = reg;
-                        for (int i = 0; i < reg.Parameters.Count; i++)
-                        {
-                            var par = reg.Parameters[i];
-                            memberModel.HomeView.Parameters[i].ParameterRegistration = par;
-                        }
-                    }
+                    string signature = memberModel.ClrReflection.ToString();
+                    sb.AppendLine(signature);
                 }
-
-                if (regMap.Count > 0)
-                {
-                    foreach (var memberReg in regMap.Values)
-                    {
-                        Logger.LogMessage("Can't find member " + memberReg.Signature + " on " + model, model);
-                    }
-
-                    var sb = new StringBuilder();
-                    foreach (var memberModel in model.Members)
-                    {
-                        string signature = memberModel.ClrReflection.ToString();
-                        sb.AppendLine(signature);
-                    }
-                    Logger.LogMessage("Available signatures are :\n" + sb, model);
-                }
-
+                Logger.LogMessage("Available signatures are :\n" + sb, model);
             }
 
             return model;

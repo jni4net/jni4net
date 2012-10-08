@@ -20,7 +20,7 @@ namespace com.jni4net.proxygen.Services
         public ILogger Logger { get; set; }
 
         [Dependency]
-        public ITypeRepository TypeRepository { get; set; }
+        public IKnownTypes KnownTypes { get; set; }
 
         [Dependency]
         public ICommonResolver CommonResolver { get; set; }
@@ -101,25 +101,25 @@ namespace com.jni4net.proxygen.Services
             var knownParent = new MType(null) { Registration = new TypeRegistration { Parent = new ProjectRegistration() { ProjectName = "Knowntypes stub" }, Name = "Knowntypes stub", Generate = false,Exclude = true} };
             knownParent.Parent = knownParent;
 
-            TypeRepository.SystemObject = ResolveModel(universe.GetType("System.Object"), knownParent);
-            TypeRepository.SystemException = ResolveModel(universe.GetType("System.Exception"), knownParent);
-            TypeRepository.SystemType = ResolveModel(universe.GetType("System.Type"), knownParent);
-            TypeRepository.ClrVoid = ResolveModel(universe.GetType("System.Void"), knownParent);
+            KnownTypes.SystemObject = ResolveModel(universe.GetType("System.Object"), knownParent);
+            KnownTypes.SystemException = ResolveModel(universe.GetType("System.Exception"), knownParent);
+            KnownTypes.SystemType = ResolveModel(universe.GetType("System.Type"), knownParent);
+            KnownTypes.ClrVoid = ResolveModel(universe.GetType("System.Void"), knownParent);
 
-            TypeRepository.ClrBool = ResolveModel(universe.GetType("System.Boolean"), knownParent);
-            TypeRepository.ClrByte = ResolveModel(universe.GetType("System.Byte"), knownParent);
-            TypeRepository.ClrChar = ResolveModel(universe.GetType("System.Char"), knownParent);
-            TypeRepository.ClrShort = ResolveModel(universe.GetType("System.Int16"), knownParent);
-            TypeRepository.ClrInt = ResolveModel(universe.GetType("System.Int32"), knownParent);
-            TypeRepository.ClrLong = ResolveModel(universe.GetType("System.Int64"), knownParent);
-            TypeRepository.ClrFloat = ResolveModel(universe.GetType("System.Single"), knownParent);
-            TypeRepository.ClrDouble = ResolveModel(universe.GetType("System.Double"), knownParent);
-            TypeRepository.ClrSByte = ResolveModel(universe.GetType("System.SByte"), knownParent);
-            TypeRepository.ClrUShort = ResolveModel(universe.GetType("System.UInt16"), knownParent);
-            TypeRepository.ClrUInt = ResolveModel(universe.GetType("System.UInt32"), knownParent);
-            TypeRepository.ClrULong = ResolveModel(universe.GetType("System.UInt64"), knownParent);
-            TypeRepository.ClrIntPtr = ResolveModel(universe.GetType("System.IntPtr"), knownParent);
-            TypeRepository.ClrUIntPtr = ResolveModel(universe.GetType("System.UIntPtr"), knownParent);
+            KnownTypes.ClrBool = ResolveModel(universe.GetType("System.Boolean"), knownParent);
+            KnownTypes.ClrByte = ResolveModel(universe.GetType("System.Byte"), knownParent);
+            KnownTypes.ClrChar = ResolveModel(universe.GetType("System.Char"), knownParent);
+            KnownTypes.ClrShort = ResolveModel(universe.GetType("System.Int16"), knownParent);
+            KnownTypes.ClrInt = ResolveModel(universe.GetType("System.Int32"), knownParent);
+            KnownTypes.ClrLong = ResolveModel(universe.GetType("System.Int64"), knownParent);
+            KnownTypes.ClrFloat = ResolveModel(universe.GetType("System.Single"), knownParent);
+            KnownTypes.ClrDouble = ResolveModel(universe.GetType("System.Double"), knownParent);
+            KnownTypes.ClrSByte = ResolveModel(universe.GetType("System.SByte"), knownParent);
+            KnownTypes.ClrUShort = ResolveModel(universe.GetType("System.UInt16"), knownParent);
+            KnownTypes.ClrUInt = ResolveModel(universe.GetType("System.UInt32"), knownParent);
+            KnownTypes.ClrULong = ResolveModel(universe.GetType("System.UInt64"), knownParent);
+            KnownTypes.ClrIntPtr = ResolveModel(universe.GetType("System.IntPtr"), knownParent);
+            KnownTypes.ClrUIntPtr = ResolveModel(universe.GetType("System.UIntPtr"), knownParent);
         }
 
         private ResolverRecord RegisterType(Type type)

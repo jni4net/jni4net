@@ -45,7 +45,7 @@ namespace com.jni4net.proxygen
                 .RegisterType<IJvmResolver, JvmResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<IClrResolver, ClrResolver>(new ContainerControlledLifetimeManager())
                 .RegisterType<ICommonResolver, CommonResolver>(new ContainerControlledLifetimeManager())
-                .RegisterType<ITypeRepository, TypeRepository>(new ContainerControlledLifetimeManager())
+                .RegisterType<IKnownTypes, KnownTypes>(new ContainerControlledLifetimeManager())
 
                 .RegisterType<IProcessor, NameProcessor>("NameProcessor")
                 .RegisterType<IProcessor, RootsProcessor>("RootsProcessor")
@@ -53,9 +53,6 @@ namespace com.jni4net.proxygen
                 .RegisterType<IProcessor, DoneProcessor>("DoneProcessor")
                 .RegisterType<IEnumerable<IProcessor>, IProcessor[]>()
                 ;
-            container
-                .RegisterInstance<IKnownTypes>(container.Resolve<ITypeRepository>());
-
         }
     }
 }

@@ -15,7 +15,7 @@ namespace com.jni4net.proxygen.Services
         readonly Dictionary<Stage, List<IProcessor>> processors = new Dictionary<Stage, List<IProcessor>>();
 
         [Dependency]
-        public ITypeRepository TypeRepository { get; set; }
+        public IKnownTypes KnownTypes { get; set; }
 
         [Dependency]
         public IProcessor[] Processors { get; set; }
@@ -34,7 +34,7 @@ namespace com.jni4net.proxygen.Services
                 processors[stage] = Processors.Where(p => p.Stage == stage).OrderBy(p => p.Priority).ToList();
             }
 
-            var allModels = TypeRepository.AllModels();
+            var allModels = KnownTypes.AllModels();
             foreach (IMType model in allModels)
             {
                 if (model.IsExplore)
@@ -46,10 +46,12 @@ namespace com.jni4net.proxygen.Services
 
         public void Run()
         {
-            while (workCount>0)
+            while (true)
             {
-                foreach (Stage stage in stages)
+                for (int s = 0; s < stages.Length; s++)
                 {
+                    Stage stage = stages[s];
+                    
                     // there is queue for each stage
                     var q = work[stage];
                     if (q.Count > 0)
@@ -59,8 +61,16 @@ namespace com.jni4net.proxygen.Services
                             throw new Exception("Processor missing for " + stage);
                         }
 
-                        //clear the queue
-                        work[stage].Reverse();
+                        if(stage>Stage.S0200_FindRoots)
+                        {
+                            q.Sort(OrderByInheritance);
+                            Console.WriteLine("-------------------------------------");
+                            foreach (var model in q)
+                            {
+                                Console.WriteLine(model);
+                            }
+                            Console.WriteLine("-------------------------------------");
+                        }
 
                         for (int i = q.Count - 1; q.Count > 0; i = q.Count - 1)
                         {
@@ -78,9 +88,27 @@ namespace com.jni4net.proxygen.Services
                                 throw new Exception();
                             }
                         }
+
+                        // restart to make sure we enter new stage 
+                        // only if we finished processing all tasks in previous stages
+                        s = 0;
+                    }
+                    else if (s==stages.Length-1)
+                    {
+                        return;
                     }
                 }
             }
+        }
+
+        private int OrderByInheritance(IMType x, IMType y)
+        {
+            if (x == y) return 0;
+            if (x.IsAssignableFrom(y)) return -1;
+            if (y.IsAssignableFrom(x)) return 1;
+            if (x.IsNestedIn(y)) return -1;
+            if (y.IsNestedIn(x)) return 1;
+            return String.Compare(x.HomeView.Name.Name, y.HomeView.Name.Name, StringComparison.Ordinal);
         }
 
         private void Dequeue(IMType model)
