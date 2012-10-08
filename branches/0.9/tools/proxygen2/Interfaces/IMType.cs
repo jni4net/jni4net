@@ -37,6 +37,8 @@ namespace com.jni4net.proxygen.Interfaces
         bool IsGenerateIfMissing { get; set; }
         bool IsExplore { get; set; }
         string ToString();
+        bool IsAssignableFrom(IMType other, bool substitutions=false);
+        bool IsNestedIn(IMType other, bool substitutions = false);
     }
 
     public enum ViewKind

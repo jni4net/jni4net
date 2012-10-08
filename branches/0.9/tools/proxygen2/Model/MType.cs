@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using com.jni4net.config;
 using com.jni4net.proxygen.Interfaces;
@@ -79,10 +81,41 @@ namespace com.jni4net.proxygen.Model
                 sb.Append(ClrReflection != null ? 'c' : ' ');
                 sb.Append('J');
             }
-            sb.Append(' ');
-            sb.Append(GetHashCode());
+            //sb.Append(' ');
+            //sb.Append(GetHashCode());
             sb.Append('}');
             return sb.ToString();
+        }
+
+        public bool IsAssignableFrom(IMType other, bool substitutions = false)
+        {
+            if (other == null) return false;
+            if (Stage <= Stage.S0200_FindRoots || other.Stage <= Stage.S0200_FindRoots)
+                throw new InvalidOperationException("Too early");
+            if (other == this) return true;
+            if (IsAssignableFrom(other.Base, substitutions)) 
+                return true;
+            if (other.Interfaces.Any(ifc=>IsAssignableFrom(ifc,substitutions))) 
+                return true;
+            if(substitutions)
+                throw new NotImplementedException();
+            return false;
+        }
+
+        public bool IsNestedIn(IMType other, bool substitutions = false)
+        {
+            if (other == null) return false;
+            if (Stage <= Stage.S0200_FindRoots || other.Stage <= Stage.S0200_FindRoots)
+                throw new InvalidOperationException("Too early");
+            if (Enclosing == null) return false;
+            if (other == this) return false;
+            if (Enclosing == other) 
+                return true;
+            if (Enclosing.IsNestedIn(other, substitutions)) 
+                return true;
+            if (substitutions)
+                throw new NotImplementedException();
+            return false;
         }
     }
 }

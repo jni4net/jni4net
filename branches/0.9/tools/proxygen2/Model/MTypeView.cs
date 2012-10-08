@@ -149,6 +149,16 @@ namespace com.jni4net.proxygen.Model
             return Owner.ToString();
         }
 
+        public bool IsAssignableFrom(IMType other, bool substitutions = false)
+        {
+            return Owner.IsAssignableFrom(other, substitutions);
+        }
+
+        public bool IsNestedIn(IMType other, bool substitutions = false)
+        {
+            return Owner.IsNestedIn(other, substitutions);
+        }
+
         #endregion
     }
 }

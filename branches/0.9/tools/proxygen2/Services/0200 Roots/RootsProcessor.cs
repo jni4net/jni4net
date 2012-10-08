@@ -21,18 +21,21 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            model = model.IsClr
-                        ? Clr(model)
-                        : Jvm(model);
+            if(model.IsExplore)
+            {
+                model = model.IsClr
+                            ? Clr(model)
+                            : Jvm(model);
 
-            Logger.LogVerbose(GetType().Name + " " + model, model);
-            WorkQueue.Enqueue(model, Stage.S0300_FindLeaves);
+                Logger.LogVerbose(GetType().Name + " " + model, model);
+                WorkQueue.Enqueue(model, Stage.S0300_FindLeaves);
+            }
         }
 
         private IMType Clr(IMType model)
         {
             var clr = model.ClrReflection;
-            if (clr == KnownTypes.SystemObject.ClrReflection || clr.IsInterface)
+            if (clr == KnownTypes.SystemObject.ClrReflection)
             {
                 return model;
             }
@@ -44,6 +47,10 @@ namespace com.jni4net.proxygen.Services
                 model.Base = baseModel;
                 model.HomeView.Base = ClrResolver.CreateUsage(clrBase, model.HomeView);
                 WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+            }
+            else
+            {
+                model.Base = KnownTypes.SystemObject;
             }
 
             model.Interfaces.Clear();
@@ -77,7 +84,7 @@ namespace com.jni4net.proxygen.Services
         private IMType Jvm(IMType model)
         {
             var jvm = model.JvmReflection;
-            if (jvm == KnownTypes.JavaLangObject.JvmReflection || jvm.isInterface())
+            if (jvm == KnownTypes.JavaLangObject.JvmReflection)
             {
                 return model;
             }
@@ -89,6 +96,10 @@ namespace com.jni4net.proxygen.Services
                 model.Base = baseModel;
                 model.HomeView.Base = JvmResolver.CreateUsage(jvmBase, model.HomeView);
                 WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+            }
+            else
+            {
+                model.Base = KnownTypes.JavaLangObject;
             }
 
             model.Interfaces.Clear();

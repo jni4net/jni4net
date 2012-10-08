@@ -69,7 +69,6 @@
     <Compile Include="Interfaces\IMType.cs" />
     <Compile Include="Interfaces\INTypeName.cs" />
     <Compile Include="Interfaces\ITypeRegistration.cs" />
-    <Compile Include="Interfaces\ITypeRepository.cs" />
     <Compile Include="Interfaces\IUTypeUsage.cs" />
     <Compile Include="Interfaces\IWorkQueue.cs" />
     <Compile Include="Model\MMember.cs" />
@@ -138,7 +137,7 @@
     <Compile Include="Services\0200 Roots\RootsProcessor.cs" />
     <Compile Include="Services\0300 Leaves\LeavesProcessor.cs" />
     <Compile Include="Services\Utils\ProcessorBase.cs" />
-    <Compile Include="Services\Utils\TypeRepository.cs" />
+    <Compile Include="Services\Utils\KnownTypes.cs" />
     <Compile Include="Services\Utils\WorkQueue.cs" />
     <Compile Include="Utils\EnumUtils.cs" />
     <Compile Include="Utils\PathUtils.cs" />

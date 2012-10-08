@@ -40,7 +40,6 @@ namespace test.proxygen
         protected IContainer Container;
         protected Proxygen Proxygen;
         protected Configurator Configurator;
-        protected ITypeRepository Repository;
         protected Explorer Explorer;
         protected IClrResolver ClrResolver;
         protected IJvmResolver JvmResolver;
@@ -68,11 +67,10 @@ namespace test.proxygen
             Container = Proxygen.Configure(LoadPlugins);
             Configurator = Container.Resolve<Configurator>();
             Proxygen = Container.Resolve<Proxygen>();
-            Repository = Container.Resolve<ITypeRepository>();
             Explorer = Container.Resolve<Explorer>();
             ClrResolver = Container.Resolve<IClrResolver>();
             JvmResolver = Container.Resolve<IJvmResolver>();
-            TypeRepository = Container.Resolve<ITypeRepository>();
+            TypeRepository = Container.Resolve<IKnownTypes>();
         }
     }
 }

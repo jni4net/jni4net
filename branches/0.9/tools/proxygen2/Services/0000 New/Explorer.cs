@@ -11,7 +11,7 @@ namespace com.jni4net.proxygen.Services
         public ILogger Logger { get; set; }
 
         [Dependency]
-        public ITypeRepository TypeRepository { get; set; }
+        public IKnownTypes KnownTypes { get; set; }
 
         [Dependency]
         public IJvmResolver JvmResolver { get; set; }
@@ -100,7 +100,7 @@ namespace com.jni4net.proxygen.Services
                         model.IsGenerate = true;
                         model.IsExplore = true;
                         model.IsClr = true;
-                        TypeRepository.Register(model);
+                        KnownTypes.Register(model);
                     }
                 }
                 foreach (var registration in assembly.ClrType)
@@ -120,7 +120,7 @@ namespace com.jni4net.proxygen.Services
                         model.IsExplore = !registration.Exclude;
                         model.IsVerbose = registration.Verbose;
                         model.IsClr = true;
-                        TypeRepository.Register(model);
+                        KnownTypes.Register(model);
                     }
                 }
             }
@@ -144,7 +144,7 @@ namespace com.jni4net.proxygen.Services
                         model.IsGenerate = true;
                         model.IsExplore = true;
                         model.IsClr = false;
-                        TypeRepository.Register(model);
+                        KnownTypes.Register(model);
                     }
                 }
                 foreach (var registration in classPath.JavaClass)
@@ -164,7 +164,7 @@ namespace com.jni4net.proxygen.Services
                         model.IsExplore = !registration.Exclude;
                         model.IsVerbose = registration.Verbose;
                         model.IsClr = false;
-                        TypeRepository.Register(model);
+                        KnownTypes.Register(model);
                     }
                 }
             }
