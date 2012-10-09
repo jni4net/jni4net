@@ -127,16 +127,27 @@ namespace com.jni4net.proxygen.Services
             var plainName = type.FullName.Replace('+', '.');
             var lowName = plainName.ToLowerInvariant();
 
+            var reflectionName = type.AssemblyQualifiedName;
             ResolverRecord record;
             if (!CommonResolver.ByName.TryGetValue(plainName, out record))
             {
                 if (!CommonResolver.ByLowName.TryGetValue(lowName, out record))
                 {
-                    record = new ResolverRecord { Type = type, ClrPlainName = plainName, ClrReflectionName = type.AssemblyQualifiedName };
+                    record = new ResolverRecord { Type = type, ClrPlainName = plainName, ClrReflectionName = reflectionName };
+                    CommonResolver.ByLowName.Add(lowName, record);
                 }
+                else
+                {
+                    record.ClrPlainName = plainName;
+                    record.ClrReflectionName = reflectionName;
+                }
+                CommonResolver.ByName.Add(plainName, record);
             }
-            CommonResolver.ByName.Add(plainName, record);
-            CommonResolver.ByLowName.Add(lowName, record);
+            else
+            {
+                record.ClrPlainName = plainName;
+                record.ClrReflectionName = reflectionName;
+            }
             byLowName.Add(lowName, record);
             byName.Add(plainName, record);
             byType.Add(type, record);
@@ -176,7 +187,15 @@ namespace com.jni4net.proxygen.Services
             }
             if (record.Type != null && record.Model == null && (forceModel || record.Type.IsPublic))
             {
-                record.Model = new MType(father) { ClrReflection = record.Type };
+                record.Model = new MType(father) { ClrReflection = record.Type , IsClr = true};
+            }
+            if (record.Model != null && record.Clazz != null && record.Model.JvmReflection == null)
+            {
+                record.Model.JvmReflection = record.Clazz;
+            }
+            if (record.Model != null && record.Type != null && record.Model.ClrReflection == null)
+            {
+                record.Model.ClrReflection = record.Type;
             }
             if (record.Type != null)
             {
@@ -191,10 +210,10 @@ namespace com.jni4net.proxygen.Services
             {
                 var lowName = record.ClrPlainName.ToLowerInvariant();
 
-                CommonResolver.ByLowName[record.ClrPlainName] = record;
-                CommonResolver.ByName[lowName] = record;
-                byLowName[record.ClrPlainName] = record;
-                byName[lowName] = record;
+                CommonResolver.ByLowName[lowName] = record;
+                CommonResolver.ByName[record.ClrPlainName] = record;
+                byLowName[lowName] = record;
+                byName[record.ClrPlainName] = record;
             }
         }
 

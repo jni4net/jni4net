@@ -35,6 +35,9 @@ namespace com.jni4net.proxygen.Services
                 ExploreConfigClr(projectRegistration);
             }
 
+            KnownTypes.SystemObject.IsRoot = true;
+            KnownTypes.JavaLangObject.IsRoot = true;
+
             KnownTypes.SystemObject.Substitution = KnownTypes.JavaLangObject;
             KnownTypes.JavaLangObject.Substitution = KnownTypes.SystemObject;
 

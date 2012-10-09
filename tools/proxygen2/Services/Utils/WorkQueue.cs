@@ -118,11 +118,9 @@ namespace com.jni4net.proxygen.Services
         public void Enqueue(IMType model, bool generate, bool explore)
         {
             bool reexplore = false;
-            if (!model.IsGenerate && !model.IsGenerateIfMissing && generate)
+            if (!model.IsGenerate && generate && !model.IsAlreadyKnown)
             {
                 //enforce reevaluation
-                model.IsExplore = true;
-                model.IsGenerateIfMissing = true;
                 reexplore = true;
                 Logger.LogVerbose("Reevaluate generate " + model, model);
             }
@@ -140,6 +138,13 @@ namespace com.jni4net.proxygen.Services
 
                 // this should be processed inline
                 NameProcessors.Process(model);
+
+                if (!model.IsGenerate && generate && !model.IsAlreadyKnown)
+                {
+                    //enforce reevaluation
+                    model.IsExplore = true;
+                    model.IsGenerate = true;
+                }
             }
         }
 

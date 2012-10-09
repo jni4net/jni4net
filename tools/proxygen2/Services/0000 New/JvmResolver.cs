@@ -159,10 +159,20 @@ namespace com.jni4net.proxygen.Services
                 if (!CommonResolver.ByLowName.TryGetValue(lowName, out record))
                 {
                     record = new ResolverRecord { JvmReflectionName = clazzName, JvmPlainName = plainName };
+                    CommonResolver.ByLowName.Add(lowName, record);
                 }
+                else
+                {
+                    record.JvmPlainName = plainName;
+                    record.JvmReflectionName = clazzName;
+                }
+                CommonResolver.ByName.Add(plainName, record);
             }
-            CommonResolver.ByName.Add(plainName, record);
-            CommonResolver.ByLowName.Add(lowName, record);
+            else
+            {
+                record.JvmPlainName = plainName;
+                record.JvmReflectionName = clazzName;
+            }
             byName.Add(plainName, record);
             byLowName.Add(lowName, record);
             return record;
@@ -202,6 +212,14 @@ namespace com.jni4net.proxygen.Services
             {
                 record.Model = new MType(father) { JvmReflection = record.Clazz };
             }
+            if (record.Model != null && record.Clazz != null && record.Model.JvmReflection==null)
+            {
+                record.Model.JvmReflection = record.Clazz;
+            }
+            if (record.Model != null && record.Type != null && record.Model.ClrReflection==null)
+            {
+                record.Model.ClrReflection = record.Type;
+            }
             if (record.Clazz != null)
             {
                 byClass[record.Clazz] = record;
@@ -216,10 +234,10 @@ namespace com.jni4net.proxygen.Services
             {
                 var lowName = record.JvmPlainName.ToLowerInvariant();
 
-                CommonResolver.ByLowName[record.JvmPlainName] = record;
-                CommonResolver.ByName[lowName] = record;
-                byLowName[record.JvmPlainName] = record;
-                byName[lowName] = record;
+                CommonResolver.ByLowName[lowName] = record;
+                CommonResolver.ByName[record.JvmPlainName] = record;
+                byLowName[lowName] = record;
+                byName[record.JvmPlainName] = record;
             }
         }
 
@@ -255,15 +273,15 @@ namespace com.jni4net.proxygen.Services
             return res.Model;
         }
 
-        public IMType ResolveModel(string fullname, IMType father)
+        public IMType ResolveModel(string plainName, IMType father)
         {
             ResolverRecord res;
-            if (byName.TryGetValue(fullname, out res))
+            if (byName.TryGetValue(plainName, out res))
             {
                 LoadClass(res, father, true);
                 return res.Model;
             }
-            if (byLowName.TryGetValue(fullname.ToLowerInvariant(), out res))
+            if (byLowName.TryGetValue(plainName.ToLowerInvariant(), out res))
             {
                 LoadClass(res, father, true);
                 return res.Model;

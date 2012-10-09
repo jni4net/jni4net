@@ -42,6 +42,10 @@ namespace com.jni4net.proxygen.Model
                 }
                 sb.Append(Enclosing[i]);
             }
+            if(Namespaces.Count>0||Enclosing.Count>0)
+            {
+                sb.Append(".");
+            }
             sb.Append(Name);
             return sb.ToString();
         }

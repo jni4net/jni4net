@@ -50,7 +50,7 @@ namespace com.jni4net.proxygen.Services
                 IMType baseModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrBase), model);
                 model.Base = baseModel;
                 model.HomeView.Base = ClrResolver.CreateUsage(clrBase, model.HomeView);
-                WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(baseModel, model.IsGenerate, model.IsExplore);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace com.jni4net.proxygen.Services
                 model.HomeView.Interfaces.Add(ClrResolver.CreateUsage(ifc, model.HomeView));
                 model.Interfaces.Add(ifcModel);
 
-                WorkQueue.Enqueue(ifcModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(ifcModel, model.IsGenerate, model.IsExplore);
             }
 
             Type clrEnclosing = clr.DeclaringType;
@@ -79,7 +79,7 @@ namespace com.jni4net.proxygen.Services
             {
                 IMType enclosingModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(clrEnclosing), model);
                 model.Enclosing = enclosingModel;
-                WorkQueue.Enqueue(enclosingModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(enclosingModel, model.IsGenerate, model.IsExplore);
             }
 
             return model;
@@ -99,7 +99,7 @@ namespace com.jni4net.proxygen.Services
                 IMType baseModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(jvmBase), model);
                 model.Base = baseModel;
                 model.HomeView.Base = JvmResolver.CreateUsage(jvmBase, model.HomeView);
-                WorkQueue.Enqueue(baseModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(baseModel, model.IsGenerate, model.IsExplore);
             }
             else
             {
@@ -120,7 +120,7 @@ namespace com.jni4net.proxygen.Services
                 model.HomeView.Interfaces.Add(JvmResolver.CreateUsage(ifc, model.HomeView));
                 model.Interfaces.Add(ifcModel);
 
-                WorkQueue.Enqueue(ifcModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(ifcModel, model.IsGenerate, model.IsExplore);
             }
 
             Class jvmEnclosing = jvm.getEnclosingClass();
@@ -128,7 +128,7 @@ namespace com.jni4net.proxygen.Services
             {
                 IMType enclosingModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(jvmEnclosing), model);
                 model.Enclosing = enclosingModel;
-                WorkQueue.Enqueue(enclosingModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(enclosingModel, model.IsGenerate, model.IsExplore);
             }
 
             return model;
