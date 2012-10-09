@@ -26,7 +26,7 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
-            if (model.IsGenerate || model.IsGenerateIfMissing)
+            if (model.IsGenerate)
             {
                 model = model.IsClr
                             ? Clr(model)
@@ -57,7 +57,7 @@ namespace com.jni4net.proxygen.Services
                     IMType nestedModel = ClrResolver.ResolveModel(ClrResolver.FindPlainType(nestedType), model);
                     model.Nested.Add(nestedModel);
 
-                    WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                    WorkQueue.Enqueue(nestedModel, model.IsGenerate, model.IsExplore);
                 }
             }
 
@@ -324,7 +324,7 @@ namespace com.jni4net.proxygen.Services
                 IMType nestedModel = JvmResolver.ResolveModel(JvmResolver.FindPlainType(nestedType), model);
                 model.Nested.Add(nestedModel);
 
-                WorkQueue.Enqueue(nestedModel, model.IsGenerate || model.IsGenerateIfMissing, model.IsExplore);
+                WorkQueue.Enqueue(nestedModel, model.IsGenerate, model.IsExplore);
             }
 
             var jvmConstructors = jvm.getConstructors().OrderBy(x => x.ToString());

@@ -3,8 +3,6 @@
   <Project ProjectName="jre-micro-j4n" ProjectKey="../../_tools/keys/jni4net.snk" ProjectVersion="0.9.0.0">
     <ClassPath JarFile="c:\Program Files\Java\jdk1.5.0_22\jre\lib\rt.jar" >
 
-      <JavaClass Name="java.lang.Object" Verbose="true"/>
-
       <JavaClass Name="java.lang.Long" >
         <!-- j4n bug so far-->
         <Member Signature="public static java.lang.Long java.lang.Long.getLong(java.lang.String,java.lang.Long)" Exclude="true"/>
@@ -97,6 +95,10 @@
       <JavaClass Name="java.lang.reflect.AnnotatedElement"/>
 
     </ClassPath>
+    <ClassPath JarFile="../../runtime/jni4net/bin/jni4net.jar" Generate="false" >
+    </ClassPath>
+    <Assembly File="..\..\runtime\jni4net\bin\jni4net.dll" Generate="false">
+    </Assembly>
   </Project>
 
 </jni4net-proxygen>

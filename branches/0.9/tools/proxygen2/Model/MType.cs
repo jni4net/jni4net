@@ -28,8 +28,12 @@ namespace com.jni4net.proxygen.Model
 
         public Stage Stage { get; set; }
 
+        public bool IsFinal { get; set; }
+        public bool IsRoot { get; set; }
         public bool IsGenerate { get; set; }
-        public bool IsGenerateIfMissing { get; set; }
+        public bool IsGeneric { get; set; }
+        public bool IsAbstract { get; set; }
+        public bool IsInterface { get; set; }
         public bool IsExplore { get; set; }
         public bool IsQueueing { get; set; }
         public bool IsVerbose { get; set; }
@@ -60,9 +64,9 @@ namespace com.jni4net.proxygen.Model
             {
                 sb.Append('G');
             }
-            else if(IsGenerateIfMissing)
+            else if (Substitution!=null)
             {
-                sb.Append('g');
+                sb.Append('S');
             }
             else if (IsExplore)
             {
@@ -86,6 +90,21 @@ namespace com.jni4net.proxygen.Model
             //sb.Append(GetHashCode());
             sb.Append('}');
             return sb.ToString();
+        }
+
+        public bool IsAlreadyKnown
+        {
+            get { return ClrReflection != null && JvmReflection != null; }
+        }
+
+        public bool IsGoingToBeKnown
+        {
+            get { return IsGenerate || IsAlreadyKnown; }
+        }
+
+        public bool IsResolved
+        {
+            get { return IsGoingToBeKnown || Substitution!=null; }
         }
 
         public bool IsAssignableFrom(IMType other, bool substitutions = false)

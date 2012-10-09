@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
-using IKVM.Reflection;
+using System.Text;
 using com.jni4net.proxygen.Interfaces;
 using java.lang;
+using StringBuilder = System.Text.StringBuilder;
+using Type = IKVM.Reflection.Type;
 
 namespace com.jni4net.proxygen.Services
 {
@@ -18,6 +21,33 @@ namespace com.jni4net.proxygen.Services
         
         public Type Type;
         public IMType Model;
+
+        public override string ToString()
+        {
+            var sb=new StringBuilder();
+
+            if(Type!=null && Clazz!=null)
+            {
+                sb.Append("CJ ");
+                sb.Append(ClrReflectionName);
+            }
+            else if (Type != null)
+            {
+                sb.Append("C  ");
+                sb.Append(ClrReflectionName);
+            }
+            else if (Clazz != null)
+            {
+                sb.Append(" J ");
+                sb.Append(JvmReflectionName);
+            }
+            else
+            {
+                sb.Append("INVALID");
+            }
+
+            return sb.ToString();
+        }
     }
 
     public class CommonResolver : ICommonResolver

@@ -23,9 +23,28 @@ namespace com.jni4net.proxygen.Services
 
         public override void Process(IMType model)
         {
+            if(model==KnownTypes.JavaLangThrowable)
+            {
+                int xxx = 0;
+            }
             model = model.IsClr 
                 ? Clr(model) 
                 : Jvm(model);
+
+            if(model.IsClr)
+            {
+                model.IsGeneric = model.ClrReflection.IsGenericType;
+                model.IsFinal = model.ClrReflection.IsSealed;
+                model.IsAbstract = model.ClrReflection.IsAbstract;
+                model.IsInterface = model.ClrReflection.IsInterface;
+            }
+            else
+            {
+                model.IsGeneric = model.JvmReflection.IsGenericClass();
+                model.IsFinal = model.JvmReflection.IsFinal();
+                model.IsAbstract = model.JvmReflection.IsAbstract();
+                model.IsInterface = model.JvmReflection.isInterface();
+            }
 
             Logger.LogVerbose(GetType().Name + " " + model, model);
             WorkQueue.Enqueue(model, Stage.S0200_FindRoots);

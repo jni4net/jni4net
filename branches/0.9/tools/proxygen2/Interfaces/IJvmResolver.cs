@@ -12,7 +12,7 @@ namespace com.jni4net.proxygen.Interfaces
         void Init();
         List<IMType> GenerateCp(string cp, IMType father, string regex = null);
         IMType ResolveModel(Class clazz, IMType father);
-        IMType ResolveModel(string fullname, IMType father);
+        IMType ResolveModel(string plainName, IMType father);
         void UpdateModel(IMType model);
         Class FindPlainType(Class clazz);
 

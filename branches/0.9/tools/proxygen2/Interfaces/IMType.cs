@@ -35,9 +35,16 @@ namespace com.jni4net.proxygen.Interfaces
 
         bool IsQueueing { get; set; }
         bool IsVerbose { get; set; }
+        bool IsGeneric { get; set; }
+        bool IsAbstract { get; set; }
+        bool IsInterface { get; set; }
+        bool IsFinal { get; set; }
+        bool IsRoot { get; set; }
         bool IsGenerate { get; set; }
-        bool IsGenerateIfMissing { get; set; }
         bool IsExplore { get; set; }
+        bool IsAlreadyKnown { get; }
+        bool IsGoingToBeKnown { get; }
+        bool IsResolved { get; }
         string ToString();
         bool IsAssignableFrom(IMType other, bool substitutions=false);
         bool IsNestedIn(IMType other, bool substitutions = false);

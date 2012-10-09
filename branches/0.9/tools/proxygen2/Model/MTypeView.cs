@@ -113,22 +113,61 @@ namespace com.jni4net.proxygen.Model
             set { Owner.IsSideLocked = value; }
         }
 
+        public bool IsAlreadyKnown
+        {
+            get { return Owner.IsAlreadyKnown; }
+        }
+
+        public bool IsGoingToBeKnown
+        {
+            get { return Owner.IsGoingToBeKnown; }
+        }
+
+        public bool IsResolved
+        {
+            get { return Owner.IsResolved; }
+        }
+
+        public bool IsRoot
+        {
+            get { return Owner.IsRoot; }
+            set { Owner.IsRoot = value; }
+        }
+
         public bool IsQueueing
         {
             get { return Owner.IsQueueing; }
             set { Owner.IsQueueing = value; }
         }
 
+        public bool IsGeneric
+        {
+            get { return Owner.IsGeneric; }
+            set { Owner.IsGeneric = value; }
+        }
+
+        public bool IsInterface
+        {
+            get { return Owner.IsInterface; }
+            set { Owner.IsInterface = value; }
+        }
+
+        public bool IsFinal
+        {
+            get { return Owner.IsFinal; }
+            set { Owner.IsFinal = value; }
+        }
+
+        public bool IsAbstract
+        {
+            get { return Owner.IsAbstract; }
+            set { Owner.IsAbstract = value; }
+        }
+        
         public bool IsGenerate
         {
             get { return Owner.IsGenerate; }
             set { Owner.IsGenerate = value; }
-        }
-
-        public bool IsGenerateIfMissing
-        {
-            get { return Owner.IsGenerateIfMissing; }
-            set { Owner.IsGenerateIfMissing = value; }
         }
 
         public bool IsExplore
