@@ -1,0 +1,2 @@
+if not exist "%~dp0/jni4net.snk" "%ProgramFiles%\Microsoft SDKs\Windows\v7.0A\Bin\sn.exe" -k "%~dp0/jni4net.snk"
+if not exist "%~dp0/jni4net.snk" "%ProgramFiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin\sn.exe" -k "%~dp0/jni4net.snk"
