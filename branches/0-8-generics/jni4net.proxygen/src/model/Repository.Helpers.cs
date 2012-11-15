@@ -355,7 +355,7 @@ namespace net.sf.jni4net.proxygen.model
         /// </summary>
         private static void LoadMethods(GType type)
         {
-            if (type.IsMethodsLoaded)
+            if (type.IsMethodsLoaded || type.CLRFullName == null)
             {
                 return;
             }

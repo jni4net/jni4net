@@ -96,7 +96,7 @@ namespace net.sf.jni4net.utils
         private static RegistryRecord ResolveNew(Type type)
         {
             var fill = new List<Type> {type};
-            Type current = type.BaseType;
+            Type current = type.BaseType ?? typeof(System.Object);
             RegistryRecord res;
             while (!knownCLR.TryGetValue(current, out res))
             {
