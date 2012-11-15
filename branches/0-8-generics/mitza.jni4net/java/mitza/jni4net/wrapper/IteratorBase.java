@@ -6,6 +6,9 @@ import java.util.NoSuchElementException;
 import mitza.jni4net.wrapper.IteratorState.State;
 import system.collections.IEnumerator;
 
+/**
+ * @author Mihai Cadariu
+ */
 class IteratorBase<T> implements Iterator<T> {
 
 	private IEnumerator enumerator;
