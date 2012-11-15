@@ -252,6 +252,9 @@ namespace net.sf.jni4net.utils
 
         public static string GetSignature(string typeName)
         {
+            if (typeName == null) {
+                return "";
+            }
             string low = typeName.ToLowerInvariant();
             int arr = low.LastIndexOf("[");
             string array = "";

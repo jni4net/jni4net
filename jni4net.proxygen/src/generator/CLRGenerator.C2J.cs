@@ -26,23 +26,19 @@ using System.Text;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.model;
 
-namespace net.sf.jni4net.proxygen.generator
-{
-    internal partial class CLRGenerator
-    {
-        protected void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool isProxy)
-        {
-            if (method.IsCLRMethod && !type.IsInterface && !type.IsDelegate)
-            {
+namespace net.sf.jni4net.proxygen.generator {
+
+    internal partial class CLRGenerator {
+
+        protected void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool isProxy) {
+            if (method.IsCLRMethod && !type.IsInterface && !type.IsDelegate) {
                 return;
             }
-            if (isProxy || !type.IsInterface)
-            {
+            if (isProxy || !type.IsInterface) {
                 GenerateMethodIdFieldC2J(method, tgtType, uName);
                 GenerateMethodRegC2J(method, uName);
             }
-            if (method.IsStatic && type.IsInterface && isProxy)
-            {
+            if (method.IsStatic && type.IsInterface && isProxy) {
                 return;
             }
             CodeStatementCollection tgtStatements = CreateMethodSignature(tgtType, method, isProxy);
@@ -54,40 +50,28 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateEndFrameC2J(tgtStatements);
         }
 
-        private void GenerateMethodIdFieldC2J(GMethod method, CodeTypeDeclaration tgtType, string uName)
-        {
+        private void GenerateMethodIdFieldC2J(GMethod method, CodeTypeDeclaration tgtType, string uName) {
             CodeMemberField fieldId;
-            if (method.IsField)
-            {
-                fieldId = new CodeMemberField(TypeReference(typeof (FieldId)), uName);
-            }
-            else
-            {
-                fieldId = new CodeMemberField(TypeReference(typeof (MethodId)), uName);
+            if (method.IsField) {
+                fieldId = new CodeMemberField(TypeReference(typeof(FieldId)), uName);
+            } else {
+                fieldId = new CodeMemberField(TypeReference(typeof(MethodId)), uName);
             }
             fieldId.Attributes = MemberAttributes.Static | MemberAttributes.FamilyAndAssembly;
             tgtType.Members.Add(fieldId);
         }
 
-        private CodeStatement GenerateCallStatementC2J(GMethod method, CodeExpression invokeExpression)
-        {
+        private CodeStatement GenerateCallStatementC2J(GMethod method, CodeExpression invokeExpression) {
             CodeStatement call;
-            if (method.IsConstructor || method.IsVoid)
-            {
+            if (method.IsConstructor || method.IsVoid) {
                 call = new CodeExpressionStatement(invokeExpression);
-            }
-            else
-            {
-                if (method.ReturnType.IsPrimitive)
-                {
-                    if (method.ReturnType.JVMSubst != null)
-                    {
+            } else {
+                if (method.ReturnType.IsPrimitive) {
+                    if (method.ReturnType.JVMSubst != null) {
                         invokeExpression = new CodeCastExpression(method.ReturnType.CLRReference, invokeExpression);
                     }
                     call = new CodeMethodReturnStatement(invokeExpression);
-                }
-                else
-                {
+                } else {
                     CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionJ2CParam(method.ReturnType,
                                                                                                     invokeExpression);
                     call = new CodeMethodReturnStatement(conversionExpression);
@@ -96,32 +80,25 @@ namespace net.sf.jni4net.proxygen.generator
             return call;
         }
 
-        private CodeMethodInvokeExpression GenerateInvokeExpressionC2J(GMethod method, string uName)
-        {
+        private CodeMethodInvokeExpression GenerateInvokeExpressionC2J(GMethod method, string uName) {
             CodeExpression[] expressions = GetExpressionsC2J(method, uName);
             string callName = GetCallNameC2J(method);
             return new CodeMethodInvokeExpression(envVariable, callName, expressions);
         }
 
-        private CodeExpression[] GetExpressionsC2J(GMethod method, string uName)
-        {
+        private CodeExpression[] GetExpressionsC2J(GMethod method, string uName) {
             int offset = method.IsConstructor ? 3 : 2;
             var expressions = new CodeExpression[method.Parameters.Count + offset];
-            if (method.IsStatic || method.IsConstructor)
-            {
+            if (method.IsStatic || method.IsConstructor) {
                 expressions[0] = new CodeFieldReferenceExpression(ProxyTypeEx, "staticClass");
-            }
-            else
-            {
+            } else {
                 expressions[0] = new CodeThisReferenceExpression();
             }
             expressions[1] = new CodeFieldReferenceExpression(ProxyTypeEx, uName);
-            if (method.IsConstructor)
-            {
+            if (method.IsConstructor) {
                 expressions[2] = new CodeThisReferenceExpression();
             }
-            for (int i = 0; i < method.Parameters.Count; i++)
-            {
+            for (int i = 0; i < method.Parameters.Count; i++) {
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
                 CodeExpression invokeExpression = new CodeVariableReferenceExpression(paramName);
@@ -132,12 +109,12 @@ namespace net.sf.jni4net.proxygen.generator
             return expressions;
         }
 
-        private void GenerateMethodRegC2J(GMethod method, string uName)
-        {
+        private void GenerateMethodRegC2J(GMethod method, string uName) {
             var claxs = new CodeFieldReferenceExpression(CurrentTypeEx, "staticClass");
             string getmethodidthrow = method.IsField
                                           ? method.IsStatic ? "GetStaticFieldID" : "GetFieldID"
                                           : method.IsStatic ? "GetStaticMethodID" : "GetMethodID";
+            string methodJVMSignature = FixGenericReturnTypeJVMSignature(method);
             var initBody =
                 new CodeAssignStatement(
                     new CodeFieldReferenceExpression(CurrentTypeEx, uName),
@@ -145,70 +122,56 @@ namespace net.sf.jni4net.proxygen.generator
                         envVariable, getmethodidthrow,
                         claxs,
                         new CodePrimitiveExpression(method.JVMName),
-                        new CodePrimitiveExpression(method.JVMSignature)));
+                        new CodePrimitiveExpression(methodJVMSignature)));
             InitStatements.Add(initBody);
         }
 
-        private string GetCallNameC2J(GMethod method)
-        {
+        private string GetCallNameC2J(GMethod method) {
             var callName = new StringBuilder();
-            if (method.IsConstructor)
-            {
+            if (method.IsConstructor) {
                 callName.Append("NewObject");
-            }
-            else
-            {
-                if (method.ReturnType != null && method.ReturnType.IsPrimitive)
-                {
+            } else {
+                if (method.ReturnType != null && method.ReturnType.IsPrimitive) {
                     callName.Append(method.ReturnType.JVMResolved);
                     callName[0] = Char.ToUpper(callName[0]);
-                }
-                else
-                {
+                } else {
                     callName.Append("Object");
                 }
-                if (method.IsStatic)
-                {
+                if (method.IsStatic) {
                     callName.Insert(0, "Static");
                 }
                 callName.Insert(0, method.IsField ? "Get" : "Call");
                 callName.Append(method.IsField ? "Field" : "Method");
-                if (method.ReturnType != null && !method.ReturnType.IsPrimitive)
-                {
+                if (method.ReturnType != null && !method.ReturnType.IsPrimitive) {
                     callName.Append("Ptr");
                 }
             }
             return callName.ToString();
         }
 
-        private void GenerateGetEnvC2J(GMethod method, CodeStatementCollection tgtStatements)
-        {
-            if (method.IsStatic || method.IsConstructor)
-            {
+        private void GenerateGetEnvC2J(GMethod method, CodeStatementCollection tgtStatements) {
+            if (method.IsStatic || method.IsConstructor) {
                 CodeStatement statement =
                     new CodeVariableDeclarationStatement(
-                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference),
+                        new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference),
                         envVariableName,
-                        new CodePropertyReferenceExpression(TypeReferenceEx(typeof (JNIEnv)), "ThreadEnv"));
+                        new CodePropertyReferenceExpression(TypeReferenceEx(typeof(JNIEnv)), "ThreadEnv"));
                 tgtStatements.Add(statement);
-            }
-            else
-            {
+            } else {
                 CodeStatement statement =
                     new CodeVariableDeclarationStatement(
-                        new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference),
+                        new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference),
                         envVariableName,
                         new CodePropertyReferenceExpression
                             (new CodeThisReferenceExpression
                                  (), "Env"));
                 tgtStatements.Add(statement);
             }
-            int framesize = (10+method.Parameters.Count*2);
-            tgtStatements.Add(new CodeSnippetStatement("            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, "+framesize+")){"));
+            int framesize = (10 + method.Parameters.Count * 2);
+            tgtStatements.Add(new CodeSnippetStatement("            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, " + framesize + ")){"));
         }
 
-        private void GenerateEndFrameC2J(CodeStatementCollection tgtStatements)
-        {
+        private void GenerateEndFrameC2J(CodeStatementCollection tgtStatements) {
             tgtStatements.Add(new CodeSnippetStatement("            }"));
         }
     }

@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #endregion
 
+using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.IO;
@@ -29,34 +30,28 @@ using Microsoft.CSharp;
 using net.sf.jni4net.jni;
 using net.sf.jni4net.proxygen.model;
 using net.sf.jni4net.utils;
-using StringBuilder=System.Text.StringBuilder;
+using StringBuilder = System.Text.StringBuilder;
 
-namespace net.sf.jni4net.proxygen.generator
-{
-    internal abstract partial class CLRGenerator : Generator
-    {
+namespace net.sf.jni4net.proxygen.generator {
+    internal abstract partial class CLRGenerator : Generator {
         protected const string cdc = "Component Designer generated code ";
         protected CodeStatementCollection InitStatements;
 
         protected CLRGenerator(GType type)
-            : base(type)
-        {
+            : base(type) {
         }
 
-        protected override void Generate()
-        {
+        protected override void Generate() {
             string package = type.CLRNamespace.Replace('.', '/').ToLower();
             string dirCs = Path.Combine(config.TargetDirClr, package);
-            if (!Directory.Exists(dirCs))
-            {
+            if (!Directory.Exists(dirCs)) {
                 Directory.CreateDirectory(dirCs);
             }
 
             string csFile = GetFileName(dirCs);
 
             string newFile = GenerateNamespace();
-            if (newFile == null)
-            {
+            if (newFile == null) {
                 // no type to store
                 return;
             }
@@ -64,8 +59,7 @@ namespace net.sf.jni4net.proxygen.generator
             //Console.WriteLine(newFile);
 
             // replace with new text
-            using (var sw = new StreamWriter(csFile))
-            {
+            using (var sw = new StreamWriter(csFile)) {
                 sw.Write(newFile);
             }
             filesCLR.Add(csFile);
@@ -74,8 +68,7 @@ namespace net.sf.jni4net.proxygen.generator
         /// <summary>
         /// Compile unit
         /// </summary>
-        private string GenerateNamespace()
-        {
+        private string GenerateNamespace() {
             var sb = new StringBuilder();
             var buffer = new StringWriter(sb);
 
@@ -85,8 +78,7 @@ namespace net.sf.jni4net.proxygen.generator
             var nameSpace = new CodeNamespace(type.CLRNamespace);
 
             Generate(nameSpace);
-            if (nameSpace.Types.Count == 0)
-            {
+            if (nameSpace.Types.Count == 0) {
                 // no type to store
                 return null;
             }
@@ -103,32 +95,27 @@ namespace net.sf.jni4net.proxygen.generator
             //sb.Replace("public partial class", "public unsafe partial class");
             //sb.Replace("internal sealed partial class @__", "internal sealed unsafe partial class @__");
 
-
             sb.Replace("// __event__\r\n        public global::", "public event global::");
             sb.Replace("get {\r\n                // __add__", "add {");
             sb.Replace("set {\r\n                // __remove__", "remove {");
             sb.Replace("__event_add__ = global", " += global");
             sb.Replace("__event_remove__ = global", " -= global");
 
-
-            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject)
-            {
+            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject) {
                 sb.Replace("internal sealed class ContructionHelper", "new internal sealed class ContructionHelper");
             }
 
             return sb.ToString();
         }
 
-        protected virtual string GetFileName(string dirCs)
-        {
+        protected virtual string GetFileName(string dirCs) {
             return Path.Combine(dirCs, type.Name + ".generated.cs");
         }
 
         /// <summary>
         /// Create static type info for interface
         /// </summary>
-        protected void GenerateStatic(CodeNamespace nameSpace)
-        {
+        protected void GenerateStatic(CodeNamespace nameSpace) {
             var tgtType = new CodeTypeDeclaration(type.Name + "_");
             SetCurrentType(type.CLRNamespaceExt + "." + type.Name + "_", type.CLRNamespace + "." + type.Name,
                            type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespaceExt + "." + type.Name + "_");
@@ -139,11 +126,9 @@ namespace net.sf.jni4net.proxygen.generator
             GenerateStaticFields(tgtType);
 
             int m = 0;
-            foreach (GMethod method in type.MethodsWithInterfaces)
-            {
+            foreach (GMethod method in type.MethodsWithInterfaces) {
                 string uName = ("j4n_" + method.CLRName + m);
-                if (method.IsField && method.IsStatic)
-                {
+                if (method.IsField && method.IsStatic) {
                     CreateMethodC2J(method, tgtType, uName, false);
                 }
                 m++;
@@ -157,8 +142,7 @@ namespace net.sf.jni4net.proxygen.generator
         /// <summary>
         /// Create proxy for interface
         /// </summary>
-        protected void GenerateProxy(CodeNamespace nameSpace)
-        {
+        protected void GenerateProxy(CodeNamespace nameSpace) {
             var tgtType = new CodeTypeDeclaration("__" + type.Name);
             SetCurrentType(type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespace + "." + type.Name,
                            type.CLRNamespaceExt + ".__" + type.Name, type.CLRNamespaceExt + "." + type.Name + "_");
@@ -167,18 +151,15 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.TypeAttributes = TypeAttributes.NotPublic | TypeAttributes.Sealed;
             Utils.AddAttribute(tgtType, "net.sf.jni4net.attributes.JavaProxyAttribute", RealType, StaticType);
             tgtType.BaseTypes.Add(Repository.javaLangObject.CLRReference);
-            if (type.IsInterface)
-            {
+            if (type.IsInterface) {
                 tgtType.BaseTypes.Add(type.CLRReference);
             }
             tgtType.IsPartial = true;
 
             GenerateTypeOfInit(tgtType, true);
             GenerateWrapperInitJ2C();
-            if (type.Registration == null || !type.Registration.NoMethods)
-            {
-                if (type.IsInterface || type.IsDelegate)
-                {
+            if (type.Registration == null || !type.Registration.NoMethods) {
+                if (type.IsInterface || type.IsDelegate) {
                     GenerateProxyMethodsC2J(tgtType);
                 }
                 GenerateWrapperMethodsJ2C(tgtType);
@@ -190,18 +171,14 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.EndDirectives.Add(new CodeRegionDirective(CodeRegionMode.End, cdc));
         }
 
-
-        private void GenerateProxyMethodsC2J(CodeTypeDeclaration tgtType)
-        {
+        private void GenerateProxyMethodsC2J(CodeTypeDeclaration tgtType) {
             int m = 0;
-            foreach (GMethod method in type.MethodsWithInterfaces)
-            {
+            foreach (GMethod method in type.MethodsWithInterfaces) {
                 string uName = ("j4n_" + method.CLRName + m);
                 CreateMethodC2J(method, tgtType, uName, true);
                 m++;
             }
-            foreach (GMethod method in type.Constructors)
-            {
+            foreach (GMethod method in type.Constructors) {
                 string uName = ("j4n_" + method.CLRName + m);
                 CreateMethodC2J(method, tgtType, uName, false);
                 m++;
@@ -209,63 +186,51 @@ namespace net.sf.jni4net.proxygen.generator
         }
 
         protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method,
-                                                                bool isProxy)
-        {
+                                                                bool isProxy) {
             bool add = true;
             CodeStatementCollection tgtStatements;
             CodeTypeMember tgtMember;
             CodeMemberMethod tgtMethod = null;
             CodeMemberPropertyEx tgtProperty;
             CodeMemberPropertyEx tgtEvent;
-            if (method.IsConstructor)
-            {
+            if (method.IsConstructor) {
                 var tgtConstructor = new CodeConstructor();
                 tgtMethod = tgtConstructor;
                 tgtMember = tgtMethod;
                 tgtStatements = tgtMethod.Statements;
-                if (!type.IsRootType)
-                {
+                if (!type.IsRootType) {
                     tgtConstructor.BaseConstructorArgs.Add(
                         new CodeCastExpression(TypeReference("net.sf.jni4net.jni.JNIEnv"),
                                                new CodePrimitiveExpression(null)));
                 }
-            }
-            else if (method.IsField)
-            {
+            } else if (method.IsField) {
                 var p = new CodeMemberProperty();
                 tgtMember = p;
                 tgtStatements = p.GetStatements;
                 p.Name = method.CLRName;
                 p.Type = method.ReturnType.CLRReference;
-            }
-            else if (method.IsEvent)
-            {
+            } else if (method.IsEvent) {
                 tgtEvent = new CodeMemberPropertyEx();
                 tgtEvent.Getter = method.CLRPropertyAdd;
                 tgtEvent.Setter = method.CLRPropertyRemove;
                 tgtEvent.Name = method.CLRName;
-                if (method.UseExplicitInterface)
-                {
+                if (method.UseExplicitInterface) {
                     tgtEvent.PrivateImplementationType = method.DeclaringType.CLRReference;
                 }
 
-                foreach (CodeTypeMember m in tgtType.Members)
-                {
+                foreach (CodeTypeMember m in tgtType.Members) {
                     var member = m as CodeMemberPropertyEx;
                     if (member != null)
-                        if (member.Getter == method || member.Setter == method)
-                        {
+                        if (member.Getter == method || member.Setter == method) {
                             tgtEvent = member;
                             add = false;
                             break;
                         }
                 }
-                int count = method.Parameters.Count-1;
+                int count = method.Parameters.Count - 1;
                 tgtEvent.Type = method.Parameters[count].CLRReference;
-                if (add)
-                {
-                    for (int i = 0; i < count; i++)
-                    {
+                if (add) {
+                    for (int i = 0; i < count; i++) {
                         var tgtParameter = new CodeParameterDeclarationExpression();
                         tgtParameter.Name = method.ParameterNames[i];
                         tgtParameter.Type = method.Parameters[i].CLRReference;
@@ -275,48 +240,37 @@ namespace net.sf.jni4net.proxygen.generator
                 }
 
                 tgtMember = tgtEvent;
-                if (method.IsCLRPropertyAdd)
-                {
+                if (method.IsCLRPropertyAdd) {
                     tgtEvent.GetStatements.Add(new CodeCommentStatement("__add__"));
                     tgtStatements = tgtEvent.GetStatements;
-                }
-                else
-                {
+                } else {
                     tgtEvent.SetStatements.Add(new CodeCommentStatement("__remove__"));
                     tgtStatements = tgtEvent.SetStatements;
                 }
-            }
-            else if (method.IsProperty)
-            {
+            } else if (method.IsProperty) {
                 tgtProperty = new CodeMemberPropertyEx();
                 tgtProperty.Setter = method.CLRPropertySetter;
                 tgtProperty.Getter = method.CLRPropertyGetter;
                 tgtProperty.Name = method.CLRName;
-                if (method.UseExplicitInterface)
-                {
+                if (method.UseExplicitInterface) {
                     tgtProperty.PrivateImplementationType = method.DeclaringType.CLRReference;
                 }
 
-                foreach (CodeTypeMember m in tgtType.Members)
-                {
+                foreach (CodeTypeMember m in tgtType.Members) {
                     var member = m as CodeMemberPropertyEx;
                     if (member != null)
-                        if (member.Getter == method || member.Setter == method)
-                        {
+                        if (member.Getter == method || member.Setter == method) {
                             tgtProperty = member;
                             add = false;
                             break;
                         }
                 }
                 int count = method.Parameters.Count;
-                if (!method.IsCLRPropertyGetter)
-                {
+                if (!method.IsCLRPropertyGetter) {
                     count--;
                 }
-                if (add)
-                {
-                    for (int i = 0; i < count; i++)
-                    {
+                if (add) {
+                    for (int i = 0; i < count; i++) {
                         var tgtParameter = new CodeParameterDeclarationExpression();
                         tgtParameter.Name = method.ParameterNames[i];
                         tgtParameter.Type = method.Parameters[i].CLRReference;
@@ -324,54 +278,42 @@ namespace net.sf.jni4net.proxygen.generator
                     }
                 }
 
-                if (method.IsCLRPropertyGetter)
-                {
+                if (method.IsCLRPropertyGetter) {
                     tgtProperty.Type = method.ReturnType.CLRReference;
                     tgtStatements = tgtProperty.GetStatements;
-                }
-                else
-                {
+                } else {
                     tgtProperty.Type = method.Parameters[count].CLRReference;
                     tgtStatements = tgtProperty.SetStatements;
                 }
                 tgtMember = tgtProperty;
-            }
-            else
-            {
+            } else {
                 tgtMethod = new CodeMemberMethod();
                 tgtMethod.Name = method.CLRName;
                 tgtMethod.ReturnType = method.ReturnType.CLRReference;
                 tgtMember = tgtMethod;
                 tgtStatements = tgtMethod.Statements;
-                if (method.UseExplicitInterface)
-                {
+                if (method.UseExplicitInterface) {
                     tgtMethod.PrivateImplementationType = method.DeclaringType.CLRReference;
                 }
             }
-            if (!config.SkipSignatures && !isProxy)
-            {
+            if (!config.SkipSignatures && !isProxy) {
                 Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.JVMSignature);
             }
             tgtMember.Attributes = method.Attributes;
-            if (isProxy)
-            {
+            if (isProxy) {
                 tgtMember.Attributes |= MemberAttributes.Final;
             }
-            if (tgtMethod != null)
-            {
+            if (tgtMethod != null) {
                 GenerateParameters(method, tgtMethod);
             }
-            if (add)
-            {
+            if (add) {
                 tgtType.Members.Add(tgtMember);
             }
             return tgtStatements;
         }
 
-        protected void GenerateParameters(GMethod method, CodeMemberMethod tgtMethod)
-        {
-            for (int i = 0; i < method.Parameters.Count; i++)
-            {
+        protected void GenerateParameters(GMethod method, CodeMemberMethod tgtMethod) {
+            for (int i = 0; i < method.Parameters.Count; i++) {
                 var tgtParameter = new CodeParameterDeclarationExpression();
                 tgtParameter.Name = method.ParameterNames[i];
                 tgtParameter.Type = method.Parameters[i].CLRReference;
@@ -379,8 +321,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
         }
 
-        protected void GenerateStaticFields(CodeTypeDeclaration tgtType)
-        {
+        protected void GenerateStaticFields(CodeTypeDeclaration tgtType) {
             var claprop = new CodeMemberProperty();
             claprop.Type = Repository.javaLangClass.CLRReference;
             claprop.Name = "_class";
@@ -388,18 +329,15 @@ namespace net.sf.jni4net.proxygen.generator
                 new CodeMethodReturnStatement(new CodeFieldReferenceExpression(ProxyTypeEx, "staticClass")));
             tgtType.Members.Add(claprop);
             claprop.Attributes = MemberAttributes.Static | MemberAttributes.Public;
-            if (type.IsJVMProxy && type!=Repository.javaLangObject && type!=Repository.javaLangThrowable)
-            {
+            if (type.IsJVMProxy && type != Repository.javaLangObject && type != Repository.javaLangThrowable) {
                 claprop.Attributes |= MemberAttributes.New;
             }
         }
 
-        protected void GenerateTypeOfInit(CodeTypeDeclaration tgtType, bool proxy)
-        {
+        protected void GenerateTypeOfInit(CodeTypeDeclaration tgtType, bool proxy) {
             var staticfield = new CodeMemberField(Repository.javaLangClass.CLRReference, "staticClass");
             staticfield.Attributes = MemberAttributes.Static | MemberAttributes.FamilyAndAssembly;
-            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject)
-            {
+            if (type != Repository.javaLangThrowable && type != Repository.javaLangObject) {
                 staticfield.Attributes |= MemberAttributes.New;
             }
             tgtType.Members.Add(staticfield);
@@ -407,8 +345,8 @@ namespace net.sf.jni4net.proxygen.generator
             var init = new CodeMemberMethod();
             init.Name = "InitJNI";
             init.Attributes |= MemberAttributes.Static;
-            var jniEnv = new CodeTypeReference(typeof (JNIEnv), CodeTypeReferenceOptions.GlobalReference);
-            var statClass = new CodeTypeReference(typeof (Class));
+            var jniEnv = new CodeTypeReference(typeof(JNIEnv), CodeTypeReferenceOptions.GlobalReference);
+            var statClass = new CodeTypeReference(typeof(Class));
             init.Parameters.Add(new CodeParameterDeclarationExpression(jniEnv, envVariableName));
             init.Parameters.Add(new CodeParameterDeclarationExpression(statClass, classVariableName));
             init.Statements.Add(
@@ -422,13 +360,12 @@ namespace net.sf.jni4net.proxygen.generator
             InitStatements = init.Statements;
         }
 
-        protected void GenerateConstructionHelper(CodeTypeDeclaration tgtType)
-        {
+        protected void GenerateConstructionHelper(CodeTypeDeclaration tgtType) {
             var constructionHelper = new CodeTypeDeclaration("ContructionHelper");
-            constructionHelper.BaseTypes.Add(TypeReference(typeof (IConstructionHelper)));
+            constructionHelper.BaseTypes.Add(TypeReference(typeof(IConstructionHelper)));
             var createMethod = new CodeMemberMethod();
-            createMethod.ReturnType = TypeReference(typeof (IJvmProxy));
-            createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof (JNIEnv)),
+            createMethod.ReturnType = TypeReference(typeof(IJvmProxy));
+            createMethod.Parameters.Add(new CodeParameterDeclarationExpression(TypeReference(typeof(JNIEnv)),
                                                                                envVariableName));
             createMethod.Statements.Add(
                 new CodeMethodReturnStatement(new CodeObjectCreateExpression(CurrentType,
@@ -440,193 +377,227 @@ namespace net.sf.jni4net.proxygen.generator
             tgtType.Members.Add(constructionHelper);
         }
 
-        private CodeMethodInvokeExpression CreateConversionExpressionJ2C(GType paramType, CodeExpression invokeExpression)
-        {
+        private CodeMethodInvokeExpression CreateConversionExpressionJ2C(GType paramType, CodeExpression invokeExpression) {
             return CEEJ2C(paramType, invokeExpression, false);
         }
 
-        private CodeMethodInvokeExpression CreateConversionExpressionJ2CParam(GType paramType, CodeExpression invokeExpression)
-        {
+        private CodeMethodInvokeExpression CreateConversionExpressionJ2CParam(GType paramType, CodeExpression invokeExpression) {
             return CEEJ2C(paramType, invokeExpression, true);
         }
 
-        private CodeMethodInvokeExpression CEEJ2C(GType paramType, CodeExpression invokeExpression, bool param)
-        {
+        private CodeMethodInvokeExpression CEEJ2C(GType paramType, CodeExpression invokeExpression, bool param) {
             CodeTypeReference[] par;
-            if (paramType.IsArray)
-            {
+            if (paramType.IsArray) {
                 GType element = paramType.ArrayElement;
-                if (element.IsPrimitive)
-                {
-                    par = new CodeTypeReference[] {};
+                if (element.IsPrimitive) {
+                    par = new CodeTypeReference[] { };
                     return CCE("ArrayPrimJ2C" + element.Name, par, invokeExpression, true);
                 }
-                if (element == Repository.javaLangString)
-                {
-                    par = new CodeTypeReference[] {};
+                if (element == Repository.javaLangString) {
+                    par = new CodeTypeReference[] { };
                     return CCE("ArrayStrongJ2CpString", par, invokeExpression, true);
                 }
-                if (element == Repository.systemString)
-                {
+                if (element == Repository.systemString) {
                     par = new CodeTypeReference[] { };
                     return CCE("ArrayStrongJ2CString", par, invokeExpression, true);
                 }
-                if (element == Repository.javaLangClass)
-                {
-                    par = new CodeTypeReference[] {};
+                if (element == Repository.javaLangClass) {
+                    par = new CodeTypeReference[] { };
                     return CCE("ArrayStrongJ2CpClass", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType)
-                {
-                    par = new[] {paramType.CLRReference, paramType.ArrayElement.CLRReference};
+                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType) {
+                    par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                     return CCE("ArrayStrongJp2C", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType)
-                {
-                    par = new[] {paramType.CLRReference, paramType.ArrayElement.CLRReference};
+                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType) {
+                    par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                     return CCE("ArrayStrongJ2Cp", par, invokeExpression, true);
                 }
-                par = new[] {paramType.CLRReference, paramType.ArrayElement.CLRReference};
+                par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
                 return CCE("ArrayFullJ2C", par, invokeExpression, true);
             }
-            if (paramType.IsPrimitive)
-            {
-                par = new CodeTypeReference[] {};
+            if (paramType.IsPrimitive) {
+                par = new CodeTypeReference[] { };
                 return CCE("PrimJ2C" + paramType.Name, par, invokeExpression, false);
             }
-            if (paramType == Repository.javaLangString)
-            {
-                par = new CodeTypeReference[] {};
+            if (paramType == Repository.javaLangString) {
+                par = new CodeTypeReference[] { };
                 return CCE("StrongJ2CpString", par, invokeExpression, true);
             }
-            if (paramType == Repository.systemString)
-            {
+            if (paramType == Repository.systemString) {
                 par = new CodeTypeReference[] { };
                 return CCE("StrongJ2CString", par, invokeExpression, true);
             }
-            if (paramType == Repository.javaLangClass)
-            {
-                par = new CodeTypeReference[] {};
+            if (paramType == Repository.javaLangClass) {
+                par = new CodeTypeReference[] { };
                 return CCE("StrongJ2CpClass", par, invokeExpression, true);
             }
-            if(paramType.IsDelegate)
-            {
-                par = new [] { paramType.CLRReference };
+            if (paramType.IsDelegate) {
+                par = new[] { paramType.CLRReference };
                 return CCE("StrongJ2CpDelegate", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
-            {
-                par = new[] {paramType.CLRReference};
+            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType) {
+                par = new[] { paramType.CLRReference };
                 return CCE("StrongJp2C", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType)
-            {
-                par = new[] {paramType.CLRReference};
+            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType) {
+                par = new[] { paramType.CLRReference };
                 return CCE("StrongJ2Cp", par, invokeExpression, true);
             }
-            par = new[] {paramType.CLRReference};
+            par = new[] { paramType.CLRReference };
             return CCE("FullJ2C", par, invokeExpression, true);
         }
 
         private CodeMethodInvokeExpression CreateConversionExpressionC2J(GType paramType,
-                                                                         CodeExpression invokeExpression)
-        {
+                                                                         CodeExpression invokeExpression) {
             return CEEC2J("", paramType, invokeExpression);
         }
 
         private CodeMethodInvokeExpression CreateConversionExpressionC2JParam(GType paramType,
-                                                                              CodeExpression invokeExpression)
-        {
+                                                                              CodeExpression invokeExpression) {
             return CEEC2J("Par", paramType, invokeExpression);
         }
 
-        private CodeMethodInvokeExpression CEEC2J(string prefix, GType paramType, CodeExpression invokeExpression)
-        {
+        private CodeMethodInvokeExpression CEEC2J(string prefix, GType paramType, CodeExpression invokeExpression) {
             CodeTypeReference[] par;
-            if (paramType.IsArray)
-            {
+            if (paramType.IsArray) {
                 GType element = paramType.ArrayElement;
-                if (element.IsPrimitive)
-                {
-                    par = new CodeTypeReference[] {};
+                if (element.IsPrimitive) {
+                    par = new CodeTypeReference[] { };
                     return CCE(prefix + "ArrayPrimC2J", par, invokeExpression, true);
                 }
-                if (element == Repository.systemString)
-                {
-                    par = new CodeTypeReference[] {};
+                if (element == Repository.systemString) {
+                    par = new CodeTypeReference[] { };
                     return CCE(prefix + "ArrayStrongC2JString", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType)
-                {
-                    par = new[] {paramType.CLRReference, paramType.ArrayElement.CLRReference};
+                if (!element.IsInterface && !element.IsCLRRootType && element.IsCLRRealType) {
+                    par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
+                    FixGenericParameters(par);
                     return CCE(prefix + "ArrayStrongC2Jp", par, invokeExpression, true);
                 }
-                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType)
-                {
-                    par = new CodeTypeReference[] {};
+                if (!element.IsInterface && !element.IsJVMRootType && element.IsJVMRealType) {
+                    par = new CodeTypeReference[] { };
                     return CCE(prefix + "ArrayStrongCp2J", par, invokeExpression, true);
                 }
-                par = new[] {paramType.CLRReference, paramType.ArrayElement.CLRReference};
+                par = new[] { paramType.CLRReference, paramType.ArrayElement.CLRReference };
+                FixGenericParameters(par);
                 return CCE(prefix + "ArrayFullC2J", par, invokeExpression, true);
             }
-            if (paramType.IsPrimitive)
-            {
-                par = new CodeTypeReference[] {};
+            if (paramType.IsPrimitive) {
+                par = new CodeTypeReference[] { };
                 return CCE(prefix + "PrimC2J", par, invokeExpression, false);
             }
             if (paramType == Repository.javaLangString ||
-                paramType == Repository.javaLangClass)
-            {
-                par = new CodeTypeReference[] {};
+                paramType == Repository.javaLangClass) {
+                par = new CodeTypeReference[] { };
                 return CCE(prefix + "StrongCp2J", par, invokeExpression, false);
             }
-            if (paramType == Repository.systemString)
-            {
-                par = new CodeTypeReference[] {};
+            if (paramType == Repository.systemString) {
+                par = new CodeTypeReference[] { };
                 return CCE(prefix + "StrongC2JString", par, invokeExpression, true);
             }
-            if (paramType.IsDelegate)
-            {
+            if (paramType.IsDelegate) {
                 par = new CodeTypeReference[] { };
                 return CCE(prefix + "StrongC2JDelegate", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType)
-            {
-                par = new[] {paramType.CLRReference};
+            if (!paramType.IsInterface && !paramType.IsCLRRootType && paramType.IsCLRRealType) {
+                par = new[] { paramType.CLRReference };
+                FixGenericParameters(par);
                 return CCE(prefix + "StrongC2Jp", par, invokeExpression, true);
             }
-            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType)
-            {
-                par = new CodeTypeReference[] {};
+            if (!paramType.IsInterface && !paramType.IsJVMRootType && paramType.IsJVMRealType) {
+                par = new CodeTypeReference[] { };
                 return CCE(prefix + "StrongCp2J", par, invokeExpression, false);
             }
-            par = new[] {paramType.CLRReference};
+            par = new[] { paramType.CLRReference };
+            FixGenericParameters(par);
             return CCE(prefix + "FullC2J", par, invokeExpression, true);
         }
 
         private CodeMethodInvokeExpression CCE(string conversion, CodeTypeReference[] parameters,
-                                               CodeExpression invokeExpression, bool env)
-        {
-            if (env)
-            {
+                                               CodeExpression invokeExpression, bool env) {
+            if (env) {
                 return new CodeMethodInvokeExpression(
-                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof (Convertor)),
+                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
                                                       conversion, parameters),
                     envVariable, invokeExpression);
-            }
-            else
-            {
+            } else {
                 return new CodeMethodInvokeExpression(
-                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof (Convertor)),
+                    new CodeMethodReferenceExpression(TypeReferenceEx(typeof(Convertor)),
                                                       conversion, parameters),
                     invokeExpression);
             }
         }
 
+        ///@@@ Mihai
+        private void FixGenericParameters(CodeTypeReference[] parameters) {
+            foreach (CodeTypeReference parameter in parameters) {
+                switch (parameter.BaseType) {
+                    case "System.Collections.Generic.ICollection`1":
+                        parameter.BaseType = "System.Collections.ICollection";
+                        parameter.TypeArguments.Clear();
+                        Console.WriteLine(string.Format("Fix GenericParameter from System.Collections.Generic.ICollection`1 to {0}", parameter.BaseType));
+                        break;
+
+                    case "System.Collections.Generic.IDictionary`2":
+                        parameter.BaseType = "System.Collections.IDictionary";
+                        parameter.TypeArguments.Clear();
+                        Console.WriteLine(string.Format("Fix GenericParameter from System.Collections.Generic.IDictionary`2 to {0}", parameter.BaseType));
+                        break;
+
+                    case "System.Collections.Generic.IEnumerable`1":
+                        parameter.BaseType = "System.Collections.IEnumerable";
+                        parameter.TypeArguments.Clear();
+                        Console.WriteLine(string.Format("Fix GenericParameter from System.Collections.Generic.IEnumerable`1 to {0}", parameter.BaseType));
+                        break;
+
+                    case "System.Collections.Generic.IList`1":
+                        parameter.BaseType = "System.Collections.IList";
+                        parameter.TypeArguments.Clear();
+                        Console.WriteLine(string.Format("Fix GenericParameter from System.Collections.Generic.IList`1 to {0}", parameter.BaseType));
+                        break;
+
+                    case "System.Collections.Generic.ISet`1":
+                        parameter.BaseType = "System.Collections.IList";
+                        parameter.TypeArguments.Clear();
+                        Console.WriteLine(string.Format("Fix GenericParameter from System.Collections.Generic.ISet`1 to {0}", parameter.BaseType));
+                        break;
+                }
+            }
+        }
+
+        ///@@@ Mihai
+        private string FixGenericReturnTypeJVMSignature(GMethod method) {
+            return FixGenericReturnTypeJVMSignature(method, method.JVMSignature);
+        }
+
+        ///@@@ Mihai
+        private string FixGenericReturnTypeJVMSignature(GMethod method, string jvmSignature) {
+            string result = jvmSignature;
+
+            if (!CheckGenericMethod(method)) {
+                return result;
+            }
+
+            //hack replace the return type in the signature
+            switch (method.ReturnType.CLRReference.BaseType) {
+                case "System.Collections.Generic.IDictionary`2":
+                    result = result.Replace(")Lsystem/Object;", ")Lsystem/collections/IDictionary;");
+                    Console.WriteLine(string.Format("Fix JVMSignature for {0} from {1} to {2}", method.Name, jvmSignature, result));
+                    break;
+
+                case "System.Collections.Generic.ISet`1":
+                    result = result.Replace(")Lsystem/Object;", ")Lsystem/collections/IList;");
+                    Console.WriteLine(string.Format("Fix JVMSignature for {0} from {1} to {2}", method.Name, jvmSignature, result));
+                    break;
+            }
+
+            return result;
+        }
+
         #region Nested type: CodeMemberPropertyEx
 
-        private class CodeMemberPropertyEx : CodeMemberProperty
-        {
+        private class CodeMemberPropertyEx : CodeMemberProperty {
             public GMethod Getter;
             public GMethod Setter;
         }

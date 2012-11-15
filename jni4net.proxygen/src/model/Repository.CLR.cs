@@ -28,136 +28,109 @@ using System.Reflection;
 using net.sf.jni4net.proxygen.config;
 using String = java.lang.String;
 
-namespace net.sf.jni4net.proxygen.model
-{
-    internal partial class Repository
-    {
+namespace net.sf.jni4net.proxygen.model {
+    internal partial class Repository {
         #region Delegates
 
         public delegate string RegSkip(GMethod skip);
 
         #endregion
 
-        public static List<GType> CLRGenTypes()
-        {
+        public static List<GType> CLRGenTypes() {
             var res = new List<GType>();
-            foreach (GType type in all)
-            {
-                if (type.IsCLRGenerate && !type.IsInterface)
-                {
+            foreach (GType type in all) {
+                if (type.IsCLRGenerate && !type.IsInterface) {
                     res.Add(type);
                 }
             }
             return res;
         }
 
-        internal static GType RegisterType(Type type)
-        {
+        internal static GType RegisterType(Type type) {
             return RegisterType(type, null);
         }
 
-        internal static GType RegisterType(Type type, TypeRegistration registration)
-        {
+        internal static GType RegisterType(Type type, TypeRegistration registration) {
             Type original = type;
-            if (knownTypes.ContainsKey(type))
-            {
+            if (knownTypes.ContainsKey(type)) {
                 GType known = knownTypes[type];
-                if (registration != null)
-                {
+                if (registration != null) {
                     known.Registration = registration;
                 }
                 return known;
             }
             var res = new GType();
-            if(typeof(Delegate).IsAssignableFrom(type))
-            {
+            if (typeof(Delegate).IsAssignableFrom(type)) {
                 int i = 0;
             }
-            if (type.IsPointer)
-            {
+            if (type.IsPointer) {
                 //it's out really
                 res.IsOut = true;
                 type = type.GetElementType();
             }
-            if (type.IsByRef)
-            {
+            if (type.IsByRef) {
                 //it's ref really
                 res.IsRef = true;
                 type = type.GetElementType();
             }
-            if (type.IsArray)
-            {
+            if (type.IsArray) {
                 res.ArrayElement = RegisterType(type.GetElementType());
                 res.IsArray = true;
             }
 
-            res.LowerName = original.FullName.ToLowerInvariant();
-            if (res.IsOut)
-            {
+            //@@@###
+            //Console.WriteLine(original.FullName);
+            res.LowerName = (original.FullName ?? original.Name).ToLowerInvariant();
+            if (res.IsOut) {
                 res.LowerName += "!";
             }
-            if (knownNames.ContainsKey(res.LowerName))
-            {
+            if (knownNames.ContainsKey(res.LowerName)) {
                 res = knownNames[res.LowerName];
             }
-            
-            if (type.IsAbstract)
-            {
+
+            if (type.IsAbstract) {
                 res.IsAbstract = true;
             }
-            if (type.IsSealed)
-            {
+            if (type.IsSealed) {
                 res.IsFinal = true;
             }
-            if (typeof(Delegate).IsAssignableFrom(type) && typeof(Delegate) != type && typeof(MulticastDelegate) != type)
-            {
+            if (typeof(Delegate).IsAssignableFrom(type) && typeof(Delegate) != type && typeof(MulticastDelegate) != type) {
                 res.IsDelegate = true;
             }
 
-            if (res.Registration == null && registration != null)
-            {
+            if (res.Registration == null && registration != null) {
                 res.Registration = registration;
             }
             res.IsPrimitive = type.IsPrimitive;
             res.IsException = typeof(Exception).IsAssignableFrom(type);
             res.CLRType = original;
-            if (res.IsArray)
-            {
+            if (res.IsArray) {
                 res.CLRFullName = type.GetElementType().FullName + "[]";
-            }
-            else
-            {
+            } else {
                 res.CLRFullName = type.FullName;
             }
             res.Attributes = type.Attributes;
             res.IsCLRType = true;
             res.IsInterface = type.IsInterface;
             res.IsJVMProxy = jvmProxyType.IsAssignableFrom(type);
-            if (!res.IsJVMProxy)
-            {
+            if (!res.IsJVMProxy) {
                 res.IsCLRRealType = true;
             }
             if (type.BaseType != null && res.Base == null
-                && type != typeof (object)
-                && type != typeof (Exception)
+                && type != typeof(object)
+                && type != typeof(Exception)
                 && type.FullName != "java.lang.Throwable"
                 && type.FullName != "java.lang.Object"
-                )
-            {
+                ) {
                 res.Base = RegisterType(type.BaseType);
             }
-            foreach (Type ifc in type.GetInterfaces())
-            {
-                if (!ifc.IsAssignableFrom(type.BaseType))
-                {
-                    if (!TestCLRTypeStrong(ifc))
-                    {
+            foreach (Type ifc in type.GetInterfaces()) {
+                if (!ifc.IsAssignableFrom(type.BaseType)) {
+                    if (!TestCLRTypeStrong(ifc)) {
                         GType gifc = RegisterType(ifc);
-                        if (!res.Interfaces.Contains(gifc))
-                        {
+                        if (!res.Interfaces.Contains(gifc)) {
 
-                            if (res.IsInterface && res.Base == null)
-                            {
+                            if (res.IsInterface && res.Base == null) {
                                 res.Base = gifc;
                             }
                             res.Interfaces.Add(gifc);
@@ -168,84 +141,61 @@ namespace net.sf.jni4net.proxygen.model
             }
             Register(res);
 
-            if (type.IsGenericType)
-            {
+            if (type.IsGenericType) {
                 Type sub;
                 Type supGeneric = type.GetGenericTypeDefinition();
-                if (typeof (IComparable<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (IComparable);
+                if (typeof(IComparable<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(IComparable);
                     res.LowerName =
                         ("System.IComparable<" + type.GetGenericArguments()[0].Name + ">").ToLowerInvariant();
-                }
-                else if (typeof (IEnumerable<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (IEnumerable);
+                } else if (typeof(IEnumerable<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(IEnumerable);
                     res.LowerName =
                         ("System.Collections.Generic.IEnumerable<" + type.GetGenericArguments()[0].Name + ">").
                             ToLowerInvariant();
-                }
-                else if (typeof (IEnumerator<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (IEnumerator);
+                } else if (typeof(IEnumerator<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(IEnumerator);
                     res.LowerName =
                         ("System.Collections.Generic.IEnumerator<" + type.GetGenericArguments()[0].Name + ">").
                             ToLowerInvariant();
-                }
-                else if (typeof (IEquatable<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (object);
+                } else if (typeof(IEquatable<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(object);
                     res.LowerName =
                         ("System.Collections.Generic.IEquatable<" + type.GetGenericArguments()[0].Name + ">").
                             ToLowerInvariant();
-                }
-                else if (typeof (ICollection<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (ICollection);
+                } else if (typeof(ICollection<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(ICollection);
                     res.LowerName =
                         ("System.Collections.Generic.ICollection<" + type.GetGenericArguments()[0].Name + ">").
                             ToLowerInvariant();
-                }
-                else if (typeof (IList<>).IsAssignableFrom(supGeneric))
-                {
-                    sub = typeof (IList);
+                } else if (typeof(IList<>).IsAssignableFrom(supGeneric)) {
+                    sub = typeof(IList);
                     res.LowerName =
                         ("System.Collections.Generic.IList<" + type.GetGenericArguments()[0].Name + ">").
                             ToLowerInvariant();
-                }
-                else
-                {
+                } else {
                     sub = type.BaseType;
-                    if (sub == null)
-                    {
-                        sub = typeof (object);
+                    if (sub == null) {
+                        sub = typeof(object);
                     }
                 }
                 res.JVMSubst = RegisterType(sub);
             }
-            if (res.IsOut)
-            {
+            if (res.IsOut) {
                 Type sub;
-                if (type.IsArray)
-                {
+                if (type.IsArray) {
                     sub = typeof(Out<>).MakeGenericType(typeof(object));
-                }
-                else
-                {
+                } else {
                     sub = typeof(Out<>).MakeGenericType(type);
                 }
                 res.JVMSubst = RegisterType(sub);
                 res.CLRSubst = res;
             }
-            if (res.IsRef)
-            {
+            if (res.IsRef) {
                 Type sub;
-                if (type.IsArray)
-                {
+                if (type.IsArray) {
                     sub = typeof(Ref<>).MakeGenericType(typeof(object));
-                }
-                else
-                {
+                } else {
                     sub = typeof(Ref<>).MakeGenericType(type);
                 }
                 res.JVMSubst = RegisterType(sub);
@@ -255,74 +205,58 @@ namespace net.sf.jni4net.proxygen.model
             return res;
         }
 
-        private static void RegisterCLRConstructors(GType type, bool register)
-        {
-            if (type.IsAbstract)
-            {
+        private static void RegisterCLRConstructors(GType type, bool register) {
+            if (type.IsAbstract) {
                 return;
             }
             Type clrType = type.CLRType;
-            if (typeof(Delegate).IsAssignableFrom(clrType))
-            {
-                if (config.Verbose)
-                {
+            if (typeof(Delegate).IsAssignableFrom(clrType)) {
+                if (config.Verbose) {
                     Console.WriteLine("Skip " + type + " constructors");
                 }
-                return;                
+                return;
             }
-            foreach (ConstructorInfo constructor in clrType.GetConstructors())
-            {
+            foreach (ConstructorInfo constructor in clrType.GetConstructors()) {
                 MethodAttributes modifiers = constructor.Attributes;
-                if ((modifiers & (MethodAttributes.Private)) != 0)
-                {
+                if ((modifiers & (MethodAttributes.Private)) != 0) {
                     continue;
                 }
                 RegisterCLRConstructor(type, constructor, register);
             }
         }
 
-        private static void RegisterCLRMethods(GType type, bool register)
-        {
+        private static void RegisterCLRMethods(GType type, bool register) {
             Type clrType = type.CLRType;
-            foreach (MethodInfo method in clrType.GetMethods())
-            {
+            foreach (MethodInfo method in clrType.GetMethods()) {
                 if (method.DeclaringType == type.CLRType
-                    || type.CLRType == typeof (Exception))
-                {
+                    || type.CLRType == typeof(Exception)) {
+                    //Console.WriteLine("Type=" + type.CLRFullName + " Method=" + method.Name);
                     RegisterCLRMethod(type, method, register);
                 }
             }
-            foreach (GType ifc in type.Interfaces)
-            {
-                if (ifc.IsCLRType)
-                {
-                    foreach (MethodInfo method in ifc.CLRType.GetMethods())
-                    {
+            foreach (GType ifc in type.Interfaces) {
+                if (ifc.IsCLRType) {
+                    foreach (MethodInfo method in ifc.CLRType.GetMethods()) {
+                        //Console.WriteLine("Type=" + type.CLRFullName + " Method=" + method.Name);
                         RegisterCLRMethod(type, method, register);
                     }
                 }
             }
         }
 
-        private static void RegisterCLRMethod(GType type, MethodInfo method, bool register)
-        {
+        private static void RegisterCLRMethod(GType type, MethodInfo method, bool register) {
             object attr = HasAttribute(method, javaMethodAttribute);
 
-            if (method.IsGenericMethod || !method.IsPublic || attr != null)
-            {
-                if (attr == null && config.Verbose)
-                {
+            if (method.IsGenericMethod || !method.IsPublic || attr != null) {
+                if (attr == null && config.Verbose) {
                     Console.WriteLine("Skip " + type + "." + method);
                 }
                 return;
             }
-            if (method.IsSpecialName)
-            {
+            if (method.IsSpecialName) {
                 string name = method.Name;
-                if (name.StartsWith("op_"))
-                {
-                    if (config.Verbose)
-                    {
+                if (name.StartsWith("op_")) {
+                    if (config.Verbose) {
                         Console.WriteLine("Skip " + type + "." + method);
                     }
                     return;
@@ -330,98 +264,75 @@ namespace net.sf.jni4net.proxygen.model
             }
 
             GMethod res = RegisterCLRCall(type, method);
-            if (res == null || TestCLRType(method.ReturnType))
-            {
+            if (res == null || TestCLRType(method.ReturnType)) {
                 // skip
-                if (config.Verbose)
-                {
+                if (config.Verbose) {
                     Console.WriteLine("Skip " + type + "." + method);
                 }
                 return;
             }
-            if (method.IsSpecialName)
-            {
+            if (method.IsSpecialName) {
                 res.CLRProperty = GetProperty(type, method);
-                if (res.CLRProperty == null)
-                {
+                if (res.CLRProperty == null) {
                     res.CLREvent = GetEvent(type, method);
                     res.IsEvent = true;
-                    if (method.Name.StartsWith("add_"))
-                    {
+                    if (method.Name.StartsWith("add_")) {
                         res.IsCLRPropertyAdd = true;
                         res.CLRPropertyAdd = res;
-                        foreach (GMethod m in type.Methods)
-                        {
-                            if (m.CLRProperty == res.CLRProperty)
-                            {
+                        foreach (GMethod m in type.Methods) {
+                            if (m.CLRProperty == res.CLRProperty) {
                                 m.CLRPropertyAdd = res;
                             }
                         }
                     }
-                    if (method.Name.StartsWith("remove_"))
-                    {
+                    if (method.Name.StartsWith("remove_")) {
                         res.IsCLRPropertyRemove = true;
                         res.CLRPropertyRemove = res;
-                        foreach (GMethod m in type.Methods)
-                        {
-                            if (m.CLRProperty == res.CLRProperty)
-                            {
+                        foreach (GMethod m in type.Methods) {
+                            if (m.CLRProperty == res.CLRProperty) {
                                 m.CLRPropertyRemove = res;
                             }
                         }
                     }
                     res.CLRName = res.CLREvent.Name;
                     res.JVMName = method.Name.Replace("_", "");
-                }
-                else
-                {
+                } else {
                     res.IsProperty = true;
-                    if (res.CLRProperty.CanRead && method.Name.StartsWith("get_"))
-                    {
+                    if (res.CLRProperty.CanRead && method.Name.StartsWith("get_")) {
                         res.IsCLRPropertyGetter = true;
                         res.CLRPropertyGetter = res;
-                        foreach (GMethod m in type.Methods)
-                        {
-                            if (m.CLRProperty == res.CLRProperty)
-                            {
+                        foreach (GMethod m in type.Methods) {
+                            if (m.CLRProperty == res.CLRProperty) {
                                 m.CLRPropertyGetter = res;
                             }
                         }
                     }
-                    if (res.CLRProperty.CanWrite && method.Name.StartsWith("set_"))
-                    {
+                    if (res.CLRProperty.CanWrite && method.Name.StartsWith("set_")) {
                         res.IsCLRPropertySetter = true;
                         res.CLRPropertySetter = res;
-                        foreach (GMethod m in type.Methods)
-                        {
-                            if (m.CLRProperty == res.CLRProperty)
-                            {
+                        foreach (GMethod m in type.Methods) {
+                            if (m.CLRProperty == res.CLRProperty) {
                                 m.CLRPropertySetter = res;
                             }
                         }
                     }
                     res.CLRName = res.CLRProperty.Name;
                     res.JVMName = method.Name.Replace("_", "");
-                    if (res.CLRProperty.PropertyType == typeof(bool) && res.JVMName.StartsWith("getIs"))
-                    {
+                    if (res.CLRProperty.PropertyType == typeof(bool) && res.JVMName.StartsWith("getIs")) {
                         res.JVMName = "is" + res.JVMName.Substring(5);
                     }
                 }
                 res.Name = method.Name;
             }
 
-            if (method.DeclaringType != type.CLRType)
-            {
+            if (method.DeclaringType != type.CLRType) {
                 res.DeclaringType = RegisterType(method.DeclaringType);
             }
             res.ReturnType = RegisterType(method.ReturnType);
-            if (register)
-            {
+            if (register) {
                 bool force = false;
-                if (UseMethodModifier(type, res, res.Name, res.GetCLRSignature(), ref force))
-                {
-                    if (config.Verbose)
-                    {
+                if (UseMethodModifier(type, res, res.Name, res.GetCLRSignature(), ref force)) {
+                    if (config.Verbose) {
                         Console.WriteLine("Skip " + type + "." + method);
                     }
                     return;
@@ -430,31 +341,24 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private static string skipJVM(GMethod skip)
-        {
+        private static string skipJVM(GMethod skip) {
             return skip.Name + skip.GetJVMSignatureNoRet();
         }
 
-        private static void RegisterCLRConstructor(GType type, ConstructorInfo method, bool register)
-        {
+        private static void RegisterCLRConstructor(GType type, ConstructorInfo method, bool register) {
             GMethod res = RegisterCLRCall(type, method);
-            if (res == null)
-            {
-                if (config.Verbose)
-                {
+            if (res == null) {
+                if (config.Verbose) {
                     Console.WriteLine("Skip " + type + "." + method);
                 }
                 // skip
                 return;
             }
             res.IsConstructor = true;
-            if (register)
-            {
+            if (register) {
                 string sig = type.Name + res.GetJVMSignatureNoRet();
-                if (type.AllMethods.ContainsKey(sig))
-                {
-                    if (config.Verbose)
-                    {
+                if (type.AllMethods.ContainsKey(sig)) {
+                    if (config.Verbose) {
                         Console.WriteLine("Skip " + type + "." + method);
                     }
                     return;
@@ -464,32 +368,28 @@ namespace net.sf.jni4net.proxygen.model
             }
         }
 
-        private static GMethod RegisterCLRCall(GType type, MethodBase method)
-        {
+        private static GMethod RegisterCLRCall(GType type, MethodBase method) {
             var res = new GMethod();
             res.Type = type;
             res.Name = method.Name;
             res.CLRName = method.Name;
             res.JVMName = method.Name;
             res.IsCLRMethod = true;
-            foreach (ParameterInfo info in method.GetParameters())
-            {
+            foreach (ParameterInfo info in method.GetParameters()) {
                 Type parameterType = info.ParameterType;
-                if (TestCLRType(parameterType))
-                {
+                if (TestCLRType(parameterType)) {
                     return null;
                 }
                 // we ignore IsOut when IsIn is set as well, because they are probably just attributes
                 // see System.IO.TextReader.Read([In, Out] char[] buffer, int index, int count)
-                if (info.IsOut && !info.IsIn)
-                {
+                if (info.IsOut && !info.IsIn) {
                     //this is trick how to store out as type
                     parameterType = parameterType.GetElementType().MakePointerType();
                 }
                 res.ParameterNames.Add(info.Name);
                 res.Parameters.Add(RegisterType(parameterType));
             }
-            res.ReturnType = RegisterType(typeof (void));
+            res.ReturnType = RegisterType(typeof(void));
 
             ConvertCLRAttributes(type, res, method);
             res.LowerName = (res.JVMName + res.GetSignatureLowerNoRet());
@@ -497,199 +397,159 @@ namespace net.sf.jni4net.proxygen.model
             return res;
         }
 
-        private static object HasAttribute(MethodInfo method, Type attribute)
-        {
+        private static object HasAttribute(MethodInfo method, Type attribute) {
             object[] objects = method.GetCustomAttributes(false);
-            foreach (object attr in objects)
-            {
-                if (attr.GetType().FullName == attribute.FullName)
-                {
+            foreach (object attr in objects) {
+                if (attr.GetType().FullName == attribute.FullName) {
                     return attr;
                 }
             }
             return null;
         }
 
-        private static object HasAttribute(Type tested, Type attribute)
-        {
+        private static object HasAttribute(Type tested, Type attribute) {
             object[] objects = tested.GetCustomAttributes(false);
-            foreach (object attr in objects)
-            {
-                if (attr.GetType().FullName == attribute.FullName)
-                {
+            foreach (object attr in objects) {
+                if (attr.GetType().FullName == attribute.FullName) {
                     return attr;
                 }
             }
             return null;
         }
 
-        private static void ConvertCLRAttributes(GType type, GMethod res, MethodBase method)
-        {
+        private static void ConvertCLRAttributes(GType type, GMethod res, MethodBase method) {
             res.Attributes = 0;
-            if (method.IsPublic || type.IsInterface)
-            {
+            if (method.IsPublic || type.IsInterface) {
                 res.Attributes |= MemberAttributes.Public;
-            }
-            else if (method.IsFamily && !type.IsInterface)
-            {
+            } else if (method.IsFamily && !type.IsInterface) {
                 res.Attributes |= MemberAttributes.Family;
-            }
-            else if (method.IsFamilyOrAssembly && !type.IsInterface)
-            {
+            } else if (method.IsFamilyOrAssembly && !type.IsInterface) {
                 res.Attributes |= MemberAttributes.FamilyOrAssembly;
-            }
-            else if (method.IsFamilyAndAssembly && !type.IsInterface)
-            {
+            } else if (method.IsFamilyAndAssembly && !type.IsInterface) {
                 res.Attributes |= MemberAttributes.FamilyAndAssembly;
             }
 
-            if (method.IsAbstract && !type.IsInterface)
-            {
+            if (method.IsAbstract && !type.IsInterface) {
                 res.Attributes |= MemberAttributes.Abstract;
-            }
-            else if (method.IsStatic && !type.IsInterface)
-            {
+            } else if (method.IsStatic && !type.IsInterface) {
                 res.IsStatic = method.IsStatic;
                 res.Attributes |= MemberAttributes.Static;
-            }
-            else if (!method.IsVirtual && !method.IsAbstract && !type.IsInterface)
-            {
+            } else if (!method.IsVirtual && !method.IsAbstract && !type.IsInterface) {
                 //TODO res.Attributes |= MemberAttributes.Final;
             }
         }
 
-		private static PropertyInfo GetProperty( GType type, MethodInfo method )
-		{
-			BindingFlags f = GetPropFlags( method );
-			string pname = method.Name.Substring( method.Name.IndexOf( '_' ) + 1 );
+        private static PropertyInfo GetProperty(GType type, MethodInfo method) {
+            BindingFlags f = GetPropFlags(method);
+            string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
 
-			bool isIndexerProperty = method.IsSpecialName && pname == "Item";
-			if (isIndexerProperty)
-			{
-                var pts=new List<Type>();
-			    int length = method.GetParameters().Length;
-                if (method.Name.StartsWith("set_"))
-                {
+            bool isIndexerProperty = method.IsSpecialName && pname == "Item";
+            if (isIndexerProperty) {
+                var pts = new List<Type>();
+                int length = method.GetParameters().Length;
+                if (method.Name.StartsWith("set_")) {
                     // setter value
-                    length--;
+                    //length--;
+                    //@@@###
+                    return FindProperty(f, type.CLRType, pname);
                 }
-			    for (int index = 0; index < length; index++)
-			    {
-			        var parameter = method.GetParameters()[index];
-			        pts.Add(parameter.ParameterType);
-			    }
-			    return FindIndexerProperty(f, type.CLRType, method.ReturnType, pts.ToArray());
+                for (int index = 0; index < length; index++) {
+                    var parameter = method.GetParameters()[index];
+                    pts.Add(parameter.ParameterType);
+                }
+                return FindIndexerProperty(f, type.CLRType, method.ReturnType, pts.ToArray());
             }
 
-			return FindProperty( f, type.CLRType, pname );
-		}
+            return FindProperty(f, type.CLRType, pname);
+        }
 
-        private static EventInfo GetEvent(GType type, MethodInfo method)
-        {
+        private static EventInfo GetEvent(GType type, MethodInfo method) {
             BindingFlags f = GetPropFlags(method);
             string pname = method.Name.Substring(method.Name.IndexOf('_') + 1);
             return FindEvent(f, type.CLRType, pname);
         }
 
-        private static BindingFlags GetPropFlags(MethodInfo method)
-        {
+        private static BindingFlags GetPropFlags(MethodInfo method) {
             BindingFlags f = 0;
-            if (method.IsStatic)
-            {
+            if (method.IsStatic) {
                 f |= BindingFlags.Static;
-            }
-            else
-            {
+            } else {
                 f |= BindingFlags.Instance;
             }
-            if (method.IsPublic)
-            {
+            if (method.IsPublic) {
                 f |= BindingFlags.Public;
-            }
-            else
-            {
+            } else {
                 f |= BindingFlags.NonPublic;
             }
-            if (method.IsAbstract)
-            {
+            if (method.IsAbstract) {
                 f |= BindingFlags.DeclaredOnly;
             }
             return f;
         }
 
-        private static PropertyInfo FindProperty(BindingFlags f, Type clazz, string pname)
-        {
-            PropertyInfo property = clazz.GetProperty(pname, f);
-            if (property != null)
-            {
-                return property;
-            }
-            foreach (Type ifc in clazz.GetInterfaces())
-            {
-                property = FindProperty(f, ifc, pname);
-                if (property != null)
-                {
+        private static PropertyInfo FindProperty(BindingFlags f, Type clazz, string pname) {
+            try {
+                PropertyInfo property = clazz.GetProperty(pname, f);
+                if (property != null) {
                     return property;
                 }
-            }
-            if (!clazz.IsInterface && clazz.BaseType == typeof (object))
-            {
-                property = FindProperty(f, clazz.BaseType, pname);
-                if (property != null)
-                {
-                    return property;
+                foreach (Type ifc in clazz.GetInterfaces()) {
+                    property = FindProperty(f, ifc, pname);
+                    if (property != null) {
+                        return property;
+                    }
+                }
+                if (!clazz.IsInterface && clazz.BaseType == typeof(object)) {
+                    property = FindProperty(f, clazz.BaseType, pname);
+                    if (property != null) {
+                        return property;
+                    }
+                }
+            } catch (AmbiguousMatchException ame) {
+                foreach (PropertyInfo info in clazz.GetProperties(f)) {
+                    if (info.Name == pname) {
+                        return info;
+                    }
                 }
             }
             return null;
         }
 
-		private static PropertyInfo FindIndexerProperty( BindingFlags f, Type clazz, Type returnType, Type[] parameterTypes )
-		{
+        private static PropertyInfo FindIndexerProperty(BindingFlags f, Type clazz, Type returnType, Type[] parameterTypes) {
             PropertyInfo property = clazz.GetProperty("Item", f, Type.DefaultBinder, returnType, parameterTypes, default(ParameterModifier[]));
-			if (property != null)
-			{
-				return property;
-			}
-			foreach (Type ifc in clazz.GetInterfaces())
-			{
-				property = FindIndexerProperty( f, ifc, returnType, parameterTypes );
-				if (property != null)
-				{
-					return property;
-				}
-			}
-			if (!clazz.IsInterface && clazz.BaseType == typeof( object ))
-			{
-				property = FindIndexerProperty( f, clazz.BaseType, returnType, parameterTypes );
-				if (property != null)
-				{
-					return property;
-				}
-			}
-
-			return null;
-		}
-
-        private static EventInfo FindEvent(BindingFlags f, Type clazz, string pname)
-        {
-            EventInfo property = clazz.GetEvent(pname, f);
-            if (property != null)
-            {
+            if (property != null) {
                 return property;
             }
-            foreach (Type ifc in clazz.GetInterfaces())
-            {
-                property = FindEvent(f, ifc, pname);
-                if (property != null)
-                {
+            foreach (Type ifc in clazz.GetInterfaces()) {
+                property = FindIndexerProperty(f, ifc, returnType, parameterTypes);
+                if (property != null) {
                     return property;
                 }
             }
-            if (!clazz.IsInterface && clazz.BaseType == typeof(object))
-            {
+            if (!clazz.IsInterface && clazz.BaseType == typeof(object)) {
+                property = FindIndexerProperty(f, clazz.BaseType, returnType, parameterTypes);
+                if (property != null) {
+                    return property;
+                }
+            }
+
+            return null;
+        }
+
+        private static EventInfo FindEvent(BindingFlags f, Type clazz, string pname) {
+            EventInfo property = clazz.GetEvent(pname, f);
+            if (property != null) {
+                return property;
+            }
+            foreach (Type ifc in clazz.GetInterfaces()) {
+                property = FindEvent(f, ifc, pname);
+                if (property != null) {
+                    return property;
+                }
+            }
+            if (!clazz.IsInterface && clazz.BaseType == typeof(object)) {
                 property = FindEvent(f, clazz.BaseType, pname);
-                if (property != null)
-                {
+                if (property != null) {
                     return property;
                 }
             }
