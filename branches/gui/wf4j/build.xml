@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="wf4j" default="bundle" basedir="."
+         xmlns:dn="antlib:org.apache.ant.dotnet">
+    <property file="build/build.properties"/>
+
+    <taskdef uri="antlib:org.apache.ant.dotnet"
+             resource="org/apache/ant/dotnet/antlib.xml"
+             classpath="${build.antlib.dir}/ant-dotnet-1.0.jar"/>
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"
+             classpath="${build.antlib.dir}/ant-contrib-1.0b3.jar"/>
+
+    <macrodef name="gen.fix">
+        <attribute name="filename"/>
+        <attribute name="search"/>
+        <attribute name="replace"/>
+        <sequential>
+            <java classpath="${build.tools.dir}" classname="RefFixer">
+                <arg value="@{filename}"/>
+                <arg value="@{search}"/>
+                <arg value="@{replace}"/>
+            </java>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="jni4net.gen.proxies">
+        <attribute name="lib.enum"/>
+        <element name="lib.dirs" optional="true"/>
+        <element name="lib.assemblies" optional="true"/>
+        <element name="gen.postprocess" optional="true"/>
+        <sequential>
+            <mkdir dir="${src.proxies.java.@{lib.enum}.dir}"/>
+            <mkdir dir="${src.proxies.net.@{lib.enum}.dir}"/>
+            <exec executable="${jni4net.gen.dir}/${jni4net.proxygen}" failonerror="true" dir=".">
+                <arg value="${jni4net.proxygen.config.@{lib.enum}}"/>
+            </exec>
+            <gen.postprocess/>
+            <mkdir dir="${jni4net.proxies.classes.@{lib.enum}.dir}"/>
+            <javac destdir="${jni4net.proxies.classes.@{lib.enum}.dir}" debug="${build.config.debug}">
+                <src location="${src.proxies.java.@{lib.enum}.dir}"/>
+                <classpath>
+                    <fileset dir="gen">
+                        <include name="*.jar"/>
+                    </fileset>
+                </classpath>
+            </javac>
+            <jar destfile="${target.root.dir}/${jni4net.proxies.jar.@{lib.enum}}"
+                 basedir="${jni4net.proxies.classes.@{lib.enum}.dir}"/>
+            <exec command="cmd /c cd" failonerror="true" dir="." outputproperty="nant.current.dir"/>
+            <!--property name="require.proxies.system" value="false"/-->
+            <property name="nant.settings.currentframework" value="net-3.5"/>
+            <dn:nant>
+                <build>
+                    <!-- need to make workaround on framework version -->
+                    <project basedir="${nant.current.dir}" default="cs.compile">
+                        <target name="cs.compile">
+                            <echo message="${src.proxies.net.@{lib.enum}.dir}"/>
+                            <csc target="library" output="${target.root.dir}/${jni4net.proxies.dll.@{lib.enum}}"
+                                 debug="${build.config.debug}" noconfig="true">
+                                <nowarn>
+                                    <!-- a warning that is a lot ingererated sources -->
+                                    <warning number="0109"/>
+                                    <!-- deprecation - these are proxies! do not care of that... -->
+                                    <warning number="0618"/>
+                                </nowarn>
+                                <sources basedir="${src.proxies.net.@{lib.enum}.dir}">
+                                    <include name="**/*.cs"/>
+                                </sources>
+                                <references>
+                                    <lib>
+                                        <include name="${target.root.dir}"/>
+                                        <include name="${native.dir}"/>
+                                        <lib.dirs/>
+                                    </lib>
+                                    <!--include name="System.dll"/-->
+                                    <include name="jni4net.n-0.7.0.0.dll"/>
+                                    <include name="Accessibility.dll"/>
+                                    <lib.assemblies/>
+                                    <!--include name="Proxies.System.dll" if="${require.proxies.system}"/-->
+                                </references>
+                            </csc>
+                        </target>
+                    </project>
+                </build>
+            </dn:nant>
+            <copy todir="${jni4net.gen.dir}" file="${target.root.dir}/${jni4net.proxies.dll.@{lib.enum}}"/>
+            <copy todir="${jni4net.gen.dir}" file="${target.root.dir}/${jni4net.proxies.jar.@{lib.enum}}"/>
+        </sequential>
+    </macrodef>
+
+    <fileset id="fileset.lib" dir="${lib.dir}">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset id="fileset.target" dir="${target.root.dir}">
+        <include name="*.jar"/>
+    </fileset>
+
+    <target name="clean">
+        <delete dir="${jni4net.gen.dir}"/>
+        <delete dir="${target.root.dir}"/>
+        <delete dir="${src.proxies.dir}"/>
+        <delete file="${build.tools.dir}/RefFixer.class"/>
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${target.root.dir}"/>
+        <javac srcdir="${build.root.dir}/fixer/" destdir="${build.tools.dir}"/>
+        <exec command="cmd /c cd" failonerror="true" dir="." outputproperty="nant.current.dir"/>
+    </target>
+
+    <target name="jni4net.gen">
+        <mkdir dir="${jni4net.gen.dir}"/>
+        <copy todir="${jni4net.gen.dir}">
+            <fileset file="${build.tools.dir}/${jni4net.proxygen}"/>
+            <fileset file="${lib.dir}/jni4net.j-${jni4net.version}.jar"/>
+            <fileset dir="${native.dir}">
+                <include name="jni4net.n-${jni4net.version}.dll"/>
+                <include name="jni4net.n.w32-${jni4net.version}.dll"/>
+                <include name="jni4net.n.w64-${jni4net.version}.dll"/>
+                <include name="System.Windows.Forms.Ribbon35.dll"/>
+                <include name="RibbonControlsLibrary.dll"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="jni4net.gen.net.corlib" depends="prepare,jni4net.gen">
+        <jni4net.gen.proxies lib.enum="corlib"/>
+    </target>
+
+    <target name="jni4net.gen.net.mshtml" depends="jni4net.gen.net.corlib">
+        <jni4net.gen.proxies lib.enum="mshtml">
+            <lib.assemblies>
+                <include name="${lib.pia.path}/Microsoft.mshtml.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+            </lib.assemblies>
+            <gen.postprocess>
+                <gen.fix filename="${src.proxies.net.mshtml.dir}/mshtml/IHTMLScriptElement.generated.cs"
+                         search="ParStrongC2JString(@__env, p));" replace="ParStrongC2JString(@__env, value));"/>
+                <gen.fix filename="${src.proxies.net.mshtml.dir}/mshtml/IHTMLScriptElement.generated.cs"
+                         search="ParPrimC2J(p)" replace="ParPrimC2J(value)"/>
+                <gen.fix filename="${src.proxies.net.mshtml.dir}/mshtml/IHTMLScriptElement.generated.cs"
+                         search="ParFullC2J&lt;object&gt;(@__env, p));" replace="ParFullC2J&lt;object&gt;(@__env, value));"/>
+            </gen.postprocess>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.system" depends="jni4net.gen.net.corlib">
+        <jni4net.gen.proxies lib.enum="system">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+            </lib.assemblies>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.drawing" depends="jni4net.gen.net.system">
+        <jni4net.gen.proxies lib.enum="drawing">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+            </lib.assemblies>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.forms" depends="jni4net.gen.net.drawing">
+        <jni4net.gen.proxies lib.enum="forms">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="System.Windows.Forms.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+                <include name="${jni4net.proxies.dll.drawing}"/>
+            </lib.assemblies>
+            <gen.postprocess>
+                <gen.fix filename="${src.proxies.net.forms.dir}/system/windows/forms/IMessageFilter.generated.cs"
+                         search="PreFilterMessage(global" replace="PreFilterMessage(ref global"/>
+            </gen.postprocess>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.ribbon" depends="jni4net.gen.net.forms">
+        <jni4net.gen.proxies lib.enum="ribbon">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="System.Design.dll"/>
+                <include name="System.Windows.Forms.dll"/>
+                <include name="System.Windows.Forms.Ribbon35.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+                <include name="${jni4net.proxies.dll.drawing}"/>
+                <include name="${jni4net.proxies.dll.forms}"/>
+            </lib.assemblies>
+            <gen.postprocess>
+                <gen.fix filename="${src.proxies.java.ribbon.dir}/system/windows/forms/ribbonhelpers/WinApi.java"
+                         search="windows.forms.ribbonhelpers.RECT" replace="Object"/>
+            </gen.postprocess>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.wpf" depends="jni4net.gen.net.forms">
+        <jni4net.gen.proxies lib.enum="wpf">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="System.Windows.Forms.dll"/>
+                <include name="WindowsBase.dll"/>
+                <!--include name="C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\PresentationCore.dll"/>
+                <include name="C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\PresentationFramework.dll"/-->
+                <!--include name="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+                    <include name="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/-->
+                <include name="${lib.wpf.path}/PresentationCore.dll"/>
+                <include name="${lib.wpf.path}/PresentationFramework.dll"/>
+                <include name="${lib.wpf.path}/WindowsFormsIntegration.dll"/>
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+                <include name="${jni4net.proxies.dll.drawing}"/>
+                <include name="${jni4net.proxies.dll.forms}"/>
+            </lib.assemblies>
+            <gen.postprocess>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/IKeyboardInputSink.generated.cs"
+                         search="TranslateAccelerator(global::System.Windows.Interop.MSG msg"
+                         replace="TranslateAccelerator(ref global::System.Windows.Interop.MSG msg"/>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/IKeyboardInputSink.generated.cs"
+                         search="OnMnemonic(global::System.Windows.Interop.MSG msg"
+                         replace="OnMnemonic(ref global::System.Windows.Interop.MSG msg"/>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/IKeyboardInputSink.generated.cs"
+                         search="TranslateChar(global::System.Windows.Interop.MSG msg"
+                         replace="TranslateChar(ref global::System.Windows.Interop.MSG msg"/>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/HwndSourceHook.generated.cs"
+                         search="ParPrimC2J(hwnd)" replace="ParPrimC2J(hwnd.ToInt64())"/>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/HwndSourceHook.generated.cs"
+                         search="ParPrimC2J(wParam)" replace="ParPrimC2J(wParam.ToInt64())"/>
+                <gen.fix filename="${src.proxies.net.wpf.dir}/system/windows/interop/HwndSourceHook.generated.cs"
+                         search="ParPrimC2J(lParam)" replace="ParPrimC2J(lParam.ToInt64())"/>
+            </gen.postprocess>
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.rcl" depends="jni4net.gen.net.wpf">
+        <jni4net.gen.proxies lib.enum="rcl">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="System.Windows.Forms.dll"/>
+                <include name="WindowsBase.dll"/>
+                <include name="${lib.wpf.path}/PresentationCore.dll"/>
+                <include name="${lib.wpf.path}/PresentationFramework.dll"/>
+                <include name="RibbonControlsLibrary.dll"/>
+
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+                <include name="${jni4net.proxies.dll.drawing}"/>
+                <include name="${jni4net.proxies.dll.forms}"/>
+                <include name="${jni4net.proxies.dll.wpf}"/>
+            </lib.assemblies>
+            <!--gen.postprocess>
+                <gen.fix filename="${src.proxies.java.ribbon.dir}/system/windows/forms/RibbonTabCollection.java"
+                         search="Collection extends system.Object" replace="Collection extends system.Object implements system.collections.IList"/>
+            </gen.postprocess-->
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.gen.net.wpf4java" depends="jni4net.gen.net.wpf,jni4net.net">
+        <copy file="${target.root.dir}/wpf4java.dll" todir="${jni4net.gen.dir}"/>
+        <jni4net.gen.proxies lib.enum="wpf4java">
+            <lib.assemblies>
+                <include name="System.dll"/>
+                <include name="System.Drawing.dll"/>
+                <include name="System.Windows.Forms.dll"/>
+                <include name="WindowsBase.dll"/>
+                <include name="${lib.wpf.path}/PresentationCore.dll"/>
+                <include name="${lib.wpf.path}/PresentationFramework.dll"/>
+                <include name="wpf4java.dll"/>
+
+                <include name="${jni4net.proxies.dll.corlib}"/>
+                <include name="${jni4net.proxies.dll.system}"/>
+                <include name="${jni4net.proxies.dll.drawing}"/>
+                <include name="${jni4net.proxies.dll.forms}"/>
+                <include name="${jni4net.proxies.dll.wpf}"/>
+            </lib.assemblies>
+            <!--gen.postprocess>
+                <gen.fix filename="${src.proxies.java.ribbon.dir}/system/windows/forms/RibbonTabCollection.java"
+                         search="Collection extends system.Object" replace="Collection extends system.Object implements system.collections.IList"/>
+            </gen.postprocess-->
+        </jni4net.gen.proxies>
+    </target>
+
+    <target name="jni4net.net" depends="prepare">
+        <dn:nant>
+            <build>
+                <!-- need to make workaround on framework version -->
+                <project basedir="${nant.current.dir}" default="cs.compile">
+                    <target name="cs.compile">
+                        <csc target="library" output="${target.root.dir}/wpf4java.dll"
+                             debug="${build.config.debug}" noconfig="true">
+                            <nowarn>
+                                <!-- a warning that is a lot ingererated sources -->
+                                <warning number="0109"/>
+                                <!-- deprecation - these are proxies! do not care of that... -->
+                                <warning number="0618"/>
+                            </nowarn>
+                            <sources basedir="${src.net.dir}/wpf4java">
+                                <include name="**/*.cs"/>
+                                <exclude name="_ReSharper*/**"/>
+                            </sources>
+                            <references>
+                                <lib>
+                                    <!--include name="${lib.wpf.path}"/-->
+                                </lib>
+                                <include name="System.dll"/>
+                                <include name="WindowsBase.dll"/>
+                                <include name="${lib.wpf.path}/PresentationCore.dll"/>
+                                <include name="${lib.wpf.path}/PresentationFramework.dll"/>
+                            </references>
+                        </csc>
+                    </target>
+                </project>
+            </build>
+        </dn:nant>
+    </target>
+
+    <target name="jni4net.gen.proxies" depends="jni4net.gen.net.mshtml,jni4net.gen.net.rcl,jni4net.gen.net.ribbon,jni4net.gen.net.wpf4java"/>
+
+    <target name="compile">
+        <mkdir dir="${target.classes.dir}"/>
+        <javac destdir="${target.classes.dir}" debug="${build.config.debug}" includeantruntime="true">
+            <src location="${src.java.dir}"/>
+            <classpath>
+                <fileset refid="fileset.lib"/>
+                <fileset refid="fileset.target"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${target.root.dir}/wf4j.jar"
+             basedir="${target.classes.dir}"/>
+    </target>
+
+    <target name="bundle" depends="jar">
+        <copy todir="${target.root.dir}">
+            <fileset refid="fileset.lib"/>
+            <fileset dir="${native.dir}">
+                <include name="*.dll"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="rebundle" depends="jni4net.gen.proxies,bundle"/>
+
+    <target name="rebuild" depends="clean,rebundle"/>
+
+    <target name="run">
+        <java classpath="${build.tools.dir}" classname="${build.run.class}" dir="${target.root.dir}" fork="true">
+            <classpath>
+                <fileset refid="fileset.target"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>

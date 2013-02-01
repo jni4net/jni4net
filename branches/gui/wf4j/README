@@ -1,0 +1,6 @@
+Project requres jdk 1.6 or higher to be installed and JAVA_HOME environment variable pointing to JDK folder
+
+To build the project run "ant rebundle"
+To run test program run "ant run"
+
+See build.xml for more details
