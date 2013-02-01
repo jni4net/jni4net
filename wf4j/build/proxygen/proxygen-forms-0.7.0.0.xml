@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.7.0.0/toolConfig.xsd">
+  <!-- Location where .java files will be generated into. It's relative or absolute path. -->
+  <TargetDirJvm>src/proxies/java/jforms</TargetDirJvm>
+
+  <!-- Location where .cs files will be generated into. It's relative or absolute path. -->
+  <TargetDirClr>src/proxies/net/nforms</TargetDirClr>
+
+  <!-- List of assemblies, which define known types for generator -->
+  <AssemblyReference Assembly="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <AssemblyReference Assembly="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <AssemblyReference Assembly="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+
+  <AssemblyReference Assembly="Proxies.corlib"/>
+  <AssemblyReference Assembly="Proxies.System"/>
+  <AssemblyReference Assembly="Proxies.System.Drawing"/>
+
+  <ClassPath Path="gen/proxies-corlib.jar"/>
+  <ClassPath Path="gen/proxies-system.jar"/>
+  <ClassPath Path="gen/proxies-system-drawing.jar"/>
+
+  <ClrType TypeName="System.Windows.Forms.BorderStyle"/>
+  <ClrType TypeName="System.Windows.Forms.RightToLeft"/>
+
+  <!-- ListBox and dependencies -->
+  <ClrType TypeName="System.Windows.Forms.ListBox"/>
+  <ClrType TypeName="System.Windows.Forms.DrawMode"/>
+  <ClrType TypeName="System.Windows.Forms.SelectionMode"/>
+  <ClrType TypeName="System.Windows.Forms.DrawItemState"/>
+  <ClrType TypeName="System.Windows.Forms.DrawItemEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.DrawItemEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.MeasureItemEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.MeasureItemEventArgs"/>
+
+  <!-- List of CLR types which should have proxy generated -->
+  <ClrType TypeName="System.Windows.Forms.Button"/>
+  <ClrType TypeName="System.Windows.Forms.Message"/>
+  <ClrType TypeName="System.Windows.Forms.IMessageFilter"/>
+  <ClrType TypeName="System.Windows.Forms.AutoScaleMode"/>
+  <ClrType TypeName="System.Windows.Forms.Layout.ArrangedElementCollection"/>
+  <ClrType TypeName="System.Windows.Forms.Form"/>
+  <ClrType TypeName="System.Windows.Forms.ContainerControl"/>
+  <ClrType TypeName="System.Windows.Forms.ScrollableControl"/>
+  <ClrType TypeName="System.Windows.Forms.Control"/>
+  <ClrType TypeName="System.Windows.Forms.FormStartPosition"/>
+  <ClrType TypeName="System.Windows.Forms.Application"/>
+  <ClrType TypeName="System.Windows.Forms.Message"/>
+  <ClrType TypeName="System.Windows.Forms.PaintEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.PaintEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.MouseEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.MouseEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.LayoutEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.LayoutEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.DockStyle"/>
+  <ClrType TypeName="System.Windows.Forms.Cursor"/>
+  <ClrType TypeName="System.Windows.Forms.Cursors"/>
+  <ClrType TypeName="System.Windows.Forms.ControlStyles"/>
+  <ClrType TypeName="System.Windows.Forms.IWin32Window"/>
+
+  <ClrType TypeName="System.Windows.Forms.DialogResult"/>
+  <ClrType TypeName="System.Windows.Forms.CommonDialog"/>
+  <ClrType TypeName="System.Windows.Forms.FileDialog"/>
+  <ClrType TypeName="System.Windows.Forms.OpenFileDialog"/>
+  <ClrType TypeName="System.Windows.Forms.SaveFileDialog"/>
+  <ClrType TypeName="System.Windows.Forms.MessageBox"/>
+
+  
+  <ClrType TypeName="System.Windows.Forms.HtmlDocument"/>
+  <ClrType TypeName="System.Windows.Forms.HtmlElement"/>
+  <!-- It crashes proxygen, so postpone for better times -->
+  <!--ClrType TypeName="System.Windows.Forms.HtmlElementCollection"/-->
+
+  <ClrType TypeName="System.Windows.Forms.WebBrowserBase"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowser"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserReadyState"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserRefreshOption"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserEncryptionLevel"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserDocumentCompletedEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserNavigatedEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserNavigatingEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserProgressChangedEventHandler"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserDocumentCompletedEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserNavigatedEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserNavigatingEventArgs"/>
+  <ClrType TypeName="System.Windows.Forms.WebBrowserProgressChangedEventArgs"/>
+  
+</jni4net-proxygen>

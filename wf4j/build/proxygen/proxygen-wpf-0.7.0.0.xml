@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2009 by Pavel Savara
+This file is part of tools for jni4net - bridge between Java and .NET
+http://jni4net.sourceforge.net/
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<jni4net-proxygen xmlns="http://jni4net.sf.net/0.7.0.0/toolConfig.xsd">
+  <!-- Location where .java files will be generated into. It's relative or absolute path. -->
+  <TargetDirJvm>src/proxies/java/jwpf</TargetDirJvm>
+
+  <!-- Location where .cs files will be generated into. It's relative or absolute path. -->
+  <TargetDirClr>src/proxies/net/nwpf</TargetDirClr>
+
+  <!-- List of assemblies, which define known types for generator -->
+  <AssemblyReference Assembly="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <AssemblyReference Assembly="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <AssemblyReference Assembly="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <AssemblyReference Assembly="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+  <AssemblyReference Assembly="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+  <AssemblyReference Assembly="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+  <AssemblyReference Assembly="WindowsFormsIntegration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+
+  <AssemblyReference Assembly="Proxies.corlib"/>
+  <AssemblyReference Assembly="Proxies.System"/>
+  <AssemblyReference Assembly="Proxies.System.Drawing"/>
+  <AssemblyReference Assembly="Proxies.System.Windows.Forms"/>
+
+  <ClassPath Path="gen/proxies-corlib.jar"/>
+  <ClassPath Path="gen/proxies-system.jar"/>
+  <ClassPath Path="gen/proxies-system-drawing.jar"/>
+  <ClassPath Path="gen/proxies-system-windows-forms.jar"/>
+
+  <!-- WindowsBase -->
+  <ClrType TypeName="System.Windows.Threading.DispatcherObject"/>
+  <ClrType TypeName="System.Windows.DependencyObject"/>
+  <ClrType TypeName="System.Windows.Size"/>
+
+  <ClrType TypeName="System.Windows.Input.ModifierKeys"/>
+
+  <ClrType TypeName="System.Windows.Interop.MSG"/>
+  <ClrType TypeName="System.Windows.Interop.IKeyboardInputSink"/>
+
+  <!-- PresentationCore -->
+  <ClrType TypeName="System.Windows.Media.Visual"/>
+  <ClrType TypeName="System.Windows.UIElement"/>
+  <ClrType TypeName="System.Windows.Visibility"/>
+
+  <ClrType TypeName="System.Windows.RoutedEvent"/>
+  <ClrType TypeName="System.Windows.RoutedEventArgs"/>
+  <ClrType TypeName="System.Windows.RoutedEventHandler"/>
+  <ClrType TypeName="System.Windows.RoutedEventHandlerInfo"/>
+  <ClrType TypeName="System.Windows.RoutingStrategy"/>
+
+  <ClrType TypeName="System.Windows.Interop.IWin32Window"/>
+  <ClrType TypeName="System.Windows.Interop.HwndSourceHook"/>
+
+  <!-- PresentationFramework -->
+  <ClrType TypeName="System.Windows.FrameworkElement"/>
+  <ClrType TypeName="System.Windows.ResourceDictionary">
+      <MethodModifier MethodName="GetEnumerator" Signature="()LSystem/Collections/IEnumerator;" Interface="System.Collections.IEnumerable" RenameJVM="IEnumerable_GetEnumerator"/>
+  </ClrType>
+  <ClrType TypeName="System.Windows.Controls.Control"/>
+  <ClrType TypeName="System.Windows.Controls.ContentControl"/>
+  <ClrType TypeName="System.Windows.Window"/>
+  <ClrType TypeName="System.Windows.WindowState"/>
+  <ClrType TypeName="System.Windows.WindowStyle"/>
+  <ClrType TypeName="System.Windows.Thickness"/>
+  <ClrType TypeName="System.Windows.Application"/>
+  <ClrType TypeName="System.Windows.Controls.Panel"/>
+  <ClrType TypeName="System.Windows.Controls.DockPanel"/>
+  <ClrType TypeName="System.Windows.Controls.Dock"/>
+  <ClrType TypeName="System.Windows.Interop.HwndHost"/>
+
+  <!-- WindowsFormsIntegration -->
+  <ClrType TypeName="System.Windows.Forms.Integration.WindowsFormsHost"/>
+  
+</jni4net-proxygen>
