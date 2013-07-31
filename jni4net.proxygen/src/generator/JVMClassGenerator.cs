@@ -185,7 +185,7 @@ namespace net.sf.jni4net.proxygen.generator {
                 if (argumentType.IsGenericType) {
                     CodeTypeReference innerType = new CodeTypeReference(argumentType);
                     if (innerType.BaseType == "System.Collections.Generic.KeyValuePair`2") {
-                        innerType.BaseType = "mitza.jni4net.wrapper.KeyValuePair";
+                        innerType.BaseType = "mitza.jni4net.wrapper.j2c.KeyValuePair";
                     }
                     innerType.TypeArguments.Clear();
                     ConstructTypeArguments(innerType, argumentType.GetGenericArguments());
