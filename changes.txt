@@ -1,5 +1,6 @@
 Version 0.8.7.0
 -----------
++ [#35] - fixed - Integer overflow on 64-bit OS [by Geert Claeys]
 + reworked contributed code which was not contributed with CLA to become full owner of the code.
 
 Version 0.8.6.0
