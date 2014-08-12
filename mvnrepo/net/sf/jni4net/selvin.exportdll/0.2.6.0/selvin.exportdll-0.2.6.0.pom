@@ -10,7 +10,7 @@
     <groupId>net.sf.jni4net</groupId>
     <artifactId>selvin.exportdll</artifactId>
     <version>0.2.6.0</version>
-    <packaging>dotnet:exe</packaging>
+    <packaging>dotnet:dll</packaging>
     <name>Dll Export helper tool - build time</name>
     <dependencies>
         <dependency>
