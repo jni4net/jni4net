@@ -29,7 +29,7 @@
             <groupId>net.sf.jni4net</groupId>
             <artifactId>selvin.exportdll</artifactId>
             <version>0.2.6.0</version>
-            <type>dotnet:exe</type>
+            <type>dotnet:library</type>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -72,17 +72,17 @@
                             <tasks>
                                 <resolveArtifact property="exportdll" groupId="net.sf.jni4net"
                                                  artifactId="selvin.exportdll" version="0.2.6.0"
-                                                 type="dotnet:exe"/>
+                                                 type="dotnet:library"/>
                                 <resolveArtifact property="exportdllattribute" groupId="net.sf.jni4net"
                                                  artifactId="selvin.exportdllattribute" version="0.2.6.0"
                                                  type="dotnet:library"/>
-                                <copy file="${exportdll}" todir="target/tool"/>
+                                <copy file="${exportdll}" tofile="target/tool/selvin.exportdll-0.2.6.0.exe"/>
                                 <copy file="${exportdllattribute}" todir="target/tool"/>
                                 <exec executable="cmd.exe" failonerror="false" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v20-${jni4net.version}.dll &quot;%ProgramFiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v2.0.50727\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
+                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v20-${jni4net.version}.dll &quot;%ProgramFiles(x86)%\Microsoft SDKs\Windows\v8.0A\Bin\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v2.0.50727\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
                                 </exec>
                                 <exec executable="cmd.exe" failonerror="false" dir="target">
-                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v20-${jni4net.version}.dll &quot;%ProgramFiles%\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v2.0.50727\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
+                                    <arg value="/c tool\selvin.exportdll-0.2.6.0.exe jni4net.n.w32.v20-${jni4net.version}.dll &quot;%ProgramFiles%\Microsoft SDKs\Windows\v8.0A\Bin\ildasm.exe&quot; &quot;%SystemRoot%\Microsoft.NET\Framework\v2.0.50727\ilasm.exe&quot; &quot;${basedir}/../tools/keys/jni4net.snk&quot; /Release /x32"/>
                                 </exec>
                             </tasks>
                         </configuration>
