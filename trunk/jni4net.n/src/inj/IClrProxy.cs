@@ -38,7 +38,7 @@ namespace net.sf.jni4net.inj
     {
         private static long getClrHandle(JNIEnv env, JniHandle obj)
         {
-            return env.CallIntMethod(obj, _getClrHandle0);
+            return env.CallLongMethod(obj, _getClrHandle0);
         }
 
         internal static object GetObject(JNIEnv env, JniHandle obj)
