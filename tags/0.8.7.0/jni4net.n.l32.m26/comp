@@ -1,0 +1,6 @@
+rm -rf target
+mkdir target
+gcc -Wall -I$JAVA_HOME/include -I$JAVA_HOME/include/linux jni4net.c -fPIC -o target/jni4net.n.l32.m26-0.8.0.0.dll -lstdc++ -lm -shared -m32 `pkg-config --cflags --libs mono`
+file target/jni4net.n.l32.m26-0.8.0.0.dll
+nm target/jni4net.n.l32.m26-0.8.0.0.dll
+cp target/jni4net.n.l32.m26-0.8.0.0.dll ../jni4net.tested.n/target/
