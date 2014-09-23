@@ -1,5 +1,11 @@
 Version 0.8.8.0
 -----------
++ moved to github
++ changed runtime license to MIT. Tools still GPLv3.
++ changed documentation to MarkDown and improved a bit
+
+Version 0.8.7.0
+-----------
 + [#35] - fixed - Integer overflow on 64-bit OS [by Geert Claeys]
 + reworked contributed code which was not contributed with CLA to become full owner of the code.
 

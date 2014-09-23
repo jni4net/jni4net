@@ -47,11 +47,11 @@
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
-            <source>license\jni4net-LGPL-3.0.txt</source>
+            <source>license\jni4net-MIT-3.0.txt</source>
             <outputDirectory>lib</outputDirectory>
         </file>
         <file>
-            <source>content\ReadMe.txt</source>
+            <source>content\ReadMe.md</source>
         </file>
         <file>
             <source>changes.txt</source>
