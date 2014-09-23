@@ -9,7 +9,7 @@
     <name>JNI 4 .NET</name>
     <organization>
         <name>jni4net</name>
-        <url>http://jni4net.sf.net</url>
+        <url>http://jni4net.github.io</url>
     </organization>
     <modules>
         <module>jni4net.j</module>

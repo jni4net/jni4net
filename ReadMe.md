@@ -1,6 +1,6 @@
 To get started
 ----------------
-Visit and read [jni4net.sf.net](http://jni4net.sf.net)
+Visit and read [jni4net.github.io](http://jni4net.github.io)
 
 Make sure you understand GPLv3 and MIT licenses.
 * runtime is licensed under [MIT](http://opensource.org/licenses/MIT).

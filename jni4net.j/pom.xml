@@ -29,7 +29,7 @@
 				<configuration>
 					<keystore>${basedir}/../tools/keys/jni4net.jkey</keystore>
 					<alias>jni4net</alias>
-					<dname>cn=jni4net.sf.net, ou=None, L=Prague, ST=Czech, o=jni4net, c=CZ</dname>
+					<dname>cn=jni4net.github.io, ou=None, L=Prague, ST=Czech, o=jni4net, c=CZ</dname>
 					<storepass>jni44net</storepass>
 				</configuration>
 			</plugin>
