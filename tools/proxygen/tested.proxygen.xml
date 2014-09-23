@@ -22,8 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <TargetDirClr>jni4net.tested.n/src/generated</TargetDirClr>
   <ClassPath Path="jni4net.j/target/classes"/>
   <ClassPath Path="jni4net.tested.j/target/classes"/>
-  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.n-0.8.7.0.dll"/>
-  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.tested.n-0.8.7.0.dll"/>
+  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.n-0.8.8.0.dll"/>
+  <AssemblyReference Assembly="jni4net.tested.n\target\jni4net.tested.n-0.8.8.0.dll"/>
 
   <!-- 
   <Verbose>true</Verbose>

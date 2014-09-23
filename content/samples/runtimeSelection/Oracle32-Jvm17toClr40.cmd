@@ -11,6 +11,6 @@ echo this asumes that you have c:\Program Files (x86)\Java\jdk1.7.0\ installed
 goto end
 
 :run
-"c:\Program Files (x86)\Java\jdk1.7.0\bin\java.exe" -cp ../../lib/jni4net.j-0.8.7.0.jar;target/classes Program v40
+"c:\Program Files (x86)\Java\jdk1.7.0\bin\java.exe" -cp ../../lib/jni4net.j-0.8.8.0.jar;target/classes Program v40
 
 :end

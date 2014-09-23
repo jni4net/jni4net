@@ -10,6 +10,6 @@ echo this asumes that you have %JAVA_HOME%\ installed
 goto end
 
 :run
-"%JAVA_HOME%\bin\java.exe" -cp ../../lib/jni4net.j-0.8.7.0.jar;target/classes Program
+"%JAVA_HOME%\bin\java.exe" -cp ../../lib/jni4net.j-0.8.8.0.jar;target/classes Program
 
 :end
