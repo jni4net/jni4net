@@ -1,1 +1,1 @@
-git tag 0.8.8.0 -m "tagged version 0.8.8.0"
+git tag 0.8.9.0 -m "tagged version 0.8.9.0"

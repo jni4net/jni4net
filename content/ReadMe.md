@@ -20,7 +20,7 @@ To use this bridge at runtime you need
 
 How to use
 ----------------
-* Download [binary](http://sourceforge.net/projects/jni4net/files/0.8.8/jni4net-0.8.8.0-bin.zip/download) package.
+* Download [binary](https://sourceforge.net/projects/jni4net/files/) package.
 * study samples inside of the binary package, read `samples\ReadMe.md` play along.
  * Try `samples\helloWorldFromCLR` there is ReadMe.md inside.
  * Try `samples\helloWorldFromJVM` there is ReadMe.md inside. 

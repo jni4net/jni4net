@@ -44,8 +44,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.8.8.0">
-      <HintPath>..\..\..\lib\jni4net.n-0.8.8.0.dll</HintPath>
+    <Reference Include="jni4net.n-0.8.9.0">
+      <HintPath>..\..\..\lib\jni4net.n-0.8.9.0.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
