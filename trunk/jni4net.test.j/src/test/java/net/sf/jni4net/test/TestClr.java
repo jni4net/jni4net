@@ -131,6 +131,12 @@ public class TestClr {
 	}
 
 	@Test()
+	public void testCWithJavaStatic() {
+		int res= JavaCallBack.callBackStatic(1,2);
+		Assert.assertThat(res, is(3));
+	}
+
+	@Test()
 	public void testJWithClrInterface() {
 		int res= JavaCallBack.callBackComparison2();
 		Assert.assertThat(res, is(1));

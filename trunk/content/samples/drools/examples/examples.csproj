@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="jni4net.n-0.8.7.0">
-      <HintPath>..\..\..\lib\jni4net.n-0.8.7.0.dll</HintPath>
+    <Reference Include="jni4net.n-0.8.8.0">
+      <HintPath>..\..\..\lib\jni4net.n-0.8.8.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,8 +64,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\lib\jni4net.j-0.8.7.0.jar">
-      <Link>jni4net.j-0.8.7.0.jar</Link>
+    <Content Include="..\..\..\lib\jni4net.j-0.8.8.0.jar">
+      <Link>jni4net.j-0.8.8.0.jar</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\drools-api-5.1.1.j4n\drools-api-5.1.1.j4n.jar">
