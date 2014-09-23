@@ -47,7 +47,7 @@
             <outputDirectory>bin</outputDirectory>
         </file>
         <file>
-            <source>license\jni4net-MIT-3.0.txt</source>
+            <source>license\jni4net-MIT.txt</source>
             <outputDirectory>lib</outputDirectory>
         </file>
         <file>

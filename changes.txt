@@ -2,7 +2,8 @@ Version 0.8.8.0
 -----------
 + moved to github
 + changed runtime license to MIT. Tools still GPLv3.
-+ changed documentation to MarkDown and improved a bit
++ changed documentation to MarkDown and improved a bit.
++ removed support for publishing jni4net to maven repository on google code. Build tools would stay there for now.
 
 Version 0.8.7.0
 -----------

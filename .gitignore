@@ -1,1 +1,4 @@
 jni4net.iws
+**/target/**
+tools/keys/jni4net.snk
+tools/lib/
