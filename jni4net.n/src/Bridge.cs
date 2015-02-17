@@ -136,7 +136,7 @@ namespace net.sf.jni4net
                 return jar4;
             }
 
-            dir = Path.GetDirectoryName(new Uri(typeof(Bridge).Assembly.GetName().CodeBase).AbsolutePath);
+            dir = Path.GetDirectoryName(Uri.UnescapeDataString(new Uri(typeof(Bridge).Assembly.GetName().CodeBase).AbsolutePath));
             var jar5 = Path.GetFullPath(Path.Combine(dir, jarName));
             if (System.IO.File.Exists(jar5))
             {
