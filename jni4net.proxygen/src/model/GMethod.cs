@@ -44,7 +44,14 @@ namespace net.sf.jni4net.proxygen.model
         public bool UseExplicitInterface { get; set; }
         public GType DeclaringType { get; set; }
         public string JVMName { get; set; }
-        public string CLRName { get; set; }
+
+        private string _clrName;
+        public string CLRName
+        {
+            get { return _clrName; }
+            set { _clrName = value.Replace("$", "S"); }
+        }
+
         public bool IsCLRPropertyGetter { get; set; }
         public bool IsCLRPropertySetter { get; set; }
         public bool IsCLRPropertyAdd { get; set; }
