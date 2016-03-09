@@ -375,15 +375,19 @@ namespace net.sf.jni4net.proxygen.model
                 }
             }
 
-            foreach (GType ifc in type.Interfaces)
+            if (!type.IsInterface)
             {
-                LoadMethods(ifc);
-                foreach (var pair in ifc.AllMethods)
+                foreach (GType ifc in type.Interfaces)
                 {
-                    if (!type.AllMethods.ContainsKey(pair.Key) || pair.Value.UseExplicitInterface || type.AllMethods[pair.Key].UseExplicitInterface)
+                    LoadMethods(ifc);
+                    foreach (var pair in ifc.AllMethods)
                     {
-                        type.AllMethods.Add(pair.Key, pair.Value);
-                        type.MethodsWithInterfaces.Add(pair.Value);
+                        if (!type.AllMethods.ContainsKey(pair.Key) || pair.Value.UseExplicitInterface ||
+                            type.AllMethods[pair.Key].UseExplicitInterface)
+                        {
+                            type.AllMethods.Add(pair.Key, pair.Value);
+                            type.MethodsWithInterfaces.Add(pair.Value);
+                        }
                     }
                 }
             }
