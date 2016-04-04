@@ -103,7 +103,7 @@ namespace net.sf.jni4net.proxygen.generator
             //sb.Replace("public partial class", "public unsafe partial class");
             //sb.Replace("internal sealed partial class @__", "internal sealed unsafe partial class @__");
 
-
+            sb.Replace("global::params ", "params global::");
             sb.Replace("// __event__\r\n        public global::", "public event global::");
             sb.Replace("get {\r\n                // __add__", "add {");
             sb.Replace("set {\r\n                // __remove__", "remove {");

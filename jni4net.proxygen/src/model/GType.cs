@@ -47,6 +47,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsFinal { get; set; }
         public bool IsOut { get; set; }
         public bool IsRef { get; set; }
+        public bool IsOptional { get; set; }
         public bool IsPrimitive { get; set; }
         public bool IsException { get; set; }
         public bool IsDelegate { get; set; }
@@ -320,6 +321,11 @@ namespace net.sf.jni4net.proxygen.model
                     if (IsArray)
                     {
                         CLRFullName = JVMType.getComponentType().getName() + "[]";
+                        if (IsOptional)
+                        {
+                            const string ellipsisSugarKeyword = "params ";
+                            CLRFullName = ellipsisSugarKeyword + CLRFullName;
+                        }
                     }
                     else
                     {
