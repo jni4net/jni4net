@@ -435,6 +435,11 @@ namespace net.sf.jni4net.proxygen.model
             {
                 res.Attributes |= MemberAttributes.Final;
             }
+            if ((modifiers & (ModifierFlags.Varargs)) != ModifierFlags.None)
+            {
+                var indexOfLastParameter = res.Parameters.Count - 1;
+                res.Parameters[indexOfLastParameter].IsOptional = true;
+            }
         }
     }
 }

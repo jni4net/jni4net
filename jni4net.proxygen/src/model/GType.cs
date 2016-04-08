@@ -47,6 +47,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsFinal { get; set; }
         public bool IsOut { get; set; }
         public bool IsRef { get; set; }
+        public bool IsOptional { get; set; }
         public bool IsPrimitive { get; set; }
         public bool IsException { get; set; }
         public bool IsDelegate { get; set; }
@@ -88,6 +89,22 @@ namespace net.sf.jni4net.proxygen.model
         {
             get { return CLRSubst == null ? CLRFullName : CLRSubst.CLRFullName; }
         }
+        public string CLRInterfaceParameterResolved
+        {
+            get
+            {
+                if (CLRSubst == null)
+                {
+                    return CLRFullName;
+                }
+                if (!IsArray || !IsOptional)
+                {
+                    return CLRSubst.CLRFullName;
+                }
+                const string ellipsisSugarKeyword = "params ";
+                return ellipsisSugarKeyword + CLRSubst.CLRFullName;
+            }
+        }
 
         public string JVMResolved
         {
@@ -102,6 +119,11 @@ namespace net.sf.jni4net.proxygen.model
         public CodeTypeReference CLRReference
         {
             get { return new CodeTypeReference(CLRResolved, CodeTypeReferenceOptions.GlobalReference); }
+        }
+
+        public CodeTypeReference CLRInterfaceParameterReference
+        {
+            get { return new CodeTypeReference(CLRInterfaceParameterResolved, CodeTypeReferenceOptions.GlobalReference); }
         }
 
         public Dictionary<string, GMethod> AllMethods
