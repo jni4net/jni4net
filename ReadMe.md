@@ -16,7 +16,7 @@ How to use
  * Try `samples\helloWorldFromJVM` there is ReadMe.md inside. 
 * [How calling from Java to .NET works](http://zamboch.blogspot.cz/2009/11/how-calling-from-java-to-net-works-in.html)
 * [How calling from .NET to Java works](http://zamboch.blogspot.cz/2009/10/how-calling-from-net-to-java-works.html)
-* [Troubleshooter](http://jni4net.sourceforge.net/troubleshoot.shtml)
+* [Troubleshooter](http://jni4net.com/troubleshoot.html)
 * [Email group](https://groups.google.com/forum/?hl=en#!forum/jni4net)
 
 How to build this solution on Windows
