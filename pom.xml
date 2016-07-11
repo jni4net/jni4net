@@ -28,14 +28,14 @@
         <repository>
             <id>net.sf.jni4net</id>
             <name>jni4net release repository</name>
-            <url>http://jni4net.googlecode.com/svn/mvnrepo</url>
+            <url>https://raw.githubusercontent.com/jni4net/jni4net.github.io/master/mvnrepo</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>net.sf.jni4net</id>
             <name>jni4net release repository</name>
-            <url>http://jni4net.googlecode.com/svn/mvnrepo</url>
+            <url>https://raw.githubusercontent.com/jni4net/jni4net.github.io/master/mvnrepo</url>
         </pluginRepository>
     </pluginRepositories>
     <licenses>
@@ -49,12 +49,12 @@
         </license>
     </licenses>
     <distributionManagement>
-        <downloadUrl>http://jni4net.googlecode.com/svn/mvnrepo</downloadUrl>
+        <downloadUrl>https://raw.githubusercontent.com/jni4net/jni4net.github.io/master/mvnrepo</downloadUrl>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>net.sf.jni4net-upload</id>
             <name>jni4net release repository</name>
-            <url>svn:https://jni4net.googlecode.com/svn/mvnrepo</url>
+            <url>svn:https://jni4net.github.io/mvnrepo</url>
         </repository>
     </distributionManagement>
     <build>

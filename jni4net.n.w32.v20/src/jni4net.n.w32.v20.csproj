@@ -60,9 +60,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="selvin.exportdllattribute-0.2.6.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
+    <Reference Include="selvin.exportdllattribute-0.2.5.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.6.0.dll</HintPath>
+      <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.5.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,7 +101,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v2.0.50727\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.5.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v2.0.50727\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x32</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.8.9.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 if not exist $(SolutionDir)\tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\tools\keys\jni4net.snk

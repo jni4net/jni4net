@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -60,9 +60,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="selvin.exportdllattribute-0.2.6.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
+    <Reference Include="selvin.exportdllattribute-0.2.5.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.6.0.dll</HintPath>
+      <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.5.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,7 +101,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.6.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v8.0A\Bin\NETFX 4.0 Tools\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x64</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)\tools\lib\selvin.exportdll-0.2.5.0.exe" "$(TargetPath)" "%25ProgramFiles%25\Microsoft SDKs\Windows\v8.0A\Bin\NETFX 4.0 Tools\ildasm.exe" "%25windir%25\Microsoft.NET\Framework\v4.0.30319\ilasm.exe" "$(SolutionDir)/tools/keys/jni4net.snk" /Debug /x64</PostBuildEvent>
     <PreBuildEvent>if not exist $(OutDir)\build-sources\generated-sources\META-INF mkdir $(OutDir)\build-sources\generated-sources\META-INF\
 echo [assembly: System.Reflection.AssemblyVersion("0.8.9.0")] &gt; $(OutDir)\build-sources\generated-sources\META-INF\AssemblyInfo.cs
 if not exist $(SolutionDir)\tools\keys\jni4net.snk "%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\sn.exe" -k $(SolutionDir)\tools\keys\jni4net.snk
