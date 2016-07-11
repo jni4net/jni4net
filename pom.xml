@@ -58,13 +58,6 @@
         </repository>
     </distributionManagement>
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.jvnet.wagon-svn</groupId>
-                <artifactId>wagon-svn</artifactId>
-                <version>1.8</version>
-            </extension>
-        </extensions>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -170,13 +163,6 @@
 			   </configuration>
 			</plugin>
 			-->
-            <plugin>
-               <artifactId>maven-deploy-plugin</artifactId>
-               <version>2.4</version>
-               <configuration>
-                 <skip>false</skip>
-              </configuration>
-            </plugin>
         </plugins>
         <resources>
             <resource>
