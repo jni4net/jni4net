@@ -1243,7 +1243,9 @@ namespace net.sf.jni4net.proxygen.generator
 
         protected override void OutputType(CodeTypeReference typeRef)
         {
-            Output.Write(GetTypeOutput(typeRef));
+            var type = GetTypeOutput(typeRef);
+            var patchedType = type.Replace("$", ".");//fix for enums https://github.com/jni4net/jni4net/issues/39
+            Output.Write(patchedType);
         }
 
 
