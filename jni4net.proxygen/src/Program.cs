@@ -203,15 +203,13 @@ namespace net.sf.jni4net.proxygen
                     jw.Write('"');
                     jw.Write(";");
                 }
-                jw.Write(" ");
-                foreach (string file in Generator.filesJVM)
+                jw.Write(" @sources.txt");
+                using (var sourceWriter = new StreamWriter(Path.Combine(workDir, "sources.txt")))
+                    foreach (string file in Generator.filesJVM)
                 {
                     int i = file.IndexOf("\\jvm\\");
                     string output = file.Substring(i+1);
-                    jw.Write('"');
-                    jw.Write(output);
-                    jw.Write('"');
-                    jw.Write(" ");
+                    sourceWriter.WriteLine(output);
                 }
                 jw.WriteLine();
                 jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
@@ -221,15 +219,14 @@ namespace net.sf.jni4net.proxygen
                 jw.WriteLine("echo " + fname + ".j4n.jar ");
                 jw.Write("jar cvf ");
                 jw.Write(fname + ".j4n.jar ");
-                foreach (string file in Generator.TypesJVM.Values)
-                {
-                    jw.Write(" -C target\\classes ");
-                    string output = file.Replace(".", "\\") + ".class";
-                    jw.Write('"');
-                    jw.Write(output);
-                    jw.Write('"');
-                    jw.Write(" ");
-                }
+                jw.Write(" @classes.txt");
+                using(var classWriter = new StreamWriter(Path.Combine(workDir, "classes.txt")))
+                    foreach (string file in Generator.TypesJVM.Values)
+                    {
+                        classWriter.Write(" -C target\\classes ");
+                        string output = file.Replace(".", "\\") + ".class";
+                        classWriter.Write(output);
+                    }
                 jw.Write(" > nul ");
                 jw.WriteLine();
                 jw.WriteLine("IF %ERRORLEVEL% NEQ 0 goto end");
