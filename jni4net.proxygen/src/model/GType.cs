@@ -342,6 +342,11 @@ namespace net.sf.jni4net.proxygen.model
                     if (IsArray)
                     {
                         CLRFullName = JVMType.getComponentType().getName() + "[]";
+                        if (IsOptional)
+                        {
+                            const string ellipsisSugarKeyword = "params ";
+                            CLRFullName = ellipsisSugarKeyword + CLRFullName;
+                        }
                     }
                     else
                     {
