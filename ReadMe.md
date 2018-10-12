@@ -6,7 +6,7 @@ Make sure you understand GPLv3 and MIT licenses.
 * runtime is licensed under [MIT](http://opensource.org/licenses/MIT).
 * proxygen and tools are licensed under [GPLv3](http://opensource.org/licenses/gpl-3.0.html).
 
-Talk back at [jni4net](mailto:jni4net@googlegroups.com) or [Pavel Savara](mailto:pavel.savara@gmail.com)
+Talk back at [jni4net](mailto:jni4net@googlegroups.com)
 
 How to use
 ----------------
