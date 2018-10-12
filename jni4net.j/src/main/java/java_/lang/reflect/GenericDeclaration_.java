@@ -35,5 +35,15 @@ class __GenericDeclaration extends system.Object implements java.lang.reflect.Ge
     
     @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/reflect/TypeVariable;")
     public native java.lang.reflect.TypeVariable[] getTypeParameters();
+
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/annotation/Annotation;()Ljava/lang/Class;")
+    public native <T extends java.lang.annotation.Annotation> T getAnnotation(java.lang.Class<T> annotationClass);
+
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/annotation/Annotation;")
+    public native java.lang.annotation.Annotation[] getAnnotations();
+
+    @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/annotation/Annotation;")
+    public native java.lang.annotation.Annotation[] getDeclaredAnnotations();
+
 }
 //</generated-proxy>

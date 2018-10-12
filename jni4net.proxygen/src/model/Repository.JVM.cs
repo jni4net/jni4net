@@ -24,12 +24,14 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Reflection;
+using com.thoughtworks.paranamer;
 using java.lang;
 using java.lang.annotation;
 using java.lang.reflect;
 using net.sf.jni4net.proxygen.config;
 using Exception = System.Exception;
 using Object = java.lang.Object;
+using String = System.String;
 
 namespace net.sf.jni4net.proxygen.model
 {
@@ -334,11 +336,13 @@ namespace net.sf.jni4net.proxygen.model
             res.JVMName = res.Name;
             res.CLRName = res.JVMName;
             res.IsJVMMethod = true;
-            Class[] parameterTypes = method.getParameterTypes();
+            var parameterTypes = method.getParameterTypes();
+            var parameterNames = GetParameterNames(method, parameterTypes.Length);
             for (int i = 0; i < parameterTypes.Length; i++)
             {
-                Class paramType = parameterTypes[i];
-                res.ParameterNames.Add("par" + i); //+ paramType.ShortName
+                var paramType = parameterTypes[i];
+                var paramName = parameterNames[i];
+                res.ParameterNames.Add(paramName); //+ paramType.ShortName
                 res.Parameters.Add(RegisterClass(paramType));
             }
             ConvertJVMAttributes(type, res, method);
@@ -381,11 +385,14 @@ namespace net.sf.jni4net.proxygen.model
             res.ReturnType = voidType;
             res.IsJVMMethod = true;
             res.IsConstructor = true;
-            Class[] parameterTypes = ctor.getParameterTypes();
+            var parameterTypes = ctor.getParameterTypes();
+            var parameterNames = GetParameterNames(ctor, parameterTypes.Length);
+
             for (int i = 0; i < parameterTypes.Length; i++)
             {
-                Class paramType = parameterTypes[i];
-                res.ParameterNames.Add("par" + i); //+ paramType.ShortName
+                var paramType = parameterTypes[i];
+                var paramName = parameterNames[i];
+                res.ParameterNames.Add(paramName); //+ paramType.ShortName
                 res.Parameters.Add(RegisterClass(paramType));
             }
             ConvertJVMAttributes(type, res, ctor);
@@ -399,6 +406,24 @@ namespace net.sf.jni4net.proxygen.model
                 }
                 type.Constructors.Add(res);
             }
+        }
+
+        private static java.lang.String[] GetParameterNames(AccessibleObject member, int parametersCount)
+        {
+            var paranamer = new BytecodeReadingParanamer();
+            var names = paranamer.lookupParameterNames(member, false);
+            if (names.Length >= parametersCount)
+            {
+                return names;
+            }
+
+            names = new java.lang.String[parametersCount];
+            for (var i = 0; i < names.Length; i++)
+            {
+                names[i] = "par" + i;
+            }
+
+            return names;
         }
 
         private static Annotation HasAnnotation(Method tested, string name)

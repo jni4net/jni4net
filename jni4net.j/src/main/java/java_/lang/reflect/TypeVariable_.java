@@ -27,7 +27,7 @@ public final class TypeVariable_ {
 
 //<generated-proxy>
 @net.sf.jni4net.attributes.ClrProxy
-class __TypeVariable extends system.Object implements java.lang.reflect.TypeVariable {
+class __TypeVariable extends java_.lang.reflect.__GenericDeclaration implements java.lang.reflect.TypeVariable {
     
     protected __TypeVariable(net.sf.jni4net.inj.INJEnv __env, long __handle) {
             super(__env, __handle);
@@ -38,6 +38,8 @@ class __TypeVariable extends system.Object implements java.lang.reflect.TypeVari
     
     @net.sf.jni4net.attributes.ClrMethod("()[Ljava/lang/reflect/Type;")
     public native java.lang.reflect.Type[] getBounds();
+
+    public native java.lang.reflect.AnnotatedType[] getAnnotatedBounds();
     
     @net.sf.jni4net.attributes.ClrMethod("()Ljava/lang/reflect/GenericDeclaration;")
     public native java.lang.reflect.GenericDeclaration getGenericDeclaration();
