@@ -392,7 +392,7 @@ namespace net.sf.jni4net.proxygen.model
             {
                 var paramType = parameterTypes[i];
                 var paramName = parameterNames[i];
-                res.ParameterNames.Add("par" + i); //+ paramType.ShortName
+                res.ParameterNames.Add(paramName); //+ paramType.ShortName
                 res.Parameters.Add(RegisterClass(paramType));
             }
             ConvertJVMAttributes(type, res, ctor);
