@@ -27,8 +27,6 @@ namespace java.lang {
         
         internal static global::net.sf.jni4net.jni.MethodId j4n_exit4;
         
-        internal static global::net.sf.jni4net.jni.MethodId j4n_runFinalizersOnExit5;
-        
         internal static global::net.sf.jni4net.jni.MethodId j4n_setProperty6;
         
         internal static global::net.sf.jni4net.jni.MethodId j4n_getProperty7;
@@ -120,7 +118,6 @@ namespace java.lang {
             global::java.lang.System.j4n_nanoTime2 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "nanoTime", "()J");
             global::java.lang.System.j4n_identityHashCode3 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "identityHashCode", "(Ljava/lang/Object;)I");
             global::java.lang.System.j4n_exit4 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "exit", "(I)V");
-            global::java.lang.System.j4n_runFinalizersOnExit5 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "runFinalizersOnExit", "(Z)V");
             global::java.lang.System.j4n_setProperty6 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "setProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
             global::java.lang.System.j4n_getProperty7 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
             global::java.lang.System.j4n_getProperty8 = @__env.GetStaticMethodID(global::java.lang.System.staticClass, "getProperty", "(Ljava/lang/String;)Ljava/lang/String;");
@@ -182,14 +179,6 @@ namespace java.lang {
             global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
             using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
             @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_exit4, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
-            }
-        }
-        
-        [global::net.sf.jni4net.attributes.JavaMethodAttribute("(Z)V")]
-        public static void runFinalizersOnExit(bool par0) {
-            global::net.sf.jni4net.jni.JNIEnv @__env = global::net.sf.jni4net.jni.JNIEnv.ThreadEnv;
-            using(new global::net.sf.jni4net.jni.LocalFrame(@__env, 12)){
-            @__env.CallStaticVoidMethod(global::java.lang.System.staticClass, global::java.lang.System.j4n_runFinalizersOnExit5, global::net.sf.jni4net.utils.Convertor.ParPrimC2J(par0));
             }
         }
         
