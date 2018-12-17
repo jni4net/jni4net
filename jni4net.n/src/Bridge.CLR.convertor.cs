@@ -53,9 +53,10 @@ namespace net.sf.jni4net
 
             RegistryRecord record = Registry.GetCLRRecord(type);
             JniLocalHandle jvmProxy = record.CreateJVMProxy(env, obj);
-            return (Object)__IClrProxy.CreateProxy(env, jvmProxy);
-        }
 
+            return (Object)record.CreateCLRProxy(env, jvmProxy);
+        }
+        
         public static TRes UnwrapCLR<TRes>(Object obj)
         {
             var clrProxy = obj as IClrProxy;
