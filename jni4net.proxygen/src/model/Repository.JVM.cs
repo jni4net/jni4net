@@ -459,6 +459,7 @@ namespace net.sf.jni4net.proxygen.model
             if ((modifiers & (ModifierFlags.Final)) != ModifierFlags.None && !type.IsInterface)
             {
                 res.Attributes |= MemberAttributes.Final;
+                res.IsFinal = true;
             }
             if (!res.IsField && (modifiers & (ModifierFlags.Varargs)) != ModifierFlags.None)
             {

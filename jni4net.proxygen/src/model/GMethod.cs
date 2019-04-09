@@ -37,6 +37,7 @@ namespace net.sf.jni4net.proxygen.model
         public bool IsProperty { get; set; }
         public bool IsEvent { get; set; }
         public bool IsStatic { get; set; }
+        public bool IsFinal { get; set; }
         public bool IsVoid { get; set; }
         public bool IsJVMMethod { get; set; }
         public bool IsCLRMethod { get; set; }
