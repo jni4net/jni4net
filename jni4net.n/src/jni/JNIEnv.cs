@@ -947,60 +947,60 @@ namespace net.sf.jni4net.jni
 
         #region setters static
 
-        internal void SetStaticObjectField(Class clazz, FieldId fieldID, IJvmProxy value)
+        public void SetStaticObjectField(Class clazz, FieldId fieldID, IJvmProxy value)
         {
             setStaticObjectField(envPtr, clazz.jvmHandle, fieldID.native, value.JvmHandle);
             ExceptionTest();
         }
 
-        internal void SetStaticIntField(Class clazz, FieldId fieldID, int value)
+        public void SetStaticIntField(Class clazz, FieldId fieldID, int value)
         {
             setStaticIntField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticBooleanField(JniHandle clazz, IntPtr fieldID, bool value)
+        public void SetStaticBooleanField(JniHandle clazz, IntPtr fieldID, bool value)
         {
             setStaticBooleanField(envPtr, clazz, fieldID, value ? (byte)1 : (byte)0);
             ExceptionTest();
         }
 
-        internal void SetStaticBooleanField(Class clazz, FieldId fieldID, bool value)
+        public void SetStaticBooleanField(Class clazz, FieldId fieldID, bool value)
         {
             SetStaticBooleanField(clazz.jvmHandle, fieldID.native, value);
         }
 
-        internal void SetStaticByteField(Class clazz, FieldId fieldID, byte value)
+        public void SetStaticByteField(Class clazz, FieldId fieldID, byte value)
         {
             setStaticByteField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticCharField(Class clazz, FieldId fieldID, char value)
+        public void SetStaticCharField(Class clazz, FieldId fieldID, char value)
         {
             setStaticCharField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticShortField(Class clazz, FieldId fieldID, short value)
+        public void SetStaticShortField(Class clazz, FieldId fieldID, short value)
         {
             setStaticShortField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticLongField(Class clazz, FieldId fieldID, long value)
+        public void SetStaticLongField(Class clazz, FieldId fieldID, long value)
         {
             setStaticLongField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticFloatField(Class clazz, FieldId fieldID, float value)
+        public void SetStaticFloatField(Class clazz, FieldId fieldID, float value)
         {
             setStaticFloatField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();
         }
 
-        internal void SetStaticDoubleField(Class clazz, FieldId fieldID, double value)
+        public void SetStaticDoubleField(Class clazz, FieldId fieldID, double value)
         {
             setStaticDoubleField(envPtr, clazz.jvmHandle, fieldID.native, value);
             ExceptionTest();

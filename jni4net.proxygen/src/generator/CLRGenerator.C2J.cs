@@ -48,7 +48,7 @@ namespace net.sf.jni4net.proxygen.generator
 
             CreateMethodC2J(method, tgtType, uName, isProxy, false);
 
-            if (method.IsField && !IsFinal(method))
+            if (method.IsField && !method.IsFinal)
             {
                 CreateMethodC2J(method, tgtType, uName, isProxy, true);
             }
@@ -63,11 +63,6 @@ namespace net.sf.jni4net.proxygen.generator
 
             tgtStatements.Add(call);
             GenerateEndFrameC2J(tgtStatements);
-        }
-
-        private static bool IsFinal(GMethod method)
-        {
-            return (method.Attributes & MemberAttributes.Final) != 0;
         }
 
         private void GenerateMethodIdFieldC2J(GMethod method, CodeTypeDeclaration tgtType, string uName)
