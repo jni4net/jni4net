@@ -208,8 +208,7 @@ namespace net.sf.jni4net.proxygen.generator
             }
         }
 
-        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method,
-                                                                bool isProxy)
+        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method, bool isProxy, bool fieldSetter = false)
         {
             bool add = true;
             CodeStatementCollection tgtStatements;
@@ -232,11 +231,27 @@ namespace net.sf.jni4net.proxygen.generator
             }
             else if (method.IsField)
             {
-                var p = new CodeMemberProperty();
-                tgtMember = p;
-                tgtStatements = p.GetStatements;
-                p.Name = method.CLRName;
-                p.Type = method.ReturnType.CLRReference;
+                CodeMemberProperty prop = null;
+
+                foreach (var m in tgtType.Members)
+                {
+                    if (m is CodeMemberProperty p && p.Name == method.CLRName)
+                    {
+                        prop = p;
+                        add = false;
+                        break;
+                    }
+                }
+
+                if (prop == null)
+                {
+                    prop = new CodeMemberProperty();
+                    prop.Name = method.CLRName;
+                    prop.Type = method.ReturnType.CLRReference;
+                }
+
+                tgtMember = prop;
+                tgtStatements = fieldSetter ? prop.SetStatements : prop.GetStatements;
             }
             else if (method.IsEvent)
             {
@@ -348,10 +363,7 @@ namespace net.sf.jni4net.proxygen.generator
                     tgtMethod.PrivateImplementationType = method.DeclaringType.CLRReference;
                 }
             }
-            if (!config.SkipSignatures && !isProxy)
-            {
-                Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.JVMSignature);
-            }
+            
             tgtMember.Attributes = method.Attributes;
             if (isProxy)
             {
@@ -363,6 +375,11 @@ namespace net.sf.jni4net.proxygen.generator
             }
             if (add)
             {
+                if (!config.SkipSignatures && !isProxy)
+                {
+                    Utils.AddAttribute(tgtMember, "net.sf.jni4net.attributes.JavaMethodAttribute", method.JVMSignature);
+                }
+
                 tgtType.Members.Add(tgtMember);
             }
             return tgtStatements;

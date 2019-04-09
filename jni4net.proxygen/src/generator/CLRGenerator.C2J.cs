@@ -45,13 +45,29 @@ namespace net.sf.jni4net.proxygen.generator
             {
                 return;
             }
-            CodeStatementCollection tgtStatements = CreateMethodSignature(tgtType, method, isProxy);
+
+            CreateMethodC2J(method, tgtType, uName, isProxy, false);
+
+            if (method.IsField && !IsFinal(method))
+            {
+                CreateMethodC2J(method, tgtType, uName, isProxy, true);
+            }
+        }
+
+        private void CreateMethodC2J(GMethod method, CodeTypeDeclaration tgtType, string uName, bool isProxy, bool fieldSetter)
+        {
+            CodeStatementCollection tgtStatements = CreateMethodSignature(tgtType, method, isProxy, fieldSetter);
             GenerateGetEnvC2J(method, tgtStatements);
-            CodeMethodInvokeExpression invokeExpression = GenerateInvokeExpressionC2J(method, uName);
-            CodeStatement call = GenerateCallStatementC2J(method, invokeExpression);
+            CodeMethodInvokeExpression invokeExpression = GenerateInvokeExpressionC2J(method, uName, fieldSetter);
+            CodeStatement call = GenerateCallStatementC2J(method, invokeExpression, fieldSetter);
 
             tgtStatements.Add(call);
             GenerateEndFrameC2J(tgtStatements);
+        }
+
+        private static bool IsFinal(GMethod method)
+        {
+            return (method.Attributes & MemberAttributes.Final) != 0;
         }
 
         private void GenerateMethodIdFieldC2J(GMethod method, CodeTypeDeclaration tgtType, string uName)
@@ -59,20 +75,20 @@ namespace net.sf.jni4net.proxygen.generator
             CodeMemberField fieldId;
             if (method.IsField)
             {
-                fieldId = new CodeMemberField(TypeReference(typeof (FieldId)), uName);
+                fieldId = new CodeMemberField(TypeReference(typeof(FieldId)), uName);
             }
             else
             {
-                fieldId = new CodeMemberField(TypeReference(typeof (MethodId)), uName);
+                fieldId = new CodeMemberField(TypeReference(typeof(MethodId)), uName);
             }
             fieldId.Attributes = MemberAttributes.Static | MemberAttributes.FamilyAndAssembly;
             tgtType.Members.Add(fieldId);
         }
 
-        private CodeStatement GenerateCallStatementC2J(GMethod method, CodeExpression invokeExpression)
+        private CodeStatement GenerateCallStatementC2J(GMethod method, CodeExpression invokeExpression, bool fieldSetter)
         {
             CodeStatement call;
-            if (method.IsConstructor || method.IsVoid)
+            if (method.IsConstructor || method.IsVoid || fieldSetter)
             {
                 call = new CodeExpressionStatement(invokeExpression);
             }
@@ -96,17 +112,18 @@ namespace net.sf.jni4net.proxygen.generator
             return call;
         }
 
-        private CodeMethodInvokeExpression GenerateInvokeExpressionC2J(GMethod method, string uName)
+        private CodeMethodInvokeExpression GenerateInvokeExpressionC2J(GMethod method, string uName, bool fieldSetter)
         {
-            CodeExpression[] expressions = GetExpressionsC2J(method, uName);
-            string callName = GetCallNameC2J(method);
+            CodeExpression[] expressions = GetExpressionsC2J(method, uName, fieldSetter);
+            string callName = GetCallNameC2J(method, fieldSetter);
             return new CodeMethodInvokeExpression(envVariable, callName, expressions);
         }
 
-        private CodeExpression[] GetExpressionsC2J(GMethod method, string uName)
+        private CodeExpression[] GetExpressionsC2J(GMethod method, string uName, bool fieldSetter)
         {
-            int offset = method.IsConstructor ? 3 : 2;
+            int offset = method.IsConstructor || fieldSetter ? 3 : 2;
             var expressions = new CodeExpression[method.Parameters.Count + offset];
+
             if (method.IsStatic || method.IsConstructor)
             {
                 expressions[0] = new CodeFieldReferenceExpression(ProxyTypeEx, "staticClass");
@@ -125,10 +142,24 @@ namespace net.sf.jni4net.proxygen.generator
                 GType parameter = method.Parameters[i];
                 string paramName = method.ParameterNames[i];
                 CodeExpression invokeExpression = new CodeVariableReferenceExpression(paramName);
-                CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2JParam(parameter,
-                                                                                                     invokeExpression);
+                CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2JParam(parameter, invokeExpression);
                 expressions[i + offset] = conversionExpression;
             }
+
+            if (fieldSetter)
+            {
+                CodeExpression invokeExpression = new CodeVariableReferenceExpression("value");
+                if (method.ReturnType.IsPrimitive)
+                {
+                    expressions[offset - 1] = invokeExpression;
+                }
+                else
+                {
+                    CodeMethodInvokeExpression conversionExpression = CreateConversionExpressionC2J(method.ReturnType, invokeExpression);
+                    expressions[offset - 1] = conversionExpression;
+                }
+            }
+
             return expressions;
         }
 
@@ -149,7 +180,7 @@ namespace net.sf.jni4net.proxygen.generator
             InitStatements.Add(initBody);
         }
 
-        private string GetCallNameC2J(GMethod method)
+        private string GetCallNameC2J(GMethod method, bool fieldSetter)
         {
             var callName = new StringBuilder();
             if (method.IsConstructor)
@@ -171,7 +202,7 @@ namespace net.sf.jni4net.proxygen.generator
                 {
                     callName.Insert(0, "Static");
                 }
-                callName.Insert(0, method.IsField ? "Get" : "Call");
+                callName.Insert(0, method.IsField ? (fieldSetter ? "Set" : "Get") : "Call");
                 callName.Append(method.IsField ? "Field" : "Method");
                 if (method.ReturnType != null && !method.ReturnType.IsPrimitive)
                 {
