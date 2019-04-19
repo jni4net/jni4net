@@ -274,6 +274,11 @@ namespace net.sf.jni4net
             }
         }
 
+        public static void ReregisterAssembly(Assembly assembly, ClassLoader classLoader) {
+
+            Registry.RegisterAssembly(assembly, true, classLoader, true);
+        }
+
         public static void SetSystemClassLoader(ClassLoader classLoader)
         {
             Registry.systemClassLoader = classLoader;
