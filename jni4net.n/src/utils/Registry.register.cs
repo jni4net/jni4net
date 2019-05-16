@@ -145,6 +145,36 @@ namespace net.sf.jni4net.utils
             }
         }
 
+        public static void RegisterAssembly(Assembly assembly, bool bindJVM, ClassLoader classLoader, bool forceRebindJVM)
+        {
+            lock (typeof (Registry))
+            {
+                JNIEnv env = JNIEnv.ThreadEnv;
+                try
+                {
+                    var types = assembly.GetTypes();
+                    foreach (Type type in types)
+                    {
+                        RegisterType(type, bindJVM, classLoader, env, forceRebindJVM);
+                    }
+                }
+                catch(ReflectionTypeLoadException ex)
+                {
+                    if (Bridge.Setup.Debug)
+                    {
+                        Console.WriteLine(ex);
+                        Console.WriteLine();
+                        foreach (var exception in ex.LoaderExceptions)
+                        {
+                            Console.WriteLine(exception);
+                            Console.WriteLine();
+                        }
+                    }
+                    throw;
+                }
+            }
+        }
+
         public static void RegisterAssembly(Assembly assembly, bool bindJVM)
         {
             lock (typeof(Registry))
@@ -213,6 +243,25 @@ namespace net.sf.jni4net.utils
           if (record != null)
           {
             if (bindJVM && !record.JVMBound)
+            {
+              BindJvm(record, classLoader, env);
+            }
+          }
+        }
+
+        private static void RegisterType(Type type, bool bindJVM, ClassLoader classLoader, JNIEnv env, bool forceRebindJVM)
+        {
+          if (Bridge.Setup.VeryVerbose)
+          {
+            Console.WriteLine("Registration : " + type.FullName);
+          }
+          RegistryRecord record = null;
+          RegisterWrapper(type, ref record);
+          RegisterInterfaceProxy(type, ref record);
+          RegisterClassProxy(type, ref record);
+          if (record != null)
+          {
+            if (bindJVM && (!record.JVMBound || forceRebindJVM))
             {
               BindJvm(record, classLoader, env);
             }
