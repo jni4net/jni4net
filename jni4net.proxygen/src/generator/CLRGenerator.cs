@@ -208,7 +208,12 @@ namespace net.sf.jni4net.proxygen.generator
             }
         }
 
-        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method, bool isProxy, bool fieldSetter = false)
+        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method, bool isProxy)
+		{
+			return CreateMethodSignature(tgtType, method, isProxy, false);
+		}
+		
+        protected CodeStatementCollection CreateMethodSignature(CodeTypeDeclaration tgtType, GMethod method, bool isProxy, bool fieldSetter)
         {
             bool add = true;
             CodeStatementCollection tgtStatements;
@@ -235,11 +240,14 @@ namespace net.sf.jni4net.proxygen.generator
 
                 foreach (var m in tgtType.Members)
                 {
-                    if (m is CodeMemberProperty p && p.Name == method.CLRName)
+                    if (m is CodeMemberProperty )
                     {
-                        prop = p;
-                        add = false;
-                        break;
+						CodeMemberProperty p = m as CodeMemberProperty;
+						if( p.Name == method.CLRName ){
+							prop = p;
+							add = false;
+							break;
+						}
                     }
                 }
 
